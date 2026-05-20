@@ -428,9 +428,9 @@ def parse_block(rows):
                 tm_entry = _team_map.get(name, {}).get("teams", [])
                 if tm_entry:
                     team_comps = [
-                        {"label": t["label"], "chars": [m for m in t["members"] if m != name]}
+                        {"label": t["label"], "chars": t["members"]}
                         for t in tm_entry
-                        if len([m for m in t["members"] if m != name]) >= 2
+                        if len(t["members"]) >= 3
                     ]
                 else:
                     team_comps = [{"label": lbl, "chars": mine_chars(lbl)} for lbl in named]

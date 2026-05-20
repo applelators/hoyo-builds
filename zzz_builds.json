@@ -84,27 +84,6 @@
               "Alexandrina Sebastiane (Rina)",
               "Ben Bigger"
             ]
-          },
-          {
-            "label": "Symmetrical Summer",
-            "chars": [
-              "Banyue",
-              "Flora (Seed)"
-            ]
-          },
-          {
-            "label": "Critical Summer Assault",
-            "chars": [
-              "Asaba Harumasa",
-              "Flora (Seed)"
-            ]
-          },
-          {
-            "label": "Absolute Symmetry (Pick your Support)",
-            "chars": [
-              "Hoshimi Miyabi",
-              "Ben Bigger"
-            ]
           }
         ]
       }
@@ -529,13 +508,6 @@
             ]
           },
           {
-            "label": "Target Practice",
-            "chars": [
-              "Banyue",
-              "Soldier 11 (Harin)"
-            ]
-          },
-          {
             "label": "The OG Cunning Hares - True Budget team",
             "chars": [
               "Banyue",
@@ -619,13 +591,6 @@
         "other_notes": "Parries, Block Counters and Retaliatory Attacks after Assists and Dodge Counters are the best and fastest way to reapply Caesar's shield and buffs for the team and debuff on nearby targets.\nAs a Defense agent you will need to use your EX Special even when you do not have energy for EX Special to activate her block counter, Caesar is best used in short bursts to apply Daze/rebuff. \nReel Projector is not \"worth\" to level up for Caesar. Levelling a Stun engine has more value, since you can use it on a Stun unit while not using Caesar, and Reel's passive effectively does nothing more than Stun engines do. Consider it an alternative to the A rank stun W-Engines.",
         "team_general": "Used with any DPS* \nto shield and buff ATK\n\n*Caesar's Shield + Buff is only active for the current on-fielder",
         "team_comps": [
-          {
-            "label": "Mono Physical no Dialyn Version",
-            "chars": [
-              "Soldier 11 (Harin)",
-              "Astra Yao"
-            ]
-          },
           {
             "label": "Spontaneous Combustion",
             "chars": [
@@ -1163,13 +1128,6 @@
               "Grace Howard",
               "Alexandrina Sebastiane (Rina)"
             ]
-          },
-          {
-            "label": "Mono Phys (gnawed is the key)",
-            "chars": [
-              "Qingyi",
-              "Ben Bigger"
-            ]
           }
         ]
       }
@@ -1578,29 +1536,7 @@
         "mindscapes": "M1 provides Nekomata with a conditional Phys RES PEN%, and allows her to trigger back attack effects unconditionally against Stunned enemies.\nM2 gives Nekomata increased ER by 25%, allowing her to use her EX more frequently. This has the added effect of allowing Neko players to use EX right before a parry window pops up in order to squeeze out a little more DPS, like Dodge Parry Tech but way easier.",
         "other_notes": "Its optimal to only activate her ultimate only after a quick assisting on an enemy and after refreshing her woodpecker if using onfield set. Rotation for stuns when onfielding would look like QA -> 2 BA -> EX -> Ult -> EX -> switch to support to refresh buff -> switch to Neko to do one final EX if you have the energy, or just BA if you don't. Holding down Nekomata's Basic Attack will move her behind the enemy and can help with triggering her M1 or her Sig's effect.",
         "team_general": "On-field: combination of supportive units and Quick-swap/Off-field Stunners\n\nBurst play: use on-field stunner and a support agent",
-        "team_comps": [
-          {
-            "label": "Neko got a phone",
-            "chars": [
-              "Grace Howard",
-              "Soukaku"
-            ]
-          },
-          {
-            "label": "Highway Robbery",
-            "chars": [
-              "Soukaku",
-              "Soldier 11 (Harin)"
-            ]
-          },
-          {
-            "label": "Stunning Hares",
-            "chars": [
-              "Alice Thymefield",
-              "Soldier 11 (Harin)"
-            ]
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -1736,6 +1672,7 @@
           {
             "label": "Rupture Wheelbarrow",
             "chars": [
+              "Pan Yinhu",
               "Anton Ivanov",
               "Grace Howard"
             ]
@@ -1746,13 +1683,6 @@
               "Nangong Yu",
               "Anton Ivanov",
               "Nicole Demara"
-            ]
-          },
-          {
-            "label": "Together we are Yunkui Summit",
-            "chars": [
-              "Banyue",
-              "Anton Ivanov"
             ]
           },
           {
@@ -1883,13 +1813,6 @@
         "other_notes": "While Pulchra is in the Hunter's Gait state immediantly switch into another character and DO NOT switch to Pulchra until that character has completed a Heavy Attack and activated Pulchra's \"Nightmare Shadow\". Not only that but Pulchra's Gait meter actually is shared between enemies so don't switch (unless you need to Parry) until the meter is empty to get the maximum mileage out of her state.",
         "team_general": "Used with Aftershock DPS to amplify Aftershock DMG\n\n(At M6) Used with any on-field DPS as an Off-field stunner and DMG amplifier",
         "team_comps": [
-          {
-            "label": "Premium Cat",
-            "chars": [
-              "Flora (Seed)",
-              "Soukaku"
-            ]
-          },
           {
             "label": "Anby AfterShock",
             "chars": [
@@ -2225,27 +2148,31 @@
           {
             "label": "Veils on veils on veils",
             "chars": [
-              "Piper Wheel",
+              "Sunna",
+              "Alice Thymefield",
               "Astra Yao"
             ]
           },
           {
             "label": "Qingming party",
             "chars": [
+              "Sunna",
               "Astra Yao",
-              "Anby Demara"
+              "Nangong Yu"
             ]
           },
           {
             "label": "AoD: Composer Sunna!",
             "chars": [
-              "Lighter",
-              "Seth Lowell"
+              "Nekomiya Mana",
+              "Sunna",
+              "Aria"
             ]
           },
           {
             "label": "Hares of Delusion",
             "chars": [
+              "Sunna",
               "Nicole Demara",
               "Billy Kid"
             ]
@@ -2542,25 +2469,11 @@
         "team_general": "Any 2 Supports/Supportive agents or Support + Stunner\n\nStunners that requires less on-field time are prefered",
         "team_comps": [
           {
-            "label": "Duo's off their rocker",
-            "chars": [
-              "Astra Yao",
-              "Anton Ivanov"
-            ]
-          },
-          {
             "label": "Astranomical Qingming force",
             "chars": [
               "Koleda Belobog",
               "Banyue",
               "Soukaku"
-            ]
-          },
-          {
-            "label": "Budget option",
-            "chars": [
-              "Astra Yao",
-              "Banyue"
             ]
           }
         ]
