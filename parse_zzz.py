@@ -216,6 +216,12 @@ if os.path.exists(_DISC_MAP_PATH):
     with open(_DISC_MAP_PATH, encoding="utf-8") as _f:
         _disc_map = json.load(_f)
 
+_TEAM_MAP_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "team_map.json")
+_team_map: dict = {}
+if os.path.exists(_TEAM_MAP_PATH):
+    with open(_TEAM_MAP_PATH, encoding="utf-8") as _f:
+        _team_map = json.load(_f)
+
 
 def normalize(text):
     """Normalize smart quotes and whitespace for disc name matching."""
@@ -419,7 +425,14 @@ def parse_block(rows):
                 team_general = c28
             named = [row[j].strip() for j in (3, 6, 12, 24, 27) if row[j].strip()]
             if named and not c28:
-                team_comps = [{"label": lbl, "chars": mine_chars(lbl)} for lbl in named]
+                tm_entry = _team_map.get(name, {}).get("teams", [])
+                if tm_entry:
+                    team_comps = [
+                        {"label": t["label"], "chars": [m for m in t["members"] if m != name]}
+                        for t in tm_entry
+                    ]
+                else:
+                    team_comps = [{"label": lbl, "chars": mine_chars(lbl)} for lbl in named]
             continue
 
         # Role row
@@ -507,7 +520,7 @@ def main():
     for a in result:
         b = a['builds'][0]
         d4 = ', '.join(b['disc_4pc']) or '—'
-        d2 = ', '.join(b['disc_2pc']) or '—'
+        d2 = ', '.join(s if isinstance(s, str) else '/'.join(s) for s in b['disc_2pc']) or '—'
         print(f"  {a['name']:40s}  4pc: {d4[:35]:35s}  2pc: {d2[:30]}")
 
 

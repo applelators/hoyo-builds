@@ -27,18 +27,25 @@
           {
             "label": "Hypercarry Yanagi",
             "chars": [
-              "Tsukishiro Yanagi"
+              "Soldier 11 (Harin)",
+              "Alice Thymefield"
             ]
           },
           {
             "label": "Disorder Yanagi",
             "chars": [
-              "Tsukishiro Yanagi"
+              "Soldier 11 (Harin)",
+              "Banyue",
+              "Alice Thymefield"
             ]
           },
           {
             "label": "\"Mono-Shock\"",
-            "chars": []
+            "chars": [
+              "Flora (Seed)",
+              "Asaba Harumasa",
+              "Alice Thymefield"
+            ]
           },
           {
             "label": "Budget",
@@ -46,7 +53,9 @@
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Alice Thymefield"
+            ]
           }
         ]
       }
@@ -79,23 +88,38 @@
         "team_comps": [
           {
             "label": "Bunny's Fateful Mischief",
-            "chars": []
+            "chars": [
+              "Grace Howard",
+              "Alexandrina Sebastiane (Rina)",
+              "Ben Bigger"
+            ]
           },
           {
             "label": "Symmetrical Summer",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Flora (Seed)"
+            ]
           },
           {
             "label": "Critical Summer Assault",
-            "chars": []
+            "chars": [
+              "Asaba Harumasa",
+              "Flora (Seed)"
+            ]
           },
           {
             "label": "Absolute Symmetry (Pick your Support)",
-            "chars": []
+            "chars": [
+              "Hoshimi Miyabi",
+              "Ben Bigger"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Ben Bigger"
+            ]
           }
         ]
       }
@@ -128,17 +152,23 @@
         "team_comps": [
           {
             "label": "Budget Zhu Yuan team",
-            "chars": [
-              "Zhu Yuan"
-            ]
+            "chars": []
           },
           {
             "label": "Budgetmasa",
-            "chars": []
+            "chars": [
+              "Flora (Seed)",
+              "Alice Thymefield",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "White hair girl supporting White hair girl",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Anton Ivanov",
+              "Alice Thymefield"
+            ]
           },
           {
             "label": "Tutorial Mission",
@@ -146,7 +176,9 @@
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Alice Thymefield"
+            ]
           }
         ]
       }
@@ -180,30 +212,37 @@
         "team_comps": [
           {
             "label": "It's my phon bro",
-            "chars": []
+            "chars": [
+              "Nekomiya Mana",
+              "Grace Howard",
+              "Soukaku"
+            ]
           },
           {
             "label": "Wheelchaired Bro - Quick Assist spam",
-            "chars": []
+            "chars": [
+              "Nekomiya Mana",
+              "Soldier 11 (Harin)",
+              "Soukaku"
+            ]
           },
           {
             "label": "Burst Bro (Astra or Nicole or Rina)",
             "chars": [
-              "Astra Yao",
-              "Nicole Demara",
-              "Alexandrina Sebastiane (Rina)"
+              "Nekomiya Mana",
+              "Evelyn Chevalier",
+              "Soldier 11 (Harin)"
             ]
           },
           {
             "label": "Budget Bro (Nicole or Rina)",
-            "chars": [
-              "Nicole Demara",
-              "Alexandrina Sebastiane (Rina)"
-            ]
+            "chars": []
           },
           {
             "label": "Generic team example",
-            "chars": []
+            "chars": [
+              "Nekomiya Mana"
+            ]
           }
         ]
       }
@@ -237,26 +276,39 @@
           {
             "label": "AoD: Lead Vocal Aria!",
             "chars": [
-              "Aria"
+              "Soldier 11 (Harin)",
+              "Seth Lowell",
+              "Grace Howard"
             ]
           },
           {
             "label": "Dream Collab",
-            "chars": []
+            "chars": [
+              "Seth Lowell",
+              "Soldier 11 (Harin)",
+              "Soukaku"
+            ]
           },
           {
             "label": "we have Nangong Yu at home",
             "chars": [
-              "Nangong Yu"
+              "Seth Lowell",
+              "Alexandrina Sebastiane (Rina)"
             ]
           },
           {
             "label": "Pink Gals (F2P)",
-            "chars": []
+            "chars": [
+              "Seth Lowell",
+              "Banyue",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Seth Lowell"
+            ]
           }
         ]
       }
@@ -293,20 +345,25 @@
           {
             "label": "Call center (Astra/Yuzuha/Sunna/Nicole)",
             "chars": [
-              "Ukinami Yuzuha",
-              "Sunna",
-              "Astra Yao",
-              "Nicole Demara"
+              "Flora (Seed)",
+              "Grace Howard",
+              "Soldier 11 (Harin)"
             ]
           },
           {
             "label": "Burstmasa",
-            "chars": []
+            "chars": [
+              "Flora (Seed)",
+              "Anby Demara",
+              "Ju Fufu"
+            ]
           },
           {
             "label": "Harumasa stops slacking (On-field)",
             "chars": [
-              "Asaba Harumasa"
+              "Flora (Seed)",
+              "Soldier 11 (Harin)",
+              "Soukaku"
             ]
           },
           {
@@ -315,7 +372,9 @@
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Seth Lowell"
+            ]
           }
         ]
       }
@@ -350,28 +409,39 @@
           {
             "label": "Evelyn Premium (Dialyn or Lighter)",
             "chars": [
-              "Evelyn Chevalier",
-              "Dialyn",
-              "Lighter"
+              "Qingyi",
+              "Ben Bigger",
+              "Soukaku"
             ]
           },
           {
             "label": "Dream Collab 2",
-            "chars": []
+            "chars": [
+              "Seth Lowell",
+              "Grace Howard",
+              "Soukaku"
+            ]
           },
           {
             "label": "Miyabi Disorder",
             "chars": [
-              "Hoshimi Miyabi"
+              "Trigger",
+              "Soldier 11 (Harin)",
+              "Soukaku"
             ]
           },
           {
             "label": "The Wheelchair",
-            "chars": []
+            "chars": [
+              "Soldier 11 (Harin)",
+              "Soukaku"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Soukaku"
+            ]
           }
         ]
       }
@@ -404,19 +474,30 @@
         "team_comps": [
           {
             "label": "Krampus Calling",
-            "chars": []
+            "chars": [
+              "Grace Howard",
+              "Hugo Vlad"
+            ]
           },
           {
             "label": "Seasoned Balls",
-            "chars": []
+            "chars": [
+              "Anton Ivanov",
+              "Grace Howard"
+            ]
           },
           {
             "label": "Back to Yunkui",
-            "chars": []
+            "chars": [
+              "Anton Ivanov"
+            ]
           },
           {
             "label": "You know the deal",
-            "chars": []
+            "chars": [
+              "Anton Ivanov",
+              "Burnice White"
+            ]
           },
           {
             "label": "Generic Comp Example",
@@ -452,18 +533,26 @@
           {
             "label": "Ben's Biggest DPS",
             "chars": [
-              "Ben Bigger"
+              "Seth Lowell",
+              "Soldier 11 (Harin)",
+              "Burnice White"
             ]
           },
           {
             "label": "Ben's cutest support",
             "chars": [
-              "Ben Bigger"
+              "Seth Lowell",
+              "Banyue",
+              "Soukaku"
             ]
           },
           {
             "label": "Outer Ring Belobrick",
-            "chars": []
+            "chars": [
+              "Seth Lowell",
+              "Astra Yao",
+              "Evelyn Chevalier"
+            ]
           },
           {
             "label": "Get BENt Budget Team",
@@ -471,7 +560,9 @@
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Seth Lowell"
+            ]
           }
         ]
       }
@@ -505,25 +596,40 @@
         "team_comps": [
           {
             "label": "It's showtime!",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Soldier 11 (Harin)",
+              "Soukaku"
+            ]
           },
           {
             "label": "Starlight Knight Billy",
             "chars": [
-              "Billy Kid"
+              "Banyue",
+              "Soldier 11 (Harin)",
+              "Soukaku"
             ]
           },
           {
             "label": "Target Practice",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "The OG Cunning Hares - True Budget team",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Alice Thymefield",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Banyue"
+            ]
           }
         ]
       }
@@ -554,15 +660,27 @@
         "team_comps": [
           {
             "label": "Sweetened Nitro-Fueled Frostburn",
-            "chars": []
+            "chars": [
+              "Ben Bigger",
+              "Trigger",
+              "Alexandrina Sebastiane (Rina)"
+            ]
           },
           {
             "label": "Nice Rat",
-            "chars": []
+            "chars": [
+              "Ben Bigger",
+              "Qingyi",
+              "Alexandrina Sebastiane (Rina)"
+            ]
           },
           {
             "label": "Unhinged Duo Disorder",
-            "chars": []
+            "chars": [
+              "Ben Bigger",
+              "Banyue",
+              "Soukaku"
+            ]
           },
           {
             "label": "Shower Scene",
@@ -570,7 +688,9 @@
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Ben Bigger"
+            ]
           }
         ]
       }
@@ -604,20 +724,33 @@
           {
             "label": "Mono Physical no Dialyn Version",
             "chars": [
-              "Dialyn"
+              "Soldier 11 (Harin)",
+              "Astra Yao"
             ]
           },
           {
             "label": "Spontaneous Combustion",
-            "chars": []
+            "chars": [
+              "Ben Bigger",
+              "Qingyi",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Megalodon",
-            "chars": []
+            "chars": [
+              "Nicole Demara",
+              "Soldier 11 (Harin)",
+              "Ju Fufu"
+            ]
           },
           {
             "label": "Shower Scene",
-            "chars": []
+            "chars": [
+              "Ben Bigger",
+              "Qingyi",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Generic Team Example",
@@ -652,23 +785,40 @@
         "team_comps": [
           {
             "label": "Ssseed",
-            "chars": []
+            "chars": [
+              "Ben Bigger",
+              "Astra Yao",
+              "Burnice White"
+            ]
           },
           {
             "label": "King Cobra",
-            "chars": []
+            "chars": [
+              "Ben Bigger",
+              "Grace Howard",
+              "Aria"
+            ]
           },
           {
             "label": "Food Chain",
-            "chars": []
+            "chars": [
+              "Ben Bigger",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Brokie Hypercarry",
-            "chars": []
+            "chars": [
+              "Ben Bigger",
+              "Seth Lowell",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Ben Bigger"
+            ]
           }
         ]
       }
@@ -703,25 +853,40 @@
           {
             "label": "Yo corn linging (Astra or Sunna)",
             "chars": [
-              "Sunna",
-              "Astra Yao"
+              "Burnice White",
+              "Soldier 11 (Harin)",
+              "Soukaku"
             ]
           },
           {
             "label": "Corn on the wheelchair",
-            "chars": []
+            "chars": [
+              "Burnice White",
+              "Soldier 11 (Harin)",
+              "Soukaku"
+            ]
           },
           {
             "label": "Corn onfield",
-            "chars": []
+            "chars": [
+              "Burnice White",
+              "Soldier 11 (Harin)",
+              "Pan Yinhu"
+            ]
           },
           {
             "label": "Cheap corn",
-            "chars": []
+            "chars": [
+              "Burnice White",
+              "Seth Lowell",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Burnice White"
+            ]
           }
         ]
       }
@@ -753,7 +918,11 @@
         "team_comps": [
           {
             "label": "Hotline Bling",
-            "chars": []
+            "chars": [
+              "Grace Howard",
+              "Qingyi",
+              "Soukaku"
+            ]
           },
           {
             "label": "Shifu on Speed Dial",
@@ -765,11 +934,17 @@
           },
           {
             "label": "Panda Express (Budget Team)",
-            "chars": []
+            "chars": [
+              "Grace Howard",
+              "Nangong Yu",
+              "Anton Ivanov"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Grace Howard"
+            ]
           }
         ]
       }
@@ -805,28 +980,39 @@
           {
             "label": "2.x Premium Ellen",
             "chars": [
-              "Ellen Joe"
+              "Nicole Demara",
+              "Grace Howard",
+              "Soldier 11 (Harin)"
             ]
           },
           {
             "label": "No Defense against Shark Attacks",
-            "chars": []
+            "chars": [
+              "Nicole Demara",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "1.x Premium Ellen",
             "chars": [
-              "Ellen Joe"
+              "Nicole Demara",
+              "Astra Yao",
+              "Soukaku"
             ]
           },
           {
             "label": "Budget Ellen",
             "chars": [
-              "Ellen Joe"
+              "Nicole Demara",
+              "Seth Lowell",
+              "Soldier 11 (Harin)"
             ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Nicole Demara"
+            ]
           }
         ]
       }
@@ -862,25 +1048,40 @@
         "team_comps": [
           {
             "label": "It won't",
-            "chars": []
+            "chars": [
+              "Qingyi",
+              "Grace Howard",
+              "Soukaku"
+            ]
           },
           {
             "label": "Premium Bodyguard",
-            "chars": []
+            "chars": [
+              "Qingyi",
+              "Astra Yao",
+              "Soukaku"
+            ]
           },
           {
             "label": "Hotwheelchair",
-            "chars": []
+            "chars": [
+              "Qingyi",
+              "Soldier 11 (Harin)",
+              "Soukaku"
+            ]
           },
           {
             "label": "Evelyn Budget",
             "chars": [
-              "Evelyn Chevalier"
+              "Qingyi",
+              "Soldier 11 (Harin)"
             ]
           },
           {
             "label": "Generic Comp Example",
-            "chars": []
+            "chars": [
+              "Qingyi"
+            ]
           }
         ]
       }
@@ -914,25 +1115,41 @@
         "team_comps": [
           {
             "label": "Ouroboros",
-            "chars": []
+            "chars": [
+              "Astra Yao",
+              "Ben Bigger",
+              "Burnice White"
+            ]
           },
           {
             "label": "Oballs squad",
-            "chars": []
+            "chars": [
+              "Astra Yao",
+              "Burnice White",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Seed Sanby duo",
             "chars": [
-              "Flora (Seed)"
+              "Astra Yao",
+              "Alice Thymefield",
+              "Soukaku"
             ]
           },
           {
             "label": "Mecha Hares (Budget team)",
-            "chars": []
+            "chars": [
+              "Astra Yao",
+              "Banyue",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Astra Yao"
+            ]
           }
         ]
       }
@@ -965,16 +1182,25 @@
         "team_comps": [
           {
             "label": "Zapping Morning Star",
-            "chars": []
+            "chars": [
+              "Asaba Harumasa",
+              "Alexandrina Sebastiane (Rina)"
+            ]
           },
           {
             "label": "Hyperbuffed",
-            "chars": []
+            "chars": [
+              "Asaba Harumasa",
+              "Alexandrina Sebastiane (Rina)",
+              "Soukaku"
+            ]
           },
           {
             "label": "We have Yanagi at home",
             "chars": [
-              "Tsukishiro Yanagi"
+              "Asaba Harumasa",
+              "Banyue",
+              "Alexandrina Sebastiane (Rina)"
             ]
           },
           {
@@ -983,7 +1209,9 @@
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Asaba Harumasa"
+            ]
           }
         ]
       }
@@ -1018,31 +1246,38 @@
           {
             "label": "Wheelchairing (Yuzuha match Miyabi)",
             "chars": [
-              "Ukinami Yuzuha",
-              "Hoshimi Miyabi"
+              "Alexandrina Sebastiane (Rina)",
+              "Trigger",
+              "Grace Howard"
             ]
           },
           {
             "label": "Unfreezable boss (Nicole or any Anomaly)",
             "chars": [
-              "Nicole Demara"
+              "Trigger",
+              "Soldier 11 (Harin)",
+              "Soukaku"
             ]
           },
           {
             "label": "Can be Frozen? You die | Yuzu Ice",
             "chars": [
-              "Ukinami Yuzuha"
+              "Trigger",
+              "Alexandrina Sebastiane (Rina)"
             ]
           },
           {
             "label": "Miyabi \"Budget\" (Mono Ice)",
             "chars": [
-              "Hoshimi Miyabi"
+              "Trigger",
+              "Seth Lowell"
             ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Trigger"
+            ]
           }
         ]
       }
@@ -1077,23 +1312,41 @@
         "team_comps": [
           {
             "label": "Judgement calls",
-            "chars": []
+            "chars": [
+              "Tsukishiro Yanagi",
+              "Grace Howard",
+              "Astra Yao"
+            ]
           },
           {
             "label": "Men",
-            "chars": []
+            "chars": [
+              "Tsukishiro Yanagi",
+              "Astra Yao",
+              "Seth Lowell"
+            ]
           },
           {
             "label": "Kitty Connoisseurs",
-            "chars": []
+            "chars": [
+              "Tsukishiro Yanagi",
+              "Astra Yao",
+              "Banyue"
+            ]
           },
           {
             "label": "Victoria Mocking Burst (Pick a stunner)",
-            "chars": []
+            "chars": [
+              "Tsukishiro Yanagi",
+              "Seth Lowell",
+              "Soukaku"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Tsukishiro Yanagi"
+            ]
           }
         ]
       }
@@ -1126,18 +1379,22 @@
         "team_comps": [
           {
             "label": "Citizen's Support",
-            "chars": []
-          },
-          {
-            "label": "Classic Disorder (Vivian > Burnice)",
             "chars": [
-              "Burnice White",
-              "Vivian Banshee"
+              "Qingyi",
+              "Grace Howard",
+              "Alexandrina Sebastiane (Rina)"
             ]
           },
           {
-            "label": "Mono Phys (gnawed is the key)",
+            "label": "Classic Disorder (Vivian > Burnice)",
             "chars": []
+          },
+          {
+            "label": "Mono Phys (gnawed is the key)",
+            "chars": [
+              "Qingyi",
+              "Ben Bigger"
+            ]
           },
           {
             "label": "Hypercarry 1.1",
@@ -1145,7 +1402,9 @@
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Qingyi"
+            ]
           }
         ]
       }
@@ -1180,27 +1439,36 @@
         "team_comps": [
           {
             "label": "Yunkui Zoo",
-            "chars": []
-          },
-          {
-            "label": "Fufu Wheelchair",
             "chars": [
-              "Ju Fufu"
+              "Banyue",
+              "Anton Ivanov"
             ]
           },
           {
-            "label": "66.6% Men",
+            "label": "Fufu Wheelchair",
             "chars": []
+          },
+          {
+            "label": "66.6% Men",
+            "chars": [
+              "Tsukishiro Yanagi",
+              "Astra Yao",
+              "Banyue"
+            ]
           },
           {
             "label": "We have Lighter at home",
             "chars": [
-              "Lighter"
+              "Alice Thymefield",
+              "Soldier 11 (Harin)",
+              "Banyue"
             ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Banyue"
+            ]
           }
         ]
       }
@@ -1234,27 +1502,41 @@
         "team_comps": [
           {
             "label": "Chain Attack buff matters",
-            "chars": []
+            "chars": [
+              "Qingyi",
+              "Ellen Joe",
+              "Soukaku"
+            ]
           },
           {
             "label": "Budget Yixuan",
             "chars": [
-              "Yixuan"
+              "Banyue",
+              "Anton Ivanov",
+              "Piper Wheel"
             ]
           },
           {
             "label": "Koleda Dialed in",
             "chars": [
-              "Koleda Belobog"
+              "Nangong Yu",
+              "Piper Wheel",
+              "Hugo Vlad"
             ]
           },
           {
             "label": "Vertically Challenged",
-            "chars": []
+            "chars": [
+              "Ellen Joe",
+              "Soldier 11 (Harin)",
+              "Hugo Vlad"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Ellen Joe"
+            ]
           }
         ]
       }
@@ -1288,29 +1570,33 @@
         "team_comps": [
           {
             "label": "Pet show squad",
-            "chars": []
+            "chars": [
+              "Nangong Yu",
+              "Banyue",
+              "Hugo Vlad"
+            ]
           },
           {
             "label": "Fufuless (Koleda or Pan Yinhu)",
-            "chars": [
-              "Pan Yinhu",
-              "Koleda Belobog"
-            ]
+            "chars": []
           },
           {
             "label": "Lighter (Caesar or Orphie)",
-            "chars": [
-              "Lighter",
-              "Orphie Magnusson & Magus"
-            ]
+            "chars": []
           },
           {
             "label": "Free to play",
-            "chars": []
+            "chars": [
+              "Nangong Yu",
+              "Anton Ivanov",
+              "Burnice White"
+            ]
           },
           {
             "label": "Generic Comp Example",
-            "chars": []
+            "chars": [
+              "Nangong Yu"
+            ]
           }
         ]
       }
@@ -1345,31 +1631,33 @@
         "team_comps": [
           {
             "label": "Fire support core (S11 or Evelyn)",
-            "chars": [
-              "Evelyn Chevalier",
-              "Soldier 11 (Harin)"
-            ]
+            "chars": []
           },
           {
             "label": "Ellen + Lighter",
             "chars": [
-              "Lighter",
-              "Ellen Joe"
+              "Nicole Demara",
+              "Astra Yao",
+              "Ju Fufu"
             ]
           },
           {
             "label": "Roommates",
-            "chars": []
-          },
-          {
-            "label": "Lighter DPS (Not Recommended)",
             "chars": [
-              "Lighter"
+              "Tsukishiro Yanagi",
+              "Seth Lowell",
+              "Astra Yao"
             ]
           },
           {
-            "label": "Generic Team Example",
+            "label": "Lighter DPS (Not Recommended)",
             "chars": []
+          },
+          {
+            "label": "Generic Team Example",
+            "chars": [
+              "Astra Yao"
+            ]
           }
         ]
       }
@@ -1399,25 +1687,36 @@
         "team_comps": [
           {
             "label": "Yunkui's Goat",
-            "chars": []
-          },
-          {
-            "label": "Fufu-less Moment",
             "chars": [
-              "Ju Fufu"
+              "Hugo Vlad",
+              "Banyue"
             ]
           },
           {
-            "label": "Takoyaki",
+            "label": "Fufu-less Moment",
             "chars": []
+          },
+          {
+            "label": "Takoyaki",
+            "chars": [
+              "Hugo Vlad",
+              "Aria",
+              "Seth Lowell"
+            ]
           },
           {
             "label": "Spook Shack Animal Farm",
-            "chars": []
+            "chars": [
+              "Hugo Vlad",
+              "Nangong Yu",
+              "Nicole Demara"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Hugo Vlad"
+            ]
           }
         ]
       }
@@ -1451,19 +1750,23 @@
         "team_comps": [
           {
             "label": "Miyabi+Lighter/Burnice",
-            "chars": [
-              "Hoshimi Miyabi",
-              "Lighter",
-              "Burnice White"
-            ]
+            "chars": []
           },
           {
             "label": "Budget Sword",
-            "chars": []
+            "chars": [
+              "Astra Yao",
+              "Evelyn Chevalier",
+              "Pan Yinhu"
+            ]
           },
           {
             "label": "Shower Scene",
-            "chars": []
+            "chars": [
+              "Ben Bigger",
+              "Pulchra Fellini",
+              "Evelyn Chevalier"
+            ]
           },
           {
             "label": "Name A Better (budget) Duo (Pick a DPS)",
@@ -1471,7 +1774,9 @@
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Evelyn Chevalier"
+            ]
           }
         ]
       }
@@ -1505,7 +1810,9 @@
           {
             "label": "AoD: Lead(er) Dancer Nangong Yu!",
             "chars": [
-              "Nangong Yu"
+              "Seth Lowell",
+              "Grace Howard",
+              "Soldier 11 (Harin)"
             ]
           },
           {
@@ -1514,15 +1821,25 @@
           },
           {
             "label": "Poppin' Ice",
-            "chars": []
+            "chars": [
+              "Lighter",
+              "Alexandrina Sebastiane (Rina)",
+              "Trigger"
+            ]
           },
           {
             "label": "Anything to fund the show (F2P)",
-            "chars": []
+            "chars": [
+              "Grace Howard",
+              "Soldier 11 (Harin)",
+              "Dialyn"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Grace Howard"
+            ]
           }
         ]
       }
@@ -1557,11 +1874,17 @@
         "team_comps": [
           {
             "label": "Neko got a phone",
-            "chars": []
+            "chars": [
+              "Grace Howard",
+              "Soukaku"
+            ]
           },
           {
             "label": "Highway Robbery",
-            "chars": []
+            "chars": [
+              "Soukaku",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Vertically Challenged",
@@ -1569,7 +1892,10 @@
           },
           {
             "label": "Stunning Hares",
-            "chars": []
+            "chars": [
+              "Alice Thymefield",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Generic Team Example",
@@ -1607,28 +1933,41 @@
         "team_comps": [
           {
             "label": "Pubsec Krampus Collab",
-            "chars": []
+            "chars": [
+              "Anton Ivanov",
+              "Grace Howard",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Alice Hypercarry (Pseudo Anomaly Nicole)",
             "chars": [
-              "Nicole Demara",
-              "Alice Thymefield"
+              "Ben Bigger",
+              "Alexandrina Sebastiane (Rina)",
+              "Soldier 11 (Harin)"
             ]
           },
           {
             "label": "Astra alternative",
             "chars": [
-              "Astra Yao"
+              "Astra Yao",
+              "Alice Thymefield",
+              "Soldier 11 (Harin)"
             ]
           },
           {
             "label": "Starter team (Budget)",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Alice Thymefield",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Soldier 11 (Harin)"
+            ]
           }
         ]
       }
@@ -1665,7 +2004,11 @@
           },
           {
             "label": "Obols Classic",
-            "chars": []
+            "chars": [
+              "Burnice White",
+              "Astra Yao",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Yuri and the Champion",
@@ -1673,11 +2016,17 @@
           },
           {
             "label": "Spicy Ramen Chips",
-            "chars": []
+            "chars": [
+              "Alice Thymefield",
+              "Burnice White",
+              "Nicole Demara"
+            ]
           },
           {
             "label": "Generic Comp Example",
-            "chars": []
+            "chars": [
+              "Burnice White"
+            ]
           }
         ]
       }
@@ -1710,23 +2059,39 @@
         "team_comps": [
           {
             "label": "Rupture Wheelbarrow",
-            "chars": []
+            "chars": [
+              "Anton Ivanov",
+              "Grace Howard"
+            ]
           },
           {
             "label": "Panda Express",
-            "chars": []
+            "chars": [
+              "Nangong Yu",
+              "Anton Ivanov",
+              "Nicole Demara"
+            ]
           },
           {
             "label": "Together we are Yunkui Summit",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Anton Ivanov"
+            ]
           },
           {
             "label": "Together we are... Thirens",
-            "chars": []
+            "chars": [
+              "Aria",
+              "Anton Ivanov",
+              "Seth Lowell"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Anton Ivanov"
+            ]
           }
         ]
       }
@@ -1760,17 +2125,23 @@
         "team_comps": [
           {
             "label": "Keep up the Spinning Beat",
-            "chars": []
+            "chars": [
+              "Qingyi",
+              "Grace Howard",
+              "Alexandrina Sebastiane (Rina)"
+            ]
           },
           {
             "label": "Physically Abloomed",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Qingyi",
+              "Alexandrina Sebastiane (Rina)"
+            ]
           },
           {
             "label": "Shower scene (Lucy > M0 Caesar)",
-            "chars": [
-              "Luciana Auxesis Theodoro de Montefio (Lucy)"
-            ]
+            "chars": []
           },
           {
             "label": "Clarishe' Shampoo (Budget option)",
@@ -1778,7 +2149,9 @@
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Qingyi"
+            ]
           }
         ]
       }
@@ -1808,23 +2181,40 @@
         "team_comps": [
           {
             "label": "Ice Cold Treats",
-            "chars": []
+            "chars": [
+              "Flora (Seed)",
+              "Grace Howard",
+              "Alexandrina Sebastiane (Rina)"
+            ]
           },
           {
             "label": "Purple Aesthetic",
-            "chars": []
+            "chars": [
+              "Flora (Seed)",
+              "Banyue",
+              "Alexandrina Sebastiane (Rina)"
+            ]
           },
           {
             "label": "Chains and Blossoms",
-            "chars": []
+            "chars": [
+              "Flora (Seed)",
+              "Banyue"
+            ]
           },
           {
             "label": "Beauties and the Beast",
-            "chars": []
+            "chars": [
+              "Flora (Seed)",
+              "Seth Lowell",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Flora (Seed)"
+            ]
           }
         ]
       }
@@ -1856,28 +2246,40 @@
         "team_comps": [
           {
             "label": "Premium Cat",
-            "chars": []
+            "chars": [
+              "Flora (Seed)",
+              "Soukaku"
+            ]
           },
           {
             "label": "Anby AfterShock",
             "chars": [
-              "Anby Demara"
+              "Alice Thymefield",
+              "Flora (Seed)",
+              "Soukaku"
             ]
           },
           {
             "label": "Bickering Cat (Jane or Piper)",
             "chars": [
-              "Piper Wheel",
-              "Jane Doe"
+              "Qingyi",
+              "Flora (Seed)",
+              "Ben Bigger"
             ]
           },
           {
             "label": "Budget Shifu",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Anton Ivanov",
+              "Flora (Seed)"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Flora (Seed)"
+            ]
           }
         ]
       }
@@ -1910,25 +2312,41 @@
         "team_comps": [
           {
             "label": "Clanking Collab",
-            "chars": []
+            "chars": [
+              "Seth Lowell",
+              "Anby Demara",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Auric Burst",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Anby Demara",
+              "Hugo Vlad"
+            ]
           },
           {
             "label": "The classic Harumasa team",
             "chars": [
-              "Asaba Harumasa"
+              "Flora (Seed)",
+              "Anby Demara",
+              "Soldier 11 (Harin)"
             ]
           },
           {
             "label": "Burst Core support",
-            "chars": []
+            "chars": [
+              "Hugo Vlad",
+              "Anby Demara",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Generic team example",
-            "chars": []
+            "chars": [
+              "Anby Demara"
+            ]
           }
         ]
       }
@@ -1962,19 +2380,25 @@
           {
             "label": "Jane hypercarry",
             "chars": [
-              "Jane Doe"
+              "Qingyi",
+              "Anby Demara",
+              "Alexandrina Sebastiane (Rina)"
             ]
           },
           {
             "label": "Yanagi hypercarry",
             "chars": [
-              "Tsukishiro Yanagi"
+              "Soldier 11 (Harin)",
+              "Anby Demara",
+              "Soukaku"
             ]
           },
           {
             "label": "Grace hypercarry",
             "chars": [
-              "Grace Howard"
+              "Asaba Harumasa",
+              "Anby Demara",
+              "Alice Thymefield"
             ]
           },
           {
@@ -1983,7 +2407,9 @@
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Anby Demara"
+            ]
           }
         ]
       }
@@ -2017,30 +2443,39 @@
           {
             "label": "Premium burgers (Astra or Orphie)",
             "chars": [
-              "Orphie Magnusson & Magus",
-              "Astra Yao"
+              "Alice Thymefield",
+              "Soldier 11 (Harin)",
+              "Burnice White"
             ]
           },
           {
             "label": "Online ordering (astra or orphie)",
             "chars": [
-              "Orphie Magnusson & Magus",
-              "Astra Yao"
+              "Alice Thymefield",
+              "Grace Howard",
+              "Soukaku"
             ]
           },
           {
             "label": "Cunningest Hare",
-            "chars": []
+            "chars": [
+              "Alice Thymefield",
+              "Soukaku",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Burger² (Budget) - Quick-swap Anby",
             "chars": [
-              "Anby Demara"
+              "Alice Thymefield",
+              "Soldier 11 (Harin)"
             ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Alice Thymefield"
+            ]
           }
         ]
       }
@@ -2076,28 +2511,34 @@
           {
             "label": "Evelyn competition (Sunna > Astra)",
             "chars": [
-              "Evelyn Chevalier",
-              "Sunna",
+              "Alice Thymefield",
               "Astra Yao"
             ]
           },
           {
             "label": "Obol Customer Support",
-            "chars": []
-          },
-          {
-            "label": "Obol Awaiting Orders",
-            "chars": []
-          },
-          {
-            "label": "S11 Budget",
             "chars": [
-              "Soldier 11 (Harin)"
+              "Alice Thymefield",
+              "Grace Howard",
+              "Burnice White"
             ]
           },
           {
-            "label": "Generic Team Example",
+            "label": "Obol Awaiting Orders",
+            "chars": [
+              "Alice Thymefield",
+              "Burnice White"
+            ]
+          },
+          {
+            "label": "S11 Budget",
             "chars": []
+          },
+          {
+            "label": "Generic Team Example",
+            "chars": [
+              "Alice Thymefield"
+            ]
           }
         ]
       }
@@ -2132,28 +2573,41 @@
         "team_comps": [
           {
             "label": "Mono Ice",
-            "chars": []
+            "chars": [
+              "Trigger",
+              "Seth Lowell",
+              "Hoshimi Miyabi"
+            ]
           },
           {
             "label": "No Lycaon Ellen Team",
             "chars": [
-              "Von Lycaon",
-              "Ellen Joe"
+              "Nicole Demara",
+              "Ju Fufu",
+              "Hoshimi Miyabi"
             ]
           },
           {
             "label": "Frostbite",
-            "chars": []
+            "chars": [
+              "Nicole Demara",
+              "Seth Lowell",
+              "Hoshimi Miyabi"
+            ]
           },
           {
             "label": "DPS Soukaku Team",
             "chars": [
-              "Soukaku"
+              "Hoshimi Miyabi",
+              "Seth Lowell",
+              "Soldier 11 (Harin)"
             ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Hoshimi Miyabi"
+            ]
           }
         ]
       }
@@ -2189,25 +2643,40 @@
         "team_comps": [
           {
             "label": "Veils on veils on veils",
-            "chars": []
+            "chars": [
+              "Soldier 11 (Harin)",
+              "Banyue",
+              "Astra Yao"
+            ]
           },
           {
             "label": "Qingming party",
-            "chars": []
+            "chars": [
+              "Soldier 11 (Harin)",
+              "Astra Yao",
+              "Grace Howard"
+            ]
           },
           {
             "label": "AoD: Composer Sunna!",
             "chars": [
-              "Sunna"
+              "Lighter",
+              "Pan Yinhu",
+              "Seth Lowell"
             ]
           },
           {
             "label": "Hares of Delusion",
-            "chars": []
+            "chars": [
+              "Soldier 11 (Harin)",
+              "Banyue"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Soldier 11 (Harin)"
+            ]
           }
         ]
       }
@@ -2240,25 +2709,39 @@
         "team_comps": [
           {
             "label": "Sanby Premium",
-            "chars": []
+            "chars": [
+              "Alice Thymefield",
+              "Soldier 11 (Harin)",
+              "Soukaku"
+            ]
           },
           {
             "label": "Oballs",
-            "chars": []
+            "chars": [
+              "Burnice White",
+              "Astra Yao",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Quadruple the guns - budget team",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Trigger of Anomaly",
             "chars": [
-              "Trigger"
+              "Soldier 11 (Harin)",
+              "Ju Fufu"
             ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Soldier 11 (Harin)"
+            ]
           }
         ]
       }
@@ -2293,23 +2776,40 @@
         "team_comps": [
           {
             "label": "Disorder, Polarity Disorder, Disorder",
-            "chars": []
+            "chars": [
+              "Soldier 11 (Harin)",
+              "Grace Howard",
+              "Alexandrina Sebastiane (Rina)"
+            ]
           },
           {
             "label": "Disorder Slave (Pick any Support)",
-            "chars": []
+            "chars": [
+              "Astra Yao",
+              "Soldier 11 (Harin)",
+              "Ju Fufu"
+            ]
           },
           {
             "label": "Electrobloom",
-            "chars": []
+            "chars": [
+              "Soldier 11 (Harin)",
+              "Banyue",
+              "Soukaku"
+            ]
           },
           {
             "label": "Brought too many bean buns (budget)",
-            "chars": []
+            "chars": [
+              "Soldier 11 (Harin)",
+              "Alice Thymefield"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Soldier 11 (Harin)"
+            ]
           }
         ]
       }
@@ -2341,25 +2841,41 @@
         "team_comps": [
           {
             "label": "New Anomaly Wheelchair",
-            "chars": []
+            "chars": [
+              "Alexandrina Sebastiane (Rina)",
+              "Tsukishiro Yanagi",
+              "Grace Howard"
+            ]
           },
           {
             "label": "Happy Halloween",
-            "chars": []
+            "chars": [
+              "Alexandrina Sebastiane (Rina)",
+              "Banyue",
+              "Qingyi"
+            ]
           },
           {
             "label": "No Astra? No Problem",
             "chars": [
+              "Alexandrina Sebastiane (Rina)",
+              "Qingyi",
               "Astra Yao"
             ]
           },
           {
             "label": "Taking Candy from a Baby",
-            "chars": []
+            "chars": [
+              "Alexandrina Sebastiane (Rina)",
+              "Evelyn Chevalier",
+              "Qingyi"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Alexandrina Sebastiane (Rina)"
+            ]
           }
         ]
       }
@@ -2391,25 +2907,41 @@
         "team_comps": [
           {
             "label": "No more Fire/Electric Shananigans",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Soldier 11 (Harin)",
+              "Alexandrina Sebastiane (Rina)"
+            ]
           },
           {
             "label": "Constantly Swapping",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Ben Bigger",
+              "Soukaku"
+            ]
           },
           {
             "label": "Anomaly Wheelchair",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Tsukishiro Yanagi",
+              "Alexandrina Sebastiane (Rina)"
+            ]
           },
           {
             "label": "Ether Poisoned Assault (Piper for Budget)",
             "chars": [
-              "Piper Wheel"
+              "Banyue",
+              "Qingyi",
+              "Ju Fufu"
             ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Banyue"
+            ]
           }
         ]
       }
@@ -2443,24 +2975,39 @@
           {
             "label": "Miyabi Mono Ice",
             "chars": [
+              "Trigger",
+              "Seth Lowell",
               "Hoshimi Miyabi"
             ]
           },
           {
             "label": "Victorian Melody",
-            "chars": []
+            "chars": [
+              "Nicole Demara",
+              "Seth Lowell",
+              "Soukaku"
+            ]
           },
           {
             "label": "The wolf with the men",
-            "chars": []
+            "chars": [
+              "Tsukishiro Yanagi",
+              "Seth Lowell",
+              "Astra Yao"
+            ]
           },
           {
             "label": "Thiren Ice Core",
-            "chars": []
+            "chars": [
+              "Seth Lowell",
+              "Banyue"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Seth Lowell"
+            ]
           }
         ]
       }
@@ -2492,25 +3039,35 @@
         "team_comps": [
           {
             "label": "Shunguang BiS (Pick 2)",
-            "chars": [
-              "Ye Shunguang"
-            ]
+            "chars": []
           },
           {
             "label": "Duo's off their rocker",
-            "chars": []
+            "chars": [
+              "Astra Yao",
+              "Anton Ivanov"
+            ]
           },
           {
             "label": "Astranomical Qingming force",
-            "chars": []
+            "chars": [
+              "Koleda Belobog",
+              "Banyue",
+              "Soukaku"
+            ]
           },
           {
             "label": "Budget option",
-            "chars": []
+            "chars": [
+              "Astra Yao",
+              "Banyue"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Astra Yao"
+            ]
           }
         ]
       }
@@ -2569,15 +3126,26 @@
         "team_comps": [
           {
             "label": "Triple the Ultimate",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Grace Howard",
+              "Hugo Vlad"
+            ]
           },
           {
             "label": "Priest Merchant",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Anby Demara",
+              "Hugo Vlad"
+            ]
           },
           {
             "label": "Shifufufu",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Soukaku"
+            ]
           },
           {
             "label": "Fried Rice",
@@ -2585,7 +3153,9 @@
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Banyue"
+            ]
           }
         ]
       }
@@ -2619,23 +3189,40 @@
         "team_comps": [
           {
             "label": "Krampus Summit",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Astra Yao",
+              "Grace Howard"
+            ]
           },
           {
             "label": "Runaway Star",
-            "chars": []
+            "chars": [
+              "Astra Yao",
+              "Banyue",
+              "Qingyi"
+            ]
           },
           {
             "label": "Obol Mercenaries",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Alice Thymefield",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Bunny Double Trouble",
-            "chars": []
+            "chars": [
+              "Banyue",
+              "Ben Bigger"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Banyue"
+            ]
           }
         ]
       }
@@ -2671,7 +3258,11 @@
         "team_comps": [
           {
             "label": "Pubsec Krampus Collab",
-            "chars": []
+            "chars": [
+              "Anton Ivanov",
+              "Grace Howard",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Pubsec Burst",
@@ -2679,15 +3270,25 @@
           },
           {
             "label": "Mono Ether",
-            "chars": []
+            "chars": [
+              "Anton Ivanov",
+              "Soldier 11 (Harin)",
+              "Soukaku"
+            ]
           },
           {
             "label": "Budget option",
-            "chars": []
+            "chars": [
+              "Anton Ivanov",
+              "Alice Thymefield",
+              "Soldier 11 (Harin)"
+            ]
           },
           {
             "label": "Generic Team Example",
-            "chars": []
+            "chars": [
+              "Anton Ivanov"
+            ]
           }
         ]
       }
