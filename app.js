@@ -30,6 +30,7 @@ let portraits    = {};  // {gi: {name: url}, hsr: {…}, zzz: {…}}
 let icons        = {};  // {gi: {name: url}, hsr: {…}, zzz: {…}} — sidebar thumbnails
 let releaseData  = {};  // {gi: {name: {version, date}}, …} — wiki release versions
 let discIconNames = []; // disc set names from disc_icons.json (ZZZ only)
+let zzzIconEntries = []; // [{name, url}] sorted by name from icons.json ZZZ section
 let activeChar    = null;
 let activeBuildIdx = 0;
 let currentGame   = 'gi';   // 'gi' | 'hsr' | 'zzz'
@@ -54,6 +55,7 @@ async function init() {
   icons = ico;
   releaseData = rel;
   discIconNames = Object.keys(di).sort();
+  zzzIconEntries = Object.entries(ico.zzz || {}).sort((a, b) => a[0].localeCompare(b[0]));
   allChars = giChars;
 
   $('search').addEventListener('input', () => refreshList());
@@ -66,11 +68,14 @@ async function init() {
     document.body.classList.remove('viewing-char');
     $('back-btn').classList.add('hidden');
     $('disc-ref-view').classList.add('hidden');
+    $('char-ref-view').classList.add('hidden');
     $('disc-ref-btn').classList.remove('active');
+    $('char-ref-btn').classList.remove('active');
     $('placeholder').classList.remove('hidden');
   });
 
   $('disc-ref-btn').addEventListener('click', showDiscReference);
+  $('char-ref-btn').addEventListener('click', showCharReference);
 
   updateSourceCredit(currentGame);
   refreshList();
@@ -90,7 +95,9 @@ function switchGame(game) {
 
   $('char-view').classList.add('hidden');
   $('disc-ref-view').classList.add('hidden');
+  $('char-ref-view').classList.add('hidden');
   $('disc-ref-btn').classList.remove('active');
+  $('char-ref-btn').classList.remove('active');
   $('disc-ref-wrap').classList.toggle('hidden', game !== 'zzz');
   $('placeholder').classList.remove('hidden');
   $('search').value = '';
@@ -174,7 +181,9 @@ function selectChar(char) {
 
   $('placeholder').classList.add('hidden');
   $('disc-ref-view').classList.add('hidden');
+  $('char-ref-view').classList.add('hidden');
   $('disc-ref-btn').classList.remove('active');
+  $('char-ref-btn').classList.remove('active');
   $('char-view').classList.remove('hidden');
 
   $('char-name').textContent = toTitle(char.name);
@@ -654,6 +663,32 @@ function showDiscReference() {
     + discIconNames.map(name =>
         `<div class="disc-ref-item">`
         + `<img class="disc-ref-img" src="disc_icons/${encodeURIComponent(name)}.png" alt="${escHtml(name)}">`
+        + `<span class="disc-ref-name">${escHtml(name)}</span>`
+        + `</div>`
+      ).join('')
+    + '</div>';
+
+  $('content').scrollTop = 0;
+}
+
+function showCharReference() {
+  $('placeholder').classList.add('hidden');
+  $('char-view').classList.add('hidden');
+  $('disc-ref-view').classList.add('hidden');
+  $('disc-ref-btn').classList.remove('active');
+  $('char-ref-btn').classList.add('active');
+  document.body.classList.add('viewing-char');
+  $('back-btn').classList.remove('hidden');
+  activeChar = null;
+
+  const view = $('char-ref-view');
+  view.classList.remove('hidden');
+  view.innerHTML =
+    '<div class="disc-ref-header">character icons (ZZZ)</div>'
+    + '<div class="disc-ref-grid">'
+    + zzzIconEntries.map(([name, url]) =>
+        `<div class="disc-ref-item">`
+        + `<img class="disc-ref-img" src="${escHtml(url)}" alt="${escHtml(name)}" referrerpolicy="no-referrer">`
         + `<span class="disc-ref-name">${escHtml(name)}</span>`
         + `</div>`
       ).join('')

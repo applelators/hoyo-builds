@@ -517,9 +517,11 @@ body.game-zzz #char-portrait {
   padding: 0 10px 8px;
   border-bottom: 1px solid var(--border);
   flex-shrink: 0;
+  display: flex;
+  gap: 6px;
 }
-#disc-ref-btn {
-  width: 100%;
+#disc-ref-btn, #char-ref-btn {
+  flex: 1;
   background: none;
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -527,12 +529,12 @@ body.game-zzz #char-portrait {
   cursor: pointer;
   font-family: inherit;
   font-size: 11px;
-  padding: 6px 10px;
-  text-align: left;
+  padding: 6px 8px;
+  text-align: center;
   transition: color 0.1s, border-color 0.1s, background 0.1s;
 }
-#disc-ref-btn:hover { color: var(--text); background: var(--surface); }
-#disc-ref-btn.active { color: var(--accent); border-color: var(--accent); background: var(--card); }
+#disc-ref-btn:hover, #char-ref-btn:hover { color: var(--text); background: var(--surface); }
+#disc-ref-btn.active, #char-ref-btn.active { color: var(--accent); border-color: var(--accent); background: var(--card); }
 
 #disc-ref-view { /* inherits #content padding */ }
 .disc-ref-header {
