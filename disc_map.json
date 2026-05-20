@@ -1,0 +1,491 @@
+{
+  "Sunna": {
+    "4pc": [
+      "Astral Voice"
+    ],
+    "2pc": [
+      "King of the Summit",
+      "Puffer Electro",
+      "Phaethon's Melody"
+    ]
+  },
+  "Ye Shunguang": {
+    "4pc": [
+      "White Water Ballad"
+    ],
+    "2pc": [
+      "Puffer Electro"
+    ]
+  },
+  "Dialyn": {
+    "4pc": [
+      "King of the Summit"
+    ],
+    "2pc": [
+      "Woodpecker Electro"
+    ]
+  },
+  "Alice Thymefield": {
+    "4pc": [
+      "Puffer Electro"
+    ],
+    "2pc": [
+      "Woodpecker Electro",
+      "Phaethon's Melody",
+      "Puffer Electro"
+    ]
+  },
+  "Ukinami Yuzuha": {
+    "4pc": [
+      "Astral Voice"
+    ],
+    "2pc": [
+      "Woodpecker Electro",
+      "Phaethon's Melody"
+    ]
+  },
+  "Caesar King": {
+    "4pc": [
+      "Astral Voice"
+    ],
+    "2pc": [
+      "Astral Voice",
+      "Shockstar Disco"
+    ]
+  },
+  "Jane Doe": {
+    "4pc": [
+      "Puffer Electro"
+    ],
+    "2pc": [
+      "Phaethon's Melody",
+      "Puffer Electro",
+      "Woodpecker Electro"
+    ]
+  },
+  "Nekomiya Mana": {
+    "4pc": [
+      "Puffer Electro",
+      "Woodpecker Electro"
+    ],
+    "2pc": [
+      "Puffer Electro",
+      "Woodpecker Electro",
+      "Fanged Metal"
+    ]
+  },
+  "Pan Yinhu": {
+    "4pc": [
+      "Astral Voice"
+    ],
+    "2pc": [
+      "Astral Voice",
+      "Woodpecker Electro"
+    ]
+  },
+  "Pulchra Fellini": {
+    "4pc": [
+      "Astral Voice"
+    ],
+    "2pc": [
+      "Astral Voice"
+    ]
+  },
+  "Billy Kid": {
+    "4pc": [
+      "Hormone Punk",
+      "Woodpecker Electro"
+    ],
+    "2pc": [
+      "Woodpecker Electro",
+      "Puffer Electro"
+    ]
+  },
+  "Piper Wheel": {
+    "4pc": [
+      "Puffer Electro"
+    ],
+    "2pc": [
+      "Phaethon's Melody",
+      "Puffer Electro",
+      "Woodpecker Electro"
+    ]
+  },
+  "Corin Wickes": {
+    "4pc": [
+      "Hormone Punk",
+      "Puffer Electro"
+    ],
+    "2pc": [
+      "Puffer Electro",
+      "Woodpecker Electro"
+    ]
+  },
+  "Banyue": {
+    "4pc": [
+      "Yunkui Tales"
+    ],
+    "2pc": [
+      "Woodpecker Electro",
+      "Inferno Metal"
+    ]
+  },
+  "Orphie Magnusson & Magus": {
+    "4pc": [
+      "Shadow Harmony",
+      "Astral Voice"
+    ],
+    "2pc": [
+      "Puffer Electro"
+    ]
+  },
+  "Ju Fufu": {
+    "4pc": [
+      "King of the Summit"
+    ],
+    "2pc": [
+      "Puffer Electro",
+      "Woodpecker Electro",
+      "Astral Voice",
+      "Phaethon's Melody"
+    ]
+  },
+  "Evelyn Chevalier": {
+    "4pc": [
+      "Puffer Electro",
+      "Hormone Punk",
+      "Astral Voice"
+    ],
+    "2pc": [
+      "Puffer Electro",
+      "Woodpecker Electro",
+      "Swing Jazz"
+    ]
+  },
+  "Lighter": {
+    "4pc": [
+      "Astral Voice"
+    ],
+    "2pc": [
+      "Astral Voice",
+      "Swing Jazz"
+    ]
+  },
+  "Burnice White": {
+    "4pc": [],
+    "2pc": [
+      "Puffer Electro",
+      "Phaethon's Melody"
+    ]
+  },
+  "Soldier 11 (Harin)": {
+    "4pc": [
+      "Puffer Electro",
+      "Hormone Punk",
+      "Inferno Metal"
+    ],
+    "2pc": [
+      "Woodpecker Electro",
+      "Puffer Electro"
+    ]
+  },
+  "Koleda Belobog": {
+    "4pc": [
+      "Astral Voice"
+    ],
+    "2pc": [
+      "Astral Voice",
+      "Shockstar Disco",
+      "Woodpecker Electro"
+    ]
+  },
+  "Komano Manato": {
+    "4pc": [
+      "Yunkui Tales"
+    ],
+    "2pc": [
+      "Woodpecker Electro",
+      "Inferno Metal",
+      "Shockstar Disco"
+    ]
+  },
+  "Luciana Auxesis Theodoro de Montefio (Lucy)": {
+    "4pc": [
+      "Astral Voice"
+    ],
+    "2pc": [
+      "Astral Voice",
+      "Woodpecker Electro"
+    ]
+  },
+  "Ben Bigger": {
+    "4pc": [],
+    "2pc": [
+      "Astral Voice",
+      "Woodpecker Electro",
+      "Swing Jazz"
+    ]
+  },
+  "Cissia": {
+    "4pc": [],
+    "2pc": [
+      "Woodpecker Electro",
+      "Puffer Electro"
+    ]
+  },
+  "Flora (Seed)": {
+    "4pc": [
+      "Hormone Punk",
+      "Astral Voice"
+    ],
+    "2pc": [
+      "Puffer Electro",
+      "Woodpecker Electro"
+    ]
+  },
+  "Trigger": {
+    "4pc": [
+      "Astral Voice"
+    ],
+    "2pc": [
+      "Astral Voice",
+      "Woodpecker Electro"
+    ]
+  },
+  "Soldier 0 - Anby": {
+    "4pc": [
+      "Shadow Harmony"
+    ],
+    "2pc": [
+      "Woodpecker Electro",
+      "Puffer Electro"
+    ]
+  },
+  "Asaba Harumasa": {
+    "4pc": [
+      "Shadow Harmony",
+      "Puffer Electro",
+      "Hormone Punk"
+    ],
+    "2pc": [
+      "Puffer Electro",
+      "Woodpecker Electro",
+      "Swing Jazz"
+    ]
+  },
+  "Tsukishiro Yanagi": {
+    "4pc": [
+      "Puffer Electro"
+    ],
+    "2pc": [
+      "Phaethon's Melody",
+      "Puffer Electro",
+      "Woodpecker Electro",
+      "Swing Jazz"
+    ]
+  },
+  "Qingyi": {
+    "4pc": [
+      "Astral Voice"
+    ],
+    "2pc": [
+      "Astral Voice",
+      "Woodpecker Electro"
+    ]
+  },
+  "Grace Howard": {
+    "4pc": [
+      "Puffer Electro"
+    ],
+    "2pc": [
+      "Phaethon's Melody",
+      "Puffer Electro"
+    ]
+  },
+  "Alexandrina Sebastiane (Rina)": {
+    "4pc": [
+      "Puffer Electro"
+    ],
+    "2pc": [
+      "Puffer Electro",
+      "Phaethon's Melody"
+    ]
+  },
+  "Seth Lowell": {
+    "4pc": [
+      "Astral Voice"
+    ],
+    "2pc": [
+      "Woodpecker Electro",
+      "Puffer Electro"
+    ]
+  },
+  "Anton Ivanov": {
+    "4pc": [
+      "Hormone Punk",
+      "Astral Voice"
+    ],
+    "2pc": [
+      "Woodpecker Electro",
+      "Puffer Electro"
+    ]
+  },
+  "Anby Demara": {
+    "4pc": [
+      "Astral Voice"
+    ],
+    "2pc": [
+      "Astral Voice",
+      "Woodpecker Electro"
+    ]
+  },
+  "Promeia": {
+    "4pc": [],
+    "2pc": [
+      "Phaethon's Melody"
+    ]
+  },
+  "Zhao": {
+    "4pc": [
+      "Astral Voice"
+    ],
+    "2pc": [
+      "Yunkui Tales",
+      "Phaethon's Melody",
+      "Puffer Electro"
+    ]
+  },
+  "Yidhari Murphy": {
+    "4pc": [
+      "Yunkui Tales"
+    ],
+    "2pc": [
+      "Woodpecker Electro"
+    ]
+  },
+  "Hugo Vlad": {
+    "4pc": [
+      "Hormone Punk",
+      "Puffer Electro"
+    ],
+    "2pc": [
+      "Woodpecker Electro",
+      "Puffer Electro",
+      "Swing Jazz"
+    ]
+  },
+  "Hoshimi Miyabi": {
+    "4pc": [
+      "Branch & Blade Song"
+    ],
+    "2pc": [
+      "Woodpecker Electro",
+      "Puffer Electro",
+      "Phaethon's Melody"
+    ]
+  },
+  "Ellen Joe": {
+    "4pc": [
+      "Woodpecker Electro",
+      "Hormone Punk"
+    ],
+    "2pc": [
+      "Puffer Electro",
+      "Woodpecker Electro",
+      "Swing Jazz"
+    ]
+  },
+  "Von Lycaon": {
+    "4pc": [
+      "Astral Voice"
+    ],
+    "2pc": [
+      "Astral Voice",
+      "Swing Jazz"
+    ]
+  },
+  "Soukaku": {
+    "4pc": [
+      "Astral Voice",
+      "Puffer Electro"
+    ],
+    "2pc": [
+      "Woodpecker Electro",
+      "Swing Jazz",
+      "Puffer Electro"
+    ]
+  },
+  "Nangong Yu": {
+    "4pc": [
+      "Phaethon's Melody",
+      "Puffer Electro"
+    ],
+    "2pc": [
+      "Phaethon's Melody"
+    ]
+  },
+  "Aria": {
+    "4pc": [
+      "Woodpecker Electro"
+    ],
+    "2pc": [
+      "Woodpecker Electro",
+      "Phaethon's Melody",
+      "Puffer Electro"
+    ]
+  },
+  "Lucia Elowen": {
+    "4pc": [],
+    "2pc": [
+      "Yunkui Tales"
+    ]
+  },
+  "Yixuan": {
+    "4pc": [
+      "Yunkui Tales"
+    ],
+    "2pc": [
+      "Woodpecker Electro"
+    ]
+  },
+  "Vivian Banshee": {
+    "4pc": [
+      "Phaethon's Melody"
+    ],
+    "2pc": [
+      "Phaethon's Melody"
+    ]
+  },
+  "Astra Yao": {
+    "4pc": [
+      "Astral Voice"
+    ],
+    "2pc": [
+      "Puffer Electro",
+      "Phaethon's Melody",
+      "Woodpecker Electro"
+    ]
+  },
+  "Zhu Yuan": {
+    "4pc": [
+      "Hormone Punk",
+      "Puffer Electro",
+      "Shadow Harmony"
+    ],
+    "2pc": [
+      "Woodpecker Electro",
+      "Puffer Electro",
+      "Shadow Harmony"
+    ]
+  },
+  "Nicole Demara": {
+    "4pc": [
+      "Astral Voice",
+      "Puffer Electro"
+    ],
+    "2pc": [
+      "Phaethon's Melody",
+      "Puffer Electro"
+    ]
+  }
+}

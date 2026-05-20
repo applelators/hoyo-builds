@@ -1,0 +1,10 @@
+# Cloudflare Wrangler local state
+.wrangler/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store

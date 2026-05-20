@@ -1,0 +1,151 @@
+#!/usr/bin/env python3
+"""Fetch character portrait URLs from fandom wikis and write portraits.json.
+
+Sources:
+  GI  — HoYoverse Website Character Profile  ({Name}_Profile.png)
+  HSR — Splash Art                            (Character_{Name}_Splash_Art.png)
+  ZZZ — Agent Full Mindscape                  (Mindscape_{Name}_Full.png)
+
+Pass --force to ignore the cached portraits.json and re-fetch everything.
+"""
+
+import json
+import re
+import sys
+import time
+import urllib.request
+from pathlib import Path
+
+OUTPUT = Path(__file__).parent / 'portraits.json'
+
+WIKIS = {
+    'gi':  'genshin-impact.fandom.com',
+    'hsr': 'honkai-star-rail.fandom.com',
+    'zzz': 'zenless-zone-zero.fandom.com',
+}
+
+# Characters whose wiki image filename differs from the normalised pattern.
+# Set a name to None to explicitly skip (no portrait available).
+OVERRIDES = {
+    'gi': {
+        # Traveler has no Profile image (only element-specific variants)
+        'TRAVELER': None,
+    },
+    'hsr': {
+        # Dan Heng IL and PT use the Unicode bullet (•) URL-encoded
+        'Imbibitor Lunae':  'Character_Dan_Heng_%E2%80%A2_Imbibitor_Lunae_Splash_Art.png',
+        'Permansor Terrae': 'Character_Dan_Heng_%E2%80%A2_Permansor_Terrae_Splash_Art.png',
+        # Topaz & Numby — ampersand must be URL-encoded
+        'Topaz & Numby':    'Character_Topaz_%26_Numby_Splash_Art.png',
+        # Trailblazer has no generic Splash Art on the wiki
+        'Trailblazer': None,
+    },
+    'zzz': {
+        # Flora (Seed) — wiki uses "Seed" as the page/file name
+        'Flora (Seed)':              'Mindscape_Seed_Full.png',
+        # Orphie Magnusson & Magus — ampersand URL-encoded
+        'Orphie Magnusson & Magus':  'Mindscape_Orphie_Magnusson_%26_Magus_Full.png',
+    },
+}
+
+
+def to_wiki_name(name: str, game: str) -> str:
+    """Convert a character name to a wiki filename base."""
+    if game == 'gi':
+        name = name.title()
+    name = re.sub(r'\s*\([^)]+\)$', '', name).strip()
+    return name.replace(' ', '_')
+
+
+def make_filename(name: str, game: str) -> str:
+    wiki_name = to_wiki_name(name, game)
+    if game == 'gi':
+        return f'{wiki_name}_Profile.png'
+    elif game == 'hsr':
+        return f'Character_{wiki_name}_Splash_Art.png'
+    else:  # zzz
+        return f'Mindscape_{wiki_name}_Full.png'
+
+
+def fetch_url(wiki: str, filename: str):
+    api_url = (
+        f'https://{wiki}/api.php?action=query'
+        f'&titles=File:{filename}&prop=imageinfo&iiprop=url&format=json'
+    )
+    req = urllib.request.Request(api_url, headers={'User-Agent': 'Mozilla/5.0'})
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = json.loads(resp.read())
+        for page in data.get('query', {}).get('pages', {}).values():
+            if page.get('missing') is not None:
+                return None
+            imgs = page.get('imageinfo', [])
+            if imgs:
+                return imgs[0]['url']
+    except Exception as e:
+        print(f'    error fetching {filename}: {e}')
+    return None
+
+
+def fetch_game_portraits(game, chars, existing):
+    wiki = WIKIS[game]
+    overrides = OVERRIDES[game]
+    results = dict(existing)
+    seen_names = set()
+
+    for char in chars:
+        name = char['name']
+        if name in seen_names:
+            continue
+        seen_names.add(name)
+
+        override = overrides.get(name, ...)  # ... = not overridden
+        if override is None:
+            print(f'  –  {name} (skipped — no portrait source)')
+            results.pop(name, None)
+            continue
+
+        if name in results:
+            print(f'  ·  {name} (cached)')
+            continue
+
+        filename = override if override is not ... else make_filename(name, game)
+        url = fetch_url(wiki, filename)
+
+        if url:
+            results[name] = url
+            print(f'  ✓  {name}')
+        else:
+            print(f'  ✗  {name} (tried: {filename})')
+
+        time.sleep(0.25)
+
+    return results
+
+
+def main():
+    force = '--force' in sys.argv
+
+    existing = {'gi': {}, 'hsr': {}, 'zzz': {}}
+    if not force and OUTPUT.exists():
+        existing = json.loads(OUTPUT.read_text())
+        print(f'Loaded existing portraits.json ({sum(len(v) for v in existing.values())} entries)')
+    elif force:
+        print('--force: ignoring cache, re-fetching all portraits')
+
+    gi_chars  = json.loads((Path(__file__).parent / 'builds.json').read_text())
+    hsr_chars = json.loads((Path(__file__).parent / 'hsr_builds.json').read_text())
+    zzz_chars = json.loads((Path(__file__).parent / 'zzz_builds.json').read_text())
+
+    result = {}
+    for game, chars in [('gi', gi_chars), ('hsr', hsr_chars), ('zzz', zzz_chars)]:
+        print(f'\n{game.upper()}:')
+        result[game] = fetch_game_portraits(game, chars, existing.get(game, {}))
+
+    OUTPUT.write_text(json.dumps(result, ensure_ascii=False, indent=2))
+    totals = {g: len(v) for g, v in result.items()}
+    print(f'\nWrote portraits.json — GI: {totals["gi"]}, HSR: {totals["hsr"]}, ZZZ: {totals["zzz"]}')
+
+
+if __name__ == '__main__':
+    main()

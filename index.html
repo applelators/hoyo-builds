@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>builds</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header id="topbar">
+      <button id="back-btn" class="hidden" aria-label="Back to character list">&#8592;</button>
+      <span class="logo">builds</span>
+      <nav id="game-tabs">
+        <button class="game-tab active" data-game="gi">Genshin Impact</button>
+        <button class="game-tab" data-game="hsr">Honkai: Star Rail</button>
+        <button class="game-tab" data-game="zzz">Zenless Zone Zero</button>
+      </nav>
+      <span class="source-credit" id="source-credit"></span>
+    </header>
+    <div id="layout">
+      <aside id="sidebar">
+        <div id="search-wrap">
+          <input id="search" type="text" placeholder="search characters..." autocomplete="off" spellcheck="false">
+        </div>
+        <ul id="char-list"></ul>
+      </aside>
+      <main id="content">
+        <div id="placeholder">
+          <span class="ph-prompt">&#8592; select a character</span>
+        </div>
+        <div id="char-view" class="hidden">
+          <div id="char-portrait-wrap" class="hidden">
+            <img id="char-portrait" alt="" referrerpolicy="no-referrer">
+          </div>
+          <div id="char-header">
+            <div class="char-info">
+              <h1 id="char-name"></h1>
+              <span id="char-meta"></span>
+            </div>
+          </div>
+          <div id="build-tabs"></div>
+          <div id="build-panel"></div>
+          <details id="notes-details">
+            <summary>notes</summary>
+            <pre id="notes-body"></pre>
+          </details>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

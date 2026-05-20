@@ -1,0 +1,582 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #0d1117;
+  --surface:  #161b22;
+  --card:     #21262d;
+  --border:   #30363d;
+  --text:     #e6edf3;
+  --muted:    #8b949e;
+  --accent:   #818cf8;
+  --gold:     #f0c040;
+  --green:    #3fb950;
+  --sidebar-w: 300px;
+  --topbar-h:  44px;
+  font-size: 14px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-monospace, "SFMono-Regular", "Cascadia Code", Menlo, monospace;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+#app { display: flex; flex-direction: column; height: 100dvh; }
+
+/* ── top bar ── */
+#topbar {
+  height: var(--topbar-h);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 16px;
+  flex-shrink: 0;
+}
+.logo { font-weight: 700; color: var(--text); letter-spacing: -0.5px; }
+.source-credit { color: var(--muted); font-size: 11px; margin-left: auto; display: flex; align-items: center; gap: 6px; }
+.source-link { color: var(--muted); text-decoration: none; transition: color 0.12s; }
+.source-link:hover { color: var(--accent); }
+.source-sep { color: var(--border); }
+
+/* ── game tabs ── */
+#game-tabs {
+  display: flex;
+  gap: 4px;
+  margin-left: 8px;
+}
+.game-tab {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  padding: 4px 10px;
+  transition: color 0.12s, border-color 0.12s, background 0.12s;
+  white-space: nowrap;
+}
+.game-tab:hover { color: var(--text); }
+.game-tab.active {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--card);
+}
+
+/* HSR path badge + release date next to character name */
+.path-badge {
+  font-size: 11px;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+.release-date {
+  font-size: 11px;
+  color: var(--muted);
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* ── layout ── */
+#layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── sidebar ── */
+#sidebar {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#search-wrap {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+#search {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 12px;
+  padding: 6px 10px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+#search:focus { border-color: var(--accent); }
+#search::placeholder { color: var(--muted); }
+
+
+#char-list {
+  list-style: none;
+  overflow-y: auto;
+  flex: 1;
+  padding: 4px 0;
+}
+#char-list::-webkit-scrollbar { width: 4px; }
+#char-list::-webkit-scrollbar-track { background: transparent; }
+#char-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+#char-list li {
+  padding: 6px 10px 6px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--muted);
+  border-left: 2px solid transparent;
+  transition: color 0.1s, border-color 0.1s, background 0.1s;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  overflow: hidden;
+}
+.li-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: opacity 0.1s;
+}
+#char-list li:hover .li-icon,
+#char-list li.active .li-icon { opacity: 1; }
+.li-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+.li-ver {
+  font-size: 10px;
+  color: var(--muted);
+  opacity: 0.6;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+#char-list li:hover { color: var(--text); background: var(--surface); }
+#char-list li.active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+  background: var(--surface);
+}
+
+/* ── main content ── */
+#content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 28px;
+}
+#content::-webkit-scrollbar { width: 6px; }
+#content::-webkit-scrollbar-track { background: transparent; }
+#content::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+#placeholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ph-prompt { color: var(--muted); font-size: 13px; }
+
+.hidden { display: none !important; }
+
+/* ── character portrait banner ── */
+#char-portrait-wrap {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background: var(--card);
+}
+#char-portrait-wrap.hidden { display: none; }
+#char-portrait {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+/* ZZZ Mindscape Full images have dark sky/floor backgrounds — zoom in to crop them */
+body.game-zzz #char-portrait {
+  transform: scale(1.22);
+}
+
+/* ── character header ── */
+#char-header {
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 14px;
+}
+.char-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+#char-name {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text);
+}
+#char-meta {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* ── build tabs ── */
+#build-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  padding: 5px 12px;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tab-btn:hover { color: var(--text); border-color: var(--muted); }
+.tab-btn.active {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--card);
+}
+.tab-star { color: var(--gold); font-size: 10px; }
+
+/* ── build panel ── */
+#build-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+@media (max-width: 900px) {
+  #build-panel { grid-template-columns: 1fr 1fr; }
+  #char-portrait-wrap { height: 320px; }
+}
+
+.build-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+.build-card.wide {
+  grid-column: 1 / -1;
+}
+
+.card-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.card-body {
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* weapon / artifact tier colouring */
+.card-body .tier-1  { color: var(--gold); }
+.card-body .tier-2  { color: #a5b4fc; }
+.card-body .tier-eq { color: var(--muted); }
+
+/* ── notes ── */
+#notes-details {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+#notes-details summary {
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  user-select: none;
+  list-style: none;
+}
+#notes-details summary::before {
+  content: "▶ ";
+  font-size: 8px;
+}
+#notes-details[open] summary::before { content: "▼ "; }
+#notes-body {
+  margin-top: 12px;
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+}
+
+/* ── ranked item list (weapons / LC / W-engines) ── */
+.item-list { display: flex; flex-direction: column; gap: 8px; }
+.item-row { display: flex; gap: 8px; align-items: flex-start; }
+.item-rank {
+  font-size: 10px;
+  color: var(--muted);
+  width: 14px;
+  flex-shrink: 0;
+  padding-top: 2px;
+  text-align: right;
+}
+.item-body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.item-name { font-size: 12px; font-weight: 600; word-break: break-word; }
+.item-desc { font-size: 11px; color: var(--muted); line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+
+/* ── ability priority chain ── */
+.ability-chain { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 4px 0; }
+.ability-node {
+  font-size: 11px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 8px;
+  background: var(--surface);
+  white-space: nowrap;
+}
+.ability-arrow { color: var(--muted); font-size: 11px; }
+.ability-note { font-size: 11px; color: var(--muted); margin-top: 8px; line-height: 1.5; font-style: italic; }
+
+/* ── stat grid (ZZZ disc slot assignments) ── */
+.stat-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.stat-slot { color: var(--muted); font-size: 11px; white-space: nowrap; }
+.stat-val { color: var(--text); word-break: break-word; }
+.stat-full { grid-column: 1 / -1; color: var(--text); }
+
+/* ── ZZZ disc drive sets ── */
+.disc-sets {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.disc-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.disc-pc-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-transform: uppercase;
+  flex-shrink: 0;
+  width: 28px;
+}
+.disc-chip {
+  font-size: 11px;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+.disc-chip.disc-bis {
+  color: var(--text);
+  border-color: var(--accent);
+}
+.disc-notes-body {
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+  opacity: 0.85;
+}
+
+/* ── ZZZ team comps ── */
+.team-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.team-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.team-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+}
+.team-chip {
+  font-size: 11px;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+.team-member-chip {
+  font-size: 10px;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 2px 7px;
+  white-space: nowrap;
+}
+
+
+/* ── HSR example teams ── */
+.hsr-teams {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hsr-team-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hsr-team-label {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.hsr-team-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.hsr-team-chip {
+  font-size: 11px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+/* ── back button (mobile only) ── */
+#back-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 10px 0 0;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── mobile layout ── */
+@media (max-width: 640px) {
+  :root { --topbar-h: 48px; }
+
+  #back-btn { display: block; }
+  /* hide back btn until a char is selected */
+  #back-btn.hidden { display: none; }
+
+  #layout { position: relative; }
+
+  /* sidebar fills the screen */
+  #sidebar {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    border-right: none;
+    z-index: 10;
+    transition: opacity 0.15s, visibility 0.15s;
+  }
+
+  /* content fills the screen but starts hidden */
+  #content {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    padding: 16px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.15s, visibility 0.15s;
+  }
+
+  /* when a character is selected: flip visibility */
+  body.viewing-char #sidebar {
+    visibility: hidden;
+    opacity: 0;
+  }
+  body.viewing-char #content {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* larger tap targets in the list */
+  #char-list li {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  .li-icon { width: 32px; height: 32px; }
+  .li-ver { font-size: 11px; }
+
+  #search {
+    font-size: 14px;
+    padding: 9px 12px;
+  }
+  #search-wrap { padding: 12px; }
+
+  /* single column cards */
+  #build-panel { grid-template-columns: 1fr; }
+  .build-card.wide { grid-column: 1; }
+
+  #char-portrait-wrap { height: 220px; border-radius: 6px; margin-bottom: 14px; }
+  #char-name { font-size: 20px; }
+
+  .card-body { font-size: 13px; }
+}

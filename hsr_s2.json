@@ -1,0 +1,3211 @@
+{
+  "The Dahlia": {
+    "kit_overview": "Kit Overview: Premium Super Break Specialist\nDahlia's Skill deploys a Zone that lasts for 3 turns. In this Zone, allies' Weakness Break Efficiency is increased by 50% and are able to deal Super Break DMG to enemies who are not weakness broken.\n\nUpon entering combat, Dahlia selects the ally who started combat or has the highest BE% to be Dance Partner with her. When attacking weakness broken enemies, Dance Partner deals Super Break DMG and trigger Dahlia's FUA bounce attack. This can be triggered once per turn, and Dahlia recovers 1 SP for every 2 FUA attack she does.\n\nWhen using Ultimate, Dahlia inflicts Wilt to enemies, which reduces their DEF, implants Fire and the [Dance Partner]'s type weaknesses. This lasts for 4 enemy turns.\n\nWhenever allies implant weaknesses to enemies, their SPD increases. If a Fire character implants weakness, they deal additional Toughness DMG and gain 10% max energy. Only 50% max energy can be generated in this manner. When Dahlia receives healing or shield, she grants BE% to the team.\n\nSynergies:\n✦ Super Break or Break DPS/Teams, especially Fire Super Break/Break DPS who can implant weakness.\nNotes:\n✦ Due to how Wilt works, Dahlia's performance can fall short for wave content such as PF.\n✦ While Dahlia is also considered Dance Partner, she cannot trigger her own FUA.\n✦ Even though most Break teams prefer to run sustainless, Dahlia allows you to run sustainers without too much impact on the team's performance.\nTips:\n✦ Since Wilt duration is based on the enemies' turns, smart timing of her Ultimate is recommended for better Wilt uptime.",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S1 or E1S1",
+    "example_teams": [
+      {
+        "label": "Firefly Premium Team",
+        "members": [
+          "Firefly",
+          "Dahlia",
+          "Fugue",
+          "HMC"
+        ]
+      },
+      {
+        "label": "Boothill Premium",
+        "members": [
+          "Boothill",
+          "Dahlia",
+          "Fugue",
+          "Sunday"
+        ]
+      },
+      {
+        "label": "Rappa Premium",
+        "members": [
+          "Rappa",
+          "Dahlia",
+          "Fugue",
+          "Lingsha"
+        ]
+      },
+      {
+        "label": "Himeko is so back",
+        "members": [
+          "Himeko",
+          "Dahlia",
+          "Fugue",
+          "Tribbie"
+        ]
+      },
+      {
+        "label": "Lingsha DPS - E1 Lingsha is recommended",
+        "members": [
+          "Lingsha",
+          "Dahlia",
+          "Fugue",
+          "Sunday"
+        ]
+      },
+      {
+        "label": "Break DPS generator",
+        "members": [
+          "Anyone",
+          "Dahlia",
+          "Fugue",
+          "Ruan Mei"
+        ]
+      }
+    ]
+  },
+  "Hysilens": {
+    "kit_overview": "Kit Overview: Damage over Time DPS\nWhenever any ally attacks, Hysilens can inflict a DoT type to the enemy, up to 4 types of DoT.\n\nHysilens' Skill inflict Vulnerability to all enemy.\n\nWhen unleashing Ultimate, Hysilens grants 1 SP, deploys a zone and detonates all the DoT on the enemies. In this zone, enemies' ATK and DEF are reduced; when enemy takes damage from a DoT type, Hysilens deals extra Bleed DoT to them and she can only deal 8 extra Bleed DoT max in this way, This zone last for 3 turns.\n\nSynergies:\n✦ DoT detonators and other DoT DPS that benefits from her multiple DoT types.\n✦ Teamwide buffer, AoE debuffers, etc.\n\nNotes:\n✦ Make sure to manage SP effectively, as DoT teams are very SP hungry in general",
+    "worth_pulling": "",
+    "recommended_baseline": "E1 with Kafka",
+    "example_teams": [
+      {
+        "label": "The Premium DoT team",
+        "members": [
+          "Black Swan",
+          "Hysilens",
+          "Kafka",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "No Swan?",
+        "members": [
+          "Cyrene",
+          "Hysilens",
+          "Kafka",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "No Rene or Swan?",
+        "members": [
+          "Cipher",
+          "Hysilens",
+          "Kafka",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "\"Budget\" Team",
+        "members": [
+          "Ruan Mei",
+          "Hysilens",
+          "Kafka",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "No Kafka? (requires E1 Hysilens)",
+        "members": [
+          "Cerydra",
+          "Hysilens",
+          "Cyrene",
+          "Hyacine"
+        ]
+      }
+    ]
+  },
+  "Cipher": {
+    "kit_overview": "Kit Overview: Consistent debuffer and flexible Sub-DPS\nWhen Cipher is present, applies 40% Vulnerability to all enemies and Patron to the enemy with highest HP, when any ally hit this enemy, she launches a FUA attack. Cipher's Skill weakens enemies, when Cipher uses her Ultimate or Skill, she can re-apply Patron on other enemies.\n\nCipher's Ultimate explanation, notes and tips:\nCipher records the DMG dealt by all allies, excluding True DMG, indicated as coins (1 coin = 1k DMG). Unleash this DMG by using Ultimate and consume all coins, if the attack only has 1 target, all DMG will be directed toward it rather than being distributed unless there are 2 or 3 enemies. If facing elite and boss targets, try to eliminate all mobs target before using her Ultimate. If the boss is AoE or in Pure Fiction, you can spam her Ultimate.\n\nWhen reaching a certain amount of SPD, she gains CR% and increases the portion of tallied damage. Up to a maximum of 24% on Patron enemy and 16% on other enemies.\n\nSynergies:\n✦ Units who appreciate Cipher's frequent attacks, debuffs application and DMG amplification.\nNotes:\n✦ Cipher's multipliers are very low and the majority of her damage is from tallied damage. This allows you to completely neglect her offensive stats.\nTips:\n✦ Cipher's skill is not high priority, use it when there is excess SP.",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S1",
+    "example_teams": [
+      {
+        "label": "Acheron Hypercarry",
+        "members": [
+          "Acheron",
+          "Silver Wolf",
+          "Cipher",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Feixiao Premium 2",
+        "members": [
+          "Feixiao",
+          "Robin",
+          "Cipher",
+          "Aventurine"
+        ]
+      },
+      {
+        "label": "Archer Premium",
+        "members": [
+          "Archer",
+          "Sparkle",
+          "Cipher",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "No Evernight?",
+        "members": [
+          "Castorice",
+          "Cyrene",
+          "Cipher",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Dr. Ratio and his pet cat",
+        "members": [
+          "Dr. Ratio",
+          "Sunday",
+          "Cipher",
+          "Aventurine"
+        ]
+      },
+      {
+        "label": "She is a universal support, she fits anywhere",
+        "members": [
+          "Anyone",
+          "Anyone",
+          "Cipher",
+          "Sustain"
+        ]
+      }
+    ]
+  },
+  "Fugue": {
+    "kit_overview": "Kit overview: Premium Super Break Support\nJust by existing in the battle, Fugue allows all allies to deal Super Break DMG against weakness broken enemies and inflicts all enemies with [Cloudflame Luster], which is an additional Toughness you can break, triggering corresponding Break DMG and Weakness Break effect once broken.\n\nFugue's skill grants 1 ally [Foxian's Prayer] effect: Increases Break Effect%, attacks from this ally can deal universal Toughness Reduction with 50% reduced value and are able to inflict Defense shred. Lastly, enhances Basic Attack, making it Blast type to contribute more Toughness Reduction.\n\nEnemy target will get delayed by 15% each time its Toughness is broken, allowing more chances to deal Super Break DMG\n\nSynergies:\n✦ Super Break or Break DPS and units with high Toughness Reduction in general.\n✦ Units that benefit from breaking enemies' Toughness and/or debuffs.\n\nNotes:\n✦ Fugue's ultimate is an attack that can ignore Weakness Type, with no further effect.\n✦ Her universal Toughness Reduction effect can not stack with other sources (ie: Rappa's EBA)\n\nTips:\n✦ Use Fugue's skill on ally capable of high Toughness Reduction (ie: Lingsha, Harmony TB) to help with Toughness damage then swap back to the main DPS unit once targets are (close to) broken.",
+    "worth_pulling": "",
+    "recommended_baseline": "E1",
+    "example_teams": [
+      {
+        "label": "Rappa's beloved Exo-Toughness",
+        "members": [
+          "Rappa",
+          "Dahlia",
+          "Fugue",
+          "Lingsha"
+        ]
+      },
+      {
+        "label": "Talent's stack for Cowboy",
+        "members": [
+          "Boothill",
+          "Dahlia",
+          "Fugue",
+          "Sunday"
+        ]
+      },
+      {
+        "label": "Himeko Break",
+        "members": [
+          "Himeko",
+          "Dahlia",
+          "Fugue",
+          "Tribbie"
+        ]
+      },
+      {
+        "label": "Lingsha Carry?!",
+        "members": [
+          "HMC",
+          "Dahlia",
+          "Fugue",
+          "Lingsha"
+        ]
+      },
+      {
+        "label": "Firefly Premium",
+        "members": [
+          "Firefly",
+          "Dahlia",
+          "Fugue",
+          "HMC"
+        ]
+      },
+      {
+        "label": "Anyone can be a Break-DPS!",
+        "members": [
+          "Anyone",
+          "Dahlia",
+          "Fugue",
+          "Sustain"
+        ]
+      }
+    ]
+  },
+  "Jiaoqiu": {
+    "kit_overview": "Kit Overview: Strong autostacking field-based Debuffer\n✦ Whenever Jiaoqiu attacks, inflicts stacks of his [Ahen Roast] debuff. This acts as Burn DoT, and at max stacks (5) applies 35% Vulnerability.\n\n✦ His Ultimate creates a field, which will cause enemies to take 15% more Ultimate DMG. It also inflicts stacks of [Ashen Roast] at the start of their turns, up to 6 times per Ultimate use.\n\nSynergies:\n✦ Units that want Debuffs, whether it is due to kit requirements or already having strong self-buffs.\n✦ Ultimate-Damage focused DPS benefit highly from his bonus Ultimate Vulnerability.\n✦ Vulnerability amplifies all damage types, including Break; as such, he can be used in all teams. \n\nTips:\n✦ Against waves of weak mobs, such as in Pure Fiction, Solitary Healing can be his preferred Light Cone for Ultimate spamming.",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S1",
+    "example_teams": [
+      {
+        "label": "Premium Acheron team",
+        "members": [
+          "Acheron",
+          "Cipher",
+          "Jiaoqiu",
+          "Aventurine"
+        ]
+      },
+      {
+        "label": "Triple DoT - E0 is fine, E2 is preferred",
+        "members": [
+          "Kafka",
+          "Hysilens",
+          "Jiaoqiu",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Ratio Hypercarry",
+        "members": [
+          "Dr. Ratio",
+          "Sunday",
+          "Jiaoqiu",
+          "Aventurine"
+        ]
+      },
+      {
+        "label": "Ultimate DMG team",
+        "members": [
+          "Argenti",
+          "Sunday",
+          "Jiaoqiu",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "Xianzhou Yaoqing Squad",
+        "members": [
+          "Feixiao",
+          "Moze",
+          "Jiaoqiu",
+          "Lingsha"
+        ]
+      },
+      {
+        "label": "Break Jiaoqiu!? - Meme team that take advantage of his Toughness DMG",
+        "members": [
+          "Ruan Mei",
+          "Fugue",
+          "Jiaoqiu",
+          "Lingsha"
+        ]
+      }
+    ]
+  },
+  "Acheron": {
+    "kit_overview": "Kit Overview: Debuff focused AoE DPS\nWhenever Acheron uses Skill or ally inflict a debuff, Acheron gains 1 Slashed Dream and inflict 1 Crimson Knot to the attacked enemy. Acheron can hold 12 Slashed Dream stacks. Crimson Knot increase damage taken from Acheron's Ultimate.\n\nAcheron can activate her Ultimate with 9 Slashed Dream stacks. Upon activation, Acheron reduces enemies' RES, then unleashes 3 ST attack before unleashing the final AoE hit. This attack depletes toughness regardless of weakness. If her ST attack hit enemies with Crimson Knot, deals an instance of AoE damage. All attacks during her Ult is considered Ult DMG.\n\nIf there are 1-2 more Nihility characters other than Acheron in the team, Acheron gains massive DMG bonus depending on the amount.\n\nWhen using her Technique, she can instantly kill any enemies, with the exception of bosses/elites in which case she will deal AoE damage and gain 6 Slashed Dream.\nSynergies:\n✦ Nihility units with fast debuff applications and damage amplification.\n✦ Supports with action advance, strong buffs, debuffs, etc. Acheron S1 and/or E2 is required if you want to use 1 Harmony/1 Nihility.\nNotes:\n✦ Acheron has worse performance against ST.\nTips:\n✦ Make sure to use Acheron's Ultimate after all debuffs and buffs are applied for most damage.\n✦ You can redirect Acheron's ST hit during her Ult to control damage and generate more Slashed Dream for next waves.",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S1 with one limited Nihility support",
+    "example_teams": [
+      {
+        "label": "Premium Acheron Team - E2 Silver Wolf Recommended",
+        "members": [
+          "Acheron",
+          "Silver Wolf",
+          "Tribbie",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Double Nihility Premium",
+        "members": [
+          "Acheron",
+          "Welt",
+          "Cipher",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Sustainless Acheron team - Featuring Silver Wolf E2",
+        "members": [
+          "Acheron",
+          "Sparkle",
+          "Silver Wolf",
+          "Tribbie"
+        ]
+      },
+      {
+        "label": "She got lost in Amphoreus (PF team)",
+        "members": [
+          "Acheron",
+          "Hysilens",
+          "Tribbie",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Budget team - Not Recommended",
+        "members": [
+          "Acheron",
+          "Guinaifen",
+          "Pela",
+          "Gallagher"
+        ]
+      }
+    ]
+  },
+  "Black Swan": {
+    "kit_overview": "Kit Overview: Damage over Time DPS\nWhenever enemies take DoT damage or when Black Swan use her abilities, they get inflicted with [Arcana]. Black Swan's abilities inflict DEF reduction to hit enemies, she also increases the team's DMG based on her EHR%.\n\n[Arcana] is considered as all types of DoT, and it deals more damage based on the number of stacks. The increased damage stops at 50 stacks, however it can continue to stack beyond this limit. When enemies take [Arcana] damage on their turn, the [Arcana] stacks is halved. [Arcana] also have unique effects depending on the number of stacks.\n\nBlack Swan's Ultimate inflict Epiphany on all enemies, which has these following effects: Increase DMG taken, whenever this enemy get inflicted with 1 [Arcana], there is 50% fixed chance to be inflicted with 1 additional [Arcana] and prevent [Arcana] from halving once.\n\nSynergies:\n✦ Units that can frequently applies and detonate DoT, such as Kafka or Sampo.\n\nNotes:\n✦ While Black Swan does have DEF reduction and Vulnerability as DMG amplification, her support capabilities outside of DoT is rather lacking.\n✦ Black Swan only becomes great once you have both Hysilens and Kafka.",
+    "worth_pulling": "",
+    "recommended_baseline": "E1, Hysilens and Kafka",
+    "example_teams": [
+      {
+        "label": "The Premium DoT team",
+        "members": [
+          "Black Swan",
+          "Kafka",
+          "Hysilens",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Sustainless variant - Featuring E2 Cyrene",
+        "members": [
+          "Black Swan",
+          "Kafka",
+          "Hysilens",
+          "Cyrene"
+        ]
+      },
+      {
+        "label": "Budget - Not recommended",
+        "members": [
+          "Black Swan",
+          "Kafka",
+          "Sampo",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Dotcheron - Not recommended",
+        "members": [
+          "Black Swan",
+          "Kafka",
+          "Acheron",
+          "Hysilens"
+        ]
+      }
+    ]
+  },
+  "Kafka": {
+    "kit_overview": "Kit Overview: Damage over Time detonator/driver\nKafka can inflict Shocked, by using her Ultimate or from her Talent: Whenever an allies attack enemies, she consumes 1 Charge and launch a FUA attack. Whenever Kafka takes turns or uses her Ultimate, gain 1 Charge, she can hold 2 Charge max.\n\nWhen Kafka uses her Skill, Ultimate, or Talent, she will detonate the DoT on the attacked enemies.\n\nIf any allies has at least 75% EHR, Kafka grants 100% ATK to that ally. This also includes herself\n\nSynergies:\n✦ Kafka works well as a DoT detonator for any DoT DPS\n✦ Kafka appreciate any Nihility or Harmony support that can benefit both Kafka and the other DoT DPS\n✦ Any ATK scaling support or sustainer can be alternatively built with 75% EHR with Kafka's EHR to ATK conversion.\n\nNotes:\n✦ Kafka's role is more similar to a support/enabler rather than a DPS herself, this allows you to build Kafka as fast as possible while not having to pay much attention to her personal damage.",
+    "worth_pulling": "",
+    "recommended_baseline": "E1 with Hysilens",
+    "example_teams": [
+      {
+        "label": "DoT Premium",
+        "members": [
+          "Kafka",
+          "Hysilens",
+          "Black Swan",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Everyone gets ATK%! - alt 75% EHR build on non-DOT allies",
+        "members": [
+          "Kafka",
+          "Hysilens",
+          "Robin",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Dotcheron - Somewhat meme team",
+        "members": [
+          "Kafka",
+          "Acheron",
+          "Hysilens",
+          "Gallagher"
+        ]
+      },
+      {
+        "label": "Fish n Cat",
+        "members": [
+          "Kafka",
+          "Hysilens",
+          "Cipher",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Budget - Not recommended",
+        "members": [
+          "Kafka",
+          "Sampo",
+          "Guinaifen",
+          "Sustain"
+        ]
+      }
+    ]
+  },
+  "Silver Wolf": {
+    "kit_overview": "Kit Overview: Strong, multiple effects Debuffer\nWhenever Silver Wolf attacks, randomly inflicts [Bug] effect that can either: reduce ATK, reduce DEF or reduce SPD.\n\nSilver Wolf's Skill adds one Weakness based on the first character on lineup to an enemy, reducing their all type RES. If the enemy doesn't already have that weakness, further reduce their RES to that element. Only 1 weakness can be implanted on an enemy. If the debuffed enemy is killed, the weakness will move to the enemy with highest HP.\n\nSilver Wolf's Ultimate reduces DEF of all enemies heavily.\n\nSynergies:\n✦ DPS that enjoy or rely on (multiple) debuffs.\n✦ Units that want to break enemies (whom do not have their own Weakness Implant).\n\nNote:\n✦ Due to high multiplier on her Ultimate and low EHR% requirement, Silver Wolf can go for a crit Sub-DPS build",
+    "worth_pulling": "",
+    "recommended_baseline": "E0 is good enough, E2 for Acheron",
+    "example_teams": [
+      {
+        "label": "Acheron Hypercarry - Double Nihility Edition",
+        "members": [
+          "Acheron",
+          "Cipher",
+          "Silver Wolf",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Ratio Hypercarry",
+        "members": [
+          "Dr. Ratio",
+          "Robin",
+          "Silver Wolf",
+          "Aventurine"
+        ]
+      },
+      {
+        "label": "Mono Quantum?!",
+        "members": [
+          "Seele",
+          "Sparkle",
+          "Silver Wolf",
+          "Fu Xuan"
+        ]
+      },
+      {
+        "label": "No Rene or Evernight?",
+        "members": [
+          "Castorice",
+          "RMC",
+          "Silver Wolf",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "The true Acheron Premium team - Requires E2 Silver Wolf",
+        "members": [
+          "Acheron",
+          "Tribbie",
+          "Silver Wolf",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Need to bruteforce? She'll fit anywhere",
+        "members": [
+          "DPS",
+          "Anyone",
+          "Silver Wolf",
+          "Sustain"
+        ]
+      }
+    ]
+  },
+  "Welt": {
+    "kit_overview": "Kit Overview: DPS likes to take it slow\nWelt's Skill deals 5 intances of bounce DMG and inflict Slow to the hit enemy, which reduces their SPD\n\nUpon casting Ultimate, Welt deals AoE damage to all enemies, inflict Slow, Imprisonment, and Weightless. \nEnemies with Weightless have their DEF and SPD reduced, if they are attacked, they are also inflicted with stackable Vulnerability, allies who attack Weightless enemies also gain DMG% boost. Additionally, hitting enemies with Weightless can delay their action by 4%, up to 8 times per turn. This effect lasts for 2 turns.\n\nIf Welt attacks enemies with BA or Skill, he deals 1 instance of Additional DMG, if the hit enemies are Slowed, Welt deals an extra instance of Additional DMG.\n\nSynergies:\n✦ Supports with good damage amplification, high attack frequency, action advance, energy generation, etc.\n✦ DPS that benefit from delaying the enemies actions.\nNote:\n✦ While Welt is capable of keeping the team alive for a lot longer, he still cannot fully replace an actual sustainer. He's a very simple and effective support for sustainless team comps.\nTips:\n✦ Try to get Welt's ultimate as quickly as possible to keep high uptime on his debuffs.\n✦ Welt can cast his Ultimate mid action which can cancel elites/bosses' extra action(s)",
+    "worth_pulling": "",
+    "recommended_baseline": "E2",
+    "example_teams": [
+      {
+        "label": "Premium",
+        "members": [
+          "Welt",
+          "Sparkle",
+          "Tribbie",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "IX is with us",
+        "members": [
+          "Acheron",
+          "Welt",
+          "Cipher",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "The Detective joins The Express",
+        "members": [
+          "Ashveil",
+          "Welt",
+          "RMC",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Let him \"Reason\" with the enemies",
+        "members": [
+          "DPS",
+          "Welt",
+          "Anyone",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Novaflare Galore (Sustain Welt)",
+        "members": [
+          "Seele",
+          "Sparkle",
+          "Cerydra",
+          "Welt"
+        ]
+      },
+      {
+        "label": "''Equation for an easy sustainless''",
+        "members": [
+          "DPS",
+          "Anyone",
+          "Anyone",
+          "Welt"
+        ]
+      }
+    ]
+  },
+  "Permansor Terrae": {
+    "kit_overview": "Kit Overview: Chunky shields via Summon\n✦ Dan Heng Permansor Terrae (DHPT) uses Skill to select one ally to become Bondmate, grant shield to the team and summon Souldragon. Bondmate will gain ATK buff based on DHPT's ATK, and when they attack, advances Souldragon's action and generate energy for DHPT. When Souldragon takes its turn, it provides teamwide shield and cleanse. \n\n✦ Souldragon is considered as Bondmate's summon.\n\n✦ Upon using DHPT Ultimate, grants shield to the entire team, enhances Souldragon for 2 actions. When enhanced Souldragon take action, they grant teamwide shield, cleansing while also dealing FUA damage based on Bondmate's stats.\n\n✦ DHPT's shields scale on his ATK, and are stackable.\n\nTeam synergies:\n✦ Supports who buff teammates with summons.\n✦ Teammates who have states where other allies can't act.\n✦ Teammates who can grant ATK buffs or benefit from his ATK buff.\n\nNotes:\n✦ Since Souldragon is the Bondmate's summon, All of Sundays summon buffs will apply to the Bondmate.\n✦ If allies act too often, their shields will run out faster.",
+    "worth_pulling": "",
+    "recommended_baseline": "E1S0",
+    "example_teams": [
+      {
+        "label": "Sustained Phainon",
+        "members": [
+          "Dan PT",
+          "Phainon",
+          "Cerydra",
+          "Sparkle"
+        ]
+      },
+      {
+        "label": "Premium Anaxa",
+        "members": [
+          "Dan PT",
+          "Anaxa",
+          "Cerydra",
+          "Cyrene"
+        ]
+      },
+      {
+        "label": "Smarties convention (+1)",
+        "members": [
+          "Dan PT",
+          "The Herta",
+          "Herta",
+          "Tribbie"
+        ]
+      },
+      {
+        "label": "Dragonborn DOT",
+        "members": [
+          "Dan PT",
+          "Kafka",
+          "Hysilens",
+          "Black Swan"
+        ]
+      },
+      {
+        "label": "Sunday Preset",
+        "members": [
+          "Dan PT",
+          "Sunday",
+          "DPS",
+          "Anyone"
+        ]
+      },
+      {
+        "label": "Classic sustain",
+        "members": [
+          "Dan PT",
+          "Anyone",
+          "Anyone",
+          "Anyone"
+        ]
+      }
+    ]
+  },
+  "Aventurine": {
+    "kit_overview": "Kit Overview: Strong Shielder with FUA attacks\nWhenever Aventurine uses his skill or triggers his FUA from talent, he grants shields to all allies. Shielded allies will also gain Effect RES.\n\nWhenever anyone is hit or perform FUA attack, Aventurine gain 1 stack of Blind Bet, up to 10 stacks. When 7 Blind Bet stacks are obtained, he performs a Bounce FUA attack.\n\nWhen using Ultimate, he apply CDMG% vulnerability to the enemy and gain a random number of Blind Bet stack.\n\nTeam Snerygies:\n✦ Teams then want a high amount of attacks (i.e. Feixiao) \n✦ Teams that want to apply debuff to enemies benefit from Aventurine's Ult (and FUA with at E0S1 Aventurine)\nNotes:\n✦ Allies may lose shields if they take too many turns,\n✦ Aventurine performs better the more enemies attack\n✦ While allies will gain extra Effect RES when shielded, they can still get inflicted with Crowd Control and debuffs, and Aventurine cannot cleanse them. It is recommended to build Effect RES on other teammates for this matter.\nTips:\n✦ Be flexible with Aventurine's skill and Ultimate to ensure comfort sustainability.",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S1",
+    "example_teams": [
+      {
+        "label": "FART team",
+        "members": [
+          "Feixiao",
+          "Aventurine",
+          "Robin",
+          "Topaz"
+        ]
+      },
+      {
+        "label": "Acheron Premium",
+        "members": [
+          "Acheron",
+          "Aventurine",
+          "Silver Wolf",
+          "Cipher"
+        ]
+      },
+      {
+        "label": "Doctor, you are huge - Ratio Hypercarry",
+        "members": [
+          "Dr. Ratio",
+          "Aventurine",
+          "Silver Wolf",
+          "Sparkle"
+        ]
+      },
+      {
+        "label": "Jade and her gambler",
+        "members": [
+          "Jade",
+          "Aventurine",
+          "Herta",
+          "Tribbie"
+        ]
+      },
+      {
+        "label": "He is a sustain, he fits anywhere",
+        "members": [
+          "Anyone",
+          "Aventurine",
+          "Anyone",
+          "Anyone"
+        ]
+      }
+    ]
+  },
+  "Fu Xuan": {
+    "kit_overview": "Kit Overview: Damage-Absorption Tank\nFu Xuan's skill activates her [Matrix of Prescience] zone, increasing the whole team's Max HP and Crit Rate. Most of the damage taken by allies will be transferred to Fu Xuan instead while this Zone is active. Additionally, Fu Xuan will grant one chance to resist to Crowd Control debuff to all allies once per skill usage.\n\nHer Talent passively decreases damage taken by everybody, and if she ever falls below half health, Fu Xuan consume 1 Charge, and recover most of the lost HP.\n\nHer Ultimate deals AoE Damage, restores the team's health slightly, and give 1 Charge. She can hold 2 Charge max.\n\nTeam Synergies:\n✦ Fu Xuan, while good at keeping her team alive, also gives minor CR buffs, making her a good sustain option in crit-scaling teams.\nNotes:\n✦ Characters that rely on the AMOUNT of hp they have lost (ie. Castorice, Mydei) has negative synergy with Fu Xuan.\n✦ Because she tanks damage for everybody in the team, AoE attacks tend to do critical damage to her. This problem is worse if you have more than 4 allies on field.\nTips:\n✦ If there is enough Skill Points, Fu Xuan can spam her Skill more often to sustain more comfortably.",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S0 is fine, E1 is nice",
+    "example_teams": [
+      {
+        "label": "Mono-Quantum (Short Girls' Rights)",
+        "members": [
+          "Seele",
+          "Silver Wolf",
+          "Sparkle",
+          "Fu Xuan"
+        ]
+      },
+      {
+        "label": "Surely Fu Xuan's HP buff is significant (it's not)",
+        "members": [
+          "Blade",
+          "Sparkle",
+          "Tribbie",
+          "Fu Xuan"
+        ]
+      },
+      {
+        "label": "Are you critting, doctor?",
+        "members": [
+          "Dr. Ratio",
+          "Welt",
+          "Sunday",
+          "Fu Xuan"
+        ]
+      },
+      {
+        "label": "Universal Trend of Market LC",
+        "members": [
+          "Acheron",
+          "Silver Wolf",
+          "Cipher",
+          "Fu Xuan"
+        ]
+      },
+      {
+        "label": "Fu Xuan for General",
+        "members": [
+          "Jing Yuan",
+          "Tribbie",
+          "Sunday",
+          "Fu Xuan"
+        ]
+      },
+      {
+        "label": "She is a sustain, put her anywhere",
+        "members": [
+          "Anyone",
+          "Anyone",
+          "Anyone",
+          "Fu Xuan"
+        ]
+      }
+    ]
+  },
+  "Gepard": {
+    "kit_overview": "Kit Overview: Shield-based Tank with Aggro Increase.\nGepard's skill has a chance to Freeze the enemy for 1 turn, leaving them incapable of taking action in that turn.\n\nHis Ultimate grants a fairly high amount of Shield to the whole team for 3 turns.\nWhen Gepard is downed, his Talent will activate, reviving him and restoring all of his Energy once per battle. Gepard has a higher chance to be attacked.\n\nTeam Synergies:\n✦ Gepard does not have any specialties that outperform any other sustain characters. However, his Shield provides fairly great survivability, and can be good if you need a solid sustainer.\n\nNotes:\n✦ His Shield does not stack upon itself, and can only be given by his Ultimate and Technique, so DPSes that take lots of actions are not recommended to go with him.",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S1",
+    "example_teams": [
+      {
+        "label": "A WILL PRESERVED IN ICE WILL NEVER FALTER",
+        "members": [
+          "Serval",
+          "Bronya",
+          "Pela",
+          "Gepard"
+        ]
+      },
+      {
+        "label": "Simulated Universe Preservation Path Cheese",
+        "members": [
+          "March 7th",
+          "Aventurine",
+          "FMC",
+          "Gepard"
+        ]
+      },
+      {
+        "label": "Protect the Yanking",
+        "members": [
+          "Yanqing",
+          "Sparkle",
+          "Ruan Mei",
+          "Gepard"
+        ]
+      },
+      {
+        "label": "Universal Trend of Market LC",
+        "members": [
+          "Acheron",
+          "Silver Wolf",
+          "Cipher",
+          "Gepard"
+        ]
+      },
+      {
+        "label": "He is a sustain, he fits anywhere",
+        "members": [
+          "Anyone",
+          "Anyone",
+          "Anyone",
+          "Gepard"
+        ]
+      }
+    ]
+  },
+  "Cyrene": {
+    "kit_overview": "Kit Overview:  ELYSIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n✦ Cyrene’s Ultimate will summon Demiurge, activate all ally ultimates, enhance her Basic Attack, increase her and Demiurge’s CRIT Rate, deploy the zone gained from her skill, and enter a special state with no cooldown. Her First Ultimate requires 24 Recollection points to activate, this Ultimate can only be activated once. Demiurge is an Out of Bounds memosprite, it will not appear on the action bar, and can’t be targeted by allies or enemies.  \n\n✦ Recollection is gained from ally actions with Future(+1) Cyrene’s Basic attack(+1), Enhanced Basic Attack(+3) and Skill(+3). Cyrene gains additional Recollection points depending on the amount of Chrysos Heirs or Remembrance characters in the party. Cyrene can hold up to 27 Recollection points.\n\n✦ Demiurge will immediately take action upon using Cyrene's Ultimate. Using its memosprite skill on an ally will provide a Special Effect to Chrysos Heirs or a DMG increase to anyone else, requiring 12 Recollection points to use. The Special Effect is personalized to each Chrysos Heir and will be listed here along with reccomended team setups.\n\n✦ When combat starts or after Cyrene takes action or when Cyrene uses Ultimate, all allies will gain Future. After an ally uses an ability, they will consume Future and Cyrene gains a Recollection. Memosprites do not consume Future after using an ability.\n\n✦ When Cyrene’s speed exceeds 180, increase the team DMG and for every additional point of speed her Ice RES PEN is increased, capped at 60 speed.\n\n✦ Cyrene’s Skill deploys a zone that will deal True DMG equal to 24% of each instance of DMG dealt by allies for 2 turns.\nSynergies:\n✦ Chrysos Heirs\nNotes:\n✦ Cyrene’s Recollection gain is quite slow without vertical investment or a full memosprite/Chrysos Heir team.\n\n✦ Cyrene wants be paired with other Chrysos Heirs. Otherwise, her support potential is extremely lacking.\n\n✦ Ironically enough, most Chrysos Heirs prefer other options without vertical investment on Cyrene. She can perform decently, with specific setups and teams at E0.\nTips:\n✦ To quicken Recollection generation, you can hold your team's Ultimates and use it after Cyrene's turn.\n\n✦ You can also weave in Cyrene's Ultimate smartly between allies' actions for maximized Recollection gain. Since Cyrene's Ultimate grants Future to allies.",
+    "worth_pulling": "",
+    "recommended_baseline": "",
+    "example_teams": []
+  },
+  "Evernight": {
+    "kit_overview": "Kit Overview: HP Manipulating Rememberance Support/DPS\nAfter entering combat or using Skill / Ultimate, Evernight will summon her memosprite, Evey. \nEvernight has large self CD, CR, and DMG% buffs, restores extra energy when she or allied Memosprites use abilities, and both she and Evey consume HP when using abilities.\n\nEvernight's skill consumes her HP to increase the CD of ally memosprities in the team by 24% of her own CD\n\nEvernight generates Memoria upon her and memosprite actions, or when losing health. \n\nEvey has two skills:\nWhen Memoria is less than 16:\nEvey deals single target damage based on the number of Memoria stacks\nWhen Memoria reaches 16:\nEvey action advances itself. Its next attack deals AoE damage based on the amount of Memoria possesed. Afterwards, all Memoria is consumed and Evey self-destructs, restoring one SP and increasing Evernight's speed, scaling on Memoria consumed, until her next turn.\n\nEvernight's ultimate deals AoE damage and grants Evernight two charges of [Darkest Riddle].  While Evernight has charges of [Darkest Riddle], enemies receive increased damage,  Evernight and Evey deal more damage, and Evernight gains more Memoria after using her skill. Evey consumes a charge of [Darkest Riddle] after exploding.\n\nTeam synergies:\n✦ Characters who consume allies' HP and/or gain benefit from Evernight and Evey's self HP drains.\n✦ Remembrance Characters.\n✦ Support characters to amplify team's DMG.",
+    "worth_pulling": "",
+    "recommended_baseline": "E1S0 or E1S1",
+    "example_teams": [
+      {
+        "label": "Castorice Premium",
+        "members": [
+          "Evernight",
+          "Castorice",
+          "Cyrene",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Evernight Hypercarry",
+        "members": [
+          "Evernight",
+          "RMC",
+          "Cyrene",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Evernight Budget",
+        "members": [
+          "Evernight",
+          "RMC",
+          "Pela",
+          "Gallagher"
+        ]
+      },
+      {
+        "label": "Castorice Budget - Not Recommended",
+        "members": [
+          "Evernight",
+          "Castorice",
+          "RMC",
+          "Gallagher"
+        ]
+      },
+      {
+        "label": "Potential future Remembrance DPS team (Or wheelchair)",
+        "members": [
+          "Evernight",
+          "DPS",
+          "Tribbie",
+          "Hyacine"
+        ]
+      }
+    ]
+  },
+  "Hyacine": {
+    "kit_overview": "Kit overview: Consistent team-wide healer and HP buffer\nHyacine summons Ica with her Skill or Ultimate, then heals the whole team, and cleanse 1 debuff. Ica normally does not appear in the action bar nor take actions. If any allies lose HP, Ica will consume its own HP to heal allies.\n\nUpon using Ultimate. Hyacine heals the team and enters [After Rain] state, last for 3 turns. During [After Rain] state, all allies' max HP are increased. Ica will also launch an AoE attack upon using Ultimate.\n\nDuring [After Rain], every time Hyacine uses a Basic Attack or Skill, Ica will gain an extra turn and deal AoE damage based on the amount of healing they've done, The more Hyacine and Ica heals, the more damage Ica does.\n\nSynergies:\n✦ Units that can benefit from Hyacine's max HP buff\n✦ Characters that consume lots of HP and would appreciate her healing.\n✦ Characters that highly appreciate the HP drain from her S1.\n\nNotes:\n✦ Despite being a HP scaling character, Mydei consumes way too much HP, and Hyacine's healing actually cannot keep up with him. It is suggested to use another Healer with Mydei unless Hyacine has high investments.\n✦ Hyacine must spam her skill to maintain [After Rain] state. If the team does not need the max HP buff and her personal damage, Hyacine can spam Basic instead.",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S1",
+    "example_teams": [
+      {
+        "label": "Premium Castorice team",
+        "members": [
+          "Castorice",
+          "Evernight",
+          "Cyrene",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Premium Blade/Jingliu team (note : S1 Hyacine is wanted)",
+        "members": [
+          "Blade",
+          "RMC",
+          "Tribbie",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Evernight Hypercarry Premium",
+        "members": [
+          "Evernight",
+          "RMC",
+          "Cyrene",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Premium Acheron team",
+        "members": [
+          "Acheron",
+          "Silver Wolf",
+          "Cipher",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Works on every team",
+        "members": [
+          "Anyone",
+          "Anyone",
+          "Anyone",
+          "Hyacine"
+        ]
+      }
+    ]
+  },
+  "Castorice": {
+    "kit_overview": "Kit overview: Super HP-draining AoE focused DPS\nWhen allies lose or gain HP, Castorice will gain a special energy charge called Newbud, after she reaches 100% Newbud and uses her Ultimate, she summons Netherwing and creates a Territory that decrease enemies' RES. Netherwing has 3 attacks: \n[Skill 1]: consumes own HP to deal continuous AoE damage; [Skill 2]: deals 1 instance of AoE damage; [Skill 3]: when Netherwing disappear, it deals bounce damage to enemies. \n\nNetherwing cannot be targeted by enemies, and when Castorice gains Newbud, it will restore the Netherwing's HP instead. When your characters take fatal damage, Netherwing will take damage instead to keep them alive.\nCastorice and Netherwing has various DMG% buff. Her skill consume a big portion of your party's HP and deals blast damage. When Netherwing is present, enhances the skill to consume a bigger portion of party's HP; deal greater damage and become an AoE Joint ATK\n\nOnce obtained Castorice, if 1 character take fatal damage, enter Mooncocoon state and take action normally, if not healed or shielded in the next turn, they will be downed. Triggers once per battle.\n\nSynergies:\n✦ Supports who can buff all target, including memosprites or AoE debuffers.\n✦ Healer is a must, preferably one with high raw healing capabilities and can heal frequently.\nNote:\n✦Though Netherwing can sustain fatal DMG for the team, playing Castorice can be stressful, her abilities are also complex and require some learning for the best result.\n✦ Sunday can potentially ruin Castorice's performance if you do not know how to utilize him well. It's recommended to use simpler options.",
+    "worth_pulling": "",
+    "recommended_baseline": "S1 with Hyacine and Evernight",
+    "example_teams": [
+      {
+        "label": "Premium Castorice team",
+        "members": [
+          "Castorice",
+          "Evernight",
+          "Cyrene",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Half Premium team",
+        "members": [
+          "Castorice",
+          "RMC",
+          "Tribbie",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "You need more options?",
+        "members": [
+          "Castorice",
+          "Cipher",
+          "Tribbie",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "F2P - Not recommended",
+        "members": [
+          "Castorice",
+          "RMC",
+          "Pela",
+          "Gallagher"
+        ]
+      },
+      {
+        "label": "No Luocha or Hyacine, Gallagher is busy - Not recommended",
+        "members": [
+          "Castorice",
+          "Pela",
+          "Ruan Mei",
+          "Lingsha"
+        ]
+      },
+      {
+        "label": "Jingliu/Blade 2.0 - Meme team that actually work",
+        "members": [
+          "Castorice",
+          "Mydei",
+          "Tribbie",
+          "Hyacine"
+        ]
+      }
+    ]
+  },
+  "Aglaea": {
+    "kit_overview": "Kit Overview: Lightning-Speed Blast DPS\nAglaea summons Garmentmaker on the field with skill, when she attacks, inflicts [Seam Stitch] on the primary enemy, when attacked by Aglaea and Garmentmaker, this enemy will receive Additional DMG.\n\nAfter taking an action, Garmentmaker gains stacks of Speed buff.\n\nWhen Aglaea uses her Ultimate, she enters Supreme Stance she also gains said Speed buff, immediately takes action, increases her ATK based on both units' speed, enhances her Basic Attack to make it a Joint ATK together with her Memosprite and constantly deal Blast damage to enemies. This enhanced state has a countdown.\n\nSynergies:\n✦ Character that can benefits from the high attacks frequency.\n✦ Buffers, preferably who can also buff Garmentmaker at the same time.\n✦ Units that can provide energy via energy recharge or allowing Aglaea & Garmentmaker to take more action.\nNote:\n✦ Aglaea does not have high Toughness-Reduction at base even when considering her amount of attacks.\nTips:\n✦  Lets Garmentmaker take its turn if its Action Value is not far away to build up Speed buff stacks\n✦  You are allowed to keep casting Ultimate even if Aglaea is already in the enhanced state to take more action and reset the countdown.",
+    "worth_pulling": "",
+    "recommended_baseline": "",
+    "example_teams": [
+      {
+        "label": "The Golden Weaver - True Premium",
+        "members": [
+          "Aglaea",
+          "Sunday",
+          "Cyrene",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "The Charmony Duo Strikes again",
+        "members": [
+          "Aglaea",
+          "Sunday",
+          "Robin",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "No Sunday? No problem",
+        "members": [
+          "Aglaea",
+          "RMC",
+          "Cyrene",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Student and Teacher Duo",
+        "members": [
+          "Aglaea",
+          "Tribbie",
+          "Cyrene",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Wheelchaired",
+        "members": [
+          "Aglaea",
+          "Evernight",
+          "Cyrene",
+          "Hyacine"
+        ]
+      }
+    ]
+  },
+  "Trailblazer": {
+    "kit_overview": "Kit Overview: Generalist True DMG buffer\nTrailblazer summons Mem on the field with Skill or Ultimate, Mem will appear in Action Order. If Mem is already summoned, it will heal Mem instead.\n\nMem has a special Charge bar, which is gained whenever allies gain energy,  at a 10 energy/1% Charge ratio. Mem also passively provides Crit DMG to the whole team based on own Crit DMG.\n\nTheir Ultimate orders Mem to deal AoE damage, generate 40% Charge and gain Genesis. When RMC has Genesis, their Basic Attack will be enhanced, RMC will perform a joint-ttack with Mem.\nAfter using Ultimate, their next Basic Attack will deal AoE damage and generate 10% Charge.\nMem has 2 skills:\n- When Mem's Charge is not full, deals AoE+Bounce on enemy while also generate Charge when taking action.\n\n- When Mem's Charge is at 100%, Mem immediately take action, advancing a designated character by 100%, whilst providing them and their memosprite with Crit Rate and allow their attack to deal an extra instance of True Damage. The more Max Energy a character has, the stronger the True Damage buff they receive.\n\nSynergies:\n✦ Characters who are already oversaturated on self buffs or highly appreciate RMC's True Damage buff\n✦ Character with high max Energy will benefit most from the True Damage buff\nTips:\n✦ Try to manage Mem's charge to fully maximize the Action Advance from Mem's Skill. Try not to advance your DPS when they are already at 0 AV",
+    "worth_pulling": "",
+    "recommended_baseline": "",
+    "example_teams": [
+      {
+        "label": "Aglaea semi-premium team",
+        "members": [
+          "Aglaea",
+          "Cyrene",
+          "RMC",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Castorice Semi-Premium",
+        "members": [
+          "Castorice",
+          "Tribbie",
+          "RMC",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Jingliu Premium (req. Hyacine S1 on both RMC and Hyacine)",
+        "members": [
+          "Jingliu",
+          "Tribbie",
+          "RMC",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Generalist Support, fits all.",
+        "members": [
+          "Anyone",
+          "Anyone",
+          "RMC",
+          "Anyone"
+        ]
+      },
+      {
+        "label": "Absolute RMCinema (meme team...?)",
+        "members": [
+          "RMC",
+          "Cyrene",
+          "Sunday",
+          "Dan PT"
+        ]
+      }
+    ]
+  },
+  "Cerydra": {
+    "kit_overview": "Kit Overview: Double the skills\n✦ Cerydra selects one ally to receive Military Merit. The ally and Cerydra gain a flat SPD buff, and the ally also gets an ATK buff. When the ally deals damage, Cerydra will deal an instance of Additional DMG and gain 5 energy. This can activate up to 20 times, and the trigger count resets when using her Ultimate.\n\nCerydra gains a point of [Charge] when the ally with Military Merit takes action (+1), and when Cerydra uses her Skill (+1) or Ultimate (+2). \nOnce reaching 6 points of [Charge], Military Merit upgrades to Peerage, the ally additionally gaining a Skill CRIT DMG and RES PEN buff, consuming 6 points of [Charge] and copies the skill performed by the ally with Military Merit. When used, Peerage will revert back to Military Merit.\n\nCerydra gives herself a 100% CRIT Rate and massive CRIT DMG buffs.\n\nSynergies:\n✦ DPS who primarily deal Skill DMG and can take action often.\nNotes:\n✦ The skill copied must deal damage to trigger.\n✦ If charge is not at max, the ally with Military Merit can grant a stack through their ultimate once per battle.",
+    "worth_pulling": "",
+    "recommended_baseline": "E1",
+    "example_teams": [
+      {
+        "label": "Premium Phainon",
+        "members": [
+          "Cerydra",
+          "Phainon",
+          "RMC",
+          "Sparkle"
+        ]
+      },
+      {
+        "label": "Premium Anaxa",
+        "members": [
+          "Cerydra",
+          "Anaxa",
+          "Cyrene",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Tribbie must be busy",
+        "members": [
+          "Cerydra",
+          "Archer",
+          "Sparkle",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Seele Premium",
+        "members": [
+          "Cerydra",
+          "Seele",
+          "Sparkle",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Mydei Premium",
+        "members": [
+          "Cerydra",
+          "Mydei",
+          "Cyrene",
+          "Hyacine"
+        ]
+      }
+    ]
+  },
+  "Tribbie": {
+    "kit_overview": "Kit Overview: Generalist Team-Wide Support with Rare buffs and DPS abilities.\nTribbie's Skill grant RES PEN, when other allies attack, regenerate energy for Tribbie, when they use Ultimate, Tribbie deal an AoE FUA, with a limit that can be reset after using Ultimate.\n\nTribbie gains energy whenever an ally hit enemies, the more enemies are hit, the more energy they gain.\n\nTribbie's Ultimate has the following effect: Launches an AoE attack, create a [Zone] which inflict Vulnerability to all enemies, after an ally attacks, for every 1 target hit, deals 1 instance of Additional DMG to the target that has the highest HP among the hit targets.\n\nSynergies:\n✦  Allies that can frequently attack multiple targets to charge Tribbie's energy and deal more DMG.\n✦  Allies that enjoy a support unit who can also attack multiple targets often.\n✦  Teams that prefer having Res-Pen and Vulnerability for DMG amplification.\nNotes:\n✦  Since Tribbie's energy depend on how often and how many targets their allies attack, Tribbie's [Zone] can run into uptime issue in unfavorable situations.\nTips:\n✦ Tribbie's potential for Ultimate spam makes her a good holder of Dance!Dance!Dance! Light cone if you can utilize it.",
+    "worth_pulling": "",
+    "recommended_baseline": "E1S0 or E1S1",
+    "example_teams": [
+      {
+        "label": "Madam Herta Premium",
+        "members": [
+          "The Herta",
+          "Herta",
+          "Tribbie",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Pure Fiction bot",
+        "members": [
+          "DPS",
+          "Herta",
+          "Tribbie",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Amphoreus Girl Power",
+        "members": [
+          "Aglaea",
+          "Cyrene",
+          "Tribbie",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Saturated stats? Tribbie is here!",
+        "members": [
+          "Jingliu",
+          "RMC",
+          "Tribbie",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Acheron Premium - Feat E2 Silver Wolf",
+        "members": [
+          "Acheron",
+          "Silver Wolf",
+          "Tribbie",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Mono Quantum!",
+        "members": [
+          "Seele",
+          "Silver Wolf",
+          "Tribbie",
+          "Fu Xuan"
+        ]
+      }
+    ]
+  },
+  "Sunday": {
+    "kit_overview": "Kit Overview: Hypercarry support unit that get better with Summon Archetype.\nSunday lets 1 target and their summon (if they have one) to immediately take action, increases DMG% (more DMG% if the target has summon), Crit Rate% and dispels 1 debuff with his skill, lasting for 2 turns. His Ultimate applies [The Beatified] state, granting Crit DMG% and energy for the target.\n\nHis skill when used on ally with [The Beatified] state will no longer consume SP.\n\nSynergies:\n✦ As seen from how his abilities are introduced, it is clear that Sunday synergizes well with Summoner DPS-es, letting you skip the thought process of working with how fast or slow the summoned unit might be by simply advance it forward (e.g, Jing Yuan's Lightning Lord, Lingsha's Fuyuan).\n\n✦ Outside of the Summon archetype, Sunday still works well in many situations, namely for Crit DMG teams and has potential to be being BiS teammate in many of them.\n\nNotes:\n✦ Sunday's kit only buffs a single ally target, making him exclusively a Hypercarry support. He is not the most suitable for multiple DPS teams.\n✦ Sunday can not advance forward Harmony units with his skill, which limits certain setups.",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S1",
+    "example_teams": [
+      {
+        "label": "Jing Yuan is so back! - Jing Yuan Premium",
+        "members": [
+          "Jing Yuan",
+          "Sunday",
+          "Tribbie",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Charmony Doves Duo",
+        "members": [
+          "DPS",
+          "Sunday",
+          "Robin",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Aglaea Premium",
+        "members": [
+          "Aglaea",
+          "Sunday",
+          "Cyrene",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Asheil Hypercarry",
+        "members": [
+          "Ashveil",
+          "Sunday",
+          "Tribbie",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Unlimited Blade Works!",
+        "members": [
+          "Blade",
+          "Sunday",
+          "Bronya",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Wait, he can be used in Break team?",
+        "members": [
+          "Boothill",
+          "Sunday",
+          "Fugue",
+          "Dahlia"
+        ]
+      }
+    ]
+  },
+  "Robin": {
+    "kit_overview": "Kit Overview: Team-wide buffer with Sub-DPS capacity\nRobin buffs DMG% with her skill and Crit-DMG% for everyone from her talent. Additionally, when an attack from allies is unleashed, regenerates 2 energy for Robin.\n\nWhen activating Ultimate, Robin enters [Concerto] state: lets all allies immediately take action, buffs their ATK by a great amount based on her own ATK, extra Crit DMG% buff for FUA, and deal Additional Damage with 100% Crit Rate when an ally attacks, until the [Concerto] state ends.\n\nSynergies:\n✦ Units that attack frequently to charge Robin's energy and deal damage during [Concerto].\n✦ Any unit that can take advantage of her buffs, notably the huge ATK increase.\n✦ Characters or Light Cones that grant energy in case her Ultimate's up-time is struggling.\n\nNotes:\n✦ When [Concerto] is active, Robin cannot take action, which means she will not take turns often to follow a specific rotation like most characters, lowering self-energy and SP production.\n✦ With her Ultimate costing 160 Energy, not every team will be able to utilize Robin comfortably. Getting hit and energy buffs from allies, Light Cones and turbulences may compensate for this.\n\nTips:\n✦ Energy-granting abilities like Tingyun's or Sunday's Ultimate can be used on Robin to activate her Ultimate early; letting allies taking more set of turns may give good results when the timing is tight.",
+    "worth_pulling": "",
+    "recommended_baseline": "E1 at least, ideally E1S1 or E2",
+    "example_teams": [
+      {
+        "label": "Feixiao Premium",
+        "members": [
+          "Feixiao",
+          "Ashveil",
+          "Robin",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Time to Twirl",
+        "members": [
+          "Jade",
+          "Herta",
+          "Robin",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Archer Premium - E2 Robin is wanted",
+        "members": [
+          "Archer",
+          "Sparkle",
+          "Robin",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "DoT with Robin",
+        "members": [
+          "Kafka",
+          "Hysilens",
+          "Robin",
+          "Luocha"
+        ]
+      },
+      {
+        "label": "Phainon Premium Variant",
+        "members": [
+          "Phainon",
+          "Cerydra",
+          "Robin",
+          "Sparkle"
+        ]
+      },
+      {
+        "label": "She is a support, she fits anywhere (that can use her ATK and/or AA)",
+        "members": [
+          "Anyone",
+          "Anyone",
+          "Robin",
+          "Sustain"
+        ]
+      }
+    ]
+  },
+  "Sparkle": {
+    "kit_overview": "Kit Overview: Burst SP regeneration and High Crit DMG buffing support \nSparkle's skill advances 1 ally's action forward by 50%, and grants them CDMG% and All-Type RES PEN. If the buffed ally consumes 3 or more SP, Sparkle's next Skill will not consume SP.\n\nWhen Sparkle is on field, she increases the skill point (SP) cap by 2 and increases ATK% for the team. When anyone uses SP, Sparkle gains [Figment] which increases damage taken by enemies and stacks 3 times, and 1 extra energy per SP consumed.\n\nSparkle's Ultimate regenerates 6 SP, records SP Overflow from her Ultimate, up to 10 SP, and grant all allies [Cipher], further increasing damage taken by enemies and lasting 3 turns. At the end of an ally's turn, Sparkle will recover SP back to maximum by using up the recorded SP overflow.\n\nSynergies:\n✦ Team Setups or DPSs that appreciate the Burst SP generation (ie. Archer, DHIL)\n✦ Any DPS that make use of the 50% Action Forward effectively along with her various buffs\nNotes:\n✦ Sparkle's Action Forward effect is only 50%, which makes her best used along with slow DPS or DPS who are not otherwise turn-locked.\nTips:\n✦ Sparkle generates the same amount of energy whether she uses a basic attack or her skill, so you can opt for basic attacks instead of skill spamming.",
+    "worth_pulling": "",
+    "recommended_baseline": "E2S0",
+    "example_teams": [
+      {
+        "label": "Archer Premium",
+        "members": [
+          "Archer",
+          "Sparkle",
+          "Cipher",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "I love not building Speed on a DPS",
+        "members": [
+          "Anaxa",
+          "Sparkle",
+          "Cyrene",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Seele Premium",
+        "members": [
+          "Seele",
+          "Sparkle",
+          "Cerydra",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Sparxie Hypercarry",
+        "members": [
+          "Sparxie",
+          "Sparkle",
+          "Yao Guang",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "Single Nihility Acheron support (needs Acheron's S1 or E2)",
+        "members": [
+          "Acheron",
+          "Sparkle",
+          "Silver Wolf",
+          "Welt"
+        ]
+      },
+      {
+        "label": "Need a team for a Crit DPS?",
+        "members": [
+          "DPS",
+          "Sparkle",
+          "Tribbie",
+          "Sustain"
+        ]
+      }
+    ]
+  },
+  "Ruan Mei": {
+    "kit_overview": "Kit Overview: Strong team damage amplifier.\nWhen Ruan Mei is on field, she grants the whole team Break Effect and SPD. Whenever an enemy is weakness broken, Ruan Mei deals an additional damage based on her Break damage.\n\nHer Skill grants Weakness Break Efficiency and Damage bonus to the whole team.With her Ultimate, she deploys a field. In this field, allies will gain All-type RES PEN and attacked enemies will be inflicted with Thanatoplum Rebloom. This debuff delays enemies action further when they try to recover from weakness broken state.\n\nSynergies:\n✦ Best teammate for Break teams.\n✦ Works well with any teams that appreciate her teamwide buff.\n\nNotes:\n✦ The DMG% buff from her A6 Trace does not need to be maximised in Break teams, as it does not amplify Break damage.\n✦ Ruan Mei is typically built to be fast, however she can opt for slower builds for low cycle/low AV clears.\n\nTips:\n✦ Ruan Mei's technique is powerful in SU/DU for giving you a head start by reducing enemies toughness and dealing significant damage based on the amount of blessings that you have.",
+    "worth_pulling": "",
+    "recommended_baseline": "E1S0, E0S0 is fine",
+    "example_teams": [
+      {
+        "label": "Firefly Superbreak",
+        "members": [
+          "Firefly",
+          "Dahlia",
+          "Ruan Mei",
+          "Fugue"
+        ]
+      },
+      {
+        "label": "Premium Rappa team",
+        "members": [
+          "Rappa",
+          "Dahlia",
+          "Ruan Mei",
+          "Fugue"
+        ]
+      },
+      {
+        "label": "DoT",
+        "members": [
+          "Kafka",
+          "Hysilens",
+          "Ruan Mei",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Jingliu Hypercarry",
+        "members": [
+          "Jingliu",
+          "Sunday",
+          "Ruan Mei",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Don't have anything better?",
+        "members": [
+          "Castorice",
+          "Evernight",
+          "Ruan Mei",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "She works anyhwere, she's a support",
+        "members": [
+          "Anyone",
+          "Anyone",
+          "Ruan Mei",
+          "Sustain"
+        ]
+      }
+    ]
+  },
+  "Bronya": {
+    "kit_overview": "Kit Overview: Hypercarry support unit with potent Action Advances.\nBronya's Skill lets 1 target immediately take action, increases their DMG% and dispels 1 debuff with her Skill, the buff lasting for 1 turn. Her ultimate grants Crit DMG% and ATK for the entire team.\nWhile on the field, Bronya also buffs her team's DMG%.\n\nHer Basic Attack also advances her action forward, making it useful for certain rotations.\n\nSynergies:\n✦ Bronya is great for units who highly value action advance and deals majority of their damage on turn.\n\nNotes:\n✦ Bronya's kit only buffs her target for low amounts of turns, making her mostly a Hypercarry support. She is not the most suitable for multiple DPS teams.\n✦ Bronya without E1 and/or S1/Sunday S1 can be very SP intensive, requires good SP management in order to maximize her potential.\n✦ Due to her short buff duration, Bronya should be used with DPS who deals damage on-turn.\n\nTips:\n✦ Bronya can also advance Harmony units, unlike Sunday, so using her to advance Sunday -> your main DPS is a very viable team comp.",
+    "worth_pulling": "",
+    "recommended_baseline": "E1S1",
+    "example_teams": [
+      {
+        "label": "A WILL PRESERVED IN ICE WILL NEVER FALTER - Meme team",
+        "members": [
+          "Serval",
+          "Bronya",
+          "Pela",
+          "Gepard"
+        ]
+      },
+      {
+        "label": "Seele Half-Premium (or is it?)",
+        "members": [
+          "Seele",
+          "Bronya",
+          "Cerydra",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Boothill likes that Action Advance",
+        "members": [
+          "Boothill",
+          "Bronya",
+          "Fugue",
+          "Dahlia"
+        ]
+      },
+      {
+        "label": "Feixiao Variant - Featuring E4 Bronya",
+        "members": [
+          "Feixiao",
+          "Bronya",
+          "Ashveil",
+          "Robin"
+        ]
+      },
+      {
+        "label": "Aglaea Double Advancer setup",
+        "members": [
+          "Aglaea",
+          "Bronya",
+          "Sunday",
+          "Robin"
+        ]
+      }
+    ]
+  },
+  "Evanescia": {
+    "kit_overview": "Kit Overview: Energy-Based Elation Main DPS\n✦ When Evancescia gains Certified Banger, she gains an equal amount of Energy (up to 100). When she gains Energy, she gains an equal amount of Certified Banger. Additionally, when allies with a lower participant ID gain or lose Certified Banger, Evancescia gains a portion of it.\n\n✦ After Evancescia gains a certain amount of Energy, Fox Teacher launches an attack against all enemies, applying Vulnerability.\n\n✦ Evancescia's Skill deals Blast Elation damage and Physical damage while generating additional Punchline.\n\n✦ Evancescia's Elation Skill deals Elation damage to all enemies and generates additional Certified Banger.\n\n✦ Evanescia can store excess Energy, up to the equivalent of one ultimate. Evancescia's Ultimate deals AoE damage to all enemies, followed by five instances of Bounce damage. The number of Bounce instances increases when there are fewer enemies on the field.\n\nSynergies:\n✦ Characters that can frequently gain and lose Certified Banger.",
+    "worth_pulling": "",
+    "recommended_baseline": "E1S0 Evanescia, E0S0 Yao Guang",
+    "example_teams": [
+      {
+        "label": "Premium Evanescia",
+        "members": [
+          "Evanescia",
+          "EMC",
+          "Yao Guang",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "Less Premium Evanescia",
+        "members": [
+          "Evanescia",
+          "Sparxie",
+          "Yao Guang",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "No Yao Guang Evanescia",
+        "members": [
+          "Evanescia",
+          "EMC",
+          "Sparkle",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Budget Evanescia - (Not Reccomended)",
+        "members": [
+          "Evanescia",
+          "EMC",
+          "Tingyun",
+          "Sustain"
+        ]
+      }
+    ]
+  },
+  "Silver Wolf LV.999": {
+    "kit_overview": "Kit Overview: I'll just cheat my way to victory.\n✦ Silver Wolf LVL 999 (SW999) gains Hidden MMR (HMMR) for every Punchline obtained with a cap of 300. When reaching 60 HMMR, SW999 is able to use her ultimate. Every point of HMMR obtained grants a small amout of CRIT Rate. When CRIT Rate is at 100%, HMMR will swap to buffing CRIT DMG.\n\n✦ After using her ultimate, SW999 will immediately take action and enter the Godmode Player state.  Her Basic ATK and Elation skill are enhanced, SW999 will be immune to Crowd Control, and when in possession of Certified banger, all of her attacks deal Imaginary Elation DMG. Her Enhanced Basic ATK deals AOE DMG and will trigger one of three Top Loot Boxes. Either dealing additional True DMG to the enemy with the highest HP, recovering 2 Skill Points or obtaining 3 Punchline. After launching an effect, its chance to be selected is decreased until the next EBA. A zone that allows allies to trigger her Top Loot Boxes when using skill points is active during this state. The state lasts for 3 turns, and once exited, all HMMR is cleared. \n\n✦ SW999's Skill deals AOE DMG and gives 5 Punchline. Her Elation skill gives 15 HMMR. Her Enhanced Elation skill deals bounce DMG to all enemies and resets the chance for Top Loot Box triggering back to its initial value. SW999's Elation increases by 2% for every point of spd above 160, up to 100. If the number of Punchline obtained when using an Elation Skill is 20/40+, gain an additional 20/40 HMMR\n\n✦ When obtaining SW999, if an ally suffers a crowd control debuff, all allies gain Firewall, which blocks all crowd control debuffs from enemies for one turn. This can trigger once per wave.\n\nSynergies:\n✦ Elation allies that generate Punchline\n✦ Allies that can burn lots of Skill points at once\n\nNotes:\n✦ Use SW999's ultimate before the next Aha Instant to trigger her Enhanced Elation Skill",
+    "worth_pulling": "",
+    "recommended_baseline": "E2S1",
+    "example_teams": [
+      {
+        "label": "Easy Win: Activated",
+        "members": [
+          "SW Lv999",
+          "Sparxie",
+          "Yao Guang",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "The Kings local diviner",
+        "members": [
+          "SW Lv999",
+          "EMC",
+          "Yao Guang",
+          "Fu Xuan"
+        ]
+      },
+      {
+        "label": "A God and their jesters",
+        "members": [
+          "SW Lv999",
+          "EMC",
+          "Sparxie",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Tutorial Failed - (Not Reccomended)",
+        "members": [
+          "SW Lv999",
+          "EMC",
+          "Sparkle",
+          "Dan PT"
+        ]
+      }
+    ]
+  },
+  "Sparxie": {
+    "kit_overview": "Kit Overview: Aha requires all of your SP again\nSparxie's Skill consumes SP to enhance her Basic Attack's DMG, up to 20 times, each Skill usage gives one of two random gifts:  gives 1 Punchline, or 2 Punchline & 2 SP. Her EBA deals Blast DMG and gives 1 SP.\n\nWhen Sparxie holds Certified Banger, her Ultimate deals AoE Elation DMG and each time she uses her Skill, her EBA deals 1 extra instance of Elation DMG.\n\nSparxie's Elation Skill Deals AoE Elation DMG, 20 bounce Elation DMG and gives Thrill, which acts as SP. Sparxie's Ultimate deals AoE DMG, gives herself Thrill and Punchline.\n\nThe more Punchline the team has, the more CDMG% Sparxie grants to the team. The more Elation units are in the team, the more Thrill and Punchline her Ultimate generates. Up to 3 units.\n\nSynergies:\n✦ Elation characters and teams.\n✦ Teammates that restore SP.",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S1 with Yao Guang",
+    "example_teams": [
+      {
+        "label": "Silver Wolf 999 Premium",
+        "members": [
+          "SW Lv999",
+          "Sparxie",
+          "Yao Guang",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Aha's Finest",
+        "members": [
+          "Sparxie",
+          "Yao Guang",
+          "Sparkle",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Alternate Trickster - E2+ Sparxie is wanted",
+        "members": [
+          "Sparxie",
+          "Yao Guang",
+          "Cipher",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Budget - Not Recommended",
+        "members": [
+          "Sparxie",
+          "Tingyun",
+          "Pela",
+          "Gallagher"
+        ]
+      }
+    ]
+  },
+  "Yao Guang": {
+    "kit_overview": "Kit Overview: Premium Elation Support\nYao Guang's skill deploys a zone which lasts for 3 turns, and increases allied units' Elation, and makes both her skill and basic attack generate 3 Punchlines.\n\nWhen Yao Guang holds Certified Banger, every time any ally attacks, she provides an additional instance (or two, if the attack consumed skill points) of Elation DMG of the corresponding type to one random target among the ones hit by the attack, using the highest Elation value among her and the attacking unit.\n\nYao Guang's Ultimate provides All Type Res Pen for the team, lasting 3 turns, and immediately trigger an additional Aha Instant, fixed at 20 Punchlines.\n\nYao Guang's Elation Skill recovers a Skill Point, deals damage to all enemies and inflicts Vulnerability on them for 3 turns.\n\nSynergies:\n✦ Elation heavy teams are likely to work well with Yao Guang's extra Aha instant.\n✦ SP hungry teams.\n✦ Sparxie is the only one currently known, which makes her the obvious teammate.\n\nNotes:\n✦ It's hard to evaluate how relevant Yao Guang will be, and how she will interact with a whole new set of yet unknown units she seems to be tailored for.\n✦ Her additional DMG uses her own Elation value if higher than the ally unit's one, which means she can somewhat work even in non-elation teams, although it's not recommended.",
+    "worth_pulling": "",
+    "recommended_baseline": "E1 and/or S1",
+    "example_teams": [
+      {
+        "label": "Sparxie Premium",
+        "members": [
+          "Yao Guang",
+          "Sparxie",
+          "Sparkle",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Premium Evanescia",
+        "members": [
+          "Evanescia",
+          "EMC",
+          "Yao Guang",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "Easy Win: Activated",
+        "members": [
+          "SW Lv999",
+          "Sparxie",
+          "Yao Guang",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "You need SP? - Not recommended",
+        "members": [
+          "Yao Guang",
+          "Archer",
+          "Sparkle",
+          "Dan PT"
+        ]
+      }
+    ]
+  },
+  "Lingsha": {
+    "kit_overview": "Kit Overview: Constant team-wide Healer and Area of Effect Attacker\nLingsha summons [Fuyuan] on the Action Order with her skill and technique. \n\nLingsha's Skill deals AoE damage, heal allies, advance [Fuyuan] action, and grant 3 action count, up to 5 maximum. If an ally gets below 60% HP, [Fuyuan] launches an attack. The effect triggers per 2 turns\n\nWhen [Fuyuan] take action, it will consume 1 action count to deal AoE damage (This is considered FUA), cleanse one debuff and heal all allies\n\nFinally, her Ultimate inflicts Break Damage Vulnerability and Advance Forward [Fuyuan] by 100%.\nTeam Synergies:\n✦ Characters that benefit from the many attacks of Lingsha: (AoE attack, Fire Toughness DMG, FUA).\n✦ Break and Super Break teams and units.\nNote:\n✦ In some rare cases, [Fuyuan] might arrive sooner or later than when you need it.\nTips:\n✦ You can use Basic Attack for the first 3 of Lingsha's turns after using her technique.\n✦ Purposely lowering your units' HP/DEF, making them more squishy to trigger [Fuyuan]'s emergency heal early for more AoE attacks is an option.",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S0 is fine, E1 for Break",
+    "example_teams": [
+      {
+        "label": "The Erudition Package",
+        "members": [
+          "Jade",
+          "Tribbie",
+          "The Herta",
+          "Lingsha"
+        ]
+      },
+      {
+        "label": "AoE Super Break Main DPS Lingsha",
+        "members": [
+          "Sunday",
+          "Fugue",
+          "Dahlia",
+          "Lingsha"
+        ]
+      },
+      {
+        "label": "Jade 2 supports enabler - Sunday's skill on Lingsha",
+        "members": [
+          "Jade",
+          "Sunday",
+          "Robin",
+          "Lingsha"
+        ]
+      },
+      {
+        "label": "AoE Toughness Reduction for Rappa - Rappa Premium team",
+        "members": [
+          "Rappa",
+          "Fugue",
+          "Dahlia",
+          "Lingsha"
+        ]
+      },
+      {
+        "label": "Full on FUA",
+        "members": [
+          "Feixiao",
+          "Moze",
+          "Hunt March 7th",
+          "Lingsha"
+        ]
+      },
+      {
+        "label": "So you need a Sustainer for Break teams?",
+        "members": [
+          "DPS",
+          "Fugue",
+          "Dahlia",
+          "Lingsha"
+        ]
+      }
+    ]
+  },
+  "Huohuo": {
+    "kit_overview": "Kit Overview: Constant cleanse and team buffer sustain\nHuohuo's skill heals 3 targets, with more heal and a cleanse for the main target. Her Ultimate regenerates 20% Max Energy for all allies (excluding herself) and grants an ATK% buff to the team, allies with at least 140 max energy gain increased ATK% buff. After using Skill or Ultimate, Huohuo gains [Divine Provision], lasting for 3 turns.\n\nUnder [Divine Provision] effect, whenever any ally takes action or uses an Ultimate, Huohuo heals them together with the lowest hp ally and any other ally whose HP is below 50% and gains 1 energy.\n\nTeam Synergies:\n✦ Any units that appreciate her healing, ATK% buff or energy generation. (or speed from e1)\n✦ Units that can act frequently and/or activate Ultimate often.\n\nNotes:\n✦ Each refresh of [Divine Provision] can only cleanse 6 times, but this is hardly an issue in real battle.\n✦  Huohuo can be SP positive with EAAA rotation for 4-turn Ultimate, but she has buff downtime.\nTips:\n✦ Put Huohuo at the edge of your team so she can heal 3 other allies with her skill, while keeping her own HP high through her talent's healing and defensive stat.",
+    "worth_pulling": "",
+    "recommended_baseline": "E0 works fine, but E1 is recomended",
+    "example_teams": [
+      {
+        "label": "Excalibur",
+        "members": [
+          "Saber",
+          "Sparkle",
+          "Robin",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "DoT",
+        "members": [
+          "Black Swan",
+          "Hysilens",
+          "Kafka",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "Aha Party",
+        "members": [
+          "Sparxie",
+          "SW Lv999",
+          "Yao Guang",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "So you guys like gaining energy?",
+        "members": [
+          "Aglaea",
+          "Sunday",
+          "Robin",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "Unlimited ult works",
+        "members": [
+          "Archer",
+          "Silver Wolf",
+          "Sparkle",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "She is a sustain, she fits anywhere",
+        "members": [
+          "Anyone",
+          "Anyone",
+          "Anyone",
+          "Huohuo"
+        ]
+      }
+    ]
+  },
+  "Luocha": {
+    "kit_overview": "Kit overview: Constant team-wide healer \nWhen Luocha uses his Skill or emergency heal activation when an ally's HP drop below 50% or uses his Ultimate, he gains 1 stack of [Abyssal Flower]. When he obtains 2 stacks, he consumes all stacks and unleashes a field which lasts for 2 turns, anyone who attack enemies in this field will heal themselves and the entire party.\n\nLuocha's skill and emergency heal are the same thing, which is a single-target heal and remove 1 debuff on the selected ally.\n\nLuocha's ultimate dispel 1 buff on enemies.\n\nTeam Synergies:\n✦ Any units who can attack frequently and can constantly heal the team\n✦ Units who highly appreciate the amount of SP that Luocha generates\n✦ Characters who consumes a large portion of their own HP or other allies' HP\n\nNotes: \n✦ Luocha does not need to consume any SP to sustain, so he's always SP positive\n✦ In order to maintain a 100% field time, some good timing when using Ultimate is recommended\n✦ Due to his absurdly high raw healing capabilities, going for HP/DEF mainstat is also a good choice as Luocha is very squishy because of his ATK scaling heals",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S0",
+    "example_teams": [
+      {
+        "label": "Hyaless Mydei",
+        "members": [
+          "Mydei",
+          "Cyrene",
+          "Cerydra",
+          "Luocha"
+        ]
+      },
+      {
+        "label": "Express Imaginary Men Harem... and Luocha - Dan IL hypercarry",
+        "members": [
+          "Dan IL",
+          "Sunday",
+          "Welt",
+          "Luocha"
+        ]
+      },
+      {
+        "label": "Luocha's Zone and his self-harm team",
+        "members": [
+          "Blade",
+          "Jade",
+          "Tribbie",
+          "Luocha"
+        ]
+      },
+      {
+        "label": "Infinite Healing works",
+        "members": [
+          "Yunli",
+          "Robin",
+          "Tingyun",
+          "Luocha"
+        ]
+      },
+      {
+        "label": "Luocha's Zone and his masochist team",
+        "members": [
+          "Castorice",
+          "Mydei",
+          "Tribbie",
+          "Luocha"
+        ]
+      },
+      {
+        "label": "He is a sustain, he fits anywhere",
+        "members": [
+          "Anyone",
+          "Anyone",
+          "Anyone",
+          "Luocha"
+        ]
+      }
+    ]
+  },
+  "Bailu": {
+    "kit_overview": "Kit Overview: Generic universal sustain\nUpon using Ultimate, Bailu heals all ally and grant them Invigoration. Invigorated allies will heal whenever they take damage and gain DMG reduction, this effect last for 2 turns. \n\nBailu's Skill heals 2 randoms allies after healing the targeted ally once. Subsequent heals are less effective after each instances.\n\nWhen an ally take fatal damage, Bailu can revive them. This can occur only once per battle.\n\nTeam Synergies:\n✦ Solid sustainer for any teams that need one.\n\nNotes:\n✦ Bailu's majority of healings are from her Ultimate and Invigoration, so she rarely has to use Skill. Only use her Skill when necessary.\n✦ Bailu does not have any way to counter debuffs and Crowd Control, which makes her a lot less effective when you need a way to deal with Crowd Control.",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S0 is fine.",
+    "example_teams": [
+      {
+        "label": "No one better? Use bailu",
+        "members": [
+          "Bailu",
+          "Seele",
+          "Sparkle",
+          "Tribbie"
+        ]
+      },
+      {
+        "label": "Dying a lot? Use bailu",
+        "members": [
+          "Bailu",
+          "Blade",
+          "Tribbie",
+          "Sunday"
+        ]
+      },
+      {
+        "label": "Double Revive",
+        "members": [
+          "Bailu",
+          "Castorice",
+          "RMC",
+          "Tribbie"
+        ]
+      },
+      {
+        "label": "Broke? Use Bailu",
+        "members": [
+          "Bailu",
+          "Serval",
+          "Tingyun",
+          "Pela"
+        ]
+      },
+      {
+        "label": "You get the point",
+        "members": [
+          "Bailu",
+          "Anyone",
+          "Anyone",
+          "Anyone"
+        ]
+      }
+    ]
+  },
+  "Gallagher": {
+    "kit_overview": "Kit Overview: Versatile Sustain, special Break synergy\nGallagher's Ultimate advances his action by 100%, applies Besotted to hit enemies, which increase Break damage taken, and enhanced his Basic Attack.\n\nWhen allies attack an enemy with Besotted, they heal an amount of HP depending on how many enemies with the debuff were hit.\n\nGallagher's Enhanced Basic Attack reduces the hit enemy's Attack, and heal the team if he hit a Besotted enemy\n\nHis Skill heals one ally and cleanse them at E2.\n\nTeam Synergies:\n✦ Break DMG amplification allows for him to be used in Break/Super Break teams.\n✦ Gallagher's raw healings are the highest in the game, making him a good pick for units with heavy HP drain\n✦ His SP positivity (+1.25) can be great for SP hungry teams or DPSes.\nNotes:\n✦His Ultimate cannot provide healing for allies in between enemies' multiple actions, which can be bad against enemies with multiple actions.\nTips:\n✦Always use his Ultimate out of turn, as it provides an extra action -> More SP, energy, etc",
+    "worth_pulling": "",
+    "recommended_baseline": "Yes (E2+ wanted for the cleanse on skill)",
+    "example_teams": [
+      {
+        "label": "So you need Break DMG buff?",
+        "members": [
+          "Boothill",
+          "Sunday",
+          "Fugue",
+          "Gallagher"
+        ]
+      },
+      {
+        "label": "So you need extra Skill Point?",
+        "members": [
+          "Firefly",
+          "HMC",
+          "Ruan Mei",
+          "Gallagher"
+        ]
+      },
+      {
+        "label": "So you need attack frequency?",
+        "members": [
+          "Feixiao",
+          "Hunt March 7th",
+          "Robin",
+          "Gallagher"
+        ]
+      },
+      {
+        "label": "So you need a Quid Pro Quo (Abundance Light Cone) holder?",
+        "members": [
+          "Serval",
+          "Tingyun",
+          "Asta",
+          "Gallagher"
+        ]
+      },
+      {
+        "label": "So you need Debuffs?",
+        "members": [
+          "Dr. Ratio",
+          "Sunday",
+          "Jiaoqiu",
+          "Gallagher"
+        ]
+      },
+      {
+        "label": "So you need a sustain?",
+        "members": [
+          "Anyone",
+          "Anyone",
+          "Anyone",
+          "Gallagher"
+        ]
+      }
+    ]
+  },
+  "Ashveil": {
+    "kit_overview": "Kit Overview: Chase enemies until they die\nUpon using his Skill, attacks 1 enemy and selects them as Bait. Additionally, when Bait is inflicted, decreases DEF of all enemies, and using Skill on enemy with Bait recover 1 SP. If the Bait is defeated, enemy with lowest hp will be the new Bait.\n\nAt the battle starts, Ashveil gains Charges.  He will also gain extra Charge when he use his technique. When other allies attack the Bait, Ashveil consumes 1 charge to launch a FUA and gain energy.\n\nWith his Ultimate, Ashveil will inflict Bait to the selected enemy and gains 3 Charges. Then, Ashveil will launch an enhanced FUA without consuming his charges.\n\nAshveil can gain [Gluttony] using his Skill, Ultimate, or when he kills enemy.  Ashveil can have 12 [Gluttony] max. When using Ultimate, Ashveil consumes 4 [Gluttony] to launch extra FUA attack until [Gluttony] reaches below 4. if Bait dies, Ashveil targets enemy with lowest HP next.\nSynergies:\n✦ Fua Supports or DPS / Sub-DPS.\n✦ Allies with high hit count.\n\nNotes:\n✦ Ashveil doesn't have any ATK on his base kit, making other sources of ATK buff more valuable.",
+    "worth_pulling": "",
+    "recommended_baseline": "E1 or S1",
+    "example_teams": [
+      {
+        "label": "Hypercarry",
+        "members": [
+          "Ashveil",
+          "Sparkle",
+          "Tribbie",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "\"Quad\" DPS",
+        "members": [
+          "Feixiao",
+          "Tribbie",
+          "Ashveil",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Classic Dual DPS",
+        "members": [
+          "Feixiao",
+          "Ashveil",
+          "Robin",
+          "Aventurine"
+        ]
+      },
+      {
+        "label": "Another Hyperrcarry",
+        "members": [
+          "Ashveil",
+          "Sunday",
+          "Cipher",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Budget Ashveil",
+        "members": [
+          "Ashveil",
+          "RMC",
+          "Tingyun",
+          "sustain"
+        ]
+      }
+    ]
+  },
+  "Archer": {
+    "kit_overview": "Kit Overview: CRIT DPS who eats SP whole\nArcher's Skill makes him enter the Circuit Connection state and extends his turn. In this state, he consumes 2 SPs to launch a powerful ST attack. This attack is considered Skill damage, Archer will exit this state after 5 Uses / Manually Ending / Run out of SP. Using this ability repeatedly will also greatly increase Skill damage.\n\nIn battle, Archer increases the SP cap by 2. Whenever allies attack enemies, Archer consumes 1 Charge to launch an FUA, and gains 1 SP. Archer's Ultimate deals massive ST to an enemy and grants 2 Charge. Additionally, entering battle or using his Technique will also grant 1 Charge.\n\nSynergies:\n✦ Supports that can generate Skill Points frequently or do not use much SPs themselves.\n✦ Supports with good damage amplification, action advance, etc.\n\nTips: \n✦ Make sure Archer has as many Skill Points as possible before he enters the Circuit Connection state again.",
+    "worth_pulling": "",
+    "recommended_baseline": "E1",
+    "example_teams": [
+      {
+        "label": "Premium",
+        "members": [
+          "Archer",
+          "Sparkle",
+          "Cipher",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "No cat? - Another Premium",
+        "members": [
+          "Archer",
+          "Sparkle",
+          "Silver Wolf",
+          "Luocha"
+        ]
+      },
+      {
+        "label": "True Premium - Featuring E2 Robin",
+        "members": [
+          "Archer",
+          "Sparkle",
+          "Robin",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "No Wolf or Cat?",
+        "members": [
+          "Archer",
+          "Sparkle",
+          "Tribbie",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Budget",
+        "members": [
+          "Archer",
+          "Tingyun",
+          "RMC",
+          "Gallagher"
+        ]
+      }
+    ]
+  },
+  "Feixiao": {
+    "kit_overview": "Kit Overview: Ultimate & Follow-Up Attack DPS that thrives on team's attack frequency\nFeixiao launches a FUA after using her skill and when an ally attacks. For every 2 ally attacks, a point of [Flying Aureus] is gained, storing up to 12 points. Activating her Ultimate consume 6 points, unleashing a strong Single-Target attack.\n\nHer Ultimate counts as both FUA damage and Ultimate damage. It can deal Toughness Damage regardless of Weakness Type with increased Toughness Reduction against unbroken targets; for broken targets, increase DMG dealt. Finally, buff self Crit DMG% and ATK% by a good amount.\n\nSynergies:\n✦ Supports focused on buffing Crit DPS. \n✦ Action Advance/Speed buffers to the team more turns.\n✦ Allies that attack frequently charge Feixiao's Ultimate more quickly.\n\nTips:\n✦ You can use the weaker attack type during Feixiao's Ultimate as damage control. By keeping an enemy's HP low, you can finish them of with her Skill to charge more points for the next wave.",
+    "worth_pulling": "",
+    "recommended_baseline": "Robin with Feixiao S1 and/or E2",
+    "example_teams": [
+      {
+        "label": "FART team",
+        "members": [
+          "Feixiao",
+          "Aventurine",
+          "Robin",
+          "Topaz"
+        ]
+      },
+      {
+        "label": "Feixiao Premium",
+        "members": [
+          "Feixiao",
+          "Ashveil",
+          "Robin",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Half- Premium",
+        "members": [
+          "Feixiao",
+          "Hunt March 7th",
+          "Tribbie",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Hypercarry Feixiao, why not? - E4 Bronya is wanted",
+        "members": [
+          "Feixiao",
+          "Bronya",
+          "Robin",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Pure Fiction Feixiao - Herta Enabler",
+        "members": [
+          "Feixiao",
+          "Herta",
+          "Tribbie",
+          "Hyacine"
+        ]
+      }
+    ]
+  },
+  "Boothill": {
+    "kit_overview": "Kit Overview: Single-Target Break DPS\nBoothill's Skill forces an enemy and himself into Standoff State, increasing Boothill‘s DMG dealt and received, as well as enhancing his Basic Attack. By breaking or defeating the enemy while in Standoff, Boothill gains one [Pocket Trickshot], stacking up to a maximum of three. Each stack increases the Toughness Reduction and Break Damage dealt with his Enhanced Basic Attack.\n\nHis Ultimate applies Physical Weakness while dealing damage and delaying the enemy. Additionally, by using his technique, Boothill's first skill usage can also implant Physical Weakness.\n\nTeam Synergies:\n✦ Break Damage amplifier: DEF Shred, Weakness-Break Efficiency, Break Effect% buff, etc.\n✦ Action Advance or Speed buffer characters to let him take more turns.\n\nNotes:\n✦ Boothill's damage is miniscule against Immune to Toughness Reduction & Unbroken Enemies.\n✦ Standoff State taunts the enemy, forcing them to attack Boothill and increasing their damage against him. This can make a strong sustain more necessary.\n \nTips:\n✦ At the beginning of the battle, gain stacks faster by targeting weaker enemies first.\n✦ Action advance support should be slightly slower than Boothill in battle.",
+    "worth_pulling": "",
+    "recommended_baseline": "Yes",
+    "example_teams": [
+      {
+        "label": "Premium Boothill team",
+        "members": [
+          "Boothill",
+          "Dahlia",
+          "Fugue",
+          "Sunday"
+        ]
+      },
+      {
+        "label": "Half- Premium",
+        "members": [
+          "Boothill",
+          "Ruan Mei",
+          "Fugue",
+          "Gallagher"
+        ]
+      },
+      {
+        "label": "More Superbreak = More Damage",
+        "members": [
+          "Boothill",
+          "Dahlia",
+          "Fugue",
+          "HMC"
+        ]
+      },
+      {
+        "label": "Budget team",
+        "members": [
+          "Boothill",
+          "HMC",
+          "Pela",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Sustained Boothill",
+        "members": [
+          "Boothill",
+          "Dahlia",
+          "Fugue",
+          "Lingsha"
+        ]
+      }
+    ]
+  },
+  "Dr. Ratio": {
+    "kit_overview": "Kit Overview: Single-Target FuA Specialist\nWhen Dr. Ratio uses his Skill to deal damage and apply a debuff, there is a chance of launching a FUA attack afterward. The more debuffs the enemy has, the higher the chance to launch a FUA attack and the higher damage they will take from Dr. Ratio. If the enemy die before the FUA attack, he will attack a random enemy instead.\n\nDr. Ratio's Ultimate deal Single-target damage to an enemy and apply Wiseman's Folly. If this enemy is attacked by ally, Dr. Ratio will launch a FUA attack, this trigger up to 2 times.\n\nSynergies:\n✦ Debuffers with constant uptime are essential for consistently triggering FUA attacks. \n✦ Supports with strong damage amplification, action advance, energy are highly appreciated.\n\nNotes:\n✦ Light Cones that provide debuffs can be valuable on supports and sub-DPSes.",
+    "worth_pulling": "",
+    "recommended_baseline": "E1",
+    "example_teams": [
+      {
+        "label": "Premium Wheelchair",
+        "members": [
+          "Dr. Ratio",
+          "Ashveil",
+          "Tribbie",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Hypercarry Ratio",
+        "members": [
+          "Dr. Ratio",
+          "Sparkle",
+          "Cipher",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "More Hypercarry Variation",
+        "members": [
+          "Dr. Ratio",
+          "Sunday",
+          "Tribbie",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "RRAT (Requires Vertical Investment)",
+        "members": [
+          "Dr. Ratio",
+          "Robin",
+          "Aventurine",
+          "Topaz"
+        ]
+      },
+      {
+        "label": "Premium Wheelchair",
+        "members": [
+          "Dr. Ratio",
+          "Ashveil",
+          "Tribbie",
+          "Dan PT"
+        ]
+      }
+    ]
+  },
+  "Topaz & Numby": {
+    "kit_overview": "Kit overview: Single-target FUA Sub-DPS\nTopaz randomly inflicts [Proof of Debt] debuff on 1 target which increases Follow-Up Attack DMG taken, using Skill can reapply this debuff and let Numby attacks once. \n\nNumby appears on the action order and attack the target with said debuff, it gets advanced by 50% if its target is attacked by a FUA attack. All Topaz's attacks are considered FUA.\n\nTopaz's Ultimate buffs Numby and it can be advanced by any attacks of other teammates for 2 turns.\n\nSynergies:\n✦ Topaz works well with any FUA DPS.\n✦ Support units that can amplify team DMG, as Topaz damage contribution to the team is significant.\n✦ Units that has frequent FUA attacks.\n\nNotes:\n✦ Topaz can be a SP neutral or SP positive sub-DPS as spamming skill is unnecessary.\n✦ She can even be played as a hypercarry role but require good investment and supports to have decent results. Otherwise, using her in a sub-DPS role is recommended.",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S1",
+    "example_teams": [
+      {
+        "label": "FART team",
+        "members": [
+          "Feixiao",
+          "Aventurine",
+          "Robin",
+          "Topaz"
+        ]
+      },
+      {
+        "label": "Topaz and smaller Topaz?",
+        "members": [
+          "Topaz",
+          "Clara",
+          "Robin",
+          "Luocha"
+        ]
+      },
+      {
+        "label": "FUAs go brrrr",
+        "members": [
+          "Topaz",
+          "Hunt March 7th",
+          "Moze",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Dr. Ratio budget dual DPS",
+        "members": [
+          "Topaz",
+          "Dr. Ratio",
+          "Pela",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Main DPS Topaz yay",
+        "members": [
+          "Topaz",
+          "Sunday",
+          "Robin",
+          "Sustain"
+        ]
+      }
+    ]
+  },
+  "Seele": {
+    "kit_overview": "Kit Overview: Mobs Cleaner\nWhenever Seele defeats an enemy, she triggers [Resurgence]. During [Resurgence], Seele enters Amplification state, which grants her increased DMG, Quantum RES PEN and an extra turn. Defeating enemies in this extra turn will not trigger another [Resurgence].\n\nSeele's Skill deals DMG to a single enemy and increases her SPD. If any ally attacks any enemy and causes their HP to reach 50% or lower, Seele immediately uses her Skill at that target. This Skill does not consume SP or generate energy, and can only be triggered once per Seele's turn.\n\nUpon using Seele's Ultimate, she enters Amplification state and deals a huge amount of DMG to one enemy. \n\nSeele's Basic Attack deals minor DMG to one enemy and advances herself by 20%.\n\nSynergies:\n✦ Supports who helps her get more actions or turns.\n✦ Any traditional Crit supports with fine DMG amplification.\n\nNotes:\n✦ It is recommended to be smart with targetting enemies to maximize Seele's turns and DMG.\n✦ Allies with Additional DMG such as Robin, Tribbie,... can occassionally kill steal, which prevents Seele from triggering [Resurgence].\n✦ Calculating the enemy HP is suggested so you do not accidentally waste DMG and overkill.\n✦ Despite being a Hunt DPS, Seele shines best in scenarios where there are multiple smaller mobs, such as Pure Fiction, etc.",
+    "worth_pulling": "",
+    "recommended_baseline": "Cerydra E0S0, Sparkle E0S0",
+    "example_teams": [
+      {
+        "label": "Seele Premium",
+        "members": [
+          "Seele",
+          "Cerydra",
+          "Sparkle",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Half- Premium Seele",
+        "members": [
+          "Seele",
+          "Cerydra",
+          "RMC",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Mono Quantum is so back - Somewhat meme team",
+        "members": [
+          "Seele",
+          "Silver Wolf",
+          "Sparkle",
+          "Fu Xuan"
+        ]
+      },
+      {
+        "label": "Pure Fiction Bot",
+        "members": [
+          "Seele",
+          "Cerydra",
+          "Ashveil",
+          "Tribbie"
+        ]
+      },
+      {
+        "label": "Budget - Not recommended",
+        "members": [
+          "Seele",
+          "Tingyun",
+          "RMC",
+          "Gallagher"
+        ]
+      },
+      {
+        "label": "Seele's team Equation",
+        "members": [
+          "Seele",
+          "Cerydra",
+          "Anyone",
+          "Sustain"
+        ]
+      }
+    ]
+  },
+  "Yanqing": {
+    "kit_overview": "Kit Overview: ST DPS who cant take DMG\nWhen using Yanqing's Skill, he deals ST damage and activates Soulsteel Sync, which last for one turn or disappear when Yanqing takes damage. \n\nUnder Soulsteel Sync effect, Yanqing gains CR% and CDMG%, his attacks also has a fixed chance to unleash a FUA to the attacked enemy and a chance freeze them. Frozen enemy take additional damage on their turn. Yanqing also deals additional DMG to enemy with Ice weakness.\n\nUpon using Yanqing's Ultimate, he gains massive amount of CR%; if Soulsteel Sync is activated, he also gains CDMG%, and unleash a ST attack.\n\nSynergies:\n✦ Supports that prevent Yanqing from taking DMG such as shielders.\n✦ Supports that give damage amplification, action advance, energy, and so on are appreciated. However they also want to be SP positive.\n\nNotes:\n✦ In order to maintain Soulsteel Sync, Yanqing must not take damage and always spam Skill, which causes a heavy SP burden to the team.\n\nTips:\n✦ Make sure Soulsteel Sync is active when Yanqing uses his Ultimate.",
+    "worth_pulling": "",
+    "recommended_baseline": "E6",
+    "example_teams": [
+      {
+        "label": "Premium",
+        "members": [
+          "Yanqing",
+          "Sunday",
+          "Robin",
+          "Aventurine"
+        ]
+      },
+      {
+        "label": "Icy Circus",
+        "members": [
+          "Yanqing",
+          "Sparkle",
+          "Cipher",
+          "Aventurine"
+        ]
+      },
+      {
+        "label": "Debuffs Galore",
+        "members": [
+          "Yanqing",
+          "Silver Wolf",
+          "Cipher",
+          "Aventurine"
+        ]
+      },
+      {
+        "label": "Ice to Meet You",
+        "members": [
+          "Yanqing",
+          "Ruan Mei",
+          "RMC",
+          "Gepard"
+        ]
+      },
+      {
+        "label": "Budget",
+        "members": [
+          "Yanqing",
+          "Tingyun",
+          "RMC",
+          "Gepard"
+        ]
+      }
+    ]
+  },
+  "Saber": {
+    "kit_overview": "Kit Overview: High Energy Crit DPS\nSaber’s kit revolves around her [Core Resonance]. 1 [Core Resonance] is considered 8 fixed energy. Saber obtains [Core Resonance] through her Skill (+3) / Enhanced Basic Attack (+2) / Ally Ultimate (+3) / Entering battle with technique (+3). Saber can hold 120 excess Energy.\n\nUpon using Saber's Ultimate, she deals 1 instance of AoE damage, then 10 additional bounce damage which also enhances her Basic Attack.\n\nSaber's Enhanced Basic Attack deals AoE damage, Saber will deals more damage if there are less than 2 enemies. Additionally, this ability will grant Mana Burst upon use. Under Mana Burst effect, when Saber's Ultimate can fully be charged with [Core Resonance] and Skill, Saber consumes Mana Burst to immediately take action and gain 1 SP.\n\nSaber has tremendous amount of DMG%, CDMG% and CR% self-buff.\n\nSynergies:\n✦ Supports with good damage amplification and action advance.\n✦ Supports that can generate Saber's Energy.\n\nTips:\n✦ Conserve ally Ultimates to properly time Mana Burst consumption, especially characters who can generate energy with it.",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S1",
+    "example_teams": [
+      {
+        "label": "Premium Excalibur",
+        "members": [
+          "Saber",
+          "Sunday",
+          "Tribbie",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "Need more Premium options?",
+        "members": [
+          "Saber",
+          "Sunday",
+          "Robin",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Where Workday?",
+        "members": [
+          "Saber",
+          "Tingyun",
+          "Tribbie",
+          "Luocha"
+        ]
+      },
+      {
+        "label": "Half-Premium",
+        "members": [
+          "Saber",
+          "Sunday",
+          "RMC",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Budget",
+        "members": [
+          "Saber",
+          "Tingyun",
+          "RMC",
+          "Gallagher"
+        ]
+      }
+    ]
+  },
+  "Phainon": {
+    "kit_overview": "Kit Overview: Crit DPS who transform into a boss\nPhainon's mechanics are based around obtaining Coreflames. Methods of getting Coreflames: Being targeted by allies or enemies abilities or enter battles (+1) / Getting energy restored by allies ability (+1) / Using skill (+2) / Leaving Territory (+3).\n\nPhainon can hold up to 15 Coreflames, and requires 12 to cast his Ultimate. After casting Ultimate, he gains 8 extra turns and enters a special Territory where all teammates become Departed (removed temporarily from the team).\n\nIn Phainon's Ultimate, he uses a resource named Scourge which replaces the function of Skill Points. He has 3 abilities in his Ultimate form : \n- [Basic Attack]: Blast attack, restores 2 Scourge,\n- [Skill 1]: Makes all enemies move instantly to attack him, gains Scourge equal to the number of enemies on field, and then Counter with an AoE + Bounce attack. The counter's damage increases the more Phainon is hit.\n- [Skill 2]: Consumes 1-4 Scourge to deal AoE + Bounce damage, with a big bonus multiplier when consuming 4.\nOn his 8th extra turn, Phainon will cast a last AoE attack and exits his Territory, returning his teammates to the field.\nSynergies:\n✦ Harmony units who can generate Coreflame, provide action advance, energy, and good damage amplification.\nNotes:\n✦ Since all allies Depart in Territory, Phainon lacks flexibility in terms of gameplay and has to rely more on his stats/investments.\n✦ Phainon's team in general is very Skill Point hungry without investments such as S1 Sunday, etc.\n✦ It is generally not recommended to use Phainon with a Sustainer due to how his Territory works.\nTips:\n✦ If Phainon's Coreflame generation is ensured, strong damage amplification options such as Tribbie or Robin can be used.",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S1 or E2 with Cerydra",
+    "example_teams": [
+      {
+        "label": "Phainon Premium",
+        "members": [
+          "Phainon",
+          "Cyrene",
+          "Cerydra",
+          "RMC"
+        ]
+      },
+      {
+        "label": "Not as Premium but still works",
+        "members": [
+          "Phainon",
+          "Sparkle",
+          "Cerydra",
+          "RMC"
+        ]
+      },
+      {
+        "label": "Extended Battle - If Phainon cannot finish enemies quickly",
+        "members": [
+          "Phainon",
+          "Sparkle",
+          "Cerydra",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Budget Phainon - Not Recommended",
+        "members": [
+          "Phainon",
+          "RMC",
+          "Tingyun",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Double Advance Phainon",
+        "members": [
+          "Phainon",
+          "Sparkle",
+          "Cerydra",
+          "Sunday"
+        ]
+      },
+      {
+        "label": "Full Premium - Requires E2 Cyrene for stacking",
+        "members": [
+          "Phainon",
+          "Cyrene",
+          "Cerydra",
+          "Sparkle"
+        ]
+      }
+    ]
+  },
+  "Mydei": {
+    "kit_overview": "Kit Overview: Nearly Immortal Self-HP drain Blast DPS\nMydei's normal Skill depletes his HP and does not require Skill Points. For each 1% of HP lost, accumulates 1 point of Charge, at 100 Charge, consumes Charge to enter [Vendetta] state, while active, buff his Max HP while his DEF remains at 0, increasing efficiency of Charge gains, he also becomes immune to Crowd Control debuffs. When it's Mydei's turn, automatically launch a powerful attack, if 150 Charge is gained in this state, consumes it to obtain one Extra Turn and deal an even more damaging Skill attack then heal himself.\n\nWhen receiving a killing blow in the [Vendetta] state, Mydei will not be knocked down, up to 3 times in battle.\nUltimate heals and deals a blast attack, taunting all enemies for 2 turns, and the primary target of the Ultimate will be the same target focused by his Enhanced Skill. This allows for some control over his Auto playstyle.\nMydei gains additional Crit Rate and Charges ratio from enemies the more HP he has, up to 8000 HP. \n\nSynergies:\n✦ Crit DPS support units that do more than ATK buff since Mydei scales on HP.\n✦ Speed or Action Advance buffers to earn more turns for HP drains.\n✦ Characters that consume his HP without hindering his performance.\n✦ Healer units for HP drains.\nNotes:\n✦ While Ultimate can help with controlling Mydei, his Auto-play playstyle might not be for everyone.",
+    "worth_pulling": "",
+    "recommended_baseline": "S1 and Cyrene",
+    "example_teams": [
+      {
+        "label": "Premium Mydei",
+        "members": [
+          "Cyrene",
+          "Cerydra",
+          "Mydei",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Half Premium Mydei",
+        "members": [
+          "Cyrene",
+          "RMC",
+          "Mydei",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "No Elysia?",
+        "members": [
+          "Sunday",
+          "Tribbie",
+          "Mydei",
+          "Luocha"
+        ]
+      },
+      {
+        "label": "Double AA strikes again",
+        "members": [
+          "Sunday",
+          "Bronya",
+          "Mydei",
+          "Luocha"
+        ]
+      },
+      {
+        "label": "Budget Mydei",
+        "members": [
+          "Ruan Mei",
+          "RMC",
+          "Mydei",
+          "Gallagher"
+        ]
+      }
+    ]
+  },
+  "Yunli": {
+    "kit_overview": "Kit Overview: Self-sufficient Counter based DPS\nWhen Yunli gets attacked, she additionally gains 15 energy, buff self ATK% by a decent amount and launches a Blast type Counter attack back, her skill is an attack that also heals herself up. Her max Energy cost is 240, but only require 120 to use, which helps with Energy overflow,\n\nWhen activating Ultimate, Yunli taunts all enemies, reduces DMG taken, resists Crowd Control Debuff and enhances the next counter, becoming [Intuit: Cull] which has great damage, then deals 6 DMG instances to random enemies, if the counter fail, automatically launches a weaker Enhanced Counter: [Intuit: Slash], this DMG count as Ultimate DMG.\n\nSynergies:\n✦ Crit DPS supporter and abilities that give Yunli energy with energy regen, Action Advance, etc.\n✦ Enemies that attack often, allies that don't compete with her aggro and/or buff her aggro.\nNotes:\n✦ Yunli runs into risk of getting taken down if she suffers too much DMG, so helping her gain turn or pairing her with a good sustain is needed.\n✦ Yunli can activate her own Counter attack but her DMG output is still dependant on getting hit often, leading to lowered DMG output if not attacked much. Enemy delay effect is bad for her.\nTips:\n✦ After doing [Intuit: Slash], the next [Intuit: Slash] will be made to be [Intuit: Cull], helpful in situations where you don't get hit often or having specific plans(Low cycle, Apocalyptic Shadow, etc)",
+    "worth_pulling": "",
+    "recommended_baseline": "Yes",
+    "example_teams": [
+      {
+        "label": "Premium Yunli Team",
+        "members": [
+          "Sunday",
+          "Yunli",
+          "Robin",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "Premium Yunli Team 2",
+        "members": [
+          "Sparkle",
+          "Yunli",
+          "Dan PT",
+          "Tribbie"
+        ]
+      },
+      {
+        "label": "Dual DPS Team",
+        "members": [
+          "Ashveil",
+          "Yunli",
+          "Robin",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "Budget Team - Not Recommended",
+        "members": [
+          "RMC",
+          "Yunli",
+          "Tingyun",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "You hit us, you die - Meme team - good for Hoolay & SimUniverse modes",
+        "members": [
+          "Tribbie",
+          "Yunli",
+          "Aventurine",
+          "Clara"
+        ]
+      }
+    ]
+  },
+  "Firefly": {
+    "kit_overview": "Kit Overview: Strong Blast Break DPS \n✦ When using her ultimate, Firefly will enter the [Complete Combustion] state which lets her immediately take action, ehnances Basic ATK and Skill, then boosts Weakness Break Efficiency and Speed. Her ES (Enhanced Skill) implants fire weakness to a blast range and deals Super Break DMG if enemies are weakness broken. The [Complete Combustion] state runs on a countdown with fixed SPD, and when depleted, Firefly will exit the state. Firefly's technique implants Fire weakness to all enemies once per wave.\n\n✦ While in the [Complete Combustion] state, Firefly's BE increases and when using EBA or ES to Break an enemy, the [Complete Combustion] countdown is delayed. This effect can trigger 3 times per [Complete Combustion] state. \n\nSynergies:\n✦ Super Break enablers, (Including Weakness break Efficiency, Vulnerablility, Defense Shred, etc).\n✦ Teammates who are SP positive\n\nNotes:\n✦ Firefly consumes a lot of SP due to her increased Speed after using Ultimate at lower investments.\n✦ Firefly has an ATK to BE conversion\n\nTips: \n✦ Allies should act before Firefly acts to apply buffs/debuffs and deal Toughness Reduction first.\n✦ Firefly's [Complete Combustion] delay can disrupt some setups, namely for low cycle clears.",
+    "worth_pulling": "",
+    "recommended_baseline": "The Dahlia, Fugue, E2S0",
+    "example_teams": [
+      {
+        "label": "Scorched Earth Operation - Firefly Premium",
+        "members": [
+          "Firefly",
+          "Dahlia",
+          "Fugue",
+          "HMC"
+        ]
+      },
+      {
+        "label": "Missing the Fox?",
+        "members": [
+          "Firefly",
+          "Dahlia",
+          "HMC",
+          "Ruan Mei"
+        ]
+      },
+      {
+        "label": "Sustain Chains - Not recommended",
+        "members": [
+          "Firefly",
+          "Dahlia",
+          "Fugue",
+          "Lingsha"
+        ]
+      }
+    ]
+  },
+  "Jingliu": {
+    "kit_overview": "Kit Overview: Blast-focused HP Scaling Skill Crit DPS\nWhen Jingliu uses her Skill (ST) or Ultimate (Blast), she gains 1 stack of Syzygy. When she has 2 Syzygy stacks, Jingliu enters [Spectral Transmigration] state, advance herself, gain an extra Syzygy stack and increase its cap to 4 . In this state, Jingliu gains Crit Rate and can only use Enhanced Skill.\n\nWhen Jingliu uses Enhanced Skill, consumes allies' HP and a stack of Syzygy to launch a Blast attack.\n\nWhenever allies' HP reduce, she gains Moonlight stacks, which increases Crit Damage. Additionally when allies' HP are reduced 20 times, gains 1 Syzygy stack.\n\nSynergies:\n✦ Units that can drain allies' HP to help generate Syzygy stacks.\n✦ Works well with most Harmony/Nihility that provide damage amplification, action advance, energy, etc. \nNotes:\n✦ Due to the sheer amount of CDMG% and CR% self-buff, Jingliu prefers supports that provide a different damage amplification such as RES PEN or debuffs. Jingliu prefers HP and potentially SPD more due to this reason\n✦ In order to maintain full uptime of Spectral Transmigration state, S1 Hyacine is required.\nTips:\n✦ Jingliu should use her Ultimate during [Spectral Transmigration] state to fully benefit from her self-buff. Unless energy is extremely overcapped.\n✦ Since Jingliu does not consume Skill Points during [Spectral Transmigration], this allows other allies to spam their skill more often.",
+    "worth_pulling": "",
+    "recommended_baseline": "Mydei S1 and Hyacine S1",
+    "example_teams": [
+      {
+        "label": "Premium Team - Featuring Hyacine E0S1",
+        "members": [
+          "Jingliu",
+          "Sunday",
+          "Tribbie",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Half Premium Team",
+        "members": [
+          "Jingliu",
+          "Bronya",
+          "RMC",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Mono Ice?! - S1 Hyacine is recommended on RMC",
+        "members": [
+          "Jingliu",
+          "RMC",
+          "Ruan Mei",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Budget Jingliu - Not Recommended",
+        "members": [
+          "Jingliu",
+          "RMC",
+          "Pela",
+          "Gallagher"
+        ]
+      },
+      {
+        "label": "Double action advance",
+        "members": [
+          "Jingliu",
+          "Sunday",
+          "Bronya",
+          "Hyacine"
+        ]
+      }
+    ]
+  },
+  "Imbibitor Lunae": {
+    "kit_overview": "Kit Overview:  Enhanced Basic Attack Crit DPS\nDan Heng – Imbibitor Lunae (DHIL) is a crit DPS that excels at Blast as well as ST fights. DHIL's skill allows him to enhance his Basic Attack, the more SP you use (up to 3), the more damage it deals. The attack starts at ST type, then after the enhancing it twice, it becomes a blast attack, dealing massive damage and toughness reduction.\n\nHis Ultimate, beside dealing Damage, will give him 2 scales called [Squama Sacrosancta], acting like SP for enhancing DHIL's Basic Attack, easing SP consumption.\n\nSynergies:\n✦ Due to his SP intensive kit playing him with SP+ characters is a must. \n✦ As DHIL isn't built fast generally, it’s recommended to have an action advancer or speed buffer on the team as well. He also benefits a lot from teammates that help with his energy regeneration.\n\nNotes + Tips:\n✦ When playing DHIL you should always keep an eye on your SP consumption to bring the most out of his damage\n✦ Since DHIL's Basic attack has multiple enhancement stages, regulating those according to the situation can save you SP",
+    "worth_pulling": "",
+    "recommended_baseline": "Sparkle and DHIL E2",
+    "example_teams": [
+      {
+        "label": "Premium team - Sparkle for your SP needs",
+        "members": [
+          "Dan IL",
+          "Sparkle",
+          "Robin",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Another Premium team",
+        "members": [
+          "Dan IL",
+          "Sparkle",
+          "Tribbie",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Typical -1  (Require S1 Sunday and careful SP planning)",
+        "members": [
+          "Dan IL",
+          "Sunday",
+          "Tribbie",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Budget team - Not Recommended",
+        "members": [
+          "Dan IL",
+          "RMC",
+          "Tingyun",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "The Astral Express Trio - Meme Team",
+        "members": [
+          "Dan IL",
+          "Hunt March 7th",
+          "RMC",
+          "Dan PT"
+        ]
+      }
+    ]
+  },
+  "Blade": {
+    "kit_overview": "Kit Overview: HP scaling DPS who spam abilities.\nWhen Blade uses his skill, he consumes his HP and enters [Hellscape] state. In this state, he deals more damage; increase the chance of getting hit; and enhances his Basic Attack, which will consume his HP when used and deals Blast damage. His Enhanced Basic Attack will not generate SP and he will exit [Hellscape] state after 3 turns.\n\nWhen Blade's HP reduces or he takes damage, he gains 1 Charge, when he obtain 5 Charge, Blade unleashes an AoE FUA attack, gains 15 energy and heals himself.\n\nWhen Blade uses his Ultimate, he sets his HP to 50% of his max HP and deals Blast damage based on his max HP and the tallied HP that he lost during the battle.\n\nSynergies:\n✦ Blade works well with most Nihility/Harmony units as long as they give good damage amplification, action advance, etc.\n✦ Prefers supports who can drain his HP for more charge and can synergize with units who can drain allies HP (Usually not recommended).\n\nNotes:\n✦ Blade can go slow or fast, depending on what supports you're using.",
+    "worth_pulling": "",
+    "recommended_baseline": "E1 and Hyacine S1",
+    "example_teams": [
+      {
+        "label": "Premium Blade team",
+        "members": [
+          "Tribbie",
+          "Sunday",
+          "Blade",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Stellaron Hunters",
+        "members": [
+          "RMC",
+          "Silver Wolf",
+          "Blade",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Good Dual DPS setup",
+        "members": [
+          "Tribbie",
+          "Jade",
+          "Blade",
+          "Lynx"
+        ]
+      },
+      {
+        "label": "Action Hypercharge for that HP drains",
+        "members": [
+          "Sparkle",
+          "Sunday",
+          "Blade",
+          "Hyacine"
+        ]
+      },
+      {
+        "label": "Budget",
+        "members": [
+          "RMC",
+          "Pela",
+          "Blade",
+          "Sustain"
+        ]
+      }
+    ]
+  },
+  "Clara": {
+    "kit_overview": "Kit Overview: Counter based DPS\n✦ When Clara gets hit, Svarog will immediately launch a ST Counter Attack to the enemy that hit her, once per hit. This attack is considered a FUA. The enemy that is hit by her counter will gain Mark of Counter, and enemies with the Mark will take extra damage from her Skill. The mark will be removed after Skill is used\n\n✦ Upon using her Ultimate, Clara will take less damage, increase her aggro, and 2 of Svarog's counters will be enhanced. Enhanced counters deal much greater damage and hit adjacent enemies. Enhanced counters can be launched when any ally gets hit.\n\nSynergies:\n✦ Supports that can provide her energy or extra turns for ready access to her ultimate \n✦ Supports that can assist in her getting hit to launch counters\n\nNotes + Tips:\n✦ Svarog's Enhanced Counters last for 2 turns only. Time your ultimates to enemy turns to avoid wasting Enhanced Counters.\n✦ When using Clara, she prefers to be as slow as possible to capitalize on enemy hits and actions.",
+    "worth_pulling": "",
+    "recommended_baseline": "E6",
+    "example_teams": [
+      {
+        "label": "Premium",
+        "members": [
+          "Robin",
+          "Sparkle",
+          "Clara",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "Short Team",
+        "members": [
+          "Tribbie",
+          "Sparkle",
+          "Clara",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "Dual DPS - Not Recommended",
+        "members": [
+          "Robin",
+          "Ashveil",
+          "Clara",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "We dare you - Meme team",
+        "members": [
+          "Robin",
+          "Yunli",
+          "Clara",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "Budget - Not Recommended",
+        "members": [
+          "RMC",
+          "Tingyun",
+          "Clara",
+          "Sustain"
+        ]
+      }
+    ]
+  },
+  "Anaxa": {
+    "kit_overview": "Kit Overview: Weakness Implanting Erudition (Sub) DPS but prefer low targets fight\nEach hit from Anaxa's attacks inflicts one weakness on enemy, based on the amount of weakness, he will ignore part of DEF, when enemies have at least 5 weaknesses, they are inflicted with [Qualitative Disclosure] and Anaxa deal increased DMG to them, attacking enemy with BA or Skill in this state will unleash an additional usage of Skill that does not consume a Skill Point.\n\nAnaxa's skill will deal 5 instances of bouncing attack. The subsequent bounce will prioritize hitting enemies who haven't been hit by his skill. Anaxa's ultimate deals AoE damage, implants all weaknesses and prevents them from taking action.\n\nIf Anaxa is the sole Erudition unit in the team, he gains a huge amount of CRIT DMG, otherwise, he buffs the whole team's DMG%\n\nSynergies:\n✦ Units able to take advantage of his Weaknesses implant\n✦ Hypercarry or Dual DPS support units depending on the team.\n\nNotes:\n✦ Weakness implant does not mean the target's Type RES is removed.\n\nTips:\n✦ If the enemy is already inflicted with [Qualitative Disclosure], Anaxa can use BA to save Skill point.\n✦ In teams where attack frequency matters more, Anaxa can use ERR% rope.",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S1",
+    "example_teams": [
+      {
+        "label": "The Herta Premium - Brute Force MOC Edition",
+        "members": [
+          "Anaxa",
+          "The Herta",
+          "Tribbie",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Anaxa Premium",
+        "members": [
+          "Anaxa",
+          "Cyrene",
+          "Cerydra",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "F2P Anaxa Hypercarry",
+        "members": [
+          "Anaxa",
+          "RMC",
+          "Tingyun",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Dual DPS Single-target version",
+        "members": [
+          "Anaxa",
+          "Feixiao",
+          "Tribbie",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Break Anaxa - Meme team",
+        "members": [
+          "Anaxa",
+          "Fugue",
+          "Dahlia",
+          "HMC"
+        ]
+      }
+    ]
+  },
+  "The Herta": {
+    "kit_overview": "Kit Overview: AoE Nuke DPS with Ultimate and Enhanced Skill\nWhen The Herta joins the battle, enemies hit by allies get inflicted with 1 stack of [Interpretation], up to 42 stacks. For each enemy attacked, generates 3 fixed energy for The Herta. Each stack of [Interpretation], along with the effects she provides pairing with another Erudition ally, give her numerous self buffs to tackle a variety of battles.\n\nHer Ultimate rearranges stacks of [Interpretation] and unleashes an attack, Advances Forward her by 100%, and enhances her next Skill. Her Enhanced Skill deals devastating damage and resets [Interpretation] stacks of the main target to 1.\n\nSynergies:\n✦ Erudition ally is a must to activate her team buff Trace and help stack [Interpretation], along with units that have frequent AoE damage instances.\n✦ Supports that buff The Herta and her team's damage and energy, or provide Speed buffs/Action Advance to improve action frequency.\nNotes:\n✦ Since [Interpretation] stacks & The Herta's energy gained is based on the amount of enemies and how often they get attacked, her damage output is lowered in 1-3 targets fights.\n✦ The Herta's teams can be Skill Point intensive, prioritize giving her SP to use skill.\nTips:\n✦ Erudition allies can use equipment such as ERR% rope, 5% ERR% planar ornaments and the Passkey Light Cone to attack more often and recharge her energy.",
+    "worth_pulling": "",
+    "recommended_baseline": "Tribbie, E0S1 or E2",
+    "example_teams": [
+      {
+        "label": "The Herta Premium - PF Editon",
+        "members": [
+          "The Herta",
+          "Herta",
+          "Tribbie",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "The Herta Premium - Brute Force MOC Edition",
+        "members": [
+          "The Herta",
+          "Anaxa",
+          "Tribbie",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Serval (E4+ recommended) Over Charge",
+        "members": [
+          "The Herta",
+          "Serval",
+          "Tribbie",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Sustainless Gaming",
+        "members": [
+          "The Herta",
+          "Herta",
+          "Tribbie",
+          "Ashveil"
+        ]
+      },
+      {
+        "label": "Budget Team - Not Recommended",
+        "members": [
+          "The Herta",
+          "Herta",
+          "RMC",
+          "Sustain"
+        ]
+      }
+    ]
+  },
+  "Rappa": {
+    "kit_overview": "Kit Overview: Constant AoE Super Break DPS\nRappa's main focus is her Ultimate: enters [Sealform] state, enhances Basic Attack to deal Universal Toughness Reduction to all enemies (though attacking non Imaginary-weak only deals half the Toughness Reduction), and allows her to deal Super Break DMG once enemies are broken.\n\nWhen allies Weakness Break an enemy, her talent gains a charge (store up to 10), which enables her to deal huge Break DMG, even in ST scenarios.\n\nSynergies:\n✦ Units that has Break-Damage related buff: Super Break enabler, WBE buff, DEF shred, etc.\n✦ Supports and DPS units that helps with breaking enemies.\n\nNotes:\n✦ Rappa struggles against enemies immune to Toughness Reduction.\n✦ Since Rappa does not implant Weakness, she would have a slower clear time if enemies' weakness don't match with Rappa or other teammates.\n\nTips:\n✦ The first 2 hits of EBA is Blast, manage it well to distribute your Toughness Reduction more evenly.\n✦ Imaginary Break DMG has a low multiplier, so allies of other types can handle breaking instead.",
+    "worth_pulling": "",
+    "recommended_baseline": "Fugue, Dahlia and S1",
+    "example_teams": [
+      {
+        "label": "Premium Rappa team",
+        "members": [
+          "Rappa",
+          "Fugue",
+          "Dahlia",
+          "Ruan Mei"
+        ]
+      },
+      {
+        "label": "Half-Premium",
+        "members": [
+          "Rappa",
+          "Fugue",
+          "Ruan Mei",
+          "Lingsha"
+        ]
+      },
+      {
+        "label": "Budget team",
+        "members": [
+          "Rappa",
+          "HMC",
+          "Ruan Mei",
+          "Gallagher"
+        ]
+      },
+      {
+        "label": "Sustained Rappa",
+        "members": [
+          "Rappa",
+          "Fugue",
+          "Dahlia",
+          "Lingsha"
+        ]
+      },
+      {
+        "label": "Girls breaking things - Meme team",
+        "members": [
+          "Rappa",
+          "Fugue",
+          "Dahlia",
+          "Himeko"
+        ]
+      }
+    ]
+  },
+  "Jade": {
+    "kit_overview": "Kit Overview: Powerful Area of Effect specialist.\nJade's Skill applies [Debt Collector] to an ally, granting 30 Speed and Additional Damage with no downtime at the cost of 2% of that ally's HP per their attack.\n\nAoE FUA is launched at 8 Charges, which are gained per enemy hit by her and her [Debt Collector]'s attacks. Jade's FUAs do not count towards these Charges. Her Talent grants massive self-buffs, making her less reliant on supports. Ultimate deals respectable damage and enhances her next 2 FUAs.\n\nSynergies:\n✦ Frequent multi-target attacker to be made as the [Debt Collector].\n✦ Support units who can buff the whole team, or ones who help generate Charges by Advancing her [Debt Collector].\n✦Characters that value the HP drains\n\nNote:\n✦ Jade's performance is rather subpar in 1 or 2 targets situation.\n\nTips:\n✦ Hypercarry Jade's [Debt Collector] should still be a unit with frequent AoE attacks, as the amount of Charges Jade generates on her own turn is low.",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S1",
+    "example_teams": [
+      {
+        "label": "Classic Pure Fiction Combo",
+        "members": [
+          "Jade",
+          "Herta",
+          "Tribbie",
+          "Dan PT"
+        ]
+      },
+      {
+        "label": "Jade - Blade Dual DPS",
+        "members": [
+          "Jade",
+          "Blade",
+          "Sparkle",
+          "Luocha"
+        ]
+      },
+      {
+        "label": "Jade with 2 supports (Sunday uses skill on Lingsha for stacks)",
+        "members": [
+          "Jade",
+          "Sparkle",
+          "Robin",
+          "Lingsha"
+        ]
+      },
+      {
+        "label": "The Herta other Premium team",
+        "members": [
+          "Jade",
+          "The Herta",
+          "Tribbie",
+          "Lingsha"
+        ]
+      },
+      {
+        "label": "Jade with ST Debt Collector - E1 Only",
+        "members": [
+          "Jade",
+          "Topaz",
+          "Moze",
+          "Sustain"
+        ]
+      }
+    ]
+  },
+  "Argenti": {
+    "kit_overview": "Kit Overview: AoE specialized DPS\nArgenti's Talent grant him energy whenever he attacks, the more enemies he hits, the more energy he gains. Each enemies hit will also grant him [Apotheosis] stacks, which increases his Crit Rate and Crit Damage.\n\nArgenti has 180 max Energy. Argenti's Skill and Ultimate deals AoE damage to enemies. However his ultimate has 2 forms: \n- [For In This Garden Supreme Beauty Bestows]: Consumes 90 energy to unleash an AoE attack\n- [Merit Bestowed in \"My\" Garden]: Consumes 180 energy to unleash an even a stronger AoE attack. He will also deals 6 additional instances of bounce damage afterwards.\n\nSynergies:\n✦ Supports that provide action advance, energy or good damage amplification\n✦ Work as enabler for other erudition unit, such as with Jade, Mini Herta or The Herta.\nNotes:\n✦ Argenti's scaling on his fully charged Ultimate is pretty low, it's recommended to spam his 90 cost Ultimate for finishing off minions or small mobs.\n✦ ERR% rope can be used on Pure Fiction build",
+    "worth_pulling": "",
+    "recommended_baseline": "E0S1",
+    "example_teams": [
+      {
+        "label": "Unlimited Ultimate works",
+        "members": [
+          "Argenti",
+          "Sunday",
+          "Tingyun",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "Premium Team",
+        "members": [
+          "Argenti",
+          "Sunday",
+          "Tribbie",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "Half Premium",
+        "members": [
+          "Argenti",
+          "RMC",
+          "Tingyun",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Kuru-kuru kaboom",
+        "members": [
+          "Argenti",
+          "Herta",
+          "robin",
+          "Gallagher"
+        ]
+      },
+      {
+        "label": "Freemium",
+        "members": [
+          "Argenti",
+          "Tingyun",
+          "RMC",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Beauty in Erudition",
+        "members": [
+          "Argenti",
+          "The Herta",
+          "Tribbie",
+          "Sustain"
+        ]
+      }
+    ]
+  },
+  "Jing Yuan": {
+    "kit_overview": "Kit Overview: Versatile FuA DPS\nJing Yuan's talent summons [Lightning Lord] (LL) in the action order bar, which is a 3-target bounce FUA that gain more speed and hit per action after using skill and ultimate attack. This allows him to be good or great in all kind of scenarios rather than just an AoE specialist.\n\nSynergies:\n✦ Advance Forward, Speed, and Energy buffer to help Jing Yuan gain more LL stack\n✦ Crit DPS supports in general. \n\nNotes:\n✦ [Lightning Lord] can not act when Jing Yuan is affected by crowd-control, so cleanse or CC-prevention is highly appreciated for him.\n✦ [Lightning Lord] being a Bounce type attack can make it harder to attempt a flawless run, though it's not a problem in general.\n\nTips:\n✦ You can skip on using his technique to buy time for Jing Yuan to kill mobs using his ult and skill, so LL can focus on boss or elite (except when paired with Sunday).\n✦ Although it's great if you can get 10 stack on LL, getting 8 stack is a minimal dps loss.\n✦ Jing Yuan damage output is closely split between Skill + Ultimate and LL, so abilities that don't buff his full kit (Like non E6 Bronya's skill, Birth of Self Lighcone, etc) are discouraged.",
+    "worth_pulling": "",
+    "recommended_baseline": "Sunday and S1",
+    "example_teams": [
+      {
+        "label": "Jing Yuan Premium team",
+        "members": [
+          "Jing Yuan",
+          "Sunday",
+          "Tribbie",
+          "Huohuo"
+        ]
+      },
+      {
+        "label": "Summoners arise! (Topaz enhances ST DMG)",
+        "members": [
+          "Jing Yuan",
+          "Sunday",
+          "Topaz",
+          "Lingsha"
+        ]
+      },
+      {
+        "label": "Half Premium team",
+        "members": [
+          "Jing Yuan",
+          "Sunday",
+          "Tingyun",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "More Hypercarry setup",
+        "members": [
+          "Jing Yuan",
+          "Sparkle",
+          "Robin",
+          "Sustain"
+        ]
+      },
+      {
+        "label": "Meme team - Xianzhou Luofu Prepares for battle",
+        "members": [
+          "Jing Yuan",
+          "Yukong",
+          "Hanya",
+          "Huohuo"
+        ]
+      }
+    ]
+  },
+  "Himeko": {
+    "kit_overview": "Kit Overview: FUA-orientated AoE DPS\nHimeko's Skill does Blast damage, and deals more damage if the enemy is afflicted with Burn. Every attack of hers has a chance to inflict Burn.\nHer Ultimate deals AoE damage to all enemies, and more energy is refunded to this Ult if any enemy is defeated.\n\nThe main premise of Himeko is her Talent. This Talent tallies up to 3 Charges, gains 1 when the battle starts, 1 when a common enemy has its Weakness Broken, and 3 if an Elite or Boss gets Weakness Broken.\nUpon obtaining 3 Charges, Himeko launches a FUA that deals AoE damage, and then clears all Charges.\n\nSynergies:\n✦ Most of Himeko's damage comes from her Talent, allies that can assist with breaking faster/obtain more breaks is invaluable.\n✦ Her AoE-damage FUA attack makes Himeko a good driver for other characters such as Herta, Jade, etc.\nNotes:\n✦ Try to manage Himeko's Charge to avoid wasting Charges since she can only hold 3 Charges. In battle, try to break Elite/Boss first.\n✦ Himeko's damage against a single target is pitiful, she's mostly good for AoE situations such as Pure Fiction.",
+    "worth_pulling": "",
+    "recommended_baseline": "Dahlia and Fugue",
+    "example_teams": [
+      {
+        "label": "Hunter & Express - Firefly enables Himeko",
+        "members": [
+          "Himeko",
+          "Firefly",
+          "Dahlia",
+          "Fugue"
+        ]
+      },
+      {
+        "label": "Fire and Ice Fiction combo",
+        "members": [
+          "Himeko",
+          "Herta",
+          "Dahlia",
+          "Fugue"
+        ]
+      },
+      {
+        "label": "Himeko Break Premium - For PF",
+        "members": [
+          "Himeko",
+          "Tribbie",
+          "Dahlia",
+          "Fugue"
+        ]
+      },
+      {
+        "label": "Want some coffee, Sunday?",
+        "members": [
+          "Himeko",
+          "Sunday",
+          "RMC",
+          "March 7th"
+        ]
+      },
+      {
+        "label": "\"Superbreak\" Himeko",
+        "members": [
+          "Himeko",
+          "Fugue",
+          "Dahlia",
+          "Lingsha"
+        ]
+      },
+      {
+        "label": "Budget - Not Recommended",
+        "members": [
+          "Himeko",
+          "Tingyun",
+          "Asta",
+          "Sustain"
+        ]
+      }
+    ]
+  }
+}
