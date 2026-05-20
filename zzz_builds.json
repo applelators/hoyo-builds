@@ -12,13 +12,11 @@
         "baseline": "PEN Ratio: 60%+ (Max 70.4%)\n\nCR: 50%+ \n\nCD: 100%+\n\nAP in Anomaly teams: 250+",
         "ability": "1.Core\n2.Chain/Ult\n2.EX Special\n3.Assist\nOnly Core is needed, the rest of her abilities can be upgraded for more Daze and slightly more DMG scaling. Skip Basic and Dodge",
         "disc_4pc": [
-          "Puffer Electro",
-          "Freedom Blues",
-          "Thunder Metal"
+          "Puffer Electro"
         ],
         "disc_2pc": [
-          "Phaethon's Melody",
-          "Puffer Electro"
+          "Puffer Electro",
+          "Phaethon's Melody"
         ],
         "w_engine_notes": "Due to how bad Slice of Time is, Kaboom the Cannon can and is a better option, giving you 5% less PEN Ratio buff in exchange for Combat ATK%.",
         "disc_notes": "2 piece Puffer Electro is necessary to increase the PEN% buff.\n*4PC Freedom Blues (or/and AM% Disc 6) can be used in a team where Shock uptime matters (i.e. Harumasa on 4pc Thunder Metal build).\nFor Anomaly teams ATK and AP are preferred to not dilute Shock DMG, for non Anomaly teams building Rina for DMG with Crit Rate and Crit Damage and ATK subs stats works as well, though optional.",
@@ -67,12 +65,11 @@
         "baseline": "ATK:\nATK Main Engine: 2500-2900+\nNon ATK Main Engine: 2300-2700+\n\nAP:\nAP Main Engine: 400-420+\nNon AP Main Engine: 320-350+",
         "ability": "1.Core\n2.Basic\n3.Ult/Chain\n4.EX Special\nAlice's Core Passive is the most important skill to level.  The rest can be ignored or leveled for minor increases in damage and daze.",
         "disc_4pc": [
-          "Puffer Electro",
-          "Fanged Metal"
+          "Puffer Electro"
         ],
         "disc_2pc": [
-          "Puffer Electro",
-          "Phaethon's Melody"
+          "Phaethon's Melody",
+          "Puffer Electro"
         ],
         "w_engine_notes": "",
         "disc_notes": "4pc Fanged Metal is her BiS 4-piece disc set. For her 2-piece disc set, choose whichever sets with the best substats and help reach your stat goals best. Although 2pc Phaethon also scales with her AA giving her some additional AP. 2-piece Puffer Electro is used when other sources of PEN% are available (i.e. disc 5 PEN% main, Rina, etc.)",
@@ -117,12 +114,11 @@
         "baseline": "Impact: 168-193\n\nCR: 50%+\n(Needed if using 4pc King of the Summit)\n\nCD: 100%+",
         "ability": "1.Core\n1. Ex Special\n2. Basic\n3.Dodge\n3.Chain/Ult\n3.5.Assist\nQuick-swap: Skip Dodge \nOn-field: Skip Assist",
         "disc_4pc": [
-          "Astral Voice",
-          "King of the Summit"
+          "Astral Voice"
         ],
         "disc_2pc": [
           "Astral Voice",
-          "Woodpecker Electro"
+          "Shockstar Disco"
         ],
         "w_engine_notes": "",
         "disc_notes": "4PC King of the Summit is her new BIS, providing Daze% bonus and CDMG% buff for team if her CR is equal or more than 50%. 4PC Astral Voice requires another Support to enable Quick Assist. Building her with sub DPS stats will help with her damage as she is stunning.",
@@ -169,8 +165,8 @@
         "baseline": "ATK: \nATK Main Engine: 2700-3000+ \nNon ATK Main Engine: 2400-2700+ \n\nCR: 60-70%+ \n\nCD:130-170%+",
         "ability": "1.Core\n1.Basic\n2.Chain/Ult\n3. Assist\n3.Dodge\n4.EX Special\nQuick Assist has high multipliers which is worth upgrading for Burst play, ignore Dodge",
         "disc_4pc": [
-          "Astral Voice",
-          "Hormone Punk"
+          "Hormone Punk",
+          "Astral Voice"
         ],
         "disc_2pc": [
           "Woodpecker Electro",
@@ -226,16 +222,11 @@
         "baseline": "ATK:\nATK Main Engine: 2500-2700+\nNon ATK Main Engine: 2300-2500+\n\nAP:\nAP Main Engine: 400-420+\nNon AP Main Engine: 330-350+",
         "ability": "1.Core\n1.Basic\n2.EX\n2. Assist\nCore matter the most, upgrade her abilities for Daze and slightly more scaling\n\nIgnore Dodge as you would spam Charged Basic",
         "disc_4pc": [
-          "Woodpecker Electro",
-          "Shining Aria",
           "Phaethon's Melody"
         ],
         "disc_2pc": [
-          "Woodpecker Electro",
-          "Puffer Electro",
           "Phaethon's Melody",
-          "Freedom Blues",
-          "Chaos Jazz"
+          "Puffer Electro"
         ],
         "w_engine_notes": "",
         "disc_notes": "4PC Shining Aria VS 4PC Phaethon Melody: Shining gives 9 less Anomaly Profiency while DMG% buff is the same value. The main difference is that Phaethon's DMG% buff can apply outside of stun and you must remember to use other allies EX during stun to keep up Phaethon's buff; while Aria is easier to manage as its DMG% buff is fully up in stun window.\nIf you use 4PC Shining Aria, then use 2PC Phaethon for AM%, otherwise use 2PC Freedom/Chaos for the AP.",
@@ -284,14 +275,14 @@
         "baseline": "ATK:\nATK Main Engine: 3000-3300+\nNon ATK Main Engine: 2700-3000+\n\nCR: Refer to notes¹\n4pc Shadow Harmony: 38-63%\nOtherwise: 50-75%\nCD: 130-180+",
         "ability": "1.Core\n1.Dodge\n2.Chain/Ult\n3.EX Special\n3.Basic\n4.Assist\nHis main source of damage is from Dash Attack, hence Dodge priority",
         "disc_4pc": [
-          "Puffer Electro",
           "Shadow Harmony",
+          "Puffer Electro",
           "Hormone Punk"
         ],
         "disc_2pc": [
           "Puffer Electro",
           "Woodpecker Electro",
-          "Swing Jazz"
+          "Shockstar Disco"
         ],
         "w_engine_notes": "- Cordis Germina is Harumasa's BIS in Dialyn team, giving 25% Elec DMG and DEF ignore on Ultimate. the downside is that it's hard not to overcap CR%, as Harumasa on Seed's sig has 83.4% CR on his Dash Attack already without a single CR% substat roll. His own signature is still better outside of Dialyn team by a bit. \n- Brimstone offers high combat ATK%, and can sometimes outperform Crit statstick as Harumasa can stacks Brimstone buff really well, and he gains a lot of Crit stats from Core Passive.",
         "disc_notes": "- 4PC Shadow Harmony is the most consistent set since he can easily stack the buff from using his Enhanced Dash Attacks. 4PC Puffer Electro is BIS w/ Dialyn team, and 4pc Hormone/Thunder are still good provided you can manage its uptime and condition. 4pc Thunder especially is only used when there's another Elec agents to help with Shock uptime.\n- Disc 4 can be either ATK%/CDMG% depend on substats, or CR% If you're lacking too much CR. Disc 5 PEN% is better unless Harumasa is paired with Nicole, in which case, ATK% is usually a bit better. \n¹Crit Rate note: Harumasa gets 25% CR bonus on enhanced Dash Attack, after his Potential Buff, the buff now apply to his Ult and Chasing Thunder, making the max CR 75% and have no more inconsistency between movesets, further reduced by 12% from 4PC Shadow Harmony, and more from teammate or/and W-engine, depending on the setup.",
@@ -343,7 +334,6 @@
         "baseline": "ATK: 3429\n(Needed to maximize Core F Passive)",
         "ability": "1.Core\n1.EX Special\n2.Chain/Ult\n3.Basic\nBasic Attack is on low priority as it only help slightly with Astra Yao's own DMG output from Additional Ability.\n\nAssist and Dodge can be ignored",
         "disc_4pc": [
-          "Moonlight Lullaby",
           "Astral Voice"
         ],
         "disc_2pc": [
@@ -448,15 +438,9 @@
         "sub_stats": "CR% = CDMG% > ATK%",
         "baseline": "CR: 50%+\n\nCD: 100%+",
         "ability": "1.EX Special\n1.Core\n2.Assist\n2.Chain/Ult\n3.Basic\n4.Dodge\nSkills should be upgraded for Daze and DMG increase.",
-        "disc_4pc": [
-          "Shockstar Disco",
-          "Woodpecker Electro",
-          "Puffer Electro"
-        ],
+        "disc_4pc": [],
         "disc_2pc": [
           "Astral Voice",
-          "Woodpecker Electro",
-          "Proto Punk",
           "Swing Jazz"
         ],
         "w_engine_notes": "",
@@ -506,14 +490,12 @@
         "baseline": "ATK:\nATK Main Engine: 2700-3000+\nNon ATK Main Engine: 2600-2800+\n\nCR: 60-70%+\n\nCD: 125-150%+",
         "ability": "1.Core\n1.Chain/Ult\n2.EX Special\n2.Dodge\n3.Basic\n4.Assist\nAssist is low priority",
         "disc_4pc": [
-          "Puffer Electro",
-          "Woodpecker Electro",
-          "Hormone Punk"
+          "Hormone Punk",
+          "Woodpecker Electro"
         ],
         "disc_2pc": [
-          "Puffer Electro",
           "Woodpecker Electro",
-          "Hormone Punk"
+          "Puffer Electro"
         ],
         "w_engine_notes": "",
         "disc_notes": "Use 2pc Hormone with 4pc Woodpecker and 2pc Woodpecker with 4pc Hormone. You can also use Puffer Electro. His best D5 is Pen% if not with Nicole due to how much DMG% he has. If with Nicole ATK% D5 becomes better.",
@@ -559,12 +541,10 @@
         "sub_stats": "AP = ATK% > Flat PEN/ATK",
         "baseline": "ATK:\nATK Main Engine: 2500-2800+\nNon ATK Main Engine: 2300-2500+\n\nAP: \nAP Main Engine: 390-440+ \nNon AP Main Engine: 320-370+",
         "ability": "1.Core\n2.EX Special\n2.Chain/Ult\n3.Assist\nOnly Core is needed, the rest of her abilities can be upgraded for more Daze and slightly more DMG scaling.",
-        "disc_4pc": [
-          "Chaos Jazz"
-        ],
+        "disc_4pc": [],
         "disc_2pc": [
-          "Phaethon's Melody",
-          "Puffer Electro"
+          "Puffer Electro",
+          "Phaethon's Melody"
         ],
         "w_engine_notes": "",
         "disc_notes": "Starting from Awakened Potential level 2, Burnice can use ER disc 6 for improved Heat uptime time, more DMG% but slightly less AM. For the full stat to be achieved, you need Potential level 6, ER 6 and 2PC ER% for 2.8 ER on the stat screen. This will require you to swap Burnice out more frequently than before to avoid Energy overcap. AM 6 can still be used for faster Anomaly especially if you have Signature W-Engine.\n\n2PC Puffer and PEN disc 5 is good if you have PEN sources or against high DEF targets.",
@@ -609,9 +589,10 @@
         "baseline": "Impact: 152-174 \n\nCR: 50%+\n\nCD: 100%+\n\nAP in Anomaly teams: 220+",
         "ability": "1.Core\n2.EX Special\n3.Assist\n4.Chain/Ult\n4.Basic\n4.Dodge\n#4th abilities can be upgraded for more DMG and Daze, lower priority.",
         "disc_4pc": [
-          "Freedom Blues"
+          "Astral Voice"
         ],
         "disc_2pc": [
+          "Astral Voice",
           "Shockstar Disco"
         ],
         "w_engine_notes": "",
@@ -658,11 +639,7 @@
         "sub_stats": "CR (until cap) > CDMG = ATK%",
         "baseline": "ATK:\nNon ATK Main Engine: 2200-2700+\nATK Main Engine: 2700-3200+\n\nCR: 57-82%\n(57% with Sig) \n\nCD: 110%+",
         "ability": "1.Core\n1. Basic\n2. EX Special\n2. Ultimate\n3. Assist\n4. Dodge\nDodge can be ignored outside of hypercarry",
-        "disc_4pc": [
-          "Astral Voice",
-          "Dawn's Bloom",
-          "Thunder Metal"
-        ],
+        "disc_4pc": [],
         "disc_2pc": [
           "Woodpecker Electro",
           "Puffer Electro"
@@ -710,13 +687,12 @@
         "baseline": "ATK:\nATK Main Engine: 2700-3000+\nNon ATK Main Engine: 2600-2800+\n\nCR: 70-80%+\n\nCD: 120-160%+",
         "ability": "1.EX Special\n1.Core\n1.Chain/Ult\n2.Basic\n3.Dodge\n3.Assist\nDodge has lower priority for Burst playstyle",
         "disc_4pc": [
-          "Fanged Metal",
           "Hormone Punk",
-          "Puffer Electro",
-          "Woodpecker Electro"
+          "Puffer Electro"
         ],
         "disc_2pc": [
-          "Puffer Electro"
+          "Puffer Electro",
+          "Woodpecker Electro"
         ],
         "w_engine_notes": "",
         "disc_notes": "4pc Puffer Electro is Corin's best burst option especially when played with Dialyn, her best stunner option. 4pc Hormone Punk is still a good option for burst Corin in general. 4oc Fanged Metal is really bad on Corin since she can't maintain good Assault proc uptime and that leads to bad DPS, unless you're running Corin with Yuzuha which helps Assault more frequently, though still worse option compared to Hormone or Puffer. 4pc Woodpecker isn't a good fit since its buff uptime is too short for Corin's Animations. 2pc Puffer and PEN% Disc 5 is her best choice, unless already using 4pc Puffer then use 2pc ATK%/CRIT.",
@@ -767,8 +743,6 @@
           "Astral Voice"
         ],
         "disc_2pc": [
-          "Moonlight Lullaby",
-          "Swing Jazz",
           "Woodpecker Electro"
         ],
         "w_engine_notes": "Steam Oven can be preferred over Hellfire Gears in some scenarios, since ER% Passive from Hellfire Gears is only during Dialyn's Off field time which leads to less Energy total compared to Oven, and less onfielding capabilities. Steam Oven's 25.6% Impact can be up during key moments like Defensive Assists, or Ultimate while Hellfire Gears needs to use an EX or 2 for maximum Impact buff. \nHellfire Gears with higher Refinement is preferred over Steam Oven due to more Impact and more ER% regardless on said issues.",
@@ -818,9 +792,9 @@
           "Hormone Punk"
         ],
         "disc_2pc": [
+          "Puffer Electro",
           "Woodpecker Electro",
-          "Swing Jazz",
-          "Puffer Electro"
+          "Phaethon's Melody"
         ],
         "w_engine_notes": "",
         "disc_notes": "Assuming you're playing with Ellen signature and some of Ellen's new best teammates like Astra or Lighter, having 32% Pen tends to be Ellen's best performing build regardless of your 4PC set, so 2PC Puffer is great to have although other 2PC sets are fine if you need to adjust for target substats. If using Myriad Eclipse or using Nicole/Trigger with sig Atk%/Ice% becomes better than Pen%.\nWith Ellen's buff and potential CR% or ATK% D4 becomes better due to how much CD% she gets in-combat. for CR goal, try to reach 80% with her Sig or close to 100% for others, then get more ATK after.",
@@ -871,15 +845,14 @@
         "baseline": "ATK: \nATK% Main W-Engine: 3200-3400+\nNon-ATK% Main: 2700-3000+\n\nCR: 55-75% *Do not exceed 75%\n\nCD: 130-160%+",
         "ability": "1.Chain/Ult\n2.Core\n2.EX Special\n2. Basic\n3.Dodge\n4.Assist\nDodge is low priority due to Dodge Counter rarely being used.",
         "disc_4pc": [
-          "Astral Voice",
+          "Puffer Electro",
           "Hormone Punk",
-          "Woodpecker Electro",
-          "Puffer Electro"
+          "Astral Voice"
         ],
         "disc_2pc": [
+          "Puffer Electro",
           "Woodpecker Electro",
-          "Swing Jazz",
-          "Puffer Electro"
+          "Phaethon's Melody"
         ],
         "w_engine_notes": "",
         "disc_notes": "4PC Puffer is viable as it has low limitations in gameplay unlike Hormone Punk and Woodpecker. with Dialyn upgrading her Chain Attack to Ultimate, it makes Puffer, a 4PC set buffing Ultimate, her best overall set.\nHormone punk has high ceiling, but requires good timing skills. 4PC Astral voice is only viable with Astra, and Astra must run 4PC Moonlight Lullaby.\n2PC Puffer is the ideal 2 PC (provided you don't already use 4pc Puffer) but any other 2 PCs work with minimal difference depending on overall build quality.",
@@ -926,7 +899,6 @@
         "baseline": "ATK:\nATK Main Engine: 2800-3000+\nNon ATK Main Engine: 2500-2700+\n\nCR: 60-75%+\nMax 85% with Cordis, otherwise 100%\n\nCD: 120%+",
         "ability": "1.Basic\n1.Core\n2.EX Special\n2.Chain/Ult\n3.Assist\n4.Dodge\nBasic and Core are top priorities, followed by EX and Chain/Ult.",
         "disc_4pc": [
-          "Dawn's Bloom",
           "Hormone Punk",
           "Astral Voice"
         ],
@@ -979,10 +951,7 @@
         "baseline": "ATK:\nATK Main Engine: 2500-2700+\nNon ATK Main Engine: 2200-2400+\n\nAP:\nAP Main Engine: 400-420+\nNon AP Main Engine: 330-350+",
         "ability": "1.Core\n2.EX Special\n2.Basic\n2.Chain/Ult\nOnly Core is needed, the rest of her abilities can be upgraded for more Daze and slightly more DMG scaling.",
         "disc_4pc": [
-          "Puffer Electro",
-          "Chaos Jazz",
-          "Thunder Metal",
-          "Freedom Blues"
+          "Puffer Electro"
         ],
         "disc_2pc": [
           "Phaethon's Melody",
@@ -1036,11 +1005,9 @@
           "Branch & Blade Song"
         ],
         "disc_2pc": [
-          "Phaethon's Melody",
           "Woodpecker Electro",
-          "Astral Voice",
-          "Hormone Punk",
-          "Puffer Electro"
+          "Puffer Electro",
+          "Phaethon's Melody"
         ],
         "w_engine_notes": "",
         "disc_notes": "4pc Branch & Blade is the undisputed best 4pc. 2pc Puffer (especially with PEN% Disc 5) is preferred as she gets a lot of DMG% in her own kits, but other 2pc like Astral/Hormone works for more ATK, or 2pc Woodpecker works for maximizing her Core Passive buildup too. \n73% CR is the max for m2 Miyabi.",
@@ -1094,13 +1061,13 @@
         "baseline": "ATK:\nATK Main Engine: 2800-3400+\nNon ATK Main Engine: 2700-3200+\n\nCR: 68-88%\nCD: 120-150%+",
         "ability": "1.Core\n1.EX Special\n1.Chain/Ult\n2.Basic\n2.Dodge\n2.Assist\nBasic Attack and Dodge is only need for Shiyu mobs and very specific DA Bosses. Ignore Assist",
         "disc_4pc": [
-          "Puffer Electro",
-          "Hormone Punk"
+          "Hormone Punk",
+          "Puffer Electro"
         ],
         "disc_2pc": [
+          "Woodpecker Electro",
           "Puffer Electro",
-          "Swing Jazz",
-          "Woodpecker Electro"
+          "Phaethon's Melody"
         ],
         "w_engine_notes": "When using Deep Sea Visitor or Severed Innocence, make sure you use Basic Attack once before you EX/Ult so you trigger the W-Engine's CR/CD passive.\nWhen using Steel Cushion, you can use his EX to let him go behind the enemy, then quickly cancel it with Ultimate before he depletes the energy. this way his Ultimate can benefit from Steel Cushion's passive.",
         "disc_notes": "4pc Hormone Punk is his best 4PC as it fits his role the best as a Burst DPS. Any offensive stats 2PC are viable, but 2PC Woodpecker has a slight edge since you'd want to get as close to 100% CR in combat as possible. 76% CR on stat page is the max with M1 Hugo.",
@@ -1148,8 +1115,7 @@
           "Puffer Electro"
         ],
         "disc_2pc": [
-          "Chaos Jazz",
-          "Freedom Blues",
+          "Phaethon's Melody",
           "Puffer Electro"
         ],
         "w_engine_notes": "",
@@ -1253,15 +1219,12 @@
         "baseline": "Impact: 168-193\n\nCR: 50%\n(Needed if using 4pc King of the Summit)\n\nCD: 100%+",
         "ability": "1.Core\n1.EX Special\n2.Assist\n2.Basic\n2.Dodge\n3.Chain/Ult\nQuick-swap: Skip Dodge, Basic on low priority\nOn-field: Skip Assist",
         "disc_4pc": [
-          "Astral Voice",
-          "King of the Summit",
-          "Moonlight Lullaby",
-          "Swing Jazz"
+          "Astral Voice"
         ],
         "disc_2pc": [
           "Astral Voice",
-          "Woodpecker Electro",
-          "Shockstar Disco"
+          "Shockstar Disco",
+          "Woodpecker Electro"
         ],
         "w_engine_notes": "",
         "disc_notes": "4PC King of the Summit is Koleda's BIS, providing Daze% bonus and CDMG% buff for team if her CR is equal or more than 50%. 4PC Astral Voice requires another Support to enable Quick Assist to the main DPS. 2PC can be either Shockstar for even more stun speed, or Swing Jazz/Moonlight Lullaby for more energy needed to use her EX Special.",
@@ -1313,10 +1276,9 @@
           "Yunkui Tales"
         ],
         "disc_2pc": [
-          "Inferno Metal",
-          "Shockstar Disco",
           "Woodpecker Electro",
-          "Branch & Blade Song"
+          "Inferno Metal",
+          "Shockstar Disco"
         ],
         "w_engine_notes": "",
         "disc_notes": "Manato with his signature at R1 only needs 63% CR for 100 in combat; 54% with R5 signature; 58% if using Yixuan's Sig on him. \n2PC Woodpecker is ideal you are struggling to get CR otherwise use 2PC Branch and Blade. If substats are good 2PC Inferno works as well.",
@@ -1367,14 +1329,13 @@
         "baseline": "Impact: 168-193\n\nCR: 50%+\n(Needed if using 4pc King of the Summit)\n\nCD: 100%+ (Optional)",
         "ability": "1.Core\n2.Assist\n2.EX Special\n3.Chain/Ult\n2.Basic\nDodge can be ignored",
         "disc_4pc": [
-          "Astral Voice",
-          "King of the Summit",
-          "Shockstar Disco"
+          "Astral Voice"
         ],
         "disc_2pc": [
           "Astral Voice",
-          "Swing Jazz",
-          "Shockstar Disco"
+          "Phaethon's Melody",
+          "Shockstar Disco",
+          "Swing Jazz"
         ],
         "w_engine_notes": "",
         "disc_notes": "4PC King of the Summit is one of Lighter's BIS, providing Daze% bonus and CDMG% buff for team if his CR is equal or more than 50%. 4PC Astral Voice requires another Support to enable Quick Asisst to the main DPS, but he can contribute to Astral stacks with his own Quick Assist as well. \nAlways use 2PC Shockstar for the Impact needed to max his DMG buff, unless already using 4pc Shockstar Disco, then 2pc Swing Jazz is decent for slightly more energy.",
@@ -1426,9 +1387,7 @@
         "sub_stats": "HP% > Flat HP",
         "baseline": "HP: 22,000-24,000\n(24k for max Sheer Force buff)",
         "ability": "1. EX\n1. Core\n2. Chain/Ult\n2. Assist\nIt is highly recommended to cage EX to increase the Sheer Force buff. Dodge isn't used.\nPerfect Assist has high Daze. Upgrading Assist, Basic, and Chain increase her Aftershock DMG but can be ignored at low investment.",
-        "disc_4pc": [
-          "Moonlight Lullaby"
-        ],
+        "disc_4pc": [],
         "disc_2pc": [
           "Yunkui Tales"
         ],
@@ -1477,11 +1436,11 @@
         "baseline": "ATK(more in note): 2367/ 2265/ 2083/ 1922\nfor EX Special level 11/ 12/ 14/ 16\n\nAP in Anomaly team: 250+\n \nCR: 50%+\nCD: 100%+\n*Only use AM in Miyabi+Lighter team",
         "ability": "1.EX Special\n2.Core\n3.Basic\n4.Chain/Ult\n5.Assist\n6.Dodge\nLucy's Boars' DMG is tied to Basic\nDodge can be ignored.",
         "disc_4pc": [
-          "Moonlight Lullaby",
           "Astral Voice"
         ],
         "disc_2pc": [
           "Astral Voice",
+          "Puffer Electro",
           "Woodpecker Electro"
         ],
         "w_engine_notes": "",
@@ -1531,10 +1490,8 @@
         "baseline": "ATK: 2000-2500+\n\nAP: 300-330+",
         "ability": "1.Core\n1.Basic\n1.Ex Special\n1.Chain/Ult\n2.Assist\n3.Dodge\nDodge can be ignored",
         "disc_4pc": [
-          "Puffer Electro",
-          "Freedom Blues",
           "Phaethon's Melody",
-          "Astral Voice"
+          "Puffer Electro"
         ],
         "disc_2pc": [
           "Phaethon's Melody"
@@ -1584,12 +1541,12 @@
         "baseline": "ATK:\nATK Main Engine: 2800-3300+\nNon ATK Main Engine: 2700-3000+\n\nCR: 60-80%+\n\nCD: 130-160%+",
         "ability": "1.Core\n1.Chain/Ult\n1.EX Special\n2.Basic\n3.Dodge\n3.Assist\nNeko's damage comes from her Core, Chain and EX, her BA is also important the other ones just have high priority.",
         "disc_4pc": [
-          "Woodpecker Electro",
-          "Hormone Punk",
-          "Puffer Electro"
+          "Puffer Electro",
+          "Woodpecker Electro"
         ],
         "disc_2pc": [
           "Puffer Electro",
+          "Woodpecker Electro",
           "Fanged Metal"
         ],
         "w_engine_notes": "",
@@ -1635,15 +1592,12 @@
         "baseline": "CR: 50%+\n\nCD: 100%+\n\nATK: 2000+ \n\nAP in Anomaly teams: 250+",
         "ability": "1.Core\n2. Chain/Ult\n2. EX Special\nNicole's Power lies in her core, but upgrading EX and Chain/Ult is good for more Daze and some Crit DMG as you will use it often.\n\nAssist can be upgraded for some Daze, ignore Basic and Dodge.",
         "disc_4pc": [
-          "Puffer Electro",
           "Astral Voice",
-          "Moonlight Lullaby",
-          "Swing Jazz"
+          "Puffer Electro"
         ],
         "disc_2pc": [
-          "Puffer Electro",
           "Phaethon's Melody",
-          "Shockstar Disco"
+          "Puffer Electro"
         ],
         "w_engine_notes": "",
         "disc_notes": "4PC Moonlight Lullaby is her best set as it gives ER as a 2PC, gives teamwide DMG% buff, and has full uptime. 4PC Astral Voice can be used in double support team when the other support already used 4PC Moonlight.\nSwing Jazz should be the priotized 2PC set, as more Energy means more EX Special, resulting to better Nicole Debuff uptime. \nThough, there are niche cases where you'd want Nicole to do more Daze (2pc Shockstar/Summit) or slightly build up faster Corruption (2pc Phaethon Melody).",
@@ -1693,11 +1647,11 @@
         "baseline": "ATK: 2200-2500+\n\nCR: 43-75%\n(63% with Shadow Harmony)\n(43% with Shadow Harmony + Sig)\n\nCD: 120-150%+",
         "ability": "1. Core\n2. EX Special\n2. Chain/ult\n3. Basics\n4. Assist\n4. Dodge\nAssist and Dodge are low priority",
         "disc_4pc": [
-          "Astral Voice",
-          "Shadow Harmony"
+          "Shadow Harmony",
+          "Astral Voice"
         ],
         "disc_2pc": [
-          "Puffer Electro"
+          "Woodpecker Electro"
         ],
         "w_engine_notes": "",
         "disc_notes": "4PC Shadow Harmony is Orphie's best 4-piece set as she benefits from the Aftershock buffs.\n4PC Astral Voice is a good alternative supportive option.\n2PC ER% and Disc 6 ER% are recommended as she requires 3.7 Energy Regen for her full buff transfer (700 ATK)\nDisc 5 priorities go as follows: ATK% > Fire%, since Orphie's AA has 25% DEF Ignore and to avoid oversaturated on DMG% itself.",
@@ -1742,7 +1696,6 @@
         "baseline": "ATK: 3000  (to max out his buff at Core F)\n\nER: 2.49+",
         "ability": "1.Core\n2.Assist\n2.Ult\n2.EX Special\nCore is the most important,\nUlt can be leveled for \nmore healing while \nAssist can be levelled for \nextra Daze.\n\nBasic and Dodge is not used.",
         "disc_4pc": [
-          "Proto Punk",
           "Astral Voice"
         ],
         "disc_2pc": [
@@ -1792,12 +1745,12 @@
         "baseline": "ATK:\nATK Main Engine: 2400-2550+\nNon ATK Main Engine: 2200-2400+\n\nAP:\nAP Main Engine: 350-400+\nNon AP Main Engine: 330-350+",
         "ability": "1.Core\n2.EX Special\n3.Basic\n3.Chain/Ult\n3.Dodge\n4.Assist\nOnly Core is needed, the rest of her abilities can be upgraded for more Daze and slightly more DMG scaling.",
         "disc_4pc": [
-          "Puffer Electro",
-          "Fanged Metal"
+          "Puffer Electro"
         ],
         "disc_2pc": [
+          "Phaethon's Melody",
           "Puffer Electro",
-          "Phaethon's Melody"
+          "Woodpecker Electro"
         ],
         "w_engine_notes": "",
         "disc_notes": "She only uses 4PC Fang no other options are good for her. ER% D6 is not a good choice for Piper and should never be considered.",
@@ -1843,9 +1796,7 @@
         "sub_stats": "AP = ATK% > PEN/ATK",
         "baseline": "ATK:\r\nATK Main Engine: 2600+\r\nNon ATK Main Engine: 2400+\r\n\r\nAP\r\nAP Main Engine: 370-400+\r\nNon AP Main Engine: 300-330+",
         "ability": "1. Core\n2.EX\n3.Ult\n4.Basic\n4.Assist\n4.Dodge\nHer most important skill is her Core. Everything else can be left on lower skill levels or upgraded for some extra daze/dmg",
-        "disc_4pc": [
-          "Notes From the Chained"
-        ],
+        "disc_4pc": [],
         "disc_2pc": [
           "Phaethon's Melody"
         ],
@@ -1895,7 +1846,7 @@
           "Astral Voice"
         ],
         "disc_2pc": [
-          "Shockstar Disco"
+          "Astral Voice"
         ],
         "w_engine_notes": "* Blazing Laurel works due to Evasive Assist giving her Impact% for the Assist Follow-up and her special Aftershock after. The Fire/Ice CDMG% buff from it doesn't work because she doesn't use her Basics, and it's not worth saving your pulls for Lighter's Signature on Pulchra. \n* Hellfire Gears's Energy Regen is way less consistent due to Aftershock not being considered as \"Off-field\", for this reason, Steam Oven is better.",
         "disc_notes": "PEN% ATK% and Phys DMG% are all valid so you should choose based on which one has the best substat rolls. Impact should always be chosen even if she is a Sub-DPS in order to facilitate more Stun windows. You want to spam Evasive Assists as much as possible in order to upkeep her Aftershock stacks on top of refreshing 4pc Astral Voice stacks.",
@@ -1945,14 +1896,11 @@
         "baseline": "Impact: 168-193\n\nCR: 50%+\n(Needed if using 4pc King of the Summit) \n\nCD: 100%+",
         "ability": "1.Core\n1.Basic\n2.EX Special\n2.Chain/Ult\n3.Dodge\n4.Assist\nYou can Ignore Assist",
         "disc_4pc": [
-          "Astral Voice",
-          "King of the Summit"
+          "Astral Voice"
         ],
         "disc_2pc": [
           "Astral Voice",
-          "Woodpecker Electro",
-          "Swing Jazz",
-          "Shockstar Disco"
+          "Woodpecker Electro"
         ],
         "w_engine_notes": "",
         "disc_notes": "4PC King of the Summit is now her new BIS, providing Qingyi Daze% bonus and CDMG% buff for team if her CR is equal or more than 50%. 4PC Astral Voice requires another Support to enable Quick Assist. 2PC Shockstar is best for stun speed, while 2PC Swing Jazz provides a bit more Energy to use EX for 4PC King of the Summit's CDMG% bonus.",
@@ -2002,7 +1950,7 @@
           "Astral Voice"
         ],
         "disc_2pc": [
-          "Woodpecker Electro",
+          "Phaethon's Melody",
           "Puffer Electro"
         ],
         "w_engine_notes": "",
@@ -2054,8 +2002,7 @@
         "baseline": "ATK:\nATK Main Engine: 2800-3100+ \nNon ATK Main Engine: 2700-3000+\n\nCR: 70-78%  \n66% for M2 Sanby\n\nCD: 120-160%+",
         "ability": "1.Core\n1.EX Special\n2.Chain/Ult\n2.Basic\n3.Dodge\n4.Assist\nS0 Anby's Aftershock is tied to Special Attack",
         "disc_4pc": [
-          "Shadow Harmony",
-          "Woodpecker Electro"
+          "Shadow Harmony"
         ],
         "disc_2pc": [
           "Woodpecker Electro",
@@ -2169,16 +2116,13 @@
         "baseline": "ATK:\nCore F: 2500+ \nCore E: 2623+ \nCore D: 2778+\nAP: 250+ (Optional and only useful for Yuzu Ice)\n\n *You only use AM in Mono Freeze",
         "ability": "1.Core\n1.EX Special\n2.Chain/Ult\n3.Assist\n4.Basic\n4.Dodge\nIgnore Basic and Dodge if using Soukaku purely as a Buffer.",
         "disc_4pc": [
-          "Puffer Electro",
-          "Freedom Blues",
           "Astral Voice",
-          "Moonlight Lullaby"
+          "Puffer Electro"
         ],
         "disc_2pc": [
-          "Woodpecker Electro",
-          "Puffer Electro",
-          "Swing Jazz",
-          "Phaethon's Melody"
+          "Phaethon's Melody",
+          "Shockstar Disco",
+          "Puffer Electro"
         ],
         "w_engine_notes": "",
         "disc_notes": "Soukaku's 4PC will usually be Astral, unless paired with another support that can carry Astral allowing her to carry Moonlight. \nWhen paired with Miyabi Mono-ice team, Soukaku should use 4PC Freedom Blues to speed up Ice Anomaly buildup for the whole team. 2PC can be Swing jazz/Phaethon Melody for more Energy or Anomaly buildup. \nAlso AP becomes a good stat to build her with in Yuzu Ice.",
@@ -2228,14 +2172,12 @@
         "baseline": "ATK: 3300 - 3500\n\nEnergy Regen:\nThoughtbop: 2.6\nKaboom the Cannon or stat stick: 2.5\nWeeping Cradle: 2.0",
         "ability": "1. Core\n2. EX\n2. Assist\n3. Ult\nPrioritize Core Skill to maximize buffs. Basic and Dodge are rarely used and can be ignored.",
         "disc_4pc": [
-          "Astral Voice"
+          "Moonlight Lullaby"
         ],
         "disc_2pc": [
           "Puffer Electro",
           "King of the Summit",
-          "Shockstar Disco",
-          "Swing Jazz",
-          "Hormone Punk"
+          "Shockstar Disco"
         ],
         "w_engine_notes": "",
         "disc_notes": "Impact 6 and Shockstar/King of the Summit are only to be used outside of Ye Shunguang teams. Astral Voice can also be used as a 4pc if a teammate is holding Moonlight Lullaby, but it is not recommended in most teams. Swing Jazz has priority over Astral/Hormone 2pc due to Sunna's Core Skill upgrades providing her with ATK%",
@@ -2282,9 +2224,7 @@
         "baseline": "CR: 60-90% - As close to 90% as \npossible is advised, not a strict must.\n\nImpact:\nWith Sig: ~162\nWithout Sig: 162~186",
         "ability": "1.Core\n1.Basic\n2.Chain/Ult\n2.EX Special\n3.Assist\n4.Dodge\nTrigger's Aftershock is tied to Basic Attack\n\nDodge can be ignored",
         "disc_4pc": [
-          "Shadow Harmony",
-          "Astral Voice",
-          "Shockstar Disco"
+          "Astral Voice"
         ],
         "disc_2pc": [
           "Astral Voice",
@@ -2335,15 +2275,13 @@
         "baseline": "ATK:\nATK Main Engine: 2500-2700+\nNon ATK Main Engine: 2300-2400+\n\nAP:\nAP Main Engine: 400-420+\nNon AP Main Engine: 350-375+",
         "ability": "1.Core\n1.EX Special\n1.Chain/Ult\n2.Basic\nUpgrading EX and Ultimate increase Additional DMG Multiplier\n\nBasic Attack is recommended for more Daze, Assist and Dodge have lower priority.",
         "disc_4pc": [
-          "Puffer Electro",
-          "Chaos Jazz",
-          "Thunder Metal"
+          "Puffer Electro"
         ],
         "disc_2pc": [
           "Phaethon's Melody",
           "Puffer Electro",
           "Woodpecker Electro",
-          "Swing Jazz"
+          "Shockstar Disco"
         ],
         "w_engine_notes": "",
         "disc_notes": "2pc sets are based on AP Rolls and ATK% sub stats roll. 4pc Thunder Metal can work with AM% or ATK% Disc 6, Chaos Jazz uses AM. Disorder builds will perform better for Yanagi at M0-M1. \n*Monoshock teams or Hypercarry Yanagi will want at ATK% on her Disc 6 because in MonoShock teams Shock anomaly will be doing the damage and AM is not needed as it will only refresh shock anomaly faster.",
@@ -2441,9 +2379,7 @@
           "Phaethon's Melody"
         ],
         "disc_2pc": [
-          "Phaethon's Melody",
-          "Chaos Jazz",
-          "Freedom Blues"
+          "Phaethon's Melody"
         ],
         "w_engine_notes": "",
         "disc_notes": "Because Vivian's Core scales heavily on AP, only 2PC Chaos Jazz/Freedom Blues is considered and AP takes the top prioriy in sub stats.\nFor Disc 5, DMG% or PEN Ratio is generally better than ATK% but simply pick the one with the most AP sub stats.",
@@ -2490,16 +2426,11 @@
         "baseline": "Impact: 169-194\n\nCR: 50%+\n(Needed if using 4pc King of the Summit)\n\nCD: 100%+\n\nAP in Anomaly Team: 250+",
         "ability": "1.EX Special\n1.Assist\n1.Core\n1.Chain/Ult\n2.Basic\n3.Dodge\nDodge is the least in priority \nif Lycaon is used as a pure parry+EX bot.",
         "disc_4pc": [
-          "Astral Voice",
-          "King of the Summit",
-          "Proto Punk"
+          "Astral Voice"
         ],
         "disc_2pc": [
           "Astral Voice",
-          "Swing Jazz",
-          "Shockstar Disco",
-          "Phaethon's Melody",
-          "Moonlight Lullaby"
+          "Phaethon's Melody"
         ],
         "w_engine_notes": "The Restrained, his own Signature, is worse than the other alternatives most of the time as it only buffs Daze% on Basic Attack. Only use if he's the only On-field stunner (i.e., Hugo team without a 2nd stunner).\nHis Potential buff doesn't really change engines other than make stacking Blazing Laruel more effective in non Hugo teams and make Hellfire worse.",
         "disc_notes": "4PC King of the Summit is his best set. 4PC Astral Voice is more viable after his Potential buff but having another support for better Astral stacks is recommended. 4PC Proto Punk if 4pc King of the Summit is already used on another stunner in the team. \n2PC can be Shockstar Disco for more Daze. Miyabi Mono Ice team you can also 2PC Swing/Moonlight for more Energy, or 2pc Phaethon although boss dependent.",
@@ -2671,8 +2602,7 @@
         "baseline": "HP: \nHP Main Engine: 23,000 - 27,000\nNon HP Main Engine: 21,000 - 25,000+",
         "ability": "1. Core\n2. EX\n3. Ult\n3. Assist\n3. Basic\n6. Dodge\nPrioritize core. EX offers some healing while the rest are for daze. Dodge can be ignored.",
         "disc_4pc": [
-          "Astral Voice",
-          "Bunny in Wonderland"
+          "Astral Voice"
         ],
         "disc_2pc": [
           "Yunkui Tales",
@@ -2722,11 +2652,9 @@
         "baseline": "ATK:\nATK Main Engine: 2800-3300+\nNon ATK Main Engine: 2700-3300+\n\nCR: 35-70%+\n\nCD: 150-200%+",
         "ability": "1.Basic\n1.Core\n2.Chain/Ult\n3.EX Special\n4.Dodge\n4.Assist\nDodge and Assist on low priority",
         "disc_4pc": [
-          "Shadow Harmony",
-          "Chaos Jazz",
           "Hormone Punk",
           "Puffer Electro",
-          "Woodpecker Electro"
+          "Shadow Harmony"
         ],
         "disc_2pc": [
           "Woodpecker Electro",

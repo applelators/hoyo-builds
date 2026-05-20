@@ -461,36 +461,12 @@ def parse_block(rows):
         if not ability_clean or line != ability_clean[-1]:
             ability_clean.append(line)
 
-    # Extract disc set names from all text fields
-    all_text = ' '.join(filter(None, [disc_notes, other_notes, team_general]))
-    disc_sets = extract_disc_sets(all_text)
-
-    # Apply disc_map (spreadsheet images — source of truth)
+    # Disc sets come exclusively from disc_map.json (image recognition).
     dm = _disc_map.get(name, {})
-    for s in reversed(dm.get('4pc', [])):
-        if s not in disc_sets['4pc']:
-            disc_sets['4pc'].insert(0, s)
-    for s in reversed(dm.get('2pc', [])):
-        if s not in disc_sets['2pc']:
-            disc_sets['2pc'].insert(0, s)
-
-    # Apply DISC_OVERRIDES: prepend_* only when disc_map had no data (empty list);
-    # exclude_* always applies to fix text-extraction errors.
-    ov = DISC_OVERRIDES.get(name, {})
-    if not dm.get('4pc'):
-        for s in reversed(ov.get('prepend_4pc', [])):
-            if s not in disc_sets['4pc']:
-                disc_sets['4pc'].insert(0, s)
-    if not dm.get('2pc'):
-        for s in reversed(ov.get('prepend_2pc', [])):
-            if s not in disc_sets['2pc']:
-                disc_sets['2pc'].insert(0, s)
-    for s in ov.get('exclude_4pc', []):
-        if s in disc_sets['4pc']:
-            disc_sets['4pc'].remove(s)
-    for s in ov.get('exclude_2pc', []):
-        if s in disc_sets['2pc']:
-            disc_sets['2pc'].remove(s)
+    disc_sets = {
+        '4pc': list(dm.get('4pc', [])),
+        '2pc': list(dm.get('2pc', [])),
+    }
 
     return {
         'name':         name,

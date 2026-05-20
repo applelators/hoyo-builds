@@ -427,8 +427,19 @@ def resolve_via_phash(
         except Exception:
             return None
 
-    # Build per-disc-set reference hashes from ALL resolved tokens (4pc + 2pc combined)
+    # Build per-disc-set reference hashes.
+    # Start from canonical wiki icons (disc_icons.json) if available — these are
+    # ground-truth references that don't depend on the bootstrap intersection step.
     ref_hashes: Dict[str, list] = {}
+    canonical_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'disc_icons.json')
+    if os.path.exists(canonical_path):
+        canonical = json.load(open(canonical_path))
+        for disc_name, phash_hex in canonical.items():
+            ref_hashes[disc_name] = [imagehash.hex_to_hash(phash_hex)]
+        if debug:
+            print(f"  [phash] loaded {len(ref_hashes)} canonical hashes from disc_icons.json")
+
+    # Also add hashes from already-resolved tokens (same render style as spreadsheet)
     for tok, disc in list(token_to_4pc.items()) + list(token_to_2pc.items()):
         if tok not in token_to_bytes:
             continue

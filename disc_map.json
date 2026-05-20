@@ -1,7 +1,7 @@
 {
   "Sunna": {
     "4pc": [
-      "Astral Voice"
+      "Moonlight Lullaby"
     ],
     "2pc": [
       "Puffer Electro",
@@ -21,13 +21,16 @@
     "4pc": [
       "Astral Voice"
     ],
-    "2pc": []
+    "2pc": [
+      "Woodpecker Electro"
+    ]
   },
   "Alice Thymefield": {
     "4pc": [
       "Puffer Electro"
     ],
     "2pc": [
+      "Phaethon's Melody",
       "Puffer Electro"
     ]
   },
@@ -40,8 +43,11 @@
     ]
   },
   "Caesar King": {
-    "4pc": [],
+    "4pc": [
+      "Astral Voice"
+    ],
     "2pc": [
+      "Astral Voice",
       "Shockstar Disco"
     ]
   },
@@ -50,21 +56,27 @@
       "Puffer Electro"
     ],
     "2pc": [
+      "Phaethon's Melody",
       "Puffer Electro"
     ]
   },
   "Nekomiya Mana": {
     "4pc": [
-      "Puffer Electro"
+      "Puffer Electro",
+      "Woodpecker Electro"
     ],
     "2pc": [
       "Puffer Electro",
+      "Woodpecker Electro",
       "Fanged Metal"
     ]
   },
   "Pan Yinhu": {
-    "4pc": [],
+    "4pc": [
+      "Astral Voice"
+    ],
     "2pc": [
+      "Astral Voice",
       "Shockstar Disco"
     ]
   },
@@ -73,12 +85,16 @@
       "Astral Voice"
     ],
     "2pc": [
-      "Shockstar Disco"
+      "Astral Voice"
     ]
   },
   "Billy Kid": {
-    "4pc": [],
+    "4pc": [
+      "Hormone Punk",
+      "Woodpecker Electro"
+    ],
     "2pc": [
+      "Woodpecker Electro",
       "Puffer Electro"
     ]
   },
@@ -87,16 +103,19 @@
       "Puffer Electro"
     ],
     "2pc": [
+      "Phaethon's Melody",
       "Puffer Electro",
-      "Phaethon's Melody"
+      "Woodpecker Electro"
     ]
   },
   "Corin Wickes": {
     "4pc": [
+      "Hormone Punk",
       "Puffer Electro"
     ],
     "2pc": [
-      "Puffer Electro"
+      "Puffer Electro",
+      "Woodpecker Electro"
     ]
   },
   "Banyue": {
@@ -114,7 +133,7 @@
       "Astral Voice"
     ],
     "2pc": [
-      "Puffer Electro"
+      "Woodpecker Electro"
     ]
   },
   "Ju Fufu": {
@@ -137,7 +156,7 @@
     "2pc": [
       "Puffer Electro",
       "Woodpecker Electro",
-      "Swing Jazz"
+      "Phaethon's Melody"
     ]
   },
   "Lighter": {
@@ -146,6 +165,8 @@
     ],
     "2pc": [
       "Astral Voice",
+      "Phaethon's Melody",
+      "Shockstar Disco",
       "Swing Jazz"
     ]
   },
@@ -193,6 +214,7 @@
     ],
     "2pc": [
       "Astral Voice",
+      "Puffer Electro",
       "Woodpecker Electro"
     ]
   },
@@ -200,7 +222,6 @@
     "4pc": [],
     "2pc": [
       "Astral Voice",
-      "Woodpecker Electro",
       "Swing Jazz"
     ]
   },
@@ -248,7 +269,7 @@
     "2pc": [
       "Puffer Electro",
       "Woodpecker Electro",
-      "Swing Jazz"
+      "Shockstar Disco"
     ]
   },
   "Tsukishiro Yanagi": {
@@ -259,7 +280,7 @@
       "Phaethon's Melody",
       "Puffer Electro",
       "Woodpecker Electro",
-      "Swing Jazz"
+      "Shockstar Disco"
     ]
   },
   "Qingyi": {
@@ -294,7 +315,7 @@
       "Astral Voice"
     ],
     "2pc": [
-      "Woodpecker Electro",
+      "Phaethon's Melody",
       "Puffer Electro"
     ]
   },
@@ -314,7 +335,7 @@
     ],
     "2pc": [
       "Astral Voice",
-      "Woodpecker Electro"
+      "Shockstar Disco"
     ]
   },
   "Promeia": {
@@ -349,7 +370,7 @@
     "2pc": [
       "Woodpecker Electro",
       "Puffer Electro",
-      "Swing Jazz"
+      "Phaethon's Melody"
     ]
   },
   "Hoshimi Miyabi": {
@@ -370,7 +391,7 @@
     "2pc": [
       "Puffer Electro",
       "Woodpecker Electro",
-      "Swing Jazz"
+      "Phaethon's Melody"
     ]
   },
   "Von Lycaon": {
@@ -379,7 +400,7 @@
     ],
     "2pc": [
       "Astral Voice",
-      "Swing Jazz"
+      "Phaethon's Melody"
     ]
   },
   "Soukaku": {
@@ -388,8 +409,8 @@
       "Puffer Electro"
     ],
     "2pc": [
-      "Woodpecker Electro",
-      "Swing Jazz",
+      "Phaethon's Melody",
+      "Shockstar Disco",
       "Puffer Electro"
     ]
   },
@@ -404,10 +425,9 @@
   },
   "Aria": {
     "4pc": [
-      "Woodpecker Electro"
+      "Phaethon's Melody"
     ],
     "2pc": [
-      "Woodpecker Electro",
       "Phaethon's Melody",
       "Puffer Electro"
     ]
