@@ -2,6 +2,7 @@
   {
     "name": "Alexandrina Sebastiane (Rina)",
     "specialty": "Support",
+    "element": "Electric",
     "last_updated": "2.1",
     "builds": [
       {
@@ -30,6 +31,7 @@
   {
     "name": "Alice Thymefield",
     "specialty": "Anomaly",
+    "element": "Physical",
     "last_updated": "2.7",
     "builds": [
       {
@@ -92,6 +94,7 @@
   {
     "name": "Anby Demara",
     "specialty": "Stun",
+    "element": "Electric",
     "last_updated": "2.0",
     "builds": [
       {
@@ -120,6 +123,7 @@
   {
     "name": "Anton Ivanov",
     "specialty": "Attack",
+    "element": "Electric",
     "last_updated": "2.4",
     "builds": [
       {
@@ -149,6 +153,7 @@
   {
     "name": "Aria",
     "specialty": "Anomaly",
+    "element": "Ether",
     "last_updated": "2.7",
     "builds": [
       {
@@ -219,6 +224,7 @@
   {
     "name": "Asaba Harumasa",
     "specialty": "Attack",
+    "element": "Electric",
     "last_updated": "2.6",
     "builds": [
       {
@@ -250,6 +256,7 @@
   {
     "name": "Astra Yao",
     "specialty": "Support",
+    "element": "Ether",
     "last_updated": "2.2",
     "builds": [
       {
@@ -279,6 +286,7 @@
   {
     "name": "Banyue",
     "specialty": "Rupture",
+    "element": "Fire",
     "last_updated": "2.5",
     "builds": [
       {
@@ -307,6 +315,7 @@
   {
     "name": "Ben Bigger",
     "specialty": "Defense",
+    "element": "Fire",
     "last_updated": "2.7",
     "builds": [
       {
@@ -333,6 +342,7 @@
   {
     "name": "Billy Kid",
     "specialty": "Attack",
+    "element": "Physical",
     "last_updated": "2.4",
     "builds": [
       {
@@ -398,6 +408,7 @@
   {
     "name": "Burnice White",
     "specialty": "Anomaly",
+    "element": "Fire",
     "last_updated": "2.5",
     "builds": [
       {
@@ -424,6 +435,7 @@
   {
     "name": "Caesar King",
     "specialty": "Defense",
+    "element": "Physical",
     "last_updated": "2.7",
     "builds": [
       {
@@ -488,6 +500,7 @@
   {
     "name": "Cissia",
     "specialty": "Attack",
+    "element": "Electric",
     "last_updated": "2.7",
     "builds": [
       {
@@ -514,6 +527,7 @@
   {
     "name": "Corin Wickes",
     "specialty": "Attack",
+    "element": "Physical",
     "last_updated": "2.4",
     "builds": [
       {
@@ -580,6 +594,7 @@
   {
     "name": "Dialyn",
     "specialty": "Stunner",
+    "element": "Physical",
     "last_updated": "2.6",
     "builds": [
       {
@@ -626,6 +641,7 @@
   {
     "name": "Ellen Joe",
     "specialty": "Attack",
+    "element": "Ice",
     "last_updated": "2.4",
     "builds": [
       {
@@ -656,6 +672,7 @@
   {
     "name": "Evelyn Chevalier",
     "specialty": "Attack",
+    "element": "Fire",
     "last_updated": "2.4",
     "builds": [
       {
@@ -687,6 +704,7 @@
   {
     "name": "Flora (Seed)",
     "specialty": "Attack",
+    "element": "Electric",
     "last_updated": "2.7",
     "builds": [
       {
@@ -716,6 +734,7 @@
   {
     "name": "Grace Howard",
     "specialty": "Anomaly",
+    "element": "Electric",
     "last_updated": "2.7",
     "builds": [
       {
@@ -744,6 +763,7 @@
   {
     "name": "Hoshimi Miyabi",
     "specialty": "Anomaly",
+    "element": "Ice",
     "last_updated": "2.7",
     "builds": [
       {
@@ -773,6 +793,7 @@
   {
     "name": "Hugo Vlad",
     "specialty": "Attack",
+    "element": "Ice",
     "last_updated": "2.6",
     "builds": [
       {
@@ -803,6 +824,7 @@
   {
     "name": "Jane Doe",
     "specialty": "Anomaly",
+    "element": "Physical",
     "last_updated": "2.7",
     "builds": [
       {
@@ -849,6 +871,7 @@
   {
     "name": "Ju Fufu",
     "specialty": "Stun",
+    "element": "Fire",
     "last_updated": "2.6",
     "builds": [
       {
@@ -879,6 +902,7 @@
   {
     "name": "Koleda Belobog",
     "specialty": "Stun",
+    "element": "Fire",
     "last_updated": "2.3",
     "builds": [
       {
@@ -908,6 +932,7 @@
   {
     "name": "Komano Manato",
     "specialty": "Rupture",
+    "element": "Fire",
     "last_updated": "2.8",
     "builds": [
       {
@@ -937,6 +962,7 @@
   {
     "name": "Lighter",
     "specialty": "Stun",
+    "element": "Fire",
     "last_updated": "2.6",
     "builds": [
       {
@@ -967,6 +993,7 @@
   {
     "name": "Lucia Elowen",
     "specialty": "Support",
+    "element": "Ether",
     "last_updated": "2.3",
     "builds": [
       {
@@ -992,6 +1019,7 @@
   {
     "name": "Luciana Auxesis Theodoro de Montefio (Lucy)",
     "specialty": "Support",
+    "element": "Fire",
     "last_updated": "2.6",
     "builds": [
       {
@@ -1021,6 +1049,7 @@
   {
     "name": "Nangong Yu",
     "specialty": "Stun",
+    "element": "Ether",
     "last_updated": "2.7",
     "builds": [
       {
@@ -1049,6 +1078,7 @@
   {
     "name": "Nekomiya Mana",
     "specialty": "Attack",
+    "element": "Physical",
     "last_updated": "2.7",
     "builds": [
       {
@@ -1104,6 +1134,7 @@
   {
     "name": "Nicole Demara",
     "specialty": "Support",
+    "element": "Ether",
     "last_updated": "2.2",
     "builds": [
       {
@@ -1133,6 +1164,7 @@
   {
     "name": "Orphie Magnusson & Magus",
     "specialty": "Attacker",
+    "element": "Fire",
     "last_updated": "2.2",
     "builds": [
       {
@@ -1161,6 +1193,7 @@
   {
     "name": "Pan Yinhu",
     "specialty": "Defense",
+    "element": "Physical",
     "last_updated": "2.7",
     "builds": [
       {
@@ -1224,6 +1257,7 @@
   {
     "name": "Piper Wheel",
     "specialty": "Anomaly",
+    "element": "Physical",
     "last_updated": "2.7",
     "builds": [
       {
@@ -1272,6 +1306,7 @@
   {
     "name": "Promeia",
     "specialty": "Anomaly",
+    "element": "Ice",
     "last_updated": "2.8",
     "builds": [
       {
@@ -1297,6 +1332,7 @@
   {
     "name": "Pulchra Fellini",
     "specialty": "Stun",
+    "element": "Physical",
     "last_updated": "Patch 2.6",
     "builds": [
       {
@@ -1360,6 +1396,7 @@
   {
     "name": "Qingyi",
     "specialty": "Stun",
+    "element": "Electric",
     "last_updated": "2.4",
     "builds": [
       {
@@ -1388,6 +1425,7 @@
   {
     "name": "Seth Lowell",
     "specialty": "Defense",
+    "element": "Electric",
     "last_updated": "2.7",
     "builds": [
       {
@@ -1416,6 +1454,7 @@
   {
     "name": "Soldier 0 - Anby",
     "specialty": "Attack",
+    "element": "Electric",
     "last_updated": "2.4",
     "builds": [
       {
@@ -1444,6 +1483,7 @@
   {
     "name": "Soldier 11 (Harin)",
     "specialty": "Attack",
+    "element": "Fire",
     "last_updated": "2.6",
     "builds": [
       {
@@ -1474,6 +1514,7 @@
   {
     "name": "Soukaku",
     "specialty": "Support",
+    "element": "Ice",
     "last_updated": "2.2",
     "builds": [
       {
@@ -1504,6 +1545,7 @@
   {
     "name": "Sunna",
     "specialty": "Support",
+    "element": "Physical",
     "last_updated": "2.7",
     "builds": [
       {
@@ -1568,6 +1610,7 @@
   {
     "name": "Trigger",
     "specialty": "Stun",
+    "element": "Electric",
     "last_updated": "2.2",
     "builds": [
       {
@@ -1596,6 +1639,7 @@
   {
     "name": "Tsukishiro Yanagi",
     "specialty": "Anomaly",
+    "element": "Electric",
     "last_updated": "2.7",
     "builds": [
       {
@@ -1626,6 +1670,7 @@
   {
     "name": "Ukinami Yuzuha",
     "specialty": "Support",
+    "element": "Physical",
     "last_updated": "2.7",
     "builds": [
       {
@@ -1690,6 +1735,7 @@
   {
     "name": "Vivian Banshee",
     "specialty": "Anomaly",
+    "element": "Ether",
     "last_updated": "2.1",
     "builds": [
       {
@@ -1717,6 +1763,7 @@
   {
     "name": "Von Lycaon",
     "specialty": "Stun",
+    "element": "Ice",
     "last_updated": "2.6",
     "builds": [
       {
@@ -1745,6 +1792,7 @@
   {
     "name": "Ye Shunguang",
     "specialty": "Attacker",
+    "element": "Physical",
     "last_updated": "2.6",
     "builds": [
       {
@@ -1798,6 +1846,7 @@
   {
     "name": "Yidhari Murphy",
     "specialty": "Rupture",
+    "element": "Ice",
     "last_updated": "2.5",
     "builds": [
       {
@@ -1825,6 +1874,7 @@
   {
     "name": "Yixuan",
     "specialty": "Rupture",
+    "element": "Ether",
     "last_updated": "2.6",
     "builds": [
       {
@@ -1852,6 +1902,7 @@
   {
     "name": "Zhao",
     "specialty": "Defense",
+    "element": "Ice",
     "last_updated": "2.7",
     "builds": [
       {
@@ -1881,6 +1932,7 @@
   {
     "name": "Zhu Yuan",
     "specialty": "Attack",
+    "element": "Ether",
     "last_updated": "2.7",
     "builds": [
       {

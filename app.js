@@ -37,6 +37,21 @@ let currentGame   = 'gi';   // 'gi' | 'hsr' | 'zzz'
 
 const $ = id => document.getElementById(id);
 
+const ELEMENT_ORDER = ['Physical', 'Fire', 'Electric', 'Ice', 'Ether'];
+
+function zzzElementKey(char) {
+  const i = ELEMENT_ORDER.indexOf(char.element || '');
+  return i === -1 ? 999 : i;
+}
+
+function zzzSortedChars() {
+  return [...zzzChars].sort((a, b) => {
+    const ek = zzzElementKey(a) - zzzElementKey(b);
+    if (ek !== 0) return ek;
+    return releaseKey(b) - releaseKey(a);
+  });
+}
+
 // ── boot ─────────────────────────────────────────────────────
 async function init() {
   const [gi, hsr, zzz, pts, ico, rel, di] = await Promise.all([
@@ -146,7 +161,15 @@ function releaseVersionLabel(char) {
 function refreshList() {
   const q = $('search').value.trim().toLowerCase();
   let list = q ? allChars.filter(c => c.name.toLowerCase().includes(q)) : [...allChars];
-  list.sort((a, b) => releaseKey(b) - releaseKey(a));
+  if (currentGame === 'zzz') {
+    list.sort((a, b) => {
+      const ek = zzzElementKey(a) - zzzElementKey(b);
+      if (ek !== 0) return ek;
+      return releaseKey(b) - releaseKey(a);
+    });
+  } else {
+    list.sort((a, b) => releaseKey(b) - releaseKey(a));
+  }
   renderList(list);
 }
 
@@ -766,9 +789,10 @@ function showAuditView() {
 
 function renderAuditView() {
   const state    = getAuditState();
-  const pending  = zzzChars.filter(c => !state[c.name]);
-  const revision = zzzChars.filter(c => state[c.name] && state[c.name] !== 'correct');
-  const verified = zzzChars.filter(c => state[c.name] === 'correct');
+  const sorted   = zzzSortedChars();
+  const pending  = sorted.filter(c => !state[c.name]);
+  const revision = sorted.filter(c => state[c.name] && state[c.name] !== 'correct');
+  const verified = sorted.filter(c => state[c.name] === 'correct');
   const reviewed = revision.length + verified.length;
 
   const exportLabel = revision.length ? `export flagged (${revision.length})` : 'nothing flagged';

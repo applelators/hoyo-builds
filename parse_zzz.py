@@ -11,6 +11,14 @@ CACHE_DIR = "/Users/hokori/.cache/zzz_builds"
 OUTPUT    = "/Users/hokori/genshin-builds/zzz_builds.json"
 
 SKIP_NAMES = {'S Rank Agents', 'A Rank Agents', 'S Rank', 'A Rank'}
+
+GID_ELEMENT = {
+    "571511473":   "Physical",
+    "1270581085":  "Fire",
+    "897804407":   "Electric",
+    "622827842":   "Ice",
+    "1395442363":  "Ether",
+}
 HEADER_VALS = {'Equipment', 'Drive Disc Stats', 'Ability Priority',
                'W-Engines', '4 Piece Drive Disc Set', 'Main Stats', 'Sub stats',
                '2 Piece Drive Disc Set', 'Baseline Stats'}
@@ -191,6 +199,7 @@ def parse_block(rows):
     return {
         'name':         name,
         'specialty':    specialty,
+        'element':      '',          # filled in by main()
         'last_updated': last_updated,
         'builds': [{
             'role':         role or specialty,
@@ -214,8 +223,11 @@ def parse_block(rows):
 def main():
     all_agents = {}
     for f in sorted(glob.glob(f"{CACHE_DIR}/agents_*.csv")):
+        m = re.search(r'agents_(\d+)\.csv', f)
+        element = GID_ELEMENT.get(m.group(1), '') if m else ''
         for agent in parse_file(f):
             if agent['name'] not in all_agents:
+                agent['element'] = element
                 all_agents[agent['name']] = agent
 
     result = sorted(all_agents.values(), key=lambda a: a['name'])
