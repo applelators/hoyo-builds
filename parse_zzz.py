@@ -37,6 +37,9 @@ DISC_OVERRIDES = {
                        'prepend_4pc': ['Thunder Metal']},
     # "PLEASE DON'T USE 4PC FANGED" — negation context; "fanged 2pc" is correct.
     'Nekomiya Mana':  {'exclude_4pc': ['Fanged Metal']},
+    # "Shockstar/King of the Summit are only to be used outside of Ye Shunguang teams"
+    # — no 4pc/2pc qualifier in text so extractor defaults to 4pc; they are 2pc options.
+    'Sunna':          {'exclude_4pc': ['King of the Summit', 'Shockstar Disco']},
 }
 NOTE_LABELS = {'Disc Drive Notes', 'Mindscapes', 'Other Notes', 'Team Comps'}
 HEADER_VALS = {'Equipment', 'Drive Disc Stats', 'Ability Priority',

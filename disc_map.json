@@ -4,9 +4,9 @@
       "Astral Voice"
     ],
     "2pc": [
-      "King of the Summit",
       "Puffer Electro",
-      "Phaethon's Melody"
+      "King of the Summit",
+      "Shockstar Disco"
     ]
   },
   "Ye Shunguang": {
@@ -19,19 +19,15 @@
   },
   "Dialyn": {
     "4pc": [
-      "King of the Summit"
+      "Astral Voice"
     ],
-    "2pc": [
-      "Woodpecker Electro"
-    ]
+    "2pc": []
   },
   "Alice Thymefield": {
     "4pc": [
       "Puffer Electro"
     ],
     "2pc": [
-      "Woodpecker Electro",
-      "Phaethon's Melody",
       "Puffer Electro"
     ]
   },
@@ -40,16 +36,12 @@
       "Astral Voice"
     ],
     "2pc": [
-      "Woodpecker Electro",
       "Phaethon's Melody"
     ]
   },
   "Caesar King": {
-    "4pc": [
-      "Astral Voice"
-    ],
+    "4pc": [],
     "2pc": [
-      "Astral Voice",
       "Shockstar Disco"
     ]
   },
@@ -58,29 +50,22 @@
       "Puffer Electro"
     ],
     "2pc": [
-      "Phaethon's Melody",
-      "Puffer Electro",
-      "Woodpecker Electro"
+      "Puffer Electro"
     ]
   },
   "Nekomiya Mana": {
     "4pc": [
-      "Puffer Electro",
-      "Woodpecker Electro"
+      "Puffer Electro"
     ],
     "2pc": [
       "Puffer Electro",
-      "Woodpecker Electro",
       "Fanged Metal"
     ]
   },
   "Pan Yinhu": {
-    "4pc": [
-      "Astral Voice"
-    ],
+    "4pc": [],
     "2pc": [
-      "Astral Voice",
-      "Woodpecker Electro"
+      "Shockstar Disco"
     ]
   },
   "Pulchra Fellini": {
@@ -88,16 +73,12 @@
       "Astral Voice"
     ],
     "2pc": [
-      "Astral Voice"
+      "Shockstar Disco"
     ]
   },
   "Billy Kid": {
-    "4pc": [
-      "Hormone Punk",
-      "Woodpecker Electro"
-    ],
+    "4pc": [],
     "2pc": [
-      "Woodpecker Electro",
       "Puffer Electro"
     ]
   },
@@ -106,19 +87,16 @@
       "Puffer Electro"
     ],
     "2pc": [
-      "Phaethon's Melody",
       "Puffer Electro",
-      "Woodpecker Electro"
+      "Phaethon's Melody"
     ]
   },
   "Corin Wickes": {
     "4pc": [
-      "Hormone Punk",
       "Puffer Electro"
     ],
     "2pc": [
-      "Puffer Electro",
-      "Woodpecker Electro"
+      "Puffer Electro"
     ]
   },
   "Banyue": {

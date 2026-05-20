@@ -71,7 +71,6 @@
           "Fanged Metal"
         ],
         "disc_2pc": [
-          "Woodpecker Electro",
           "Puffer Electro",
           "Phaethon's Melody"
         ],
@@ -610,11 +609,9 @@
         "baseline": "Impact: 152-174 \n\nCR: 50%+\n\nCD: 100%+\n\nAP in Anomaly teams: 220+",
         "ability": "1.Core\n2.EX Special\n3.Assist\n4.Chain/Ult\n4.Basic\n4.Dodge\n#4th abilities can be upgraded for more DMG and Daze, lower priority.",
         "disc_4pc": [
-          "Astral Voice",
           "Freedom Blues"
         ],
         "disc_2pc": [
-          "Astral Voice",
           "Shockstar Disco"
         ],
         "w_engine_notes": "",
@@ -719,7 +716,6 @@
           "Woodpecker Electro"
         ],
         "disc_2pc": [
-          "Woodpecker Electro",
           "Puffer Electro"
         ],
         "w_engine_notes": "",
@@ -768,7 +764,7 @@
         "baseline": "CR:\nWithout Sig. Engine: 80-100%\nWith Sig. Engine: 100%\n(100% to maximize the Impact self-buff.)",
         "ability": "1. Core\n2. EX\n3. Ult/Chain\nRead Below\nCore and EX are her main priorities, followed by Chain and Assist.\nBasic and Dodge should also be levelled for On-field play.",
         "disc_4pc": [
-          "King of the Summit"
+          "Astral Voice"
         ],
         "disc_2pc": [
           "Moonlight Lullaby",
@@ -1152,8 +1148,6 @@
           "Puffer Electro"
         ],
         "disc_2pc": [
-          "Phaethon's Melody",
-          "Woodpecker Electro",
           "Chaos Jazz",
           "Freedom Blues",
           "Puffer Electro"
@@ -1596,7 +1590,6 @@
         ],
         "disc_2pc": [
           "Puffer Electro",
-          "Woodpecker Electro",
           "Fanged Metal"
         ],
         "w_engine_notes": "",
@@ -1753,7 +1746,6 @@
           "Astral Voice"
         ],
         "disc_2pc": [
-          "Woodpecker Electro",
           "Astral Voice",
           "Shockstar Disco"
         ],
@@ -1804,9 +1796,8 @@
           "Fanged Metal"
         ],
         "disc_2pc": [
-          "Phaethon's Melody",
           "Puffer Electro",
-          "Woodpecker Electro"
+          "Phaethon's Melody"
         ],
         "w_engine_notes": "",
         "disc_notes": "She only uses 4PC Fang no other options are good for her. ER% D6 is not a good choice for Piper and should never be considered.",
@@ -1904,7 +1895,7 @@
           "Astral Voice"
         ],
         "disc_2pc": [
-          "Astral Voice"
+          "Shockstar Disco"
         ],
         "w_engine_notes": "* Blazing Laurel works due to Evasive Assist giving her Impact% for the Assist Follow-up and her special Aftershock after. The Fire/Ice CDMG% buff from it doesn't work because she doesn't use her Basics, and it's not worth saving your pulls for Lighter's Signature on Pulchra. \n* Hellfire Gears's Energy Regen is way less consistent due to Aftershock not being considered as \"Off-field\", for this reason, Steam Oven is better.",
         "disc_notes": "PEN% ATK% and Phys DMG% are all valid so you should choose based on which one has the best substat rolls. Impact should always be chosen even if she is a Sub-DPS in order to facilitate more Stun windows. You want to spam Evasive Assists as much as possible in order to upkeep her Aftershock stacks on top of refreshing 4pc Astral Voice stacks.",
@@ -2237,14 +2228,12 @@
         "baseline": "ATK: 3300 - 3500\n\nEnergy Regen:\nThoughtbop: 2.6\nKaboom the Cannon or stat stick: 2.5\nWeeping Cradle: 2.0",
         "ability": "1. Core\n2. EX\n2. Assist\n3. Ult\nPrioritize Core Skill to maximize buffs. Basic and Dodge are rarely used and can be ignored.",
         "disc_4pc": [
-          "Astral Voice",
-          "King of the Summit",
-          "Shockstar Disco"
+          "Astral Voice"
         ],
         "disc_2pc": [
-          "King of the Summit",
           "Puffer Electro",
-          "Phaethon's Melody",
+          "King of the Summit",
+          "Shockstar Disco",
           "Swing Jazz",
           "Astral Voice",
           "Hormone Punk"
@@ -2403,7 +2392,6 @@
           "Astral Voice"
         ],
         "disc_2pc": [
-          "Woodpecker Electro",
           "Phaethon's Melody"
         ],
         "w_engine_notes": "",
