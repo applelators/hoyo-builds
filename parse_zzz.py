@@ -430,6 +430,7 @@ def parse_block(rows):
                     team_comps = [
                         {"label": t["label"], "chars": [m for m in t["members"] if m != name]}
                         for t in tm_entry
+                        if len([m for m in t["members"] if m != name]) >= 2
                     ]
                 else:
                     team_comps = [{"label": lbl, "chars": mine_chars(lbl)} for lbl in named]

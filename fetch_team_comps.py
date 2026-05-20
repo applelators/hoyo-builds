@@ -304,7 +304,9 @@ async def load_sheet_teams(page, gid: str,
                 char = src_to_char.get(p["src"])
                 if char and char not in members:
                     members.append(char)
-            teams.append({"label": lbl, "members": members})
+            teams.append({"label": lbl, "members": members,
+                          "_imgs": [{"x": p["x"], "y": p["y"], "src": p["src"]}
+                                    for p in team_imgs]})
 
         if teams:
             result[char_name] = {"teams": teams}
@@ -344,10 +346,49 @@ async def main_async(args):
 
         await browser.close()
 
+    if args.save_portraits:
+        save_name = args.save_portraits
+        save_dir  = f"/tmp/portraits_{save_name.replace(' ', '_')}"
+        os.makedirs(save_dir, exist_ok=True)
+        entry = team_map.get(save_name)
+        if not entry:
+            print(f"  '{save_name}' not found in team_map")
+        else:
+            async with async_playwright() as pw2:
+                browser2 = await pw2.chromium.launch(headless=True)
+                ctx2  = await browser2.new_context(viewport={"width": 1600, "height": 900})
+                page2 = await ctx2.new_page()
+                gid = args.tab or SHEET_GIDS[0]
+                url = f"{SHEET_BASE}/pubhtml/sheet?headers=false&gid={gid}"
+                await page2.goto(url, wait_until="networkidle", timeout=60000)
+                await page2.wait_for_timeout(2000)
+                for ti, team in enumerate(entry["teams"]):
+                    for pi, img_info in enumerate(team.get("_imgs", [])):
+                        resp = await page2.request.get(img_info["src"])
+                        if resp.ok:
+                            body = await resp.body()
+                            fname = os.path.join(save_dir,
+                                f"t{ti+1}_{pi+1}_x{img_info['x']}.png")
+                            with open(fname, "wb") as fh2:
+                                fh2.write(body)
+                await browser2.close()
+            print(f"  Saved portraits to {save_dir}/")
+            for ti, team in enumerate(entry["teams"]):
+                imgs = team.get("_imgs", [])
+                print(f"  Team {ti+1} '{team['label']}': {len(imgs)} imgs → {team['members']}")
+                for img_info in imgs:
+                    print(f"    x={img_info['x']}  ...{img_info['src'][-30:]}")
+        return
+
     print(f"\n=== Step 3: Write {OUTPUT} ===")
+    # Strip _imgs before writing
+    clean_map = {}
+    for name, data in team_map.items():
+        clean_map[name] = {"teams": [{"label": t["label"], "members": t["members"]}
+                                      for t in data["teams"]]}
     with open(OUTPUT, "w", encoding="utf-8") as fh:
-        json.dump(team_map, fh, indent=2, ensure_ascii=False)
-    print(f"  Wrote {len(team_map)} characters")
+        json.dump(clean_map, fh, indent=2, ensure_ascii=False)
+    print(f"  Wrote {len(clean_map)} characters")
 
     print("\n=== Summary ===")
     for name, data in sorted(team_map.items()):
@@ -358,10 +399,12 @@ async def main_async(args):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--debug",     action="store_true")
-    p.add_argument("--tab",       help="Only process this GID")
-    p.add_argument("--threshold", type=int, default=12,
+    p.add_argument("--debug",          action="store_true")
+    p.add_argument("--tab",            help="Only process this GID")
+    p.add_argument("--threshold",      type=int, default=12,
                    help="phash match threshold (default 12)")
+    p.add_argument("--save-portraits", metavar="CHARNAME",
+                   help="Save portrait images for CHARNAME to /tmp/portraits_<name>/")
     args = p.parse_args()
     asyncio.run(main_async(args))
 
