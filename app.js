@@ -29,6 +29,7 @@ let allChars = [];      // active game's character list
 let portraits    = {};  // {gi: {name: url}, hsr: {…}, zzz: {…}}
 let icons        = {};  // {gi: {name: url}, hsr: {…}, zzz: {…}} — sidebar thumbnails
 let releaseData  = {};  // {gi: {name: {version, date}}, …} — wiki release versions
+let discIconNames = []; // disc set names from disc_icons.json (ZZZ only)
 let activeChar    = null;
 let activeBuildIdx = 0;
 let currentGame   = 'gi';   // 'gi' | 'hsr' | 'zzz'
@@ -37,13 +38,14 @@ const $ = id => document.getElementById(id);
 
 // ── boot ─────────────────────────────────────────────────────
 async function init() {
-  const [gi, hsr, zzz, pts, ico, rel] = await Promise.all([
+  const [gi, hsr, zzz, pts, ico, rel, di] = await Promise.all([
     fetch('builds.json').then(r => r.json()),
     fetch('hsr_builds.json').then(r => r.json()),
     fetch('zzz_builds.json').then(r => r.json()),
     fetch('portraits.json').then(r => r.json()).catch(() => ({})),
     fetch('icons.json').then(r => r.json()).catch(() => ({})),
     fetch('release_data.json').then(r => r.json()).catch(() => ({})),
+    fetch('disc_icons.json').then(r => r.json()).catch(() => ({})),
   ]);
   giChars  = gi;
   hsrChars = hsr;
@@ -51,6 +53,7 @@ async function init() {
   portraits = pts;
   icons = ico;
   releaseData = rel;
+  discIconNames = Object.keys(di).sort();
   allChars = giChars;
 
   $('search').addEventListener('input', () => refreshList());
@@ -62,7 +65,12 @@ async function init() {
   $('back-btn').addEventListener('click', () => {
     document.body.classList.remove('viewing-char');
     $('back-btn').classList.add('hidden');
+    $('disc-ref-view').classList.add('hidden');
+    $('disc-ref-btn').classList.remove('active');
+    $('placeholder').classList.remove('hidden');
   });
+
+  $('disc-ref-btn').addEventListener('click', showDiscReference);
 
   updateSourceCredit(currentGame);
   refreshList();
@@ -81,6 +89,9 @@ function switchGame(game) {
   $('back-btn').classList.add('hidden');
 
   $('char-view').classList.add('hidden');
+  $('disc-ref-view').classList.add('hidden');
+  $('disc-ref-btn').classList.remove('active');
+  $('disc-ref-wrap').classList.toggle('hidden', game !== 'zzz');
   $('placeholder').classList.remove('hidden');
   $('search').value = '';
   updateSourceCredit(game);
@@ -162,6 +173,8 @@ function selectChar(char) {
   highlightActive(char);
 
   $('placeholder').classList.add('hidden');
+  $('disc-ref-view').classList.add('hidden');
+  $('disc-ref-btn').classList.remove('active');
   $('char-view').classList.remove('hidden');
 
   $('char-name').textContent = toTitle(char.name);
@@ -617,6 +630,30 @@ function zzzTeamCard(build) {
 
   html += '</div>';
   return html;
+}
+
+function showDiscReference() {
+  $('placeholder').classList.add('hidden');
+  $('char-view').classList.add('hidden');
+  $('disc-ref-btn').classList.add('active');
+  document.body.classList.add('viewing-char');
+  $('back-btn').classList.remove('hidden');
+  activeChar = null;
+
+  const view = $('disc-ref-view');
+  view.classList.remove('hidden');
+  view.innerHTML =
+    '<div class="disc-ref-header">drive disc icons</div>'
+    + '<div class="disc-ref-grid">'
+    + discIconNames.map(name =>
+        `<div class="disc-ref-item">`
+        + `<img class="disc-ref-img" src="disc_icons/${encodeURIComponent(name)}.png" alt="${escHtml(name)}">`
+        + `<span class="disc-ref-name">${escHtml(name)}</span>`
+        + `</div>`
+      ).join('')
+    + '</div>';
+
+  $('content').scrollTop = 0;
 }
 
 function renderNotes(char) {

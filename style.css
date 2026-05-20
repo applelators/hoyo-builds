@@ -502,6 +502,65 @@ body.game-zzz #char-portrait {
   white-space: nowrap;
 }
 
+/* ── disc icon reference (ZZZ sidebar button + grid view) ── */
+#disc-ref-wrap {
+  padding: 0 10px 8px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+#disc-ref-btn {
+  width: 100%;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  padding: 6px 10px;
+  text-align: left;
+  transition: color 0.1s, border-color 0.1s, background 0.1s;
+}
+#disc-ref-btn:hover { color: var(--text); background: var(--surface); }
+#disc-ref-btn.active { color: var(--accent); border-color: var(--accent); background: var(--card); }
+
+#disc-ref-view { /* inherits #content padding */ }
+.disc-ref-header {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.disc-ref-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 12px;
+}
+.disc-ref-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 8px 10px;
+}
+.disc-ref-img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+.disc-ref-name {
+  font-size: 10px;
+  text-align: center;
+  color: var(--text);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
 /* ── back button (mobile only) ── */
 #back-btn {
   display: none;
