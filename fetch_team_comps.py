@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Extract ZZZ team comp member characters from Google Sheets portrait images.
-Matches 100×119px portrait images against wiki character icons via phash.
+Matches 100×119px portrait images against wiki Agent portrait art via phash.
 Output: team_map.json  { "CharName": {"teams": [{"label":"...", "members":[...]}]} }
 
 Usage:
@@ -30,9 +30,11 @@ SHEET_GIDS = [
     "1395442363",
 ]
 
-ICONS_JSON   = "/Users/hokori/genshin-builds/icons.json"
-ICON_CACHE   = "/Users/hokori/.cache/zzz_icons"
-OUTPUT       = "/Users/hokori/genshin-builds/team_map.json"
+ICONS_JSON      = "/Users/hokori/genshin-builds/icons.json"
+ICON_CACHE      = "/Users/hokori/.cache/zzz_icons"
+PORTRAIT_CACHE  = "/Users/hokori/.cache/zzz_portraits"
+ZZZ_WIKI        = "zenless-zone-zero.fandom.com"
+OUTPUT          = "/Users/hokori/genshin-builds/team_map.json"
 
 # Portrait image size filter (pixels, at 1600px viewport)
 IMG_W_MIN, IMG_W_MAX = 80,  125
@@ -47,36 +49,116 @@ TEAM_MISC_X = 1500
 
 TEAMCOMP_GAP_MAX = 60
 
+# Characters whose portrait filename differs from the normalised pattern.
+PORTRAIT_OVERRIDES = {
+    "Flora (Seed)":             "Agent_Seed_Portrait.png",
+    "Orphie Magnusson & Magus": "Agent_Orphie_Magnusson_%26_Magus_Portrait.png",
+    "Alexandrina Sebastiane (Rina)": "Agent_Rina_Portrait.png",
+    "Soldier 11 (Harin)":       "Agent_Soldier_11_Portrait.png",
+    "Soldier 0 (Anby)":         "Agent_Soldier_0_Portrait.png",
+    "Luciana Auxesis Theodoro de Montefio (Lucy)": "Agent_Lucy_Portrait.png",
+}
 
-# ─── Reference icons ─────────────────────────────────────────────────────────
+
+def _wiki_portrait_filename(char_name: str) -> str:
+    override = PORTRAIT_OVERRIDES.get(char_name)
+    if override:
+        return override
+    base = re.sub(r"\s*\([^)]+\)$", "", char_name).strip()
+    base = base.replace(" ", "_")
+    return f"Agent_{base}_Portrait.png"
+
+
+def _fetch_wiki_url(filename: str) -> Optional[str]:
+    api = (
+        f"https://{ZZZ_WIKI}/api.php?action=query"
+        f"&titles=File:{filename}&prop=imageinfo&iiprop=url&format=json"
+    )
+    try:
+        resp = requests.get(api, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
+        if not resp.ok:
+            return None
+        for page in resp.json().get("query", {}).get("pages", {}).values():
+            if "missing" in page:
+                return None
+            imgs = page.get("imageinfo", [])
+            if imgs:
+                return imgs[0]["url"]
+    except Exception:
+        pass
+    return None
+
+
+# ─── Reference portraits ──────────────────────────────────────────────────────
 
 def download_reference_icons() -> Dict[str, bytes]:
-    """Download and cache all ZZZ character icons from icons.json."""
+    """Download and cache Agent portrait art for all ZZZ characters.
+
+    Uses Agent_NAME_Portrait.png (bust-crop art matching spreadsheet style).
+    Falls back to icon thumbnails from icons.json if portrait not found.
+    """
     with open(ICONS_JSON) as f:
         all_icons = json.load(f)
     zzz_icons: Dict[str, str] = all_icons.get("zzz", {})
 
+    os.makedirs(PORTRAIT_CACHE, exist_ok=True)
     os.makedirs(ICON_CACHE, exist_ok=True)
+
     result: Dict[str, bytes] = {}
-    for char_name, url in zzz_icons.items():
+    portrait_hits, icon_fallbacks = 0, 0
+
+    for char_name in zzz_icons:
         safe = re.sub(r"[^\w]", "_", char_name)
-        cache_path = os.path.join(ICON_CACHE, f"{safe}.png")
-        if os.path.exists(cache_path):
-            with open(cache_path, "rb") as fh:
+        portrait_path = os.path.join(PORTRAIT_CACHE, f"{safe}.png")
+
+        # Use cached portrait if available
+        if os.path.exists(portrait_path):
+            with open(portrait_path, "rb") as fh:
                 result[char_name] = fh.read()
+            portrait_hits += 1
             continue
-        try:
-            resp = requests.get(url, timeout=15,
-                                headers={"User-Agent": "Mozilla/5.0"})
-            if resp.ok:
-                result[char_name] = resp.content
-                with open(cache_path, "wb") as fh:
-                    fh.write(resp.content)
-            else:
-                print(f"  WARN: {char_name}: HTTP {resp.status_code}")
-        except Exception as exc:
-            print(f"  WARN: {char_name}: {exc}")
-    print(f"  {len(result)} icons ready (cache: {ICON_CACHE})")
+
+        # Try fetching Agent_NAME_Portrait.png from wiki
+        filename = _wiki_portrait_filename(char_name)
+        url = _fetch_wiki_url(filename)
+        if url:
+            try:
+                resp = requests.get(url, timeout=15,
+                                    headers={"User-Agent": "Mozilla/5.0"})
+                if resp.ok:
+                    result[char_name] = resp.content
+                    with open(portrait_path, "wb") as fh:
+                        fh.write(resp.content)
+                    portrait_hits += 1
+                    continue
+            except Exception:
+                pass
+
+        # Fall back to icon thumbnail
+        icon_path = os.path.join(ICON_CACHE, f"{safe}.png")
+        icon_url = zzz_icons[char_name]
+        if os.path.exists(icon_path):
+            with open(icon_path, "rb") as fh:
+                result[char_name] = fh.read()
+            icon_fallbacks += 1
+            print(f"  WARN: {char_name}: portrait not found, using icon fallback")
+        else:
+            try:
+                resp = requests.get(icon_url, timeout=15,
+                                    headers={"User-Agent": "Mozilla/5.0"})
+                if resp.ok:
+                    result[char_name] = resp.content
+                    with open(icon_path, "wb") as fh:
+                        fh.write(resp.content)
+                    icon_fallbacks += 1
+                    print(f"  WARN: {char_name}: portrait not found, using icon fallback")
+                else:
+                    print(f"  WARN: {char_name}: HTTP {resp.status_code}")
+            except Exception as exc:
+                print(f"  WARN: {char_name}: {exc}")
+
+    print(f"  {portrait_hits} portraits, {icon_fallbacks} icon fallbacks "
+          f"({len(result)} total, cache: {PORTRAIT_CACHE})")
     return result
 
 
