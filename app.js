@@ -579,11 +579,13 @@ function zzzDiscCard(build) {
   if (has4 || has2) {
     html += '<div class="disc-sets">';
     if (has4) {
+      const labels4 = build.disc_4pc_labels || [];
       html += '<div class="disc-row">'
         + '<span class="disc-pc-label">4PC</span>'
-        + build.disc_4pc.map((s, i) =>
-            `<span class="disc-chip${i === 0 ? ' disc-bis' : ''}">${escHtml(s)}</span>`
-          ).join('')
+        + build.disc_4pc.map((s, i) => {
+            const lbl = labels4[i] ? `<span class="disc-chip-label">${escHtml(labels4[i])}</span>` : '';
+            return `<span class="disc-chip-wrap"><span class="disc-chip${i === 0 ? ' disc-bis' : ''}">${escHtml(s)}</span>${lbl}</span>`;
+          }).join('')
         + '</div>';
     }
     if (has2) {

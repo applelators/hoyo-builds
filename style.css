@@ -435,6 +435,18 @@ body.game-zzz #char-portrait {
   color: var(--muted);
   padding: 0 1px;
 }
+.disc-chip-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+.disc-chip-label {
+  font-size: 10px;
+  color: var(--muted);
+  opacity: 0.8;
+  padding-left: 2px;
+}
 .disc-notes-body {
   font-size: 12px;
   line-height: 1.65;

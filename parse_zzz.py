@@ -142,15 +142,16 @@ def parse_block(rows):
     main_stats    = []
     ability_left  = []   # col 30
     ability_right = []   # col 31
-    sub_stats     = ''
-    baseline      = ''
-    role          = ''
-    disc_notes    = ''
+    sub_stats      = ''
+    baseline       = ''
+    role           = ''
+    disc_notes     = ''
     w_engine_notes = ''
-    mindscapes    = ''
-    other_notes   = ''
-    team_general  = ''
-    team_comps    = []
+    mindscapes     = ''
+    other_notes    = ''
+    team_general   = ''
+    team_comps     = []
+    disc_4pc_labels = []
 
     in_team = False
 
@@ -218,8 +219,13 @@ def parse_block(rows):
             main_stats.append(c24)
 
         # Sub stats: col 27 (first non-header, non-baseline occurrence)
+        # 4pc disc labels appear at cols 8/12/16/20 on this same row
         if c27 and c27 not in HEADER_VALS and not sub_stats and not baseline:
             sub_stats = c27
+            for _col in (8, 12, 16, 20):
+                _v = row[_col].strip()
+                if _v and _v not in HEADER_VALS:
+                    disc_4pc_labels.append(_v)
 
         # Ability priority: cols 30 & 31
         if c30 and c30 not in HEADER_VALS:
@@ -260,8 +266,9 @@ def parse_block(rows):
             'sub_stats':    sub_stats,
             'baseline':     baseline,
             'ability':      '\n'.join(ability_clean),
-            'disc_4pc':     disc_sets['4pc'],
-            'disc_2pc':     disc_sets['2pc'],
+            'disc_4pc':        disc_sets['4pc'],
+            'disc_2pc':        disc_sets['2pc'],
+            'disc_4pc_labels': disc_4pc_labels,
             'w_engine_notes': w_engine_notes,
             'disc_notes':   disc_notes,
             'mindscapes':   mindscapes,
