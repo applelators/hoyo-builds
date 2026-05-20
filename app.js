@@ -81,6 +81,7 @@ async function init() {
   $('audit-btn').addEventListener('click', showAuditView);
 
   $('audit-view').addEventListener('click', e => {
+    if (e.target.id === 'audit-export-btn') { copyFlagged(e.target); return; }
     const btn = e.target.closest('[data-audit-char]');
     if (!btn) return;
     const charName = btn.dataset.auditChar;
@@ -733,6 +734,20 @@ function getAuditState() {
 }
 function saveAuditState(s) { localStorage.setItem('zzz_audit', JSON.stringify(s)); }
 
+function copyFlagged(btn) {
+  const state = getAuditState();
+  const flagged = zzzChars
+    .filter(c => state[c.name] && state[c.name] !== 'correct')
+    .map(c => `- ${c.name}: ${state[c.name]}`);
+  if (!flagged.length) return;
+  const text = `Needs revision (${flagged.length}):\n${flagged.join('\n')}`;
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = 'copied!';
+    setTimeout(() => { btn.textContent = orig; }, 1500);
+  });
+}
+
 function showAuditView() {
   $('placeholder').classList.add('hidden');
   $('char-view').classList.add('hidden');
@@ -756,9 +771,14 @@ function renderAuditView() {
   const verified = zzzChars.filter(c => state[c.name] === 'correct');
   const reviewed = revision.length + verified.length;
 
+  const exportLabel = revision.length ? `export flagged (${revision.length})` : 'nothing flagged';
+  const exportDis   = revision.length ? '' : ' disabled';
   let html = '<div class="audit-top-bar">'
     + '<span class="disc-ref-header" style="margin-bottom:0">audit — disc drives &amp; team comps</span>'
+    + '<div class="audit-top-right">'
     + `<span class="audit-progress">${reviewed} / ${zzzChars.length} reviewed</span>`
+    + `<button class="audit-export-btn" id="audit-export-btn"${exportDis}>${exportLabel}</button>`
+    + '</div>'
     + '</div>';
 
   if (revision.length) {

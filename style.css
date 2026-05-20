@@ -576,14 +576,36 @@ body.game-zzz #char-portrait {
 /* ── audit view ── */
 .audit-top-bar {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 16px;
+  gap: 12px;
+}
+.audit-top-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
 }
 .audit-progress {
   font-size: 11px;
   color: var(--muted);
+  white-space: nowrap;
 }
+.audit-export-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  padding: 4px 10px;
+  transition: color 0.1s, border-color 0.1s, background 0.1s;
+  white-space: nowrap;
+}
+.audit-export-btn:not(:disabled):hover { color: var(--text); border-color: var(--accent); background: var(--card); }
+.audit-export-btn:disabled { opacity: 0.35; cursor: default; }
 .audit-section-hdr {
   font-size: 10px;
   font-weight: 700;
