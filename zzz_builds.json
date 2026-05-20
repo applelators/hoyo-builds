@@ -22,6 +22,7 @@
         "disc_4pc_labels": [
           "Buff on EX"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "Due to how bad Slice of Time is, Kaboom the Cannon can and is a better option, giving you 5% less PEN Ratio buff in exchange for Combat ATK%.",
         "disc_notes": "2 piece Puffer Electro is necessary to increase the PEN% buff.\n*4PC Freedom Blues (or/and AM% Disc 6) can be used in a team where Shock uptime matters (i.e. Harumasa on 4pc Thunder Metal build).\nFor Anomaly teams ATK and AP are preferred to not dilute Shock DMG, for non Anomaly teams building Rina for DMG with Crit Rate and Crit Damage and ATK subs stats works as well, though optional.",
         "mindscapes": "Rina's most notable Mindscape is her M1, which increases the duration of her Core Passive PEN Ratio buff and its value.",
@@ -52,6 +53,7 @@
           "Puffer Electro"
         ],
         "disc_4pc_labels": [],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "4pc Fanged Metal is her BiS 4-piece disc set. For her 2-piece disc set, choose whichever sets with the best substats and help reach your stat goals best. Although 2pc Phaethon also scales with her AA giving her some additional AP. 2-piece Puffer Electro is used when other sources of PEN% are available (i.e. disc 5 PEN% main, Rina, etc.)",
         "mindscapes": "M1 provides 25 Blade Etiquette whenever she triggers a Polarized Assault. It also further increases her DPS by reducing enemies' DEF by 20% whenever she triggers Assault.\nM2 Alice's Ultimate also trigger a Polarized Assault when hitting an enemy, and the whole squad's Assault DMG is increased by 15%. Disorder DMG against enemies suffering from Physical Anomaly increases by 15%. Upon entering the battlefield, Alice immediately gains 1,000 Decibels. In Investigation Zone mode, this effect can trigger once every 180 seconds.",
@@ -118,6 +120,7 @@
         "disc_4pc_labels": [
           "CDMG% Buff"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "4PC King of the Summit is her new BIS, providing Daze% bonus and CDMG% buff for team if her CR is equal or more than 50%. 4PC Astral Voice requires another Support to enable Quick Assist. Building her with sub DPS stats will help with her damage as she is stunning.",
         "mindscapes": "Anby's M1 increases her EGR, increasing her Energy received from all sources, allowing her to use her EX Special more frequently. \nM2 slightly increases the Daze inflicted by her EX Special.",
@@ -152,6 +155,7 @@
           "Burst Bro",
           "Use w/ Astra"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "4PC Hormone offers high buff with 50% Uptime, fits well with Anton's quickswap nature but need to check for buff uptime before doing Chain or Ultimate. \n4PC Thunder can still be used with another Electric agents in the team that can help him keep Shock uptime (I.e. Qingyi, Trigger, Grace (not recommended)), + Plugboo\n4PC Astral voice is only viable with Astra, and Astra must run 4PC Moonlight Lullaby.",
         "mindscapes": "The Energy provided by M1 allows Anton to perform the \"infinite Drill\" tech. M4 provides a 10% CRIT Rate increase when using Chain Attack or Ultimate which can typically last through an entire stun window.\nM6 provides a strong DMG% increase with high uptime. M3 and M5 are also appreciated for their Scaling increases.",
@@ -193,6 +197,11 @@
         "disc_4pc_labels": [
           "BiS: remember to time EX",
           "Inferior choice"
+        ],
+        "disc_2pc_labels": [
+          "AM",
+          "AP",
+          "inferior - work if good sub stat"
         ],
         "w_engine_notes": "",
         "disc_notes": "4PC Shining Aria VS 4PC Phaethon Melody: Shining gives 9 less Anomaly Profiency while DMG% buff is the same value. The main difference is that Phaethon's DMG% buff can apply outside of stun and you must remember to use other allies EX during stun to keep up Phaethon's buff; while Aria is easier to manage as its DMG% buff is fully up in stun window.\nIf you use 4PC Shining Aria, then use 2PC Phaethon for AM%, otherwise use 2PC Freedom/Chaos for the AP.",
@@ -265,6 +274,7 @@
           "Burst",
           "Mono-Shock"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "- Cordis Germina is Harumasa's BIS in Dialyn team, giving 25% Elec DMG and DEF ignore on Ultimate. the downside is that it's hard not to overcap CR%, as Harumasa on Seed's sig has 83.4% CR on his Dash Attack already without a single CR% substat roll. His own signature is still better outside of Dialyn team by a bit. \n- Brimstone offers high combat ATK%, and can sometimes outperform Crit statstick as Harumasa can stacks Brimstone buff really well, and he gains a lot of Crit stats from Core Passive.",
         "disc_notes": "- 4PC Shadow Harmony is the most consistent set since he can easily stack the buff from using his Enhanced Dash Attacks. 4PC Puffer Electro is BIS w/ Dialyn team, and 4pc Hormone/Thunder are still good provided you can manage its uptime and condition. 4pc Thunder especially is only used when there's another Elec agents to help with Shock uptime.\n- Disc 4 can be either ATK%/CDMG% depend on substats, or CR% If you're lacking too much CR. Disc 5 PEN% is better unless Harumasa is paired with Nicole, in which case, ATK% is usually a bit better. \n¹Crit Rate note: Harumasa gets 25% CR bonus on enhanced Dash Attack, after his Potential Buff, the buff now apply to his Ult and Chasing Thunder, making the max CR 75% and have no more inconsistency between movesets, further reduced by 12% from 4PC Shadow Harmony, and more from teammate or/and W-engine, depending on the setup.",
         "mindscapes": "M1 allows more stacks from your basic attack and your quivers shooting another arrow at the target, which makes him able to do a few more Dashes during stun window, and improving his on field/out of stun capability. M2 gives his own dash attacks 50% DMG buff after using Chain Attack/Ultimate. \nit's recommended to Vertically invest in supportive agent's mindscapes first (such as Dialyn, Trigger, Astra, etc.) before pulling Harumasa's mindscapes.",
@@ -299,6 +309,7 @@
           "Team Buff",
           "If other ally uses Astral"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "4pc Astral is BiS in any situation due to how easily Astra can gain and maintain the stack counts. 2 PC option just depend on if you can reach the required attack needed for her core passive without\nneeding the 2 pc ATK. You can use 4pc Moonlight Lullaby if another ally is holding 4pc Astral.",
         "mindscapes": "M1 Provide a stacking resistance shred up to 18% all-type res while providing Astra herself with 1,000 Decibels when combat start and provide a stack of 1 sec iframe for the whole team whenever she casts ultimate.\nM2 further increase her attack conversion by 19%(35% to 54%) while increasing the attack buff by 400(1200 to 1600) on top of a small personal damage increase via more Tremolo/Tone cluster whenever her teammates trigger Quick Assist/Defensive Assist/Etc. Cinema pass M2 is not recommended due to the small return on investment.",
@@ -329,6 +340,7 @@
           "Inferno Metal"
         ],
         "disc_4pc_labels": [],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "Focus on Crit Rate for stat screen as Banyue gain 36% CRIT DMG in-combat from Core. When using Signature or Yixuan's Signature you only need 68% CRIT Rate to reach 100% in combat.",
         "mindscapes": "M1 gives 10% RES PEN when using One's Path or Earth Shaker, 10% Sheer DMG% when using certain skills; using Crushing Peaks extends stun duration by 2s on stunned target, which can be good for short stun duration target but can lose out another stun when used with Dialyn, making it situational.\nM2 gives 15% CRIT DMG, 15% Fire DMG and a total of 20 extra Adrenaline when using the free EX skills provided by \"Visage of Wrath\" state.\nLow spenders should only get his Signature W-Engine.",
@@ -359,6 +371,7 @@
         "disc_4pc_labels": [
           "Team Buff"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "Bunny Wonderland is Ben's best 4 pc Support set, Shockstar Disco is Ben's Best 2 pc set but if using Proto Punk 2 piece Swing Jazz would work as well. Crit rate and Crit damage\nSub stats are more optional since Ben's core converts his Def% to ATK. More Def% Also helps him increase his shield value.",
         "mindscapes": "M1 provides additional survivability, reducing the DMG dealt by enemies blocked by his (EX) Specials. M2 provides a good personal DMG increase. M6 further increases the Daze inflicted by his Basic, Dash and Dodge Counters.",
@@ -393,6 +406,7 @@
           "Burst DPS",
           "On-Field DPS"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "Use 2pc Hormone with 4pc Woodpecker and 2pc Woodpecker with 4pc Hormone. You can also use Puffer Electro. His best D5 is Pen% if not with Nicole due to how much DMG% he has. If with Nicole ATK% D5 becomes better.",
         "mindscapes": "Billy's most important Mindscape is his M6, providing a stackable DMG% buff that is permanent until he gets hit.",
@@ -457,6 +471,9 @@
           "Phaethon's Melody"
         ],
         "disc_4pc_labels": [],
+        "disc_2pc_labels": [
+          "Awaken Potential LV 2+"
+        ],
         "w_engine_notes": "",
         "disc_notes": "Starting from Awakened Potential level 2, Burnice can use ER disc 6 for improved Heat uptime time, more DMG% but slightly less AM. For the full stat to be achieved, you need Potential level 6, ER 6 and 2PC ER% for 2.8 ER on the stat screen. This will require you to swap Burnice out more frequently than before to avoid Energy overcap. AM 6 can still be used for faster Anomaly especially if you have Signature W-Engine.\n\n2PC Puffer and PEN disc 5 is good if you have PEN sources or against high DEF targets.",
         "mindscapes": "M1 provides good QoL by increasing the amount of Heat Burnice can hold, additionally it also increases mainly the Anomaly Buildup of her Afterburn effect. M2 provides a teamwide 20% PEN Ratio increase against enemies hit by her Afterburn.\nMindscapes past M2 are not recommended unless going for M6, though they allow her to take on a CRIT DPS status.",
@@ -490,6 +507,7 @@
           "Team Buffs",
           "If able to keep full stack"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "Caesar's shields and utility in her Daze all derives from her impact making it hard to justify switching off 2pc Shockstar in most to all scenarios, this is the same for Disc 6 main stat. \n4PC Freedom Blues is a possible set on Ceasar, but current usage is limited.",
         "mindscapes": "M1 provides significant QoL enabling Caesar to apply her Shield when entering the field without activating it (on a 300s CD), while further applying an All-Attribute RES reduction to nearby enemies.\nM2 further increases the ATK buff her Shield provides, by up to 500 ATK more, and slightly increases Caesar's Energy Generation Rate by 10%, increasing her Energy gain from all sources.",
@@ -554,6 +572,7 @@
           "Puffer Electro"
         ],
         "disc_4pc_labels": [],
+        "disc_2pc_labels": [],
         "w_engine_notes": "Seed Sig is her best Crit stat stick as she can make great use of the passive fully. Orphie sig is also a top Crit stat stick as it also gives Cissia ER. Both Seed and Orphie sig is better than Anton sig mainly cause of the CR/passive. If you have none of listed W-Engines then you'll have to use an ER stat stick like Steam Oven (Starlight if main dps) until you get something better.",
         "disc_notes": "If not using her Sig or a CR stat stick W-Engine 2pc Wood is ideal due to how much CR she lacks at base kit. Her CR goal is very high like Seed's being 82% for 100% CR in combat so you will be using CR D4 most of the time.",
         "mindscapes": "M1 makes Cissia start combat with 6 Venom, increases DEF shred by 140% (25→35%), makes all teammates ignore 5% Electric Res, and makes Corrode Bone ignore an additional 10% Electric Res.\nM2 increaes the DMG of Serpent's Kiss by 35%, Ult and Chain Attack provide an additional 3 Venom.\nRecommended stopping point for high invest is M2. M1>R1 for Seed teams.",
@@ -588,6 +607,7 @@
           "General set",
           "Dialyn"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "4pc Puffer Electro is Corin's best burst option especially when played with Dialyn, her best stunner option. 4pc Hormone Punk is still a good option for burst Corin in general. 4oc Fanged Metal is really bad on Corin since she can't maintain good Assault proc uptime and that leads to bad DPS, unless you're running Corin with Yuzuha which helps Assault more frequently, though still worse option compared to Hormone or Puffer. 4pc Woodpecker isn't a good fit since its buff uptime is too short for Corin's Animations. 2pc Puffer and PEN% Disc 5 is her best choice, unless already using 4pc Puffer then use 2pc ATK%/CRIT.",
         "mindscapes": "M2 is Corin's most notable Mindscape, allowing her to reduce the Phys RES% of enemies she hits with EX Special, Chain Attack and Ultimate. M3 and M5 are good for the Scaling increases to her damaging abilities.",
@@ -654,6 +674,9 @@
           "Woodpecker Electro"
         ],
         "disc_4pc_labels": [],
+        "disc_2pc_labels": [
+          "Energy Regen% if 100% CR"
+        ],
         "w_engine_notes": "Steam Oven can be preferred over Hellfire Gears in some scenarios, since ER% Passive from Hellfire Gears is only during Dialyn's Off field time which leads to less Energy total compared to Oven, and less onfielding capabilities. Steam Oven's 25.6% Impact can be up during key moments like Defensive Assists, or Ultimate while Hellfire Gears needs to use an EX or 2 for maximum Impact buff. \nHellfire Gears with higher Refinement is preferred over Steam Oven due to more Impact and more ER% regardless on said issues.",
         "disc_notes": "Dialyn already gets a lot of Impact from her Core, and relies heavily on her EX Specials. For these reasons it is better to get her an ER% Disc 6 and 2-piece set (Swing Jazz or Moonlight Lullaby). Alternatively, 2pc Woodpecker can be used in order to reach closer to 100% Crit Rate for maximum extra Impact from her Core Passive.\nWhen paired with Dialyn, it is recommended that certain DPS agents, like Hugo, Evelyn, and Ellen, run a 4pc Puffer Electro set due to the increase in Ultimate usage Dialyn enables. Always use 2pc ER% when with YSG.",
         "mindscapes": "M1 increases her Positive Review generation and amount gained by using her EX Special Attacks by 16%. Agents in the Overwhelmingly Positive state ignore 15% enemy All-Attribute RES.\nM2 grants an additional 20% Stun DMG Multiplier on enemies under Malicious Complaint, and the team deals +15% DMG to enemies under that effect.\nGoing beyond M2 is not recommended.",
@@ -708,6 +731,7 @@
           "General Build",
           "Good if you can time it"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "Assuming you're playing with Ellen signature and some of Ellen's new best teammates like Astra or Lighter, having 32% Pen tends to be Ellen's best performing build regardless of your 4PC set, so 2PC Puffer is great to have although other 2PC sets are fine if you need to adjust for target substats. If using Myriad Eclipse or using Nicole/Trigger with sig Atk%/Ice% becomes better than Pen%.\nWith Ellen's buff and potential CR% or ATK% D4 becomes better due to how much CD% she gets in-combat. for CR goal, try to reach 80% with her Sig or close to 100% for others, then get more ATK after.",
         "mindscapes": "M1 significantly increases her Flash Freeze generation and grants her a stacking CRIT Rate buff when consuming them, requiring her to only have around 68% CR to max CR. M2 allows her to chain her N3 into her EX Special, while increasing its CRIT DMG based on the number of Flash Freeze Charges she has, opening up a different playstyle if she has sufficient Energy. M6 increases Ellen's PEN Ratio and increases the DMG of her special Dash Attack after using 3 EX Specials, Chain Attacks or gains Quick Charge.",
@@ -744,6 +768,7 @@
           "Best Overall",
           "Use w/ Astra"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "4PC Puffer is viable as it has low limitations in gameplay unlike Hormone Punk and Woodpecker. with Dialyn upgrading her Chain Attack to Ultimate, it makes Puffer, a 4PC set buffing Ultimate, her best overall set.\nHormone punk has high ceiling, but requires good timing skills. 4PC Astral voice is only viable with Astra, and Astra must run 4PC Moonlight Lullaby.\n2PC Puffer is the ideal 2 PC (provided you don't already use 4pc Puffer) but any other 2 PCs work with minimal difference depending on overall build quality.",
         "mindscapes": "M1 enable Evelyn to cast her initial ult a lot faster during each encounter as she will open with an additional 1500 decibel while providing a small damage boost in the form of 12% def shred.\nM2 provide Evelyn with an unconditional 15% combat attack while refunding her 1 set of burning ember every 25 sec when she cast her EBA.",
@@ -777,6 +802,7 @@
         "disc_4pc_labels": [
           "With Cissia"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "Seed's best 4-piece sets are Hormone Punk, granting her a great ATK% buff with a challenging uptime, and Dawn's Bloom, granting up to 55% BA DMG Bonus, its issue being it only affects Basic Attacks.\n2-piece Puffer Electro and Pen Ratio Disc 5 are her best options (if used together) at M0/M1. At M2+, other 2-piece options such as B&B, Woodpecker, Astral/Hormone take the lead, as well as Electric DMG Bonus D5.",
         "mindscapes": "M1 decreases Steel Charge consumed by BA: Falling Petals - Crash Strike to 100; gain +40 when entering the battlefield and +20 when using Ultimate; increases BA: Falling Petals - Crash Strike's Crit DMG by 30%.\nWith M2, while under the Besiege status, agents gain 20% DEF ignore; When using EX Special, Seed can now consume up to 120 Energy. For every 5, BA: Falling Petals - Slaughter's DMG increases by 5%.\nM6 grants Seed +50% Crit DMG; when using BA: Falling Petals - Heavy Strike, fire 3 more beams, which deal 165% of Seed's ATK each. This can happen once every 3 seconds.",
@@ -809,6 +835,7 @@
         "disc_4pc_labels": [
           "Mono Shock (Electric)"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "2pc sets are based on AP Rolls and ATK% sub stats roll.Thunder Metal 4pc on Grace for (MonoShock Grace Teams) will want at ATK% on her 6 Disc slot because in MonoShock teams Shock anomaly will be doing the damage, but if needing her for a Disorder team it can still work with her main stats 6 Disc ATK% Changing to AM% , For Disc 5 ATK% or Elec%.",
         "mindscapes": "M2 increases all Electric Buildup and Electric DMG against enemies hit by Grace's Grenades (Special, EX Special and some of her basic attacks).\nM6 further increases Grace's (EX) Special DMG and Electric Anomaly Buildup when they are used while she has max Zap stacks.",
@@ -841,6 +868,9 @@
         ],
         "disc_4pc_labels": [
           "Best In Slot"
+        ],
+        "disc_2pc_labels": [
+          "General"
         ],
         "w_engine_notes": "",
         "disc_notes": "4pc Branch & Blade is the undisputed best 4pc. 2pc Puffer (especially with PEN% Disc 5) is preferred as she gets a lot of DMG% in her own kits, but other 2pc like Astral/Hormone works for more ATK, or 2pc Woodpecker works for maximizing her Core Passive buildup too. \n73% CR is the max for m2 Miyabi.",
@@ -877,6 +907,7 @@
           "Best In Slot - Skill check",
           "Dialyn"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "When using Deep Sea Visitor or Severed Innocence, make sure you use Basic Attack once before you EX/Ult so you trigger the W-Engine's CR/CD passive.\nWhen using Steel Cushion, you can use his EX to let him go behind the enemy, then quickly cancel it with Ultimate before he depletes the energy. this way his Ultimate can benefit from Steel Cushion's passive.",
         "disc_notes": "4pc Hormone Punk is his best 4PC as it fits his role the best as a Burst DPS. Any offensive stats 2PC are viable, but 2PC Woodpecker has a slight edge since you'd want to get as close to 100% CR in combat as possible. 76% CR on stat page is the max with M1 Hugo.",
         "mindscapes": "M1 In Dark Abyss Reverb state, totalize skill gets an extra 30% CD and 12% CR\nM2 When Ult triggers totalize, it doesn't end the stun window, allowing an EX to be used as well, effectively doubling your damage in that stun window. Totalize damage also gains 15% DEF Ignore.",
@@ -909,6 +940,7 @@
         "disc_4pc_labels": [
           "Jane's BIS"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "Among the available 2pc options, Freedom Blues/Chaos Jazz or Puffer Electro are usually preferred.\nPhys DMG% is usually the go-to on Disc 5, however PEN% is a valid option especially when paired with 2pc Puffer Electro. ATK% should only be used as a temporary solution unless its sub rolls are exceptionally good.",
         "mindscapes": "M1 allows Jane to hold 1 additional usage of Salchow Jump and slightly increases her DMG% and Anomaly Buildup Rate% while in the Passion state.\nM2 significantly increases the CRIT DMG of Assaults (~33% over M0), and then further increases their damage by allowing them to ignore a portion of the target's DEF. M2 also significantly increases the damage output of Mono Phys\nMindscapes past M2 are not recommended.",
@@ -962,6 +994,10 @@
           "CD% for team",
           "Alternative for KotS"
         ],
+        "disc_2pc_labels": [
+          "ATK% / CR% for Core / KotS",
+          "Faster stun"
+        ],
         "w_engine_notes": "",
         "disc_notes": "Fufu requires a high amount of substats to fully cap out her buffs, prioritise 50% CR for King of the Summit (KotS) as it is a conditional buff while ATK for her core scales dynamically. \nFor Disc 4: it is better to use ATK% over CR%, and get CR% substats until she reaches 50% in combat, because you will have to get a coping amount of ATK% / ATK substats to reach over 3k otherwise. \nFor Disc 6: if is better to use Impact% if it lets you achieve more stuns or faster stun is needed even if ATK is not capped, otherwise use ATK%.",
         "mindscapes": "Fufu's M1 increases Stun DMG Multiplier by 35% when hitting Chain Attacks and grants her 12% CR, allowing her to hit the 50% requirement for KotS easier. This Mindscape is also the best stopping point.",
@@ -995,6 +1031,7 @@
         "disc_4pc_labels": [
           "CDMG% Buff"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "4PC King of the Summit is Koleda's BIS, providing Daze% bonus and CDMG% buff for team if her CR is equal or more than 50%. 4PC Astral Voice requires another Support to enable Quick Assist to the main DPS. 2PC can be either Shockstar for even more stun speed, or Swing Jazz/Moonlight Lullaby for more energy needed to use her EX Special.",
         "mindscapes": "M1 increases the Daze inflicted by Koleda's (EX) Specials when used after her 2nd or 4th Basic Attack. M3 and M5 provide good increases to Koleda's Daze multipliers.",
@@ -1026,6 +1063,7 @@
           "Shockstar Disco"
         ],
         "disc_4pc_labels": [],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "Manato with his signature at R1 only needs 63% CR for 100 in combat; 54% with R5 signature; 58% if using Yixuan's Sig on him. \n2PC Woodpecker is ideal you are struggling to get CR otherwise use 2PC Branch and Blade. If substats are good 2PC Inferno works as well.",
         "mindscapes": "M1- When Manato's HP decreases, every 1% of his Max HP increases the Fire DMG of Assist Follow-Ups and Basic by 0.4%, up to a max of 20%.\nM2- While in Molten Edge state, ignore 8% of the enemies Fire RES. After being hit by an enemy while using Return to Ashes or Return to Ashes - Sacrifice, press Basic to trigger an Assist Follow-Up.\nM6- When Return to Ashes hits a Stunned enemy, gain 75 Blazing Heart and 4 stacks of Remnant Flame, and pressing Basic will launch an Assist Follow-Up. This effect can trigger once every 20s. When his Assist Follow-Up hits an enemy, Fire DMG increases by 3% for 8s, stacking up to 5 times.",
@@ -1060,6 +1098,7 @@
         "disc_4pc_labels": [
           "CDMG% Buff"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "4PC King of the Summit is one of Lighter's BIS, providing Daze% bonus and CDMG% buff for team if his CR is equal or more than 50%. 4PC Astral Voice requires another Support to enable Quick Asisst to the main DPS, but he can contribute to Astral stacks with his own Quick Assist as well. \nAlways use 2PC Shockstar for the Impact needed to max his DMG buff, unless already using 4pc Shockstar Disco, then 2pc Swing Jazz is decent for slightly more energy.",
         "mindscapes": "M1 further extends his Stun Pause effect (3s->5s pause) and his Ice/Fire RES reduction. It also provides a slight personal damage increase.\nM2 allows Lighter to increase the Stun DMG Multiplier of enemies affected by Collapse effect and further increases the Ice/Fire DMG bonus provided by Morale.\nFurther Mindscapes past M2 are not recommended for pure Stun Lighter.",
@@ -1089,6 +1128,7 @@
         "disc_4pc_labels": [
           "Best in Slot"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "Reaching 24k HP is the priority when building Lucia. If you are able to do it without HP% Disc 6 and/or 2PC Yunkui, you can consider Impact% as it can help getting faster stuns due to her high daze MVs on EX/Assist \nSub DPS build is viable but requiring a lot of sub stats on top of balancing HP make it not suitable for a general guide.",
         "mindscapes": "M1 Dreamer's Nursery Rhyme additionally grants the whole team with 18% All-Attribute RES Ignore and a 5% increase to their Decibel Generation Rate.\nM2 Lucia's Harmony attacks deal 15% more damage while under Ether Veil: Wellspring. Agents in the \"Darkbreaker\" state gain an extra 15% Sheer DMG.\nM2 is her best stopping point for mindscapes",
@@ -1120,6 +1160,7 @@
           "Woodpecker Electro"
         ],
         "disc_4pc_labels": [],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "4pc Moonlight Lullaby is her BIS, as Lucy's gameplay is usually tap EX and forget. if another support is already holding 4pc Moonlight, Lucy can use 4pc Astral, or vice versa.\nAfter you achieve her Buff cap, you can switch up the 2pc to Woodpecker to assist Lucy's off-field Dps. ATK% main stats until buff cap, AP 4 or CR% 4 and PEN% 5 all help her Dps.",
         "mindscapes": "M2 allows Lucy to provide her Cheer On! buff through her Chain Attack and Ultimate. M4 enhances Cheer On! to also provide 10% CRIT DMG. M6 allows EX Special used by allies with the Cheer On! buff to extend its duration (up to 3 times), while increasing Lucy's personal damage and Anomaly Buildup.",
@@ -1151,6 +1192,9 @@
         ],
         "disc_4pc_labels": [
           "Best Choice"
+        ],
+        "disc_2pc_labels": [
+          "Personal Damage"
         ],
         "w_engine_notes": "Simmering Pot is worse than Steam Oven as it lacks the Daze needed for 4 Stuns on bosses, and the self DMG% doesn't make up for it. Aside from her own signature, none other stun W-Engines significantly differ in results besides Simmering Pot. R5 Steam Oven is recommended for general use. Hellfire gets less value when with Aria as when Aria does her stomps Nangong is on field, losing the ER passive.",
         "disc_notes": "4PC Phaethon is used to increase Nangong Yu's DMG. 4PC Freedom Blues is only good if you play her with Miyabi. 4PC Astral is a good choice when with Miyabi.\n2PC Phaethon is best for more Buildup and Impact from Core skill if not using 4PC Phaethon, 2PC AP for Personal DMG.",
@@ -1187,6 +1231,7 @@
           "If you have Dialyn",
           "On-field DPS"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "4pc Woodpecker is for on-field, though Hormone can work I personally have never seen anyone use it. Use 4pc Puffer with Dialyn. If you have M1 or Nekos sig, using fanged 2pc becomes less and less good due to oversaturation, in which case its advised to switch to a different 2pc if possible.  PLEASE DON'T USE 4PC FANGED IM BEGGING YOU.",
         "mindscapes": "M1 provides Nekomata with a conditional Phys RES PEN%, and allows her to trigger back attack effects unconditionally against Stunned enemies.\nM2 gives Nekomata increased ER by 25%, allowing her to use her EX more frequently. This has the added effect of allowing Neko players to use EX right before a parry window pops up in order to squeeze out a little more DPS, like Dodge Parry Tech but way easier.",
@@ -1243,6 +1288,11 @@
           "Puffer Electro"
         ],
         "disc_4pc_labels": [],
+        "disc_2pc_labels": [
+          "Team Buff on\n EX Special",
+          "Buff on\nQuick Assist",
+          "Disorder/ Corruption procs"
+        ],
         "w_engine_notes": "",
         "disc_notes": "4PC Moonlight Lullaby is her best set as it gives ER as a 2PC, gives teamwide DMG% buff, and has full uptime. 4PC Astral Voice can be used in double support team when the other support already used 4PC Moonlight.\nSwing Jazz should be the priotized 2PC set, as more Energy means more EX Special, resulting to better Nicole Debuff uptime. \nThough, there are niche cases where you'd want Nicole to do more Daze (2pc Shockstar/Summit) or slightly build up faster Corruption (2pc Phaethon Melody).",
         "mindscapes": "M1 increases Nicole's EX Special's Anomaly Buildup, it also allows her to further charge it, which is niche but can occasionally be useful. M4 increases the range and grouping ability of her Energy Fields. M6 allows Nicole to provide a stacking CRIT Rate debuff against enemies hit by her Energy Field, up to 15% CRIT Rate.",
@@ -1276,6 +1326,7 @@
           "Best In Slot",
           "Alternative Support Sets"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "4PC Shadow Harmony is Orphie's best 4-piece set as she benefits from the Aftershock buffs.\n4PC Astral Voice is a good alternative supportive option.\n2PC ER% and Disc 6 ER% are recommended as she requires 3.7 Energy Regen for her full buff transfer (700 ATK)\nDisc 5 priorities go as follows: ATK% > Fire%, since Orphie's AA has 25% DEF Ignore and to avoid oversaturated on DMG% itself.",
         "mindscapes": "M1 increases the team's DMG by 20%, and grants her a 15% Fire RES Ignore.\nM2 gives her Decibels on Aftershocks, and her ATK increases by 20% for 45 seconds after using Ultimate.\nM4 increases the Zeroed In buff's duration to 16 seconds from the usual 12. EX Special and Ultimate DMG increases by 40%.\nWith M6, Orphie's Basic Attack now grants her 10 Heat, and she gets a higher interrupt level on her EX. Her EX and Ultimate's laser now deal an extra 250% of her attack as damage every .5 seconds.",
@@ -1309,6 +1360,7 @@
           "Better uptime",
           "If able to keep full stacks"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "4pc Astral is good as he would make use of the 2pc ATK% from it and can Quick Assist to trigger Astral's passive. 4pc Proto Punk also works if someone is already using 4pc Astral, but need to get a Parry before Stun to have its buff activated during stun window. 2pc Swing is ideal to help stack Astral better. 2pc Shockstar can also be used for extra Daze if needed.",
         "mindscapes": "M1 provides an extra 10% DMG increase on enemies affected by Depleted Qi.\nM2 for every 6 points of Break Force used he gains 4 Energy, Depleted Qi effect applied when Special Attack: Touch of Death hits an enemy which will have its duration increased to 12s. \nM6 the maximum Sheer Force buff from Core is increased to 720 without changing ATK requirement at core F.",
@@ -1377,6 +1429,7 @@
         "disc_4pc_labels": [
           "Main DPS"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "She only uses 4PC Fang no other options are good for her. ER% D6 is not a good choice for Piper and should never be considered.",
         "mindscapes": "M1 further increases Piper's Anomaly Buildup Rate%, both increasing how fast it stacks and its maximum value. \nM2's increased movement speed during her (EX) Special helps her properly connect all the hits, while increasing their damage, as well as her Ultimate's damage. \nM6's increased EX Special duration increases the Buildup it can provide, while the increased Power duration allows more flexible rotations.",
@@ -1425,6 +1478,9 @@
         "disc_4pc_labels": [
           "Best in slot"
         ],
+        "disc_2pc_labels": [
+          "Best in slot"
+        ],
         "w_engine_notes": "",
         "disc_notes": "If Promeia’s AM exceeds 150, she increases her own AP by 1.5 and the squad’s Abloom DMG by 0.35% for every point of extra AM. This makes the 2pc Phaethon’s Melody her best choice for maximizing these bonuses. Alternatively, a 2pc AP set can be used if the substats quality is better (though it isn't the main recommendation). Promeia makes Ablooms ignore 40% of enemy DEF meaning PEN% is not that good of a mainstat on her. (side note: this does not apply to complier, it is very good regardless)",
         "mindscapes": "M1 gives Promeia a stack of Trial by Cold when using her Ultimate. Additionally, Ablooms ignore an extra 20% of enemy DEF (including other sources like Vivian) (great)\nM2 increases personal Abloom damage multi by 120% and provides 40 AP (lacking)\nM6 procs a special Abloom when consuming Trial by Cold which also recovers 5 Corrosive Chill and 100 decibels. Attribute Anomaly DMG and Disorder DMG ignore 15% of enemies' All Attribute RES (good)\nBest stopping points are M0R1, M1R0, or M1R1",
@@ -1457,6 +1513,7 @@
           "CD% buff",
           "Alternative support sets"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "* Blazing Laurel works due to Evasive Assist giving her Impact% for the Assist Follow-up and her special Aftershock after. The Fire/Ice CDMG% buff from it doesn't work because she doesn't use her Basics, and it's not worth saving your pulls for Lighter's Signature on Pulchra. \n* Hellfire Gears's Energy Regen is way less consistent due to Aftershock not being considered as \"Off-field\", for this reason, Steam Oven is better.",
         "disc_notes": "PEN% ATK% and Phys DMG% are all valid so you should choose based on which one has the best substat rolls. Impact should always be chosen even if she is a Sub-DPS in order to facilitate more Stun windows. You want to spam Evasive Assists as much as possible in order to upkeep her Aftershock stacks on top of refreshing 4pc Astral Voice stacks.",
         "mindscapes": "Pulchra's M1 and M2 increase her own DPS with the increased CR% and ATK%, buffing her offield DPS capabilities. Her M6 gives her better offielding capabilites as well as a universal buff to all damage types.",
@@ -1526,6 +1583,7 @@
           "CDMG% Buff",
           "Stun Speed"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "4PC King of the Summit is now her new BIS, providing Qingyi Daze% bonus and CDMG% buff for team if her CR is equal or more than 50%. 4PC Astral Voice requires another Support to enable Quick Assist. 2PC Shockstar is best for stun speed, while 2PC Swing Jazz provides a bit more Energy to use EX for 4PC King of the Summit's CDMG% bonus.",
         "mindscapes": "M1 allows Qingyi to enter combat with full Flash Connect Voltage bar and increases its buildup. It also allows her Enhanced Basic Attack to reduce the DEF of enemies hit if used while Flash Connect Voltage is at 100%, while increasing her CRIT Rate. M2 further increases the Stun DMG multiplier her Core Passive provides, while increasing her Daze against enemies with max Subjugation stacks.",
@@ -1559,6 +1617,7 @@
           "Better uptime",
           "If able to keep full stacks"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "CD/ATK/Impact is his most general and best build for supporting Anomaly teams. Seth mostly doesn't have Energy issues especially if using Peacekeeper but ER Disc 6 can give extra comfort if\nfrequently using his EX Special. Anomaly Prof/Electric builds have more niche use cases but are fine overall.",
         "mindscapes": "M1 increases the potency of his Shield, while allowing the AP buff to linger for 10s after the Shield is removed. M2 allows Seth to begin with sufficient Resolve to use his Enhanced Basic Attack, while increasing the Anomaly Buildup it inflicts. M4 slightly increases the Daze of his Defensive Assist. M6 gives Seth a large damage hit on his eba thats guaranteed to crit so CD is reccomended on Disc 4.",
@@ -1591,6 +1650,7 @@
         "disc_4pc_labels": [
           "Best In Slot"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "Shadow Harmony will be Soldier 0 - Anby's best in slot as a 4pc due to the combination of crit rate and attack it gives, allowing her to get to thresholds easier, compared to sets like woodpecker solely boosting combat attack. Most 2 pieces are extremely comparable so it comes down to sub stats.",
         "mindscapes": "Sanby's M1 gives some additional damage when using ex special, but Anby's M2 is her best mindscape due to the combination of the 12% crit rate , and the second effect of giving her better uptime on marks. M2 is a good stopping point.",
@@ -1625,6 +1685,7 @@
         "disc_4pc_labels": [
           "W/ Dialyn"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "PEN% disc 5 should be used in most scenarios.\nDue to Potential Vision giving 48% Crit DMG, prioritise Crit Rate more than Crit DMG.\n¹ Inferno metal should be used on fire weakness enemies with 2+ fire agents and Rocketboo, else may see slight issues with uptime. Note: IMetal duration lasts ~18s due to buff refreshing during burn duration.",
         "mindscapes": "M1 is fairly decent to give extra EXs, translating into 3 BA3-5 chains if you time supressions properly. \nM2 provides a stackable DMG increase to her Basic Attacks, Dash Attacks and Dodge Counters when triggering her (timing-based) Fire Suppression effect. M3 and M5 are decent for Multiplier Increases.\nM6 allows the next 8 Fire Suppressions used to ignore 25% of the target's Fire RES after using EX Special, Chain Attack or Ultimate. \nm4 might be the most useless mindscape in the entire game lmao",
@@ -1660,6 +1721,7 @@
           "Buff on Quick Assist",
           "Mono Freeze"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "Soukaku's 4PC will usually be Astral, unless paired with another support that can carry Astral allowing her to carry Moonlight. \nWhen paired with Miyabi Mono-ice team, Soukaku should use 4PC Freedom Blues to speed up Ice Anomaly buildup for the whole team. 2PC can be Swing jazz/Phaethon Melody for more Energy or Anomaly buildup. \nAlso AP becomes a good stat to build her with in Yuzu Ice.",
         "mindscapes": "M1 extends the duration of Soukaku's buffs. M4 allows the initial hit of Fly The Flag to reduce the Ice RES of enemies hit.\nM6 enables Soukaku to take on an on-field DPS role aiming to be a Crit DPS using 4PC Blade and Branch with AM% disc 6 or  4PC Puffer Electro being the recommended equipments.",
@@ -1693,6 +1755,7 @@
           ]
         ],
         "disc_4pc_labels": [],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "Impact 6 and Shockstar/King of the Summit are only to be used outside of Ye Shunguang teams. Astral Voice can also be used as a 4pc if a teammate is holding Moonlight Lullaby, but it is not recommended in most teams. Swing Jazz has priority over Astral/Hormone 2pc due to Sunna's Core Skill upgrades providing her with ATK%",
         "mindscapes": "M1 when Cat's Gaze hits an enemy reduce the enemies Def by 7% up to 21%.\nM2 increases the ATK of all agents by 10% while any Ether Veil is active, it also reduces the number of attacks required to trigger Cat's Gaze and increases its Multiplier\nM1 is the recommended stopping point for those who choose to invest in Mindscapes",
@@ -1760,6 +1823,10 @@
           "DMG% buff",
           "Stun speed"
         ],
+        "disc_2pc_labels": [
+          "Best for Stun",
+          "If CR not capped"
+        ],
         "w_engine_notes": "",
         "disc_notes": "Trigger's 4PC is reliant on the team she is being used in. Generally speaking, KOTS will be best in slot for Crit DPS. while Astral, Shockstar, and Shadow Harmony can be used in more niche circumstances.\nWhile not a must, to reach 90% CR, you need 26 sub stats (which is not realistic without other sources' help), Sig W-Engine reduces the amount by 10, 4PC Shadow Harmony by 5 and 2PC Woodpecker by 3.",
         "mindscapes": "Trigger's M1 increases Purge gained and Max amount of Purge, the Stun Multiplier from Core is added an additional 20% and reduces Aftershock's CD by 1s.\nLow spender should stop at her M1 and Signature W-Engine",
@@ -1795,6 +1862,7 @@
           "Disorder Teams",
           "Mono-shock Teams"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "2pc sets are based on AP Rolls and ATK% sub stats roll. 4pc Thunder Metal can work with AM% or ATK% Disc 6, Chaos Jazz uses AM. Disorder builds will perform better for Yanagi at M0-M1. \n*Monoshock teams or Hypercarry Yanagi will want at ATK% on her Disc 6 because in MonoShock teams Shock anomaly will be doing the damage and AM is not needed as it will only refresh shock anomaly faster.",
         "mindscapes": "M1 allows Yanagi to gain stacks of invulnerability when applying Anomalies to enemies (up to 3 at a time), and grants her increased AP while she has at least one. M2 increases the Anomaly Buildup and Polarity Disorder multiplier of her EX Special. M4 provides a teamwide PEN Ratio increase when attacking enemies Yanagi dealt Anomaly DMG to. M6 increases the duration of her Shinrabanshou state and allows her to further increase the Polarity Disorder multiplier of her EX Special (up to 4 thrusts count, for the same Energy cost as 2 before M6).",
@@ -1827,6 +1895,7 @@
           "Overall best",
           "Hypercarry"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "Yuzuha can't keep Astral stacks well alone, and in duo Anomaly teams you can only support one Anomaly, Even with Signature W-Engine, AM% Disc 6 and 2pc Phaethon's Melody are needed to make the most use of her AA buff, unless you have Signature W-Engine at W3 or above, at which a different 2pc can be used.",
         "mindscapes": "M1 Yuzuha gains 30 Energy when entering the battle, enemies under Sweet Scare have All-Type RES reduced by 10%. DMG% buff from AA is increased by 8% with signature W-Engine and 4% without.\nM2 when EX or Ult hits the enemy, increases DMG% and Anomaly Buildup by 15%. When a heavy attack hits an unstunned enemy, triggers a Chain Attack window (20s CD). Ally entering the field through this Chain Attack gives Yuzuha 1 Sugar Point. The CD of Basic Attack: Hard Candy Shot is reduced by 25%.",
@@ -1895,6 +1964,7 @@
         "disc_4pc_labels": [
           "Best in Slot"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "Because Vivian's Core scales heavily on AP, only 2PC Chaos Jazz/Freedom Blues is considered and AP takes the top prioriy in sub stats.\nFor Disc 5, DMG% or PEN Ratio is generally better than ATK% but simply pick the one with the most AP sub stats.",
         "mindscapes": "M1 increases the gain of Flight Feather; Attribute Anomaly and Disorder DMG of the team.\nM2 increases Vivian's Anomaly Buildup Rate, Abloom scaling is increased and ignores 15% RES\nM6 further boost Flight Feather gain rate, increases Ether DMG and multiplicatively boost Abloom DMG without fearing of Feather stacks overcap.",
@@ -1927,6 +1997,7 @@
         "disc_4pc_labels": [
           "CDMG% Buff"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "The Restrained, his own Signature, is worse than the other alternatives most of the time as it only buffs Daze% on Basic Attack. Only use if he's the only On-field stunner (i.e., Hugo team without a 2nd stunner).\nHis Potential buff doesn't really change engines other than make stacking Blazing Laruel more effective in non Hugo teams and make Hellfire worse.",
         "disc_notes": "4PC King of the Summit is his best set. 4PC Astral Voice is more viable after his Potential buff but having another support for better Astral stacks is recommended. 4PC Proto Punk if 4pc King of the Summit is already used on another stunner in the team. \n2PC can be Shockstar Disco for more Daze. Miyabi Mono Ice team you can also 2PC Swing/Moonlight for more Energy, or 2pc Phaethon although boss dependent.",
         "mindscapes": "M1 is Lycaon's only notable Mindscape, increasing the Daze inflicted by his EX Special. M3 and M5 increase Lycaon's Daze multipliers.",
@@ -1956,6 +2027,7 @@
           "Puffer Electro"
         ],
         "disc_4pc_labels": [],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "4pc White Water Ballad BiS option that gives Shunguang 10% ATK and 20% CR which allows the use of better offensive subs.\nIf using PEN% Disc 5, 2pc Puffer will be better, but overall any 2pc listed can be used, depending on sub stats. PEN% is not recommended for bosses with 476 DEF as it makes PEN% much less effective.\nRegarding the main stat choice - it can be any with better sub stats.\n*CR% Breakpoint for 4pc Ballad, otherwise 70%.",
         "mindscapes": "M1 provides Ye Shunguang 6 stacks of Qingming Sword Force upon entering the battlefield. Also the Unity effect provided by her Core additionally gives 10% DMG, and lets her ignore 20% of enemy DEF.\nM2 increases Bearer max stack count to 6, and Culmination stack to 9. While in her Enlightened state each Qingming Sword Force consumed grants 1 stack of Culmination. EX Special: Soaring Light and Ultimate: Cleaving Heavens ignore 40% of enemy DEF.",
@@ -2013,6 +2085,9 @@
         "disc_4pc_labels": [
           "Best in slot"
         ],
+        "disc_2pc_labels": [
+          "we have Shifu at home"
+        ],
         "w_engine_notes": "",
         "disc_notes": "¹With her or Yixuan's signature W-Engine, Yidhari needs 68% Crit Rate to reach 100% in combat. R5 Grill O'Wisp provides 24% combat Crit Rate, reducing said requirement to 64%. R5 Cauldron provides 10.4% Crit Rate, reducing the requirement to 78% (well 77.4% but basically 78%). Without any of the aforementioned W-Engine options, the requirement sits at 88%. Use 2pc Woodpecker, a Crit Rate W-Engine and/or a Crit Rate Disc 4 if needed in order to reach the Crit Rate requirement. Yidhari should have 100% CR in combat.\n2pc Polar is a valid option if substats are excellent.",
         "mindscapes": "M1 reduces Yidhari's Ex Special Attack: Glacial Crush's Adrenaline cost by 10, and lets you use 35 more Adrenaline to use a second Glacial Crush, increasing its healing and ignoring 20% Ice Res. (amazing)\nM2 provides a flat 40% Crit Damage increase and increases Adrenaline regeneration after triggering Surging Cold or Crushing Pursuit. This works nicely with her M1. (good)\nM4 increases the Decibel generation from Yidhari's Core and increases the HP bonus from Ether Veil by an additional 5%. (ok)\nM6 grants her a 25% Sheer Damage increase and a guardian angel mechanic. (ok)",
@@ -2044,6 +2119,7 @@
         "disc_4pc_labels": [
           "Best in Slot"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "*Yixuan with her signature only needs 68% CR to reach 100% CR in combat.\nSheer Damage completely ignores DEF so PEN isn't helpful on Yixuan. Generally use 2 PC Woodpecker to balance Crit Ratio especially without Signature Engine. \nFlat HP is only slightly worse than ATK% for Sheer Force conversion.",
         "mindscapes": "M1 - Provide 10% Combat Crit Rate while allowing her to start the fight with full Talisman bar. In addition to follow up attack whenever another agent deal damage to an enemy target with 6 sec CD\nM2 -  Ultimate/EX Special now ignore 15% Ether res and Casting Ult on a stunned target extend their stun duration for 3 sec. After Casting Talisman Ult gain 1 cast of special EX that deal 1200% Sheer Force\nM6 - Casting Ult allows you to bypass the resource cost of Talisman Ult with a cooldown of 30 sec, further more increase Yixuan Sheer Force by 20% during her Meditation(AA) state.",
@@ -2077,6 +2153,10 @@
         "disc_4pc_labels": [
           "Better uptime",
           "If able to keep full stacks"
+        ],
+        "disc_2pc_labels": [
+          "If more HP is needed",
+          "For consistent Astral stacks"
         ],
         "w_engine_notes": "",
         "disc_notes": "4PC Bunny in Wonderland is the new BiS, but for Ye Shunguang, it's a sidegrade or worse than Astral in Shiyu, and when with Sunna/Anyone who can QA consistently.\nSlot 6 ER% recommended to have 100% uptime on buff and keep consistent Astral stacks.",
@@ -2113,6 +2193,7 @@
         "disc_4pc_labels": [
           "Burst/Buff Manage"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "4PC Hormone Punk may be a better option for your gameplay, as long as you can manage the the 20 second cooldown with your Stun window. 4PC Puffer Electro is a comfortable pick with Dialyn in the team.\n4PC and 2PC Shadow Harmony is viable on Zhu Yuan as her enhanced Basic Attack while dragging the joystick count as a Dash Attack, the result is comparable to Woodpecker or Chaos Jazz while having easy uptime, if not better, though you will need to balance CRIT Rate more.\nFor 2PC, use whatever needed to reach your stat goals.",
         "mindscapes": "M1 allows Zhu Yuan to extend her Burst Window by providing additional Shotshells. M2 provides an easy to trigger DMG bonus for her Basic and Dash attacks, while providing a slight QoL through interruption resistance and damage reduction. M4 allows Zhu Yuan's Basic and Dash attacks to ignore 25% of the target's Ether RES.",

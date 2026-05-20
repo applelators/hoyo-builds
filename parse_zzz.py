@@ -152,6 +152,7 @@ def parse_block(rows):
     team_general   = ''
     team_comps     = []
     disc_4pc_labels = []
+    disc_2pc_labels = []
 
     in_team = False
 
@@ -215,8 +216,13 @@ def parse_block(rows):
             w_engines.append(c6)
 
         # Main stats: col 24
+        # 2pc disc labels appear at cols 8/12/16/20 on the last main-stat row
         if c24 and c24 not in HEADER_VALS:
             main_stats.append(c24)
+            for _col in (8, 12, 16, 20):
+                _v = row[_col].strip()
+                if _v and _v not in HEADER_VALS:
+                    disc_2pc_labels.append(_v)
 
         # Sub stats: col 27 (first non-header, non-baseline occurrence)
         # 4pc disc labels appear at cols 8/12/16/20 on this same row
@@ -269,6 +275,7 @@ def parse_block(rows):
             'disc_4pc':        disc_sets['4pc'],
             'disc_2pc':        disc_sets['2pc'],
             'disc_4pc_labels': disc_4pc_labels,
+            'disc_2pc_labels': disc_2pc_labels,
             'w_engine_notes': w_engine_notes,
             'disc_notes':   disc_notes,
             'mindscapes':   mindscapes,

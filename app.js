@@ -589,16 +589,18 @@ function zzzDiscCard(build) {
         + '</div>';
     }
     if (has2) {
+      const labels2 = build.disc_2pc_labels || [];
       html += '<div class="disc-row">'
         + '<span class="disc-pc-label">2PC</span>'
         + build.disc_2pc.map((s, i) => {
+            const lbl = labels2[i] ? `<span class="disc-chip-label">${escHtml(labels2[i])}</span>` : '';
             if (Array.isArray(s)) {
-              return '<span class="disc-pair-group">'
+              return '<span class="disc-chip-wrap"><span class="disc-pair-group">'
                 + s.map(name => `<span class="disc-chip">${escHtml(name)}</span>`)
                     .join('<span class="disc-pair-sep">/</span>')
-                + '</span>';
+                + `</span>${lbl}</span>`;
             }
-            return `<span class="disc-chip${i === 0 ? ' disc-bis' : ''}">${escHtml(s)}</span>`;
+            return `<span class="disc-chip-wrap"><span class="disc-chip${i === 0 ? ' disc-bis' : ''}">${escHtml(s)}</span>${lbl}</span>`;
           }).join('')
         + '</div>';
     }
