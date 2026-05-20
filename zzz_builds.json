@@ -210,10 +210,19 @@
         "baseline": "ATK:\nATK Main Engine: 2500-2700+\nNon ATK Main Engine: 2300-2500+\n\nAP:\nAP Main Engine: 400-420+\nNon AP Main Engine: 330-350+",
         "ability": "1.Core\n1.Basic\n2.EX\n2. Assist\nCore matter the most, upgrade her abilities for Daze and slightly more scaling\n\nIgnore Dodge as you would spam Charged Basic",
         "disc_4pc": [
-          "Phaethon's Melody"
+          "Phaethon's Melody",
+          "Shining Aria"
         ],
         "disc_2pc": [
           "Phaethon's Melody",
+          [
+            "Chaos Jazz",
+            "Freedom Blues"
+          ],
+          [
+            "Shining Aria",
+            "Chaotic Metal"
+          ],
           "Puffer Electro"
         ],
         "w_engine_notes": "",
@@ -225,26 +234,34 @@
           {
             "label": "AoD: Lead Vocal Aria!",
             "chars": [
-              "Aria"
-            ]
-          },
-          {
-            "label": "Dream Collab",
-            "chars": []
-          },
-          {
-            "label": "we have Nangong Yu at home",
-            "chars": [
+              "Sunna",
+              "Aria",
               "Nangong Yu"
             ]
           },
           {
-            "label": "Pink Gals (F2P)",
-            "chars": []
+            "label": "Dream Collab",
+            "chars": [
+              "Aria",
+              "Sunna",
+              "Astra Yao"
+            ]
           },
           {
-            "label": "Generic Team Example",
-            "chars": []
+            "label": "we have Nangong Yu at home",
+            "chars": [
+              "Aria",
+              "Von Lycaon",
+              "Ukinami Yuzuha"
+            ]
+          },
+          {
+            "label": "Pink Gals (F2P)",
+            "chars": [
+              "Aria",
+              "Zhao",
+              "Nicole Demara"
+            ]
           }
         ]
       }

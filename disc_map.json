@@ -424,10 +424,13 @@
   },
   "Aria": {
     "4pc": [
-      "Phaethon's Melody"
+      "Phaethon's Melody",
+      "Shining Aria"
     ],
     "2pc": [
       "Phaethon's Melody",
+      ["Chaos Jazz", "Freedom Blues"],
+      ["Shining Aria", "Chaotic Metal"],
       "Puffer Electro"
     ]
   },

@@ -489,5 +489,47 @@
         ]
       }
     ]
+  },
+  "Aria": {
+    "teams": [
+      {
+        "label": "AoD: Lead Vocal Aria!",
+        "members": [
+          "Sunna",
+          "Aria",
+          "Nangong Yu"
+        ]
+      },
+      {
+        "label": "Dream Collab",
+        "members": [
+          "Aria",
+          "Sunna",
+          "Astra Yao"
+        ]
+      },
+      {
+        "label": "we have Nangong Yu at home",
+        "members": [
+          "Aria",
+          "Von Lycaon",
+          "Ukinami Yuzuha"
+        ]
+      },
+      {
+        "label": "Pink Gals (F2P)",
+        "members": [
+          "Aria",
+          "Zhao",
+          "Nicole Demara"
+        ]
+      },
+      {
+        "label": "Generic Team Example",
+        "members": [
+          "Aria"
+        ]
+      }
+    ]
   }
 }
