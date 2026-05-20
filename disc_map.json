@@ -5,7 +5,10 @@
     ],
     "2pc": [
       "Swing Jazz",
-      ["King of the Summit", "Shockstar Disco"]
+      [
+        "King of the Summit",
+        "Shockstar Disco"
+      ]
     ]
   },
   "Ye Shunguang": {
@@ -13,15 +16,17 @@
       "White Water Ballad"
     ],
     "2pc": [
-      "Puffer Electro"
+      "White Water Ballad"
     ]
   },
   "Dialyn": {
     "4pc": [
-      "Astral Voice"
+      "King of the Summit"
     ],
     "2pc": [
-      "Woodpecker Electro"
+      "Freedom Blues",
+      "Puffer Electro",
+      "Shadow Harmony"
     ]
   },
   "Alice Thymefield": {
@@ -29,25 +34,28 @@
       "Puffer Electro"
     ],
     "2pc": [
-      "Phaethon's Melody",
-      "Puffer Electro"
+      "Freedom Blues",
+      "Hormone Punk"
     ]
   },
   "Ukinami Yuzuha": {
     "4pc": [
-      "Astral Voice"
+      "Phaethon's Melody",
+      "Moonlight Lullaby"
     ],
     "2pc": [
+      "Freedom Blues",
       "Phaethon's Melody"
     ]
   },
   "Caesar King": {
     "4pc": [
-      "Astral Voice"
+      "King of the Summit",
+      "Moonlight Lullaby"
     ],
     "2pc": [
       "Astral Voice",
-      "Shockstar Disco"
+      "Freedom Blues"
     ]
   },
   "Jane Doe": {
@@ -55,33 +63,36 @@
       "Puffer Electro"
     ],
     "2pc": [
-      "Phaethon's Melody",
-      "Puffer Electro"
+      "Freedom Blues",
+      "Hormone Punk"
     ]
   },
   "Nekomiya Mana": {
     "4pc": [
-      "Puffer Electro",
-      "Woodpecker Electro"
+      "Hormone Punk",
+      "Puffer Electro"
     ],
     "2pc": [
-      "Puffer Electro",
-      "Woodpecker Electro",
-      "Fanged Metal"
+      "White Water Ballad",
+      "Hormone Punk"
     ]
   },
   "Pan Yinhu": {
     "4pc": [
-      "Astral Voice"
+      "King of the Summit",
+      "Moonlight Lullaby"
     ],
     "2pc": [
+      "Freedom Blues",
       "Astral Voice",
-      "Shockstar Disco"
+      "Proto Punk"
     ]
   },
   "Pulchra Fellini": {
     "4pc": [
-      "Astral Voice"
+      "King of the Summit",
+      "Astral Voice",
+      "Moonlight Lullaby"
     ],
     "2pc": [
       "Astral Voice"
@@ -90,10 +101,11 @@
   "Billy Kid": {
     "4pc": [
       "Hormone Punk",
-      "Woodpecker Electro"
+      "Puffer Electro"
     ],
     "2pc": [
-      "Woodpecker Electro",
+      "Hormone Punk",
+      "White Water Ballad",
       "Puffer Electro"
     ]
   },
@@ -102,37 +114,37 @@
       "Puffer Electro"
     ],
     "2pc": [
-      "Phaethon's Melody",
-      "Puffer Electro",
-      "Woodpecker Electro"
+      "Freedom Blues",
+      "Hormone Punk",
+      "Moonlight Lullaby"
     ]
   },
   "Corin Wickes": {
     "4pc": [
-      "Hormone Punk",
-      "Puffer Electro"
+      "Hormone Punk"
     ],
     "2pc": [
-      "Puffer Electro",
-      "Woodpecker Electro"
+      "Hormone Punk",
+      "White Water Ballad",
+      "Puffer Electro"
     ]
   },
   "Banyue": {
-    "4pc": [
-      "Yunkui Tales"
-    ],
+    "4pc": [],
     "2pc": [
-      "Woodpecker Electro",
-      "Inferno Metal"
+      "Hormone Punk",
+      "Freedom Blues",
+      "Shadow Harmony"
     ]
   },
   "Orphie Magnusson & Magus": {
     "4pc": [
       "Shadow Harmony",
-      "Astral Voice"
+      "Moonlight Lullaby"
     ],
     "2pc": [
-      "Woodpecker Electro"
+      "Shadow Harmony",
+      "King of the Summit"
     ]
   },
   "Ju Fufu": {
@@ -140,114 +152,125 @@
       "King of the Summit"
     ],
     "2pc": [
+      "White Water Ballad",
       "Puffer Electro",
-      "Woodpecker Electro",
       "Astral Voice",
-      "Phaethon's Melody"
+      "King of the Summit"
     ]
   },
   "Evelyn Chevalier": {
     "4pc": [
-      "Puffer Electro",
       "Hormone Punk",
-      "Astral Voice"
+      "Moonlight Lullaby"
     ],
     "2pc": [
-      "Puffer Electro",
-      "Woodpecker Electro",
+      "Hormone Punk",
+      "White Water Ballad",
+      "Freedom Blues",
       "Phaethon's Melody"
     ]
   },
   "Lighter": {
     "4pc": [
+      "King of the Summit",
       "Astral Voice"
     ],
     "2pc": [
-      "Astral Voice",
-      "Phaethon's Melody",
-      "Shockstar Disco",
-      "Swing Jazz"
+      "Astral Voice"
     ]
   },
   "Burnice White": {
-    "4pc": [],
+    "4pc": [
+      "King of the Summit"
+    ],
     "2pc": [
-      "Puffer Electro",
-      "Phaethon's Melody"
+      "Freedom Blues",
+      "Hormone Punk",
+      "Astral Voice"
     ]
   },
   "Soldier 11 (Harin)": {
     "4pc": [
-      "Puffer Electro",
       "Hormone Punk",
-      "Inferno Metal"
+      "Freedom Blues"
     ],
     "2pc": [
-      "Woodpecker Electro",
+      "Hormone Punk",
+      "White Water Ballad",
+      "Shadow Harmony",
+      "King of the Summit",
       "Puffer Electro"
     ]
   },
   "Koleda Belobog": {
     "4pc": [
-      "Astral Voice"
+      "King of the Summit"
     ],
     "2pc": [
-      "Astral Voice",
-      "Shockstar Disco",
-      "Woodpecker Electro"
+      "Astral Voice"
     ]
   },
   "Komano Manato": {
-    "4pc": [
-      "Yunkui Tales"
-    ],
+    "4pc": [],
     "2pc": [
-      "Woodpecker Electro",
-      "Inferno Metal",
-      "Shockstar Disco"
+      "Hormone Punk",
+      "Freedom Blues"
     ]
   },
   "Luciana Auxesis Theodoro de Montefio (Lucy)": {
     "4pc": [
-      "Astral Voice"
+      "Freedom Blues",
+      "Moonlight Lullaby"
     ],
     "2pc": [
       "Astral Voice",
-      "Puffer Electro",
-      "Woodpecker Electro"
+      "Freedom Blues",
+      "Moonlight Lullaby"
     ]
   },
   "Ben Bigger": {
-    "4pc": [],
+    "4pc": [
+      "King of the Summit"
+    ],
     "2pc": [
       "Astral Voice",
-      "Swing Jazz"
+      "Freedom Blues"
     ]
   },
   "Cissia": {
-    "4pc": [],
+    "4pc": [
+      "Freedom Blues"
+    ],
     "2pc": [
-      "Woodpecker Electro",
+      "Freedom Blues",
+      "Hormone Punk",
+      "Shadow Harmony",
       "Puffer Electro"
     ]
   },
   "Flora (Seed)": {
     "4pc": [
       "Hormone Punk",
-      "Astral Voice"
+      "Freedom Blues",
+      "Moonlight Lullaby"
     ],
     "2pc": [
+      "Hormone Punk",
+      "White Water Ballad",
       "Puffer Electro",
-      "Woodpecker Electro"
+      "Shadow Harmony"
     ]
   },
   "Trigger": {
     "4pc": [
+      "King of the Summit",
+      "Moonlight Lullaby",
       "Astral Voice"
     ],
     "2pc": [
       "Astral Voice",
-      "Woodpecker Electro"
+      "Puffer Electro",
+      "Shadow Harmony"
     ]
   },
   "Soldier 0 - Anby": {
@@ -255,171 +278,180 @@
       "Shadow Harmony"
     ],
     "2pc": [
-      "Woodpecker Electro",
-      "Puffer Electro"
+      "Hormone Punk",
+      "Shadow Harmony"
     ]
   },
   "Asaba Harumasa": {
     "4pc": [
       "Shadow Harmony",
-      "Puffer Electro",
-      "Hormone Punk"
+      "Hormone Punk",
+      "Puffer Electro"
     ],
     "2pc": [
-      "Puffer Electro",
-      "Woodpecker Electro",
-      "Shockstar Disco"
+      "White Water Ballad",
+      "Hormone Punk",
+      "Moonlight Lullaby",
+      "Puffer Electro"
     ]
   },
   "Tsukishiro Yanagi": {
     "4pc": [
+      "King of the Summit",
       "Puffer Electro"
     ],
     "2pc": [
-      "Phaethon's Melody",
-      "Puffer Electro",
-      "Woodpecker Electro",
-      "Shockstar Disco"
+      "Freedom Blues",
+      "Hormone Punk"
     ]
   },
   "Qingyi": {
     "4pc": [
+      "King of the Summit",
       "Astral Voice"
     ],
     "2pc": [
       "Astral Voice",
-      "Woodpecker Electro"
+      "Moonlight Lullaby"
     ]
   },
   "Grace Howard": {
     "4pc": [
-      "Puffer Electro"
+      "Puffer Electro",
+      "King of the Summit",
+      "Freedom Blues"
     ],
     "2pc": [
-      "Phaethon's Melody",
-      "Puffer Electro"
+      "Freedom Blues",
+      "Puffer Electro",
+      "Hormone Punk",
+      "White Water Ballad",
+      "Thunder Metal"
     ]
   },
   "Alexandrina Sebastiane (Rina)": {
     "4pc": [
-      "Puffer Electro"
+      "Freedom Blues"
     ],
     "2pc": [
-      "Puffer Electro",
-      "Phaethon's Melody"
+      "Hormone Punk",
+      "Thunder Metal"
     ]
   },
   "Seth Lowell": {
     "4pc": [
-      "Astral Voice"
+      "King of the Summit",
+      "Moonlight Lullaby"
     ],
     "2pc": [
-      "Phaethon's Melody",
-      "Puffer Electro"
+      "Freedom Blues",
+      "Thunder Metal"
     ]
   },
   "Anton Ivanov": {
     "4pc": [
       "Hormone Punk",
-      "Astral Voice"
+      "Moonlight Lullaby"
     ],
     "2pc": [
-      "Woodpecker Electro",
-      "Puffer Electro"
+      "Hormone Punk",
+      "White Water Ballad",
+      "Moonlight Lullaby"
     ]
   },
   "Anby Demara": {
     "4pc": [
-      "Astral Voice"
+      "King of the Summit"
     ],
     "2pc": [
-      "Astral Voice",
-      "Shockstar Disco"
+      "Astral Voice"
     ]
   },
   "Promeia": {
-    "4pc": [],
+    "4pc": [
+      "King of the Summit"
+    ],
     "2pc": [
-      "Phaethon's Melody"
+      "Freedom Blues",
+      "White Water Ballad"
     ]
   },
   "Zhao": {
     "4pc": [
-      "Astral Voice"
+      "King of the Summit",
+      "Moonlight Lullaby"
     ],
     "2pc": [
-      "Yunkui Tales",
+      "Freedom Blues",
+      "White Water Ballad",
       "Phaethon's Melody",
       "Puffer Electro"
     ]
   },
   "Yidhari Murphy": {
-    "4pc": [
-      "Yunkui Tales"
-    ],
+    "4pc": [],
     "2pc": [
-      "Woodpecker Electro"
+      "Hormone Punk",
+      "Freedom Blues",
+      "Proto Punk"
     ]
   },
   "Hugo Vlad": {
     "4pc": [
-      "Hormone Punk",
-      "Puffer Electro"
+      "Hormone Punk"
     ],
     "2pc": [
-      "Woodpecker Electro",
-      "Puffer Electro",
-      "Phaethon's Melody"
+      "Hormone Punk",
+      "White Water Ballad"
     ]
   },
   "Hoshimi Miyabi": {
     "4pc": [
-      "Branch & Blade Song"
+      "White Water Ballad"
     ],
     "2pc": [
-      "Woodpecker Electro",
       "Puffer Electro",
-      "Phaethon's Melody"
+      "White Water Ballad",
+      "Hormone Punk",
+      "Freedom Blues"
     ]
   },
   "Ellen Joe": {
     "4pc": [
-      "Woodpecker Electro",
+      "Puffer Electro",
       "Hormone Punk"
     ],
     "2pc": [
+      "Hormone Punk",
+      "White Water Ballad",
       "Puffer Electro",
-      "Woodpecker Electro",
-      "Phaethon's Melody"
+      "Freedom Blues"
     ]
   },
   "Von Lycaon": {
     "4pc": [
-      "Astral Voice"
+      "King of the Summit",
+      "Moonlight Lullaby"
     ],
     "2pc": [
-      "Astral Voice",
-      "Phaethon's Melody"
+      "Astral Voice"
     ]
   },
   "Soukaku": {
     "4pc": [
-      "Astral Voice",
-      "Puffer Electro"
+      "Moonlight Lullaby",
+      "Freedom Blues"
     ],
     "2pc": [
-      "Phaethon's Melody",
-      "Shockstar Disco",
-      "Puffer Electro"
+      "Freedom Blues"
     ]
   },
   "Nangong Yu": {
     "4pc": [
-      "Phaethon's Melody",
-      "Puffer Electro"
+      "Freedom Blues"
     ],
     "2pc": [
-      "Phaethon's Melody"
+      "Freedom Blues"
     ]
   },
   "Aria": {
@@ -429,63 +461,70 @@
     ],
     "2pc": [
       "Phaethon's Melody",
-      ["Chaos Jazz", "Freedom Blues"],
-      ["Shining Aria", "Chaotic Metal"],
+      [
+        "Chaos Jazz",
+        "Freedom Blues"
+      ],
+      [
+        "Shining Aria",
+        "Chaotic Metal"
+      ],
       "Puffer Electro"
     ]
   },
   "Lucia Elowen": {
-    "4pc": [],
+    "4pc": [
+      "Freedom Blues"
+    ],
     "2pc": [
-      "Yunkui Tales"
+      "Proto Punk"
     ]
   },
   "Yixuan": {
-    "4pc": [
-      "Yunkui Tales"
-    ],
+    "4pc": [],
     "2pc": [
-      "Woodpecker Electro"
+      "Hormone Punk",
+      "White Water Ballad",
+      "Moonlight Lullaby"
     ]
   },
   "Vivian Banshee": {
     "4pc": [
-      "Phaethon's Melody"
+      "Freedom Blues"
     ],
     "2pc": [
-      "Phaethon's Melody"
+      "Freedom Blues",
+      "Astral Voice"
     ]
   },
   "Astra Yao": {
     "4pc": [
-      "Astral Voice"
+      "Moonlight Lullaby",
+      "Freedom Blues"
     ],
     "2pc": [
-      "Puffer Electro",
-      "Phaethon's Melody",
-      "Woodpecker Electro"
+      "Freedom Blues",
+      "White Water Ballad"
     ]
   },
   "Zhu Yuan": {
     "4pc": [
       "Hormone Punk",
-      "Puffer Electro",
       "Shadow Harmony"
     ],
     "2pc": [
-      "Woodpecker Electro",
-      "Puffer Electro",
-      "Shadow Harmony"
+      "Hormone Punk",
+      "White Water Ballad"
     ]
   },
   "Nicole Demara": {
     "4pc": [
-      "Astral Voice",
-      "Puffer Electro"
+      "Freedom Blues",
+      "Moonlight Lullaby"
     ],
     "2pc": [
-      "Phaethon's Melody",
-      "Puffer Electro"
+      "Freedom Blues",
+      "Shadow Harmony"
     ]
   }
 }

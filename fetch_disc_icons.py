@@ -31,34 +31,44 @@ OUT_JSON = os.path.join(DIR, 'disc_icons.json')
 OUT_DIR  = os.path.join(DIR, 'disc_icons')
 WIKI_API = 'https://zenless-zone-zero.fandom.com/api.php'
 
-sys.path.insert(0, DIR)
-from parse_zzz import DISC_SETS
+DISC_SETS = [
+    "Assassin's Ballad", "Astral Voice", "Branch & Blade Song",
+    "Bunny in Wonderland", "Chaos Jazz", "Chaotic Metal", "Dawn's Bloom",
+    "Doom Grindcore", "Ecstatic Punk", "Fanged Metal", "Freedom Blues",
+    "Hormone Punk", "Inferno Metal", "King of the Summit", "Mammoth Electro",
+    "Monsoon Funk", "Moonlight Lullaby", "Noisy Pop", "Notes From the Chained",
+    "Phaethon's Melody", "Polar Metal", "Proto Punk", "Puffer Electro",
+    "Shadow Harmony", "Shining Aria", "Shockstar Disco", "Soul Rock",
+    "Swing Jazz", "Thunder Metal", "Twisted Grindcore", "Unicorn Electro",
+    "Vagabond Folk", "White Water Ballad", "Woodpecker Electro", "Yunkui Tales",
+]
 
 
-def wiki_filename(name: str) -> str:
-    return f"Drive_Disc_{name.replace(' ', '_')}_Icon.png"
-
-
-def fetch_cdn_url(filename: str):
-    params = urllib.parse.urlencode({
-        'action': 'query',
-        'titles': f'File:{filename}',
-        'prop':   'imageinfo',
-        'iiprop': 'url',
-        'format': 'json',
-    })
-    req = urllib.request.Request(
-        f"{WIKI_API}?{params}",
-        headers={'User-Agent': 'Mozilla/5.0 (compatible; hoyo-builds/1.0)'},
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=15) as r:
-            data = json.loads(r.read())
-        for page in data['query']['pages'].values():
-            if 'imageinfo' in page:
-                return page['imageinfo'][0]['url']
-    except Exception as e:
-        print(f"  API error: {e}")
+def fetch_cdn_url(name: str):
+    """Try _S, _A, _B suffixes; return first URL that resolves (prefer 256x256 square)."""
+    safe = name.replace(' ', '_')
+    for suffix in ('S', 'A', 'B'):
+        filename = f"Drive_Disc_{safe}_{suffix}.png"
+        params = urllib.parse.urlencode({
+            'action': 'query',
+            'titles': f'File:{filename}',
+            'prop':   'imageinfo',
+            'iiprop': 'url',
+            'format': 'json',
+        })
+        req = urllib.request.Request(
+            f"{WIKI_API}?{params}",
+            headers={'User-Agent': 'Mozilla/5.0 (compatible; hoyo-builds/1.0)'},
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=15) as r:
+                data = json.loads(r.read())
+            for page in data['query']['pages'].values():
+                if 'imageinfo' in page:
+                    return page['imageinfo'][0]['url']
+        except Exception as e:
+            print(f"  API error ({filename}): {e}")
+        time.sleep(0.1)
     return None
 
 
@@ -109,7 +119,7 @@ def main():
                 data = f.read()
             print("cached", end=' ', flush=True)
         else:
-            cdn_url = fetch_cdn_url(wiki_filename(name))
+            cdn_url = fetch_cdn_url(name)
             if not cdn_url:
                 print("MISSING ON WIKI")
                 missing.append(name)

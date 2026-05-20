@@ -200,7 +200,7 @@ def parse_block(rows):
                     members = t["members"]
                     if name not in members:
                         members = [name] + members
-                    if len(members) >= 3:
+                    if len(members) >= 2:
                         team_comps.append({"label": t["label"], "chars": members})
             continue
 

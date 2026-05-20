@@ -10,13 +10,14 @@ Usage:
 
 import argparse
 import asyncio
+from collections import Counter
 import io
 import json
 import os
 import re
 import requests
 import sys
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Set, Tuple
 
 SHEET_BASE = (
     "https://docs.google.com/spreadsheets/d/e/"
@@ -55,7 +56,7 @@ PORTRAIT_OVERRIDES = {
     "Orphie Magnusson & Magus": "Agent_Orphie_Magnusson_%26_Magus_Portrait.png",
     "Alexandrina Sebastiane (Rina)": "Agent_Rina_Portrait.png",
     "Soldier 11 (Harin)":       "Agent_Soldier_11_Portrait.png",
-    "Soldier 0 (Anby)":         "Agent_Soldier_0_Portrait.png",
+    "Soldier 0 - Anby":         "Agent_Soldier_0_Portrait.png",
     "Luciana Auxesis Theodoro de Montefio (Lucy)": "Agent_Lucy_Portrait.png",
 }
 
@@ -92,73 +93,46 @@ def _fetch_wiki_url(filename: str) -> Optional[str]:
 # ─── Reference portraits ──────────────────────────────────────────────────────
 
 def download_reference_icons() -> Dict[str, bytes]:
-    """Download and cache Agent portrait art for all ZZZ characters.
+    """Download and cache Agent icon thumbnails for all ZZZ characters.
 
-    Uses Agent_NAME_Portrait.png (bust-crop art matching spreadsheet style).
-    Falls back to icon thumbnails from icons.json if portrait not found.
+    Uses icons.json icon URLs (small square thumbnails matching spreadsheet style).
     """
     with open(ICONS_JSON) as f:
         all_icons = json.load(f)
     zzz_icons: Dict[str, str] = all_icons.get("zzz", {})
 
-    os.makedirs(PORTRAIT_CACHE, exist_ok=True)
     os.makedirs(ICON_CACHE, exist_ok=True)
 
     result: Dict[str, bytes] = {}
-    portrait_hits, icon_fallbacks = 0, 0
+    hits, misses = 0, 0
 
-    for char_name in zzz_icons:
+    for char_name, icon_url in zzz_icons.items():
         safe = re.sub(r"[^\w]", "_", char_name)
-        portrait_path = os.path.join(PORTRAIT_CACHE, f"{safe}.png")
-
-        # Use cached portrait if available
-        if os.path.exists(portrait_path):
-            with open(portrait_path, "rb") as fh:
-                result[char_name] = fh.read()
-            portrait_hits += 1
-            continue
-
-        # Try fetching Agent_NAME_Portrait.png from wiki
-        filename = _wiki_portrait_filename(char_name)
-        url = _fetch_wiki_url(filename)
-        if url:
-            try:
-                resp = requests.get(url, timeout=15,
-                                    headers={"User-Agent": "Mozilla/5.0"})
-                if resp.ok:
-                    result[char_name] = resp.content
-                    with open(portrait_path, "wb") as fh:
-                        fh.write(resp.content)
-                    portrait_hits += 1
-                    continue
-            except Exception:
-                pass
-
-        # Fall back to icon thumbnail
         icon_path = os.path.join(ICON_CACHE, f"{safe}.png")
-        icon_url = zzz_icons[char_name]
+
         if os.path.exists(icon_path):
             with open(icon_path, "rb") as fh:
                 result[char_name] = fh.read()
-            icon_fallbacks += 1
-            print(f"  WARN: {char_name}: portrait not found, using icon fallback")
-        else:
-            try:
-                resp = requests.get(icon_url, timeout=15,
-                                    headers={"User-Agent": "Mozilla/5.0"})
-                if resp.ok:
-                    result[char_name] = resp.content
-                    with open(icon_path, "wb") as fh:
-                        fh.write(resp.content)
-                    icon_fallbacks += 1
-                    print(f"  WARN: {char_name}: portrait not found, using icon fallback")
-                else:
-                    print(f"  WARN: {char_name}: HTTP {resp.status_code}")
-            except Exception as exc:
-                print(f"  WARN: {char_name}: {exc}")
+            hits += 1
+            continue
 
-    print(f"  {portrait_hits} portraits, {icon_fallbacks} icon fallbacks "
-          f"({len(result)} total, cache: {PORTRAIT_CACHE})")
+        try:
+            resp = requests.get(icon_url, timeout=15,
+                                headers={"User-Agent": "Mozilla/5.0"})
+            if resp.ok:
+                result[char_name] = resp.content
+                with open(icon_path, "wb") as fh:
+                    fh.write(resp.content)
+                hits += 1
+            else:
+                print(f"  WARN: {char_name}: HTTP {resp.status_code}")
+                misses += 1
+        except Exception as exc:
+            print(f"  WARN: {char_name}: {exc}")
+            misses += 1
+
+    print(f"  {hits} icons loaded, {misses} failed "
+          f"({len(result)} total, cache: {ICON_CACHE})")
     return result
 
 
@@ -206,62 +180,59 @@ def best_match(img_bytes: bytes,
     return None, best_d
 
 
-# ─── Playwright ───────────────────────────────────────────────────────────────
+# ─── DOM helpers (shared by token extraction and team loading) ────────────────
 
-async def load_sheet_teams(page, gid: str,
-                           phash_db: Dict[str, object],
-                           threshold: int,
-                           debug: bool = False) -> Dict[str, dict]:
-    """
-    Returns {char_name: {"teams": [{"label": str, "members": [str, ...]}]}}
-    for all characters on this sheet tab.
-    """
+def _base_token(url: str) -> str:
+    """Strip Google Serving URL size suffix to get the stable base image token."""
+    tail = url.split("/")[-1]
+    return re.sub(r"=w\d+-h\d+.*$", "", tail)
+
+
+_DOM_ROWS_JS = r"""() => {
+    const result = [];
+    for (const tr of document.querySelectorAll('tr')) {
+        const trRect = tr.getBoundingClientRect();
+        const cells = [];
+        for (const td of tr.querySelectorAll('td')) {
+            const text = td.innerText.trim();
+            const rect = td.getBoundingClientRect();
+            cells.push({text, x: Math.round(rect.left),
+                        w: Math.round(rect.width), y: Math.round(rect.top)});
+        }
+        result.push({y: Math.round(trRect.top), h: Math.round(trRect.height), cells});
+    }
+    return result;
+}"""
+
+_DOM_IMGS_JS = r"""() => {
+    const results = [];
+    for (const img of document.querySelectorAll('img')) {
+        const rect = img.getBoundingClientRect();
+        results.push({
+            src: img.src, alt: img.alt || '',
+            x: Math.round(rect.left), y: Math.round(rect.top),
+            w: Math.round(rect.width), h: Math.round(rect.height),
+        });
+    }
+    return results;
+}"""
+
+
+async def _load_tab(page, gid: str):
+    """Load a sheet tab and return (rows, portrait_imgs, char_rows, tc_ys)."""
     url = f"{SHEET_BASE}/pubhtml/sheet?headers=false&gid={gid}"
     await page.goto(url, wait_until="networkidle", timeout=60000)
     await page.wait_for_timeout(2000)
 
-    # ── Scan all TR rows ──────────────────────────────────────────────────────
-    rows = await page.evaluate(r"""() => {
-        const result = [];
-        for (const tr of document.querySelectorAll('tr')) {
-            const trRect = tr.getBoundingClientRect();
-            const cells = [];
-            for (const td of tr.querySelectorAll('td')) {
-                const text = td.innerText.trim();
-                const rect = td.getBoundingClientRect();
-                cells.push({text, x: Math.round(rect.left),
-                            w: Math.round(rect.width), y: Math.round(rect.top)});
-            }
-            result.push({y: Math.round(trRect.top), h: Math.round(trRect.height), cells});
-        }
-        return result;
-    }""")
+    rows     = await page.evaluate(_DOM_ROWS_JS)
+    raw_imgs = await page.evaluate(_DOM_IMGS_JS)
 
-    # ── Scan all images ───────────────────────────────────────────────────────
-    raw_imgs = await page.evaluate(r"""() => {
-        const results = [];
-        for (const img of document.querySelectorAll('img')) {
-            const rect = img.getBoundingClientRect();
-            results.push({
-                src: img.src,
-                alt: img.alt || '',
-                x:   Math.round(rect.left),
-                y:   Math.round(rect.top),
-                w:   Math.round(rect.width),
-                h:   Math.round(rect.height),
-            });
-        }
-        return results;
-    }""")
-
-    # ── Identify character rows ───────────────────────────────────────────────
+    # Character row detection
     lu_ys = {r["y"] for r in rows
              if any("last updated" in c["text"].lower() for c in r["cells"])}
-
     SKIP = {"S Rank Agents", "A Rank Agents", "S Rank", "A Rank",
             "Equipment", "Role", "Ability Priority", "W-Engines",
             "Drive Disc Stats", "Team Comps"}
-
     candidates = []
     for row in rows:
         left = [c for c in row["cells"] if c["x"] < 250 and c["text"] and len(c["text"]) > 2]
@@ -273,7 +244,7 @@ async def load_sheet_teams(page, gid: str,
         if any(0 < lu_y - row["y"] <= 120 for lu_y in lu_ys):
             candidates.append({"name": name, "y": row["y"]})
 
-    char_rows = []
+    char_rows: list = []
     i = 0
     while i < len(candidates):
         if (i + 1 < len(candidates) and
@@ -283,23 +254,16 @@ async def load_sheet_teams(page, gid: str,
         else:
             char_rows.append(candidates[i])
             i += 1
-
     for j in range(len(char_rows) - 1):
         char_rows[j]["next_y"] = char_rows[j + 1]["y"]
     if char_rows:
         char_rows[-1]["next_y"] = 999999
 
-    if debug:
-        print(f"  {len(char_rows)} characters: {[c['name'] for c in char_rows]}")
-
-    # ── Find Team Comps sections ──────────────────────────────────────────────
-    team_comp_label_ys: List[int] = [
-        row["y"]
-        for row in rows
+    tc_ys: List[int] = [
+        row["y"] for row in rows
         if any(c["text"].lower() == "team comps" for c in row["cells"])
     ]
 
-    # ── Filter portrait-sized images in team comp x-range ────────────────────
     portrait_imgs = [
         img for img in raw_imgs
         if (IMG_W_MIN <= img["w"] <= IMG_W_MAX
@@ -307,8 +271,79 @@ async def load_sheet_teams(page, gid: str,
             and TEAM_X_MIN <= img["x"] <= TEAM_X_MAX)
     ]
 
-    # ── Download all unique portrait images via session ───────────────────────
-    seen_srcs = {}
+    return rows, portrait_imgs, char_rows, tc_ys
+
+
+def _section_data(char_row: dict, rows: list, portrait_imgs: list,
+                  tc_ys: List[int]) -> tuple:
+    """Return (tc_y, label_cells, portraits) for a single character section."""
+    y0, y1 = char_row["y"], char_row["next_y"]
+    tc_y = next((y for y in tc_ys if y0 <= y < y1), None)
+    if tc_y is None:
+        return None, None, None
+    label_cells: List[Tuple[int, str]] = []
+    for row in rows:
+        if not (tc_y < row["y"] < y1):
+            continue
+        for cell in row["cells"]:
+            if (TEAM_X_MIN <= cell["x"] <= TEAM_X_MAX
+                    and cell["w"] >= 250
+                    and cell["text"]
+                    and cell["text"].lower() not in ("team comps",)):
+                label_cells.append((cell["x"], cell["text"]))
+    label_cells.sort(key=lambda t: t[0])
+    portraits = sorted(
+        [img for img in portrait_imgs if tc_y < img["y"] < y1],
+        key=lambda i: i["x"],
+    )
+    return tc_y, label_cells, portraits
+
+
+# ─── Pass 1: Token extraction ─────────────────────────────────────────────────
+
+async def extract_tab_tokens(page, gid: str) -> Dict[str, str]:
+    """Return {char_name: base_token} using dominant-token heuristic (no downloads)."""
+    rows, portrait_imgs, char_rows, tc_ys = await _load_tab(page, gid)
+    char_token: Dict[str, str] = {}
+    for cr in char_rows:
+        _, label_cells, portraits = _section_data(cr, rows, portrait_imgs, tc_ys)
+        if not label_cells:
+            continue
+        team_token_sets: List[Set[str]] = []
+        for ti, (lx, _) in enumerate(label_cells):
+            next_lx = label_cells[ti + 1][0] if ti + 1 < len(label_cells) else TEAM_X_MAX + 1
+            tokens: Set[str] = {_base_token(p["src"])
+                                for p in portraits if lx <= p["x"] < next_lx}
+            if tokens:
+                team_token_sets.append(tokens)
+        if not team_token_sets:
+            continue
+        freq = Counter(tok for tset in team_token_sets for tok in tset)
+        dominant, count = freq.most_common(1)[0]
+        if count >= (len(team_token_sets) + 1) // 2:
+            char_token[cr["name"]] = dominant
+    return char_token
+
+
+# ─── Pass 2: Team loading ─────────────────────────────────────────────────────
+
+async def load_sheet_teams(page, gid: str,
+                           phash_db: Dict[str, object],
+                           threshold: int,
+                           global_token_to_char: Dict[str, str],
+                           debug: bool = False) -> Dict[str, dict]:
+    """
+    Returns {char_name: {"teams": [{"label": str, "members": [str, ...]}]}}
+    for all characters on this sheet tab.
+    Uses global_token_to_char for direct lookup; phash as fallback.
+    """
+    rows, portrait_imgs, char_rows, tc_ys = await _load_tab(page, gid)
+
+    if debug:
+        print(f"  {len(char_rows)} characters: {[c['name'] for c in char_rows]}")
+
+    # ── Download all unique portrait images ───────────────────────────────────
+    seen_srcs: Dict[str, Optional[bytes]] = {}
     for img in portrait_imgs:
         if img["src"] not in seen_srcs:
             seen_srcs[img["src"]] = None
@@ -323,63 +358,42 @@ async def load_sheet_teams(page, gid: str,
     downloaded = sum(1 for v in seen_srcs.values() if v)
     print(f"  Downloaded {downloaded}/{len(seen_srcs)}")
 
-    # ── Match portraits to character names ────────────────────────────────────
+    # ── Match portraits: global token lookup first, phash fallback ────────────
     src_to_char: Dict[str, Optional[str]] = {}
     for src, data in seen_srcs.items():
-        if data is None:
+        tok = _base_token(src)
+        if tok in global_token_to_char:
+            src_to_char[src] = global_token_to_char[tok]
+            if debug:
+                tail = src.split("/")[-1][:30]
+                print(f"    {tail} → {global_token_to_char[tok]!r} (token)")
+        elif data is None:
             src_to_char[src] = None
-            continue
-        name, dist = best_match(data, phash_db, threshold)
-        src_to_char[src] = name
-        if debug:
-            tail = src.split("/")[-1][:30]
-            print(f"    {tail} → {name!r} (dist={dist})")
+        else:
+            name, dist = best_match(data, phash_db, threshold)
+            src_to_char[src] = name
+            if debug:
+                tail = src.split("/")[-1][:30]
+                print(f"    {tail} → {name!r} (phash dist={dist})")
 
     # ── Per-character: collect teams ──────────────────────────────────────────
     result: Dict[str, dict] = {}
 
     for cr in char_rows:
+        _, label_cells, char_portraits = _section_data(cr, rows, portrait_imgs, tc_ys)
+        if not label_cells:
+            continue
+
         char_name = cr["name"]
-        y0, y1 = cr["y"], cr["next_y"]
-
-        # Find this character's Team Comps label y
-        tc_y = next((y for y in team_comp_label_ys if y0 <= y < y1), None)
-        if tc_y is None:
-            continue
-
-        # Team label text cells (in row ≈ tc_y + 100..200)
-        # They appear ~2 rows after the portrait image row
-        team_label_cells: List[Tuple[int, str]] = []  # (x, label)
-        for row in rows:
-            if not (tc_y < row["y"] < y1):
-                continue
-            for cell in row["cells"]:
-                if (TEAM_X_MIN <= cell["x"] <= TEAM_X_MAX
-                        and cell["w"] >= 250
-                        and cell["text"]
-                        and cell["text"].lower() not in ("team comps",)):
-                    team_label_cells.append((cell["x"], cell["text"]))
-        team_label_cells.sort(key=lambda t: t[0])
-
-        if not team_label_cells:
-            continue
-
-        # Portrait images belonging to this character's team comp section
-        char_portraits = sorted(
-            [img for img in portrait_imgs if tc_y < img["y"] < y1],
-            key=lambda i: i["x"],
-        )
 
         if debug:
             print(f"  {char_name}: {len(char_portraits)} portrait imgs, "
-                  f"{len(team_label_cells)} labels: "
-                  f"{[lbl[:25] for _, lbl in team_label_cells]}")
+                  f"{len(label_cells)} labels: "
+                  f"{[lbl[:25] for _, lbl in label_cells]}")
 
-        # Group portraits into teams by label x boundaries
-        # Each team's x range: [label_x, next_label_x)
         teams: List[dict] = []
-        for ti, (lx, lbl) in enumerate(team_label_cells):
-            next_lx = team_label_cells[ti + 1][0] if ti + 1 < len(team_label_cells) else TEAM_X_MAX + 1
+        for ti, (lx, lbl) in enumerate(label_cells):
+            next_lx = label_cells[ti + 1][0] if ti + 1 < len(label_cells) else TEAM_X_MAX + 1
             team_imgs = [p for p in char_portraits if lx <= p["x"] < next_lx]
             members: List[str] = []
             for p in team_imgs:
@@ -407,12 +421,31 @@ async def main_async(args):
     if not phash_db:
         sys.exit("No phash database — install imagehash and Pillow")
 
-    print("\n=== Step 2: Scrape team comp images ===")
     from playwright.async_api import async_playwright
-
-    team_map: Dict[str, dict] = {}
     gids = [args.tab] if args.tab else SHEET_GIDS
 
+    # ── Pass 1: Build global token map (no image downloads) ───────────────────
+    print("\n=== Step 2: Build global character token map ===")
+    global_char_token: Dict[str, str] = {}  # char_name → base_token
+    async with async_playwright() as pw:
+        browser = await pw.chromium.launch(headless=True)
+        ctx  = await browser.new_context(viewport={"width": 1600, "height": 900})
+        page = await ctx.new_page()
+        for gid in gids:
+            print(f"  Scanning gid={gid}...")
+            tokens = await extract_tab_tokens(page, gid)
+            print(f"    {len(tokens)} tokens extracted")
+            global_char_token.update(tokens)
+        await browser.close()
+
+    global_token_to_char: Dict[str, str] = {tok: name
+                                             for name, tok in global_char_token.items()}
+    print(f"  Global token map: {len(global_token_to_char)} entries "
+          f"({len(global_char_token)} characters)")
+
+    # ── Pass 2: Scrape team comps with global token map ───────────────────────
+    print("\n=== Step 3: Scrape team comp images ===")
+    team_map: Dict[str, dict] = {}
     async with async_playwright() as pw:
         browser = await pw.chromium.launch(headless=True)
         ctx  = await browser.new_context(viewport={"width": 1600, "height": 900})
@@ -421,7 +454,7 @@ async def main_async(args):
         for gid in gids:
             print(f"\n  Loading gid={gid}...")
             tab_result = await load_sheet_teams(
-                page, gid, phash_db, threshold, args.debug
+                page, gid, phash_db, threshold, global_token_to_char, args.debug
             )
             print(f"  → {len(tab_result)} characters with team data")
             team_map.update(tab_result)
@@ -462,7 +495,7 @@ async def main_async(args):
                     print(f"    x={img_info['x']}  ...{img_info['src'][-30:]}")
         return
 
-    print(f"\n=== Step 3: Write {OUTPUT} ===")
+    print(f"\n=== Step 4: Write {OUTPUT} ===")
     # Strip _imgs before writing
     clean_map = {}
     for name, data in team_map.items():
@@ -483,8 +516,8 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--debug",          action="store_true")
     p.add_argument("--tab",            help="Only process this GID")
-    p.add_argument("--threshold",      type=int, default=12,
-                   help="phash match threshold (default 12)")
+    p.add_argument("--threshold",      type=int, default=20,
+                   help="phash match threshold (default 20)")
     p.add_argument("--save-portraits", metavar="CHARNAME",
                    help="Save portrait images for CHARNAME to /tmp/portraits_<name>/")
     args = p.parse_args()

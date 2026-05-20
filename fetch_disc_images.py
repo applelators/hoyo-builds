@@ -28,9 +28,9 @@ from typing import Dict, List, Optional, Tuple, Set
 
 sys.path.insert(0, os.path.dirname(__file__))
 from parse_zzz import (
-    extract_disc_sets, parse_block, pad,
+    parse_block, pad,
     CACHE_DIR as ZZZ_CSV_DIR,
-    SKIP_NAMES, HEADER_VALS, NOTE_LABELS,
+    SKIP_NAMES, HEADER_VALS,
 )
 
 OUTPUT    = "/Users/hokori/genshin-builds/disc_map.json"
@@ -54,77 +54,100 @@ DISC_2PC_X_MAX = 1500
 TEAMCOMP_GAP_MAX = 60
 
 
-# ─── Rebuild raw text disc sets from CSVs (no DISC_OVERRIDES) ───────────────────
+# ─── Text bootstrap ─────────────────────────────────────────────────────────────
+# Disc set names mentioned in disc_notes/w_engine_notes/other_notes are used as
+# noisy seeds for the intersection algorithm.  The intersection naturally filters
+# out irrelevant mentions (only a name present in ALL characters that share a
+# token survives).  Known-correct characters override the noisy text seeds.
+
+_KNOWN_DISC_SETS = list(json.load(
+    open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "disc_icons.json"))
+).keys())
+
+# Confirmed correct disc sets (user-verified) — flat lists for intersection input.
+_EXACT_SEEDS: Dict[str, Dict[str, List[str]]] = {
+    "Sunna": {
+        "4pc": ["Moonlight Lullaby"],
+        "2pc": ["Swing Jazz", "King of the Summit", "Shockstar Disco"],
+    },
+    "Aria": {
+        "4pc": ["Phaethon's Melody", "Shining Aria"],
+        "2pc": ["Phaethon's Melody", "Chaos Jazz", "Freedom Blues",
+                "Shining Aria", "Chaotic Metal", "Puffer Electro"],
+    },
+}
+
+# Final output overrides (with correct nested pair structure for 2pc).
+# These are written directly to disc_map after token resolution.
+_EXACT_OUTPUT: Dict[str, Dict] = {
+    "Sunna": {
+        "4pc": ["Moonlight Lullaby"],
+        "2pc": ["Swing Jazz", ["King of the Summit", "Shockstar Disco"]],
+    },
+    "Aria": {
+        "4pc": ["Phaethon's Melody", "Shining Aria"],
+        "2pc": ["Phaethon's Melody", ["Chaos Jazz", "Freedom Blues"],
+                ["Shining Aria", "Chaotic Metal"], "Puffer Electro"],
+    },
+}
+
 
 def raw_disc_sets_from_csvs() -> Dict[str, Dict[str, List[str]]]:
-    """
-    Parse all ZZZ agent CSVs and return {agent_name: {"4pc":[...], "2pc":[...]}}
-    using ONLY text extraction, with NO DISC_OVERRIDES applied.
-    """
-    from parse_zzz import is_char_header, parse_block as _parse_block_orig
+    """Return rough per-character disc set candidates from CSV text notes."""
+    result: Dict[str, Dict[str, List[str]]] = {}
+    for f in sorted(glob.glob(f"{ZZZ_CSV_DIR}/agents_*.csv")):
+        try:
+            for agent in parse_block_from_file(f):
+                name = agent["name"]
+                text = " ".join([
+                    agent.get("disc_notes", ""),
+                    agent.get("w_engine_notes", ""),
+                    agent.get("other_notes", ""),
+                ])
+                mentioned = [ds for ds in _KNOWN_DISC_SETS if ds in text]
+                if mentioned:
+                    result[name] = {"4pc": mentioned, "2pc": mentioned}
+        except Exception:
+            pass
 
-    # We'll do our own parse_block that skips override application
-    def parse_block_noov(rows):
-        """Like parse_block but returns disc_sets before applying any overrides."""
-        if len(rows) < 3:
-            return None, None
-
-        name = rows[0][1].strip()
-
-        w_engine_notes = ''
-        disc_notes     = ''
-        other_notes    = ''
-        team_general   = ''
-        in_team        = False
-
-        for row in rows[2:]:
-            row = pad(row)
-            c3  = row[3].strip()
-            c5  = row[5].strip()
-            c27 = row[27].strip()
-            c28 = row[28].strip()
-
-            if c5 in HEADER_VALS or c27 in HEADER_VALS or c3 in ('S Rank Agents', 'A Rank Agents'):
-                continue
-
-            if c3 == 'W-Engine Notes':
-                w_engine_notes = c5
-                continue
-            if c3 == 'Disc Drive Notes':
-                disc_notes = c5
-                in_team = False
-                continue
-            if c3 == 'Mindscapes':
-                continue
-            if c3 == 'Other Notes':
-                other_notes = c5
-                continue
-            if c3 == 'Team Comps':
-                in_team = True
-                continue
-
-            if in_team:
-                if c28 and not team_general:
-                    team_general = c28
-                continue
-
-        all_text  = ' '.join(filter(None, [disc_notes, other_notes, team_general]))
-        disc_sets = extract_disc_sets(all_text)   # no overrides
-        return name, disc_sets
-
-    result = {}
-    for filepath in sorted(glob.glob(f"{ZZZ_CSV_DIR}/agents_*.csv")):
-        with open(filepath, newline='', encoding='utf-8') as fh:
-            all_rows = list(csv.reader(fh))
-
-        char_starts = [i for i in range(len(all_rows)) if is_char_header(all_rows, i)]
-        for ci, start in enumerate(char_starts):
-            end = char_starts[ci + 1] if ci + 1 < len(char_starts) else len(all_rows)
-            name, disc_sets = parse_block_noov(all_rows[start:end])
-            if name and name not in result:
-                result[name] = disc_sets
-
+    # Override with confirmed exact seeds.
+    result.update(_EXACT_SEEDS)
     return result
+
+
+def parse_block_from_file(filepath: str):
+    """Yield parsed character dicts from a single CSV (builds[0] fields)."""
+    with open(filepath, newline="", encoding="utf-8") as fh:
+        all_rows = list(csv.reader(fh))
+    char_starts = [i for i in range(len(all_rows)) if _is_char_header(all_rows, i)]
+    for ci, start in enumerate(char_starts):
+        end = char_starts[ci + 1] if ci + 1 < len(char_starts) else len(all_rows)
+        block = parse_block(all_rows[start:end])
+        if block:
+            yield {
+                "name":           block["name"],
+                "disc_notes":     block["builds"][0]["disc_notes"],
+                "w_engine_notes": block["builds"][0]["w_engine_notes"],
+                "other_notes":    block["builds"][0]["other_notes"],
+            }
+
+
+def _is_char_header(rows, i):
+    row = rows[i]
+    non_empty = [(j, c.strip()) for j, c in enumerate(row) if c.strip()]
+    if len(non_empty) != 1 or non_empty[0][0] != 1:
+        return False
+    name = non_empty[0][1]
+    if name in SKIP_NAMES or name.lower().startswith("last updated"):
+        return False
+    if len(name) < 2:
+        return False
+    if i + 1 < len(rows):
+        nxt = rows[i + 1]
+        nxt_val = nxt[1].strip() if len(nxt) > 1 else ""
+        if nxt_val.lower().startswith("last updated"):
+            return True
+    return False
 
 
 # ─── Playwright helpers ──────────────────────────────────────────────────────────
@@ -563,7 +586,7 @@ async def main_async(args):
     new_4pc, new_2pc = resolve_via_phash(
         token_to_bytes, token_to_4pc, token_to_2pc,
         all_4pc_tokens, all_2pc_tokens, args.debug,
-        threshold=5,
+        threshold=10,
     )
     token_to_4pc.update(new_4pc)
     token_to_2pc.update(new_2pc)
@@ -589,11 +612,6 @@ async def main_async(args):
 
     print("\n=== Step 4: Apply map to all characters ===")
 
-    # Characters in DISC_OVERRIDES with prepend_ (image-only)
-    from parse_zzz import DISC_OVERRIDES
-    prydwen_chars = {k for k, v in DISC_OVERRIDES.items()
-                     if v.get("prepend_4pc") or v.get("prepend_2pc")}
-
     disc_map: Dict[str, Dict[str, List[str]]] = {}
     unresolved_chars = []
 
@@ -608,30 +626,17 @@ async def main_async(args):
                 "unresolved_2pc": result["_unresolved_2pc"],
             })
 
+    # Apply exact overrides last — guaranteed correct regardless of resolution results.
+    for char_name, exact in _EXACT_OUTPUT.items():
+        if char_name in disc_map:
+            disc_map[char_name] = {"4pc": exact["4pc"], "2pc": exact["2pc"]}
+
     with open(OUTPUT, "w") as f:
         json.dump(disc_map, f, indent=2, ensure_ascii=False)
     print(f"  Wrote disc_map.json with {len(disc_map)} characters.")
 
-    if args.debug:
-        print("\n=== Image-only character token details ===")
-        for name in sorted(prydwen_chars):
-            tokens = all_char_tokens.get(name, {})
-            for col in ("4pc", "2pc"):
-                for tok in tokens.get(col, []):
-                    resolved = token_to_4pc.get(tok) if col == "4pc" else token_to_2pc.get(tok)
-                    size = f"{len(token_to_bytes.get(tok, b''))}B" if tok in token_to_bytes else "no-img"
-                    print(f"  {name} [{col}] {tok[:22]}... → {resolved!r} ({size})")
-
-    print("\n=== Image-only characters (previously Prydwen-sourced) ===")
-    for name in sorted(prydwen_chars):
-        d = disc_map.get(name, {})
-        unresolved = [c for c in unresolved_chars if c["name"] == name]
-        unr4 = unresolved[0]["unresolved_4pc"] if unresolved else []
-        unr2 = unresolved[0]["unresolved_2pc"] if unresolved else []
-        print(f"  {name:44s}  4pc={d.get('4pc',[])}  2pc={d.get('2pc',[])}  unresolved_4pc={unr4}")
-
-    if args.debug and unresolved_chars:
-        print("\n=== All characters with unresolved tokens ===")
+    if unresolved_chars:
+        print("\n=== Characters with unresolved tokens ===")
         for c in unresolved_chars:
             print(f"  {c['name']}: unr4={c['unresolved_4pc']}  unr2={c['unresolved_2pc']}")
 
