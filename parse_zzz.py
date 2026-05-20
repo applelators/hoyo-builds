@@ -12,12 +12,64 @@ OUTPUT    = "/Users/hokori/genshin-builds/zzz_builds.json"
 
 SKIP_NAMES = {'S Rank Agents', 'A Rank Agents', 'S Rank', 'A Rank'}
 
-GID_ELEMENT = {
-    "571511473":   "Physical",
-    "1270581085":  "Fire",
-    "897804407":   "Electric",
-    "622827842":   "Ice",
-    "1395442363":  "Ether",
+ZZZ_ELEMENT = {
+    # Physical
+    "Alice Thymefield":                            "Physical",
+    "Banyue":                                      "Physical",
+    "Billy Kid":                                   "Physical",
+    "Caesar King":                                 "Physical",
+    "Corin Wickes":                                "Physical",
+    "Dialyn":                                      "Physical",
+    "Flora (Seed)":                                "Physical",
+    "Jane Doe":                                    "Physical",
+    "Nekomiya Mana":                               "Physical",
+    "Pan Yinhu":                                   "Physical",
+    "Piper Wheel":                                 "Physical",
+    "Pulchra Fellini":                             "Physical",
+    "Sunna":                                       "Physical",
+    # Fire
+    "Ben Bigger":                                  "Fire",
+    "Burnice White":                               "Fire",
+    "Evelyn Chevalier":                            "Fire",
+    "Ju Fufu":                                     "Fire",
+    "Koleda Belobog":                              "Fire",
+    "Komano Manato":                               "Fire",
+    "Lighter":                                     "Fire",
+    "Luciana Auxesis Theodoro de Montefio (Lucy)": "Fire",
+    "Nangong Yu":                                  "Fire",
+    "Soldier 11 (Harin)":                          "Fire",
+    # Electric
+    "Alexandrina Sebastiane (Rina)":               "Electric",
+    "Anby Demara":                                 "Electric",
+    "Anton Ivanov":                                "Electric",
+    "Asaba Harumasa":                              "Electric",
+    "Cissia":                                      "Electric",
+    "Grace Howard":                                "Electric",
+    "Hugo Vlad":                                   "Electric",
+    "Qingyi":                                      "Electric",
+    "Seth Lowell":                                 "Electric",
+    "Soldier 0 - Anby":                            "Electric",
+    "Trigger":                                     "Electric",
+    "Tsukishiro Yanagi":                           "Electric",
+    "Ukinami Yuzuha":                              "Electric",
+    # Ice
+    "Ellen Joe":                                   "Ice",
+    "Hoshimi Miyabi":                              "Ice",
+    "Lucia Elowen":                                "Ice",
+    "Orphie Magnusson & Magus":                    "Ice",
+    "Soukaku":                                     "Ice",
+    "Von Lycaon":                                  "Ice",
+    "Ye Shunguang":                                "Ice",
+    "Yidhari Murphy":                              "Ice",
+    "Zhao":                                        "Ice",
+    # Ether
+    "Aria":                                        "Ether",
+    "Astra Yao":                                   "Ether",
+    "Nicole Demara":                               "Ether",
+    "Promeia":                                     "Ether",
+    "Vivian Banshee":                              "Ether",
+    "Yixuan":                                      "Ether",
+    "Zhu Yuan":                                    "Ether",
 }
 HEADER_VALS = {'Equipment', 'Drive Disc Stats', 'Ability Priority',
                'W-Engines', '4 Piece Drive Disc Set', 'Main Stats', 'Sub stats',
@@ -223,11 +275,9 @@ def parse_block(rows):
 def main():
     all_agents = {}
     for f in sorted(glob.glob(f"{CACHE_DIR}/agents_*.csv")):
-        m = re.search(r'agents_(\d+)\.csv', f)
-        element = GID_ELEMENT.get(m.group(1), '') if m else ''
         for agent in parse_file(f):
             if agent['name'] not in all_agents:
-                agent['element'] = element
+                agent['element'] = ZZZ_ELEMENT.get(agent['name'], '')
                 all_agents[agent['name']] = agent
 
     result = sorted(all_agents.values(), key=lambda a: a['name'])

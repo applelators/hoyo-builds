@@ -286,7 +286,7 @@
   {
     "name": "Banyue",
     "specialty": "Rupture",
-    "element": "Fire",
+    "element": "Physical",
     "last_updated": "2.5",
     "builds": [
       {
@@ -704,7 +704,7 @@
   {
     "name": "Flora (Seed)",
     "specialty": "Attack",
-    "element": "Electric",
+    "element": "Physical",
     "last_updated": "2.7",
     "builds": [
       {
@@ -793,7 +793,7 @@
   {
     "name": "Hugo Vlad",
     "specialty": "Attack",
-    "element": "Ice",
+    "element": "Electric",
     "last_updated": "2.6",
     "builds": [
       {
@@ -993,7 +993,7 @@
   {
     "name": "Lucia Elowen",
     "specialty": "Support",
-    "element": "Ether",
+    "element": "Ice",
     "last_updated": "2.3",
     "builds": [
       {
@@ -1049,7 +1049,7 @@
   {
     "name": "Nangong Yu",
     "specialty": "Stun",
-    "element": "Ether",
+    "element": "Fire",
     "last_updated": "2.7",
     "builds": [
       {
@@ -1164,7 +1164,7 @@
   {
     "name": "Orphie Magnusson & Magus",
     "specialty": "Attacker",
-    "element": "Fire",
+    "element": "Ice",
     "last_updated": "2.2",
     "builds": [
       {
@@ -1306,7 +1306,7 @@
   {
     "name": "Promeia",
     "specialty": "Anomaly",
-    "element": "Ice",
+    "element": "Ether",
     "last_updated": "2.8",
     "builds": [
       {
@@ -1670,7 +1670,7 @@
   {
     "name": "Ukinami Yuzuha",
     "specialty": "Support",
-    "element": "Physical",
+    "element": "Electric",
     "last_updated": "2.7",
     "builds": [
       {
@@ -1792,7 +1792,7 @@
   {
     "name": "Ye Shunguang",
     "specialty": "Attacker",
-    "element": "Physical",
+    "element": "Ice",
     "last_updated": "2.6",
     "builds": [
       {
