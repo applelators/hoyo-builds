@@ -2176,8 +2176,10 @@
         ],
         "disc_2pc": [
           "Swing Jazz",
-          "King of the Summit",
-          "Shockstar Disco"
+          [
+            "King of the Summit",
+            "Shockstar Disco"
+          ]
         ],
         "w_engine_notes": "",
         "disc_notes": "Impact 6 and Shockstar/King of the Summit are only to be used outside of Ye Shunguang teams. Astral Voice can also be used as a 4pc if a teammate is holding Moonlight Lullaby, but it is not recommended in most teams. Swing Jazz has priority over Astral/Hormone 2pc due to Sunna's Core Skill upgrades providing her with ATK%",

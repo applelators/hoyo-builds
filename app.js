@@ -532,9 +532,15 @@ function zzzDiscCard(build) {
     if (has2) {
       html += '<div class="disc-row">'
         + '<span class="disc-pc-label">2PC</span>'
-        + build.disc_2pc.map((s, i) =>
-            `<span class="disc-chip${i === 0 ? ' disc-bis' : ''}">${escHtml(s)}</span>`
-          ).join('')
+        + build.disc_2pc.map((s, i) => {
+            if (Array.isArray(s)) {
+              return '<span class="disc-pair-group">'
+                + s.map(name => `<span class="disc-chip">${escHtml(name)}</span>`)
+                    .join('<span class="disc-pair-sep">/</span>')
+                + '</span>';
+            }
+            return `<span class="disc-chip${i === 0 ? ' disc-bis' : ''}">${escHtml(s)}</span>`;
+          }).join('')
         + '</div>';
     }
     html += '</div>';

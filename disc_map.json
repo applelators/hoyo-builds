@@ -5,8 +5,7 @@
     ],
     "2pc": [
       "Swing Jazz",
-      "King of the Summit",
-      "Shockstar Disco"
+      ["King of the Summit", "Shockstar Disco"]
     ]
   },
   "Ye Shunguang": {
