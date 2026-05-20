@@ -69,13 +69,16 @@ async function init() {
     $('back-btn').classList.add('hidden');
     $('disc-ref-view').classList.add('hidden');
     $('char-ref-view').classList.add('hidden');
+    $('audit-view').classList.add('hidden');
     $('disc-ref-btn').classList.remove('active');
     $('char-ref-btn').classList.remove('active');
+    $('audit-btn').classList.remove('active');
     $('placeholder').classList.remove('hidden');
   });
 
   $('disc-ref-btn').addEventListener('click', showDiscReference);
   $('char-ref-btn').addEventListener('click', showCharReference);
+  $('audit-btn').addEventListener('click', showAuditView);
 
   updateSourceCredit(currentGame);
   refreshList();
@@ -96,8 +99,10 @@ function switchGame(game) {
   $('char-view').classList.add('hidden');
   $('disc-ref-view').classList.add('hidden');
   $('char-ref-view').classList.add('hidden');
+  $('audit-view').classList.add('hidden');
   $('disc-ref-btn').classList.remove('active');
   $('char-ref-btn').classList.remove('active');
+  $('audit-btn').classList.remove('active');
   $('disc-ref-wrap').classList.toggle('hidden', game !== 'zzz');
   $('placeholder').classList.remove('hidden');
   $('search').value = '';
@@ -182,8 +187,10 @@ function selectChar(char) {
   $('placeholder').classList.add('hidden');
   $('disc-ref-view').classList.add('hidden');
   $('char-ref-view').classList.add('hidden');
+  $('audit-view').classList.add('hidden');
   $('disc-ref-btn').classList.remove('active');
   $('char-ref-btn').classList.remove('active');
+  $('audit-btn').classList.remove('active');
   $('char-view').classList.remove('hidden');
 
   $('char-name').textContent = toTitle(char.name);
@@ -650,6 +657,10 @@ function zzzTeamCard(build) {
 function showDiscReference() {
   $('placeholder').classList.add('hidden');
   $('char-view').classList.add('hidden');
+  $('char-ref-view').classList.add('hidden');
+  $('audit-view').classList.add('hidden');
+  $('char-ref-btn').classList.remove('active');
+  $('audit-btn').classList.remove('active');
   $('disc-ref-btn').classList.add('active');
   document.body.classList.add('viewing-char');
   $('back-btn').classList.remove('hidden');
@@ -675,7 +686,9 @@ function showCharReference() {
   $('placeholder').classList.add('hidden');
   $('char-view').classList.add('hidden');
   $('disc-ref-view').classList.add('hidden');
+  $('audit-view').classList.add('hidden');
   $('disc-ref-btn').classList.remove('active');
+  $('audit-btn').classList.remove('active');
   $('char-ref-btn').classList.add('active');
   document.body.classList.add('viewing-char');
   $('back-btn').classList.remove('hidden');
@@ -695,6 +708,115 @@ function showCharReference() {
     + '</div>';
 
   $('content').scrollTop = 0;
+}
+
+function showAuditView() {
+  $('placeholder').classList.add('hidden');
+  $('char-view').classList.add('hidden');
+  $('disc-ref-view').classList.add('hidden');
+  $('char-ref-view').classList.add('hidden');
+  $('disc-ref-btn').classList.remove('active');
+  $('char-ref-btn').classList.remove('active');
+  $('audit-btn').classList.add('active');
+  document.body.classList.add('viewing-char');
+  $('back-btn').classList.remove('hidden');
+  activeChar = null;
+
+  const view = $('audit-view');
+  view.classList.remove('hidden');
+  view.innerHTML = '<div class="disc-ref-header">audit — disc drives &amp; team comps</div>'
+    + buildAuditHtml();
+  $('content').scrollTop = 0;
+}
+
+function discIconItem(name) {
+  const src = 'disc_icons/' + encodeURIComponent(name) + '.png';
+  return `<div class="disc-icon-item">`
+    + `<img class="disc-icon-img" src="${src}" alt="${escHtml(name)}">`
+    + `<span class="disc-icon-name">${escHtml(name)}</span>`
+    + `</div>`;
+}
+
+function buildAuditHtml() {
+  const zzzIcons = icons.zzz || {};
+  let html = '<div class="audit-grid">';
+
+  for (const char of zzzChars) {
+    const build = char.builds && char.builds[0];
+    if (!build) continue;
+
+    const iconUrl = zzzIcons[char.name];
+    const disc4 = build.disc_4pc || [];
+    const disc2 = build.disc_2pc || [];
+    const teams = build.team_comps || [];
+
+    html += '<div class="audit-char">';
+
+    // Header
+    html += '<div class="audit-char-header">';
+    if (iconUrl) {
+      html += `<img class="audit-char-icon" src="${escHtml(iconUrl)}" alt="" referrerpolicy="no-referrer">`;
+    }
+    html += `<span class="audit-char-name">${escHtml(char.name)}</span>`;
+    if (char.specialty) {
+      html += `<span class="path-badge">${escHtml(char.specialty)}</span>`;
+    }
+    html += '</div>';
+
+    // Disc drives
+    if (disc4.length || disc2.length) {
+      html += '<div class="audit-section">';
+      if (disc4.length) {
+        html += '<div class="audit-row"><span class="audit-pc">4PC</span><div class="disc-icon-row">';
+        for (const s of disc4) html += discIconItem(s);
+        html += '</div></div>';
+      }
+      if (disc2.length) {
+        html += '<div class="audit-row"><span class="audit-pc">2PC</span><div class="disc-icon-row">';
+        for (const s of disc2) {
+          if (Array.isArray(s)) {
+            html += '<div class="disc-pair">';
+            for (const name of s) html += discIconItem(name);
+            html += '</div>';
+          } else {
+            html += discIconItem(s);
+          }
+        }
+        html += '</div></div>';
+      }
+      html += '</div>';
+    } else {
+      html += '<div class="audit-empty">no disc data</div>';
+    }
+
+    // Team comps
+    if (teams.length) {
+      html += '<div class="audit-teams">';
+      for (const team of teams) {
+        html += '<div class="audit-team-row">';
+        html += `<span class="audit-team-label">${escHtml(team.label)}</span>`;
+        html += '<div class="audit-team-members">';
+        for (const m of team.chars) {
+          const mUrl = zzzIcons[m];
+          html += '<div class="audit-member">';
+          if (mUrl) {
+            html += `<img class="audit-member-icon" src="${escHtml(mUrl)}" alt="" referrerpolicy="no-referrer">`;
+          }
+          html += `<span class="audit-member-name">${escHtml(zzzShortName(m))}</span>`;
+          html += '</div>';
+        }
+        html += '</div></div>';
+      }
+      html += '</div>';
+    } else {
+      html += '<div class="audit-empty">no team data</div>';
+    }
+
+    html += '</div>';
+  }
+
+  html += '</div>';
+  return html;
 }
 
 function renderNotes(char) {

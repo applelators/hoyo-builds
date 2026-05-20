@@ -23,32 +23,7 @@
         "mindscapes": "Rina's most notable Mindscape is her M1, which increases the duration of her Core Passive PEN Ratio buff and its value.",
         "other_notes": "Rina can not actually max out her PEN% Buff, to achieve this she requires a team member to provide her with PEN% in combat. Rina excels in quick swap cancelling to allow her allies to benefit from the buffs her puppets provide for the highest possible time.",
         "team_general": "Best used with Shock Anomaly team (Yanagi, Grace)\n\nCan be used as a flex support for PEN% buff",
-        "team_comps": [
-          {
-            "label": "Hypercarry Yanagi",
-            "chars": [
-              "Tsukishiro Yanagi"
-            ]
-          },
-          {
-            "label": "Disorder Yanagi",
-            "chars": [
-              "Tsukishiro Yanagi"
-            ]
-          },
-          {
-            "label": "\"Mono-Shock\"",
-            "chars": []
-          },
-          {
-            "label": "Budget",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -80,8 +55,33 @@
           {
             "label": "Bunny's Fateful Mischief",
             "chars": [
+              "Alice Thymefield",
               "Grace Howard",
               "Alexandrina Sebastiane (Rina)",
+              "Ben Bigger"
+            ]
+          },
+          {
+            "label": "Symmetrical Summer",
+            "chars": [
+              "Alice Thymefield",
+              "Banyue",
+              "Flora (Seed)"
+            ]
+          },
+          {
+            "label": "Critical Summer Assault",
+            "chars": [
+              "Alice Thymefield",
+              "Asaba Harumasa",
+              "Flora (Seed)"
+            ]
+          },
+          {
+            "label": "Absolute Symmetry (Pick your Support)",
+            "chars": [
+              "Alice Thymefield",
+              "Hoshimi Miyabi",
               "Ben Bigger"
             ]
           }
@@ -113,30 +113,7 @@
         "mindscapes": "Anby's M1 increases her EGR, increasing her Energy received from all sources, allowing her to use her EX Special more frequently. \nM2 slightly increases the Daze inflicted by her EX Special.",
         "other_notes": "For W-Engines The Restrained or Hellfire Gears is a great choice if you have to lost on the W-Engine banner or got either on the standard banner.\nSince Anby is a character given from the beginning of the game Anby can be used to replace any stunner in any team comp",
         "team_general": "Any team that appreciate an on-field stunner (Burst playstyle DPS), Quick-swap stunner (On-field DPS) or an Electric On-field unit in general (Mono Grace).",
-        "team_comps": [
-          {
-            "label": "Budget Zhu Yuan team",
-            "chars": [
-              "Zhu Yuan"
-            ]
-          },
-          {
-            "label": "Budgetmasa",
-            "chars": []
-          },
-          {
-            "label": "White hair girl supporting White hair girl",
-            "chars": []
-          },
-          {
-            "label": "Tutorial Mission",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -165,35 +142,7 @@
         "mindscapes": "The Energy provided by M1 allows Anton to perform the \"infinite Drill\" tech. M4 provides a 10% CRIT Rate increase when using Chain Attack or Ultimate which can typically last through an entire stun window.\nM6 provides a strong DMG% increase with high uptime. M3 and M5 are also appreciated for their Scaling increases.",
         "other_notes": "While using Anton Ult build in “Burst Mode” it is recommended you use EX-Special Attack and cancel it into your ultimate for extra damage since the animation takes a miniscule amount of time\nand you get free damage out of it. Tip while in burst mode during EX-Special Attack, and Basic Attack Hold/Rapid-Press Anton has Armor and is unable to be flinched during the move’s Animation.",
         "team_general": "Burst: 1 On-field Stunner +Support/ Supportive unit\n\nOn-field: combination of supportive units and Quick-swap/Off-field Stunners",
-        "team_comps": [
-          {
-            "label": "It's my phon bro",
-            "chars": []
-          },
-          {
-            "label": "Wheelchaired Bro - Quick Assist spam",
-            "chars": []
-          },
-          {
-            "label": "Burst Bro (Astra or Nicole or Rina)",
-            "chars": [
-              "Astra Yao",
-              "Nicole Demara",
-              "Alexandrina Sebastiane (Rina)"
-            ]
-          },
-          {
-            "label": "Budget Bro (Nicole or Rina)",
-            "chars": [
-              "Nicole Demara",
-              "Alexandrina Sebastiane (Rina)"
-            ]
-          },
-          {
-            "label": "Generic team example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -294,35 +243,7 @@
         "mindscapes": "M1 allows more stacks from your basic attack and your quivers shooting another arrow at the target, which makes him able to do a few more Dashes during stun window, and improving his on field/out of stun capability. M2 gives his own dash attacks 50% DMG buff after using Chain Attack/Ultimate. \nit's recommended to Vertically invest in supportive agent's mindscapes first (such as Dialyn, Trigger, Astra, etc.) before pulling Harumasa's mindscapes.",
         "other_notes": "Harumasa's main game plan is to fit an Ultimate and as many Enhanced Dash Attacks (EDA for short) as possible during the stun window. \nBefore entering the battle, Harumasa can pre-generate 6 Electro Quivers via doing his Basic Attack strings 3 times. If there's already 6 Quivers on field, Harumasa can use a Chain Attack/EX Special to generate 6 more Quivers, which makes the previous Quivers fired to the enemy and mark it. by doing this you can save times from his aiming attack, allowing more EDAs in stun.",
         "team_general": "Burst: 1 On-field Stunner +Support/ Supportive unit\n\nOn-field: Anomaly Quick-swap or Off-field/Quick-swap Stunner + Support/Supportive unit.",
-        "team_comps": [
-          {
-            "label": "Call center (Astra/Yuzuha/Sunna/Nicole)",
-            "chars": [
-              "Ukinami Yuzuha",
-              "Sunna",
-              "Astra Yao",
-              "Nicole Demara"
-            ]
-          },
-          {
-            "label": "Burstmasa",
-            "chars": []
-          },
-          {
-            "label": "Harumasa stops slacking (On-field)",
-            "chars": [
-              "Asaba Harumasa"
-            ]
-          },
-          {
-            "label": "Budget Burst Team",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -351,34 +272,7 @@
         "mindscapes": "M1 Provide a stacking resistance shred up to 18% all-type res while providing Astra herself with 1,000 Decibels when combat start and provide a stack of 1 sec iframe for the whole team whenever she casts ultimate.\nM2 further increase her attack conversion by 19%(35% to 54%) while increasing the attack buff by 400(1200 to 1600) on top of a small personal damage increase via more Tremolo/Tone cluster whenever her teammates trigger Quick Assist/Defensive Assist/Etc. Cinema pass M2 is not recommended due to the small return on investment.",
         "other_notes": "M2 Astra lower her attack requirement from 3429 to 2963 allowing her to swap either disc 4 or 5 to another offensive main stat such as crit rate/ether damage% for a small increase in personal\ndamage. If running Kaboom it is possible to use ER disc 6 but it is not recommended due to the high investment needed but it is possible for those that want to min/max her further disc wise.",
         "team_general": "Used in any team\nas an teamwide ATK, CRIT Damage and DMG amplifier as well as allowing Quick-swap constantly",
-        "team_comps": [
-          {
-            "label": "Evelyn Premium (Dialyn or Lighter)",
-            "chars": [
-              "Evelyn Chevalier",
-              "Dialyn",
-              "Lighter"
-            ]
-          },
-          {
-            "label": "Dream Collab 2",
-            "chars": []
-          },
-          {
-            "label": "Miyabi Disorder",
-            "chars": [
-              "Hoshimi Miyabi"
-            ]
-          },
-          {
-            "label": "The Wheelchair",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -406,28 +300,7 @@
         "mindscapes": "M1 gives 10% RES PEN when using One's Path or Earth Shaker, 10% Sheer DMG% when using certain skills; using Crushing Peaks extends stun duration by 2s on stunned target, which can be good for short stun duration target but can lose out another stun when used with Dialyn, making it situational.\nM2 gives 15% CRIT DMG, 15% Fire DMG and a total of 20 extra Adrenaline when using the free EX skills provided by \"Visage of Wrath\" state.\nLow spenders should only get his Signature W-Engine.",
         "other_notes": "High-level gameplay for Banyue requires executing his Perfect Cancel well (adding Basic/EX input at the correct time while another animation is running) to fit in the most DMG. Each version of EX skill has different animation length and scaling, so what combo to use during a stun duration is dependant on the enemy. Focus on fitting the free EX skills and an enhanced EX skill in stun time.\nCurrently, it's recommended to loop EX: Earth Shaker when out of stun as it has the highest scaling but of course it depend on the flow of battle. Sub-Optimal gameplay can still clear end-game.",
         "team_general": "Any 2 Supports/Supportive agents or 1 Support + 1 Stunner.\n\nHaving a Stunner in the team is recommended.",
-        "team_comps": [
-          {
-            "label": "Krampus Calling",
-            "chars": []
-          },
-          {
-            "label": "Seasoned Balls",
-            "chars": []
-          },
-          {
-            "label": "Back to Yunkui",
-            "chars": []
-          },
-          {
-            "label": "You know the deal",
-            "chars": []
-          },
-          {
-            "label": "Generic Comp Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -453,32 +326,7 @@
         "mindscapes": "M1 provides additional survivability, reducing the DMG dealt by enemies blocked by his (EX) Specials. M2 provides a good personal DMG increase. M6 further increases the Daze inflicted by his Basic, Dash and Dodge Counters.",
         "other_notes": "For when using Ben as a DPS you'll want to use Tremor Trigram Vesse or Crit statstick, Trigram being the best. As for discs 4PC Woodpecker or 4 Puffer and any offensive 2PC, Disc 4 Cr/Cd, Disc 5 PEN%/ATK%/Fire% and Disc 6 ATK%. With some team options down below.",
         "team_general": "Used anywhere for Shield, Crit Rate buff and Stun utility when applicable\n\nFor DPS role, He is an On-field DPS",
-        "team_comps": [
-          {
-            "label": "Ben's Biggest DPS",
-            "chars": [
-              "Ben Bigger"
-            ]
-          },
-          {
-            "label": "Ben's cutest support",
-            "chars": [
-              "Ben Bigger"
-            ]
-          },
-          {
-            "label": "Outer Ring Belobrick",
-            "chars": []
-          },
-          {
-            "label": "Get BENt Budget Team",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -511,6 +359,7 @@
           {
             "label": "It's showtime!",
             "chars": [
+              "Billy Kid",
               "Banyue",
               "Soldier 11 (Harin)",
               "Soukaku"
@@ -519,14 +368,24 @@
           {
             "label": "Starlight Knight Billy",
             "chars": [
+              "Billy Kid",
               "Banyue",
               "Soldier 11 (Harin)",
               "Soukaku"
             ]
           },
           {
+            "label": "Target Practice",
+            "chars": [
+              "Billy Kid",
+              "Banyue",
+              "Soldier 11 (Harin)"
+            ]
+          },
+          {
             "label": "The OG Cunning Hares - True Budget team",
             "chars": [
+              "Billy Kid",
               "Banyue",
               "Alice Thymefield",
               "Soldier 11 (Harin)"
@@ -558,28 +417,7 @@
         "mindscapes": "M1 provides good QoL by increasing the amount of Heat Burnice can hold, additionally it also increases mainly the Anomaly Buildup of her Afterburn effect. M2 provides a teamwide 20% PEN Ratio increase against enemies hit by her Afterburn.\nMindscapes past M2 are not recommended unless going for M6, though they allow her to take on a CRIT DPS status.",
         "other_notes": "Afterburn can trigger the burn anomaly status off field which allow less field time on Burnice while also letting the team to refresh the burn status after it get removed by disorder from other anomalies. Her Ultimate provides her with 50 heat with great Burn Anomaly Buildup and triggering Quick Assist which enables quicker combo for her teammates",
         "team_general": "Used with any anomaly agent + a support/ supportive agent (preferably team buffer) to amplify both DPS's Anomaly/Disorder Damage",
-        "team_comps": [
-          {
-            "label": "Sweetened Nitro-Fueled Frostburn",
-            "chars": []
-          },
-          {
-            "label": "Nice Rat",
-            "chars": []
-          },
-          {
-            "label": "Unhinged Duo Disorder",
-            "chars": []
-          },
-          {
-            "label": "Shower Scene",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -609,8 +447,17 @@
         "team_general": "Used with any DPS* \nto shield and buff ATK\n\n*Caesar's Shield + Buff is only active for the current on-fielder",
         "team_comps": [
           {
+            "label": "Mono Physical no Dialyn Version",
+            "chars": [
+              "Caesar King",
+              "Soldier 11 (Harin)",
+              "Astra Yao"
+            ]
+          },
+          {
             "label": "Spontaneous Combustion",
             "chars": [
+              "Caesar King",
               "Ben Bigger",
               "Qingyi",
               "Soldier 11 (Harin)"
@@ -619,6 +466,7 @@
           {
             "label": "Megalodon",
             "chars": [
+              "Caesar King",
               "Nicole Demara",
               "Soldier 11 (Harin)",
               "Ju Fufu"
@@ -627,6 +475,7 @@
           {
             "label": "Shower Scene",
             "chars": [
+              "Caesar King",
               "Ben Bigger",
               "Qingyi",
               "Soldier 11 (Harin)"
@@ -658,28 +507,7 @@
         "mindscapes": "M1 makes Cissia start combat with 6 Venom, increases DEF shred by 140% (25→35%), makes all teammates ignore 5% Electric Res, and makes Corrode Bone ignore an additional 10% Electric Res.\nM2 increaes the DMG of Serpent's Kiss by 35%, Ult and Chain Attack provide an additional 3 Venom.\nRecommended stopping point for high invest is M2. M1>R1 for Seed teams.",
         "other_notes": "After EX you can chain directly to 4th hit of Basic Attack: Tongue Flick to gain 2 extra Venom quickly. When you use EX, Chain, Ult, or 4th hit of BA and have at least 3 Venom you can hold BA to use up your Serpentine Shadow and perform Serpent's Kiss.\nCissia's Chain activates QA to the next agent",
         "team_general": "Can be played on field with a combination of Quick-Swap Stunners and Supports",
-        "team_comps": [
-          {
-            "label": "Ssseed",
-            "chars": []
-          },
-          {
-            "label": "King Cobra",
-            "chars": []
-          },
-          {
-            "label": "Food Chain",
-            "chars": []
-          },
-          {
-            "label": "Brokie Hypercarry",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -712,6 +540,7 @@
           {
             "label": "Yo corn linging (Astra or Sunna)",
             "chars": [
+              "Corin Wickes",
               "Burnice White",
               "Soldier 11 (Harin)",
               "Soukaku"
@@ -720,6 +549,7 @@
           {
             "label": "Corn on the wheelchair",
             "chars": [
+              "Corin Wickes",
               "Burnice White",
               "Soldier 11 (Harin)",
               "Soukaku"
@@ -728,6 +558,7 @@
           {
             "label": "Corn onfield",
             "chars": [
+              "Corin Wickes",
               "Burnice White",
               "Soldier 11 (Harin)",
               "Pan Yinhu"
@@ -736,6 +567,7 @@
           {
             "label": "Cheap corn",
             "chars": [
+              "Corin Wickes",
               "Burnice White",
               "Seth Lowell",
               "Soldier 11 (Harin)"
@@ -772,6 +604,7 @@
           {
             "label": "Hotline Bling",
             "chars": [
+              "Dialyn",
               "Grace Howard",
               "Qingyi",
               "Soukaku"
@@ -780,6 +613,7 @@
           {
             "label": "Panda Express (Budget Team)",
             "chars": [
+              "Dialyn",
               "Grace Howard",
               "Nangong Yu",
               "Anton Ivanov"
@@ -815,34 +649,7 @@
         "mindscapes": "M1 significantly increases her Flash Freeze generation and grants her a stacking CRIT Rate buff when consuming them, requiring her to only have around 68% CR to max CR. M2 allows her to chain her N3 into her EX Special, while increasing its CRIT DMG based on the number of Flash Freeze Charges she has, opening up a different playstyle if she has sufficient Energy. M6 increases Ellen's PEN Ratio and increases the DMG of her special Dash Attack after using 3 EX Specials, Chain Attacks or gains Quick Charge.",
         "other_notes": "Ellen's Flash Freeze stacks are the key to her damage output, making sure to weave in Scissor Strikes to upkeep your enhanced Basic Attacks, letting them do Physical DMG is a severe DPS loss.\nDue to Ellen's playstyle and damage output she benefits most by using her team as buff or parry bots and immediately switching back to her. More field time for Ellen is essential for damage output.",
         "team_general": "On-field: combination of supportive units and Quick-swap/Off-field Stunners",
-        "team_comps": [
-          {
-            "label": "2.x Premium Ellen",
-            "chars": [
-              "Ellen Joe"
-            ]
-          },
-          {
-            "label": "No Defense against Shark Attacks",
-            "chars": []
-          },
-          {
-            "label": "1.x Premium Ellen",
-            "chars": [
-              "Ellen Joe"
-            ]
-          },
-          {
-            "label": "Budget Ellen",
-            "chars": [
-              "Ellen Joe"
-            ]
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -873,30 +680,7 @@
         "mindscapes": "M1 enable Evelyn to cast her initial ult a lot faster during each encounter as she will open with an additional 1500 decibel while providing a small damage boost in the form of 12% def shred.\nM2 provide Evelyn with an unconditional 15% combat attack while refunding her 1 set of burning ember every 25 sec when she cast her EBA.",
         "other_notes": "Evelyn Guide by lzz",
         "team_general": "On-field: combination of supportive units and Quick-swap/Off-field Stunners",
-        "team_comps": [
-          {
-            "label": "It won't",
-            "chars": []
-          },
-          {
-            "label": "Premium Bodyguard",
-            "chars": []
-          },
-          {
-            "label": "Hotwheelchair",
-            "chars": []
-          },
-          {
-            "label": "Evelyn Budget",
-            "chars": [
-              "Evelyn Chevalier"
-            ]
-          },
-          {
-            "label": "Generic Comp Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -925,30 +709,7 @@
         "mindscapes": "M1 decreases Steel Charge consumed by BA: Falling Petals - Crash Strike to 100; gain +40 when entering the battlefield and +20 when using Ultimate; increases BA: Falling Petals - Crash Strike's Crit DMG by 30%.\nWith M2, while under the Besiege status, agents gain 20% DEF ignore; When using EX Special, Seed can now consume up to 120 Energy. For every 5, BA: Falling Petals - Slaughter's DMG increases by 5%.\nM6 grants Seed +50% Crit DMG; when using BA: Falling Petals - Heavy Strike, fire 3 more beams, which deal 165% of Seed's ATK each. This can happen once every 3 seconds.",
         "other_notes": "Since Seed's passive requires the presence of a second Attacker, it restricts her team compositions. The second Attacker can either actively help with their own damage or act as a \"battery\" for Seed, replenishing her Steel Charge by using their own energy.",
         "team_general": "Pair with another Attacker\n\n+ Stunner/Support/Defense",
-        "team_comps": [
-          {
-            "label": "Ouroboros",
-            "chars": []
-          },
-          {
-            "label": "Oballs squad",
-            "chars": []
-          },
-          {
-            "label": "Seed Sanby duo",
-            "chars": [
-              "Flora (Seed)"
-            ]
-          },
-          {
-            "label": "Mecha Hares (Budget team)",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -976,30 +737,7 @@
         "mindscapes": "M2 increases all Electric Buildup and Electric DMG against enemies hit by Grace's Grenades (Special, EX Special and some of her basic attacks).\nM6 further increases Grace's (EX) Special DMG and Electric Anomaly Buildup when they are used while she has max Zap stacks.",
         "other_notes": "Recommendations are based on 4Thunder Metal or Chaos Jazz set with AM% or a ATK% 6 mainstat.Thunder Metal Disorder teams get 28% ATK from Thunder Metal on the 2nd shock proc so 4Thunder\nwith AM% 6 is not as bad as people think for Disorder.4 Piece freedom works on Grace disorder but is a support set so 4 piece chaos jazz is the a lot better for higher disorder numbers off shock.",
         "team_general": "On-field: Off-field Anomaly unit + Support/Supportive unit (prioritize team wide buff) Or- 2 Support/Supportive unit.",
-        "team_comps": [
-          {
-            "label": "Zapping Morning Star",
-            "chars": []
-          },
-          {
-            "label": "Hyperbuffed",
-            "chars": []
-          },
-          {
-            "label": "We have Yanagi at home",
-            "chars": [
-              "Tsukishiro Yanagi"
-            ]
-          },
-          {
-            "label": "Budget Disorder team",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -1028,37 +766,7 @@
         "mindscapes": "M1 allows her Enhanced Basic to ignore a large portion of the enemy's DEF while allowing her to trigger Frostburn - Break and apply Icefire to increase all agents' Anomaly buildup more often. \nM2 grants 15% CR bonus, allows her to start with 6 Fallen Frost stacks, allows her to get a Fallen frost stack after the 5th hit of her Basic which enables more team comp as she relies less on Disorder for stacks.\nM6 significantly increases the damage of her Enhanced Basic.",
         "other_notes": "While relatively easy to play, optimizing Miyabi team DPS requires some advanced techniques such as abusing swap cancel as much as possible in order to cut down the long animation from lvl 3 Charged Basic.\nIt is recommended to watch example gameplay and testing in VR to get the timing down. A basic guide on how to play Mono Ice (and a little of Yuzu Ice) Miyabi by Shiiirro",
         "team_general": "used with (almost) any Anomaly + Support\n\nused with Support + Support that has decent buildup (I.e. soukaku / nicole)",
-        "team_comps": [
-          {
-            "label": "Wheelchairing (Yuzuha match Miyabi)",
-            "chars": [
-              "Ukinami Yuzuha",
-              "Hoshimi Miyabi"
-            ]
-          },
-          {
-            "label": "Unfreezable boss (Nicole or any Anomaly)",
-            "chars": [
-              "Nicole Demara"
-            ]
-          },
-          {
-            "label": "Can be Frozen? You die | Yuzu Ice",
-            "chars": [
-              "Ukinami Yuzuha"
-            ]
-          },
-          {
-            "label": "Miyabi \"Budget\" (Mono Ice)",
-            "chars": [
-              "Hoshimi Miyabi"
-            ]
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -1088,28 +796,7 @@
         "mindscapes": "M1 In Dark Abyss Reverb state, totalize skill gets an extra 30% CD and 12% CR\nM2 When Ult triggers totalize, it doesn't end the stun window, allowing an EX to be used as well, effectively doubling your damage in that stun window. Totalize damage also gains 15% DEF Ignore.",
         "other_notes": "Hugo has a pretty straightforward playstyle: Stun the enemy, then use double Chain Attack with Hugo, get Dark Abyss Reverb state, then EX/Ult which triggers Totalize and ends the stun state, rinse and repeat. \nNote that even without Lighter's stun extension, you still want to use double Chain Attack since it still nets more damage than skipping the 2nd Chain for slightly more Totalize Damage, unless the stun window has a short duration.",
         "team_general": "Ideally used with double stunners to get as many Totalized as you can while also getting the extra ATK from having 1/2 stunners in his team",
-        "team_comps": [
-          {
-            "label": "Judgement calls",
-            "chars": []
-          },
-          {
-            "label": "Men",
-            "chars": []
-          },
-          {
-            "label": "Kitty Connoisseurs",
-            "chars": []
-          },
-          {
-            "label": "Victoria Mocking Burst (Pick a stunner)",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -1141,9 +828,18 @@
           {
             "label": "Citizen's Support",
             "chars": [
+              "Jane Doe",
               "Qingyi",
               "Grace Howard",
               "Alexandrina Sebastiane (Rina)"
+            ]
+          },
+          {
+            "label": "Mono Phys (gnawed is the key)",
+            "chars": [
+              "Jane Doe",
+              "Qingyi",
+              "Ben Bigger"
             ]
           }
         ]
@@ -1176,32 +872,7 @@
         "mindscapes": "Fufu's M1 increases Stun DMG Multiplier by 35% when hitting Chain Attacks and grants her 12% CR, allowing her to hit the 50% requirement for KotS easier. This Mindscape is also the best stopping point.",
         "other_notes": "While not difficult to play, it is important to be mindful of managing her resources (Might, Momentum). As Fufu gains 80 Might from EX Special and 100 Might from her Ult, it is recommended to use EX at or below 100 Might (Half bar) and Ult at or below 80 Might to avoid overcapping after she gains another 20 Might from Hu Wei's off-field BA. Enable back-swap in a Yixuan team for ease of switching to Fufu to gain resources.\nAlthough Core stated \"every 100 ATK\", any amount of ATK counts toward buff threshold.",
         "team_general": "Use with any Rupture/Attack agent for Additional Ability decibel refund and increase in decibel cap. \nAlso provides fast stuns",
-        "team_comps": [
-          {
-            "label": "Yunkui Zoo",
-            "chars": []
-          },
-          {
-            "label": "Fufu Wheelchair",
-            "chars": [
-              "Ju Fufu"
-            ]
-          },
-          {
-            "label": "66.6% Men",
-            "chars": []
-          },
-          {
-            "label": "We have Lighter at home",
-            "chars": [
-              "Lighter"
-            ]
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -1230,32 +901,7 @@
         "mindscapes": "M1 increases the Daze inflicted by Koleda's (EX) Specials when used after her 2nd or 4th Basic Attack. M3 and M5 provide good increases to Koleda's Daze multipliers.",
         "other_notes": "Koleda's core is reliant on using her EX Special Skill, meaning the more sources of Energy Regeneration you can provide her the more comfortable she will feel in her rotation as well as stun the target much quicker. She boasts some of the best invulnerability frames of all agents in her Basic Attack combo, you can utilize this to avoid damage while building daze on a difficult enemy.",
         "team_general": "Used as an on field Stunner for Burst DPS or Quick-swap Stunner for On-field DPS\n\nCan buff Chain Attack",
-        "team_comps": [
-          {
-            "label": "Chain Attack buff matters",
-            "chars": []
-          },
-          {
-            "label": "Budget Yixuan",
-            "chars": [
-              "Yixuan"
-            ]
-          },
-          {
-            "label": "Koleda Dialed in",
-            "chars": [
-              "Koleda Belobog"
-            ]
-          },
-          {
-            "label": "Vertically Challenged",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -1284,34 +930,7 @@
         "mindscapes": "M1- When Manato's HP decreases, every 1% of his Max HP increases the Fire DMG of Assist Follow-Ups and Basic by 0.4%, up to a max of 20%.\nM2- While in Molten Edge state, ignore 8% of the enemies Fire RES. After being hit by an enemy while using Return to Ashes or Return to Ashes - Sacrifice, press Basic to trigger an Assist Follow-Up.\nM6- When Return to Ashes hits a Stunned enemy, gain 75 Blazing Heart and 4 stacks of Remnant Flame, and pressing Basic will launch an Assist Follow-Up. This effect can trigger once every 20s. When his Assist Follow-Up hits an enemy, Fire DMG increases by 3% for 8s, stacking up to 5 times.",
         "other_notes": "His mindscapes change his playstyle as you'd want to use his parry mechanic of M2 as much as possible as his Assist Follow-Ups are a massive chunk of his damage.",
         "team_general": "Any 2 Supports/Supportive agents or 1 Support + 1 Stunner",
-        "team_comps": [
-          {
-            "label": "Pet show squad",
-            "chars": []
-          },
-          {
-            "label": "Fufuless (Koleda or Pan Yinhu)",
-            "chars": [
-              "Pan Yinhu",
-              "Koleda Belobog"
-            ]
-          },
-          {
-            "label": "Lighter (Caesar or Orphie)",
-            "chars": [
-              "Lighter",
-              "Orphie Magnusson & Magus"
-            ]
-          },
-          {
-            "label": "Free to play",
-            "chars": []
-          },
-          {
-            "label": "Generic Comp Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -1341,36 +960,7 @@
         "mindscapes": "M1 further extends his Stun Pause effect (3s->5s pause) and his Ice/Fire RES reduction. It also provides a slight personal damage increase.\nM2 allows Lighter to increase the Stun DMG Multiplier of enemies affected by Collapse effect and further increases the Ice/Fire DMG bonus provided by Morale.\nFurther Mindscapes past M2 are not recommended for pure Stun Lighter.",
         "other_notes": "Ice/Fire Damage buff Lighter can reach with each engine sheet provided by iamabigfatloser This is still up to date cause there has been no new engines that are good for him.",
         "team_general": "Used with any Fire or Ice DPS to stun/amplify the DPS's damage output provided that Additional Ability is active",
-        "team_comps": [
-          {
-            "label": "Fire support core (S11 or Evelyn)",
-            "chars": [
-              "Evelyn Chevalier",
-              "Soldier 11 (Harin)"
-            ]
-          },
-          {
-            "label": "Ellen + Lighter",
-            "chars": [
-              "Lighter",
-              "Ellen Joe"
-            ]
-          },
-          {
-            "label": "Roommates",
-            "chars": []
-          },
-          {
-            "label": "Lighter DPS (Not Recommended)",
-            "chars": [
-              "Lighter"
-            ]
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -1395,30 +985,7 @@
         "mindscapes": "M1 Dreamer's Nursery Rhyme additionally grants the whole team with 18% All-Attribute RES Ignore and a 5% increase to their Decibel Generation Rate.\nM2 Lucia's Harmony attacks deal 15% more damage while under Ether Veil: Wellspring. Agents in the \"Darkbreaker\" state gain an extra 15% Sheer DMG.\nM2 is her best stopping point for mindscapes",
         "other_notes": "After using EX, you can follow up with the 5th hit of BA, allowing you to immediately gain 100 dream points after a use of EX, so you can trigger Ether Veil.",
         "team_general": "Paired with Rupture agents with another supportive unit, like an on-field/off-field stunner or a buffer.",
-        "team_comps": [
-          {
-            "label": "Yunkui's Goat",
-            "chars": []
-          },
-          {
-            "label": "Fufu-less Moment",
-            "chars": [
-              "Ju Fufu"
-            ]
-          },
-          {
-            "label": "Takoyaki",
-            "chars": []
-          },
-          {
-            "label": "Spook Shack Animal Farm",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -1447,32 +1014,7 @@
         "mindscapes": "M2 allows Lucy to provide her Cheer On! buff through her Chain Attack and Ultimate. M4 enhances Cheer On! to also provide 10% CRIT DMG. M6 allows EX Special used by allies with the Cheer On! buff to extend its duration (up to 3 times), while increasing Lucy's personal damage and Anomaly Buildup.",
         "other_notes": "Lucy's Cheer-on provides her boars with up to +1200 attack. Lucys engine also Buffs the Boars attack letting her provide them with over 1500 ATK. They also inherit her Crit Rate and Crit DMG% from Additional Ability. For this reason it is best to build additional offensive stats (like Crit, or AP) after hitting the ATK goal which is quite easy to go for.\nAttack needed to max out Lucy's buff based off her EX level by JetaluskiPro",
         "team_general": "Used with any DPS to buff ATK\n\nUsed with any Dual DPS Team as a teamwide ATK buffer",
-        "team_comps": [
-          {
-            "label": "Miyabi+Lighter/Burnice",
-            "chars": [
-              "Hoshimi Miyabi",
-              "Lighter",
-              "Burnice White"
-            ]
-          },
-          {
-            "label": "Budget Sword",
-            "chars": []
-          },
-          {
-            "label": "Shower Scene",
-            "chars": []
-          },
-          {
-            "label": "Name A Better (budget) Duo (Pick a DPS)",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -1500,30 +1042,7 @@
         "mindscapes": "M1 reduces enemy's All-Attribute RES by 18% upon using Nangong's EX or Charged Basic and fills her EBA bar fully at the start of combat.\nM2 increases Nangong's Abloom ratio an additional 10% per Vibrato stack, increases AA Stun DMG multiplier an additional 30%, and triggers a Polarity Disorder via any agent's Chain Attack once per stun.\nSignature W-Engine is recommended to get first before Mindscape. M2 is a good stopping point for high investment.",
         "other_notes": "Hold Basic 1-2-3 when timed correctly will have increased daze, while also take more time to execute. Using EX Special, Chain Attack, Ultimate also allow you to chain into Hold Basic 2-3. Hold Basic 3 can be swap-cancelled. You should always be doing the EX into EBA combo.",
         "team_general": "Work with any Hypercarry Anomaly team to provide daze, buff, personal DMG and Corruption-Disorder",
-        "team_comps": [
-          {
-            "label": "AoD: Lead(er) Dancer Nangong Yu!",
-            "chars": [
-              "Nangong Yu"
-            ]
-          },
-          {
-            "label": "Brand-new Anomaly Wheelchair",
-            "chars": []
-          },
-          {
-            "label": "Poppin' Ice",
-            "chars": []
-          },
-          {
-            "label": "Anything to fund the show (F2P)",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -1553,7 +1072,32 @@
         "mindscapes": "M1 provides Nekomata with a conditional Phys RES PEN%, and allows her to trigger back attack effects unconditionally against Stunned enemies.\nM2 gives Nekomata increased ER by 25%, allowing her to use her EX more frequently. This has the added effect of allowing Neko players to use EX right before a parry window pops up in order to squeeze out a little more DPS, like Dodge Parry Tech but way easier.",
         "other_notes": "Its optimal to only activate her ultimate only after a quick assisting on an enemy and after refreshing her woodpecker if using onfield set. Rotation for stuns when onfielding would look like QA -> 2 BA -> EX -> Ult -> EX -> switch to support to refresh buff -> switch to Neko to do one final EX if you have the energy, or just BA if you don't. Holding down Nekomata's Basic Attack will move her behind the enemy and can help with triggering her M1 or her Sig's effect.",
         "team_general": "On-field: combination of supportive units and Quick-swap/Off-field Stunners\n\nBurst play: use on-field stunner and a support agent",
-        "team_comps": []
+        "team_comps": [
+          {
+            "label": "Neko got a phone",
+            "chars": [
+              "Nekomiya Mana",
+              "Grace Howard",
+              "Soukaku"
+            ]
+          },
+          {
+            "label": "Highway Robbery",
+            "chars": [
+              "Nekomiya Mana",
+              "Soukaku",
+              "Soldier 11 (Harin)"
+            ]
+          },
+          {
+            "label": "Stunning Hares",
+            "chars": [
+              "Nekomiya Mana",
+              "Alice Thymefield",
+              "Soldier 11 (Harin)"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -1582,33 +1126,7 @@
         "mindscapes": "M1 increases Nicole's EX Special's Anomaly Buildup, it also allows her to further charge it, which is niche but can occasionally be useful. M4 increases the range and grouping ability of her Energy Fields. M6 allows Nicole to provide a stacking CRIT Rate debuff against enemies hit by her Energy Field, up to 15% CRIT Rate.",
         "other_notes": "Nicole has amazing grouping with her Energy Field. There are a few little tricks you can learn with her to further enhance her Energy field like making it last longer, there are many videos explaining\nhow to use these online, a quick example; while charging her energy field with EX hold, you can press WASD in quick succession, Nicole will sit on her briefcase and gain duration on her vortex.\nwhen Nicole EX isn't available yet, You can use her Dash Attack (Directional inputs -> Normal) to apply a short DEF down debuff and quickly switch off to DPS after. This gives her more energy to use EX as well.",
         "team_general": "Used in any team due to DEF shred and enemy grouping.\n\nCan be used as a Pseudo Ether Anomaly",
-        "team_comps": [
-          {
-            "label": "Pubsec Krampus Collab",
-            "chars": []
-          },
-          {
-            "label": "Alice Hypercarry (Pseudo Anomaly Nicole)",
-            "chars": [
-              "Nicole Demara",
-              "Alice Thymefield"
-            ]
-          },
-          {
-            "label": "Astra alternative",
-            "chars": [
-              "Astra Yao"
-            ]
-          },
-          {
-            "label": "Starter team (Budget)",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -1636,28 +1154,7 @@
         "mindscapes": "M1 increases the team's DMG by 20%, and grants her a 15% Fire RES Ignore.\nM2 gives her Decibels on Aftershocks, and her ATK increases by 20% for 45 seconds after using Ultimate.\nM4 increases the Zeroed In buff's duration to 16 seconds from the usual 12. EX Special and Ultimate DMG increases by 40%.\nWith M6, Orphie's Basic Attack now grants her 10 Heat, and she gets a higher interrupt level on her EX. Her EX and Ultimate's laser now deal an extra 250% of her attack as damage every .5 seconds.",
         "other_notes": "Main DPS/On-field Orphie is not good due to how her kit is.\nW-Engines comparison calculation",
         "team_general": "On-field: combination of attacker units and Quick-swap/On-field Stunners",
-        "team_comps": [
-          {
-            "label": "Aftershit Party",
-            "chars": []
-          },
-          {
-            "label": "Obols Classic",
-            "chars": []
-          },
-          {
-            "label": "Yuri and the Champion",
-            "chars": []
-          },
-          {
-            "label": "Spicy Ramen Chips",
-            "chars": []
-          },
-          {
-            "label": "Generic Comp Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -1697,14 +1194,24 @@
           {
             "label": "Panda Express",
             "chars": [
+              "Pan Yinhu",
               "Nangong Yu",
               "Anton Ivanov",
               "Nicole Demara"
             ]
           },
           {
+            "label": "Together we are Yunkui Summit",
+            "chars": [
+              "Pan Yinhu",
+              "Banyue",
+              "Anton Ivanov"
+            ]
+          },
+          {
             "label": "Together we are... Thirens",
             "chars": [
+              "Pan Yinhu",
               "Aria",
               "Anton Ivanov",
               "Seth Lowell"
@@ -1743,6 +1250,7 @@
           {
             "label": "Keep up the Spinning Beat",
             "chars": [
+              "Piper Wheel",
               "Qingyi",
               "Grace Howard",
               "Alexandrina Sebastiane (Rina)"
@@ -1751,6 +1259,7 @@
           {
             "label": "Physically Abloomed",
             "chars": [
+              "Piper Wheel",
               "Banyue",
               "Qingyi",
               "Alexandrina Sebastiane (Rina)"
@@ -1781,28 +1290,7 @@
         "mindscapes": "M1 gives Promeia a stack of Trial by Cold when using her Ultimate. Additionally, Ablooms ignore an extra 20% of enemy DEF (including other sources like Vivian) (great)\nM2 increases personal Abloom damage multi by 120% and provides 40 AP (lacking)\nM6 procs a special Abloom when consuming Trial by Cold which also recovers 5 Corrosive Chill and 100 decibels. Attribute Anomaly DMG and Disorder DMG ignore 15% of enemies' All Attribute RES (good)\nBest stopping points are M0R1, M1R0, or M1R1",
         "other_notes": "Promeias Abloom dmg increase also applies to other teammates, keep this in mind for their disc choices.\nFusion Compiler is relative enough to her sig at higher refinements that M1 becomes a better choice to pull over it.\nSunna can only be used over Yuzuha with Nangong Yu on the team or Sunna's AA will not be active. No Sunna AA is bad, do not do this.",
         "team_general": "Promeia's team options are flexible since she is not reliant on a second anomaly agent for disorders. Many double support and stun/support combinations are viable as long as they dont take up a lot of field time",
-        "team_comps": [
-          {
-            "label": "Ice Cold Treats",
-            "chars": []
-          },
-          {
-            "label": "Purple Aesthetic",
-            "chars": []
-          },
-          {
-            "label": "Chains and Blossoms",
-            "chars": []
-          },
-          {
-            "label": "Beauties and the Beast",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -1831,8 +1319,17 @@
         "team_general": "Used with Aftershock DPS to amplify Aftershock DMG\n\n(At M6) Used with any on-field DPS as an Off-field stunner and DMG amplifier",
         "team_comps": [
           {
+            "label": "Premium Cat",
+            "chars": [
+              "Pulchra Fellini",
+              "Flora (Seed)",
+              "Soukaku"
+            ]
+          },
+          {
             "label": "Anby AfterShock",
             "chars": [
+              "Pulchra Fellini",
               "Alice Thymefield",
               "Flora (Seed)",
               "Soukaku"
@@ -1841,6 +1338,7 @@
           {
             "label": "Bickering Cat (Jane or Piper)",
             "chars": [
+              "Pulchra Fellini",
               "Qingyi",
               "Flora (Seed)",
               "Ben Bigger"
@@ -1849,6 +1347,7 @@
           {
             "label": "Budget Shifu",
             "chars": [
+              "Pulchra Fellini",
               "Banyue",
               "Anton Ivanov",
               "Flora (Seed)"
@@ -1882,30 +1381,7 @@
         "mindscapes": "M1 allows Qingyi to enter combat with full Flash Connect Voltage bar and increases its buildup. It also allows her Enhanced Basic Attack to reduce the DEF of enemies hit if used while Flash Connect Voltage is at 100%, while increasing her CRIT Rate. M2 further increases the Stun DMG multiplier her Core Passive provides, while increasing her Daze against enemies with max Subjugation stacks.",
         "other_notes": "Qingyi can enter straight into her BA3 after a dodge counter, EX Special or Quick Assist, this also builds her flash voltage meter significantly. Her basic attacks and enhanced basic do not have many invulnerability frames so try time these well or cancel animations with swaps. Always use at least 2 full enhanced finishers for max buff.",
         "team_general": "Any team that need an On-field stunner (Burst playstyle DPS)\n\nCan also work with On-field DPS but not recommended",
-        "team_comps": [
-          {
-            "label": "Clanking Collab",
-            "chars": []
-          },
-          {
-            "label": "Auric Burst",
-            "chars": []
-          },
-          {
-            "label": "The classic Harumasa team",
-            "chars": [
-              "Asaba Harumasa"
-            ]
-          },
-          {
-            "label": "Burst Core support",
-            "chars": []
-          },
-          {
-            "label": "Generic team example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -1933,34 +1409,7 @@
         "mindscapes": "M1 increases the potency of his Shield, while allowing the AP buff to linger for 10s after the Shield is removed. M2 allows Seth to begin with sufficient Resolve to use his Enhanced Basic Attack, while increasing the Anomaly Buildup it inflicts. M4 slightly increases the Daze of his Defensive Assist. M6 gives Seth a large damage hit on his eba thats guaranteed to crit so CD is reccomended on Disc 4.",
         "other_notes": "Seth's Quick Assist goes backward so the agent you want to buff should be to the left of him in team order. The easiest way to trigger his buff would be through his Defensive Assist. \nHis Chain Attack and Ult is never worth using since you want to maximise Anomaly procs during the stun window. Use his EX Special and hold Basic to get the Anomaly buildup Res shred debuff.",
         "team_general": "Used with any Anomaly DPS, preferably hypercarry team since he can only buff 1 other unit",
-        "team_comps": [
-          {
-            "label": "Jane hypercarry",
-            "chars": [
-              "Jane Doe"
-            ]
-          },
-          {
-            "label": "Yanagi hypercarry",
-            "chars": [
-              "Tsukishiro Yanagi"
-            ]
-          },
-          {
-            "label": "Grace hypercarry",
-            "chars": [
-              "Grace Howard"
-            ]
-          },
-          {
-            "label": "Budget Team",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -1988,36 +1437,7 @@
         "mindscapes": "Sanby's M1 gives some additional damage when using ex special, but Anby's M2 is her best mindscape due to the combination of the 12% crit rate , and the second effect of giving her better uptime on marks. M2 is a good stopping point.",
         "other_notes": "Sanby is able to skip basic attack 1 and 2 by dodging. This allows her to have better dps and better mark appliance on enemies, compared to attempting to string in ex specials instead of dodging.",
         "team_general": "On-field: combination of supportive units and Quick-swap/Off-field Stunners",
-        "team_comps": [
-          {
-            "label": "Premium burgers (Astra or Orphie)",
-            "chars": [
-              "Orphie Magnusson & Magus",
-              "Astra Yao"
-            ]
-          },
-          {
-            "label": "Online ordering (astra or orphie)",
-            "chars": [
-              "Orphie Magnusson & Magus",
-              "Astra Yao"
-            ]
-          },
-          {
-            "label": "Cunningest Hare",
-            "chars": []
-          },
-          {
-            "label": "Burger² (Budget) - Quick-swap Anby",
-            "chars": [
-              "Anby Demara"
-            ]
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -2047,34 +1467,7 @@
         "mindscapes": "M1 is fairly decent to give extra EXs, translating into 3 BA3-5 chains if you time supressions properly. \nM2 provides a stackable DMG increase to her Basic Attacks, Dash Attacks and Dodge Counters when triggering her (timing-based) Fire Suppression effect. M3 and M5 are decent for Multiplier Increases.\nM6 allows the next 8 Fire Suppressions used to ignore 25% of the target's Fire RES after using EX Special, Chain Attack or Ultimate. \nm4 might be the most useless mindscape in the entire game lmao",
         "other_notes": "Updated with Potential Vision buffs!\nAfter the buff, Soldier 11 still maintains the timing aspect of her kit, only this time it is applied to her guarenteed Fire Supression basics. Time your basics after using EX/Chain/Ult (successful timing is indicated by a flash) to launch Basic attacks more quickly without any move endlag. If done on BA5, this enables BA1 and BA2 to be skipped, directly placing her next basic at BA3.\nnoodle guide coming soon(?)",
         "team_general": "On-field: combination of supportive units and Quick-swap/Off-field Stunners",
-        "team_comps": [
-          {
-            "label": "Evelyn competition (Sunna > Astra)",
-            "chars": [
-              "Evelyn Chevalier",
-              "Sunna",
-              "Astra Yao"
-            ]
-          },
-          {
-            "label": "Obol Customer Support",
-            "chars": []
-          },
-          {
-            "label": "Obol Awaiting Orders",
-            "chars": []
-          },
-          {
-            "label": "S11 Budget",
-            "chars": [
-              "Soldier 11 (Harin)"
-            ]
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -2104,33 +1497,7 @@
         "mindscapes": "M1 extends the duration of Soukaku's buffs. M4 allows the initial hit of Fly The Flag to reduce the Ice RES of enemies hit.\nM6 enables Soukaku to take on an on-field DPS role aiming to be a Crit DPS using 4PC Blade and Branch with AM% disc 6 or  4PC Puffer Electro being the recommended equipments.",
         "other_notes": "Fly The Flag is Soukaku's key buff and mechanic making her a super buffer for Ice teams with her Bonus Ability providing 20% Ice DMG% additional to the 1000 Attack when consuming \n3 Vortex stacks. Soukaku can pass her buff through Chain Attack or via Quick Assist, how early you want this buff will depend on your gameplay and team composition. (Save for stun if rushing)\nYou can also use Dash Attack to cancel Fly the Flag animation, follow it with her 3rd Basic Attack and Quick Assist during its animation (Swap Cancelling) if you need her Ice buildup and extra Energy. \nthis tech is mostly used in Miyabi Mono-Ice team.",
         "team_general": "Used in any team, preferably hypercarry since her buff is mainly 1 target.\n\nHas good buff for Ice DPS, can be a pseudo Anomaly",
-        "team_comps": [
-          {
-            "label": "Mono Ice",
-            "chars": []
-          },
-          {
-            "label": "No Lycaon Ellen Team",
-            "chars": [
-              "Von Lycaon",
-              "Ellen Joe"
-            ]
-          },
-          {
-            "label": "Frostbite",
-            "chars": []
-          },
-          {
-            "label": "DPS Soukaku Team",
-            "chars": [
-              "Soukaku"
-            ]
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -2222,30 +1589,7 @@
         "mindscapes": "Trigger's M1 increases Purge gained and Max amount of Purge, the Stun Multiplier from Core is added an additional 20% and reduces Aftershock's CD by 1s.\nLow spender should stop at her M1 and Signature W-Engine",
         "other_notes": "Signature W-Engine gives 24% CRIT Rate, 20% Impact for the wearer and 25% DEF Reduct for the team, very clearly her best weapon but is not usable on a single other character.",
         "team_general": "Can be used in any team for Off-field stunning and Team buff purpose\n\nBest paired with On-field Attacker",
-        "team_comps": [
-          {
-            "label": "Sanby Premium",
-            "chars": []
-          },
-          {
-            "label": "Oballs",
-            "chars": []
-          },
-          {
-            "label": "Quadruple the guns - budget team",
-            "chars": []
-          },
-          {
-            "label": "Trigger of Anomaly",
-            "chars": [
-              "Trigger"
-            ]
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -2275,28 +1619,7 @@
         "mindscapes": "M1 allows Yanagi to gain stacks of invulnerability when applying Anomalies to enemies (up to 3 at a time), and grants her increased AP while she has at least one. M2 increases the Anomaly Buildup and Polarity Disorder multiplier of her EX Special. M4 provides a teamwide PEN Ratio increase when attacking enemies Yanagi dealt Anomaly DMG to. M6 increases the duration of her Shinrabanshou state and allows her to further increase the Polarity Disorder multiplier of her EX Special (up to 4 thrusts count, for the same Energy cost as 2 before M6).",
         "other_notes": "Yanagi is a lot more Anomaly Proficiency reliant in her Substats compared to the existing Anomaly Agents due to her additional Anomaly Proficiency scaling built into her EX Special and her Chain\nAttack/Ultimate(Lvl these). Maintain her Shinrabanshou state and make use of Dodge Counters/Assists to let Yanagi skip to the 3rd Basic Attack in her Basic Attack chain increasing her DMG output.",
         "team_general": "On-field: Off-field Anomaly unit + Support/Supportive unit (prioritize team wide buff) Or- 2 Support/Supportive unit.\n\nQuick-swap: Any team that want Anomaly + Disorder",
-        "team_comps": [
-          {
-            "label": "Disorder, Polarity Disorder, Disorder",
-            "chars": []
-          },
-          {
-            "label": "Disorder Slave (Pick any Support)",
-            "chars": []
-          },
-          {
-            "label": "Electrobloom",
-            "chars": []
-          },
-          {
-            "label": "Brought too many bean buns (budget)",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -2327,6 +1650,7 @@
           {
             "label": "New Anomaly Wheelchair",
             "chars": [
+              "Ukinami Yuzuha",
               "Alexandrina Sebastiane (Rina)",
               "Tsukishiro Yanagi",
               "Grace Howard"
@@ -2335,6 +1659,7 @@
           {
             "label": "Happy Halloween",
             "chars": [
+              "Ukinami Yuzuha",
               "Alexandrina Sebastiane (Rina)",
               "Banyue",
               "Qingyi"
@@ -2343,6 +1668,7 @@
           {
             "label": "No Astra? No Problem",
             "chars": [
+              "Ukinami Yuzuha",
               "Alexandrina Sebastiane (Rina)",
               "Qingyi",
               "Astra Yao"
@@ -2351,6 +1677,7 @@
           {
             "label": "Taking Candy from a Baby",
             "chars": [
+              "Ukinami Yuzuha",
               "Alexandrina Sebastiane (Rina)",
               "Evelyn Chevalier",
               "Qingyi"
@@ -2383,30 +1710,7 @@
         "mindscapes": "M1 increases the gain of Flight Feather; Attribute Anomaly and Disorder DMG of the team.\nM2 increases Vivian's Anomaly Buildup Rate, Abloom scaling is increased and ignores 15% RES\nM6 further boost Flight Feather gain rate, increases Ether DMG and multiplicatively boost Abloom DMG without fearing of Feather stacks overcap.",
         "other_notes": "Although Core stated \"per 10 point of Anomaly Proficiency\", each point of AP is taken into account for Abloom.\nFire%, Electric%, Ice% and Physical% on Vivian don't affect respective Atribute Abloom DMG.\nWhen swapped out during Noblewoman state, Vivian automatically converts her Flight Feather into Guard Feather, use a Quick Assist into Vivian to quickly convert her feathers at the start of battle.",
         "team_general": "Disorder: Any Anomaly + Support/Supportive unit (preferably team-wide buff)\n\nHypercarry is not recommended",
-        "team_comps": [
-          {
-            "label": "No more Fire/Electric Shananigans",
-            "chars": []
-          },
-          {
-            "label": "Constantly Swapping",
-            "chars": []
-          },
-          {
-            "label": "Anomaly Wheelchair",
-            "chars": []
-          },
-          {
-            "label": "Ether Poisoned Assault (Piper for Budget)",
-            "chars": [
-              "Piper Wheel"
-            ]
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -2434,30 +1738,7 @@
         "mindscapes": "M1 is Lycaon's only notable Mindscape, increasing the Daze inflicted by his EX Special. M3 and M5 increase Lycaon's Daze multipliers.",
         "other_notes": "Quick-Swap: use Assist and EX Special then swap to another agent with QA after Potential buff.\nEnsures that the Additional Ability is active and let Lycaon hit the enemy once when it's stunned to gain additional Stun Multiplier.",
         "team_general": "Used with any team that want stun but prioritize activating his AA for the most buff\n\nCan be either an on-field stunner (for Hugo) or quick-swap stunner",
-        "team_comps": [
-          {
-            "label": "Miyabi Mono Ice",
-            "chars": [
-              "Hoshimi Miyabi"
-            ]
-          },
-          {
-            "label": "Victorian Melody",
-            "chars": []
-          },
-          {
-            "label": "The wolf with the men",
-            "chars": []
-          },
-          {
-            "label": "Thiren Ice Core",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -2486,11 +1767,28 @@
         "team_general": "Any 2 Supports/Supportive agents or Support + Stunner\n\nStunners that requires less on-field time are prefered",
         "team_comps": [
           {
+            "label": "Duo's off their rocker",
+            "chars": [
+              "Ye Shunguang",
+              "Astra Yao",
+              "Anton Ivanov"
+            ]
+          },
+          {
             "label": "Astranomical Qingming force",
             "chars": [
+              "Ye Shunguang",
               "Koleda Belobog",
               "Banyue",
               "Soukaku"
+            ]
+          },
+          {
+            "label": "Budget option",
+            "chars": [
+              "Ye Shunguang",
+              "Astra Yao",
+              "Banyue"
             ]
           }
         ]
@@ -2547,28 +1845,7 @@
         "mindscapes": "M1 - Provide 10% Combat Crit Rate while allowing her to start the fight with full Talisman bar. In addition to follow up attack whenever another agent deal damage to an enemy target with 6 sec CD\nM2 -  Ultimate/EX Special now ignore 15% Ether res and Casting Ult on a stunned target extend their stun duration for 3 sec. After Casting Talisman Ult gain 1 cast of special EX that deal 1200% Sheer Force\nM6 - Casting Ult allows you to bypass the resource cost of Talisman Ult with a cooldown of 30 sec, further more increase Yixuan Sheer Force by 20% during her Meditation(AA) state.",
         "other_notes": "Rina is not a good teammate for Yixuan as Sheer Damage ignores all DEF. All ATK buffers are good for Yixuan despite her scaling off of HP as Sheer converts 30% of your ATK into Sheer Force. For example Lucy's 600 ATK will convert to 180 Sheer Force. Nicole is suprisingly a strong support for Yixuan, as she gives CR% (M6), Ether DMG% Bonus (AA), and more DMG% from her Wengine.",
         "team_general": "Any 2 Supports/Supportive agents or 1 Support + 1 Stunner to help out Yixuan's Damage",
-        "team_comps": [
-          {
-            "label": "Triple the Ultimate",
-            "chars": []
-          },
-          {
-            "label": "Priest Merchant",
-            "chars": []
-          },
-          {
-            "label": "Shifufufu",
-            "chars": []
-          },
-          {
-            "label": "Fried Rice",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -2597,28 +1874,7 @@
         "mindscapes": "M1 Righteous Verdict grants the team 15% All-Attribute RES Ignore for 50s after swapping off of Zhao.                         \nM2 Krampus Senior grants Zhao 20% combat attack and her teammates 15% combat attack whenever Zhao recovers HP.\nM1 is her best stopping point for mindscapes.",
         "other_notes": "Her Assist Follow Up, Chain and Ult grants a Quick Assist to the next character while Ether Veil is up, while nice for upkeeping Astral Voice, its only recommended for non-Ye Shuanguang teams as she wants as much field time as she can to spam basics",
         "team_general": "Can be used in any team for team wide ATK buff and 40% DMG% buff with AA active",
-        "team_comps": [
-          {
-            "label": "Krampus Summit",
-            "chars": []
-          },
-          {
-            "label": "Runaway Star",
-            "chars": []
-          },
-          {
-            "label": "Obol Mercenaries",
-            "chars": []
-          },
-          {
-            "label": "Bunny Double Trouble",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   },
@@ -2649,28 +1905,7 @@
         "mindscapes": "M1 allows Zhu Yuan to extend her Burst Window by providing additional Shotshells. M2 provides an easy to trigger DMG bonus for her Basic and Dash attacks, while providing a slight QoL through interruption resistance and damage reduction. M4 allows Zhu Yuan's Basic and Dash attacks to ignore 25% of the target's Ether RES.",
         "other_notes": "After her 3rd Enhanced Shot, holding any direction (except back) on your respective device will allow her to perform a Quick Dodge maneuver allowing her to skip straight to the 3rd Enhanced Shot shell, repeating this allows her to use all shotshells at maximum possible damage output, and keeps you close to the boss to prevent damage fall off.",
         "team_general": "Burst: 1 On-field Stunner +Support/ Supportive unit\n\nOn-field: combination of supportive units and Quick-swap/Off-field Stunners",
-        "team_comps": [
-          {
-            "label": "Pubsec Krampus Collab",
-            "chars": []
-          },
-          {
-            "label": "Pubsec Burst",
-            "chars": []
-          },
-          {
-            "label": "Mono Ether",
-            "chars": []
-          },
-          {
-            "label": "Budget option",
-            "chars": []
-          },
-          {
-            "label": "Generic Team Example",
-            "chars": []
-          }
-        ]
+        "team_comps": []
       }
     ]
   }
