@@ -39,7 +39,10 @@ DISC_OVERRIDES = {
     'Nekomiya Mana':  {'exclude_4pc': ['Fanged Metal']},
     # "Shockstar/King of the Summit are only to be used outside of Ye Shunguang teams"
     # — no 4pc/2pc qualifier in text so extractor defaults to 4pc; they are 2pc options.
-    'Sunna':          {'exclude_4pc': ['King of the Summit', 'Shockstar Disco']},
+    # 'astral' short alias catches "Astral/Hormone 2pc" putting Astral Voice in 2pc,
+    # but disc_map adds it as the 4pc — can't be both simultaneously.
+    'Sunna':          {'exclude_4pc': ['King of the Summit', 'Shockstar Disco'],
+                       'exclude_2pc': ['Astral Voice']},
 }
 NOTE_LABELS = {'Disc Drive Notes', 'Mindscapes', 'Other Notes', 'Team Comps'}
 HEADER_VALS = {'Equipment', 'Drive Disc Stats', 'Ability Priority',
