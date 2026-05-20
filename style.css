@@ -574,6 +574,74 @@ body.game-zzz #char-portrait {
 }
 
 /* ── audit view ── */
+.audit-top-bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.audit-progress {
+  font-size: 11px;
+  color: var(--muted);
+}
+.audit-section-hdr {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 16px 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.audit-hdr-revision { color: #f87171; }
+.audit-hdr-pending  { color: var(--muted); }
+.audit-hdr-verified { color: var(--green); }
+.audit-count {
+  font-size: 10px;
+  opacity: 0.7;
+}
+.audit-verified-wrap > summary {
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.audit-verified-wrap > summary::before { content: "▶ "; font-size: 8px; }
+.audit-verified-wrap[open] > summary::before { content: "▼ "; }
+.audit-verified-wrap > .audit-grid { margin-top: 8px; }
+
+.audit-actions {
+  display: flex;
+  gap: 4px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.audit-action-btn {
+  flex: 1;
+  min-width: 60px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 10px;
+  padding: 4px 6px;
+  text-align: center;
+  transition: color 0.1s, border-color 0.1s, background 0.1s;
+  white-space: nowrap;
+}
+.audit-action-btn:hover { color: var(--text); background: var(--card); }
+.audit-correct.active  { color: var(--green);  border-color: var(--green);  background: var(--card); }
+.audit-wrong.active    { color: #f87171;        border-color: #f87171;       background: var(--card); }
+
+.audit-status-correct { border-left: 3px solid var(--green); }
+.audit-status-discs   { border-left: 3px solid #fb923c; }
+.audit-status-teams   { border-left: 3px solid #facc15; }
+.audit-status-both    { border-left: 3px solid #f87171; }
+
 .audit-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
