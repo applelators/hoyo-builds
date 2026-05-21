@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
 """
-Identify ZZZ disc set images from the Google Sheets spreadsheet.
+Identify ZZZ disc set images from the Google Sheets spreadsheet via Claude vision.
 
-Core algorithm:
-  For each unique image token T that appears in the 4pc disc column:
-    chars_with_T = all characters on the spreadsheet that have image T
-    for each char in chars_with_T, get their TEXT-EXTRACTED disc sets (no overrides)
-    intersection = set.intersection of all non-empty text-disc sets
-    if |intersection| == 1  →  T maps to that one disc set name
+For each unique image token found in the disc columns, the image is sent to
+Claude alongside reference icons from disc_icons/ for visual identification.
+Results are cached in vision_cache.json so re-runs pay no API cost.
 
 Output: disc_map.json  { "Character Name": {"4pc": [...], "2pc": [...]} }
 
@@ -18,21 +15,12 @@ Usage:
 import argparse
 import asyncio
 import base64
-import glob
-import csv
 import io
 import json
 import os
 import re
 import sys
 from typing import Dict, List, Optional, Tuple, Set
-
-sys.path.insert(0, os.path.dirname(__file__))
-from parse_zzz import (
-    parse_block, pad,
-    CACHE_DIR as ZZZ_CSV_DIR,
-    SKIP_NAMES, HEADER_VALS,
-)
 
 OUTPUT             = "/Users/hokori/genshin-builds/disc_map.json"
 VISION_CACHE_PATH  = "/Users/hokori/genshin-builds/vision_cache.json"
@@ -56,31 +44,11 @@ DISC_2PC_X_MAX = 1500
 TEAMCOMP_GAP_MAX = 60
 
 
-# ─── Text bootstrap ─────────────────────────────────────────────────────────────
-# Disc set names mentioned in disc_notes/w_engine_notes/other_notes are used as
-# noisy seeds for the intersection algorithm.  The intersection naturally filters
-# out irrelevant mentions (only a name present in ALL characters that share a
-# token survives).  Known-correct characters override the noisy text seeds.
-
 _KNOWN_DISC_SETS = list(json.load(
     open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "disc_icons.json"))
 ).keys())
 
-# Confirmed correct disc sets (user-verified) — flat lists for intersection input.
-_EXACT_SEEDS: Dict[str, Dict[str, List[str]]] = {
-    "Sunna": {
-        "4pc": ["Moonlight Lullaby"],
-        "2pc": ["Swing Jazz", "King of the Summit", "Shockstar Disco"],
-    },
-    "Aria": {
-        "4pc": ["Phaethon's Melody", "Shining Aria"],
-        "2pc": ["Phaethon's Melody", "Chaos Jazz", "Freedom Blues",
-                "Shining Aria", "Chaotic Metal", "Puffer Electro"],
-    },
-}
-
-# Final output overrides (with correct nested pair structure for 2pc).
-# These are written directly to disc_map after token resolution.
+# User-verified overrides written directly to disc_map after vision resolution.
 _EXACT_OUTPUT: Dict[str, Dict] = {
     "Sunna": {
         "4pc": ["Moonlight Lullaby"],
@@ -92,64 +60,6 @@ _EXACT_OUTPUT: Dict[str, Dict] = {
                 ["Shining Aria", "Chaotic Metal"], "Puffer Electro"],
     },
 }
-
-
-def raw_disc_sets_from_csvs() -> Dict[str, Dict[str, List[str]]]:
-    """Return rough per-character disc set candidates from CSV text notes."""
-    result: Dict[str, Dict[str, List[str]]] = {}
-    for f in sorted(glob.glob(f"{ZZZ_CSV_DIR}/agents_*.csv")):
-        try:
-            for agent in parse_block_from_file(f):
-                name = agent["name"]
-                text = " ".join([
-                    agent.get("disc_notes", ""),
-                    agent.get("w_engine_notes", ""),
-                    agent.get("other_notes", ""),
-                ])
-                mentioned = [ds for ds in _KNOWN_DISC_SETS if ds in text]
-                if mentioned:
-                    result[name] = {"4pc": mentioned, "2pc": mentioned}
-        except Exception:
-            pass
-
-    # Override with confirmed exact seeds.
-    result.update(_EXACT_SEEDS)
-    return result
-
-
-def parse_block_from_file(filepath: str):
-    """Yield parsed character dicts from a single CSV (builds[0] fields)."""
-    with open(filepath, newline="", encoding="utf-8") as fh:
-        all_rows = list(csv.reader(fh))
-    char_starts = [i for i in range(len(all_rows)) if _is_char_header(all_rows, i)]
-    for ci, start in enumerate(char_starts):
-        end = char_starts[ci + 1] if ci + 1 < len(char_starts) else len(all_rows)
-        block = parse_block(all_rows[start:end])
-        if block:
-            yield {
-                "name":           block["name"],
-                "disc_notes":     block["builds"][0]["disc_notes"],
-                "w_engine_notes": block["builds"][0]["w_engine_notes"],
-                "other_notes":    block["builds"][0]["other_notes"],
-            }
-
-
-def _is_char_header(rows, i):
-    row = rows[i]
-    non_empty = [(j, c.strip()) for j, c in enumerate(row) if c.strip()]
-    if len(non_empty) != 1 or non_empty[0][0] != 1:
-        return False
-    name = non_empty[0][1]
-    if name in SKIP_NAMES or name.lower().startswith("last updated"):
-        return False
-    if len(name) < 2:
-        return False
-    if i + 1 < len(rows):
-        nxt = rows[i + 1]
-        nxt_val = nxt[1].strip() if len(nxt) > 1 else ""
-        if nxt_val.lower().startswith("last updated"):
-            return True
-    return False
 
 
 # ─── Playwright helpers ──────────────────────────────────────────────────────────
@@ -368,59 +278,6 @@ async def collect_all_images(
     return all_char_tokens, token_to_bytes
 
 
-# ─── Intersection algorithm ───────────────────────────────────────────────────────
-
-def build_token_map(
-    all_char_tokens: Dict[str, Dict[str, List[str]]],
-    raw_text_disc:   Dict[str, Dict[str, List[str]]],
-    debug:           bool = False,
-) -> Tuple[Dict[str, str], Dict[str, str]]:
-    """
-    For each image token, compute intersection of text-disc sets across all characters
-    that have that token. If intersection is exactly 1 disc set → that's the mapping.
-
-    Returns (token_to_4pc, token_to_2pc).
-    """
-    # Collect all tokens
-    all_4pc_tokens: Set[str] = set()
-    all_2pc_tokens: Set[str] = set()
-    for char_data in all_char_tokens.values():
-        all_4pc_tokens.update(char_data["4pc"])
-        all_2pc_tokens.update(char_data["2pc"])
-
-    token_to_4pc: Dict[str, str] = {}
-    token_to_2pc: Dict[str, str] = {}
-
-    for col, all_tokens, bucket in [
-        ("4pc", all_4pc_tokens, token_to_4pc),
-        ("2pc", all_2pc_tokens, token_to_2pc),
-    ]:
-        for tok in all_tokens:
-            # Find all chars with this token
-            chars_with_tok = [
-                name for name, data in all_char_tokens.items()
-                if tok in data[col]
-            ]
-            # Get text disc sets for those chars (non-empty only)
-            text_sets = [
-                set(raw_text_disc[name][col])
-                for name in chars_with_tok
-                if name in raw_text_disc and raw_text_disc[name][col]
-            ]
-            if not text_sets:
-                continue
-
-            intersection = set.intersection(*text_sets)
-            if len(intersection) == 1:
-                disc_name = next(iter(intersection))
-                bucket[tok] = disc_name
-                if debug:
-                    print(f"  [{col}] {tok[:22]}... → {disc_name!r}  ({len(chars_with_tok)} chars)")
-            elif debug and len(intersection) > 1:
-                print(f"  [{col}] {tok[:22]}... → ambiguous: {intersection}  ({len(chars_with_tok)} chars)")
-
-    return token_to_4pc, token_to_2pc
-
 
 def _load_vision_cache() -> Dict[str, str]:
     if os.path.exists(VISION_CACHE_PATH):
@@ -574,44 +431,24 @@ def apply_token_map(
 # ─── Main ────────────────────────────────────────────────────────────────────────
 
 async def main_async(args):
-    print("=== Step 1: Parse raw text disc sets from CSVs (no overrides) ===")
-    raw_text_disc = raw_disc_sets_from_csvs()
-    # Summary
-    non_empty_4pc = sum(1 for v in raw_text_disc.values() if v["4pc"])
-    print(f"  {len(raw_text_disc)} characters, {non_empty_4pc} with non-empty 4pc text sets")
-
-    if args.debug:
-        for name, d in sorted(raw_text_disc.items()):
-            if d["4pc"]:
-                print(f"  {name}: 4pc={d['4pc']}")
-
-    print("\n=== Step 2: Collect disc images from spreadsheet ===")
+    print("=== Step 1: Collect disc images from spreadsheet ===")
     gids = [args.tab] if args.tab else SHEET_GIDS
     all_char_tokens, token_to_bytes = await collect_all_images(gids, args.debug)
     print(f"  {len(all_char_tokens)} characters found across tabs")
 
-    print("\n=== Step 3: Build token→disc_set map via intersection ===")
-    token_to_4pc, token_to_2pc = build_token_map(
-        all_char_tokens, raw_text_disc, args.debug
-    )
-    print(f"  Mapped: {len(token_to_4pc)} 4pc tokens, {len(token_to_2pc)} 2pc tokens")
-
-    print("\n=== Step 3b: Resolve remaining tokens via Claude vision ===")
+    print("\n=== Step 2: Identify disc sets via Claude vision ===")
     all_4pc_tokens: Set[str] = set()
     all_2pc_tokens: Set[str] = set()
     for char_data in all_char_tokens.values():
         all_4pc_tokens.update(char_data["4pc"])
         all_2pc_tokens.update(char_data["2pc"])
 
-    unresolved = (all_4pc_tokens | all_2pc_tokens) - set(token_to_4pc) - set(token_to_2pc)
-    vision_map = resolve_via_vision(token_to_bytes, unresolved, _KNOWN_DISC_SETS, args.debug)
-
-    new_4pc = {t: v for t, v in vision_map.items() if t in all_4pc_tokens and t not in token_to_4pc}
-    new_2pc = {t: v for t, v in vision_map.items() if t in all_2pc_tokens and t not in token_to_2pc}
-    token_to_4pc.update(new_4pc)
-    token_to_2pc.update(new_2pc)
-    print(f"  Added {len(new_4pc)} 4pc, {len(new_2pc)} 2pc via vision → "
-          f"total {len(token_to_4pc)} 4pc, {len(token_to_2pc)} 2pc")
+    vision_map = resolve_via_vision(
+        token_to_bytes, all_4pc_tokens | all_2pc_tokens, _KNOWN_DISC_SETS, args.debug
+    )
+    token_to_4pc = {t: v for t, v in vision_map.items() if t in all_4pc_tokens}
+    token_to_2pc = {t: v for t, v in vision_map.items() if t in all_2pc_tokens}
+    print(f"  Identified {len(token_to_4pc)} 4pc tokens, {len(token_to_2pc)} 2pc tokens")
 
     # Save images for inspection if requested
     if getattr(args, "save_images", None):
