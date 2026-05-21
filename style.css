@@ -608,6 +608,12 @@ body.game-zzz #char-portrait {
 .tier-T2   { background: #3498db; color: #fff; }
 .tier-T3   { background: #27ae60; color: #fff; }
 .tier-T4   { background: var(--muted); color: var(--bg); }
+.tier-SS   { background: #f5a623; color: #000; }
+.tier-S    { background: #9b59b6; color: #fff; }
+.tier-A    { background: #3498db; color: #fff; }
+.tier-B    { background: #27ae60; color: #fff; }
+.tier-C    { background: var(--muted); color: var(--bg); }
+.tier-D    { background: #555; color: #aaa; }
 
 /* ── Tier view ───────────────────────────────────────────── */
 .tier-section { margin-bottom: 28px; }

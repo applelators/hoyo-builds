@@ -1047,7 +1047,11 @@ function charTier(char) {
   return (tiersData[currentGame] || {})[char.name] || null;
 }
 
-const TIER_ORDER = ['T0', 'T0.5', 'T1', 'T1.5', 'T2', 'T3', 'T4'];
+const TIER_ORDERS = {
+  gi:  ['SS', 'S', 'A', 'B', 'C', 'D'],
+  hsr: ['T0', 'T0.5', 'T1', 'T1.5', 'T2', 'T3', 'T4'],
+  zzz: ['T0', 'T0.5', 'T1', 'T1.5', 'T2', 'T3', 'T4'],
+};
 
 function showTierView() {
   $('placeholder').classList.add('hidden');
@@ -1078,7 +1082,8 @@ function renderTierView() {
     byTier[t].push(char);
   }
 
-  const orderedTiers = [...TIER_ORDER.filter(t => byTier[t]), ...(byTier['Unranked'] ? ['Unranked'] : [])];
+  const tierOrder = TIER_ORDERS[currentGame] || TIER_ORDERS.zzz;
+  const orderedTiers = [...tierOrder.filter(t => byTier[t]), ...(byTier['Unranked'] ? ['Unranked'] : [])];
 
   let html = '<div class="disc-ref-header">tier list</div>';
   for (const tier of orderedTiers) {

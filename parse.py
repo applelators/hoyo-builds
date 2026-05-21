@@ -14,6 +14,19 @@ SKIP_NAMES = {
     "ABILITY TIPS", "MAIN STATS", "NOTES", "4 STAR", "5 STAR",
 }
 
+GI_NAME_NORMALIZE = {
+    'ARATAKI ITTO': 'Itto',
+    'KAEDEHARA KAZUHA': 'Kazuha',
+    'KAMISATO AYAKA': 'Ayaka',
+    'KAMISATO AYATO': 'Ayato',
+    'KUJOU SARA': 'Sara',
+    'KUKI SHINOBU': 'Shinobu',
+    'RAIDEN SHOGUN': 'Raiden',
+    'SANGONOMIYA KOKOMI': 'Kokomi',
+    'SHIKANOIN HEIZOU': 'Heizou',
+    'YUMEMIZUKI MIZUKI': 'Mizuki',
+}
+
 HEADER_MARKERS = {"ROLE", "EQUIPMENT", "ARTIFACT STATS", "TALENT PRIORITY", "ABILITY TIPS"}
 
 
@@ -55,7 +68,8 @@ def parse_file(filepath):
         if is_character_row(row):
             if current:
                 characters.append(current)
-            current = {"name": col1, "last_updated": "", "builds": [], "notes": ""}
+            name = GI_NAME_NORMALIZE.get(col1, col1.title())
+            current = {"name": name, "last_updated": "", "builds": [], "notes": ""}
             continue
 
         if current is None:
