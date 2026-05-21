@@ -29,8 +29,6 @@ let allChars = [];      // active game's character list
 let portraits    = {};  // {gi: {name: url}, hsr: {…}, zzz: {…}}
 let icons        = {};  // {gi: {name: url}, hsr: {…}, zzz: {…}} — sidebar thumbnails
 let releaseData  = {};  // {gi: {name: {version, date}}, …} — wiki release versions
-let discIconNames = []; // disc set names from disc_icons.json (ZZZ only)
-let zzzIconEntries = []; // [{name, url}] sorted by name from icons.json ZZZ section
 let activeChar    = null;
 let activeBuildIdx = 0;
 let currentGame   = 'gi';   // 'gi' | 'hsr' | 'zzz'
@@ -72,24 +70,15 @@ function zzzElementKey(char) {
   return i === -1 ? 999 : i;
 }
 
-function zzzSortedChars() {
-  return [...zzzChars].sort((a, b) => {
-    const ek = zzzElementKey(a) - zzzElementKey(b);
-    if (ek !== 0) return ek;
-    return releaseKey(b) - releaseKey(a);
-  });
-}
-
 // ── boot ─────────────────────────────────────────────────────
 async function init() {
-  const [gi, hsr, zzz, pts, ico, rel, di, tiers] = await Promise.all([
+  const [gi, hsr, zzz, pts, ico, rel, tiers] = await Promise.all([
     fetch('builds.json').then(r => r.json()),
     fetch('hsr_builds.json').then(r => r.json()),
     fetch('zzz_builds.json').then(r => r.json()),
     fetch('portraits.json').then(r => r.json()).catch(() => ({})),
     fetch('icons.json').then(r => r.json()).catch(() => ({})),
     fetch('release_data.json').then(r => r.json()).catch(() => ({})),
-    fetch('disc_icons.json').then(r => r.json()).catch(() => ({})),
     fetch('tiers.json').then(r => r.json()).catch(() => ({})),
   ]);
   giChars  = gi;
@@ -98,9 +87,7 @@ async function init() {
   portraits = pts;
   icons = ico;
   releaseData = rel;
-  discIconNames = Object.keys(di).sort();
   tiersData = tiers;
-  zzzIconEntries = Object.entries(ico.zzz || {}).sort((a, b) => a[0].localeCompare(b[0]));
   allChars = giChars;
 
   $('search').addEventListener('input', () => refreshList());
@@ -112,39 +99,12 @@ async function init() {
   $('back-btn').addEventListener('click', () => {
     document.body.classList.remove('viewing-char');
     $('back-btn').classList.add('hidden');
-    $('disc-ref-view').classList.add('hidden');
-    $('char-ref-view').classList.add('hidden');
-    $('audit-view').classList.add('hidden');
     $('tier-view').classList.add('hidden');
-    $('disc-ref-btn').classList.remove('active');
-    $('char-ref-btn').classList.remove('active');
-    $('audit-btn').classList.remove('active');
     $('tier-btn').classList.remove('active');
     $('placeholder').classList.remove('hidden');
   });
 
-  $('disc-ref-btn').addEventListener('click', showDiscReference);
-  $('char-ref-btn').addEventListener('click', showCharReference);
-  $('audit-btn').addEventListener('click', showAuditView);
   $('tier-btn').addEventListener('click', showTierView);
-
-  $('audit-view').addEventListener('click', e => {
-    if (e.target.id === 'audit-export-btn') { copyFlagged(e.target); return; }
-    const btn = e.target.closest('[data-audit-char]');
-    if (!btn) return;
-    const charName = btn.dataset.auditChar;
-    const status   = btn.dataset.auditStatus;
-    const state    = getAuditState();
-    if (state[charName] === status) {
-      delete state[charName];
-    } else {
-      state[charName] = status;
-    }
-    saveAuditState(state);
-    const scrollTop = $('content').scrollTop;
-    renderAuditView();
-    requestAnimationFrame(() => { $('content').scrollTop = scrollTop; });
-  });
 
   updateSourceCredit(currentGame);
   renderElementFilters();
@@ -164,15 +124,8 @@ function switchGame(game) {
   $('back-btn').classList.add('hidden');
 
   $('char-view').classList.add('hidden');
-  $('disc-ref-view').classList.add('hidden');
-  $('char-ref-view').classList.add('hidden');
-  $('audit-view').classList.add('hidden');
   $('tier-view').classList.add('hidden');
-  $('disc-ref-btn').classList.remove('active');
-  $('char-ref-btn').classList.remove('active');
-  $('audit-btn').classList.remove('active');
   $('tier-btn').classList.remove('active');
-  $('disc-ref-wrap').classList.toggle('hidden', game !== 'zzz');
   $('placeholder').classList.remove('hidden');
   $('search').value = '';
   filterElement = null;
@@ -320,13 +273,7 @@ function selectChar(char) {
   highlightActive(char);
 
   $('placeholder').classList.add('hidden');
-  $('disc-ref-view').classList.add('hidden');
-  $('char-ref-view').classList.add('hidden');
-  $('audit-view').classList.add('hidden');
   $('tier-view').classList.add('hidden');
-  $('disc-ref-btn').classList.remove('active');
-  $('char-ref-btn').classList.remove('active');
-  $('audit-btn').classList.remove('active');
   $('tier-btn').classList.remove('active');
   $('char-view').classList.remove('hidden');
 
@@ -770,234 +717,6 @@ function zzzTeamCard(build) {
   return html;
 }
 
-function showDiscReference() {
-  $('placeholder').classList.add('hidden');
-  $('char-view').classList.add('hidden');
-  $('char-ref-view').classList.add('hidden');
-  $('audit-view').classList.add('hidden');
-  $('tier-view').classList.add('hidden');
-  $('char-ref-btn').classList.remove('active');
-  $('audit-btn').classList.remove('active');
-  $('tier-btn').classList.remove('active');
-  $('disc-ref-btn').classList.add('active');
-  document.body.classList.add('viewing-char');
-  $('back-btn').classList.remove('hidden');
-  activeChar = null;
-
-  const view = $('disc-ref-view');
-  view.classList.remove('hidden');
-  view.innerHTML =
-    '<div class="disc-ref-header">drive disc icons</div>'
-    + '<div class="disc-ref-grid">'
-    + discIconNames.map(name =>
-        `<div class="disc-ref-item">`
-        + `<img class="disc-ref-img" src="disc_icons/${encodeURIComponent(name)}.png" alt="${escHtml(name)}">`
-        + `<span class="disc-ref-name">${escHtml(name)}</span>`
-        + `</div>`
-      ).join('')
-    + '</div>';
-
-  $('content').scrollTop = 0;
-}
-
-function showCharReference() {
-  $('placeholder').classList.add('hidden');
-  $('char-view').classList.add('hidden');
-  $('disc-ref-view').classList.add('hidden');
-  $('audit-view').classList.add('hidden');
-  $('tier-view').classList.add('hidden');
-  $('disc-ref-btn').classList.remove('active');
-  $('audit-btn').classList.remove('active');
-  $('tier-btn').classList.remove('active');
-  $('char-ref-btn').classList.add('active');
-  document.body.classList.add('viewing-char');
-  $('back-btn').classList.remove('hidden');
-  activeChar = null;
-
-  const view = $('char-ref-view');
-  view.classList.remove('hidden');
-  view.innerHTML =
-    '<div class="disc-ref-header">character icons (ZZZ)</div>'
-    + '<div class="disc-ref-grid">'
-    + zzzIconEntries.map(([name, url]) =>
-        `<div class="disc-ref-item">`
-        + `<img class="disc-ref-img" src="${escHtml(url)}" alt="${escHtml(name)}" referrerpolicy="no-referrer">`
-        + `<span class="disc-ref-name">${escHtml(name)}</span>`
-        + `</div>`
-      ).join('')
-    + '</div>';
-
-  $('content').scrollTop = 0;
-}
-
-function getAuditState() {
-  try { return JSON.parse(localStorage.getItem('zzz_audit') || '{}'); }
-  catch { return {}; }
-}
-function saveAuditState(s) { localStorage.setItem('zzz_audit', JSON.stringify(s)); }
-
-function copyFlagged(btn) {
-  const state = getAuditState();
-  const flagged = zzzChars
-    .filter(c => state[c.name] && state[c.name] !== 'correct')
-    .map(c => `- ${c.name}: ${state[c.name]}`);
-  if (!flagged.length) return;
-  const text = `Needs revision (${flagged.length}):\n${flagged.join('\n')}`;
-  navigator.clipboard.writeText(text).then(() => {
-    const orig = btn.textContent;
-    btn.textContent = 'copied!';
-    setTimeout(() => { btn.textContent = orig; }, 1500);
-  });
-}
-
-function showAuditView() {
-  $('placeholder').classList.add('hidden');
-  $('char-view').classList.add('hidden');
-  $('disc-ref-view').classList.add('hidden');
-  $('char-ref-view').classList.add('hidden');
-  $('tier-view').classList.add('hidden');
-  $('disc-ref-btn').classList.remove('active');
-  $('char-ref-btn').classList.remove('active');
-  $('tier-btn').classList.remove('active');
-  $('audit-btn').classList.add('active');
-  document.body.classList.add('viewing-char');
-  $('back-btn').classList.remove('hidden');
-  activeChar = null;
-  $('audit-view').classList.remove('hidden');
-  renderAuditView();
-  $('content').scrollTop = 0;
-}
-
-function renderAuditView() {
-  const state    = getAuditState();
-  const sorted   = zzzSortedChars();
-  const pending  = sorted.filter(c => !state[c.name]);
-  const revision = sorted.filter(c => state[c.name] && state[c.name] !== 'correct');
-  const verified = sorted.filter(c => state[c.name] === 'correct');
-  const reviewed = revision.length + verified.length;
-
-  const exportLabel = revision.length ? `export flagged (${revision.length})` : 'nothing flagged';
-  const exportDis   = revision.length ? '' : ' disabled';
-  let html = '<div class="audit-top-bar">'
-    + '<span class="disc-ref-header" style="margin-bottom:0">audit — disc drives &amp; team comps</span>'
-    + '<div class="audit-top-right">'
-    + `<span class="audit-progress">${reviewed} / ${zzzChars.length} reviewed</span>`
-    + `<button class="audit-export-btn" id="audit-export-btn"${exportDis}>${exportLabel}</button>`
-    + '</div>'
-    + '</div>';
-
-  if (revision.length) {
-    html += `<div class="audit-section-hdr audit-hdr-revision">needs revision <span class="audit-count">${revision.length}</span></div>`;
-    html += '<div class="audit-grid">';
-    for (const c of revision) html += auditCharCard(c, state[c.name]);
-    html += '</div>';
-  }
-
-  if (pending.length) {
-    html += `<div class="audit-section-hdr audit-hdr-pending">pending review <span class="audit-count">${pending.length}</span></div>`;
-    html += '<div class="audit-grid">';
-    for (const c of pending) html += auditCharCard(c, null);
-    html += '</div>';
-  }
-
-  if (verified.length) {
-    html += '<details class="audit-verified-wrap">'
-      + `<summary class="audit-section-hdr audit-hdr-verified">verified <span class="audit-count">${verified.length}</span></summary>`
-      + '<div class="audit-grid">';
-    for (const c of verified) html += auditCharCard(c, 'correct');
-    html += '</div></details>';
-  }
-
-  $('audit-view').innerHTML = html;
-}
-
-function discIconItem(name) {
-  const src = 'disc_icons/' + encodeURIComponent(name) + '.png';
-  return `<div class="disc-icon-item">`
-    + `<img class="disc-icon-img" src="${src}" alt="${escHtml(name)}">`
-    + `<span class="disc-icon-name">${escHtml(name)}</span>`
-    + `</div>`;
-}
-
-function auditCharCard(char, status) {
-  const build = char.builds && char.builds[0];
-  if (!build) return '';
-  const zzzIcons = icons.zzz || {};
-  const iconUrl  = zzzIcons[char.name];
-  const disc4    = build.disc_4pc || [];
-  const disc2    = build.disc_2pc || [];
-  const teams    = build.team_comps || [];
-  const statusCls = status ? ` audit-status-${status}` : '';
-
-  let html = `<div class="audit-char${statusCls}">`;
-
-  // Header
-  html += '<div class="audit-char-header">';
-  if (iconUrl) html += `<img class="audit-char-icon" src="${escHtml(iconUrl)}" alt="" referrerpolicy="no-referrer">`;
-  html += `<span class="audit-char-name">${escHtml(char.name)}</span>`;
-  if (char.specialty) html += `<span class="path-badge">${escHtml(char.specialty)}</span>`;
-  html += '</div>';
-
-  // Disc drives
-  if (disc4.length || disc2.length) {
-    html += '<div class="audit-section">';
-    if (disc4.length) {
-      html += '<div class="audit-row"><span class="audit-pc">4PC</span><div class="disc-icon-row">';
-      for (const s of disc4) html += discIconItem(s);
-      html += '</div></div>';
-    }
-    if (disc2.length) {
-      html += '<div class="audit-row"><span class="audit-pc">2PC</span><div class="disc-icon-row">';
-      for (const s of disc2) {
-        if (Array.isArray(s)) {
-          html += '<div class="disc-pair">';
-          for (const n of s) html += discIconItem(n);
-          html += '</div>';
-        } else {
-          html += discIconItem(s);
-        }
-      }
-      html += '</div></div>';
-    }
-    html += '</div>';
-  } else {
-    html += '<div class="audit-empty">no disc data</div>';
-  }
-
-  // Team comps
-  if (teams.length) {
-    html += '<div class="audit-teams">';
-    for (const team of teams) {
-      html += '<div class="audit-team-row">';
-      html += `<span class="audit-team-label">${escHtml(team.label)}</span>`;
-      html += '<div class="audit-team-members">';
-      for (const m of team.chars) {
-        const mUrl = zzzIcons[m];
-        html += '<div class="audit-member">';
-        if (mUrl) html += `<img class="audit-member-icon" src="${escHtml(mUrl)}" alt="" referrerpolicy="no-referrer">`;
-        html += `<span class="audit-member-name">${escHtml(zzzShortName(m))}</span>`;
-        html += '</div>';
-      }
-      html += '</div></div>';
-    }
-    html += '</div>';
-  } else {
-    html += '<div class="audit-empty">no team data</div>';
-  }
-
-  // Action buttons
-  const enc = escHtml(char.name);
-  html += '<div class="audit-actions">'
-    + `<button class="audit-action-btn audit-correct${status === 'correct' ? ' active' : ''}" data-audit-char="${enc}" data-audit-status="correct">✓ correct</button>`
-    + `<button class="audit-action-btn audit-wrong${status === 'discs' ? ' active' : ''}" data-audit-char="${enc}" data-audit-status="discs">✗ discs</button>`
-    + `<button class="audit-action-btn audit-wrong${status === 'teams' ? ' active' : ''}" data-audit-char="${enc}" data-audit-status="teams">✗ teams</button>`
-    + `<button class="audit-action-btn audit-wrong${status === 'both' ? ' active' : ''}" data-audit-char="${enc}" data-audit-status="both">✗ both</button>`
-    + '</div>';
-
-  html += '</div>';
-  return html;
-}
-
 function renderNotes(char) {
   const details  = $('notes-details');
   const body     = $('notes-body');
@@ -1056,12 +775,6 @@ const TIER_ORDERS = {
 function showTierView() {
   $('placeholder').classList.add('hidden');
   $('char-view').classList.add('hidden');
-  $('disc-ref-view').classList.add('hidden');
-  $('char-ref-view').classList.add('hidden');
-  $('audit-view').classList.add('hidden');
-  $('disc-ref-btn').classList.remove('active');
-  $('char-ref-btn').classList.remove('active');
-  $('audit-btn').classList.remove('active');
   $('tier-btn').classList.add('active');
   document.body.classList.add('viewing-char');
   $('back-btn').classList.remove('hidden');
@@ -1085,7 +798,7 @@ function renderTierView() {
   const tierOrder = TIER_ORDERS[currentGame] || TIER_ORDERS.zzz;
   const orderedTiers = [...tierOrder.filter(t => byTier[t]), ...(byTier['Unranked'] ? ['Unranked'] : [])];
 
-  let html = '<div class="disc-ref-header">tier list</div>';
+  let html = '<div class="view-header">tier list</div>';
   for (const tier of orderedTiers) {
     const chars = byTier[tier].sort((a, b) => releaseKey(b) - releaseKey(a));
     const cls = `tier-${tier.replace('.', '_')}`;
