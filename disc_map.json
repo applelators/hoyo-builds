@@ -239,13 +239,17 @@
   },
   "Cissia": {
     "4pc": [
-      "Freedom Blues"
+      "Dawn's Bloom"
     ],
     "2pc": [
-      "Freedom Blues",
-      "Hormone Punk",
-      "Shadow Harmony",
-      "Puffer Electro"
+      [
+        "Swing Jazz",
+        "King of the Summit"
+      ],
+      [
+        "Puffer Electro",
+        "Woodpecker Electro"
+      ]
     ]
   },
   "Flora (Seed)": {

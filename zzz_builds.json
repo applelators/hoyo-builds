@@ -717,13 +717,17 @@
         "baseline": "ATK:\nNon ATK Main Engine: 2200-2700+\nATK Main Engine: 2700-3200+\n\nCR: 57-82%\n(57% with Sig) \n\nCD: 110%+",
         "ability": "1.Core\n1. Basic\n2. EX Special\n2. Ultimate\n3. Assist\n4. Dodge\nDodge can be ignored outside of hypercarry",
         "disc_4pc": [
-          "Freedom Blues"
+          "Dawn's Bloom"
         ],
         "disc_2pc": [
-          "Freedom Blues",
-          "Hormone Punk",
-          "Shadow Harmony",
-          "Puffer Electro"
+          [
+            "Swing Jazz",
+            "King of the Summit"
+          ],
+          [
+            "Puffer Electro",
+            "Woodpecker Electro"
+          ]
         ],
         "disc_4pc_labels": [],
         "disc_2pc_labels": [],
@@ -737,7 +741,40 @@
             "label": "Ssseed",
             "chars": [
               "Cissia",
-              "Burnice White"
+              "Flora (Seed)",
+              "Astra Yao"
+            ]
+          },
+          {
+            "label": "King Cobra",
+            "chars": [
+              "Cissia",
+              "Qingyi",
+              "Seth Lowell"
+            ]
+          },
+          {
+            "label": "Food Chain",
+            "chars": [
+              "Cissia",
+              "Trigger",
+              "Lighter"
+            ]
+          },
+          {
+            "label": "Brokie Hypercarry",
+            "chars": [
+              "Cissia",
+              "Asaba Harumasa",
+              "Nicole Demara"
+            ]
+          },
+          {
+            "label": "Generic Team Example",
+            "chars": [
+              "Cissia",
+              "Seth Lowell",
+              "Astra Yao"
             ]
           }
         ]
