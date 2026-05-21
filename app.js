@@ -1074,7 +1074,7 @@ function renderTierView() {
 
   let html = '<div class="disc-ref-header">tier list</div>';
   for (const tier of orderedTiers) {
-    const chars = byTier[tier].sort((a, b) => a.name.localeCompare(b.name));
+    const chars = byTier[tier].sort((a, b) => releaseKey(b) - releaseKey(a));
     const cls = `tier-${tier.replace('.', '_')}`;
     html += `<div class="tier-section">`;
     html += `<div class="tier-section-header ${cls}">${escHtml(tier)}</div>`;
