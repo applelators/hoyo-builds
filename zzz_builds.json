@@ -12,13 +12,8 @@
         "sub_stats": "ATK% & AP or ATK% & CRIT%",
         "baseline": "PEN Ratio: 60%+ (Max 70.4%)\n\nCR: 50%+ \n\nCD: 100%+\n\nAP in Anomaly teams: 250+",
         "ability": "1.Core\n2.Chain/Ult\n2.EX Special\n3.Assist\nOnly Core is needed, the rest of her abilities can be upgraded for more Daze and slightly more DMG scaling. Skip Basic and Dodge",
-        "disc_4pc": [
-          "Freedom Blues"
-        ],
-        "disc_2pc": [
-          "Hormone Punk",
-          "Thunder Metal"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Buff on EX"
         ],
@@ -76,13 +71,8 @@
         "sub_stats": "AP>ATK%>Flat PEN/ATK",
         "baseline": "ATK:\nATK Main Engine: 2500-2900+\nNon ATK Main Engine: 2300-2700+\n\nAP:\nAP Main Engine: 400-420+\nNon AP Main Engine: 320-350+",
         "ability": "1.Core\n2.Basic\n3.Ult/Chain\n4.EX Special\nAlice's Core Passive is the most important skill to level.  The rest can be ignored or leveled for minor increases in damage and daze.",
-        "disc_4pc": [
-          "Puffer Electro"
-        ],
-        "disc_2pc": [
-          "Freedom Blues",
-          "Hormone Punk"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [],
         "disc_2pc_labels": [],
         "w_engine_notes": "",
@@ -131,12 +121,8 @@
         "sub_stats": "CR% = CDMG% > ATK%",
         "baseline": "Impact: 168-193\n\nCR: 50%+\n(Needed if using 4pc King of the Summit)\n\nCD: 100%+",
         "ability": "1.Core\n1. Ex Special\n2. Basic\n3.Dodge\n3.Chain/Ult\n3.5.Assist\nQuick-swap: Skip Dodge \nOn-field: Skip Assist",
-        "disc_4pc": [
-          "King of the Summit"
-        ],
-        "disc_2pc": [
-          "Astral Voice"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "CDMG% Buff"
         ],
@@ -179,15 +165,8 @@
         "sub_stats": "CR% = CDMG% > ATK%",
         "baseline": "ATK: \nATK Main Engine: 2700-3000+ \nNon ATK Main Engine: 2400-2700+ \n\nCR: 60-70%+ \n\nCD:130-170%+",
         "ability": "1.Core\n1.Basic\n2.Chain/Ult\n3. Assist\n3.Dodge\n4.EX Special\nQuick Assist has high multipliers which is worth upgrading for Burst play, ignore Dodge",
-        "disc_4pc": [
-          "Hormone Punk",
-          "Moonlight Lullaby"
-        ],
-        "disc_2pc": [
-          "Hormone Punk",
-          "White Water Ballad",
-          "Moonlight Lullaby"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Burst Bro",
           "Use w/ Astra"
@@ -237,22 +216,8 @@
         "sub_stats": "AP >= ATK% > PEN >= Flat ATK",
         "baseline": "ATK:\nATK Main Engine: 2500-2700+\nNon ATK Main Engine: 2300-2500+\n\nAP:\nAP Main Engine: 400-420+\nNon AP Main Engine: 330-350+",
         "ability": "1.Core\n1.Basic\n2.EX\n2. Assist\nCore matter the most, upgrade her abilities for Daze and slightly more scaling\n\nIgnore Dodge as you would spam Charged Basic",
-        "disc_4pc": [
-          "Phaethon's Melody",
-          "Shining Aria"
-        ],
-        "disc_2pc": [
-          "Phaethon's Melody",
-          [
-            "Chaos Jazz",
-            "Freedom Blues"
-          ],
-          [
-            "Shining Aria",
-            "Chaotic Metal"
-          ],
-          "Puffer Electro"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "BiS: remember to time EX",
           "Inferior choice"
@@ -299,17 +264,8 @@
         "sub_stats": "CR% (until caps) > CDMG% = ATK%",
         "baseline": "ATK:\nATK Main Engine: 3000-3300+\nNon ATK Main Engine: 2700-3000+\n\nCR: Refer to notes¹\n4pc Shadow Harmony: 38-63%\nOtherwise: 50-75%\nCD: 130-180+",
         "ability": "1.Core\n1.Dodge\n2.Chain/Ult\n3.EX Special\n3.Basic\n4.Assist\nHis main source of damage is from Dash Attack, hence Dodge priority",
-        "disc_4pc": [
-          "Shadow Harmony",
-          "Hormone Punk",
-          "Puffer Electro"
-        ],
-        "disc_2pc": [
-          "White Water Ballad",
-          "Hormone Punk",
-          "Moonlight Lullaby",
-          "Puffer Electro"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Consistency",
           "w/ Dialyn",
@@ -354,14 +310,8 @@
         "sub_stats": "ATK%>Flat ATK",
         "baseline": "ATK: 3429\n(Needed to maximize Core F Passive)",
         "ability": "1.Core\n1.EX Special\n2.Chain/Ult\n3.Basic\nBasic Attack is on low priority as it only help slightly with Astra Yao's own DMG output from Additional Ability.\n\nAssist and Dodge can be ignored",
-        "disc_4pc": [
-          "Moonlight Lullaby",
-          "Freedom Blues"
-        ],
-        "disc_2pc": [
-          "Freedom Blues",
-          "White Water Ballad"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Team Buff",
           "If other ally uses Astral"
@@ -421,11 +371,7 @@
         "baseline": "HP:\nHP main Engine: 17,000-20,000+\nNon HP main Engine: 15,000-17,000+\n\nCR: 68-88%\n\nCD: 130%+",
         "ability": "1.Core\n1.EX Special\n1.Chain/Ult\n1.Basic\n2.Assist\n2.Dodge\nAssist and Dodge aren't good for damage but can be upgraded if you need the Daze",
         "disc_4pc": [],
-        "disc_2pc": [
-          "Hormone Punk",
-          "Freedom Blues",
-          "Shadow Harmony"
-        ],
+        "disc_2pc": [],
         "disc_4pc_labels": [],
         "disc_2pc_labels": [],
         "w_engine_notes": "",
@@ -473,13 +419,8 @@
         "sub_stats": "CR% = CDMG% > ATK%",
         "baseline": "CR: 50%+\n\nCD: 100%+",
         "ability": "1.EX Special\n1.Core\n2.Assist\n2.Chain/Ult\n3.Basic\n4.Dodge\nSkills should be upgraded for Daze and DMG increase.",
-        "disc_4pc": [
-          "King of the Summit"
-        ],
-        "disc_2pc": [
-          "Astral Voice",
-          "Freedom Blues"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Team Buff"
         ],
@@ -530,15 +471,8 @@
         "sub_stats": "CR% = CD% > ATK%",
         "baseline": "ATK:\nATK Main Engine: 2700-3000+\nNon ATK Main Engine: 2600-2800+\n\nCR: 60-70%+\n\nCD: 125-150%+",
         "ability": "1.Core\n1.Chain/Ult\n2.EX Special\n2.Dodge\n3.Basic\n4.Assist\nAssist is low priority",
-        "disc_4pc": [
-          "Hormone Punk",
-          "Puffer Electro"
-        ],
-        "disc_2pc": [
-          "Hormone Punk",
-          "White Water Ballad",
-          "Puffer Electro"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Burst DPS",
           "On-Field DPS"
@@ -598,14 +532,8 @@
         "sub_stats": "AP = ATK% > Flat PEN/ATK",
         "baseline": "ATK:\nATK Main Engine: 2500-2800+\nNon ATK Main Engine: 2300-2500+\n\nAP: \nAP Main Engine: 390-440+ \nNon AP Main Engine: 320-370+",
         "ability": "1.Core\n2.EX Special\n2.Chain/Ult\n3.Assist\nOnly Core is needed, the rest of her abilities can be upgraded for more Daze and slightly more DMG scaling.",
-        "disc_4pc": [
-          "King of the Summit"
-        ],
-        "disc_2pc": [
-          "Freedom Blues",
-          "Hormone Punk",
-          "Astral Voice"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [],
         "disc_2pc_labels": [
           "Awaken Potential LV 2+"
@@ -657,14 +585,8 @@
         "sub_stats": "CR% = CD% > ATK%",
         "baseline": "Impact: 152-174 \n\nCR: 50%+\n\nCD: 100%+\n\nAP in Anomaly teams: 220+",
         "ability": "1.Core\n2.EX Special\n3.Assist\n4.Chain/Ult\n4.Basic\n4.Dodge\n#4th abilities can be upgraded for more DMG and Daze, lower priority.",
-        "disc_4pc": [
-          "King of the Summit",
-          "Moonlight Lullaby"
-        ],
-        "disc_2pc": [
-          "Astral Voice",
-          "Freedom Blues"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Team Buffs",
           "If able to keep full stack"
@@ -716,19 +638,8 @@
         "sub_stats": "CR (until cap) > CDMG = ATK%",
         "baseline": "ATK:\nNon ATK Main Engine: 2200-2700+\nATK Main Engine: 2700-3200+\n\nCR: 57-82%\n(57% with Sig) \n\nCD: 110%+",
         "ability": "1.Core\n1. Basic\n2. EX Special\n2. Ultimate\n3. Assist\n4. Dodge\nDodge can be ignored outside of hypercarry",
-        "disc_4pc": [
-          "Dawn's Bloom"
-        ],
-        "disc_2pc": [
-          [
-            "Swing Jazz",
-            "Moonlight Lullaby"
-          ],
-          [
-            "Branch & Blade Song",
-            "Woodpecker Electro"
-          ]
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [],
         "disc_2pc_labels": [],
         "w_engine_notes": "Seed Sig is her best Crit stat stick as she can make great use of the passive fully. Orphie sig is also a top Crit stat stick as it also gives Cissia ER. Both Seed and Orphie sig is better than Anton sig mainly cause of the CR/passive. If you have none of listed W-Engines then you'll have to use an ER stat stick like Steam Oven (Starlight if main dps) until you get something better.",
@@ -794,14 +705,8 @@
         "sub_stats": "CR% > CD% > ATK%",
         "baseline": "ATK:\nATK Main Engine: 2700-3000+\nNon ATK Main Engine: 2600-2800+\n\nCR: 70-80%+\n\nCD: 120-160%+",
         "ability": "1.EX Special\n1.Core\n1.Chain/Ult\n2.Basic\n3.Dodge\n3.Assist\nDodge has lower priority for Burst playstyle",
-        "disc_4pc": [
-          "Hormone Punk"
-        ],
-        "disc_2pc": [
-          "Hormone Punk",
-          "White Water Ballad",
-          "Puffer Electro"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "General set",
           "Dialyn"
@@ -860,14 +765,8 @@
         "sub_stats": "CR% >>> CD% ≥ ATK%",
         "baseline": "CR:\nWithout Sig. Engine: 80-100%\nWith Sig. Engine: 100%\n(100% to maximize the Impact self-buff.)",
         "ability": "1. Core\n2. EX\n3. Ult/Chain\nRead Below\nCore and EX are her main priorities, followed by Chain and Assist.\nBasic and Dodge should also be levelled for On-field play.",
-        "disc_4pc": [
-          "King of the Summit"
-        ],
-        "disc_2pc": [
-          "Freedom Blues",
-          "Puffer Electro",
-          "Shadow Harmony"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [],
         "disc_2pc_labels": [
           "Energy Regen% if 100% CR"
@@ -910,16 +809,8 @@
         "sub_stats": "CR% > ATK% > CDMG%",
         "baseline": "ATK:\nATK Main Engine: 2750-3450+\nNon ATK Main Engine: 2700-3000+\n\nCR: 80%-100%      \nCD: 120%+",
         "ability": "1.Core\n1.Basic\n2.EX Special\n2.Chain/Ult\n3.Dodge\n4.Assist\nAssist is the low priority",
-        "disc_4pc": [
-          "Puffer Electro",
-          "Hormone Punk"
-        ],
-        "disc_2pc": [
-          "Hormone Punk",
-          "White Water Ballad",
-          "Puffer Electro",
-          "Freedom Blues"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "General Build",
           "Good if you can time it"
@@ -962,16 +853,8 @@
         "sub_stats": "CR%(till 100%) = CDMG%  > ATK%",
         "baseline": "ATK: \nATK% Main W-Engine: 3200-3400+\nNon-ATK% Main: 2700-3000+\n\nCR: 55-75% *Do not exceed 75%\n\nCD: 130-160%+",
         "ability": "1.Chain/Ult\n2.Core\n2.EX Special\n2. Basic\n3.Dodge\n4.Assist\nDodge is low priority due to Dodge Counter rarely being used.",
-        "disc_4pc": [
-          "Hormone Punk",
-          "Moonlight Lullaby"
-        ],
-        "disc_2pc": [
-          "Hormone Punk",
-          "White Water Ballad",
-          "Freedom Blues",
-          "Phaethon's Melody"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Best Overall",
           "Use w/ Astra"
@@ -1037,17 +920,8 @@
         "sub_stats": "CR (until capped) > CDMG = ATK%",
         "baseline": "ATK:\nATK Main Engine: 2800-3000+\nNon ATK Main Engine: 2500-2700+\n\nCR: 60-75%+\nMax 85% with Cordis, otherwise 100%\n\nCD: 120%+",
         "ability": "1.Basic\n1.Core\n2.EX Special\n2.Chain/Ult\n3.Assist\n4.Dodge\nBasic and Core are top priorities, followed by EX and Chain/Ult.",
-        "disc_4pc": [
-          "Hormone Punk",
-          "Freedom Blues",
-          "Moonlight Lullaby"
-        ],
-        "disc_2pc": [
-          "Hormone Punk",
-          "White Water Ballad",
-          "Puffer Electro",
-          "Shadow Harmony"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "With Cissia"
         ],
@@ -1098,18 +972,8 @@
         "sub_stats": "AP > ATK% > Flat PEN/ATK",
         "baseline": "ATK:\nATK Main Engine: 2500-2700+\nNon ATK Main Engine: 2200-2400+\n\nAP:\nAP Main Engine: 400-420+\nNon AP Main Engine: 330-350+",
         "ability": "1.Core\n2.EX Special\n2.Basic\n2.Chain/Ult\nOnly Core is needed, the rest of her abilities can be upgraded for more Daze and slightly more DMG scaling.",
-        "disc_4pc": [
-          "Puffer Electro",
-          "King of the Summit",
-          "Freedom Blues"
-        ],
-        "disc_2pc": [
-          "Freedom Blues",
-          "Puffer Electro",
-          "Hormone Punk",
-          "White Water Ballad",
-          "Thunder Metal"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Mono Shock (Electric)"
         ],
@@ -1160,15 +1024,8 @@
         "sub_stats": "CR%(til 80) > ATK% >= CDMG% > AP",
         "baseline": "ATK:\nSignature: 2700-3000+\nNon-Sig: 2500-2800+\nAM Disc 6: 2200-2500+\n\nCR: 68-80%+\nCD: 110-150%+\nNote: AP is a good stat in Yuzu ice",
         "ability": "1.Basic\n1.Core\n2.Chain/Ult\n3.EX Special\n4.Assist\n5.Dodge\nAll skills should be upgraded to take advantage of Crit stats and Skill's scaling",
-        "disc_4pc": [
-          "White Water Ballad"
-        ],
-        "disc_2pc": [
-          "Puffer Electro",
-          "White Water Ballad",
-          "Hormone Punk",
-          "Freedom Blues"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Best In Slot"
         ],
@@ -1235,13 +1092,8 @@
         "sub_stats": "CR% (Until Cap) > CDMG% = ATK%",
         "baseline": "ATK:\nATK Main Engine: 2800-3400+\nNon ATK Main Engine: 2700-3200+\n\nCR: 68-88%\nCD: 120-150%+",
         "ability": "1.Core\n1.EX Special\n1.Chain/Ult\n2.Basic\n2.Dodge\n2.Assist\nBasic Attack and Dodge is only need for Shiyu mobs and very specific DA Bosses. Ignore Assist",
-        "disc_4pc": [
-          "Hormone Punk"
-        ],
-        "disc_2pc": [
-          "Hormone Punk",
-          "White Water Ballad"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Best In Slot - Skill check",
           "Dialyn"
@@ -1291,13 +1143,8 @@
         "sub_stats": "AP = ATK% > Flat PEN/ATK",
         "baseline": "ATK:\nATK Main Engine: 2500-2700+\nNon ATK Main Engine: 2300-2500+\n\nAP:\nAP Main Engine: 400-420+\nNon AP Main Engine: 330-350+",
         "ability": "1.Core\n2.Basic\n3.EX Special\n3.Chain/Ult\n3.Dodge\n4.Assist\nOnly Core is needed, the rest of her abilities can be upgraded for more Daze and slightly more DMG scaling.",
-        "disc_4pc": [
-          "Puffer Electro"
-        ],
-        "disc_2pc": [
-          "Freedom Blues",
-          "Hormone Punk"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Jane's BIS"
         ],
@@ -1339,15 +1186,8 @@
         "sub_stats": "CR% (till 50%) > ATK% > Flat ATK",
         "baseline": "ATK: \nSignature: 3400 (Maxing core CD% buff)\nNon-signature: 3100-3300+\n\nCR: 50% (For KotS)",
         "ability": "1. Core\n2. Chain/Ult\n3. EX Special\n3. Assist\n3.Basic\n4. Dodge\nUpgrading Basic increases Hu Wei's Daze\nDodge is low priority",
-        "disc_4pc": [
-          "King of the Summit"
-        ],
-        "disc_2pc": [
-          "White Water Ballad",
-          "Puffer Electro",
-          "Astral Voice",
-          "King of the Summit"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "CD% for team",
           "Alternative for KotS"
@@ -1401,12 +1241,8 @@
         "sub_stats": "CR% = CDMG% > ATK%",
         "baseline": "Impact: 168-193\n\nCR: 50%\n(Needed if using 4pc King of the Summit)\n\nCD: 100%+",
         "ability": "1.Core\n1.EX Special\n2.Assist\n2.Basic\n2.Dodge\n3.Chain/Ult\nQuick-swap: Skip Dodge, Basic on low priority\nOn-field: Skip Assist",
-        "disc_4pc": [
-          "King of the Summit"
-        ],
-        "disc_2pc": [
-          "Astral Voice"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "CDMG% Buff"
         ],
@@ -1465,10 +1301,7 @@
         "baseline": "HP:\nHP main Engine: 17,000-20,000+\nNon HP main Engine: 15,000-17,000+\n\nCR: 54-63%\n\nCD: 130-150%+",
         "ability": "1.Core\n1.Chain/Ult\n1.Assist\n2.Basic\n3.EX Special\n4.Dodge\nDodge is low priority due to him rarely using this skill, all others are quite beneficial to level up",
         "disc_4pc": [],
-        "disc_2pc": [
-          "Hormone Punk",
-          "Freedom Blues"
-        ],
+        "disc_2pc": [],
         "disc_4pc_labels": [],
         "disc_2pc_labels": [],
         "w_engine_notes": "",
@@ -1508,13 +1341,8 @@
         "sub_stats": "CR% > CDMG%  > ATK%",
         "baseline": "Impact: 168-193\n\nCR: 50%+\n(Needed if using 4pc King of the Summit)\n\nCD: 100%+ (Optional)",
         "ability": "1.Core\n2.Assist\n2.EX Special\n3.Chain/Ult\n2.Basic\nDodge can be ignored",
-        "disc_4pc": [
-          "King of the Summit",
-          "Astral Voice"
-        ],
-        "disc_2pc": [
-          "Astral Voice"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "CDMG% Buff"
         ],
@@ -1550,12 +1378,8 @@
         "sub_stats": "HP% > Flat HP",
         "baseline": "HP: 22,000-24,000\n(24k for max Sheer Force buff)",
         "ability": "1. EX\n1. Core\n2. Chain/Ult\n2. Assist\nIt is highly recommended to cage EX to increase the Sheer Force buff. Dodge isn't used.\nPerfect Assist has high Daze. Upgrading Assist, Basic, and Chain increase her Aftershock DMG but can be ignored at low investment.",
-        "disc_4pc": [
-          "Freedom Blues"
-        ],
-        "disc_2pc": [
-          "Proto Punk"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Best in Slot"
         ],
@@ -1605,15 +1429,8 @@
         "sub_stats": "AP Build ATK%>AP/CR Build CR%=CDMG",
         "baseline": "ATK(more in note): 2367/ 2265/ 2083/ 1922\nfor EX Special level 11/ 12/ 14/ 16\n\nAP in Anomaly team: 250+\n \nCR: 50%+\nCD: 100%+\n*Only use AM in Miyabi+Lighter team",
         "ability": "1.EX Special\n2.Core\n3.Basic\n4.Chain/Ult\n5.Assist\n6.Dodge\nLucy's Boars' DMG is tied to Basic\nDodge can be ignored.",
-        "disc_4pc": [
-          "Freedom Blues",
-          "Moonlight Lullaby"
-        ],
-        "disc_2pc": [
-          "Astral Voice",
-          "Freedom Blues",
-          "Moonlight Lullaby"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [],
         "disc_2pc_labels": [],
         "w_engine_notes": "",
@@ -1655,17 +1472,8 @@
         "sub_stats": "AP >= ATK% > PEN >= Flat ATK",
         "baseline": "ATK: 2000-2500+\n\nAP: 300-330+",
         "ability": "1.Core\n1.Basic\n1.Ex Special\n1.Chain/Ult\n2.Assist\n3.Dodge\nDodge can be ignored",
-        "disc_4pc": [
-          "Phaethon's Melody",
-          "Freedom Blues"
-        ],
-        "disc_2pc": [
-          [
-            "Chaos Jazz",
-            "Freedom Blues"
-          ],
-          "Phaethon's Melody"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Best Choice"
         ],
@@ -1735,14 +1543,8 @@
         "sub_stats": "CR% = CD% > ATK%",
         "baseline": "ATK:\nATK Main Engine: 2800-3300+\nNon ATK Main Engine: 2700-3000+\n\nCR: 60-80%+\n\nCD: 130-160%+",
         "ability": "1.Core\n1.Chain/Ult\n1.EX Special\n2.Basic\n3.Dodge\n3.Assist\nNeko's damage comes from her Core, Chain and EX, her BA is also important the other ones just have high priority.",
-        "disc_4pc": [
-          "Hormone Punk",
-          "Puffer Electro"
-        ],
-        "disc_2pc": [
-          "White Water Ballad",
-          "Hormone Punk"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "If you have Dialyn",
           "On-field DPS"
@@ -1795,14 +1597,8 @@
         "sub_stats": "Anom build AP/ATK% | CR build ATK%/CR",
         "baseline": "CR: 50%+\n\nCD: 100%+\n\nATK: 2000+ \n\nAP in Anomaly teams: 250+",
         "ability": "1.Core\n2. Chain/Ult\n2. EX Special\nNicole's Power lies in her core, but upgrading EX and Chain/Ult is good for more Daze and some Crit DMG as you will use it often.\n\nAssist can be upgraded for some Daze, ignore Basic and Dodge.",
-        "disc_4pc": [
-          "Freedom Blues",
-          "Moonlight Lullaby"
-        ],
-        "disc_2pc": [
-          "Freedom Blues",
-          "Shadow Harmony"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [],
         "disc_2pc_labels": [
           "Team Buff on\n EX Special",
@@ -1862,14 +1658,8 @@
         "sub_stats": "CR% (until 100%) > CDMG% = ATK%",
         "baseline": "ATK: 2200-2500+\n\nCR: 43-75%\n(63% with Shadow Harmony)\n(43% with Shadow Harmony + Sig)\n\nCD: 120-150%+",
         "ability": "1. Core\n2. EX Special\n2. Chain/ult\n3. Basics\n4. Assist\n4. Dodge\nAssist and Dodge are low priority",
-        "disc_4pc": [
-          "Shadow Harmony",
-          "Moonlight Lullaby"
-        ],
-        "disc_2pc": [
-          "Shadow Harmony",
-          "King of the Summit"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Best In Slot",
           "Alternative Support Sets"
@@ -1905,15 +1695,8 @@
         "sub_stats": "ATK%>Flat ATK>>CR%/CD%",
         "baseline": "ATK: 3000  (to max out his buff at Core F)\n\nER: 2.49+",
         "ability": "1.Core\n2.Assist\n2.Ult\n2.EX Special\nCore is the most important,\nUlt can be leveled for \nmore healing while \nAssist can be levelled for \nextra Daze.\n\nBasic and Dodge is not used.",
-        "disc_4pc": [
-          "King of the Summit",
-          "Moonlight Lullaby"
-        ],
-        "disc_2pc": [
-          "Freedom Blues",
-          "Astral Voice",
-          "Proto Punk"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Better uptime",
           "If able to keep full stacks"
@@ -1957,14 +1740,8 @@
         "sub_stats": "AP = ATK% > Flat PEN/ATK",
         "baseline": "ATK:\nATK Main Engine: 2400-2550+\nNon ATK Main Engine: 2200-2400+\n\nAP:\nAP Main Engine: 350-400+\nNon AP Main Engine: 330-350+",
         "ability": "1.Core\n2.EX Special\n3.Basic\n3.Chain/Ult\n3.Dodge\n4.Assist\nOnly Core is needed, the rest of her abilities can be upgraded for more Daze and slightly more DMG scaling.",
-        "disc_4pc": [
-          "Puffer Electro"
-        ],
-        "disc_2pc": [
-          "Freedom Blues",
-          "Hormone Punk",
-          "Moonlight Lullaby"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Main DPS"
         ],
@@ -2008,11 +1785,10 @@
         "baseline": "ATK:\r\nATK Main Engine: 2600+\r\nNon ATK Main Engine: 2400+\r\n\r\nAP\r\nAP Main Engine: 370-400+\r\nNon AP Main Engine: 300-330+",
         "ability": "1. Core\n2.EX\n3.Ult\n4.Basic\n4.Assist\n4.Dodge\nHer most important skill is her Core. Everything else can be left on lower skill levels or upgraded for some extra daze/dmg",
         "disc_4pc": [
-          "King of the Summit"
+          "Polar Metal"
         ],
         "disc_2pc": [
-          "Freedom Blues",
-          "White Water Ballad"
+          "Phaethon's Melody"
         ],
         "disc_4pc_labels": [
           "Best in slot"
@@ -2030,21 +1806,40 @@
             "label": "Ice Cold Treats",
             "chars": [
               "Promeia",
-              "Alexandrina Sebastiane (Rina)"
+              "Lighter",
+              "Sunna"
             ]
           },
           {
             "label": "Purple Aesthetic",
             "chars": [
               "Promeia",
-              "Alexandrina Sebastiane (Rina)"
+              "Alexandrina Sebastiane (Rina)",
+              "Sunna"
             ]
           },
           {
             "label": "Chains and Blossoms",
             "chars": [
               "Promeia",
-              "Zhao"
+              "Zhao",
+              "Ukinami Yuzuha"
+            ]
+          },
+          {
+            "label": "Beauties and the Beast",
+            "chars": [
+              "Promeia",
+              "Von Lycaon",
+              "Nicole Demara"
+            ]
+          },
+          {
+            "label": "Generic Team Example",
+            "chars": [
+              "Promeia",
+              "Astra Yao",
+              "Ukinami Yuzuha"
             ]
           }
         ]
@@ -2064,14 +1859,8 @@
         "sub_stats": "CR%  > CD% > ATK%",
         "baseline": "Impact: 168-193\n\nCR: 50%+\n(Needed if using 4pc King of the Summit) \n\nCD: 100%+",
         "ability": "1.Core\n2.EX Special\n2.Assist\n2.Chain/Ult\nIgnore Basic and Dodge",
-        "disc_4pc": [
-          "King of the Summit",
-          "Astral Voice",
-          "Moonlight Lullaby"
-        ],
-        "disc_2pc": [
-          "Astral Voice"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "CD% buff",
           "Alternative support sets"
@@ -2139,14 +1928,8 @@
         "sub_stats": "CR% = CDMG% > ATK%",
         "baseline": "Impact: 168-193\n\nCR: 50%+\n(Needed if using 4pc King of the Summit) \n\nCD: 100%+",
         "ability": "1.Core\n1.Basic\n2.EX Special\n2.Chain/Ult\n3.Dodge\n4.Assist\nYou can Ignore Assist",
-        "disc_4pc": [
-          "King of the Summit",
-          "Astral Voice"
-        ],
-        "disc_2pc": [
-          "Astral Voice",
-          "Moonlight Lullaby"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "CDMG% Buff",
           "Stun Speed"
@@ -2199,14 +1982,8 @@
         "sub_stats": "ATK% > AP",
         "baseline": "ATK: 2200-2600+\n\nImpact: 110-127+",
         "ability": "1.Core\n2.Assist\n3.Basic\n3.EX Special\nOnly Core is needed for AP buff, Assist, EX and Basic can be upgraded for more Daze gain. Ultimate and Dodge can be ignored.",
-        "disc_4pc": [
-          "King of the Summit",
-          "Moonlight Lullaby"
-        ],
-        "disc_2pc": [
-          "Freedom Blues",
-          "Thunder Metal"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Better uptime",
           "If able to keep full stacks"
@@ -2259,13 +2036,8 @@
         "sub_stats": "CR% = CDMG% > ATK%",
         "baseline": "ATK:\nATK Main Engine: 2800-3100+ \nNon ATK Main Engine: 2700-3000+\n\nCR: 70-78%  \n66% for M2 Sanby\n\nCD: 120-160%+",
         "ability": "1.Core\n1.EX Special\n2.Chain/Ult\n2.Basic\n3.Dodge\n4.Assist\nS0 Anby's Aftershock is tied to Special Attack",
-        "disc_4pc": [
-          "Shadow Harmony"
-        ],
-        "disc_2pc": [
-          "Hormone Punk",
-          "Shadow Harmony"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Best In Slot"
         ],
@@ -2321,17 +2093,8 @@
         "sub_stats": "CR% > CDMG% = ATK%",
         "baseline": "ATK: \nATK% Main W-Engine: 3100-3300+\nNon-ATK% Main: 2600-3000+\n\nCR: 70-100%\n(72% cap for 4pc Inferno Metal)\n\nCD: 100-160%+",
         "ability": "1.Core\n1.Basic\n1.Chain/Ult\n1.EX Special\n1.Dodge\n2.Assist\nAssist is low priority, dodge is recommended for on-field play",
-        "disc_4pc": [
-          "Hormone Punk",
-          "Freedom Blues"
-        ],
-        "disc_2pc": [
-          "Hormone Punk",
-          "White Water Ballad",
-          "Shadow Harmony",
-          "King of the Summit",
-          "Puffer Electro"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "W/ Dialyn"
         ],
@@ -2380,13 +2143,8 @@
         "sub_stats": "ATK% till requirement >= CR% >= CDMG%",
         "baseline": "ATK:\nCore F: 2500+ \nCore E: 2623+ \nCore D: 2778+\nAP: 250+ (Optional and only useful for Yuzu Ice)\n\n *You only use AM in Mono Freeze",
         "ability": "1.Core\n1.EX Special\n2.Chain/Ult\n3.Assist\n4.Basic\n4.Dodge\nIgnore Basic and Dodge if using Soukaku purely as a Buffer.",
-        "disc_4pc": [
-          "Moonlight Lullaby",
-          "Freedom Blues"
-        ],
-        "disc_2pc": [
-          "Freedom Blues"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Buff on Quick Assist",
           "Mono Freeze"
@@ -2437,16 +2195,8 @@
         "sub_stats": "ATK% > Flat ATK",
         "baseline": "ATK: 3300 - 3500\n\nEnergy Regen:\nThoughtbop: 2.6\nKaboom the Cannon or stat stick: 2.5\nWeeping Cradle: 2.0",
         "ability": "1. Core\n2. EX\n2. Assist\n3. Ult\nPrioritize Core Skill to maximize buffs. Basic and Dodge are rarely used and can be ignored.",
-        "disc_4pc": [
-          "Moonlight Lullaby"
-        ],
-        "disc_2pc": [
-          "Swing Jazz",
-          [
-            "King of the Summit",
-            "Shockstar Disco"
-          ]
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [],
         "disc_2pc_labels": [],
         "w_engine_notes": "",
@@ -2471,16 +2221,8 @@
         "sub_stats": "CR% Highest priority > CD% = ATK%",
         "baseline": "CR: 60-90% - As close to 90% as \npossible is advised, not a strict must.\n\nImpact:\nWith Sig: ~162\nWithout Sig: 162~186",
         "ability": "1.Core\n1.Basic\n2.Chain/Ult\n2.EX Special\n3.Assist\n4.Dodge\nTrigger's Aftershock is tied to Basic Attack\n\nDodge can be ignored",
-        "disc_4pc": [
-          "King of the Summit",
-          "Moonlight Lullaby",
-          "Astral Voice"
-        ],
-        "disc_2pc": [
-          "Astral Voice",
-          "Puffer Electro",
-          "Shadow Harmony"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Team CDMG% buff",
           "DMG% buff",
@@ -2542,14 +2284,8 @@
         "sub_stats": "AP > ATK% > Flat PEN/ATK",
         "baseline": "ATK:\nATK Main Engine: 2500-2700+\nNon ATK Main Engine: 2300-2400+\n\nAP:\nAP Main Engine: 400-420+\nNon AP Main Engine: 350-375+",
         "ability": "1.Core\n1.EX Special\n1.Chain/Ult\n2.Basic\nUpgrading EX and Ultimate increase Additional DMG Multiplier\n\nBasic Attack is recommended for more Daze, Assist and Dodge have lower priority.",
-        "disc_4pc": [
-          "King of the Summit",
-          "Puffer Electro"
-        ],
-        "disc_2pc": [
-          "Freedom Blues",
-          "Hormone Punk"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Disorder Teams",
           "Mono-shock Teams"
@@ -2607,14 +2343,8 @@
         "sub_stats": "ATK% > Flat Atk > AP",
         "baseline": "ATK: 3000 (to max out buff at Core F)\n\nAM: 171",
         "ability": "1.Core\n2.Chain/Ult\n2.EX Special\n2.Basic\nCore, Ult, Basic and EX are the most important but Ult and Basic have priority over EX for Cage. Assist can be levelled for extra Daze while Dodge can be completely ignored.",
-        "disc_4pc": [
-          "Phaethon's Melody",
-          "Moonlight Lullaby"
-        ],
-        "disc_2pc": [
-          "Freedom Blues",
-          "Phaethon's Melody"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Overall best",
           "Hypercarry"
@@ -2672,13 +2402,8 @@
         "sub_stats": "AP >>> ATK% > Flat PEN/ATK",
         "baseline": "ATK:\nATK Main Engine: 2500-2700+\nNon ATK Main Engine: 2200-2400+\n\nAP: \nAP Main Engine: 400-430+ \nNon AP Main Engine: 350-370+",
         "ability": "1.Core\n2.Basic\n3.Chain/Ult\n3.EX Special\nOnly Core is needed, the rest of her abilities can be upgraded for more Daze and slightly more DMG scaling.",
-        "disc_4pc": [
-          "Freedom Blues"
-        ],
-        "disc_2pc": [
-          "Freedom Blues",
-          "Astral Voice"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Best in Slot"
         ],
@@ -2736,13 +2461,8 @@
         "sub_stats": "CR% = CDMG% > ATK%",
         "baseline": "Impact: 169-194\n\nCR: 50%+\n(Needed if using 4pc King of the Summit)\n\nCD: 100%+\n\nAP in Anomaly Team: 250+",
         "ability": "1.EX Special\n1.Assist\n1.Core\n1.Chain/Ult\n2.Basic\n3.Dodge\nDodge is the least in priority \nif Lycaon is used as a pure parry+EX bot.",
-        "disc_4pc": [
-          "King of the Summit",
-          "Moonlight Lullaby"
-        ],
-        "disc_2pc": [
-          "Astral Voice"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "CDMG% Buff"
         ],
@@ -2799,12 +2519,8 @@
         "sub_stats": "CR% (till 50%) > CD% = ATK% > PEN / ATK",
         "baseline": "ATK:\nATK Main W-engine: 3200-3400+\nNon-ATK Main W-engine: 2700-3000+\n\nCR: 50%*\n\nCD: 160-200%+",
         "ability": "1. Core\n1. Basic\n2. Chain/Ult\n3. EX Special\n3. Assist\n4. Dodge\nMost of Ye Shunguang damage comes from her Basic.\nAssist and Dodge has lower priority.",
-        "disc_4pc": [
-          "White Water Ballad"
-        ],
-        "disc_2pc": [
-          "White Water Ballad"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [],
         "disc_2pc_labels": [],
         "w_engine_notes": "",
@@ -2838,11 +2554,7 @@
         "baseline": "HP:\nHP Main Engine: 17k+ HP\nNon HP Main Engine: 15k+ HP\n\nCrit Rate¹: 64%/68%/78%/88%\n\nCrit Damage: 130%+",
         "ability": "1. Core\n2. EX\n3. Ult\n3. Basic\nDodge and Assist \ncan be ignored\nReference\nLuft\nRafe",
         "disc_4pc": [],
-        "disc_2pc": [
-          "Hormone Punk",
-          "Freedom Blues",
-          "Proto Punk"
-        ],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Best in slot"
         ],
@@ -2872,11 +2584,7 @@
         "baseline": "CR: 68-88%*\n\nCD: 130-150%+\n\nHP:\nHP Main Engine: 17,000-20,000+\nNon HP Main Engine: 15,000-17,000+\n(Prioritized CR/CD over HP!)",
         "ability": "1.Core\n1. Chain/Ult\n1.EX Special\n2.Basic\nUlt and Ex Special are most important but all skills can be upgraded to take advantage of Crit stats and Skill's scaling. Assist and Dodge are low priority",
         "disc_4pc": [],
-        "disc_2pc": [
-          "Hormone Punk",
-          "White Water Ballad",
-          "Moonlight Lullaby"
-        ],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Best in Slot"
         ],
@@ -2927,16 +2635,8 @@
         "sub_stats": "HP% > Flat HP",
         "baseline": "HP: \nHP Main Engine: 23,000 - 27,000\nNon HP Main Engine: 21,000 - 25,000+",
         "ability": "1. Core\n2. EX\n3. Ult\n3. Assist\n3. Basic\n6. Dodge\nPrioritize core. EX offers some healing while the rest are for daze. Dodge can be ignored.",
-        "disc_4pc": [
-          "King of the Summit",
-          "Moonlight Lullaby"
-        ],
-        "disc_2pc": [
-          "Freedom Blues",
-          "White Water Ballad",
-          "Phaethon's Melody",
-          "Puffer Electro"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Better uptime",
           "If able to keep full stacks"
@@ -2982,14 +2682,8 @@
         "sub_stats": "CR% = CDMG% > ATK%",
         "baseline": "ATK:\nATK Main Engine: 2800-3300+\nNon ATK Main Engine: 2700-3300+\n\nCR: 35-70%+\n\nCD: 150-200%+",
         "ability": "1.Basic\n1.Core\n2.Chain/Ult\n3.EX Special\n4.Dodge\n4.Assist\nDodge and Assist on low priority",
-        "disc_4pc": [
-          "Hormone Punk",
-          "Shadow Harmony"
-        ],
-        "disc_2pc": [
-          "Hormone Punk",
-          "White Water Ballad"
-        ],
+        "disc_4pc": [],
+        "disc_2pc": [],
         "disc_4pc_labels": [
           "Burst/Buff Manage"
         ],

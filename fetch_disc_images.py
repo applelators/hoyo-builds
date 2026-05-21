@@ -400,6 +400,8 @@ def resolve_via_vision(
         except Exception as exc:
             print(f"  [vision] error for {tok[:22]}: {exc}")
 
+    return result
+
 
 def apply_token_map(
     char_name:    str,
