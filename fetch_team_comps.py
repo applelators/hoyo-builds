@@ -43,7 +43,7 @@ IMG_H_MIN, IMG_H_MAX = 90,  145
 
 # x-range of team comp portrait columns
 TEAM_X_MIN = 200
-TEAM_X_MAX = 1550
+TEAM_X_MAX = 1950
 
 # x-range of team general / misc text (right side, not team comps)
 TEAM_MISC_X = 1500
@@ -58,6 +58,24 @@ PORTRAIT_OVERRIDES = {
     "Soldier 11 (Harin)":       "Agent_Soldier_11_Portrait.png",
     "Soldier 0 - Anby":         "Agent_Soldier_0_Portrait.png",
     "Luciana Auxesis Theodoro de Montefio (Lucy)": "Agent_Lucy_Portrait.png",
+}
+
+# Manually verified team comps — override automated detection on every run.
+_EXACT_OUTPUT: Dict[str, dict] = {
+    "Cissia": {"teams": [
+        {"label": "Ssseed",              "members": ["Cissia", "Flora (Seed)", "Dialyn"]},
+        {"label": "King Cobra",          "members": ["Cissia", "Dialyn", "Sunna"]},
+        {"label": "Food Chain",          "members": ["Cissia", "Trigger", "Nicole Demara"]},
+        {"label": "Brokie Hypercarry",   "members": ["Cissia", "Von Lycaon", "Nicole Demara"]},
+        {"label": "Generic Team Example","members": ["Cissia", "Seth Lowell", "Astra Yao"]},
+    ]},
+    "Nangong Yu": {"teams": [
+        {"label": "AoD: Lead(er) Dancer",               "members": ["Nangong Yu", "Aria", "Astra Yao"]},
+        {"label": "Brand-new Anomaly Wheelchair",       "members": ["Nangong Yu", "Burnice White", "Luciana Auxesis Theodoro de Montefio (Lucy)"]},
+        {"label": "Poppin' Ice",                        "members": ["Nangong Yu", "Ukinami Yuzuha", "Hoshimi Miyabi"]},
+        {"label": "Anything to fund the show (F2P)",    "members": ["Nangong Yu", "Piper Wheel", "Nicole Demara"]},
+        {"label": "Generic Team Example",               "members": ["Nangong Yu", "Lighter", "Astra Yao"]},
+    ]},
 }
 
 
@@ -501,6 +519,10 @@ async def main_async(args):
     for name, data in team_map.items():
         clean_map[name] = {"teams": [{"label": t["label"], "members": t["members"]}
                                       for t in data["teams"]]}
+    # Apply manually verified overrides last
+    for name, exact in _EXACT_OUTPUT.items():
+        if name in clean_map:
+            clean_map[name] = exact
     with open(OUTPUT, "w", encoding="utf-8") as fh:
         json.dump(clean_map, fh, indent=2, ensure_ascii=False)
     print(f"  Wrote {len(clean_map)} characters")
