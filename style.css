@@ -122,6 +122,32 @@ body {
 #search:focus { border-color: var(--accent); }
 #search::placeholder { color: var(--muted); }
 
+#element-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+}
+#element-filter:empty { display: none; }
+
+.elem-btn {
+  font-family: inherit;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: opacity 0.1s;
+}
+.elem-btn:hover { opacity: 0.8; }
+.elem-btn-all {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
 
 #char-list {
   list-style: none;

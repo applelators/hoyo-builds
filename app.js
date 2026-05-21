@@ -34,10 +34,37 @@ let zzzIconEntries = []; // [{name, url}] sorted by name from icons.json ZZZ sec
 let activeChar    = null;
 let activeBuildIdx = 0;
 let currentGame   = 'gi';   // 'gi' | 'hsr' | 'zzz'
+let filterElement = null;   // currently selected element filter, or null
 
 const $ = id => document.getElementById(id);
 
 const ELEMENT_ORDER = ['Physical', 'Fire', 'Electric', 'Ice', 'Ether'];
+
+const ELEMENT_ORDERS = {
+  gi:  ['Pyro', 'Hydro', 'Cryo', 'Electro', 'Anemo', 'Geo', 'Dendro'],
+  hsr: ['Fire', 'Ice', 'Wind', 'Lightning', 'Physical', 'Quantum', 'Imaginary', 'Elation'],
+  zzz: ['Physical', 'Fire', 'Electric', 'Ice', 'Ether'],
+};
+
+const ELEMENT_COLORS = {
+  Pyro:      ['#f87171', '#ef4444', false],
+  Hydro:     ['#60a5fa', '#3b82f6', false],
+  Cryo:      ['#67e8f9', '#22d3ee', true],
+  Electro:   ['#a78bfa', '#7c3aed', false],
+  Anemo:     ['#34d399', '#10b981', true],
+  Geo:       ['#fbbf24', '#d97706', true],
+  Dendro:    ['#86efac', '#16a34a', true],
+  Fire:      ['#f87171', '#ef4444', false],
+  Ice:       ['#67e8f9', '#22d3ee', true],
+  Wind:      ['#34d399', '#10b981', true],
+  Lightning: ['#a78bfa', '#7c3aed', false],
+  Physical:  ['#94a3b8', '#64748b', false],
+  Quantum:   ['#818cf8', '#6366f1', false],
+  Imaginary: ['#fde68a', '#ca8a04', true],
+  Elation:   ['#f472b6', '#db2777', false],
+  Electric:  ['#facc15', '#ca8a04', true],
+  Ether:     ['#c084fc', '#9333ea', false],
+};
 
 function zzzElementKey(char) {
   const i = ELEMENT_ORDER.indexOf(char.element || '');
@@ -114,6 +141,7 @@ async function init() {
   });
 
   updateSourceCredit(currentGame);
+  renderElementFilters();
   refreshList();
 }
 
@@ -139,7 +167,9 @@ function switchGame(game) {
   $('disc-ref-wrap').classList.toggle('hidden', game !== 'zzz');
   $('placeholder').classList.remove('hidden');
   $('search').value = '';
+  filterElement = null;
   updateSourceCredit(game);
+  renderElementFilters();
   refreshList();
 }
 
@@ -158,9 +188,58 @@ function releaseVersionLabel(char) {
   return entry && entry.version ? entry.version : '';
 }
 
+function charElement(char) {
+  if (currentGame === 'zzz') return char.element || '';
+  return ((releaseData[currentGame] || {})[char.name] || {}).element || '';
+}
+
+function renderElementFilters() {
+  const wrap = $('element-filter');
+  wrap.innerHTML = '';
+
+  const seen = new Set();
+  allChars.forEach(c => { const e = charElement(c); if (e) seen.add(e); });
+  if (seen.size === 0) return;
+
+  const order = ELEMENT_ORDERS[currentGame] || [];
+  const elems = order.filter(e => seen.has(e));
+
+  const allBtn = document.createElement('button');
+  allBtn.className = 'elem-btn' + (filterElement === null ? ' elem-btn-all' : '');
+  allBtn.textContent = 'All';
+  allBtn.addEventListener('click', () => { filterElement = null; renderElementFilters(); refreshList(); });
+  wrap.appendChild(allBtn);
+
+  elems.forEach(el => {
+    const col = ELEMENT_COLORS[el];
+    const isActive = filterElement === el;
+    const btn = document.createElement('button');
+    btn.className = 'elem-btn';
+    btn.textContent = el;
+    if (col) {
+      const [idle, active, dark] = col;
+      if (isActive) {
+        btn.style.background = active;
+        btn.style.borderColor = active;
+        btn.style.color = dark ? '#111' : '#fff';
+      } else {
+        btn.style.borderColor = idle + '60';
+        btn.style.color = idle;
+      }
+    }
+    btn.addEventListener('click', () => {
+      filterElement = filterElement === el ? null : el;
+      renderElementFilters();
+      refreshList();
+    });
+    wrap.appendChild(btn);
+  });
+}
+
 function refreshList() {
   const q = $('search').value.trim().toLowerCase();
   let list = q ? allChars.filter(c => c.name.toLowerCase().includes(q)) : [...allChars];
+  if (filterElement) list = list.filter(c => charElement(c) === filterElement);
   list.sort((a, b) => releaseKey(b) - releaseKey(a));
   renderList(list);
 }
