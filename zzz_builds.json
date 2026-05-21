@@ -1785,7 +1785,7 @@
         "baseline": "ATK:\r\nATK Main Engine: 2600+\r\nNon ATK Main Engine: 2400+\r\n\r\nAP\r\nAP Main Engine: 370-400+\r\nNon AP Main Engine: 300-330+",
         "ability": "1. Core\n2.EX\n3.Ult\n4.Basic\n4.Assist\n4.Dodge\nHer most important skill is her Core. Everything else can be left on lower skill levels or upgraded for some extra daze/dmg",
         "disc_4pc": [
-          "Polar Metal"
+          "Notes From the Chained"
         ],
         "disc_2pc": [
           "Phaethon's Melody"
@@ -1806,24 +1806,24 @@
             "label": "Ice Cold Treats",
             "chars": [
               "Promeia",
-              "Lighter",
-              "Sunna"
+              "Nangong Yu",
+              "Ukinami Yuzuha"
             ]
           },
           {
             "label": "Purple Aesthetic",
             "chars": [
               "Promeia",
-              "Alexandrina Sebastiane (Rina)",
-              "Sunna"
+              "Vivian Banshee",
+              "Ukinami Yuzuha"
             ]
           },
           {
             "label": "Chains and Blossoms",
             "chars": [
               "Promeia",
-              "Zhao",
-              "Ukinami Yuzuha"
+              "Vivian Banshee",
+              "Zhao"
             ]
           },
           {

@@ -76,6 +76,13 @@ _EXACT_OUTPUT: Dict[str, dict] = {
         {"label": "Anything to fund the show (F2P)",    "members": ["Nangong Yu", "Piper Wheel", "Nicole Demara"]},
         {"label": "Generic Team Example",               "members": ["Nangong Yu", "Lighter", "Astra Yao"]},
     ]},
+    "Promeia": {"teams": [
+        {"label": "Ice Cold Treats",        "members": ["Promeia", "Nangong Yu", "Ukinami Yuzuha"]},
+        {"label": "Purple Aesthetic",       "members": ["Promeia", "Vivian Banshee", "Ukinami Yuzuha"]},
+        {"label": "Chains and Blossoms",    "members": ["Promeia", "Vivian Banshee", "Zhao"]},
+        {"label": "Beauties and the Beast", "members": ["Promeia", "Von Lycaon", "Nicole Demara"]},
+        {"label": "Generic Team Example",   "members": ["Promeia", "Astra Yao", "Ukinami Yuzuha"]},
+    ]},
 }
 
 

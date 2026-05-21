@@ -59,6 +59,10 @@ _EXACT_OUTPUT: Dict[str, Dict] = {
         "2pc": ["Phaethon's Melody", ["Chaos Jazz", "Freedom Blues"],
                 ["Shining Aria", "Chaotic Metal"], "Puffer Electro"],
     },
+    "Promeia": {
+        "4pc": ["Notes From the Chained"],
+        "2pc": ["Phaethon's Melody"],
+    },
 }
 
 
