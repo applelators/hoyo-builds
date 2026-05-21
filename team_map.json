@@ -1546,12 +1546,18 @@
       {
         "label": "AoD: Lead(er) Dancer Nangong Yu!",
         "members": [
-          "Nangong Yu"
+          "Nangong Yu",
+          "Aria",
+          "Astra Yao"
         ]
       },
       {
         "label": "Brand-new Anomaly Wheelchair",
-        "members": []
+        "members": [
+          "Nangong Yu",
+          "Burnice White",
+          "Luciana Auxesis Theodoro de Montefio (Lucy)"
+        ]
       },
       {
         "label": "Poppin' Ice",
@@ -1564,13 +1570,17 @@
       {
         "label": "Anything to fund the show (F2P)",
         "members": [
-          "Nangong Yu"
+          "Nangong Yu",
+          "Piper Wheel",
+          "Nicole Demara"
         ]
       },
       {
         "label": "Generic Team Example",
         "members": [
-          "Nangong Yu"
+          "Nangong Yu",
+          "Lighter",
+          "Astra Yao"
         ]
       }
     ]
