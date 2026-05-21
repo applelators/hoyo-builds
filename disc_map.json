@@ -449,12 +449,14 @@
   "Nangong Yu": {
     "4pc": [
       "Phaethon's Melody",
-      "Freedom Blues",
-      "Astral Voice"
+      "Freedom Blues"
     ],
     "2pc": [
       "Phaethon's Melody",
-      "Astral Voice"
+      [
+        "Chaos Jazz",
+        "Freedom Blues"
+      ]
     ]
   },
   "Aria": {

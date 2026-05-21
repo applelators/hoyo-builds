@@ -1620,12 +1620,14 @@
         "ability": "1.Core\n1.Basic\n1.Ex Special\n1.Chain/Ult\n2.Assist\n3.Dodge\nDodge can be ignored",
         "disc_4pc": [
           "Phaethon's Melody",
-          "Freedom Blues",
-          "Astral Voice"
+          "Freedom Blues"
         ],
         "disc_2pc": [
           "Phaethon's Melody",
-          "Astral Voice"
+          [
+            "Chaos Jazz",
+            "Freedom Blues"
+          ]
         ],
         "disc_4pc_labels": [
           "Best Choice"
