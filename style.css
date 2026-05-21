@@ -264,6 +264,14 @@ body.game-zzz #char-portrait {
   font-weight: 700;
   letter-spacing: -0.5px;
   color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.char-tier-badge {
+  font-size: 11px;
+  padding: 2px 7px;
 }
 #char-meta {
   font-size: 11px;

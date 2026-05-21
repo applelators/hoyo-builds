@@ -330,7 +330,15 @@ function selectChar(char) {
   $('tier-btn').classList.remove('active');
   $('char-view').classList.remove('hidden');
 
-  $('char-name').textContent = toTitle(char.name);
+  const nameEl = $('char-name');
+  nameEl.textContent = toTitle(char.name);
+  const detailTier = charTier(char);
+  if (detailTier) {
+    const badge = document.createElement('span');
+    badge.className = `tier-badge tier-${detailTier.replace('.', '_')} char-tier-badge`;
+    badge.textContent = detailTier;
+    nameEl.appendChild(badge);
+  }
 
   const portraitWrap = $('char-portrait-wrap');
   const portraitEl   = $('char-portrait');
