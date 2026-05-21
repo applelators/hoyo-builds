@@ -20,7 +20,7 @@ WIKIS = {
 # ZZZ: Agent_NAME_Icon.png (283×307)
 ICON_OVERRIDES = {
     'gi': {
-        'TRAVELER': 'Character_Lumine_Thumb.png',
+        'Traveler': 'Character_Lumine_Thumb.png',
     },
     'hsr': {
         'Trailblazer':      'Character_Trailblazer_Icon.png',
@@ -85,15 +85,28 @@ def fetch_game_icons(game, chars):
             continue
         seen.add(name)
 
-        fname = overrides[name] if name in overrides else make_icon_filename(name, game)
-        url = fetch_url(wiki, fname)
-        time.sleep(0.25)
+        if name in overrides:
+            candidates = [overrides[name]]
+        else:
+            primary = make_icon_filename(name, game)
+            if game == 'gi':
+                wiki_name = to_wiki_name(name, game)
+                candidates = [primary, f'{wiki_name}_Avatar.png', f'{wiki_name}_Card.png']
+            else:
+                candidates = [primary]
+
+        url = None
+        for fname in candidates:
+            url = fetch_url(wiki, fname)
+            time.sleep(0.25)
+            if url:
+                break
 
         if url:
             results[name] = url
             print(f'  ✓  {name}')
         else:
-            print(f'  ✗  {name} (tried: {fname})')
+            print(f'  ✗  {name} (tried: {", ".join(candidates)})')
 
     return results
 
