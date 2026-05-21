@@ -189,13 +189,14 @@ function renderList(chars) {
 
     const metaSpan = document.createElement('span');
     metaSpan.className = 'li-ver';
+    const rdMeta = (releaseData[currentGame] || {})[char.name] || {};
     if (currentGame === 'gi') {
       const relVer = releaseVersionLabel(char);
-      const parts = [char.element, relVer].filter(Boolean);
+      const parts = [rdMeta.element, relVer].filter(Boolean);
       metaSpan.textContent = parts.join(' · ');
     } else if (currentGame === 'hsr') {
       const relVer = releaseVersionLabel(char);
-      const parts = [char.element, char.path, relVer].filter(Boolean);
+      const parts = [rdMeta.element, char.path, relVer].filter(Boolean);
       metaSpan.textContent = parts.join(' · ');
     } else {
       const relVer = releaseVersionLabel(char);
