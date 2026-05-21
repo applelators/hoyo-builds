@@ -1,6 +1,6 @@
 [
   {
-    "name": "Alexandrina Sebastiane (Rina)",
+    "name": "Rina",
     "specialty": "Support",
     "element": "Electric",
     "last_updated": "2.1",
@@ -59,7 +59,7 @@
     ]
   },
   {
-    "name": "Alice Thymefield",
+    "name": "Alice",
     "specialty": "Anomaly",
     "element": "Physical",
     "last_updated": "2.7",
@@ -109,7 +109,7 @@
     ]
   },
   {
-    "name": "Anby Demara",
+    "name": "Anby",
     "specialty": "Stun",
     "element": "Electric",
     "last_updated": "2.0",
@@ -153,7 +153,7 @@
     ]
   },
   {
-    "name": "Anton Ivanov",
+    "name": "Anton",
     "specialty": "Attack",
     "element": "Electric",
     "last_updated": "2.4",
@@ -252,7 +252,7 @@
     ]
   },
   {
-    "name": "Asaba Harumasa",
+    "name": "Harumasa",
     "specialty": "Attack",
     "element": "Electric",
     "last_updated": "2.6",
@@ -407,7 +407,7 @@
     ]
   },
   {
-    "name": "Ben Bigger",
+    "name": "Ben",
     "specialty": "Defense",
     "element": "Fire",
     "last_updated": "2.7",
@@ -459,7 +459,7 @@
     ]
   },
   {
-    "name": "Billy Kid",
+    "name": "Billy",
     "specialty": "Attack",
     "element": "Physical",
     "last_updated": "2.4",
@@ -520,7 +520,7 @@
     ]
   },
   {
-    "name": "Burnice White",
+    "name": "Burnice",
     "specialty": "Anomaly",
     "element": "Fire",
     "last_updated": "2.5",
@@ -573,7 +573,7 @@
     ]
   },
   {
-    "name": "Caesar King",
+    "name": "Caesar",
     "specialty": "Defense",
     "element": "Physical",
     "last_updated": "2.7",
@@ -693,7 +693,7 @@
     ]
   },
   {
-    "name": "Corin Wickes",
+    "name": "Corin",
     "specialty": "Attack",
     "element": "Physical",
     "last_updated": "2.4",
@@ -797,7 +797,7 @@
     ]
   },
   {
-    "name": "Ellen Joe",
+    "name": "Ellen",
     "specialty": "Attack",
     "element": "Ice",
     "last_updated": "2.4",
@@ -841,7 +841,7 @@
     ]
   },
   {
-    "name": "Evelyn Chevalier",
+    "name": "Evelyn",
     "specialty": "Attack",
     "element": "Fire",
     "last_updated": "2.4",
@@ -908,7 +908,7 @@
     ]
   },
   {
-    "name": "Flora (Seed)",
+    "name": "Seed",
     "specialty": "Attack",
     "element": "Physical",
     "last_updated": "2.7",
@@ -960,7 +960,7 @@
     ]
   },
   {
-    "name": "Grace Howard",
+    "name": "Grace",
     "specialty": "Anomaly",
     "element": "Electric",
     "last_updated": "2.7",
@@ -1012,7 +1012,7 @@
     ]
   },
   {
-    "name": "Hoshimi Miyabi",
+    "name": "Miyabi",
     "specialty": "Anomaly",
     "element": "Ice",
     "last_updated": "2.7",
@@ -1080,7 +1080,7 @@
     ]
   },
   {
-    "name": "Hugo Vlad",
+    "name": "Hugo",
     "specialty": "Attack",
     "element": "Electric",
     "last_updated": "2.6",
@@ -1229,7 +1229,7 @@
     ]
   },
   {
-    "name": "Koleda Belobog",
+    "name": "Koleda",
     "specialty": "Stun",
     "element": "Fire",
     "last_updated": "2.3",
@@ -1288,7 +1288,7 @@
     ]
   },
   {
-    "name": "Komano Manato",
+    "name": "Manato",
     "specialty": "Rupture",
     "element": "Fire",
     "last_updated": "2.8",
@@ -1366,7 +1366,7 @@
     ]
   },
   {
-    "name": "Lucia Elowen",
+    "name": "Lucia",
     "specialty": "Support",
     "element": "Ice",
     "last_updated": "2.3",
@@ -1417,7 +1417,7 @@
     ]
   },
   {
-    "name": "Luciana Auxesis Theodoro de Montefio (Lucy)",
+    "name": "Lucy",
     "specialty": "Support",
     "element": "Fire",
     "last_updated": "2.6",
@@ -1531,7 +1531,7 @@
     ]
   },
   {
-    "name": "Nekomiya Mana",
+    "name": "Nekomata",
     "specialty": "Attack",
     "element": "Physical",
     "last_updated": "2.7",
@@ -1585,7 +1585,7 @@
     ]
   },
   {
-    "name": "Nicole Demara",
+    "name": "Nicole",
     "specialty": "Support",
     "element": "Ether",
     "last_updated": "2.2",
@@ -1646,7 +1646,7 @@
     ]
   },
   {
-    "name": "Orphie Magnusson & Magus",
+    "name": "Orphie & Magus",
     "specialty": "Attacker",
     "element": "Ice",
     "last_updated": "2.2",
@@ -1728,7 +1728,7 @@
     ]
   },
   {
-    "name": "Piper Wheel",
+    "name": "Piper",
     "specialty": "Anomaly",
     "element": "Physical",
     "last_updated": "2.7",
@@ -1847,7 +1847,7 @@
     ]
   },
   {
-    "name": "Pulchra Fellini",
+    "name": "Pulchra",
     "specialty": "Stun",
     "element": "Physical",
     "last_updated": "Patch 2.6",
@@ -1970,7 +1970,7 @@
     ]
   },
   {
-    "name": "Seth Lowell",
+    "name": "Seth",
     "specialty": "Defense",
     "element": "Electric",
     "last_updated": "2.7",
@@ -2024,7 +2024,7 @@
     ]
   },
   {
-    "name": "Soldier 0 - Anby",
+    "name": "Anby: Soldier 0",
     "specialty": "Attack",
     "element": "Electric",
     "last_updated": "2.4",
@@ -2081,7 +2081,7 @@
     ]
   },
   {
-    "name": "Soldier 11 (Harin)",
+    "name": "Soldier 11",
     "specialty": "Attack",
     "element": "Fire",
     "last_updated": "2.6",
@@ -2272,7 +2272,7 @@
     ]
   },
   {
-    "name": "Tsukishiro Yanagi",
+    "name": "Yanagi",
     "specialty": "Anomaly",
     "element": "Electric",
     "last_updated": "2.7",
@@ -2331,7 +2331,7 @@
     ]
   },
   {
-    "name": "Ukinami Yuzuha",
+    "name": "Yuzuha",
     "specialty": "Support",
     "element": "Electric",
     "last_updated": "2.7",
@@ -2390,7 +2390,7 @@
     ]
   },
   {
-    "name": "Vivian Banshee",
+    "name": "Vivian",
     "specialty": "Anomaly",
     "element": "Ether",
     "last_updated": "2.1",
@@ -2449,7 +2449,7 @@
     ]
   },
   {
-    "name": "Von Lycaon",
+    "name": "Lycaon",
     "specialty": "Stun",
     "element": "Ice",
     "last_updated": "2.6",
@@ -2541,7 +2541,7 @@
     ]
   },
   {
-    "name": "Yidhari Murphy",
+    "name": "Yidhari",
     "specialty": "Rupture",
     "element": "Ice",
     "last_updated": "2.5",

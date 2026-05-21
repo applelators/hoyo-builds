@@ -52,36 +52,36 @@ TEAMCOMP_GAP_MAX = 60
 
 # Characters whose portrait filename differs from the normalised pattern.
 PORTRAIT_OVERRIDES = {
-    "Flora (Seed)":             "Agent_Seed_Portrait.png",
-    "Orphie Magnusson & Magus": "Agent_Orphie_Magnusson_%26_Magus_Portrait.png",
-    "Alexandrina Sebastiane (Rina)": "Agent_Rina_Portrait.png",
-    "Soldier 11 (Harin)":       "Agent_Soldier_11_Portrait.png",
-    "Soldier 0 - Anby":         "Agent_Soldier_0_Portrait.png",
-    "Luciana Auxesis Theodoro de Montefio (Lucy)": "Agent_Lucy_Portrait.png",
+    "Seed":             "Agent_Seed_Portrait.png",
+    "Orphie & Magus":   "Agent_Orphie_Magnusson_%26_Magus_Portrait.png",
+    "Rina":             "Agent_Rina_Portrait.png",
+    "Soldier 11":       "Agent_Soldier_11_Portrait.png",
+    "Anby: Soldier 0":  "Agent_Soldier_0_Portrait.png",
+    "Lucy":             "Agent_Lucy_Portrait.png",
 }
 
 # Manually verified team comps — override automated detection on every run.
 _EXACT_OUTPUT: Dict[str, dict] = {
     "Cissia": {"teams": [
-        {"label": "Ssseed",              "members": ["Cissia", "Flora (Seed)", "Dialyn"]},
+        {"label": "Ssseed",              "members": ["Cissia", "Seed", "Dialyn"]},
         {"label": "King Cobra",          "members": ["Cissia", "Dialyn", "Sunna"]},
-        {"label": "Food Chain",          "members": ["Cissia", "Trigger", "Nicole Demara"]},
-        {"label": "Brokie Hypercarry",   "members": ["Cissia", "Von Lycaon", "Nicole Demara"]},
-        {"label": "Generic Team Example","members": ["Cissia", "Seth Lowell", "Astra Yao"]},
+        {"label": "Food Chain",          "members": ["Cissia", "Trigger", "Nicole"]},
+        {"label": "Brokie Hypercarry",   "members": ["Cissia", "Lycaon", "Nicole"]},
+        {"label": "Generic Team Example","members": ["Cissia", "Seth", "Astra Yao"]},
     ]},
     "Nangong Yu": {"teams": [
         {"label": "AoD: Lead(er) Dancer",               "members": ["Nangong Yu", "Aria", "Astra Yao"]},
-        {"label": "Brand-new Anomaly Wheelchair",       "members": ["Nangong Yu", "Burnice White", "Luciana Auxesis Theodoro de Montefio (Lucy)"]},
-        {"label": "Poppin' Ice",                        "members": ["Nangong Yu", "Ukinami Yuzuha", "Hoshimi Miyabi"]},
-        {"label": "Anything to fund the show (F2P)",    "members": ["Nangong Yu", "Piper Wheel", "Nicole Demara"]},
+        {"label": "Brand-new Anomaly Wheelchair",       "members": ["Nangong Yu", "Burnice", "Lucy"]},
+        {"label": "Poppin' Ice",                        "members": ["Nangong Yu", "Yuzuha", "Miyabi"]},
+        {"label": "Anything to fund the show (F2P)",    "members": ["Nangong Yu", "Piper", "Nicole"]},
         {"label": "Generic Team Example",               "members": ["Nangong Yu", "Lighter", "Astra Yao"]},
     ]},
     "Promeia": {"teams": [
-        {"label": "Ice Cold Treats",        "members": ["Promeia", "Nangong Yu", "Ukinami Yuzuha"]},
-        {"label": "Purple Aesthetic",       "members": ["Promeia", "Vivian Banshee", "Ukinami Yuzuha"]},
-        {"label": "Chains and Blossoms",    "members": ["Promeia", "Vivian Banshee", "Zhao"]},
-        {"label": "Beauties and the Beast", "members": ["Promeia", "Von Lycaon", "Nicole Demara"]},
-        {"label": "Generic Team Example",   "members": ["Promeia", "Astra Yao", "Ukinami Yuzuha"]},
+        {"label": "Ice Cold Treats",        "members": ["Promeia", "Nangong Yu", "Yuzuha"]},
+        {"label": "Purple Aesthetic",       "members": ["Promeia", "Vivian", "Yuzuha"]},
+        {"label": "Chains and Blossoms",    "members": ["Promeia", "Vivian", "Zhao"]},
+        {"label": "Beauties and the Beast", "members": ["Promeia", "Lycaon", "Nicole"]},
+        {"label": "Generic Team Example",   "members": ["Promeia", "Astra Yao", "Yuzuha"]},
     ]},
 }
 

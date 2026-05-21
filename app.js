@@ -35,6 +35,7 @@ let activeChar    = null;
 let activeBuildIdx = 0;
 let currentGame   = 'gi';   // 'gi' | 'hsr' | 'zzz'
 let filterElement = null;   // currently selected element filter, or null
+let tiersData     = {};     // {gi: {name: tier}, hsr: {…}, zzz: {…}}
 
 const $ = id => document.getElementById(id);
 
@@ -81,7 +82,7 @@ function zzzSortedChars() {
 
 // ── boot ─────────────────────────────────────────────────────
 async function init() {
-  const [gi, hsr, zzz, pts, ico, rel, di] = await Promise.all([
+  const [gi, hsr, zzz, pts, ico, rel, di, tiers] = await Promise.all([
     fetch('builds.json').then(r => r.json()),
     fetch('hsr_builds.json').then(r => r.json()),
     fetch('zzz_builds.json').then(r => r.json()),
@@ -89,6 +90,7 @@ async function init() {
     fetch('icons.json').then(r => r.json()).catch(() => ({})),
     fetch('release_data.json').then(r => r.json()).catch(() => ({})),
     fetch('disc_icons.json').then(r => r.json()).catch(() => ({})),
+    fetch('tiers.json').then(r => r.json()).catch(() => ({})),
   ]);
   giChars  = gi;
   hsrChars = hsr;
@@ -97,6 +99,7 @@ async function init() {
   icons = ico;
   releaseData = rel;
   discIconNames = Object.keys(di).sort();
+  tiersData = tiers;
   zzzIconEntries = Object.entries(ico.zzz || {}).sort((a, b) => a[0].localeCompare(b[0]));
   allChars = giChars;
 
@@ -112,15 +115,18 @@ async function init() {
     $('disc-ref-view').classList.add('hidden');
     $('char-ref-view').classList.add('hidden');
     $('audit-view').classList.add('hidden');
+    $('tier-view').classList.add('hidden');
     $('disc-ref-btn').classList.remove('active');
     $('char-ref-btn').classList.remove('active');
     $('audit-btn').classList.remove('active');
+    $('tier-btn').classList.remove('active');
     $('placeholder').classList.remove('hidden');
   });
 
   $('disc-ref-btn').addEventListener('click', showDiscReference);
   $('char-ref-btn').addEventListener('click', showCharReference);
   $('audit-btn').addEventListener('click', showAuditView);
+  $('tier-btn').addEventListener('click', showTierView);
 
   $('audit-view').addEventListener('click', e => {
     if (e.target.id === 'audit-export-btn') { copyFlagged(e.target); return; }
@@ -161,9 +167,11 @@ function switchGame(game) {
   $('disc-ref-view').classList.add('hidden');
   $('char-ref-view').classList.add('hidden');
   $('audit-view').classList.add('hidden');
+  $('tier-view').classList.add('hidden');
   $('disc-ref-btn').classList.remove('active');
   $('char-ref-btn').classList.remove('active');
   $('audit-btn').classList.remove('active');
+  $('tier-btn').classList.remove('active');
   $('disc-ref-wrap').classList.toggle('hidden', game !== 'zzz');
   $('placeholder').classList.remove('hidden');
   $('search').value = '';
@@ -285,6 +293,15 @@ function renderList(chars) {
 
     li.appendChild(nameSpan);
     li.appendChild(metaSpan);
+
+    const tier = charTier(char);
+    if (tier) {
+      const badge = document.createElement('span');
+      badge.className = `tier-badge tier-${tier.replace('.', '_')}`;
+      badge.textContent = tier;
+      li.appendChild(badge);
+    }
+
     ul.appendChild(li);
   });
   if (activeChar) highlightActive(activeChar);
@@ -306,9 +323,11 @@ function selectChar(char) {
   $('disc-ref-view').classList.add('hidden');
   $('char-ref-view').classList.add('hidden');
   $('audit-view').classList.add('hidden');
+  $('tier-view').classList.add('hidden');
   $('disc-ref-btn').classList.remove('active');
   $('char-ref-btn').classList.remove('active');
   $('audit-btn').classList.remove('active');
+  $('tier-btn').classList.remove('active');
   $('char-view').classList.remove('hidden');
 
   $('char-name').textContent = toTitle(char.name);
@@ -693,46 +712,13 @@ function zzzDiscCard(build) {
 }
 
 const ZZZ_SHORT = {
-  'Alexandrina Sebastiane (Rina)': 'Rina',
-  'Asaba Harumasa': 'Harumasa',
-  'Tsukishiro Yanagi': 'Yanagi',
-  'Ukinami Yuzuha': 'Yuzuha',
-  'Hoshimi Miyabi': 'Miyabi',
-  'Luciana Auxesis Theodoro de Montefio (Lucy)': 'Lucy',
-  'Komano Manato': 'Manato',
-  'Koleda Belobog': 'Koleda',
-  'Nekomiya Mana': 'Mana',
-  'Alice Thymefield': 'Alice',
-  'Von Lycaon': 'Lycaon',
-  'Evelyn Chevalier': 'Evelyn',
-  'Soldier 11 (Harin)': 'S11',
-  'Soldier 0 - Anby': 'S0-Anby',
-  'Flora (Seed)': 'Seed',
-  'Grace Howard': 'Grace',
-  'Jane Doe': 'Jane',
-  'Ellen Joe': 'Ellen',
-  'Piper Wheel': 'Piper',
-  'Corin Wickes': 'Corin',
-  'Nicole Demara': 'Nicole',
-  'Anby Demara': 'Anby',
-  'Billy Kid': 'Billy',
-  'Seth Lowell': 'Seth',
-  'Ju Fufu': 'Fufu',
-  'Orphie Magnusson & Magus': 'Orphie',
-  'Burnice White': 'Burnice',
-  'Caesar King': 'Caesar',
-  'Pulchra Fellini': 'Pulchra',
-  'Vivian Banshee': 'Vivian',
-  'Yidhari Murphy': 'Yidhari',
-  'Hugo Vlad': 'Hugo',
-  'Lucia Elowen': 'Lucia',
-  'Astra Yao': 'Astra',
-  'Anton Ivanov': 'Anton',
-  'Ben Bigger': 'Ben',
-  'Zhu Yuan': 'Zhu Yuan',
-  'Nangong Yu': 'Nangong',
-  'Ye Shunguang': 'Shunguang',
-  'Pan Yinhu': 'Pan Yinhu',
+  'Soldier 11':      'S11',
+  'Anby: Soldier 0': 'S0-Anby',
+  'Jane Doe':        'Jane',
+  'Orphie & Magus':  'Orphie',
+  'Astra Yao':       'Astra',
+  'Nangong Yu':      'Nangong',
+  'Zhu Yuan':        'Zhu Yuan',
 };
 
 function zzzShortName(n) {
@@ -781,8 +767,10 @@ function showDiscReference() {
   $('char-view').classList.add('hidden');
   $('char-ref-view').classList.add('hidden');
   $('audit-view').classList.add('hidden');
+  $('tier-view').classList.add('hidden');
   $('char-ref-btn').classList.remove('active');
   $('audit-btn').classList.remove('active');
+  $('tier-btn').classList.remove('active');
   $('disc-ref-btn').classList.add('active');
   document.body.classList.add('viewing-char');
   $('back-btn').classList.remove('hidden');
@@ -809,8 +797,10 @@ function showCharReference() {
   $('char-view').classList.add('hidden');
   $('disc-ref-view').classList.add('hidden');
   $('audit-view').classList.add('hidden');
+  $('tier-view').classList.add('hidden');
   $('disc-ref-btn').classList.remove('active');
   $('audit-btn').classList.remove('active');
+  $('tier-btn').classList.remove('active');
   $('char-ref-btn').classList.add('active');
   document.body.classList.add('viewing-char');
   $('back-btn').classList.remove('hidden');
@@ -857,8 +847,10 @@ function showAuditView() {
   $('char-view').classList.add('hidden');
   $('disc-ref-view').classList.add('hidden');
   $('char-ref-view').classList.add('hidden');
+  $('tier-view').classList.add('hidden');
   $('disc-ref-btn').classList.remove('active');
   $('char-ref-btn').classList.remove('active');
+  $('tier-btn').classList.remove('active');
   $('audit-btn').classList.add('active');
   document.body.classList.add('viewing-char');
   $('back-btn').classList.remove('hidden');
@@ -1040,6 +1032,66 @@ function colorize(html) {
     }
     return line;
   }).join('\n');
+}
+
+// ── tier list ────────────────────────────────────────────────
+function charTier(char) {
+  return (tiersData[currentGame] || {})[char.name] || null;
+}
+
+const TIER_ORDER = ['T0', 'T0.5', 'T1', 'T1.5', 'T2', 'T3', 'T4'];
+
+function showTierView() {
+  $('placeholder').classList.add('hidden');
+  $('char-view').classList.add('hidden');
+  $('disc-ref-view').classList.add('hidden');
+  $('char-ref-view').classList.add('hidden');
+  $('audit-view').classList.add('hidden');
+  $('disc-ref-btn').classList.remove('active');
+  $('char-ref-btn').classList.remove('active');
+  $('audit-btn').classList.remove('active');
+  $('tier-btn').classList.add('active');
+  document.body.classList.add('viewing-char');
+  $('back-btn').classList.remove('hidden');
+  activeChar = null;
+  $('tier-view').classList.remove('hidden');
+  renderTierView();
+  $('content').scrollTop = 0;
+}
+
+function renderTierView() {
+  const gameTiers = tiersData[currentGame] || {};
+  const gameIcons = icons[currentGame] || {};
+
+  const byTier = {};
+  for (const char of allChars) {
+    const t = gameTiers[char.name] || 'Unranked';
+    if (!byTier[t]) byTier[t] = [];
+    byTier[t].push(char);
+  }
+
+  const orderedTiers = [...TIER_ORDER.filter(t => byTier[t]), ...(byTier['Unranked'] ? ['Unranked'] : [])];
+
+  let html = '<div class="disc-ref-header">tier list</div>';
+  for (const tier of orderedTiers) {
+    const chars = byTier[tier].sort((a, b) => a.name.localeCompare(b.name));
+    const cls = `tier-${tier.replace('.', '_')}`;
+    html += `<div class="tier-section">`;
+    html += `<div class="tier-section-header ${cls}">${escHtml(tier)}</div>`;
+    html += `<div class="tier-char-grid">`;
+    for (const char of chars) {
+      const iconUrl = gameIcons[char.name];
+      html += `<div class="tier-char-chip">`;
+      if (iconUrl) {
+        html += `<img class="tier-char-icon" src="${escHtml(iconUrl)}" alt="" referrerpolicy="no-referrer">`;
+      }
+      html += `<span class="tier-char-name">${escHtml(char.name)}</span>`;
+      html += `</div>`;
+    }
+    html += `</div></div>`;
+  }
+
+  $('tier-view').innerHTML = html;
 }
 
 // ── utilities ─────────────────────────────────────────────────

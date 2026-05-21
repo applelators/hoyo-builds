@@ -49,7 +49,7 @@
         "label": "Astranomical Qingming force",
         "members": [
           "Ye Shunguang",
-          "Evelyn Chevalier"
+          "Evelyn"
         ]
       },
       {
@@ -99,111 +99,111 @@
       }
     ]
   },
-  "Alice Thymefield": {
+  "Alice": {
     "teams": [
       {
         "label": "Bunny's Fateful Mischief",
         "members": [
-          "Ukinami Yuzuha",
-          "Alice Thymefield"
+          "Yuzuha",
+          "Alice"
         ]
       },
       {
         "label": "Symmetrical Summer",
         "members": [
           "Banyue",
-          "Flora (Seed)"
+          "Seed"
         ]
       },
       {
         "label": "Critical Summer Assault",
         "members": [
-          "Asaba Harumasa",
-          "Flora (Seed)"
+          "Harumasa",
+          "Seed"
         ]
       },
       {
         "label": "Absolute Symmetry (Pick your Support)",
         "members": [
-          "Alice Thymefield"
+          "Alice"
         ]
       },
       {
         "label": "Generic Team Example",
         "members": [
-          "Alice Thymefield"
+          "Alice"
         ]
       }
     ]
   },
-  "Ukinami Yuzuha": {
+  "Yuzuha": {
     "teams": [
       {
         "label": "New Anomaly Wheelchair",
         "members": [
-          "Ukinami Yuzuha",
-          "Tsukishiro Yanagi"
+          "Yuzuha",
+          "Yanagi"
         ]
       },
       {
         "label": "Happy Halloween",
         "members": [
-          "Ukinami Yuzuha",
-          "Vivian Banshee",
+          "Yuzuha",
+          "Vivian",
           "Jane Doe"
         ]
       },
       {
         "label": "No Astra? No Problem",
         "members": [
-          "Ukinami Yuzuha",
+          "Yuzuha",
           "Qingyi"
         ]
       },
       {
         "label": "Taking Candy from a Baby",
         "members": [
-          "Ukinami Yuzuha",
-          "Piper Wheel"
+          "Yuzuha",
+          "Piper"
         ]
       },
       {
         "label": "Generic Team Example",
         "members": [
-          "Ukinami Yuzuha"
+          "Yuzuha"
         ]
       }
     ]
   },
-  "Caesar King": {
+  "Caesar": {
     "teams": [
       {
         "label": "Mono Physical no Dialyn Version",
         "members": [
           "Sunna",
-          "Caesar King"
+          "Caesar"
         ]
       },
       {
         "label": "Spontaneous Combustion",
         "members": [
-          "Burnice White",
+          "Burnice",
           "Jane Doe",
-          "Caesar King"
+          "Caesar"
         ]
       },
       {
         "label": "Megalodon",
         "members": [
-          "Caesar King"
+          "Caesar"
         ]
       },
       {
         "label": "Shower Scene",
         "members": [
-          "Burnice White",
-          "Piper Wheel",
-          "Caesar King"
+          "Burnice",
+          "Piper",
+          "Caesar"
         ]
       },
       {
@@ -218,7 +218,7 @@
         "label": "Citizen's Support",
         "members": [
           "Jane Doe",
-          "Ukinami Yuzuha"
+          "Yuzuha"
         ]
       },
       {
@@ -243,22 +243,22 @@
       }
     ]
   },
-  "Nekomiya Mana": {
+  "Nekomata": {
     "teams": [
       {
         "label": "Neko got a phone",
         "members": [
-          "Nekomiya Mana",
+          "Nekomata",
           "Dialyn",
-          "Evelyn Chevalier"
+          "Evelyn"
         ]
       },
       {
         "label": "Highway Robbery",
         "members": [
-          "Nekomiya Mana",
-          "Evelyn Chevalier",
-          "Nicole Demara"
+          "Nekomata",
+          "Evelyn",
+          "Nicole"
         ]
       },
       {
@@ -268,15 +268,15 @@
       {
         "label": "Stunning Hares",
         "members": [
-          "Nekomiya Mana",
-          "Anby Demara",
-          "Nicole Demara"
+          "Nekomata",
+          "Anby",
+          "Nicole"
         ]
       },
       {
         "label": "Generic Team Example",
         "members": [
-          "Nekomiya Mana"
+          "Nekomata"
         ]
       }
     ]
@@ -292,7 +292,7 @@
       {
         "label": "Panda Express",
         "members": [
-          "Komano Manato",
+          "Manato",
           "Pan Yinhu"
         ]
       },
@@ -318,29 +318,29 @@
       }
     ]
   },
-  "Pulchra Fellini": {
+  "Pulchra": {
     "teams": [
       {
         "label": "Premium Cat",
         "members": [
-          "Nekomiya Mana",
-          "Flora (Seed)",
-          "Evelyn Chevalier"
+          "Nekomata",
+          "Seed",
+          "Evelyn"
         ]
       },
       {
         "label": "Anby AfterShock",
         "members": [
-          "Soldier 0 - Anby",
-          "Pulchra Fellini",
-          "Evelyn Chevalier"
+          "Anby: Soldier 0",
+          "Pulchra",
+          "Evelyn"
         ]
       },
       {
         "label": "Bickering Cat (Jane or Piper)",
         "members": [
           "Jane Doe",
-          "Pulchra Fellini"
+          "Pulchra"
         ]
       },
       {
@@ -348,73 +348,73 @@
         "members": [
           "Yixuan",
           "Pan Yinhu",
-          "Pulchra Fellini"
+          "Pulchra"
         ]
       },
       {
         "label": "Generic Team Example",
         "members": [
-          "Flora (Seed)"
+          "Seed"
         ]
       }
     ]
   },
-  "Billy Kid": {
+  "Billy": {
     "teams": [
       {
         "label": "It's showtime!",
         "members": [
-          "Billy Kid",
-          "Soldier 11 (Harin)",
+          "Billy",
+          "Soldier 11",
           "Astra Yao"
         ]
       },
       {
         "label": "Starlight Knight Billy",
         "members": [
-          "Billy Kid",
-          "Nicole Demara",
+          "Billy",
+          "Nicole",
           "Astra Yao"
         ]
       },
       {
         "label": "Target Practice",
         "members": [
-          "Billy Kid",
-          "Nicole Demara"
+          "Billy",
+          "Nicole"
         ]
       },
       {
         "label": "The OG Cunning Hares - True Budget team",
         "members": [
-          "Billy Kid",
-          "Anby Demara",
-          "Nicole Demara"
+          "Billy",
+          "Anby",
+          "Nicole"
         ]
       },
       {
         "label": "Generic Team Example",
         "members": [
-          "Billy Kid"
+          "Billy"
         ]
       }
     ]
   },
-  "Piper Wheel": {
+  "Piper": {
     "teams": [
       {
         "label": "Keep up the Spinning Beat",
         "members": [
-          "Piper Wheel",
-          "Ukinami Yuzuha"
+          "Piper",
+          "Yuzuha"
         ]
       },
       {
         "label": "Physically Abloomed",
         "members": [
-          "Vivian Banshee",
-          "Piper Wheel",
-          "Alexandrina Sebastiane (Rina)"
+          "Vivian",
+          "Piper",
+          "Rina"
         ]
       },
       {
@@ -431,42 +431,42 @@
       }
     ]
   },
-  "Corin Wickes": {
+  "Corin": {
     "teams": [
       {
         "label": "Yo corn linging (Astra or Sunna)",
         "members": [
-          "Corin Wickes",
-          "Soldier 11 (Harin)",
-          "Evelyn Chevalier"
+          "Corin",
+          "Soldier 11",
+          "Evelyn"
         ]
       },
       {
         "label": "Corn on the wheelchair",
         "members": [
-          "Corin Wickes",
-          "Nicole Demara",
-          "Evelyn Chevalier"
+          "Corin",
+          "Nicole",
+          "Evelyn"
         ]
       },
       {
         "label": "Corn onfield",
         "members": [
-          "Corin Wickes",
+          "Corin",
           "Pan Yinhu"
         ]
       },
       {
         "label": "Cheap corn",
         "members": [
-          "Corin Wickes",
-          "Nicole Demara"
+          "Corin",
+          "Nicole"
         ]
       },
       {
         "label": "Generic Team Example",
         "members": [
-          "Corin Wickes"
+          "Corin"
         ]
       }
     ]
@@ -477,7 +477,7 @@
         "label": "Krampus Calling",
         "members": [
           "Dialyn",
-          "Hugo Vlad"
+          "Hugo"
         ]
       },
       {
@@ -493,7 +493,7 @@
       {
         "label": "You know the deal",
         "members": [
-          "Burnice White"
+          "Burnice"
         ]
       },
       {
@@ -502,7 +502,7 @@
       }
     ]
   },
-  "Orphie Magnusson & Magus": {
+  "Orphie & Magus": {
     "teams": [
       {
         "label": "Aftershit Party",
@@ -511,7 +511,7 @@
       {
         "label": "Obols Classic",
         "members": [
-          "Orphie Magnusson & Magus"
+          "Orphie & Magus"
         ]
       },
       {
@@ -521,14 +521,14 @@
       {
         "label": "Spicy Ramen Chips",
         "members": [
-          "Alice Thymefield",
-          "Orphie Magnusson & Magus"
+          "Alice",
+          "Orphie & Magus"
         ]
       },
       {
         "label": "Generic Comp Example",
         "members": [
-          "Orphie Magnusson & Magus"
+          "Orphie & Magus"
         ]
       }
     ]
@@ -550,14 +550,14 @@
       {
         "label": "66.6% Men",
         "members": [
-          "Hugo Vlad",
+          "Hugo",
           "Ju Fufu"
         ]
       },
       {
         "label": "We have Lighter at home",
         "members": [
-          "Alice Thymefield",
+          "Alice",
           "Ju Fufu"
         ]
       },
@@ -569,35 +569,35 @@
       }
     ]
   },
-  "Evelyn Chevalier": {
+  "Evelyn": {
     "teams": [
       {
         "label": "It won't",
         "members": [
           "Qingyi",
-          "Evelyn Chevalier"
+          "Evelyn"
         ]
       },
       {
         "label": "Premium Bodyguard",
         "members": [
           "Qingyi",
-          "Evelyn Chevalier"
+          "Evelyn"
         ]
       },
       {
         "label": "Hotwheelchair",
         "members": [
           "Qingyi",
-          "Nicole Demara",
-          "Evelyn Chevalier"
+          "Nicole",
+          "Evelyn"
         ]
       },
       {
         "label": "Evelyn Budget",
         "members": [
           "Qingyi",
-          "Nicole Demara"
+          "Nicole"
         ]
       },
       {
@@ -621,8 +621,8 @@
       {
         "label": "Roommates",
         "members": [
-          "Hugo Vlad",
-          "Von Lycaon"
+          "Hugo",
+          "Lycaon"
         ]
       },
       {
@@ -635,30 +635,30 @@
       }
     ]
   },
-  "Burnice White": {
+  "Burnice": {
     "teams": [
       {
         "label": "Sweetened Nitro-Fueled Frostburn",
         "members": [
-          "Burnice White",
+          "Burnice",
           "Trigger",
-          "Ukinami Yuzuha"
+          "Yuzuha"
         ]
       },
       {
         "label": "Nice Rat",
         "members": [
-          "Burnice White",
+          "Burnice",
           "Jane Doe",
-          "Ukinami Yuzuha"
+          "Yuzuha"
         ]
       },
       {
         "label": "Unhinged Duo Disorder",
         "members": [
-          "Burnice White",
-          "Vivian Banshee",
-          "Evelyn Chevalier"
+          "Burnice",
+          "Vivian",
+          "Evelyn"
         ]
       },
       {
@@ -668,32 +668,32 @@
       {
         "label": "Generic Team Example",
         "members": [
-          "Burnice White"
+          "Burnice"
         ]
       }
     ]
   },
-  "Soldier 11 (Harin)": {
+  "Soldier 11": {
     "teams": [
       {
         "label": "Evelyn competition (Sunna > Astra)",
         "members": [
-          "Soldier 11 (Harin)",
+          "Soldier 11",
           "Sunna"
         ]
       },
       {
         "label": "Obol Customer Support",
         "members": [
-          "Soldier 11 (Harin)",
-          "Burnice White"
+          "Soldier 11",
+          "Burnice"
         ]
       },
       {
         "label": "Obol Awaiting Orders",
         "members": [
-          "Soldier 11 (Harin)",
-          "Orphie Magnusson & Magus"
+          "Soldier 11",
+          "Orphie & Magus"
         ]
       },
       {
@@ -703,40 +703,40 @@
       {
         "label": "Generic Team Example",
         "members": [
-          "Soldier 11 (Harin)"
+          "Soldier 11"
         ]
       }
     ]
   },
-  "Koleda Belobog": {
+  "Koleda": {
     "teams": [
       {
         "label": "Chain Attack buff matters",
         "members": [
           "Qingyi",
-          "Koleda Belobog",
-          "Evelyn Chevalier"
+          "Koleda",
+          "Evelyn"
         ]
       },
       {
         "label": "Budget Yixuan",
         "members": [
           "Banyue",
-          "Koleda Belobog"
+          "Koleda"
         ]
       },
       {
         "label": "Koleda Dialed in",
         "members": [
           "Nangong Yu",
-          "Koleda Belobog",
-          "Hugo Vlad"
+          "Koleda",
+          "Hugo"
         ]
       },
       {
         "label": "Vertically Challenged",
         "members": [
-          "Nicole Demara"
+          "Nicole"
         ]
       },
       {
@@ -745,13 +745,13 @@
       }
     ]
   },
-  "Komano Manato": {
+  "Manato": {
     "teams": [
       {
         "label": "Pet show squad",
         "members": [
-          "Komano Manato",
-          "Hugo Vlad"
+          "Manato",
+          "Hugo"
         ]
       },
       {
@@ -765,19 +765,19 @@
       {
         "label": "Free to play",
         "members": [
-          "Komano Manato",
-          "Burnice White"
+          "Manato",
+          "Burnice"
         ]
       },
       {
         "label": "Generic Comp Example",
         "members": [
-          "Komano Manato"
+          "Manato"
         ]
       }
     ]
   },
-  "Luciana Auxesis Theodoro de Montefio (Lucy)": {
+  "Lucy": {
     "teams": [
       {
         "label": "Miyabi+Lighter/Burnice",
@@ -787,16 +787,16 @@
         "label": "Budget Sword",
         "members": [
           "Ye Shunguang",
-          "Luciana Auxesis Theodoro de Montefio (Lucy)",
+          "Lucy",
           "Sunna"
         ]
       },
       {
         "label": "Shower Scene",
         "members": [
-          "Burnice White",
-          "Piper Wheel",
-          "Luciana Auxesis Theodoro de Montefio (Lucy)"
+          "Burnice",
+          "Piper",
+          "Lucy"
         ]
       },
       {
@@ -806,25 +806,25 @@
       {
         "label": "Generic Team Example",
         "members": [
-          "Luciana Auxesis Theodoro de Montefio (Lucy)"
+          "Lucy"
         ]
       }
     ]
   },
-  "Ben Bigger": {
+  "Ben": {
     "teams": [
       {
         "label": "Ben's Biggest DPS",
         "members": [
-          "Ben Bigger",
-          "Soldier 11 (Harin)",
-          "Orphie Magnusson & Magus"
+          "Ben",
+          "Soldier 11",
+          "Orphie & Magus"
         ]
       },
       {
         "label": "Ben's cutest support",
         "members": [
-          "Ben Bigger",
+          "Ben",
           "Ju Fufu",
           "Astra Yao"
         ]
@@ -832,8 +832,8 @@
       {
         "label": "Outer Ring Belobrick",
         "members": [
-          "Ben Bigger",
-          "Luciana Auxesis Theodoro de Montefio (Lucy)"
+          "Ben",
+          "Lucy"
         ]
       },
       {
@@ -843,7 +843,7 @@
       {
         "label": "Generic Team Example",
         "members": [
-          "Ben Bigger"
+          "Ben"
         ]
       }
     ]
@@ -854,7 +854,7 @@
         "label": "Ssseed",
         "members": [
           "Cissia",
-          "Flora (Seed)",
+          "Seed",
           "Dialyn"
         ]
       },
@@ -871,48 +871,48 @@
         "members": [
           "Cissia",
           "Trigger",
-          "Nicole Demara"
+          "Nicole"
         ]
       },
       {
         "label": "Brokie Hypercarry",
         "members": [
           "Cissia",
-          "Von Lycaon",
-          "Nicole Demara"
+          "Lycaon",
+          "Nicole"
         ]
       },
       {
         "label": "Generic Team Example",
         "members": [
           "Cissia",
-          "Seth Lowell",
+          "Seth",
           "Astra Yao"
         ]
       }
     ]
   },
-  "Flora (Seed)": {
+  "Seed": {
     "teams": [
       {
         "label": "Ouroboros",
         "members": [
-          "Flora (Seed)",
+          "Seed",
           "Cissia",
-          "Burnice White"
+          "Burnice"
         ]
       },
       {
         "label": "Oballs squad",
         "members": [
-          "Flora (Seed)",
-          "Burnice White"
+          "Seed",
+          "Burnice"
         ]
       },
       {
         "label": "Seed Sanby duo",
         "members": [
-          "Soldier 0 - Anby",
+          "Anby: Soldier 0",
           "Soukaku"
         ]
       },
@@ -923,7 +923,7 @@
       {
         "label": "Generic Team Example",
         "members": [
-          "Flora (Seed)"
+          "Seed"
         ]
       }
     ]
@@ -933,26 +933,26 @@
       {
         "label": "Sanby Premium",
         "members": [
-          "Soldier 0 - Anby",
-          "Evelyn Chevalier"
+          "Anby: Soldier 0",
+          "Evelyn"
         ]
       },
       {
         "label": "Oballs",
         "members": [
-          "Orphie Magnusson & Magus"
+          "Orphie & Magus"
         ]
       },
       {
         "label": "Quadruple the guns - budget team",
         "members": [
-          "Billy Kid"
+          "Billy"
         ]
       },
       {
         "label": "Trigger of Anomaly",
         "members": [
-          "Tsukishiro Yanagi"
+          "Yanagi"
         ]
       },
       {
@@ -961,64 +961,64 @@
       }
     ]
   },
-  "Soldier 0 - Anby": {
+  "Anby: Soldier 0": {
     "teams": [
       {
         "label": "Premium burgers (Astra or Orphie)",
         "members": [
-          "Soldier 0 - Anby",
-          "Orphie Magnusson & Magus"
+          "Anby: Soldier 0",
+          "Orphie & Magus"
         ]
       },
       {
         "label": "Online ordering (astra or orphie)",
         "members": [
-          "Soldier 0 - Anby",
-          "Evelyn Chevalier"
+          "Anby: Soldier 0",
+          "Evelyn"
         ]
       },
       {
         "label": "Cunningest Hare",
         "members": [
-          "Soldier 0 - Anby",
-          "Evelyn Chevalier"
+          "Anby: Soldier 0",
+          "Evelyn"
         ]
       },
       {
         "label": "Burger² (Budget) - Quick-swap Anby",
         "members": [
-          "Soldier 0 - Anby",
-          "Anby Demara"
+          "Anby: Soldier 0",
+          "Anby"
         ]
       },
       {
         "label": "Generic Team Example",
         "members": [
-          "Soldier 0 - Anby"
+          "Anby: Soldier 0"
         ]
       }
     ]
   },
-  "Asaba Harumasa": {
+  "Harumasa": {
     "teams": [
       {
         "label": "Call center (Astra/Yuzuha/Sunna/Nicole)",
         "members": [
-          "Asaba Harumasa"
+          "Harumasa"
         ]
       },
       {
         "label": "Burstmasa",
         "members": [
-          "Asaba Harumasa",
+          "Harumasa",
           "Qingyi"
         ]
       },
       {
         "label": "Harumasa stops slacking (On-field)",
         "members": [
-          "Asaba Harumasa",
-          "Evelyn Chevalier"
+          "Harumasa",
+          "Evelyn"
         ]
       },
       {
@@ -1031,41 +1031,41 @@
       }
     ]
   },
-  "Tsukishiro Yanagi": {
+  "Yanagi": {
     "teams": [
       {
         "label": "Disorder, Polarity Disorder, Disorder",
         "members": [
-          "Tsukishiro Yanagi",
-          "Ukinami Yuzuha"
+          "Yanagi",
+          "Yuzuha"
         ]
       },
       {
         "label": "Disorder Slave (Pick any Support)",
         "members": [
           "Astra Yao",
-          "Tsukishiro Yanagi"
+          "Yanagi"
         ]
       },
       {
         "label": "Electrobloom",
         "members": [
-          "Tsukishiro Yanagi",
-          "Vivian Banshee",
-          "Evelyn Chevalier"
+          "Yanagi",
+          "Vivian",
+          "Evelyn"
         ]
       },
       {
         "label": "Brought too many bean buns (budget)",
         "members": [
-          "Tsukishiro Yanagi",
-          "Alexandrina Sebastiane (Rina)"
+          "Yanagi",
+          "Rina"
         ]
       },
       {
         "label": "Generic Team Example",
         "members": [
-          "Tsukishiro Yanagi"
+          "Yanagi"
         ]
       }
     ]
@@ -1076,7 +1076,7 @@
         "label": "Clanking Collab",
         "members": [
           "Aria",
-          "Anby Demara",
+          "Anby",
           "Sunna"
         ]
       },
@@ -1085,13 +1085,13 @@
         "members": [
           "Yixuan",
           "Qingyi",
-          "Hugo Vlad"
+          "Hugo"
         ]
       },
       {
         "label": "The classic Harumasa team",
         "members": [
-          "Asaba Harumasa",
+          "Harumasa",
           "Qingyi"
         ]
       },
@@ -1109,29 +1109,29 @@
       }
     ]
   },
-  "Grace Howard": {
+  "Grace": {
     "teams": [
       {
         "label": "Zapping Morning Star",
         "members": [
-          "Grace Howard",
-          "Alexandrina Sebastiane (Rina)"
+          "Grace",
+          "Rina"
         ]
       },
       {
         "label": "Hyperbuffed",
         "members": [
-          "Grace Howard",
-          "Alexandrina Sebastiane (Rina)",
-          "Evelyn Chevalier"
+          "Grace",
+          "Rina",
+          "Evelyn"
         ]
       },
       {
         "label": "We have Yanagi at home",
         "members": [
-          "Grace Howard",
-          "Vivian Banshee",
-          "Alexandrina Sebastiane (Rina)"
+          "Grace",
+          "Vivian",
+          "Rina"
         ]
       },
       {
@@ -1141,34 +1141,34 @@
       {
         "label": "Generic Team Example",
         "members": [
-          "Grace Howard"
+          "Grace"
         ]
       }
     ]
   },
-  "Alexandrina Sebastiane (Rina)": {
+  "Rina": {
     "teams": [
       {
         "label": "Hypercarry Yanagi",
         "members": [
-          "Tsukishiro Yanagi",
-          "Alexandrina Sebastiane (Rina)"
+          "Yanagi",
+          "Rina"
         ]
       },
       {
         "label": "Disorder Yanagi",
         "members": [
-          "Tsukishiro Yanagi",
-          "Vivian Banshee",
-          "Alexandrina Sebastiane (Rina)"
+          "Yanagi",
+          "Vivian",
+          "Rina"
         ]
       },
       {
         "label": "\"Mono-Shock\"",
         "members": [
-          "Asaba Harumasa",
-          "Grace Howard",
-          "Alexandrina Sebastiane (Rina)"
+          "Harumasa",
+          "Grace",
+          "Rina"
         ]
       },
       {
@@ -1178,35 +1178,35 @@
       {
         "label": "Generic Team Example",
         "members": [
-          "Alice Thymefield"
+          "Alice"
         ]
       }
     ]
   },
-  "Seth Lowell": {
+  "Seth": {
     "teams": [
       {
         "label": "Jane hypercarry",
         "members": [
           "Qingyi",
-          "Seth Lowell",
-          "Alexandrina Sebastiane (Rina)"
+          "Seth",
+          "Rina"
         ]
       },
       {
         "label": "Yanagi hypercarry",
         "members": [
-          "Tsukishiro Yanagi",
-          "Seth Lowell",
-          "Evelyn Chevalier"
+          "Yanagi",
+          "Seth",
+          "Evelyn"
         ]
       },
       {
         "label": "Grace hypercarry",
         "members": [
-          "Grace Howard",
-          "Seth Lowell",
-          "Alexandrina Sebastiane (Rina)"
+          "Grace",
+          "Seth",
+          "Rina"
         ]
       },
       {
@@ -1216,32 +1216,32 @@
       {
         "label": "Generic Team Example",
         "members": [
-          "Seth Lowell"
+          "Seth"
         ]
       }
     ]
   },
-  "Anton Ivanov": {
+  "Anton": {
     "teams": [
       {
         "label": "It's my phon bro",
         "members": [
-          "Anton Ivanov",
-          "Evelyn Chevalier"
+          "Anton",
+          "Evelyn"
         ]
       },
       {
         "label": "Wheelchaired Bro - Quick Assist spam",
         "members": [
-          "Anton Ivanov",
-          "Evelyn Chevalier"
+          "Anton",
+          "Evelyn"
         ]
       },
       {
         "label": "Burst Bro (Astra or Nicole or Rina)",
         "members": [
-          "Anton Ivanov",
-          "Evelyn Chevalier"
+          "Anton",
+          "Evelyn"
         ]
       },
       {
@@ -1251,12 +1251,12 @@
       {
         "label": "Generic team example",
         "members": [
-          "Anton Ivanov"
+          "Anton"
         ]
       }
     ]
   },
-  "Anby Demara": {
+  "Anby": {
     "teams": [
       {
         "label": "Budget Zhu Yuan team",
@@ -1265,8 +1265,8 @@
       {
         "label": "Budgetmasa",
         "members": [
-          "Asaba Harumasa",
-          "Anby Demara"
+          "Harumasa",
+          "Anby"
         ]
       },
       {
@@ -1274,7 +1274,7 @@
         "members": [
           "Yixuan",
           "Pan Yinhu",
-          "Anby Demara"
+          "Anby"
         ]
       },
       {
@@ -1284,7 +1284,7 @@
       {
         "label": "Generic Team Example",
         "members": [
-          "Anby Demara"
+          "Anby"
         ]
       }
     ]
@@ -1296,22 +1296,22 @@
         "members": [
           "Promeia",
           "Nangong Yu",
-          "Ukinami Yuzuha"
+          "Yuzuha"
         ]
       },
       {
         "label": "Purple Aesthetic",
         "members": [
           "Promeia",
-          "Vivian Banshee",
-          "Ukinami Yuzuha"
+          "Vivian",
+          "Yuzuha"
         ]
       },
       {
         "label": "Chains and Blossoms",
         "members": [
           "Promeia",
-          "Vivian Banshee",
+          "Vivian",
           "Zhao"
         ]
       },
@@ -1319,8 +1319,8 @@
         "label": "Beauties and the Beast",
         "members": [
           "Promeia",
-          "Von Lycaon",
-          "Nicole Demara"
+          "Lycaon",
+          "Nicole"
         ]
       },
       {
@@ -1328,7 +1328,7 @@
         "members": [
           "Promeia",
           "Astra Yao",
-          "Ukinami Yuzuha"
+          "Yuzuha"
         ]
       }
     ]
@@ -1352,7 +1352,7 @@
         "label": "Obol Mercenaries",
         "members": [
           "Zhao",
-          "Alice Thymefield"
+          "Alice"
         ]
       },
       {
@@ -1369,72 +1369,72 @@
       }
     ]
   },
-  "Hugo Vlad": {
+  "Hugo": {
     "teams": [
       {
         "label": "Judgement calls",
         "members": [
-          "Hugo Vlad"
+          "Hugo"
         ]
       },
       {
         "label": "Men",
         "members": [
-          "Hugo Vlad",
-          "Von Lycaon"
+          "Hugo",
+          "Lycaon"
         ]
       },
       {
         "label": "Kitty Connoisseurs",
         "members": [
-          "Hugo Vlad",
+          "Hugo",
           "Ju Fufu"
         ]
       },
       {
         "label": "Victoria Mocking Burst (Pick a stunner)",
         "members": [
-          "Hugo Vlad",
-          "Von Lycaon"
+          "Hugo",
+          "Lycaon"
         ]
       },
       {
         "label": "Generic Team Example",
         "members": [
-          "Hugo Vlad"
+          "Hugo"
         ]
       }
     ]
   },
-  "Hoshimi Miyabi": {
+  "Miyabi": {
     "teams": [
       {
         "label": "Wheelchairing (Yuzuha match Miyabi)",
         "members": [
-          "Ukinami Yuzuha",
-          "Hoshimi Miyabi"
+          "Yuzuha",
+          "Miyabi"
         ]
       },
       {
         "label": "Unfreezable boss (Nicole or any Anomaly)",
         "members": [
-          "Hoshimi Miyabi",
-          "Evelyn Chevalier"
+          "Miyabi",
+          "Evelyn"
         ]
       },
       {
         "label": "Can be Frozen? You die | Yuzu Ice",
         "members": [
-          "Hoshimi Miyabi",
-          "Ukinami Yuzuha",
+          "Miyabi",
+          "Yuzuha",
           "Soukaku"
         ]
       },
       {
         "label": "Miyabi \"Budget\" (Mono Ice)",
         "members": [
-          "Hoshimi Miyabi",
-          "Von Lycaon",
+          "Miyabi",
+          "Lycaon",
           "Soukaku"
         ]
       },
@@ -1446,75 +1446,75 @@
       }
     ]
   },
-  "Ellen Joe": {
+  "Ellen": {
     "teams": [
       {
         "label": "2.x Premium Ellen",
         "members": [
-          "Ellen Joe"
+          "Ellen"
         ]
       },
       {
         "label": "No Defense against Shark Attacks",
         "members": [
-          "Ellen Joe"
+          "Ellen"
         ]
       },
       {
         "label": "1.x Premium Ellen",
         "members": [
-          "Evelyn Chevalier"
+          "Evelyn"
         ]
       },
       {
         "label": "Budget Ellen",
         "members": [
-          "Von Lycaon"
+          "Lycaon"
         ]
       },
       {
         "label": "Generic Team Example",
         "members": [
-          "Ellen Joe"
+          "Ellen"
         ]
       }
     ]
   },
-  "Von Lycaon": {
+  "Lycaon": {
     "teams": [
       {
         "label": "Miyabi Mono Ice",
         "members": [
           "Trigger",
-          "Von Lycaon",
+          "Lycaon",
           "Soukaku"
         ]
       },
       {
         "label": "Victorian Melody",
         "members": [
-          "Von Lycaon",
-          "Evelyn Chevalier"
+          "Lycaon",
+          "Evelyn"
         ]
       },
       {
         "label": "The wolf with the men",
         "members": [
-          "Hugo Vlad",
-          "Von Lycaon"
+          "Hugo",
+          "Lycaon"
         ]
       },
       {
         "label": "Thiren Ice Core",
         "members": [
-          "Von Lycaon",
+          "Lycaon",
           "Zhao"
         ]
       },
       {
         "label": "Generic Team Example",
         "members": [
-          "Von Lycaon"
+          "Lycaon"
         ]
       }
     ]
@@ -1525,7 +1525,7 @@
         "label": "Mono Ice",
         "members": [
           "Trigger",
-          "Von Lycaon",
+          "Lycaon",
           "Soukaku"
         ]
       },
@@ -1538,7 +1538,7 @@
       {
         "label": "Frostbite",
         "members": [
-          "Von Lycaon",
+          "Lycaon",
           "Soukaku"
         ]
       },
@@ -1546,7 +1546,7 @@
         "label": "DPS Soukaku Team",
         "members": [
           "Soukaku",
-          "Von Lycaon"
+          "Lycaon"
         ]
       },
       {
@@ -1571,24 +1571,24 @@
         "label": "Brand-new Anomaly Wheelchair",
         "members": [
           "Nangong Yu",
-          "Burnice White",
-          "Luciana Auxesis Theodoro de Montefio (Lucy)"
+          "Burnice",
+          "Lucy"
         ]
       },
       {
         "label": "Poppin' Ice",
         "members": [
           "Nangong Yu",
-          "Ukinami Yuzuha",
-          "Hoshimi Miyabi"
+          "Yuzuha",
+          "Miyabi"
         ]
       },
       {
         "label": "Anything to fund the show (F2P)",
         "members": [
           "Nangong Yu",
-          "Piper Wheel",
-          "Nicole Demara"
+          "Piper",
+          "Nicole"
         ]
       },
       {
@@ -1620,7 +1620,7 @@
         "label": "we have Nangong Yu at home",
         "members": [
           "Aria",
-          "Ukinami Yuzuha"
+          "Yuzuha"
         ]
       },
       {
@@ -1637,12 +1637,12 @@
       }
     ]
   },
-  "Lucia Elowen": {
+  "Lucia": {
     "teams": [
       {
         "label": "Yunkui's Goat",
         "members": [
-          "Hugo Vlad",
+          "Hugo",
           "Banyue"
         ]
       },
@@ -1653,20 +1653,20 @@
       {
         "label": "Takoyaki",
         "members": [
-          "Lucia Elowen"
+          "Lucia"
         ]
       },
       {
         "label": "Spook Shack Animal Farm",
         "members": [
-          "Lucia Elowen",
+          "Lucia",
           "Nangong Yu"
         ]
       },
       {
         "label": "Generic Team Example",
         "members": [
-          "Hugo Vlad"
+          "Hugo"
         ]
       }
     ]
@@ -1677,15 +1677,15 @@
         "label": "Triple the Ultimate",
         "members": [
           "Yixuan",
-          "Hugo Vlad"
+          "Hugo"
         ]
       },
       {
         "label": "Priest Merchant",
         "members": [
           "Yixuan",
-          "Anby Demara",
-          "Hugo Vlad"
+          "Anby",
+          "Hugo"
         ]
       },
       {
@@ -1708,42 +1708,42 @@
       }
     ]
   },
-  "Vivian Banshee": {
+  "Vivian": {
     "teams": [
       {
         "label": "No more Fire/Electric Shananigans",
         "members": [
-          "Vivian Banshee",
-          "Tsukishiro Yanagi",
-          "Ukinami Yuzuha"
+          "Vivian",
+          "Yanagi",
+          "Yuzuha"
         ]
       },
       {
         "label": "Constantly Swapping",
         "members": [
-          "Vivian Banshee",
+          "Vivian",
           "Astra Yao"
         ]
       },
       {
         "label": "Anomaly Wheelchair",
         "members": [
-          "Vivian Banshee",
-          "Tsukishiro Yanagi",
-          "Ukinami Yuzuha"
+          "Vivian",
+          "Yanagi",
+          "Yuzuha"
         ]
       },
       {
         "label": "Ether Poisoned Assault (Piper for Budget)",
         "members": [
-          "Vivian Banshee",
+          "Vivian",
           "Qingyi"
         ]
       },
       {
         "label": "Generic Team Example",
         "members": [
-          "Vivian Banshee"
+          "Vivian"
         ]
       }
     ]
@@ -1767,15 +1767,15 @@
       {
         "label": "Miyabi Disorder",
         "members": [
-          "Hoshimi Miyabi",
-          "Tsukishiro Yanagi",
+          "Miyabi",
+          "Yanagi",
           "Astra Yao"
         ]
       },
       {
         "label": "The Wheelchair",
         "members": [
-          "Nicole Demara",
+          "Nicole",
           "Astra Yao"
         ]
       },
@@ -1793,7 +1793,7 @@
         "label": "Pubsec Krampus Collab",
         "members": [
           "Zhu Yuan",
-          "Nicole Demara"
+          "Nicole"
         ]
       },
       {
@@ -1804,7 +1804,7 @@
         "label": "Mono Ether",
         "members": [
           "Zhu Yuan",
-          "Nicole Demara",
+          "Nicole",
           "Astra Yao"
         ]
       },
@@ -1812,8 +1812,8 @@
         "label": "Budget option",
         "members": [
           "Zhu Yuan",
-          "Anby Demara",
-          "Nicole Demara"
+          "Anby",
+          "Nicole"
         ]
       },
       {
@@ -1824,42 +1824,42 @@
       }
     ]
   },
-  "Nicole Demara": {
+  "Nicole": {
     "teams": [
       {
         "label": "Pubsec Krampus Collab",
         "members": [
           "Zhu Yuan",
-          "Nicole Demara"
+          "Nicole"
         ]
       },
       {
         "label": "Alice Hypercarry (Pseudo Anomaly Nicole)",
         "members": [
-          "Alice Thymefield",
-          "Ukinami Yuzuha",
-          "Nicole Demara"
+          "Alice",
+          "Yuzuha",
+          "Nicole"
         ]
       },
       {
         "label": "Astra alternative",
         "members": [
-          "Soldier 0 - Anby",
-          "Nicole Demara"
+          "Anby: Soldier 0",
+          "Nicole"
         ]
       },
       {
         "label": "Starter team (Budget)",
         "members": [
-          "Billy Kid",
-          "Anby Demara",
-          "Nicole Demara"
+          "Billy",
+          "Anby",
+          "Nicole"
         ]
       },
       {
         "label": "Generic Team Example",
         "members": [
-          "Nicole Demara"
+          "Nicole"
         ]
       }
     ]

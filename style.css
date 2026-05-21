@@ -551,6 +551,13 @@ body.game-zzz #char-portrait {
 }
 
 /* ── disc icon reference (ZZZ sidebar button + grid view) ── */
+#tier-wrap {
+  padding: 0 10px 8px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  display: flex;
+  gap: 6px;
+}
 #disc-ref-wrap {
   padding: 0 10px 8px;
   border-bottom: 1px solid var(--border);
@@ -558,7 +565,7 @@ body.game-zzz #char-portrait {
   display: flex;
   gap: 6px;
 }
-#disc-ref-btn, #char-ref-btn, #audit-btn {
+#disc-ref-btn, #char-ref-btn, #audit-btn, #tier-btn {
   flex: 1;
   background: none;
   border: 1px solid var(--border);
@@ -571,10 +578,63 @@ body.game-zzz #char-portrait {
   text-align: center;
   transition: color 0.1s, border-color 0.1s, background 0.1s;
 }
-#disc-ref-btn:hover, #char-ref-btn:hover, #audit-btn:hover { color: var(--text); background: var(--surface); }
-#disc-ref-btn.active, #char-ref-btn.active, #audit-btn.active { color: var(--accent); border-color: var(--accent); background: var(--card); }
+#disc-ref-btn:hover, #char-ref-btn:hover, #audit-btn:hover, #tier-btn:hover { color: var(--text); background: var(--surface); }
+#disc-ref-btn.active, #char-ref-btn.active, #audit-btn.active, #tier-btn.active { color: var(--accent); border-color: var(--accent); background: var(--card); }
 
 #disc-ref-view { /* inherits #content padding */ }
+
+/* ── Tier badges (sidebar) ───────────────────────────────── */
+.tier-badge {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-left: auto;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+.tier-T0   { background: #f5a623; color: #000; }
+.tier-T0_5 { background: #e8832a; color: #fff; }
+.tier-T1   { background: #9b59b6; color: #fff; }
+.tier-T1_5 { background: #5b7fd4; color: #fff; }
+.tier-T2   { background: #3498db; color: #fff; }
+.tier-T3   { background: #27ae60; color: #fff; }
+.tier-T4   { background: var(--muted); color: var(--bg); }
+
+/* ── Tier view ───────────────────────────────────────────── */
+.tier-section { margin-bottom: 28px; }
+.tier-section-header {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.tier-char-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tier-char-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 8px 4px 4px;
+  cursor: default;
+}
+.tier-char-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.tier-char-name { color: var(--text); }
 .disc-ref-header {
   font-size: 10px;
   font-weight: 700;

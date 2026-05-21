@@ -9,6 +9,15 @@ import re
 CACHE_DIR = "/Users/hokori/.cache/hsr_builds"
 OUTPUT    = "/Users/hokori/genshin-builds/hsr_builds.json"
 
+HSR_NAME_NORMALIZE = {
+    'Imbibitor Lunae':  'Dan Heng • Imbibitor Lunae',
+    'Permansor Terrae': 'Dan Heng • Permansor Terrae',
+    'Evernight':        'March 7th • Evernight',
+    'March 7th':        'March 7th • The Hunt',
+    'Fugue':            'Tingyun • Fugue',
+    'Silver Wolf LV.999': 'Silver Wolf • Lv. 999',
+}
+
 PATH_KEYWORDS = {
     'Erudition', 'Harmony', 'Nihility', 'Destruction', 'Hunt',
     'Remembrance', 'Abundance', 'Preservation', 'Elation',
@@ -57,7 +66,7 @@ def parse_block(rows):
         return None
 
     header = pad(rows[0])
-    name = header[1].strip()
+    name = HSR_NAME_NORMALIZE.get(header[1].strip(), header[1].strip())
     path = header[2].strip()
 
     # rows[1] = column sub-header, rows[2] = first data row
