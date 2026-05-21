@@ -1,15 +1,15 @@
 {
   "gi": {
     "AINO": {
-      "version": "5.5",
+      "version": "6.0",
       "date": "2025-09-10"
     },
     "ALBEDO": {
-      "version": "1.0",
+      "version": "1.2",
       "date": "2020-12-23"
     },
     "ALHAITHAM": {
-      "version": "3.0",
+      "version": "3.4",
       "date": "2023-01-18"
     },
     "ALOY": {
@@ -21,15 +21,15 @@
       "date": "2020-09-28"
     },
     "ARATAKI ITTO": {
-      "version": "2.0",
+      "version": "2.3",
       "date": "2021-12-14"
     },
     "ARLECCHINO": {
-      "version": "2.4",
+      "version": "4.6",
       "date": "2024-04-24"
     },
     "BAIZHU": {
-      "version": "1.0",
+      "version": "3.6",
       "date": "2023-05-02"
     },
     "BARBARA": {
@@ -45,23 +45,23 @@
       "date": "2020-09-28"
     },
     "CANDACE": {
-      "version": "3.0",
+      "version": "3.1",
       "date": "2022-09-28"
     },
     "CHARLOTTE": {
-      "version": "3.7",
+      "version": "4.2",
       "date": "2023-11-08"
     },
     "CHASCA": {
-      "version": "5.0",
+      "version": "5.2",
       "date": "2024-11-20"
     },
     "CHEVREUSE": {
-      "version": "4.0",
+      "version": "4.3",
       "date": "2024-01-09"
     },
     "CHIORI": {
-      "version": "3.7",
+      "version": "4.5",
       "date": "2024-03-13"
     },
     "CHONGYUN": {
@@ -69,11 +69,11 @@
       "date": "2020-09-28"
     },
     "CITLALI": {
-      "version": "5.0",
+      "version": "5.3",
       "date": "2025-01-01"
     },
     "CLORINDE": {
-      "version": "4.0",
+      "version": "4.7",
       "date": "2024-06-05"
     },
     "COLLEI": {
@@ -81,19 +81,19 @@
       "date": "2022-08-24"
     },
     "COLUMBINA": {
-      "version": "2.7",
+      "version": "6.3",
       "date": "2026-01-14"
     },
     "CYNO": {
-      "version": "1.0",
+      "version": "3.1",
       "date": "2022-09-28"
     },
     "DAHLIA": {
-      "version": "1.4",
+      "version": "5.7",
       "date": "2025-06-18"
     },
     "DEHYA": {
-      "version": "3.0",
+      "version": "3.5",
       "date": "2023-03-01"
     },
     "DILUC": {
@@ -109,15 +109,15 @@
       "date": "2022-09-09"
     },
     "DURIN": {
-      "version": "4.7",
+      "version": "6.2",
       "date": "2025-12-03"
     },
     "EMILIE": {
-      "version": "4.0",
+      "version": "4.8",
       "date": "2024-08-06"
     },
     "ESCOFFIER": {
-      "version": "5.5",
+      "version": "5.6",
       "date": "2025-05-07"
     },
     "EULA": {
@@ -125,7 +125,7 @@
       "date": "2021-05-18"
     },
     "FARUZAN": {
-      "version": "3.0",
+      "version": "3.3",
       "date": "2022-12-07"
     },
     "FISCHL": {
@@ -133,7 +133,7 @@
       "date": "2020-09-28"
     },
     "FLINS": {
-      "version": "5.7",
+      "version": "6.0",
       "date": "2025-09-30"
     },
     "FREMINET": {
@@ -141,7 +141,7 @@
       "date": "2023-09-05"
     },
     "FURINA": {
-      "version": "3.0",
+      "version": "4.2",
       "date": "2023-11-08"
     },
     "GAMING": {
@@ -149,35 +149,35 @@
       "date": "2024-01-31"
     },
     "GANYU": {
-      "version": "1.0",
+      "version": "1.2",
       "date": "2021-01-12"
     },
     "GOROU": {
-      "version": "2.0",
+      "version": "2.3",
       "date": "2021-12-14"
     },
     "HU TAO": {
-      "version": "1.0",
+      "version": "1.3",
       "date": "2021-03-02"
     },
     "IANSAN": {
-      "version": "1.0",
+      "version": "5.5",
       "date": "2025-03-26"
     },
     "IFA": {
-      "version": "5.0",
+      "version": "5.6",
       "date": "2025-05-07"
     },
     "ILLUGA": {
-      "version": "5.9",
+      "version": "6.3",
       "date": "2026-02-03"
     },
     "INEFFA": {
-      "version": "5.7",
+      "version": "5.8",
       "date": "2025-07-30"
     },
     "JAHODA": {
-      "version": "5.7",
+      "version": "6.2",
       "date": "2025-12-03"
     },
     "JEAN": {
@@ -197,15 +197,15 @@
       "date": "2020-09-28"
     },
     "KAMISATO AYAKA": {
-      "version": "1.0",
+      "version": "2.0",
       "date": "2021-07-21"
     },
     "KAMISATO AYATO": {
-      "version": "2.0",
+      "version": "2.6",
       "date": "2022-03-30"
     },
     "KAVEH": {
-      "version": "3.0",
+      "version": "3.6",
       "date": "2023-05-02"
     },
     "KEQING": {
@@ -225,11 +225,11 @@
       "date": "2020-10-20"
     },
     "KUJOU SARA": {
-      "version": "1.6",
+      "version": "2.1",
       "date": "2021-09-01"
     },
     "KUKI SHINOBU": {
-      "version": "2.0",
+      "version": "2.7",
       "date": "2022-06-21"
     },
     "LAN YAN": {
@@ -237,15 +237,15 @@
       "date": "2025-01-21"
     },
     "LAUMA": {
-      "version": "5.7",
+      "version": "6.0",
       "date": "2025-09-10"
     },
     "LAYLA": {
-      "version": "3.0",
+      "version": "3.2",
       "date": "2022-11-18"
     },
     "LINNEA": {
-      "version": "5.8",
+      "version": "6.5",
       "date": "2026-04-08"
     },
     "LISA": {
@@ -253,19 +253,19 @@
       "date": "2020-09-28"
     },
     "LYNETTE": {
-      "version": "1.0",
+      "version": "4.0",
       "date": "2023-08-16"
     },
     "LYNEY": {
-      "version": "1.0",
+      "version": "4.0",
       "date": "2023-08-16"
     },
     "MAVUIKA": {
-      "version": "1.0",
+      "version": "5.3",
       "date": "2025-01-01"
     },
     "MIKA": {
-      "version": "3.1",
+      "version": "3.5",
       "date": "2023-03-21"
     },
     "MONA": {
@@ -277,23 +277,23 @@
       "date": "2024-08-28"
     },
     "NAHIDA": {
-      "version": "1.0",
+      "version": "3.2",
       "date": "2022-11-02"
     },
     "NAVIA": {
-      "version": "4.0",
+      "version": "4.3",
       "date": "2023-12-20"
     },
     "NEFER": {
-      "version": "5.8",
+      "version": "6.1",
       "date": "2025-10-22"
     },
     "NEUVILLETTE": {
-      "version": "3.0",
+      "version": "4.1",
       "date": "2023-09-27"
     },
     "NILOU": {
-      "version": "3.0",
+      "version": "3.1",
       "date": "2022-10-14"
     },
     "NINGGUANG": {
@@ -305,7 +305,7 @@
       "date": "2020-09-28"
     },
     "ORORON": {
-      "version": "5.0",
+      "version": "5.2",
       "date": "2024-11-20"
     },
     "QIQI": {
@@ -313,7 +313,7 @@
       "date": "2020-09-28"
     },
     "RAIDEN SHOGUN": {
-      "version": "1.0",
+      "version": "2.1",
       "date": "2021-09-01"
     },
     "RAZOR": {
@@ -321,11 +321,11 @@
       "date": "2020-09-28"
     },
     "ROSARIA": {
-      "version": "1.0",
+      "version": "1.4",
       "date": "2021-04-06"
     },
     "SANGONOMIYA KOKOMI": {
-      "version": "2.0",
+      "version": "2.1",
       "date": "2021-09-21"
     },
     "SAYU": {
@@ -333,23 +333,23 @@
       "date": "2021-08-10"
     },
     "SETHOS": {
-      "version": "4.6",
+      "version": "4.7",
       "date": "2024-06-05"
     },
     "SHENHE": {
-      "version": "2.2",
+      "version": "2.4",
       "date": "2022-01-05"
     },
     "SHIKANOIN HEIZOU": {
-      "version": "2.0",
+      "version": "2.8",
       "date": "2022-07-13"
     },
     "SIGEWINNE": {
-      "version": "4.0",
+      "version": "4.7",
       "date": "2024-06-25"
     },
     "SKIRK": {
-      "version": "1.1",
+      "version": "5.7",
       "date": "2025-06-18"
     },
     "SUCROSE": {
@@ -357,11 +357,11 @@
       "date": "2020-09-28"
     },
     "TARTAGLIA": {
-      "version": "1.0",
+      "version": "1.1",
       "date": "2020-11-11"
     },
     "THOMA": {
-      "version": "2.0",
+      "version": "2.2",
       "date": "2021-11-02"
     },
     "TIGHNARI": {
@@ -373,11 +373,11 @@
       "date": "2020-09-28"
     },
     "VARESA": {
-      "version": "5.0",
+      "version": "5.5",
       "date": "2025-03-26"
     },
     "VARKA": {
-      "version": "1.0",
+      "version": "6.4",
       "date": "2026-02-25"
     },
     "VENTI": {
@@ -397,15 +397,15 @@
       "date": "2020-09-28"
     },
     "XIANYUN": {
-      "version": "1.0",
+      "version": "4.4",
       "date": "2024-01-31"
     },
     "XIAO": {
-      "version": "1.0",
+      "version": "1.3",
       "date": "2021-02-03"
     },
     "XILONEN": {
-      "version": "5.0",
+      "version": "5.1",
       "date": "2024-10-09"
     },
     "XINGQIU": {
@@ -413,11 +413,11 @@
       "date": "2020-09-28"
     },
     "XINYAN": {
-      "version": "1.0",
+      "version": "1.1",
       "date": "2020-12-01"
     },
     "YAE MIKO": {
-      "version": "1.0",
+      "version": "2.5",
       "date": "2022-02-16"
     },
     "YANFEI": {
@@ -425,11 +425,11 @@
       "date": "2021-04-28"
     },
     "YAOYAO": {
-      "version": "1.0",
+      "version": "3.4",
       "date": "2023-01-18"
     },
     "YELAN": {
-      "version": "2.6",
+      "version": "2.7",
       "date": "2022-05-31"
     },
     "YOIMIYA": {
@@ -441,37 +441,37 @@
       "date": "2025-02-12"
     },
     "YUN JIN": {
-      "version": "1.0",
+      "version": "2.4",
       "date": "2022-01-05"
     },
     "ZHONGLI": {
-      "version": "1.0",
+      "version": "1.1",
       "date": "2020-12-01"
     },
     "ZIBAI": {
-      "version": "1.0",
+      "version": "6.3",
       "date": "2026-02-03"
     }
   },
   "hsr": {
     "Acheron": {
-      "version": "1.5",
+      "version": "2.1",
       "date": "2024-03-27"
     },
     "Aglaea": {
-      "version": "2.6",
+      "version": "3.0",
       "date": "2025-02-05"
     },
     "Anaxa": {
-      "version": "2.6",
+      "version": "3.2",
       "date": "2025-04-30"
     },
     "Archer": {
-      "version": "2.4",
+      "version": "3.4",
       "date": "2025-07-11"
     },
     "Argenti": {
-      "version": "1.0",
+      "version": "1.5",
       "date": "2023-12-06"
     },
     "Arlan": {
@@ -479,7 +479,7 @@
       "date": "2023-04-26"
     },
     "Ashveil": {
-      "version": "1.0",
+      "version": "4.1",
       "date": "2026-03-25"
     },
     "Asta": {
@@ -487,7 +487,7 @@
       "date": "2023-04-26"
     },
     "Aventurine": {
-      "version": "1.0",
+      "version": "2.1",
       "date": "2024-04-17"
     },
     "Bailu": {
@@ -495,15 +495,15 @@
       "date": "2023-04-26"
     },
     "Black Swan": {
-      "version": "1.0",
+      "version": "2.0",
       "date": "2024-02-06"
     },
     "Blade": {
-      "version": "1.0",
+      "version": "1.2",
       "date": "2023-07-19"
     },
     "Boothill": {
-      "version": "2.0",
+      "version": "2.2",
       "date": "2024-05-29"
     },
     "Bronya": {
@@ -511,15 +511,15 @@
       "date": "2023-04-26"
     },
     "Castorice": {
-      "version": "2.6",
+      "version": "3.2",
       "date": "2025-04-09"
     },
     "Cerydra": {
-      "version": "2.6",
+      "version": "3.5",
       "date": "2025-09-02"
     },
     "Cipher": {
-      "version": "2.6",
+      "version": "3.3",
       "date": "2025-06-11"
     },
     "Clara": {
@@ -527,7 +527,7 @@
       "date": "2023-04-26"
     },
     "Cyrene": {
-      "version": "2.6",
+      "version": "3.7",
       "date": "2025-11-05"
     },
     "Dan Heng": {
@@ -535,35 +535,35 @@
       "date": "2023-04-26"
     },
     "Dr. Ratio": {
-      "version": "1.4",
+      "version": "1.6",
       "date": "2024-01-17"
     },
     "Evanescia": {
-      "version": "3.7",
+      "version": "4.2",
       "date": "2026-05-13"
     },
     "Evernight": {
-      "version": "1.5",
+      "version": "3.6",
       "date": "2025-09-24"
     },
     "Feixiao": {
-      "version": "1.0",
+      "version": "2.5",
       "date": "2024-09-10"
     },
     "Firefly": {
-      "version": "1.6",
+      "version": "2.3",
       "date": "2024-06-19"
     },
     "Fu Xuan": {
-      "version": "1.0",
+      "version": "1.3",
       "date": "2023-09-20"
     },
     "Fugue": {
-      "version": "2.5",
+      "version": "2.7",
       "date": "2024-12-25"
     },
     "Gallagher": {
-      "version": "1.6",
+      "version": "2.1",
       "date": "2024-03-27"
     },
     "Gepard": {
@@ -571,11 +571,11 @@
       "date": "2023-04-26"
     },
     "Guinaifen": {
-      "version": "1.0",
+      "version": "1.4",
       "date": "2023-10-27"
     },
     "Hanya": {
-      "version": "1.0",
+      "version": "1.5",
       "date": "2023-12-06"
     },
     "Herta": {
@@ -591,27 +591,27 @@
       "date": "2023-04-26"
     },
     "Huohuo": {
-      "version": "1.3",
+      "version": "1.5",
       "date": "2023-11-15"
     },
     "Hyacine": {
-      "version": "2.6",
+      "version": "3.3",
       "date": "2025-05-21"
     },
     "Hysilens": {
-      "version": "2.6",
+      "version": "3.5",
       "date": "2025-08-13"
     },
     "Imbibitor Lunae": {
-      "version": "1.0",
+      "version": "1.3",
       "date": "2023-08-30"
     },
     "Jade": {
-      "version": "1.4",
+      "version": "2.3",
       "date": "2024-07-10"
     },
     "Jiaoqiu": {
-      "version": "2.2",
+      "version": "2.4",
       "date": "2024-08-21"
     },
     "Jing Yuan": {
@@ -619,27 +619,27 @@
       "date": "2023-05-17"
     },
     "Jingliu": {
-      "version": "1.0",
+      "version": "1.4",
       "date": "2023-10-11"
     },
     "Kafka": {
-      "version": "1.0",
+      "version": "1.2",
       "date": "2023-08-09"
     },
     "Lingsha": {
-      "version": "2.2",
+      "version": "2.5",
       "date": "2024-10-02"
     },
     "Luka": {
-      "version": "1.0",
+      "version": "1.2",
       "date": "2023-08-09"
     },
     "Luocha": {
-      "version": "1.0",
+      "version": "1.1",
       "date": "2023-06-28"
     },
     "Lynx": {
-      "version": "1.0",
+      "version": "1.3",
       "date": "2023-09-20"
     },
     "March 7th": {
@@ -647,15 +647,15 @@
       "date": "2023-04-26"
     },
     "Misha": {
-      "version": "1.5",
+      "version": "2.0",
       "date": "2024-02-06"
     },
     "Moze": {
-      "version": "2.2",
+      "version": "2.5",
       "date": "2024-09-10"
     },
     "Mydei": {
-      "version": "2.6",
+      "version": "3.1",
       "date": "2025-03-19"
     },
     "Natasha": {
@@ -667,11 +667,11 @@
       "date": "2023-04-26"
     },
     "Permansor Terrae": {
-      "version": "2.6",
+      "version": "3.6",
       "date": "2025-10-15"
     },
     "Phainon": {
-      "version": "2.6",
+      "version": "3.4",
       "date": "2025-07-02"
     },
     "Qingque": {
@@ -679,19 +679,19 @@
       "date": "2023-04-26"
     },
     "Rappa": {
-      "version": "2.4",
+      "version": "2.6",
       "date": "2024-10-23"
     },
     "Robin": {
-      "version": "1.6",
+      "version": "2.2",
       "date": "2024-05-08"
     },
     "Ruan Mei": {
-      "version": "1.0",
+      "version": "1.6",
       "date": "2023-12-27"
     },
     "Saber": {
-      "version": "3.2",
+      "version": "3.4",
       "date": "2025-07-11"
     },
     "Sampo": {
@@ -707,23 +707,23 @@
       "date": "2023-04-26"
     },
     "Silver Wolf": {
-      "version": "1.0",
+      "version": "1.1",
       "date": "2023-06-07"
     },
     "Silver Wolf LV.999": {
-      "version": "3.8",
+      "version": "4.2",
       "date": "2026-04-22"
     },
     "Sparkle": {
-      "version": "1.5",
+      "version": "2.0",
       "date": "2024-02-29"
     },
     "Sparxie": {
-      "version": "3.7",
+      "version": "4.0",
       "date": "2026-03-03"
     },
     "Sunday": {
-      "version": "1.6",
+      "version": "2.7",
       "date": "2024-12-04"
     },
     "Sushang": {
@@ -731,11 +731,11 @@
       "date": "2023-04-26"
     },
     "The Dahlia": {
-      "version": "1.6",
+      "version": "3.8",
       "date": "2025-12-17"
     },
     "The Herta": {
-      "version": "2.5",
+      "version": "3.0",
       "date": "2025-01-15"
     },
     "Tingyun": {
@@ -743,7 +743,7 @@
       "date": "2023-04-26"
     },
     "Topaz & Numby": {
-      "version": "1.0",
+      "version": "1.4",
       "date": "2023-10-27"
     },
     "Trailblazer": {
@@ -751,7 +751,7 @@
       "date": "2023-04-26"
     },
     "Tribbie": {
-      "version": "2.6",
+      "version": "3.1",
       "date": "2025-02-26"
     },
     "Welt": {
@@ -759,7 +759,7 @@
       "date": "2023-04-26"
     },
     "Xueyi": {
-      "version": "1.0",
+      "version": "1.6",
       "date": "2023-12-27"
     },
     "Yanqing": {
@@ -767,15 +767,15 @@
       "date": "2023-04-26"
     },
     "Yao Guang": {
-      "version": "1.0",
+      "version": "4.0",
       "date": "2026-02-13"
     },
     "Yukong": {
-      "version": "1.0",
+      "version": "1.1",
       "date": "2023-06-28"
     },
     "Yunli": {
-      "version": "2.1",
+      "version": "2.4",
       "date": "2024-07-31"
     }
   },
@@ -785,7 +785,7 @@
       "date": "2024-07-04"
     },
     "Alice Thymefield": {
-      "version": "1.6",
+      "version": "2.1",
       "date": "2025-08-06"
     },
     "Anton Ivanov": {
@@ -793,19 +793,19 @@
       "date": "2024-07-04"
     },
     "Aria": {
-      "version": "0.3",
+      "version": "2.6",
       "date": "2026-03-04"
     },
     "Asaba Harumasa": {
-      "version": "1.0",
+      "version": "1.4",
       "date": "2024-12-18"
     },
     "Astra Yao": {
-      "version": "1.1",
+      "version": "1.4",
       "date": "2025-01-22"
     },
     "Banyue": {
-      "version": "2.2",
+      "version": "2.4",
       "date": "2025-12-17"
     },
     "Ben Bigger": {
@@ -813,11 +813,11 @@
       "date": "2024-07-04"
     },
     "Cissia": {
-      "version": "2.6",
+      "version": "2.7",
       "date": "2026-04-15"
     },
     "Dialyn": {
-      "version": "2.2",
+      "version": "2.4",
       "date": "2025-11-26"
     },
     "Ellen Joe": {
@@ -825,11 +825,11 @@
       "date": "2024-07-04"
     },
     "Evelyn Chevalier": {
-      "version": "1.3",
+      "version": "1.5",
       "date": "2025-02-12"
     },
     "Flora (Seed)": {
-      "version": "1.0",
+      "version": "2.2",
       "date": "2025-09-04"
     },
     "Grace Howard": {
@@ -837,31 +837,31 @@
       "date": "2024-07-04"
     },
     "Hoshimi Miyabi": {
-      "version": "1.0",
+      "version": "1.4",
       "date": "2024-12-18"
     },
     "Hugo Vlad": {
-      "version": "1.0",
+      "version": "1.7",
       "date": "2025-05-14"
     },
     "Ju Fufu": {
-      "version": "1.6",
+      "version": "2.0",
       "date": "2025-06-25"
     },
     "Komano Manato": {
-      "version": "2.0",
+      "version": "2.3",
       "date": "2025-10-15"
     },
     "Lighter": {
-      "version": "1.0",
+      "version": "1.3",
       "date": "2024-11-27"
     },
     "Lucia Elowen": {
-      "version": "2.1",
+      "version": "2.3",
       "date": "2025-10-15"
     },
     "Nangong Yu": {
-      "version": "0.3",
+      "version": "2.7",
       "date": "2026-03-24"
     },
     "Nicole Demara": {
@@ -869,15 +869,15 @@
       "date": "2024-07-04"
     },
     "Orphie Magnusson & Magus": {
-      "version": "1.0",
+      "version": "2.2",
       "date": "2025-09-24"
     },
     "Promeia": {
-      "version": "2.4",
+      "version": "2.8",
       "date": "2026-05-06"
     },
     "Qingyi": {
-      "version": "1.0",
+      "version": "1.1",
       "date": "2024-08-14"
     },
     "Seth Lowell": {
@@ -885,7 +885,7 @@
       "date": "2024-09-04"
     },
     "Soldier 0 - Anby": {
-      "version": "1.5",
+      "version": "1.6",
       "date": "2025-03-12"
     },
     "Soldier 11 (Harin)": {
@@ -897,19 +897,19 @@
       "date": "2024-07-04"
     },
     "Sunna": {
-      "version": "0.3",
+      "version": "2.6",
       "date": "2026-02-06"
     },
     "Trigger": {
-      "version": "1.0",
+      "version": "1.6",
       "date": "2025-04-02"
     },
     "Tsukishiro Yanagi": {
-      "version": "1.0",
+      "version": "1.3",
       "date": "2024-11-06"
     },
     "Vivian Banshee": {
-      "version": "1.5",
+      "version": "1.7",
       "date": "2025-04-23"
     },
     "Von Lycaon": {
@@ -917,20 +917,76 @@
       "date": "2024-07-04"
     },
     "Yidhari Murphy": {
-      "version": "2.1",
+      "version": "2.3",
       "date": "2025-11-05"
     },
     "Yixuan": {
-      "version": "1.6",
+      "version": "2.0",
       "date": "2025-06-06"
     },
     "Zhao": {
-      "version": "1.6",
+      "version": "2.5",
       "date": "2025-12-30"
     },
     "Zhu Yuan": {
       "version": "1.0",
       "date": "2024-07-24"
+    },
+    "Anby Demara": {
+      "version": "1.0",
+      "date": "2024-07-04"
+    },
+    "Burnice White": {
+      "version": "1.2",
+      "date": "2024-10-16"
+    },
+    "Caesar King": {
+      "version": "1.2",
+      "date": "2024-09-25"
+    },
+    "Corin Wickes": {
+      "version": "1.0",
+      "date": "2024-07-04"
+    },
+    "Jane Doe": {
+      "version": "1.1",
+      "date": "2024-09-07"
+    },
+    "Koleda Belobog": {
+      "version": "1.0",
+      "date": "2024-07-04"
+    },
+    "Luciana Auxesis Theodoro de Montefio (Lucy)": {
+      "version": "1.0",
+      "date": "2024-07-04"
+    },
+    "Nekomiya Mana": {
+      "version": "1.0",
+      "date": "2024-07-04"
+    },
+    "Pan Yinhu": {
+      "version": "2.0",
+      "date": "2025-06-05"
+    },
+    "Piper Wheel": {
+      "version": "1.0",
+      "date": "2024-07-04"
+    },
+    "Pulchra Fellini": {
+      "version": "1.6",
+      "date": "2025-03-12"
+    },
+    "Billy Kid": {
+      "version": "2.8",
+      "date": "2026-05-27"
+    },
+    "Ukinami Yuzuha": {
+      "version": "2.1",
+      "date": "2025-07-16"
+    },
+    "Ye Shunguang": {
+      "version": "2.5",
+      "date": "2025-12-30"
     }
   }
 }

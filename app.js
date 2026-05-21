@@ -190,7 +190,8 @@ function renderList(chars) {
     const metaSpan = document.createElement('span');
     metaSpan.className = 'li-ver';
     if (currentGame === 'gi') {
-      const parts = [char.element, char.last_updated].filter(Boolean);
+      const relVer = releaseVersionLabel(char);
+      const parts = [char.element, relVer].filter(Boolean);
       metaSpan.textContent = parts.join(' · ');
     } else if (currentGame === 'hsr') {
       const relVer = releaseVersionLabel(char);
