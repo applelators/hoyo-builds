@@ -17,6 +17,7 @@ Usage:
 
 import argparse
 import asyncio
+import base64
 import glob
 import csv
 import io
@@ -33,7 +34,8 @@ from parse_zzz import (
     SKIP_NAMES, HEADER_VALS,
 )
 
-OUTPUT    = "/Users/hokori/genshin-builds/disc_map.json"
+OUTPUT             = "/Users/hokori/genshin-builds/disc_map.json"
+VISION_CACHE_PATH  = "/Users/hokori/genshin-builds/vision_cache.json"
 
 SHEET_BASE = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTj2PaPq6Py_1B5fsOPj_Moc-tN_7mut7fICczI6lz1njyEIAInTnfB7lAraX4pYCRGNbaHGlIbFZ90"
 SHEET_GIDS = [
@@ -420,108 +422,126 @@ def build_token_map(
     return token_to_4pc, token_to_2pc
 
 
-def resolve_via_phash(
+def _load_vision_cache() -> Dict[str, str]:
+    if os.path.exists(VISION_CACHE_PATH):
+        with open(VISION_CACHE_PATH, encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+
+def _save_vision_cache(cache: Dict[str, str]) -> None:
+    with open(VISION_CACHE_PATH, "w", encoding="utf-8") as f:
+        json.dump(cache, f, indent=2, ensure_ascii=False)
+
+
+def resolve_via_vision(
     token_to_bytes: Dict[str, bytes],
-    token_to_4pc:   Dict[str, str],
-    token_to_2pc:   Dict[str, str],
-    all_4pc_tokens: Set[str],
-    all_2pc_tokens: Set[str],
+    unresolved:     Set[str],
+    known_disc_sets: List[str],
     debug: bool = False,
-    threshold: int = 12,
-) -> Tuple[Dict[str, str], Dict[str, str]]:
+) -> Dict[str, str]:
     """
-    For tokens unresolved by intersection, compare perceptual hash against
-    resolved-token images (same spreadsheet → same 3D render style).
-    Also uses 2pc references when matching 4pc tokens and vice-versa.
-    Returns (new_4pc_mappings, new_2pc_mappings) to merge into the token maps.
+    Identify disc sets for unresolved tokens using Claude vision.
+
+    Sends each unknown spreadsheet icon alongside all reference icons from
+    disc_icons/ and asks Claude to match by visual design.  Results are cached
+    in vision_cache.json so repeated runs pay no API cost for already-seen tokens.
+
+    Returns {token: disc_set_name} for every token that was successfully identified.
+    Tokens whose images are not disc icons (e.g. character portraits that leaked
+    into the disc column) will return no entry — Claude's response won't match any
+    known disc set name and is silently dropped.
     """
     try:
-        import imagehash
-        from PIL import Image
-        import io as _io
+        import anthropic
     except ImportError:
-        print("  [phash] imagehash/Pillow not available — skipping")
-        return {}, {}
+        print("  [vision] anthropic package not available — skipping")
+        return {}
 
-    def phash_for(data: bytes) -> Optional[object]:
-        try:
-            img = Image.open(_io.BytesIO(data))
-            return imagehash.phash(img)
-        except Exception:
-            return None
+    cache = _load_vision_cache()
 
-    # Build per-disc-set reference hashes.
-    # Start from canonical wiki icons (disc_icons.json) if available — these are
-    # ground-truth references that don't depend on the bootstrap intersection step.
-    ref_hashes: Dict[str, list] = {}
-    canonical_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'disc_icons.json')
-    if os.path.exists(canonical_path):
-        canonical = json.load(open(canonical_path))
-        for disc_name, phash_hex in canonical.items():
-            ref_hashes[disc_name] = [imagehash.hex_to_hash(phash_hex)]
-        if debug:
-            print(f"  [phash] loaded {len(ref_hashes)} canonical hashes from disc_icons.json")
+    result: Dict[str, str] = {}
+    uncached: List[str] = []
+    for tok in unresolved:
+        if tok in cache:
+            result[tok] = cache[tok]
+            if debug:
+                print(f"  [vision-cache] {tok[:22]}... → {cache[tok]!r}")
+        elif tok in token_to_bytes:
+            uncached.append(tok)
 
-    # Also add hashes from already-resolved tokens (same render style as spreadsheet)
-    for tok, disc in list(token_to_4pc.items()) + list(token_to_2pc.items()):
-        if tok not in token_to_bytes:
+    if not uncached:
+        return result
+
+    # Load reference icons once
+    ref_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "disc_icons")
+    ref_content: List[dict] = []
+    valid_names: List[str] = []
+    for disc_name in sorted(known_disc_sets):
+        path = os.path.join(ref_dir, f"{disc_name}.png")
+        if not os.path.exists(path):
             continue
-        h = phash_for(token_to_bytes[tok])
-        if h is not None:
-            ref_hashes.setdefault(disc, []).append(h)
+        with open(path, "rb") as fh:
+            b64 = base64.standard_b64encode(fh.read()).decode()
+        ref_content.append({"type": "text", "text": f"• {disc_name}"})
+        ref_content.append({
+            "type": "image",
+            "source": {"type": "base64", "media_type": "image/png", "data": b64},
+        })
+        valid_names.append(disc_name)
 
-    if not ref_hashes:
-        if debug:
-            print("  [phash] no reference hashes available")
-        return {}, {}
+    client = anthropic.Anthropic()
+    print(f"  [vision] identifying {len(uncached)} tokens via Claude vision "
+          f"({len(cache)} already cached)...")
 
-    if debug:
-        print(f"  [phash] {len(ref_hashes)} disc sets with reference hashes")
+    for tok in uncached:
+        content: List[dict] = [
+            {
+                "type": "text",
+                "text": (
+                    "Below is a ZZZ (Zenless Zone Zero) drive disc set icon taken from a "
+                    "Google Sheets spreadsheet. It may look slightly different from the "
+                    "reference icons (different render style, smaller size) but the colour "
+                    "scheme and overall design pattern should match one of them.\n\n"
+                    "Unknown icon:"
+                ),
+            },
+            {
+                "type": "image",
+                "source": {
+                    "type": "base64",
+                    "media_type": "image/png",
+                    "data": base64.standard_b64encode(token_to_bytes[tok]).decode(),
+                },
+            },
+            {"type": "text", "text": "\nReference disc set icons (name then icon):\n"},
+        ] + ref_content + [
+            {
+                "type": "text",
+                "text": (
+                    "\nReply with ONLY the exact name of the matching disc set from the "
+                    "reference list. No other text."
+                ),
+            },
+        ]
 
-    new_4pc: Dict[str, str] = {}
-    new_2pc: Dict[str, str] = {}
-
-    for col, all_tokens, bucket, new_bucket in [
-        ("4pc", all_4pc_tokens, token_to_4pc, new_4pc),
-        ("2pc", all_2pc_tokens, token_to_2pc, new_2pc),
-    ]:
-        for tok in all_tokens:
-            if tok in bucket:
-                continue
-            if tok not in token_to_bytes:
-                continue
-            h = phash_for(token_to_bytes[tok])
-            if h is None:
-                continue
-
-            best_dist = 999
-            best_name = None
-            for disc_set, hashes in ref_hashes.items():
-                d = min(abs(h - rh) for rh in hashes)
-                if d < best_dist:
-                    best_dist = d
-                    best_name = disc_set
-
-            if best_name is not None and best_dist <= threshold:
-                new_bucket[tok] = best_name
+        try:
+            response = client.messages.create(
+                model="claude-haiku-4-5-20251001",
+                max_tokens=32,
+                messages=[{"role": "user", "content": content}],
+            )
+            name = response.content[0].text.strip().rstrip(".")
+            if name in valid_names:
+                result[tok] = name
+                cache[tok] = name
+                _save_vision_cache(cache)
                 if debug:
-                    top5 = sorted(
-                        [(d, nm) for nm, hashes in ref_hashes.items()
-                         for d in [min(abs(h - rh) for rh in hashes)]],
-                        key=lambda x: x[0]
-                    )[:5]
-                    print(f"  [phash-{col}] {tok[:22]}... → {best_name!r} (dist={best_dist})  "
-                          f"top5={[(nm,d) for d,nm in top5]}")
+                    print(f"  [vision] {tok[:22]}... → {name!r}")
             elif debug:
-                top5 = sorted(
-                    [(d, nm) for nm, hashes in ref_hashes.items()
-                     for d in [min(abs(h - rh) for rh in hashes)]],
-                    key=lambda x: x[0]
-                )[:5]
-                print(f"  [phash-{col}] {tok[:22]}... → NO MATCH (best_dist={best_dist})  "
-                      f"top5={[(nm,d) for d,nm in top5]}")
-
-    return new_4pc, new_2pc
+                print(f"  [vision] {tok[:22]}... → not a disc icon ({name!r} — skipped)")
+        except Exception as exc:
+            print(f"  [vision] error for {tok[:22]}: {exc}")
 
 
 def apply_token_map(
@@ -576,28 +596,28 @@ async def main_async(args):
     )
     print(f"  Mapped: {len(token_to_4pc)} 4pc tokens, {len(token_to_2pc)} 2pc tokens")
 
-    print("\n=== Step 3b: Resolve remaining tokens via perceptual hash ===")
+    print("\n=== Step 3b: Resolve remaining tokens via Claude vision ===")
     all_4pc_tokens: Set[str] = set()
     all_2pc_tokens: Set[str] = set()
     for char_data in all_char_tokens.values():
         all_4pc_tokens.update(char_data["4pc"])
         all_2pc_tokens.update(char_data["2pc"])
 
-    new_4pc, new_2pc = resolve_via_phash(
-        token_to_bytes, token_to_4pc, token_to_2pc,
-        all_4pc_tokens, all_2pc_tokens, args.debug,
-        threshold=10,
-    )
+    unresolved = (all_4pc_tokens | all_2pc_tokens) - set(token_to_4pc) - set(token_to_2pc)
+    vision_map = resolve_via_vision(token_to_bytes, unresolved, _KNOWN_DISC_SETS, args.debug)
+
+    new_4pc = {t: v for t, v in vision_map.items() if t in all_4pc_tokens and t not in token_to_4pc}
+    new_2pc = {t: v for t, v in vision_map.items() if t in all_2pc_tokens and t not in token_to_2pc}
     token_to_4pc.update(new_4pc)
     token_to_2pc.update(new_2pc)
-    print(f"  Added {len(new_4pc)} 4pc, {len(new_2pc)} 2pc via phash → "
+    print(f"  Added {len(new_4pc)} 4pc, {len(new_2pc)} 2pc via vision → "
           f"total {len(token_to_4pc)} 4pc, {len(token_to_2pc)} 2pc")
 
     # Save images for inspection if requested
     if getattr(args, "save_images", None):
         save_dir = args.save_images
         os.makedirs(save_dir, exist_ok=True)
-        # Build reverse map: token → disc set name (from both intersection + phash)
+        # Build reverse map: token → disc set name (from both intersection + vision)
         tok_label = {}
         for tok, name in token_to_4pc.items():
             tok_label[tok] = f"4pc_{name}"
