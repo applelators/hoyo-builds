@@ -155,21 +155,13 @@ function releaseKey(char) {
 
 function releaseVersionLabel(char) {
   const entry = (releaseData[currentGame] || {})[char.name];
-  return entry && entry.version ? `v${entry.version}` : '';
+  return entry && entry.version ? entry.version : '';
 }
 
 function refreshList() {
   const q = $('search').value.trim().toLowerCase();
   let list = q ? allChars.filter(c => c.name.toLowerCase().includes(q)) : [...allChars];
-  if (currentGame === 'zzz') {
-    list.sort((a, b) => {
-      const ek = zzzElementKey(a) - zzzElementKey(b);
-      if (ek !== 0) return ek;
-      return releaseKey(b) - releaseKey(a);
-    });
-  } else {
-    list.sort((a, b) => releaseKey(b) - releaseKey(a));
-  }
+  list.sort((a, b) => releaseKey(b) - releaseKey(a));
   renderList(list);
 }
 
@@ -197,13 +189,17 @@ function renderList(chars) {
 
     const metaSpan = document.createElement('span');
     metaSpan.className = 'li-ver';
-    const relVer = releaseVersionLabel(char);
     if (currentGame === 'gi') {
-      metaSpan.textContent = relVer;
+      const parts = [char.element, char.last_updated].filter(Boolean);
+      metaSpan.textContent = parts.join(' · ');
     } else if (currentGame === 'hsr') {
-      metaSpan.textContent = char.path ? `${char.path} · ${relVer}` : relVer;
+      const relVer = releaseVersionLabel(char);
+      const parts = [char.element, char.path, relVer].filter(Boolean);
+      metaSpan.textContent = parts.join(' · ');
     } else {
-      metaSpan.textContent = char.specialty ? `${char.specialty} · ${relVer}` : relVer;
+      const relVer = releaseVersionLabel(char);
+      const parts = [char.element, relVer].filter(Boolean);
+      metaSpan.textContent = parts.join(' · ');
     }
 
     li.appendChild(nameSpan);
