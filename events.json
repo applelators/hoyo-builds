@@ -1,0 +1,40 @@
+{
+  "$schema": {
+    "_description": "Event calendar per game. Update once per patch. All dates ISO YYYY-MM-DD in the game's primary server timezone.",
+    "_fields": {
+      "name":     "Event name as it appears on the wiki",
+      "type":     "One of: main, web, login, combat, exploration, story",
+      "start":    "ISO date YYYY-MM-DD when the event opens",
+      "end":      "ISO date YYYY-MM-DD when the event closes (exclusive)",
+      "rewards":  "Short string summarizing notable rewards (e.g. '4★ Selector + Primogems'). Optional.",
+      "tagline":  "One-line description. Optional.",
+      "url":      "Wiki link to the event page. Optional.",
+      "patch":    "Patch number string this event belongs to. Optional."
+    },
+    "_wiki_sources": {
+      "gi":  "https://genshin-impact.fandom.com/wiki/Event",
+      "hsr": "https://honkai-star-rail.fandom.com/wiki/Event",
+      "zzz": "https://zenless-zone-zero.fandom.com/wiki/Event"
+    },
+    "_scrape_hints": [
+      "Each wiki has an Events page listing current + upcoming events with start/end dates.",
+      "Filter to only 'ongoing' and 'upcoming' for the calendar — past events should be dropped on patch sync.",
+      "Web events live in a separate section but use the same shape — type='web'.",
+      "Daily login events are typically type='login' with low importance."
+    ]
+  },
+  "gi": [
+    { "name": "Stellar Reunion",        "type": "login",       "start": "2026-05-21", "end": "2026-07-01", "rewards": "4★ Selector + Primogems",            "tagline": "Welcome-back rewards for returning Travelers.",                 "patch": "5.7" },
+    { "name": "Echoing Tales of Geo",   "type": "main",        "start": "2026-05-25", "end": "2026-06-15", "rewards": "Linnea trial + Primogems",            "tagline": "Combat trial introducing Linnea's mechanics.",                  "patch": "5.7" },
+    { "name": "Marvelous Merchandise",  "type": "exploration", "start": "2026-05-30", "end": "2026-06-08", "rewards": "Mora · Hero's Wit",                   "tagline": "Daily trade-in event with Liben.",                              "patch": "5.7" }
+  ],
+  "hsr": [
+    { "name": "Path Through Stardust",  "type": "main",        "start": "2026-05-22", "end": "2026-06-19", "rewards": "Cyrene trial + Stellar Jade",        "tagline": "Story event exploring Amphoreus past.",                        "patch": "3.7" },
+    { "name": "Trailblaze Comm: Memory","type": "combat",      "start": "2026-05-21", "end": "2026-07-02", "rewards": "5★ Light Cone + Jade",                "tagline": "End-game combat tower with Remembrance synergies.",            "patch": "3.7" },
+    { "name": "Boulder Town Olympics",  "type": "web",         "start": "2026-05-26", "end": "2026-06-10", "rewards": "Stellar Jade × 200",                   "tagline": "Web event with mini-games.",                                    "patch": "3.7" }
+  ],
+  "zzz": [
+    { "name": "Aria Debut Trial",       "type": "combat",      "start": "2026-05-21", "end": "2026-06-04", "rewards": "Aria trial + Polychrome",             "tagline": "Test-drive Aria with a curated team.",                          "patch": "2.5" },
+    { "name": "Shiyu Defense: Phase 2", "type": "combat",      "start": "2026-05-26", "end": "2026-06-26", "rewards": "Polychrome × 300",                     "tagline": "Bimonthly combat tower with new affixes.",                      "patch": "2.5" }
+  ]
+}
