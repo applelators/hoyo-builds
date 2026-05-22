@@ -11,7 +11,7 @@
       "patch": "Optional. Patch number string (e.g. '3.7') this banner belongs to."
     },
     "_wiki_sources": {
-      "gi":  "https://genshin-impact.fandom.com/wiki/Character_Event_Wish",
+      "gi": "https://genshin-impact.fandom.com/wiki/Character_Event_Wish",
       "hsr": "https://honkai-star-rail.fandom.com/wiki/Warp/Event_Warp",
       "zzz": "https://zenless-zone-zero.fandom.com/wiki/Exclusive_Channel"
     },
@@ -25,18 +25,90 @@
     ]
   },
   "gi": [
-    { "character": "Linnea",  "phase": 1, "start": "2026-05-21", "end": "2026-06-10", "rerun": false, "verdict": "Pull if you play Geo teams. Era-defining DPS for Natlan/Snezhnaya rotations.", "patch": "5.7" },
-    { "character": "Varka",   "phase": 1, "start": "2026-05-21", "end": "2026-06-10", "rerun": false, "verdict": "Top-tier Pyro option; pull if you need a Pyro DPS or are committed to Mavuika teams.", "patch": "5.7" },
-    { "character": "Mavuika", "phase": 2, "start": "2026-06-10", "end": "2026-07-01", "rerun": true,  "verdict": "Best Pyro DPS in the game. High-value if you missed her last rerun.", "patch": "5.7" }
+    {
+      "character": "Linnea",
+      "phase": 1,
+      "start": "2026-05-21",
+      "end": "2026-06-10",
+      "rerun": false,
+      "verdict": "Pull if you play Geo teams. Era-defining DPS for Natlan/Snezhnaya rotations.",
+      "patch": "5.7"
+    },
+    {
+      "character": "Varka",
+      "phase": 1,
+      "start": "2026-05-21",
+      "end": "2026-06-10",
+      "rerun": false,
+      "verdict": "Top-tier Pyro option; pull if you need a Pyro DPS or are committed to Mavuika teams.",
+      "patch": "5.7"
+    },
+    {
+      "character": "Mavuika",
+      "phase": 2,
+      "start": "2026-06-10",
+      "end": "2026-07-01",
+      "rerun": true,
+      "verdict": "Best Pyro DPS in the game. High-value if you missed her last rerun.",
+      "patch": "5.7"
+    }
   ],
   "hsr": [
-    { "character": "Cyrene",   "phase": 1, "start": "2026-05-21", "end": "2026-06-11", "rerun": false, "verdict": "Pull if you play Remembrance teams. Era-defining support; Cyrene reshapes the meta for Chrysos Heirs.", "patch": "3.7" },
-    { "character": "Hysilens", "phase": 1, "start": "2026-05-21", "end": "2026-06-11", "rerun": false, "verdict": "Premium DoT DPS. Strong pull if your Nihility roster is thin.", "patch": "3.7" },
-    { "character": "Hyacine",  "phase": 2, "start": "2026-06-11", "end": "2026-07-02", "rerun": true,  "verdict": "Top sustain; rerun is high value if you missed her debut.", "patch": "3.7" },
-    { "character": "Acheron",  "phase": 2, "start": "2026-06-11", "end": "2026-07-02", "rerun": true,  "verdict": "Strong DPS but powercrept by newer Nihility comps. Skip if you have her at E0S1.", "patch": "3.7" }
+    {
+      "character": "Cyrene",
+      "phase": 1,
+      "start": "2026-05-21",
+      "end": "2026-06-11",
+      "rerun": false,
+      "verdict": "Pull if you play Remembrance teams. Era-defining support; Cyrene reshapes the meta for Chrysos Heirs.",
+      "patch": "3.7"
+    },
+    {
+      "character": "Hysilens",
+      "phase": 1,
+      "start": "2026-05-21",
+      "end": "2026-06-11",
+      "rerun": false,
+      "verdict": "Premium DoT DPS. Strong pull if your Nihility roster is thin.",
+      "patch": "3.7"
+    },
+    {
+      "character": "Hyacine",
+      "phase": 2,
+      "start": "2026-06-11",
+      "end": "2026-07-02",
+      "rerun": true,
+      "verdict": "Top sustain; rerun is high value if you missed her debut.",
+      "patch": "3.7"
+    },
+    {
+      "character": "Acheron",
+      "phase": 2,
+      "start": "2026-06-11",
+      "end": "2026-07-02",
+      "rerun": true,
+      "verdict": "Strong DPS but powercrept by newer Nihility comps. Skip if you have her at E0S1.",
+      "patch": "3.7"
+    }
   ],
   "zzz": [
-    { "character": "Aria",  "phase": 1, "start": "2026-05-21", "end": "2026-06-11", "rerun": false, "verdict": "Pull if you play Stun teams. Best-in-slot Stunner.", "patch": "2.5" },
-    { "character": "Sunna", "phase": 2, "start": "2026-06-11", "end": "2026-07-02", "rerun": false, "verdict": "High-value: new Anomaly DPS with strong solo carry potential.", "patch": "2.5" }
+    {
+      "character": "Aria",
+      "phase": 1,
+      "start": "2026-05-21",
+      "end": "2026-06-11",
+      "rerun": false,
+      "verdict": "Pull if you play Stun teams. Best-in-slot Stunner.",
+      "patch": "2.5"
+    },
+    {
+      "character": "Sunna",
+      "phase": 2,
+      "start": "2026-06-11",
+      "end": "2026-07-02",
+      "rerun": false,
+      "verdict": "High-value: new Anomaly DPS with strong solo carry potential.",
+      "patch": "2.5"
+    }
   ]
 }
