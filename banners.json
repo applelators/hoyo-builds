@@ -1,0 +1,42 @@
+{
+  "$schema": {
+    "_description": "Banner schedule per game. Update once per patch. All dates ISO YYYY-MM-DD in the game's primary server timezone (Asia, observed at 04:00 UTC reset).",
+    "_fields": {
+      "character": "Exact character name as it appears in builds.json (case-sensitive)",
+      "phase": "1 or 2 — which half of the patch this banner runs in",
+      "start": "ISO date YYYY-MM-DD when the banner opens",
+      "end": "ISO date YYYY-MM-DD when the banner closes (exclusive)",
+      "rerun": "true if this character has appeared on a banner before",
+      "verdict": "Short editorial guidance — 'Pull if X' / 'Skip' / 'High value'. Plain text, no HTML.",
+      "patch": "Optional. Patch number string (e.g. '3.7') this banner belongs to."
+    },
+    "_wiki_sources": {
+      "gi":  "https://genshin-impact.fandom.com/wiki/Character_Event_Wish",
+      "hsr": "https://honkai-star-rail.fandom.com/wiki/Warp/Event_Warp",
+      "zzz": "https://zenless-zone-zero.fandom.com/wiki/Exclusive_Channel"
+    },
+    "_scrape_hints": [
+      "Each wiki page lists upcoming + past banners as wikitables.",
+      "Standard banner duration: 21 days (3 weeks). Phase 1 starts on version release, phase 2 starts ~3 weeks later.",
+      "Genshin runs two simultaneous banners per phase (two 5★ chars share start/end dates).",
+      "HSR runs two simultaneous banners per phase as well.",
+      "ZZZ usually runs one main banner + one standard rate-up per phase.",
+      "Live versions can be checked via the corresponding /wiki/Version page."
+    ]
+  },
+  "gi": [
+    { "character": "Linnea",  "phase": 1, "start": "2026-05-21", "end": "2026-06-10", "rerun": false, "verdict": "Pull if you play Geo teams. Era-defining DPS for Natlan/Snezhnaya rotations.", "patch": "5.7" },
+    { "character": "Varka",   "phase": 1, "start": "2026-05-21", "end": "2026-06-10", "rerun": false, "verdict": "Top-tier Pyro option; pull if you need a Pyro DPS or are committed to Mavuika teams.", "patch": "5.7" },
+    { "character": "Mavuika", "phase": 2, "start": "2026-06-10", "end": "2026-07-01", "rerun": true,  "verdict": "Best Pyro DPS in the game. High-value if you missed her last rerun.", "patch": "5.7" }
+  ],
+  "hsr": [
+    { "character": "Cyrene",   "phase": 1, "start": "2026-05-21", "end": "2026-06-11", "rerun": false, "verdict": "Pull if you play Remembrance teams. Era-defining support; Cyrene reshapes the meta for Chrysos Heirs.", "patch": "3.7" },
+    { "character": "Hysilens", "phase": 1, "start": "2026-05-21", "end": "2026-06-11", "rerun": false, "verdict": "Premium DoT DPS. Strong pull if your Nihility roster is thin.", "patch": "3.7" },
+    { "character": "Hyacine",  "phase": 2, "start": "2026-06-11", "end": "2026-07-02", "rerun": true,  "verdict": "Top sustain; rerun is high value if you missed her debut.", "patch": "3.7" },
+    { "character": "Acheron",  "phase": 2, "start": "2026-06-11", "end": "2026-07-02", "rerun": true,  "verdict": "Strong DPS but powercrept by newer Nihility comps. Skip if you have her at E0S1.", "patch": "3.7" }
+  ],
+  "zzz": [
+    { "character": "Aria",  "phase": 1, "start": "2026-05-21", "end": "2026-06-11", "rerun": false, "verdict": "Pull if you play Stun teams. Best-in-slot Stunner.", "patch": "2.5" },
+    { "character": "Sunna", "phase": 2, "start": "2026-06-11", "end": "2026-07-02", "rerun": false, "verdict": "High-value: new Anomaly DPS with strong solo carry potential.", "patch": "2.5" }
+  ]
+}

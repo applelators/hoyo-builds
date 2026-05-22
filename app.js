@@ -34,6 +34,70 @@ let activeBuildIdx = 0;
 let currentGame   = 'gi';   // 'gi' | 'hsr' | 'zzz'
 let filterElement = null;   // currently selected element filter, or null
 let tiersData     = {};     // {gi: {name: tier}, hsr: {…}, zzz: {…}}
+let bannerData    = {};     // {gi: [{character, phase, start, end, verdict}], …}
+let eventData     = {};     // {gi: [{name, type, start, end, rewards, tagline}], …}
+let livestreamData = {};    // {gi: {version, title, date, highlights}, …}
+
+// ── favorites + density (localStorage) ───────────────────────
+const FAV_KEY = 'hoyo-builds:favorites';
+const DENSITY_KEY = 'hoyo-builds:density';
+function loadFavorites() {
+  try {
+    const raw = localStorage.getItem(FAV_KEY);
+    return raw ? JSON.parse(raw) : { gi: [], hsr: [], zzz: [] };
+  } catch { return { gi: [], hsr: [], zzz: [] }; }
+}
+function saveFavorites(f) {
+  try { localStorage.setItem(FAV_KEY, JSON.stringify(f)); } catch {}
+}
+function loadDensity() {
+  try { return localStorage.getItem(DENSITY_KEY) === 'compact'; } catch { return false; }
+}
+function saveDensity(compact) {
+  try { localStorage.setItem(DENSITY_KEY, compact ? 'compact' : 'normal'); } catch {}
+}
+let favorites = { gi: [], hsr: [], zzz: [] };
+function isFavorite(char) {
+  const list = favorites[currentGame] || [];
+  return list.includes(char.name);
+}
+function toggleFavorite(char) {
+  if (!favorites[currentGame]) favorites[currentGame] = [];
+  const idx = favorites[currentGame].indexOf(char.name);
+  if (idx >= 0) favorites[currentGame].splice(idx, 1);
+  else favorites[currentGame].push(char.name);
+  saveFavorites(favorites);
+  refreshList();
+}
+let compactMode = false;
+
+// ── compare mode state ───────────────────────────────────────
+let compareChar = null;
+
+// ── palette + element grouping state ───────────────────────
+let paletteOpen = false;
+let paletteQuery = '';
+let paletteIndex = 0;
+let paletteItems = []; // [{type, char?, label, action}]
+
+const COLLAPSE_KEY = 'hoyo-builds:collapsed-groups';
+let collapsedGroups = {};
+function loadCollapsed() {
+  try { return JSON.parse(localStorage.getItem(COLLAPSE_KEY) || '{}'); }
+  catch { return {}; }
+}
+function saveCollapsed() {
+  try { localStorage.setItem(COLLAPSE_KEY, JSON.stringify(collapsedGroups)); } catch {}
+}
+function isGroupCollapsed(el) {
+  return !!(collapsedGroups[currentGame] && collapsedGroups[currentGame][el]);
+}
+function toggleGroup(el) {
+  if (!collapsedGroups[currentGame]) collapsedGroups[currentGame] = {};
+  collapsedGroups[currentGame][el] = !collapsedGroups[currentGame][el];
+  saveCollapsed();
+  refreshList();
+}
 
 const $ = id => document.getElementById(id);
 
@@ -70,9 +134,175 @@ function zzzElementKey(char) {
   return i === -1 ? 999 : i;
 }
 
+// ── element accent setting (per-character page tint) ─────────
+function applyCharAccent(char) {
+  const el = charElement(char);
+  const col = ELEMENT_COLORS[el];
+  const root = document.documentElement;
+  if (col) {
+    const [idle, active, dark] = col;
+    root.style.setProperty('--char-accent', active);
+    root.style.setProperty('--char-accent-soft', idle);
+    root.style.setProperty('--char-accent-fg', dark ? '#111' : '#fff');
+  } else {
+    root.style.removeProperty('--char-accent');
+    root.style.removeProperty('--char-accent-soft');
+    root.style.removeProperty('--char-accent-fg');
+  }
+}
+
+// ── rarity detection for items (5✩ / 4✩ / 3✩ / 5★ / 4★ / 3★) ─
+function detectRarity(text) {
+  const m = text.match(/\(?\s*(\d)\s*[✩★⭐]/);
+  if (m) return parseInt(m[1]);
+  return null;
+}
+
+// ── section header glyph map ─────────────────────────────────
+const SECTION_ICONS = {
+  'role':           '<svg viewBox="0 0 16 16" class="sec-ico"><circle cx="8" cy="5.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M3 14c.5-2.8 2.6-4.5 5-4.5s4.5 1.7 5 4.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
+  'weapons':        '<svg viewBox="0 0 16 16" class="sec-ico"><path d="M2.5 13.5l8-8 1.5 1.5-8 8zM10.5 5.5l3-3M2 14l1.5-1.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
+  'light cones':    '<svg viewBox="0 0 16 16" class="sec-ico"><path d="M8 1.5l1.5 5h5l-4 3 1.5 5L8 11.5 4 14.5l1.5-5-4-3h5z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>',
+  'w-engines':      '<svg viewBox="0 0 16 16" class="sec-ico"><circle cx="8" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="8" r="1.5" fill="currentColor"/><path d="M8 3v-2M8 15v-2M13 8h2M1 8h2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
+  'w-engine notes': '<svg viewBox="0 0 16 16" class="sec-ico"><circle cx="8" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="8" r="1.5" fill="currentColor"/></svg>',
+  'artifacts':      '<svg viewBox="0 0 16 16" class="sec-ico"><path d="M3 6l5-3 5 3v4l-5 3-5-3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>',
+  'relics':         '<svg viewBox="0 0 16 16" class="sec-ico"><path d="M3 6l5-3 5 3v4l-5 3-5-3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>',
+  'drive discs':    '<svg viewBox="0 0 16 16" class="sec-ico"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="8" r="2" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>',
+  'main stats':     '<svg viewBox="0 0 16 16" class="sec-ico"><path d="M2 13l3-5 3 3 4-7 2 9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'sub stats':      '<svg viewBox="0 0 16 16" class="sec-ico"><path d="M2 13l3-5 3 3 4-7 2 9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'substats':       '<svg viewBox="0 0 16 16" class="sec-ico"><path d="M2 13l3-5 3 3 4-7 2 9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  'talent priority':'<svg viewBox="0 0 16 16" class="sec-ico"><path d="M3 4h10M3 8h7M3 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+  'ability priority':'<svg viewBox="0 0 16 16" class="sec-ico"><path d="M3 4h10M3 8h7M3 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+  'tips':           '<svg viewBox="0 0 16 16" class="sec-ico"><path d="M5.5 11h5M6.5 13h3M8 1.5c-2.8 0-4.5 2-4.5 4.5 0 2 1 3 1.5 4h6c.5-1 1.5-2 1.5-4 0-2.5-1.7-4.5-4.5-4.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>',
+  'notes':          '<svg viewBox="0 0 16 16" class="sec-ico"><path d="M3 2.5h7l3 3V14H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 2.5v3h3M5.5 8h5M5.5 11h4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
+  'other notes':    '<svg viewBox="0 0 16 16" class="sec-ico"><path d="M3 2.5h7l3 3V14H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 2.5v3h3M5.5 8h5M5.5 11h4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
+  'team comps':     '<svg viewBox="0 0 16 16" class="sec-ico"><circle cx="4.5" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="11.5" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 13c.4-1.8 1.6-2.8 3-2.8s2.6 1 3 2.8M8.5 13c.4-1.8 1.6-2.8 3-2.8s2.6 1 3 2.8" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
+  'example teams':  '<svg viewBox="0 0 16 16" class="sec-ico"><circle cx="4.5" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="11.5" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M1.5 13c.4-1.8 1.6-2.8 3-2.8s2.6 1 3 2.8M8.5 13c.4-1.8 1.6-2.8 3-2.8s2.6 1 3 2.8" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
+  'mindscapes':     '<svg viewBox="0 0 16 16" class="sec-ico"><path d="M8 1.5c-1.5 2-4 2.5-4 5.5 0 2.5 1.8 4.5 4 4.5s4-2 4-4.5c0-3-2.5-3.5-4-5.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>',
+  'eidolons':       '<svg viewBox="0 0 16 16" class="sec-ico"><path d="M8 1.5c-1.5 2-4 2.5-4 5.5 0 2.5 1.8 4.5 4 4.5s4-2 4-4.5c0-3-2.5-3.5-4-5.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>',
+  'notable eidolons':'<svg viewBox="0 0 16 16" class="sec-ico"><path d="M8 1.5c-1.5 2-4 2.5-4 5.5 0 2.5 1.8 4.5 4 4.5s4-2 4-4.5c0-3-2.5-3.5-4-5.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>',
+  'stat targets':   '<svg viewBox="0 0 16 16" class="sec-ico"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="8" r="0.8" fill="currentColor"/></svg>',
+  'disc notes':     '<svg viewBox="0 0 16 16" class="sec-ico"><path d="M3 2.5h7l3 3V14H3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>',
+};
+function sectionIcon(label) {
+  return SECTION_ICONS[label.toLowerCase()] || '';
+}
+
+// ── stat-target table parser ────────────────────────────
+function parseStatTargets(text) {
+  if (!text || !text.trim()) return null;
+  const sections = [];
+  let cur = { title: null, rows: [] };
+  for (const raw of text.split('\n')) {
+    const line = raw.trim();
+    if (!line) {
+      if (cur.rows.length || cur.title) { sections.push(cur); cur = { title: null, rows: [] }; }
+      continue;
+    }
+    // "LABEL:" alone (no value) → section heading
+    const headMatch = line.match(/^([^:]+):\s*$/);
+    if (headMatch) {
+      if (cur.rows.length || cur.title) { sections.push(cur); cur = { title: null, rows: [] }; }
+      cur.title = headMatch[1].trim();
+      continue;
+    }
+    // "LABEL: VALUE"
+    const kvMatch = line.match(/^([^:]+):\s*(.+)$/);
+    if (kvMatch) {
+      cur.rows.push({ label: kvMatch[1].trim(), value: kvMatch[2].trim() });
+      continue;
+    }
+    // bare value
+    cur.rows.push({ label: '', value: line });
+  }
+  if (cur.rows.length || cur.title) sections.push(cur);
+  return sections.length ? sections : null;
+}
+
+function statTargetCard(text) {
+  const sections = parseStatTargets(text);
+  if (!sections) return '';
+  let body = '';
+  for (const sec of sections) {
+    if (sec.title) body += `<div class="stat-section-title">${escHtml(sec.title)}</div>`;
+    body += '<div class="stat-target-grid">';
+    for (const r of sec.rows) {
+      if (r.label) {
+        body += `<span class="st-label">${escHtml(r.label)}</span><span class="st-value">${escHtml(r.value)}</span>`;
+      } else {
+        body += `<span class="st-full">${escHtml(r.value)}</span>`;
+      }
+    }
+    body += '</div>';
+  }
+  return `<div class="build-card left-card"><div class="card-label">${sectionIcon('stat targets')}<span>stat targets</span></div>${body}</div>`;
+}
+
+function pullPriorityCard(text) {
+  if (!text || !text.trim()) return '';
+  return `<div class="build-card left-card pull-priority">
+    <div class="card-label">${sectionIcon('pull priority')}<span>pull priority</span></div>
+    <div class="pp-body">${escHtml(text.trim())}</div>
+  </div>`;
+}
+
+// ── character icon lookup with name normalization ──────────
+function lookupIcon(game, name) {
+  if (!name) return null;
+  const map = icons[game] || {};
+  if (map[name]) return map[name];
+  // strip parens → try inside-parens or outside-parens
+  const parenMatch = name.match(/\(([^)]+)\)/);
+  if (parenMatch && map[parenMatch[1].trim()]) return map[parenMatch[1].trim()];
+  const stripped = name.replace(/\s*\(.*?\)\s*/g, '').trim();
+  if (map[stripped]) return map[stripped];
+  // last word fallback ("Tsukishiro Yanagi" → "Yanagi")
+  const last = stripped.split(' ').pop();
+  if (last && map[last]) return map[last];
+  // first word
+  const first = stripped.split(' ')[0];
+  if (first && map[first]) return map[first];
+  // try matching against keys case-insensitive
+  const lower = name.toLowerCase();
+  for (const k of Object.keys(map)) {
+    if (k.toLowerCase() === lower || k.toLowerCase().includes(lower) || lower.includes(k.toLowerCase())) {
+      return map[k];
+    }
+  }
+  return null;
+}
+
+function teamMemberThumb(game, name) {
+  const display = game === 'zzz' ? zzzShortName(name) : name;
+  const url = lookupIcon(game, name);
+  const imgHtml = url
+    ? `<img class="tm-icon" src="${escHtml(url)}" alt="" referrerpolicy="no-referrer" loading="lazy">`
+    : '<span class="tm-icon tm-icon-blank"></span>';
+  return `<span class="team-thumb">${imgHtml}<span class="tm-name">${escHtml(display)}</span></span>`;
+}
+
+// ── status pill (NEW / BUFFED) ────────────────────────────────
+const TODAY = new Date('2026-05-21'); // matches "today" per project; falls back gracefully
+function statusPill(char) {
+  let dateStr = null;
+  if (currentGame === 'hsr' && char.release_date) dateStr = char.release_date;
+  else {
+    const rd = (releaseData[currentGame] || {})[char.name];
+    if (rd && rd.date) dateStr = rd.date;
+  }
+  if (!dateStr) return '';
+  const d = new Date(dateStr);
+  if (isNaN(d.getTime())) return '';
+  const diff = (TODAY - d) / (1000 * 60 * 60 * 24);
+  if (diff < 0) return '<span class="pill pill-upcoming">UPCOMING</span>';
+  if (diff <= 45) return '<span class="pill pill-new">NEW</span>';
+  if (diff <= 90) return '<span class="pill pill-recent">RECENT</span>';
+  return '';
+}
+
 // ── boot ─────────────────────────────────────────────────────
 async function init() {
-  const [gi, hsr, zzz, pts, ico, rel, tiers] = await Promise.all([
+  const [gi, hsr, zzz, pts, ico, rel, tiers, bnrs, evts, livs] = await Promise.all([
     fetch('builds.json').then(r => r.json()),
     fetch('hsr_builds.json').then(r => r.json()),
     fetch('zzz_builds.json').then(r => r.json()),
@@ -80,6 +310,9 @@ async function init() {
     fetch('icons.json').then(r => r.json()).catch(() => ({})),
     fetch('release_data.json').then(r => r.json()).catch(() => ({})),
     fetch('tiers.json').then(r => r.json()).catch(() => ({})),
+    fetch('banners.json').then(r => r.json()).catch(() => ({})),
+    fetch('events.json').then(r => r.json()).catch(() => ({})),
+    fetch('livestreams.json').then(r => r.json()).catch(() => ({})),
   ]);
   giChars  = gi;
   hsrChars = hsr;
@@ -88,12 +321,33 @@ async function init() {
   icons = ico;
   releaseData = rel;
   tiersData = tiers;
+  bannerData = bnrs;
+  eventData = evts;
+  livestreamData = livs;
   allChars = giChars;
 
-  $('search').addEventListener('input', () => refreshList());
+  // load persisted state
+  collapsedGroups = loadCollapsed();
 
-  document.querySelectorAll('.game-tab').forEach(tab => {
-    tab.addEventListener('click', () => switchGame(tab.dataset.game));
+  // rail — game buttons
+  document.querySelectorAll('.rail-game').forEach(btn => {
+    btn.addEventListener('click', () => switchGame(btn.dataset.game));
+  });
+
+  // rail — lens buttons (tiers/favorites/compare hooked separately)
+  document.querySelectorAll('.rail-lens').forEach(btn => {
+    const lens = btn.dataset.lens;
+    if (lens === 'tiers') {
+      btn.addEventListener('click', showTierView);
+    } else if (lens === 'favorites') {
+      btn.addEventListener('click', () => toggleFavoritesLens());
+    } else if (lens === 'compare') {
+      btn.addEventListener('click', () => {
+        if (compareChar) clearCompare();
+      });
+    } else if (lens === 'characters') {
+      btn.addEventListener('click', () => clearLensViews());
+    }
   });
 
   $('back-btn').addEventListener('click', () => {
@@ -102,21 +356,752 @@ async function init() {
     $('tier-view').classList.add('hidden');
     $('tier-btn').classList.remove('active');
     $('placeholder').classList.remove('hidden');
+    $('char-view').classList.add('hidden');
+    activeChar = null;
+    clearCompare();
+    updateLensState();
+    updateUrl();
   });
 
   $('tier-btn').addEventListener('click', showTierView);
 
+  // ── palette wire-up ──
+  const paletteTrigger = $('palette-trigger');
+  if (paletteTrigger) paletteTrigger.addEventListener('click', openPalette);
+  const paletteInput = $('palette-input');
+  if (paletteInput) {
+    paletteInput.addEventListener('input', () => {
+      paletteQuery = paletteInput.value;
+      paletteIndex = 0;
+      renderPalette();
+    });
+    paletteInput.addEventListener('keydown', handlePaletteKeydown);
+  }
+  const backdrop = document.querySelector('#palette .palette-backdrop');
+  if (backdrop) backdrop.addEventListener('click', closePalette);
+
   updateSourceCredit(currentGame);
   renderElementFilters();
+
+  // ── favorites + density load ──
+  favorites = loadFavorites();
+  compactMode = loadDensity();
+  document.body.classList.toggle('density-compact', compactMode);
+
+  // ── wire density toggle ──
+  const dToggle = $('density-toggle');
+  if (dToggle) {
+    dToggle.addEventListener('click', () => {
+      compactMode = !compactMode;
+      saveDensity(compactMode);
+      document.body.classList.toggle('density-compact', compactMode);
+      dToggle.classList.toggle('active', compactMode);
+    });
+    dToggle.classList.toggle('active', compactMode);
+  }
+
+  // ── wire compare close ──
+  const cClose = $('compare-close');
+  if (cClose) cClose.addEventListener('click', clearCompare);
+
+  // ── keyboard navigation ──
+  document.addEventListener('keydown', handleKeydown);
+
+  // ── URL state on load ──
+  window.addEventListener('popstate', applyUrlState);
+
   refreshList();
+  renderHighlights();
+  updateGameLabel();
+  applyUrlState();
 }
 
-function switchGame(game) {
+// ── URL state ─────────────────────────────────────────────
+function applyUrlState() {
+  const params = new URLSearchParams(location.hash.slice(1) || location.search.slice(1));
+  const g = params.get('game');
+  const c = params.get('char');
+  const cmp = params.get('compare');
+  const view = params.get('view'); // 'tier'
+  if (g && g !== currentGame && ['gi','hsr','zzz'].includes(g)) {
+    _switchGameNoUrl(g);
+  }
+  if (view === 'tier') {
+    showTierView();
+    return;
+  }
+  if (c) {
+    const char = allChars.find(x => x.name.toLowerCase() === c.toLowerCase());
+    if (char) {
+      _selectCharNoUrl(char);
+      if (cmp) {
+        const cmpChar = allChars.find(x => x.name.toLowerCase() === cmp.toLowerCase());
+        if (cmpChar) setCompareChar(cmpChar);
+        else clearCompare();
+      } else clearCompare();
+    }
+  }
+}
+
+function updateUrl() {
+  const params = new URLSearchParams();
+  params.set('game', currentGame);
+  if (activeChar) params.set('char', activeChar.name);
+  if (compareChar) params.set('compare', compareChar.name);
+  const target = '#' + params.toString();
+  if (location.hash !== target) {
+    history.replaceState(null, '', target);
+  }
+}
+
+// ── keyboard navigation ───────────────────────────────
+function handleKeydown(e) {
+  const t = e.target;
+  const inField = t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable);
+  // ⌘K / Ctrl+K always opens palette
+  if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) {
+    e.preventDefault();
+    openPalette();
+    return;
+  }
+  if (e.key === '/' && !inField) {
+    e.preventDefault();
+    openPalette();
+    return;
+  }
+  if (e.key === 'Escape') {
+    if (paletteOpen) { closePalette(); return; }
+    if (inField) { t.blur(); return; }
+    if (compareChar) { clearCompare(); return; }
+    $('back-btn').click();
+    return;
+  }
+  if (inField) return;
+  const items = [...document.querySelectorAll('#char-list li:not(.list-section-header)')];
+  if (!items.length) return;
+  const activeIdx = items.findIndex(li => li.classList.contains('active'));
+  if (e.key === 'j' || e.key === 'ArrowDown') {
+    e.preventDefault();
+    const next = items[Math.min(items.length - 1, (activeIdx < 0 ? 0 : activeIdx + 1))];
+    if (next) next.click();
+  } else if (e.key === 'k' || e.key === 'ArrowUp') {
+    e.preventDefault();
+    const prev = items[Math.max(0, (activeIdx < 0 ? 0 : activeIdx - 1))];
+    if (prev) prev.click();
+  } else if (e.key === '1') { switchGame('gi'); }
+  else if (e.key === '2') { switchGame('hsr'); }
+  else if (e.key === '3') { switchGame('zzz'); }
+}
+
+// ── compare mode ───────────────────────────────────────────
+// ── command palette ───────────────────────────────────────────
+function openPalette() {
+  if (paletteOpen) return;
+  paletteOpen = true;
+  paletteQuery = '';
+  paletteIndex = 0;
+  const root = $('palette');
+  if (!root) return;
+  root.classList.remove('hidden');
+  const input = $('palette-input');
+  if (input) { input.value = ''; setTimeout(() => input.focus(), 10); }
+  renderPalette();
+}
+function closePalette() {
+  if (!paletteOpen) return;
+  paletteOpen = false;
+  $('palette').classList.add('hidden');
+}
+
+function fuzzyScore(query, text) {
+  if (!query) return 0;
+  const q = query.toLowerCase();
+  const t = text.toLowerCase();
+  if (t.startsWith(q)) return 1000 - t.length;
+  if (t.includes(q)) return 500 - t.length;
+  // subsequence match
+  let qi = 0;
+  for (let ti = 0; ti < t.length && qi < q.length; ti++) {
+    if (t[ti] === q[qi]) qi++;
+  }
+  return qi === q.length ? 100 - t.length : -1;
+}
+
+function buildPaletteItems() {
+  const q = paletteQuery.trim();
+  const items = [];
+
+  // Characters (active game first, then others)
+  const allGameChars = [
+    ...allChars.map(c => ({ char: c, game: currentGame })),
+    ...(currentGame !== 'gi' ? giChars.map(c => ({ char: c, game: 'gi' })) : []),
+    ...(currentGame !== 'hsr' ? hsrChars.map(c => ({ char: c, game: 'hsr' })) : []),
+    ...(currentGame !== 'zzz' ? zzzChars.map(c => ({ char: c, game: 'zzz' })) : []),
+  ];
+  let charMatches = allGameChars
+    .map(({ char, game }) => ({ char, game, score: fuzzyScore(q, char.name) }))
+    .filter(x => !q || x.score > 0)
+    .sort((a, b) => b.score - a.score);
+  // cap to 12 results when querying, otherwise show top 30
+  charMatches = q ? charMatches.slice(0, 12) : charMatches.slice(0, 30);
+  if (charMatches.length) {
+    items.push({ kind: 'section', label: 'Characters' });
+    for (const { char, game } of charMatches) {
+      items.push({
+        kind: 'char',
+        char, game,
+        label: char.name,
+        sublabel: gamePaletteLabel(game, char),
+        action: () => {
+          if (game !== currentGame) _switchGameNoUrl(game);
+          allChars = game === 'gi' ? giChars : game === 'hsr' ? hsrChars : zzzChars;
+          selectChar(char);
+        },
+      });
+    }
+  }
+
+  // Actions / Lenses
+  const actionFilters = [
+    { label: 'Open Tier List', score: fuzzyScore(q, 'open tier list'), icon: 'tier', action: showTierView },
+    { label: 'Show Pinned Characters', score: fuzzyScore(q, 'show pinned characters'), icon: 'star', action: () => { favoritesOnly = true; updateLensState(); refreshList(); } },
+    { label: 'Switch to Genshin Impact', score: fuzzyScore(q, 'switch to genshin impact'), icon: 'game', action: () => switchGame('gi') },
+    { label: 'Switch to Honkai: Star Rail', score: fuzzyScore(q, 'switch to honkai star rail'), icon: 'game', action: () => switchGame('hsr') },
+    { label: 'Switch to Zenless Zone Zero', score: fuzzyScore(q, 'switch to zenless zone zero'), icon: 'game', action: () => switchGame('zzz') },
+    { label: 'Toggle Compact List', score: fuzzyScore(q, 'toggle compact list'), icon: 'density', action: () => $('density-toggle').click() },
+  ];
+  const actionMatches = actionFilters.filter(a => !q || a.score > 0).sort((a, b) => b.score - a.score);
+  if (actionMatches.length) {
+    items.push({ kind: 'section', label: 'Actions' });
+    for (const a of actionMatches) {
+      items.push({ kind: 'action', label: a.label, icon: a.icon, action: a.action });
+    }
+  }
+
+  return items;
+}
+
+function gamePaletteLabel(game, char) {
+  const parts = [];
+  parts.push(game.toUpperCase());
+  if (game === 'hsr' && char.path) parts.push(char.path);
+  else if (game === 'zzz' && char.specialty) parts.push(char.specialty);
+  else {
+    const el = ((releaseData[game] || {})[char.name] || {}).element || char.element;
+    if (el) parts.push(el);
+  }
+  return parts.join(' · ');
+}
+
+const PALETTE_ICONS = {
+  tier:    '<svg viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="2.5" rx="0.5" fill="#f5a623"/><rect x="2" y="7" width="9" height="2.5" rx="0.5" fill="#9b59b6"/><rect x="2" y="11" width="6" height="2.5" rx="0.5" fill="#3498db"/></svg>',
+  star:    '<svg viewBox="0 0 16 16" fill="none"><path d="M8 2l1.8 4 4.2.4-3.2 2.8 1 4.4L8 11.3 4.2 13.6l1-4.4L2 6.4l4.2-.4z" stroke="currentColor" stroke-width="1.4" fill="rgba(240,192,64,0.3)"/></svg>',
+  game:    '<svg viewBox="0 0 16 16" fill="none"><rect x="1" y="5" width="14" height="7" rx="2" stroke="currentColor" stroke-width="1.4"/><circle cx="11" cy="8.5" r="1" fill="currentColor"/><path d="M4 7v3M3 8.5h2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
+  density: '<svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+};
+
+function renderPalette() {
+  paletteItems = buildPaletteItems();
+  const wrap = $('palette-results');
+  if (!wrap) return;
+  if (!paletteItems.length || paletteItems.every(i => i.kind === 'section')) {
+    wrap.innerHTML = '<div class="palette-empty">No matches</div>';
+    return;
+  }
+  // clamp index to a selectable (non-section) item
+  const selectable = paletteItems.filter(i => i.kind !== 'section');
+  if (paletteIndex >= selectable.length) paletteIndex = 0;
+
+  let html = '';
+  let selIdx = -1;
+  for (let i = 0; i < paletteItems.length; i++) {
+    const it = paletteItems[i];
+    if (it.kind === 'section') {
+      html += `<div class="palette-section-title">${escHtml(it.label)}</div>`;
+    } else {
+      selIdx++;
+      const isActive = selIdx === paletteIndex;
+      const cls = `palette-item${isActive ? ' active' : ''}`;
+      let iconHtml = '';
+      if (it.kind === 'char') {
+        const url = (icons[it.game] || {})[it.char.name];
+        iconHtml = url
+          ? `<img class="palette-item-icon" src="${escHtml(url)}" alt="" referrerpolicy="no-referrer">`
+          : '<span class="palette-item-iconwrap"></span>';
+      } else {
+        iconHtml = `<span class="palette-item-iconwrap">${PALETTE_ICONS[it.icon] || ''}</span>`;
+      }
+      let tierBadge = '';
+      if (it.kind === 'char') {
+        const tier = (tiersData[it.game] || {})[it.char.name];
+        if (tier) tierBadge = `<span class="palette-item-tier tier-${tier.replace('.', '_')}">${tier}</span>`;
+      }
+      html += `<div class="${cls}" data-selidx="${selIdx}">
+        ${iconHtml}
+        <span class="palette-item-name">${escHtml(it.label)}</span>
+        ${tierBadge}
+        ${it.sublabel ? `<span class="palette-item-meta">${escHtml(it.sublabel)}</span>` : ''}
+      </div>`;
+    }
+  }
+  wrap.innerHTML = html;
+  wrap.querySelectorAll('.palette-item').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const idx = parseInt(el.dataset.selidx, 10);
+      runPaletteIndex(idx, e.shiftKey);
+    });
+  });
+  // scroll active into view
+  const activeEl = wrap.querySelector('.palette-item.active');
+  if (activeEl) activeEl.scrollIntoView({ block: 'nearest' });
+}
+
+function runPaletteIndex(idx, withShift) {
+  const selectable = paletteItems.filter(i => i.kind !== 'section');
+  const target = selectable[idx];
+  if (!target) return;
+  closePalette();
+  if (target.kind === 'char' && withShift) {
+    // shift-enter on a char => compare
+    if (target.game !== currentGame) _switchGameNoUrl(target.game);
+    allChars = target.game === 'gi' ? giChars : target.game === 'hsr' ? hsrChars : zzzChars;
+    setCompareChar(target.char);
+  } else if (target.action) {
+    target.action();
+  }
+}
+
+function handlePaletteKeydown(e) {
+  if (e.key === 'Escape') { e.preventDefault(); closePalette(); return; }
+  const selectable = paletteItems.filter(i => i.kind !== 'section');
+  if (!selectable.length) return;
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    paletteIndex = Math.min(selectable.length - 1, paletteIndex + 1);
+    renderPalette();
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    paletteIndex = Math.max(0, paletteIndex - 1);
+    renderPalette();
+  } else if (e.key === 'Enter') {
+    e.preventDefault();
+    runPaletteIndex(paletteIndex, e.shiftKey);
+  }
+}
+
+function setCompareChar(char) {
+  if (!activeChar) { selectChar(char); return; }
+  if (activeChar.name === char.name) return;
+  compareChar = char;
+  document.body.classList.add('compare-on');
+  applyCharAccent(activeChar); // keep primary accent on root
+  renderCompareView();
+  highlightCompare(char);
+  updateLensState();
+  updateUrl();
+}
+function clearCompare() {
+  compareChar = null;
+  document.body.classList.remove('compare-on');
+  document.querySelectorAll('#char-list li.compare').forEach(li => li.classList.remove('compare'));
+  updateLensState();
+  updateUrl();
+}
+function highlightCompare(char) {
+  const key = char.name + '|' + (char.path || '');
+  document.querySelectorAll('#char-list li').forEach(li =>
+    li.classList.toggle('compare', li.dataset.name === key));
+}
+function renderCompareView() {
+  if (!compareChar) return;
+  const wrap = $('compare-panel');
+  if (!wrap) return;
+  const build = compareChar.builds[0];
+  const portraitUrl = (portraits[currentGame] || {})[compareChar.name];
+  const cmpEl = charElement(compareChar);
+  const cmpCol = ELEMENT_COLORS[cmpEl];
+  const cmpAccent = cmpCol ? cmpCol[1] : '#818cf8';
+  const cmpAccentSoft = cmpCol ? cmpCol[0] : '#a5b4fc';
+
+  let cards = '';
+  if (currentGame === 'gi') {
+    cards = itemCard('weapons', build.weapons, 'gi')
+          + abilityCard('talent priority', build.talent_priority)
+          + itemCard('artifacts', build.artifacts, 'gi')
+          + card('main stats', build.main_stats);
+  } else if (currentGame === 'hsr') {
+    cards = itemCard('light cones', build.light_cones, 'hsr')
+          + abilityCard('ability priority', build.ability_priority, build.ability_notes)
+          + hsrRelicCard(build)
+          + card('main stats', build.main_stats);
+  } else {
+    cards = itemCard('w-engines', build.w_engines, 'zzz')
+          + abilityCard('ability priority', build.ability)
+          + zzzDiscCard(build);
+  }
+
+  const portraitHtml = portraitUrl
+    ? `<img class="cmp-portrait" src="${escHtml(portraitUrl)}" alt="" referrerpolicy="no-referrer">`
+    : '<div class="cmp-portrait cmp-portrait-blank"></div>';
+
+  wrap.innerHTML = `
+    <div class="cmp-head">
+      <div class="cmp-portrait-wrap">${portraitHtml}
+        <div class="cmp-nameplate">
+          <span class="cmp-name">${escHtml(toTitle(compareChar.name))}</span>
+        </div>
+      </div>
+      <button id="compare-close" class="cmp-close" title="Close compare" aria-label="Close compare">×</button>
+      <div class="cmp-role">
+        <div class="role-label">vs — ${escHtml(build.role || '')}</div>
+      </div>
+    </div>
+    <div class="cmp-cards">${cards}</div>
+  `;
+  wrap.style.setProperty('--cmp-accent', cmpAccent);
+  wrap.style.setProperty('--cmp-accent-soft', cmpAccentSoft);
+  $('compare-close').addEventListener('click', clearCompare);
+}
+
+// ── highlights row on landing ────────────────────────────────
+function renderHighlights() {
+  const wrap = $('highlights');
+  if (!wrap) return;
+  const banners = (bannerData[currentGame] || []).filter(b => b && b.character);
+  if (banners.length || livestreamData[currentGame] || (eventData[currentGame] || []).length) {
+    renderPullGuide(wrap, banners);
+    return;
+  }
+  // Fallback when no banner data: simple latest-3 row
+  const sorted = [...allChars].sort((a, b) => releaseKey(b) - releaseKey(a));
+  const top = sorted.slice(0, 3);
+  if (!top.length) { wrap.innerHTML = ''; return; }
+
+  const gameLabel = currentGame === 'gi' ? 'Genshin Impact' : currentGame === 'hsr' ? 'Honkai: Star Rail' : 'Zenless Zone Zero';
+  let html = `<div class="hl-eyebrow">latest in ${escHtml(gameLabel)}</div><div class="hl-grid">`;
+  for (const c of top) {
+    const portraitUrl = (portraits[currentGame] || {})[c.name];
+    const el = charElement(c);
+    const col = ELEMENT_COLORS[el];
+    const accent = col ? col[1] : '#818cf8';
+    const tier = charTier(c);
+    html += `<button class="hl-card" data-name="${escHtml(c.name)}" style="--hl-accent:${accent}">
+      <div class="hl-art">${portraitUrl ? `<img src="${escHtml(portraitUrl)}" alt="" referrerpolicy="no-referrer">` : ''}</div>
+      <div class="hl-info">
+        <div class="hl-name">${escHtml(toTitle(c.name))}</div>
+        <div class="hl-meta">${el ? escHtml(el) : ''}${tier ? ` <span class="tier-badge tier-${tier.replace('.', '_')}">${tier}</span>` : ''}</div>
+      </div>
+    </button>`;
+  }
+  html += '</div>';
+  wrap.innerHTML = html;
+  wrap.querySelectorAll('.hl-card').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const name = btn.dataset.name;
+      const char = allChars.find(x => x.name === name);
+      if (char) selectChar(char);
+    });
+  });
+}
+
+// ── Pull Guide (variation 4) ─────────────────────────────────
+function tierColor(tier) {
+  const map = { 'T0':'#f5a623','T0.5':'#e8832a','T1':'#9b59b6','T1.5':'#5b7fd4','T2':'#3498db','T3':'#27ae60','T4':'#8b949e',
+                'SS':'#f5a623','S':'#9b59b6','A':'#3498db','B':'#27ae60','C':'#8b949e','D':'#555' };
+  return map[tier] || '#9b59b6';
+}
+function tierFg(tier) {
+  return (tier === 'T0' || tier === 'SS') ? '#000' : '#fff';
+}
+function tierRank(tier) {
+  const map = { 'T0':1,'SS':1,'T0.5':2,'S':2,'T1':3,'A':3,'T1.5':4,'T2':5,'B':5,'T3':6,'C':6,'T4':7,'D':7 };
+  return map[tier] || 9;
+}
+
+function renderPullGuide(wrap, banners) {
+  const games = { gi: 'Genshin Impact', hsr: 'Honkai: Star Rail', zzz: 'Zenless Zone Zero' };
+  const now = Date.now();
+  const findChar = (name) => allChars.find(c => c.name === name);
+  const computeDelta = (b) => {
+    const start = new Date(b.start).getTime();
+    const end = new Date(b.end).getTime();
+    return { start, end, isActive: now >= start && now < end, isPast: now >= end, isFuture: now < start };
+  };
+  const decorated = banners.map(b => ({ b, ...computeDelta(b) }));
+  const featured =
+    decorated.find(d => d.isActive && d.b.phase === 1)
+    || decorated.find(d => d.isActive)
+    || decorated.find(d => d.isFuture)
+    || decorated[0];
+  const upcoming = decorated.filter(d => d !== featured && (d.isFuture || (d.isActive && d.b.phase !== featured.b.phase)))
+    .sort((a, b) => a.start - b.start).slice(0, 2);
+
+  const featuredChar = findChar(featured.b.character);
+  const featuredTier = featuredChar ? (tiersData[currentGame] || {})[featuredChar.name] : null;
+  const featuredTierCol = featuredTier ? tierColor(featuredTier) : '#9b59b6';
+  const featuredTierFg  = featuredTier ? tierFg(featuredTier) : '#fff';
+  const featuredElement = featuredChar ? charElement(featuredChar) : null;
+  const splash = featuredChar ? (portraits[currentGame] || {})[featuredChar.name] : null;
+  const remainingMs = featured.end - now;
+  const days = Math.max(0, Math.floor(remainingMs / 86400000));
+  const hours = Math.max(0, Math.floor((remainingMs % 86400000) / 3600000));
+  const mins = Math.max(0, Math.floor((remainingMs % 3600000) / 60000));
+  const role = featuredChar ? (featuredChar.builds?.[0]?.role || '').split('\n')[0] : '';
+  const groupVal = featuredChar ? (currentGame === 'hsr' ? featuredChar.path : currentGame === 'zzz' ? featuredChar.specialty : null) : null;
+  const bannerLabel = featured.b.rerun ? `Phase ${featured.b.phase} Rerun` : `Phase ${featured.b.phase}`;
+
+  const inList = new Set([featured.b.character, ...upcoming.map(d => d.b.character)]);
+  const tierMap = tiersData[currentGame] || {};
+  const worthCands = allChars
+    .filter(c => !inList.has(c.name))
+    .map(c => ({ char: c, tier: tierMap[c.name] }))
+    .filter(x => x.tier === 'T0' || x.tier === 'SS' || x.tier === 'T0.5')
+    .sort((a, b) => (tierRank(a.tier) - tierRank(b.tier)))
+    .slice(0, 2);
+  const worthList = [
+    { char: featuredChar, tier: featuredTier, verdict: featured.b.verdict, when: 'On banner now' },
+    ...worthCands.map(x => ({ char: x.char, tier: x.tier, verdict: null, when: 'Likely future rerun' })),
+  ].filter(x => x.char);
+
+  let html = `
+    <div class="pg-body">
+      ${renderLivestreamStrip()}
+      <div class="pg-pre">Featured banner · ${escHtml(games[currentGame])} · ${escHtml(bannerLabel)}</div>
+      <div class="pg-banner">
+        <div class="pg-banner-left">
+          <h1 class="pg-banner-title">
+            ${escHtml(toTitle(featured.b.character))}
+            ${featuredTier ? `<span class="pg-banner-tier" style="background:${featuredTierCol};color:${featuredTierFg}">${escHtml(featuredTier)}</span>` : ''}
+          </h1>
+          <div class="pg-banner-meta">
+            ${groupVal ? `<span>${escHtml(groupVal)}</span><span class="sep">·</span>` : ''}
+            ${featuredElement ? `<span>${escHtml(featuredElement)}</span>` : ''}
+            ${role ? `<span class="sep">·</span><span>${escHtml(role)}</span>` : ''}
+          </div>
+          ${featured.b.verdict ? `
+            <div class="pg-verdict">
+              <div class="pg-verdict-label">Pull verdict</div>
+              <div class="pg-verdict-text">${escHtml(featured.b.verdict)}</div>
+            </div>
+          ` : ''}
+          ${remainingMs > 0 ? `
+            <div class="pg-timer">
+              <span class="pg-timer-label">Banner ends in</span>
+              <div class="pg-timer-vals">
+                <div class="pg-timer-val"><span class="pg-timer-num">${days}</span><span class="pg-timer-unit">days</span></div>
+                <div class="pg-timer-val"><span class="pg-timer-num">${String(hours).padStart(2,'0')}</span><span class="pg-timer-unit">hrs</span></div>
+                <div class="pg-timer-val"><span class="pg-timer-num">${String(mins).padStart(2,'0')}</span><span class="pg-timer-unit">min</span></div>
+              </div>
+            </div>
+          ` : ''}
+          <div class="pg-banner-cta">
+            <button class="pg-cta primary" data-pg-open="${escHtml(featured.b.character)}">View build →</button>
+            <button class="pg-cta secondary" data-pg-tiers>Tier list</button>
+          </div>
+        </div>
+        <div class="pg-banner-art">
+          ${splash ? `<img src="${escHtml(splash)}" alt="" referrerpolicy="no-referrer">` : ''}
+        </div>
+      </div>
+      <div class="pg-twocol">
+  `;
+
+  if (upcoming.length) {
+    html += `<div class="pg-mini" style="--m-color:#22d3ee"><div class="pg-mini-title">Coming next</div><div class="pg-upcoming">`;
+    for (const u of upcoming) {
+      const c = findChar(u.b.character);
+      const cEl = c ? charElement(c) : null;
+      const cElCol = cEl ? (ELEMENT_COLORS[cEl] || ['#8b949e'])[1] : '#8b949e';
+      const cSplash = c ? (portraits[currentGame] || {})[c.name] : null;
+      const cIcon = c ? (icons[currentGame] || {})[c.name] : null;
+      const cTier = c ? (tiersData[currentGame] || {})[c.name] : null;
+      const cRole = c ? ((c.builds?.[0]?.role || '').split('\n')[0]) : '';
+      const cGroup = c ? (currentGame === 'hsr' ? c.path : currentGame === 'zzz' ? c.specialty : cEl) : null;
+      const phaseLabel = u.b.rerun ? `Phase ${u.b.phase} rerun` : `Phase ${u.b.phase}`;
+      html += `<div class="pg-up-row" style="--c-color:${cElCol}" data-pg-open="${escHtml(u.b.character)}">
+        <div class="pg-up-art">${cSplash ? `<img src="${escHtml(cSplash)}" alt="" referrerpolicy="no-referrer">` : (cIcon ? `<img src="${escHtml(cIcon)}" alt="" referrerpolicy="no-referrer">` : '')}</div>
+        <div class="pg-up-info">
+          <div class="pg-up-tag">${escHtml(phaseLabel)}</div>
+          <div class="pg-up-name">${escHtml(toTitle(u.b.character))}</div>
+          <div class="pg-up-sub">${escHtml([cEl, cGroup, cTier && (cTier + (cRole ? ' ' + cRole : ''))].filter(Boolean).join(' · '))}</div>
+        </div>
+      </div>`;
+    }
+    html += `</div></div>`;
+  }
+
+  if (worthList.length) {
+    html += `<div class="pg-mini" style="--m-color:#f5a623"><div class="pg-mini-title">Worth pulling</div><div class="pg-worth">`;
+    for (const w of worthList) {
+      const cIcon = (icons[currentGame] || {})[w.char.name];
+      const cEl = charElement(w.char);
+      const cElCol = cEl ? (ELEMENT_COLORS[cEl] || ['#8b949e'])[1] : '#8b949e';
+      const cRole = (w.char.builds?.[0]?.role || '').split('\n')[0];
+      const rank = tierRank(w.tier);
+      const badge = rank <= 1 ? { cls: 'high', text: 'High' } : rank <= 2 ? { cls: 'mid', text: 'Strong' } : { cls: 'skip', text: 'Skip' };
+      const meta = [w.tier && (w.tier + (cRole ? ' ' + cRole : '')), w.when].filter(Boolean).join(' · ');
+      html += `<div class="pg-worth-row" style="--c-color:${cElCol}" data-pg-open="${escHtml(w.char.name)}">
+        ${cIcon ? `<img src="${escHtml(cIcon)}" alt="" referrerpolicy="no-referrer">` : '<span></span>'}
+        <div class="pg-worth-info">
+          <div class="pg-worth-name">${escHtml(toTitle(w.char.name))}</div>
+          <div class="pg-worth-meta">${escHtml(meta)}</div>
+        </div>
+        <span class="pg-worth-badge ${badge.cls}"><span class="pg-worth-dot"></span>${badge.text}</span>
+      </div>`;
+    }
+    html += `</div></div>`;
+  }
+  html += `</div>${renderEventsBlock()}</div>`;
+
+  wrap.innerHTML = html;
+  wrap.querySelectorAll('[data-pg-open]').forEach(el => {
+    el.addEventListener('click', () => {
+      const name = el.dataset.pgOpen;
+      const char = allChars.find(c => c.name === name);
+      if (char) selectChar(char);
+    });
+  });
+  const tiersBtn = wrap.querySelector('[data-pg-tiers]');
+  if (tiersBtn) tiersBtn.addEventListener('click', showTierView);
+}
+
+// ── Livestream countdown strip ────────────────────────────
+function renderLivestreamStrip() {
+  const ls = livestreamData[currentGame];
+  if (!ls || !ls.date) return '';
+  const date = new Date(ls.date);
+  if (isNaN(date.getTime())) return '';
+  const now = Date.now();
+  const ms = date.getTime() - now;
+  if (ms < -1000 * 60 * 60 * 24) return ''; // hide if more than a day past
+
+  let timerHtml = '';
+  if (ms > 0) {
+    const days = Math.floor(ms / 86400000);
+    const hours = Math.floor((ms % 86400000) / 3600000);
+    const mins = Math.floor((ms % 3600000) / 60000);
+    timerHtml = `<div class="pg-livestream-timer">
+      <div class="pg-timer-val"><span class="pg-timer-num">${days}</span><span class="pg-timer-unit">d</span></div>
+      <div class="pg-timer-val"><span class="pg-timer-num">${String(hours).padStart(2,'0')}</span><span class="pg-timer-unit">h</span></div>
+      <div class="pg-timer-val"><span class="pg-timer-num">${String(mins).padStart(2,'0')}</span><span class="pg-timer-unit">m</span></div>
+    </div>`;
+  } else {
+    timerHtml = `<div class="pg-livestream-timer"><div class="pg-timer-val" style="background:rgba(63,185,80,0.15);border-color:#3fb950"><span class="pg-timer-num" style="color:#3fb950">LIVE</span></div></div>`;
+  }
+
+  const dateLabel = date.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+  const games = { gi: 'Genshin Impact', hsr: 'Honkai: Star Rail', zzz: 'Zenless Zone Zero' };
+  const hlPills = (ls.highlights || []).slice(0, 3).map(h => `<span class="pg-livestream-hl-pill">${escHtml(h)}</span>`).join('');
+  const link = ls.url ? `<a class="pg-livestream-link" href="${escHtml(ls.url)}" target="_blank" rel="noopener">Watch ↗</a>` : '';
+
+  return `
+    <div class="pg-livestream">
+      <span class="pg-livestream-icon">
+        <svg viewBox="0 0 16 16" fill="none"><rect x="1.5" y="3" width="13" height="9" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 6L10 8L6.5 10z" fill="currentColor"/></svg>
+      </span>
+      <div class="pg-livestream-info">
+        <div class="pg-livestream-pre">Upcoming v${escHtml(ls.version)} Livestream</div>
+        <div class="pg-livestream-name"><b>${escHtml(games[currentGame] || '')}</b>${ls.title ? ' · ' + escHtml(ls.title) : ''}</div>
+        ${hlPills ? `<div class="pg-livestream-highlights">${hlPills}</div>` : `<div class="pg-livestream-time">${escHtml(dateLabel)}</div>`}
+      </div>
+      ${timerHtml}
+      ${link}
+    </div>
+  `;
+}
+
+// ── Event calendar block ────────────────────────────────────
+const EVENT_COLORS = {
+  main:        '#22d3ee',
+  combat:      '#f87171',
+  exploration: '#3fb950',
+  web:         '#a78bfa',
+  login:       '#fbbf24',
+  story:       '#67e8f9',
+};
+const EVENT_ICONS = {
+  main:        '<svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5l1.8 4 4.2.4-3.2 2.8 1 4.4L8 11.3 4.2 13.6l1-4.4L2 6.4l4.2-.4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>',
+  combat:      '<svg viewBox="0 0 16 16" fill="none"><path d="M2.5 13.5l8-8 1.5 1.5-8 8zM10.5 5.5l3-3M2 14l1.5-1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
+  exploration: '<svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  web:         '<svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M2 8h12M8 2c2 2 2 10 0 12M8 2c-2 2-2 10 0 12" stroke="currentColor" stroke-width="1.2"/></svg>',
+  login:       '<svg viewBox="0 0 16 16" fill="none"><rect x="2.5" y="3" width="11" height="10" rx="1.4" stroke="currentColor" stroke-width="1.4"/><path d="M2.5 6h11M6 2v2M10 2v2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
+  story:       '<svg viewBox="0 0 16 16" fill="none"><path d="M3 2.5h7l3 3V14H3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M10 2.5v3h3M5.5 8h5M5.5 11h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
+};
+
+function renderEventsBlock() {
+  const events = (eventData[currentGame] || []).slice();
+  if (!events.length) return '';
+  const now = Date.now();
+  const decorated = events.map(e => {
+    const start = new Date(e.start).getTime();
+    const end = new Date(e.end).getTime();
+    return { ev: e, start, end,
+      isLive: now >= start && now < end,
+      isSoon: now < start,
+      isEnded: now >= end,
+    };
+  }).filter(d => !d.isEnded);
+  // Sort: live first (by end soonest), then upcoming (by start)
+  decorated.sort((a, b) => {
+    if (a.isLive && !b.isLive) return -1;
+    if (!a.isLive && b.isLive) return 1;
+    if (a.isLive) return a.end - b.end;
+    return a.start - b.start;
+  });
+
+  let html = `<div class="pg-events">
+    <div class="pg-events-head">
+      <div class="pg-events-title">Event calendar</div>
+      <span class="pg-events-count"><b>${decorated.length}</b> active</span>
+    </div>`;
+  if (!decorated.length) {
+    html += `<div class="pg-event-empty">No events scheduled.</div>`;
+  } else {
+    html += '<div class="pg-events-grid">';
+    for (const d of decorated) {
+      const e = d.ev;
+      const type = (e.type || 'main').toLowerCase();
+      const color = EVENT_COLORS[type] || '#8b949e';
+      const icon = EVENT_ICONS[type] || EVENT_ICONS.main;
+      let pillCls, pillText, whenText;
+      if (d.isLive) {
+        pillCls = 'live'; pillText = 'Live';
+        const daysLeft = Math.max(0, Math.ceil((d.end - now) / 86400000));
+        whenText = `Ends in ${daysLeft}d`;
+      } else {
+        pillCls = 'soon'; pillText = 'Upcoming';
+        const daysUntil = Math.max(0, Math.ceil((d.start - now) / 86400000));
+        whenText = `In ${daysUntil}d`;
+      }
+      const hasUrl = e.url ? true : false;
+      const tag = hasUrl ? 'a' : 'div';
+      const attrs = hasUrl ? ` href="${escHtml(e.url)}" target="_blank" rel="noopener" style="text-decoration:none"` : '';
+      html += `<${tag} class="pg-event" style="--e-color:${color}"${attrs}>
+        <span class="pg-event-icon">${icon}</span>
+        <div class="pg-event-info">
+          <div class="pg-event-name">${escHtml(e.name || '')}</div>
+          ${e.tagline ? `<div class="pg-event-tagline">${escHtml(e.tagline)}</div>` : ''}
+          ${e.rewards ? `<div class="pg-event-rewards">${escHtml(e.rewards)}</div>` : ''}
+        </div>
+        <div class="pg-event-status">
+          <span class="pg-event-pill ${pillCls}">${pillText}</span>
+          <span class="pg-event-when">${escHtml(whenText)}</span>
+        </div>
+      </${tag}>`;
+    }
+    html += '</div>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function switchGame(game) { _switchGameNoUrl(game); updateUrl(); }
+function _switchGameNoUrl(game) {
   currentGame = game;
   allChars    = game === 'gi' ? giChars : game === 'hsr' ? hsrChars : zzzChars;
   activeChar  = null;
 
-  document.querySelectorAll('.game-tab').forEach(t =>
+  document.querySelectorAll('.rail-game').forEach(t =>
     t.classList.toggle('active', t.dataset.game === game));
   document.body.classList.toggle('game-hsr', game === 'hsr');
   document.body.classList.toggle('game-zzz', game === 'zzz');
@@ -127,11 +1112,22 @@ function switchGame(game) {
   $('tier-view').classList.add('hidden');
   $('tier-btn').classList.remove('active');
   $('placeholder').classList.remove('hidden');
-  $('search').value = '';
   filterElement = null;
+  clearCompare();
   updateSourceCredit(game);
   renderElementFilters();
+  updateGameLabel();
   refreshList();
+  renderHighlights();
+  updateLensState();
+}
+
+function updateGameLabel() {
+  const names = { gi: 'Genshin Impact', hsr: 'Honkai: Star Rail', zzz: 'Zenless Zone Zero' };
+  const nameEl = document.getElementById('game-name');
+  const countEl = document.getElementById('game-count');
+  if (nameEl) nameEl.textContent = names[currentGame] || '';
+  if (countEl) countEl.textContent = allChars.length;
 }
 
 // ── list rendering ────────────────────────────────────────────
@@ -197,67 +1193,186 @@ function renderElementFilters() {
   });
 }
 
-function refreshList() {
-  const q = $('search').value.trim().toLowerCase();
-  let list = q ? allChars.filter(c => c.name.toLowerCase().includes(q)) : [...allChars];
-  if (filterElement) list = list.filter(c => charElement(c) === filterElement);
-  list.sort((a, b) => releaseKey(b) - releaseKey(a));
-  renderList(list);
+// ── lens state (which sidebar mode is active) ─────────────────────
+let favoritesOnly = false;
+function toggleFavoritesLens() {
+  favoritesOnly = !favoritesOnly;
+  updateLensState();
+  refreshList();
+}
+function clearLensViews() {
+  // "Characters" lens click: close tier view if open, otherwise no-op
+  if (!$('tier-view').classList.contains('hidden')) {
+    $('tier-view').classList.add('hidden');
+    $('tier-btn').classList.remove('active');
+    document.body.classList.remove('viewing-char');
+    $('back-btn').classList.add('hidden');
+    $('placeholder').classList.remove('hidden');
+  }
+  updateLensState();
+}
+function updateLensState() {
+  const tierActive = !$('tier-view').classList.contains('hidden');
+  const charView = !$('char-view').classList.contains('hidden');
+  document.querySelectorAll('.rail-lens').forEach(btn => {
+    const lens = btn.dataset.lens;
+    if (lens === 'tiers') btn.classList.toggle('active', tierActive);
+    else if (lens === 'favorites') btn.classList.toggle('active', favoritesOnly);
+    else if (lens === 'compare') btn.classList.toggle('active', !!compareChar);
+    else if (lens === 'characters') btn.classList.toggle('active', !tierActive);
+  });
 }
 
-function renderList(chars) {
+function refreshList() {
+  let list = [...allChars];
+  if (filterElement) list = list.filter(c => charElement(c) === filterElement);
+  const favSet = new Set(favorites[currentGame] || []);
+  if (favoritesOnly) list = list.filter(c => favSet.has(c.name));
+  list.sort((a, b) => releaseKey(b) - releaseKey(a));
+  const pinned = favoritesOnly ? [] : list.filter(c => favSet.has(c.name));
+  const rest = list.filter(c => !favSet.has(c.name));
+  renderList(pinned, rest);
+}
+
+function renderList(pinned, rest) {
   const ul = $('char-list');
   ul.innerHTML = '';
-  chars.forEach(char => {
-    const li = document.createElement('li');
-    li.dataset.name = char.name + '|' + (char.path || '');
-    li.addEventListener('click', () => selectChar(char));
 
-    const iconUrl = (icons[currentGame] || {})[char.name];
-    if (iconUrl) {
-      const img = document.createElement('img');
-      img.className = 'li-icon';
-      img.referrerPolicy = 'no-referrer';
-      img.src = iconUrl;
-      img.alt = '';
-      li.appendChild(img);
+  if (pinned && pinned.length) {
+    const hdr = document.createElement('li');
+    hdr.className = 'list-section-header';
+    hdr.innerHTML = '<svg viewBox="0 0 16 16" fill="none" style="width:11px;height:11px"><path d="M8 2l1.8 4 4.2.4-3.2 2.8 1 4.4L8 11.3 4.2 13.6l1-4.4L2 6.4l4.2-.4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>Pinned</span><span class="group-count">' + pinned.length + '</span>';
+    hdr.style.cursor = 'default';
+    ul.appendChild(hdr);
+    pinned.forEach(c => ul.appendChild(buildListItem(c, true)));
+  }
+
+  if (favoritesOnly) {
+    // flat list when favorites lens is on
+    rest.forEach(c => ul.appendChild(buildListItem(c, false)));
+  } else {
+    // group by element
+    const order = ELEMENT_ORDERS[currentGame] || [];
+    const groups = new Map();
+    for (const c of rest) {
+      const el = charElement(c) || 'Other';
+      if (!groups.has(el)) groups.set(el, []);
+      groups.get(el).push(c);
     }
-
-    const nameSpan = document.createElement('span');
-    nameSpan.className = 'li-name';
-    nameSpan.textContent = toTitle(char.name);
-
-    const metaSpan = document.createElement('span');
-    metaSpan.className = 'li-ver';
-    const rdMeta = (releaseData[currentGame] || {})[char.name] || {};
-    if (currentGame === 'gi') {
-      const relVer = releaseVersionLabel(char);
-      const parts = [rdMeta.element, relVer].filter(Boolean);
-      metaSpan.textContent = parts.join(' · ');
-    } else if (currentGame === 'hsr') {
-      const relVer = releaseVersionLabel(char);
-      const parts = [rdMeta.element, char.path, relVer].filter(Boolean);
-      metaSpan.textContent = parts.join(' · ');
-    } else {
-      const relVer = releaseVersionLabel(char);
-      const parts = [char.element, relVer].filter(Boolean);
-      metaSpan.textContent = parts.join(' · ');
+    // Sort group keys per game-defined order, unknown at end
+    const groupKeys = [...groups.keys()].sort((a, b) => {
+      const ia = order.indexOf(a), ib = order.indexOf(b);
+      return (ia < 0 ? 999 : ia) - (ib < 0 ? 999 : ib);
+    });
+    for (const el of groupKeys) {
+      const collapsed = isGroupCollapsed(el);
+      const items = groups.get(el);
+      const hdr = document.createElement('li');
+      hdr.className = 'list-section-header' + (collapsed ? ' collapsed' : '');
+      const col = ELEMENT_COLORS[el];
+      const dotColor = col ? col[1] : 'var(--muted)';
+      hdr.innerHTML =
+        '<span class="group-dot" style="background:' + dotColor + ';color:' + dotColor + '"></span>' +
+        '<span>' + escHtml(el) + '</span>' +
+        '<span class="group-count">' + items.length + '</span>' +
+        '<span class="group-chev">▾</span>';
+      hdr.addEventListener('click', () => toggleGroup(el));
+      ul.appendChild(hdr);
+      if (!collapsed) {
+        items.forEach(c => ul.appendChild(buildListItem(c, false)));
+      }
     }
+  }
 
-    li.appendChild(nameSpan);
-    li.appendChild(metaSpan);
-
-    const tier = charTier(char);
-    if (tier) {
-      const badge = document.createElement('span');
-      badge.className = `tier-badge tier-${tier.replace('.', '_')}`;
-      badge.textContent = tier;
-      li.appendChild(badge);
-    }
-
-    ul.appendChild(li);
-  });
   if (activeChar) highlightActive(activeChar);
+  if (compareChar) highlightCompare(compareChar);
+}
+
+function buildListItem(char, isPinned) {
+  const li = document.createElement('li');
+  li.dataset.name = char.name + '|' + (char.path || '');
+  li.addEventListener('click', (e) => {
+    if (e.shiftKey && activeChar && activeChar.name !== char.name) {
+      setCompareChar(char);
+    } else {
+      selectChar(char);
+    }
+  });
+
+  const iconUrl = (icons[currentGame] || {})[char.name];
+  if (iconUrl) {
+    const img = document.createElement('img');
+    img.className = 'li-icon';
+    img.referrerPolicy = 'no-referrer';
+    img.src = iconUrl;
+    img.alt = '';
+    li.appendChild(img);
+  }
+
+  const nameSpan = document.createElement('span');
+  nameSpan.className = 'li-name';
+  nameSpan.textContent = toTitle(char.name);
+
+  const metaSpan = document.createElement('span');
+  metaSpan.className = 'li-ver';
+  const rdMeta = (releaseData[currentGame] || {})[char.name] || {};
+  if (currentGame === 'gi') {
+    const relVer = releaseVersionLabel(char);
+    const parts = [rdMeta.element, relVer].filter(Boolean);
+    metaSpan.textContent = parts.join(' · ');
+  } else if (currentGame === 'hsr') {
+    const relVer = releaseVersionLabel(char);
+    const parts = [rdMeta.element, char.path, relVer].filter(Boolean);
+    metaSpan.textContent = parts.join(' · ');
+  } else {
+    const relVer = releaseVersionLabel(char);
+    const parts = [char.element, relVer].filter(Boolean);
+    metaSpan.textContent = parts.join(' · ');
+  }
+
+  li.appendChild(nameSpan);
+
+  // NEW dot for recent characters
+  if (isRecentlyReleased(char)) {
+    const dot = document.createElement('span');
+    dot.className = 'li-status';
+    dot.title = 'Released recently';
+    li.appendChild(dot);
+  }
+
+  li.appendChild(metaSpan);
+
+  const tier = charTier(char);
+  if (tier) {
+    const badge = document.createElement('span');
+    badge.className = `tier-badge tier-${tier.replace('.', '_')}`;
+    badge.textContent = tier;
+    li.appendChild(badge);
+  }
+
+  // favorite star (hover/visible if pinned)
+  const fav = document.createElement('button');
+  fav.className = 'li-fav' + (isPinned ? ' active' : '');
+  fav.innerHTML = '★';
+  fav.title = isPinned ? 'Unpin' : 'Pin to top';
+  fav.addEventListener('click', (e) => { e.stopPropagation(); toggleFavorite(char); });
+  li.appendChild(fav);
+
+  return li;
+}
+
+function isRecentlyReleased(char) {
+  let dateStr = null;
+  if (currentGame === 'hsr' && char.release_date) dateStr = char.release_date;
+  else {
+    const rd = (releaseData[currentGame] || {})[char.name];
+    if (rd && rd.date) dateStr = rd.date;
+  }
+  if (!dateStr) return false;
+  const d = new Date(dateStr);
+  if (isNaN(d.getTime())) return false;
+  const diff = (Date.now() - d.getTime()) / (1000 * 60 * 60 * 24);
+  return diff >= 0 && diff <= 45;
 }
 
 function highlightActive(char) {
@@ -266,11 +1381,36 @@ function highlightActive(char) {
     li.classList.toggle('active', li.dataset.name === key));
 }
 
+function renderCrumbs(char) {
+  const games = { gi: 'Genshin Impact', hsr: 'Honkai: Star Rail', zzz: 'Zenless Zone Zero' };
+  const gameEl = document.querySelector('#crumbs .crumb-game');
+  const sectEl = document.querySelector('#crumbs .crumb-section');
+  const curEl  = document.querySelector('#crumbs .crumb-current');
+  if (!gameEl) return;
+  const el = charElement(char);
+  const col = ELEMENT_COLORS[el];
+  const dotColor = col ? col[1] : 'var(--char-accent)';
+  gameEl.innerHTML = '<span class="crumb-game-dot" style="background:' + dotColor + ';color:' + dotColor + '"></span>' + escHtml(games[currentGame] || '');
+  let section = '';
+  if (currentGame === 'hsr' && char.path) section = char.path;
+  else if (currentGame === 'zzz' && char.specialty) section = char.specialty;
+  else if (el) section = el;
+  sectEl.textContent = section;
+  curEl.textContent = toTitle(char.name);
+}
+
 // ── character view ────────────────────────────────────────────
-function selectChar(char) {
+function selectChar(char) { _selectCharNoUrl(char); updateUrl(); }
+function _selectCharNoUrl(char) {
+  // clear compare when selecting new primary
+  if (compareChar && char.name !== compareChar.name) {
+    // keep compare if explicit; otherwise clear
+  }
   activeChar    = char;
   activeBuildIdx = 0;
   highlightActive(char);
+  applyCharAccent(char);
+  renderCrumbs(char);
 
   $('placeholder').classList.add('hidden');
   $('tier-view').classList.add('hidden');
@@ -316,13 +1456,14 @@ function selectChar(char) {
 
   renderTabs(char);
   renderBuild(char, 0);
+  renderRoleCallout(char, 0);
   renderNotes(char);
 
   document.body.classList.add('viewing-char');
   $('back-btn').classList.remove('hidden');
   $('content').scrollTop = 0;
+  updateLensState();
 }
-
 function renderTabs(char) {
   const container = $('build-tabs');
   container.innerHTML = '';
@@ -339,6 +1480,7 @@ function renderTabs(char) {
       container.querySelectorAll('.tab-btn').forEach((b, j) =>
         b.classList.toggle('active', j === i));
       renderBuild(char, i);
+      renderRoleCallout(char, i);
       $('content').scrollTop = 0;
     });
     container.appendChild(btn);
@@ -359,10 +1501,42 @@ function renderBuild(char, idx) {
   }
 }
 
+function renderRoleCallout(char, idx) {
+  const build = char.builds[idx];
+  const callout = $('role-callout');
+  const leftCards = $('left-cards');
+  leftCards.innerHTML = '';
+  if (!build || !build.role) {
+    callout.classList.add('hidden');
+    return;
+  }
+  callout.classList.remove('hidden');
+  $('role-text').innerHTML = escHtml(build.role) +
+    (build.recommended ? ' <span class="role-star">✩</span>' : '');
+  const verEl = $('role-version');
+  let verText = '';
+  if (currentGame === 'gi') verText = char.last_updated || '';
+  else if (currentGame === 'hsr') {
+    const parts = [char.path, char.release_date ? formatReleaseDate(char.release_date) : ''].filter(Boolean);
+    verText = parts.join(' · ');
+  } else {
+    const parts = [char.specialty, char.last_updated ? 'v' + char.last_updated : ''].filter(Boolean);
+    verText = parts.join(' · ');
+  }
+  verEl.textContent = verText;
+  $('role-status').innerHTML = statusPill(char);
+  // left column extra cards: stat targets + pull priority
+  let leftHtml = '';
+  const targetText = build.baseline_stats || build.baseline || '';
+  if (targetText) leftHtml += statTargetCard(targetText);
+  if (currentGame === 'hsr' && char.recommended_baseline) {
+    leftHtml += pullPriorityCard(char.recommended_baseline);
+  }
+  leftCards.innerHTML = leftHtml;
+}
+
 function renderGiBuild(build, panel) {
-  const roleLabel = build.role + (build.recommended ? ' ✩' : '');
   panel.innerHTML = [
-    card('role', roleLabel),
     itemCard('weapons', build.weapons, 'gi'),
     abilityCard('talent priority', build.talent_priority),
     itemCard('artifacts', build.artifacts, 'gi', true),
@@ -373,16 +1547,14 @@ function renderGiBuild(build, panel) {
 }
 
 function renderHsrBuild(char, build, panel) {
-  const roleLabel = build.role || '';
   const notesText = [build.relic_notes, build.other_notes].filter(Boolean).join('\n\n');
   panel.innerHTML = [
-    card('role', roleLabel),
     itemCard('light cones', build.light_cones, 'hsr'),
     abilityCard('ability priority', build.ability_priority, build.ability_notes),
     hsrRelicCard(build),
     card('main stats', build.main_stats),
     card('sub stats', build.sub_stats, false, true),
-    build.baseline_stats ? card('stat targets', build.baseline_stats) : '',
+    build.baseline_stats ? '' : '', // stat targets moved to left column
     build.eidolons ? card('notable eidolons', build.eidolons) : '',
     notesText ? card('notes', notesText, true) : '',
     hsrTeamCard(char),
@@ -392,16 +1564,16 @@ function renderHsrBuild(char, build, panel) {
 function hsrTeamCard(char) {
   const teams = char.example_teams;
   if (!teams || !teams.length) return '';
-  let html = '<div class="build-card wide"><div class="card-label">example teams</div><div class="hsr-teams">';
+  let html = '<div class="build-card wide"><div class="card-label">' + sectionIcon('example teams') + '<span>example teams</span></div><div class="hsr-teams">';
   for (const team of teams) {
     html += '<div class="hsr-team-group">';
     if (team.label) {
       html += `<div class="hsr-team-label">${escHtml(team.label)}</div>`;
     }
     if (team.members && team.members.length) {
-      html += '<div class="hsr-team-members">';
+      html += '<div class="hsr-team-members team-thumbs">';
       for (const m of team.members) {
-        html += `<span class="hsr-team-chip">${escHtml(m)}</span>`;
+        html += teamMemberThumb('hsr', m);
       }
       html += '</div>';
     }
@@ -419,14 +1591,13 @@ function renderZzzBuild(build, panel) {
     ? cardRaw('main stats', `<div class="stat-grid">${statGridRows(mainStatRows)}</div>`)
     : card('main stats', build.main_stats);
   panel.innerHTML = [
-    card('role', build.role),
     itemCard('w-engines', build.w_engines, 'zzz'),
     build.w_engine_notes ? card('w-engine notes', build.w_engine_notes, true) : '',
     abilityCard('ability priority', build.ability),
     discCard,
     mainStatContent,
     card('sub stats', build.sub_stats),
-    build.baseline ? card('stat targets', build.baseline) : '',
+    build.baseline ? '' : '', // stat targets moved to left column
     build.mindscapes ? card('mindscapes', build.mindscapes, true) : '',
     build.other_notes ? card('other notes', build.other_notes, true) : '',
     teamCard,
@@ -437,7 +1608,7 @@ function renderZzzBuild(build, panel) {
 
 function cardRaw(label, bodyHtml, wide = false) {
   if (!bodyHtml) return '';
-  return `<div class="build-card${wide ? ' wide' : ''}"><div class="card-label">${label}</div>${bodyHtml}</div>`;
+  return `<div class="build-card${wide ? ' wide' : ''}"><div class="card-label">${sectionIcon(label)}<span>${label}</span></div>${bodyHtml}</div>`;
 }
 
 function parseItemList(text, game) {
@@ -451,9 +1622,10 @@ function parseItemList(text, game) {
       if (!t) continue;
       if (t.endsWith(':')) {
         if (cur) items.push(cur);
-        cur = { rank: items.length + 1, name: t.slice(0, -1).trim(), desc: '' };
+        cur = { rank: items.length + 1, name: t.slice(0, -1).trim(), desc: '', rarity: null };
       } else if (cur) {
         cur.desc += (cur.desc ? '\n' : '') + t;
+        if (!cur.rarity) { const r = detectRarity(t); if (r) cur.rarity = r; }
       }
     }
     if (cur) items.push(cur);
@@ -466,15 +1638,25 @@ function parseItemList(text, game) {
       const em = !nm && t.match(/^[≈~]{1,2}\s*(.+)/);
       if (nm) {
         if (cur) items.push(cur);
-        cur = { rank: parseInt(nm[1]), name: nm[2].trim(), desc: '' };
+        const name = nm[2].trim();
+        cur = { rank: parseInt(nm[1]), name, desc: '', rarity: detectRarity(name) };
       } else if (em) {
         if (cur) items.push(cur);
-        cur = { rank: 0, name: em[1].trim(), desc: '' };
+        const name = em[1].trim();
+        cur = { rank: 0, name, desc: '', rarity: detectRarity(name) };
       } else if (cur) {
         cur.desc += (cur.desc ? '\n' : '') + t;
       }
     }
     if (cur) items.push(cur);
+  }
+  for (const it of items) {
+    it.displayName = it.name
+      .replace(/\s*\(\d\s*[✩★⭐]\)\s*/g, '')
+      .replace(/\s*\[R\d\]\s*/gi, '')
+      .replace(/\s*\*+$/, '')
+      .trim();
+    it.trailingStar = /\*$/.test(it.name);
   }
   return items;
 }
@@ -483,8 +1665,11 @@ function itemListHtml(items) {
   if (!items.length) return '';
   return '<div class="item-list">' + items.map(item => {
     const cls = item.rank === 1 ? ' tier-1' : item.rank === 2 ? ' tier-2' : item.rank === 0 ? ' tier-eq' : '';
+    const rarityCls = item.rarity ? ` rarity-${item.rarity}` : '';
     const label = item.rank === 0 ? '≈' : item.rank;
-    const nameHtml = `<span class="item-name${cls}">${escHtml(item.name)}</span>`;
+    const star = item.trailingStar ? '<sup class="item-foot">*</sup>' : '';
+    const display = item.displayName || item.name;
+    const nameHtml = `<span class="item-name-wrap"><span class="item-pill${rarityCls}${cls}">${escHtml(display)}</span>${star}</span>`;
     const descHtml = item.desc ? `<div class="item-desc">${escHtml(item.desc)}</div>` : '';
     return `<div class="item-row"><span class="item-rank">${label}</span><div class="item-body">${nameHtml}${descHtml}</div></div>`;
   }).join('') + '</div>';
@@ -578,7 +1763,7 @@ function hsrRelicCard(build) {
   const sets4 = parseHsrSets(build.relic_4pc || '');
   const sets2 = parseHsrSets(build.planar_ornament || '');
   if (!sets4.length && !sets2.length) return '';
-  let html = '<div class="build-card wide"><div class="card-label">relics</div><div class="disc-sets">';
+  let html = '<div class="build-card wide"><div class="card-label">' + sectionIcon('relics') + '<span>relics</span></div><div class="disc-sets">';
   if (sets4.length) {
     html += '<div class="disc-row"><span class="disc-pc-label">4PC</span>'
       + sets4.map((s, i) => `<span class="disc-chip${i === 0 ? ' disc-bis' : ''}">${escHtml(s)}</span>`).join('')
@@ -625,7 +1810,7 @@ function zzzDiscCard(build) {
   const hasNotes = build.disc_notes && build.disc_notes.trim();
   if (!has4 && !has2 && !hasNotes) return '';
 
-  let html = '<div class="build-card wide"><div class="card-label">drive discs</div>';
+  let html = '<div class="build-card wide"><div class="card-label">' + sectionIcon('drive discs') + '<span>drive discs</span></div>';
 
   if (has4 || has2) {
     html += '<div class="disc-sets">';
@@ -685,7 +1870,7 @@ function zzzTeamCard(build) {
   const hasGeneral = build.team_general && build.team_general.trim();
   if (!hasComps && !hasGeneral) return '';
 
-  let html = '<div class="build-card wide"><div class="card-label">team comps</div>';
+  let html = '<div class="build-card wide"><div class="card-label">' + sectionIcon('team comps') + '<span>team comps</span></div>';
 
   if (hasGeneral) {
     html += `<div class="card-body" style="margin-bottom:${hasComps ? '12px' : '0'}">${escHtml(build.team_general)}</div>`;
@@ -699,9 +1884,11 @@ function zzzTeamCard(build) {
         html += '<div class="team-row">';
         html += `<span class="team-chip">${escHtml(team.label)}</span>`;
         if (team.chars && team.chars.length) {
+          html += '<span class="team-thumbs">';
           for (const c of team.chars) {
-            html += `<span class="team-member-chip">${escHtml(zzzShortName(c))}</span>`;
+            html += teamMemberThumb('zzz', c);
           }
+          html += '</span>';
         }
         html += '</div>';
       }
@@ -743,7 +1930,7 @@ function card(label, content, wide = false, colorTiers = false) {
   const body = colorTiers ? colorize(escHtml(content)) : escHtml(content);
   return `
     <div class="build-card${wide ? ' wide' : ''}">
-      <div class="card-label">${label}</div>
+      <div class="card-label">${sectionIcon(label)}<span>${label}</span></div>
       <div class="card-body">${body}</div>
     </div>`;
 }
@@ -782,42 +1969,229 @@ function showTierView() {
   $('tier-view').classList.remove('hidden');
   renderTierView();
   $('content').scrollTop = 0;
+  updateLensState();
+  // update url
+  const params = new URLSearchParams();
+  params.set('game', currentGame);
+  params.set('view', 'tier');
+  history.replaceState(null, '', '#' + params.toString());
 }
+
+// ── tier list state ───────────────────────────────────────────
+let tierFilters = { element: null, group: null, newOnly: false, q: '' };
+let tierCompact = false;
+
+const TIER_BLURBS = {
+  // HSR/ZZZ shape
+  'T0':   { name: 'Era-defining', blurb: 'Top of meta. Pulls revolve around these.', color: '#f5a623', fg: '#000' },
+  'T0.5': { name: 'Strong',       blurb: 'Build-around, very competitive.',         color: '#e8832a', fg: '#fff' },
+  'T1':   { name: 'Solid',        blurb: 'Reliable picks, no team wasted.',         color: '#9b59b6', fg: '#fff' },
+  'T1.5': { name: 'Niche',        blurb: 'Strong in their lane, narrow use.',       color: '#5b7fd4', fg: '#fff' },
+  'T2':   { name: 'Aging',        blurb: 'Powercrept but still playable.',          color: '#3498db', fg: '#fff' },
+  'T3':   { name: 'Filler',       blurb: 'Use only if you have no alternative.',    color: '#27ae60', fg: '#fff' },
+  'T4':   { name: 'Outdated',     blurb: 'Outclassed; skip unless meme.',           color: '#8b949e', fg: '#0d1117' },
+  // GI shape
+  'SS':   { name: 'Top tier',     blurb: 'Strongest picks; pull priority.',         color: '#f5a623', fg: '#000' },
+  'S':    { name: 'Strong',       blurb: 'Excellent in their role.',                color: '#9b59b6', fg: '#fff' },
+  'A':    { name: 'Solid',        blurb: 'Good picks, reliable.',                   color: '#3498db', fg: '#fff' },
+  'B':    { name: 'Decent',       blurb: 'Usable, niche or budget option.',         color: '#27ae60', fg: '#fff' },
+  'C':    { name: 'Weak',         blurb: 'Outclassed in most teams.',               color: '#8b949e', fg: '#0d1117' },
+  'D':    { name: 'Outdated',     blurb: 'Skip unless you must.',                   color: '#555',    fg: '#aaa' },
+  'Unranked': { name: 'Unranked', blurb: 'No tier assigned.',                       color: '#3a414b', fg: '#fff' },
+};
 
 function renderTierView() {
   const gameTiers = tiersData[currentGame] || {};
   const gameIcons = icons[currentGame] || {};
-
-  const byTier = {};
-  for (const char of allChars) {
-    const t = gameTiers[char.name] || 'Unranked';
-    if (!byTier[t]) byTier[t] = [];
-    byTier[t].push(char);
-  }
-
   const tierOrder = TIER_ORDERS[currentGame] || TIER_ORDERS.zzz;
+
+  // Build filtered list
+  const q = (tierFilters.q || '').trim().toLowerCase();
+  let chars = [...allChars];
+  if (q) chars = chars.filter(c => c.name.toLowerCase().includes(q));
+  if (tierFilters.element) chars = chars.filter(c => charElement(c) === tierFilters.element);
+  if (tierFilters.group) {
+    chars = chars.filter(c => {
+      if (currentGame === 'hsr') return c.path === tierFilters.group;
+      if (currentGame === 'zzz') return c.specialty === tierFilters.group;
+      return true;
+    });
+  }
+  if (tierFilters.newOnly) chars = chars.filter(c => isRecentlyReleased(c));
+
+  const filteredCount = chars.length;
+  const totalCount = allChars.length;
+
+  // Group by tier
+  const byTier = {};
+  for (const c of chars) {
+    const t = gameTiers[c.name] || 'Unranked';
+    (byTier[t] = byTier[t] || []).push(c);
+  }
   const orderedTiers = [...tierOrder.filter(t => byTier[t]), ...(byTier['Unranked'] ? ['Unranked'] : [])];
 
-  let html = '<div class="view-header">tier list</div>';
-  for (const tier of orderedTiers) {
-    const chars = byTier[tier].sort((a, b) => releaseKey(b) - releaseKey(a));
-    const cls = `tier-${tier.replace('.', '_')}`;
-    html += `<div class="tier-section">`;
-    html += `<div class="tier-section-header ${cls}">${escHtml(tier)}</div>`;
-    html += `<div class="tier-char-grid">`;
-    for (const char of chars) {
-      const iconUrl = gameIcons[char.name];
-      html += `<div class="tier-char-chip">`;
-      if (iconUrl) {
-        html += `<img class="tier-char-icon" src="${escHtml(iconUrl)}" alt="" referrerpolicy="no-referrer">`;
-      }
-      html += `<span class="tier-char-name">${escHtml(char.name)}</span>`;
-      html += `</div>`;
+  // Determine collection axes
+  const games = { gi: 'Genshin Impact', hsr: 'Honkai: Star Rail', zzz: 'Zenless Zone Zero' };
+  const gameLabel = games[currentGame] || '';
+  const gameShort = currentGame.toUpperCase();
+  const groupAxisLabel = currentGame === 'hsr' ? 'Path' : currentGame === 'zzz' ? 'Specialty' : null;
+  const groupValues = currentGame === 'hsr'
+    ? ['Destruction', 'Hunt', 'Erudition', 'Harmony', 'Nihility', 'Preservation', 'Abundance', 'Remembrance']
+    : currentGame === 'zzz'
+      ? ['Attack', 'Anomaly', 'Stun', 'Support', 'Defense', 'Rupture']
+      : null;
+
+  // Element filter (use existing ELEMENT_ORDERS data)
+  const elemSet = new Set();
+  for (const c of allChars) {
+    const el = charElement(c);
+    if (el) elemSet.add(el);
+  }
+  const elemOrder = (ELEMENT_ORDERS[currentGame] || []).filter(e => elemSet.has(e));
+
+  // Build header
+  let html = `
+    <div class="tv-head">
+      <div>
+        <div class="tv-eyebrow">${escHtml(gameShort)} · Tier List</div>
+        <div class="tv-title">${escHtml(gameLabel)}</div>
+      </div>
+      <div class="tv-search">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <input id="tv-search-input" type="text" placeholder="Filter characters…" value="${escHtml(tierFilters.q)}" autocomplete="off" spellcheck="false" />
+      </div>
+    </div>
+    <div class="tv-filterbar">
+  `;
+
+  if (elemOrder.length) {
+    html += '<div class="tv-fgroup"><span class="tv-flabel">Element</span>';
+    html += `<button class="tv-fpill${tierFilters.element === null ? ' active' : ''}" data-tv-elem="">All</button>`;
+    for (const el of elemOrder) {
+      const col = ELEMENT_COLORS[el];
+      const dot = col ? col[1] : 'var(--muted)';
+      html += `<button class="tv-fpill${tierFilters.element === el ? ' active' : ''}" data-tv-elem="${escHtml(el)}"><span class="tv-fdot" style="background:${dot}"></span>${escHtml(el)}</button>`;
     }
-    html += `</div></div>`;
+    html += '</div>';
   }
 
-  $('tier-view').innerHTML = html;
+  if (groupAxisLabel && groupValues) {
+    html += `<div class="tv-fgroup"><span class="tv-flabel">${groupAxisLabel}</span>`;
+    html += `<button class="tv-fpill${tierFilters.group === null ? ' active' : ''}" data-tv-group="">All</button>`;
+    // detect which group values are actually present
+    const presentGroups = new Set();
+    for (const c of allChars) {
+      const g = currentGame === 'hsr' ? c.path : c.specialty;
+      if (g) presentGroups.add(g);
+    }
+    for (const g of groupValues) {
+      if (!presentGroups.has(g)) continue;
+      html += `<button class="tv-fpill${tierFilters.group === g ? ' active' : ''}" data-tv-group="${escHtml(g)}">${escHtml(g)}</button>`;
+    }
+    html += '</div>';
+  }
+
+  html += `
+    <div class="tv-fgroup">
+      <span class="tv-flabel">Show</span>
+      <button class="tv-fpill${tierFilters.newOnly ? ' active' : ''}" id="tv-new-only">New only</button>
+    </div>
+    <span class="tv-resultcount"><b>${filteredCount}</b> of ${totalCount}</span>
+    <div class="tv-density">
+      <button class="${!tierCompact ? 'active' : ''}" data-tv-density="cards">Cards</button>
+      <button class="${tierCompact ? 'active' : ''}" data-tv-density="compact">Compact</button>
+    </div>
+  </div>
+  `;
+
+  // Tier sections
+  if (!orderedTiers.length) {
+    html += `<div class="tv-empty"><b>No characters match.</b><br>Try clearing some filters.</div>`;
+  } else {
+    for (const tier of orderedTiers) {
+      const meta = TIER_BLURBS[tier] || TIER_BLURBS['Unranked'];
+      const tierChars = byTier[tier].sort((a, b) => releaseKey(b) - releaseKey(a));
+      html += `<div class="tv-section" style="--t-color:${meta.color};--t-fg:${meta.fg}">`;
+      html += `<div class="tv-banner">
+        <span class="tv-letter">${escHtml(tier)}</span>
+        <span class="tv-tier-name">${escHtml(meta.name)}</span>
+        <span class="tv-tier-blurb">${escHtml(meta.blurb)}</span>
+        <span class="tv-tier-count">${tierChars.length} character${tierChars.length === 1 ? '' : 's'}</span>
+      </div>`;
+      html += '<div class="tv-grid">';
+      for (const c of tierChars) {
+        const iconUrl = gameIcons[c.name];
+        const el = charElement(c);
+        const col = ELEMENT_COLORS[el];
+        const dot = col ? col[1] : 'var(--muted)';
+        const groupVal = currentGame === 'hsr' ? c.path : currentGame === 'zzz' ? c.specialty : el;
+        const isNew = isRecentlyReleased(c);
+        const cKey = c.name + '|' + (c.path || '');
+        html += `<div class="tv-chip" data-tv-char="${escHtml(cKey)}" style="--c-color:${dot}">`;
+        if (iconUrl) html += `<img class="tv-chip-icon" src="${escHtml(iconUrl)}" alt="" referrerpolicy="no-referrer">`;
+        else html += '<span class="tv-chip-icon" style="background:rgba(255,255,255,0.05)"></span>';
+        html += `<div class="tv-chip-info">`;
+        html += `<span class="tv-chip-name">${escHtml(toTitle(c.name))}</span>`;
+        html += `<span class="tv-chip-meta">`;
+        if (el) html += `<span class="tv-eldot" style="background:${dot}"></span>`;
+        if (groupVal) html += escHtml(groupVal);
+        html += `</span>`;
+        html += `</div>`;
+        if (isNew) html += `<span class="tv-chip-new">NEW</span>`;
+        html += `</div>`;
+      }
+      html += `</div></div>`;
+    }
+  }
+
+  const view = $('tier-view');
+  view.innerHTML = html;
+  view.classList.toggle('compact', tierCompact);
+
+  // Wire interactions
+  view.querySelectorAll('[data-tv-elem]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const v = btn.dataset.tvElem;
+      tierFilters.element = v || null;
+      renderTierView();
+    });
+  });
+  view.querySelectorAll('[data-tv-group]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const v = btn.dataset.tvGroup;
+      tierFilters.group = v || null;
+      renderTierView();
+    });
+  });
+  const newBtn = view.querySelector('#tv-new-only');
+  if (newBtn) newBtn.addEventListener('click', () => {
+    tierFilters.newOnly = !tierFilters.newOnly;
+    renderTierView();
+  });
+  view.querySelectorAll('[data-tv-density]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      tierCompact = btn.dataset.tvDensity === 'compact';
+      renderTierView();
+    });
+  });
+  view.querySelectorAll('[data-tv-char]').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const key = chip.dataset.tvChar;
+      const char = allChars.find(c => (c.name + '|' + (c.path || '')) === key);
+      if (char) selectChar(char);
+    });
+  });
+  const searchInput = view.querySelector('#tv-search-input');
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      tierFilters.q = searchInput.value;
+      // Re-render without losing focus by saving cursor pos
+      const start = searchInput.selectionStart;
+      renderTierView();
+      const newInput = $('tier-view').querySelector('#tv-search-input');
+      if (newInput) { newInput.focus(); newInput.setSelectionRange(start, start); }
+    });
+  }
 }
 
 // ── utilities ─────────────────────────────────────────────────
