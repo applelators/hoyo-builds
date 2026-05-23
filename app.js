@@ -1057,7 +1057,7 @@ function renderEventsBlock() {
   if (!decorated.length) {
     html += `<div class="pg-event-empty">No events scheduled.</div>`;
   } else {
-    html += '<div class="pg-events-grid">';
+    html += '<div class="pg-events-list">';
     for (const d of decorated) {
       const e = d.ev;
       const type = (e.type || 'main').toLowerCase();
@@ -1066,27 +1066,40 @@ function renderEventsBlock() {
       let pillCls, pillText, whenText;
       if (d.isLive) {
         pillCls = 'live'; pillText = 'Live';
-        const daysLeft = Math.max(0, Math.ceil((d.end - now) / 86400000));
-        whenText = `Ends in ${daysLeft}d`;
+        const msLeft = d.end - now;
+        if (msLeft < 86400000) {
+          const h = Math.max(1, Math.ceil(msLeft / 3600000));
+          whenText = `Ends in ${h}h`;
+        } else {
+          const daysLeft = Math.max(0, Math.ceil(msLeft / 86400000));
+          whenText = `Ends in ${daysLeft}d`;
+        }
       } else {
         pillCls = 'soon'; pillText = 'Upcoming';
         const daysUntil = Math.max(0, Math.ceil((d.start - now) / 86400000));
         whenText = `In ${daysUntil}d`;
       }
-      const hasUrl = e.url ? true : false;
+      const progress = d.isLive
+        ? Math.max(0, Math.min(1, (now - d.start) / (d.end - d.start)))
+        : 0;
+      const barPct = (progress * 100).toFixed(1);
+      const hasUrl = !!e.url;
       const tag = hasUrl ? 'a' : 'div';
       const attrs = hasUrl ? ` href="${escHtml(e.url)}" target="_blank" rel="noopener" style="text-decoration:none"` : '';
       html += `<${tag} class="pg-event" style="--e-color:${color}"${attrs}>
-        <span class="pg-event-icon">${icon}</span>
-        <div class="pg-event-info">
-          <div class="pg-event-name">${escHtml(e.name || '')}</div>
-          ${e.tagline ? `<div class="pg-event-tagline">${escHtml(e.tagline)}</div>` : ''}
-          ${e.rewards ? `<div class="pg-event-rewards">${escHtml(e.rewards)}</div>` : ''}
+        <div class="pg-event-top">
+          <span class="pg-event-icon">${icon}</span>
+          <div class="pg-event-info">
+            <div class="pg-event-name">${escHtml(e.name || '')}</div>
+            ${e.tagline ? `<div class="pg-event-tagline">${escHtml(e.tagline)}</div>` : ''}
+            ${e.rewards ? `<div class="pg-event-rewards">${escHtml(e.rewards)}</div>` : ''}
+          </div>
+          <div class="pg-event-status">
+            <span class="pg-event-pill ${pillCls}">${pillText}</span>
+            <span class="pg-event-when">${escHtml(whenText)}</span>
+          </div>
         </div>
-        <div class="pg-event-status">
-          <span class="pg-event-pill ${pillCls}">${pillText}</span>
-          <span class="pg-event-when">${escHtml(whenText)}</span>
-        </div>
+        <div class="pg-event-bar"><div class="pg-event-bar-fill" style="width:${barPct}%"></div></div>
       </${tag}>`;
     }
     html += '</div>';
