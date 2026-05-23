@@ -1,14 +1,19 @@
-"""Fetch character banner schedules from each game's wiki using Playwright.
+"""Fetch character banner schedules from Game8 using Playwright.
 
 Outputs to banners.json in the project root.
 Run once per patch; manual `verdict`, `rerun`, and `phase` fields are preserved.
 
+Sources:
+- GI:  https://game8.co/games/Genshin-Impact/archives/305012  (Current and Next Banner Schedule)
+- HSR: See CURRENT_VERSION_URLS — update each patch to the new version page
+- ZZZ: See CURRENT_VERSION_URLS — update each patch to the new version page
+
 Notes:
-- The banner history wiki pages list all-time banners without dated current tables,
-  so automated extraction of start/end for the *current* patch isn't reliable.
-  The scraper tries its best; if nothing is found the existing data is kept intact.
-- Add new banners manually (or update this scraper) when a new patch begins.
-  The merge key is (character, start) so safe to re-run after manual edits.
+- Game8 banner schedule pages have clean Phase 1 / Phase 2 tables with explicit dates.
+- GI: the single banner schedule page covers current and next banners.
+- HSR/ZZZ: use the version release date page which lists both phases.
+- The merge key is (character, start) so safe to re-run after manual edits.
+- Update CURRENT_VERSION_URLS at the start of each patch cycle.
 """
 from __future__ import annotations
 import asyncio
@@ -20,36 +25,80 @@ from pathlib import Path
 
 OUTPUT = Path(__file__).parent / "banners.json"
 
-SOURCES = {
-    "gi":  "https://genshin-impact.fandom.com/wiki/Character_Event_Wish",
-    "hsr": "https://honkai-star-rail.fandom.com/wiki/Event_Warp",
-    "zzz": "https://zenless-zone-zero.fandom.com/wiki/Exclusive_Channel",
-}
-
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 
-# Extract rows from tables that have a date range and a character name
-_EXTRACT_JS = """
+SOURCES = {
+    "gi":  "https://game8.co/games/Genshin-Impact/archives/305012",
+    "hsr": "https://game8.co/games/Honkai-Star-Rail/archives/585934",
+    "zzz": "https://game8.co/games/Zenless-Zone-Zero/archives/590340",
+}
+
+# JS to extract banner phase tables from Game8 pages.
+# Game8 uses tables with "Phase N Banners | Banner Dates | Rate-Ups" header rows.
+_EXTRACT_GI_JS = """
 () => {
-    const DATE_RE = /\\d{4}-\\d{2}-\\d{2}|[A-Z][a-z]+ \\d{1,2}, \\d{4}/;
-    const rows = [];
-    for (const table of document.querySelectorAll('table.wikitable, table.article-table')) {
-        const headers = Array.from(table.querySelectorAll('tr:first-child th')).map(c => c.innerText.trim().toLowerCase());
-        const charIdx  = headers.findIndex(h => h.includes('character') || h.includes('agent') || h.includes('wish'));
-        const startIdx = headers.findIndex(h => h.includes('start') || h.includes('from') || h.includes('release'));
-        const endIdx   = headers.findIndex(h => h.includes('end') || h.includes('to'));
-        if (charIdx < 0 || startIdx < 0) continue;
-        for (const row of Array.from(table.querySelectorAll('tr')).slice(1)) {
-            const cells = Array.from(row.querySelectorAll('td'));
-            if (!cells.length) continue;
-            const charText  = cells[charIdx]?.innerText.trim();
-            const startText = cells[startIdx]?.innerText.trim();
-            const endText   = endIdx >= 0 ? cells[endIdx]?.innerText.trim() : '';
-            if (charText && startText && DATE_RE.test(startText))
-                rows.push({ character: charText, start: startText, end: endText });
+    var results = [];
+    var DATE_RE = /([A-Z][a-z]+ \\d{1,2}, \\d{4})/g;
+    var tables = document.querySelectorAll('table');
+    for (var i = 0; i < tables.length; i++) {
+        var rows = tables[i].querySelectorAll('tr');
+        for (var j = 0; j < rows.length; j++) {
+            var cells = rows[j].querySelectorAll('td');
+            if (cells.length < 2) continue;
+            var nameText = cells[0].innerText.trim();
+            var dateText = cells[1] ? cells[1].innerText.trim() : '';
+            // Look for rows that have a banner name and a date range
+            var dates = dateText.match(DATE_RE);
+            if (!dates || dates.length < 2) continue;
+            // Character name: strip phase suffix, grab 5★ from rate-up cell
+            var rateCell = cells[2] ? cells[2].innerText.trim() : '';
+            var charMatch = rateCell.match(/5 Star Rate-Up:\\s*([^\\n4]+)/);
+            var charName = charMatch ? charMatch[1].trim() : nameText.replace(/\\n.*/,'').trim();
+            // Phase: look for "Phase 1" or "Phase 2" in nameText
+            var phaseMatch = nameText.match(/Phase (\\d)/);
+            var phase = phaseMatch ? parseInt(phaseMatch[1]) : 1;
+            results.push({
+                character: charName,
+                phase: phase,
+                startText: dates[0],
+                endText: dates[1],
+            });
         }
     }
-    return rows;
+    return results;
+}
+"""
+
+_EXTRACT_VERSION_JS = """
+() => {
+    var results = [];
+    var DATE_RE = /([A-Z][a-z]+ \\d{1,2}, \\d{4})/g;
+    var tables = document.querySelectorAll('table');
+    for (var i = 0; i < tables.length; i++) {
+        var headers = tables[i].querySelectorAll('tr:first-child th, tr:first-child td');
+        var headerText = '';
+        for (var h = 0; h < headers.length; h++) headerText += headers[h].innerText;
+        if (headerText.toLowerCase().indexOf('phase') < 0 && headerText.toLowerCase().indexOf('banner') < 0) continue;
+        var rows = tables[i].querySelectorAll('tr');
+        for (var j = 1; j < rows.length; j++) {
+            var cells = rows[j].querySelectorAll('td');
+            if (cells.length < 2) continue;
+            var nameText = cells[0].innerText.trim();
+            var dateText = cells[1] ? cells[1].innerText.trim() : '';
+            var dates = dateText.match(DATE_RE);
+            if (!dates || dates.length < 2) continue;
+            var charName = nameText.replace(/Banner.*$/, '').trim();
+            var phaseMatch = (nameText + (cells[2] ? cells[2].innerText : '')).match(/Phase (\\d)/);
+            var phase = phaseMatch ? parseInt(phaseMatch[1]) : 1;
+            results.push({
+                character: charName,
+                phase: phase,
+                startText: dates[0],
+                endText: dates[1],
+            });
+        }
+    }
+    return results;
 }
 """
 
@@ -74,7 +123,6 @@ def parse_date(s: str) -> str | None:
 
 
 def merge(existing: list[dict], scraped: list[dict]) -> list[dict]:
-    """Preserve verdicts + reruns from existing entries. Match by (character, start)."""
     lookup = {(e["character"], e.get("start")): e for e in (existing or [])}
     merged = []
     for s in scraped:
@@ -88,7 +136,6 @@ def merge(existing: list[dict], scraped: list[dict]) -> list[dict]:
             if prev.get("phase"):
                 s["phase"] = prev["phase"]
         merged.append(s)
-    # Preserve existing entries not found in the scrape (manually-added banners)
     seen = {(s["character"], s.get("start")) for s in scraped}
     today = date.today().isoformat()
     for key, prev in lookup.items():
@@ -100,30 +147,35 @@ def merge(existing: list[dict], scraped: list[dict]) -> list[dict]:
 async def scrape_game(page, game: str, url: str) -> list[dict]:
     print(f"  [{game}] loading {url}")
     try:
-        await page.goto(url, wait_until="load", timeout=30000)
-        await page.wait_for_timeout(5000)
+        await page.goto(url, wait_until="domcontentloaded", timeout=60000)
+        await page.wait_for_timeout(8000)
         title = await page.title()
-        if "moment" in title.lower():
-            await page.wait_for_timeout(7000)
+        print(f"  [{game}] title: {title}")
 
-        raw = await page.evaluate(_EXTRACT_JS)
+        js = _EXTRACT_GI_JS if game == "gi" else _EXTRACT_VERSION_JS
+        raw = await page.evaluate(js)
     except Exception as e:
         print(f"  [{game}] ERROR: {e}")
         return []
 
     out = []
     today = date.today().isoformat()
+    seen = set()
     for r in raw:
-        char  = re.sub(r"\s*\(.*?\)\s*$", "", r["character"]).strip()
-        start = parse_date(r["start"])
-        end   = parse_date(r["end"]) if r["end"] else None
+        char  = r.get("character", "").strip()
+        start = parse_date(r.get("startText", ""))
+        end   = parse_date(r.get("endText", ""))
         if not char or not start or not end:
             continue
         if end < today:
             continue
+        key = (char, start)
+        if key in seen:
+            continue
+        seen.add(key)
         out.append({
             "character": char,
-            "phase":     1,
+            "phase":     r.get("phase", 1),
             "start":     start,
             "end":       end,
             "rerun":     False,
@@ -157,9 +209,15 @@ async def main_async() -> None:
 
         await browser.close()
 
-    OUTPUT.write_text(json.dumps(data, indent=2, ensure_ascii=False))
+    # Preserve $schema and non-list keys
+    result = {k: v for k, v in data.items() if not isinstance(v, list)}
+    for game in SOURCES:
+        if game in data:
+            result[game] = data[game]
+
+    OUTPUT.write_text(json.dumps(result, indent=2, ensure_ascii=False))
     print(f"\nWrote {OUTPUT}")
-    for g, entries in data.items():
+    for g, entries in result.items():
         if isinstance(entries, list):
             print(f"  {g}: {len(entries)} banners")
 

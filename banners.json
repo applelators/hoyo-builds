@@ -8,107 +8,150 @@
       "end": "ISO date YYYY-MM-DD when the banner closes (exclusive)",
       "rerun": "true if this character has appeared on a banner before",
       "verdict": "Short editorial guidance — 'Pull if X' / 'Skip' / 'High value'. Plain text, no HTML.",
-      "patch": "Optional. Patch number string (e.g. '3.7') this banner belongs to."
+      "patch": "Optional. Patch number string (e.g. '6.6') this banner belongs to."
     },
     "_wiki_sources": {
-      "gi": "https://genshin-impact.fandom.com/wiki/Character_Event_Wish",
-      "hsr": "https://honkai-star-rail.fandom.com/wiki/Warp/Event_Warp",
-      "zzz": "https://zenless-zone-zero.fandom.com/wiki/Exclusive_Channel"
+      "gi": "https://game8.co/games/Genshin-Impact/archives/305012",
+      "hsr": "https://game8.co/games/Honkai-Star-Rail/archives/585934",
+      "zzz": "https://game8.co/games/Zenless-Zone-Zero/archives/590340"
     },
     "_scrape_hints": [
-      "Each wiki page lists upcoming + past banners as wikitables.",
-      "Standard banner duration: 21 days (3 weeks). Phase 1 starts on version release, phase 2 starts ~3 weeks later.",
-      "Genshin runs two simultaneous banners per phase (two 5★ chars share start/end dates).",
-      "HSR runs two simultaneous banners per phase as well.",
-      "ZZZ usually runs one main banner + one standard rate-up per phase.",
-      "Live versions can be checked via the corresponding /wiki/Version page."
+      "Game8 banner schedule pages list Phase 1 and Phase 2 with explicit dates in wikitables.",
+      "GI: game8.co/games/Genshin-Impact/archives/305012 (Current and Next Banner Schedule)",
+      "HSR: game8.co/games/Honkai-Star-Rail/archives/NNNNNN (current version banners page)",
+      "ZZZ: game8.co/games/Zenless-Zone-Zero/archives/NNNNNN (current version release date page)"
     ]
   },
   "gi": [
     {
-      "character": "Linnea",
+      "character": "Nicole",
       "phase": 1,
-      "start": "2026-05-21",
-      "end": "2026-06-10",
+      "start": "2026-05-20",
+      "end": "2026-06-09",
       "rerun": false,
-      "verdict": "Pull if you play Geo teams. Era-defining DPS for Natlan/Snezhnaya rotations.",
-      "patch": "5.7"
+      "verdict": "",
+      "patch": "6.6"
     },
     {
-      "character": "Varka",
+      "character": "Durin",
       "phase": 1,
-      "start": "2026-05-21",
-      "end": "2026-06-10",
+      "start": "2026-05-20",
+      "end": "2026-06-09",
       "rerun": false,
-      "verdict": "Top-tier Pyro option; pull if you need a Pyro DPS or are committed to Mavuika teams.",
-      "patch": "5.7"
+      "verdict": "",
+      "patch": "6.6"
+    },
+    {
+      "character": "Lohen",
+      "phase": 2,
+      "start": "2026-06-09",
+      "end": "2026-06-30",
+      "rerun": true,
+      "verdict": "",
+      "patch": "6.6"
     },
     {
       "character": "Mavuika",
       "phase": 2,
-      "start": "2026-06-10",
-      "end": "2026-07-01",
+      "start": "2026-06-09",
+      "end": "2026-06-30",
       "rerun": true,
       "verdict": "Best Pyro DPS in the game. High-value if you missed her last rerun.",
-      "patch": "5.7"
+      "patch": "6.6"
     }
   ],
   "hsr": [
     {
+      "character": "Evanescia",
+      "phase": 2,
+      "start": "2026-05-13",
+      "end": "2026-05-31",
+      "rerun": false,
+      "verdict": "",
+      "patch": "4.2"
+    },
+    {
+      "character": "Feixiao",
+      "phase": 2,
+      "start": "2026-05-13",
+      "end": "2026-05-31",
+      "rerun": true,
+      "verdict": "Available via Indelible Coterie selectable banner (pick Feixiao, Sunday, or Tribbie).",
+      "patch": "4.2"
+    },
+    {
+      "character": "Mortenax Blade",
+      "phase": 1,
+      "start": "2026-06-01",
+      "end": "2026-06-20",
+      "rerun": false,
+      "verdict": "",
+      "patch": "4.3"
+    },
+    {
+      "character": "Yao Guang",
+      "phase": 1,
+      "start": "2026-06-01",
+      "end": "2026-06-20",
+      "rerun": true,
+      "verdict": "",
+      "patch": "4.3"
+    },
+    {
       "character": "Cyrene",
-      "phase": 1,
-      "start": "2026-05-21",
-      "end": "2026-06-11",
-      "rerun": false,
+      "phase": 2,
+      "start": "2026-06-20",
+      "end": "2026-07-09",
+      "rerun": true,
       "verdict": "Pull if you play Remembrance teams. Era-defining support; Cyrene reshapes the meta for Chrysos Heirs.",
-      "patch": "3.7"
+      "patch": "4.3"
     },
     {
-      "character": "Hysilens",
-      "phase": 1,
-      "start": "2026-05-21",
-      "end": "2026-06-11",
-      "rerun": false,
-      "verdict": "Premium DoT DPS. Strong pull if your Nihility roster is thin.",
-      "patch": "3.7"
-    },
-    {
-      "character": "Hyacine",
+      "character": "Phainon",
       "phase": 2,
-      "start": "2026-06-11",
-      "end": "2026-07-02",
+      "start": "2026-06-20",
+      "end": "2026-07-09",
       "rerun": true,
-      "verdict": "Top sustain; rerun is high value if you missed her debut.",
-      "patch": "3.7"
-    },
-    {
-      "character": "Acheron",
-      "phase": 2,
-      "start": "2026-06-11",
-      "end": "2026-07-02",
-      "rerun": true,
-      "verdict": "Strong DPS but powercrept by newer Nihility comps. Skip if you have her at E0S1.",
-      "patch": "3.7"
+      "verdict": "",
+      "patch": "4.3"
     }
   ],
   "zzz": [
     {
-      "character": "Aria",
+      "character": "Promeia",
       "phase": 1,
-      "start": "2026-05-21",
-      "end": "2026-06-11",
+      "start": "2026-05-06",
+      "end": "2026-05-27",
       "rerun": false,
-      "verdict": "Pull if you play Stun teams. Best-in-slot Stunner.",
-      "patch": "2.5"
+      "verdict": "",
+      "patch": "2.8"
     },
     {
-      "character": "Sunna",
+      "character": "Lucia",
+      "phase": 1,
+      "start": "2026-05-06",
+      "end": "2026-05-27",
+      "rerun": true,
+      "verdict": "",
+      "patch": "2.8"
+    },
+    {
+      "character": "Starlight Billy",
       "phase": 2,
-      "start": "2026-06-11",
-      "end": "2026-07-02",
+      "start": "2026-05-27",
+      "end": "2026-06-16",
       "rerun": false,
-      "verdict": "High-value: new Anomaly DPS with strong solo carry potential.",
-      "patch": "2.5"
+      "verdict": "",
+      "patch": "2.8"
+    },
+    {
+      "character": "Orphie and Magus",
+      "phase": 2,
+      "start": "2026-05-27",
+      "end": "2026-06-16",
+      "rerun": true,
+      "verdict": "",
+      "patch": "2.8"
     }
   ]
 }

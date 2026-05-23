@@ -1,112 +1,22 @@
 {
   "gi": [
     {
-      "name": "The Stilled Interstice of a Thousand Winds",
-      "type": "main",
-      "start": "2026-04-08",
-      "end": "2026-06-30",
-      "tagline": "",
-      "rewards": "",
-      "url": "https://genshin-impact.fandom.com/wiki/The_Stilled_Interstice_of_a_Thousand_Winds"
-    },
-    {
-      "name": "To Temper Thyself and Journey Far",
-      "type": "main",
-      "start": "2026-05-18",
-      "end": "2026-08-10",
-      "tagline": "",
-      "rewards": "",
-      "url": "https://genshin-impact.fandom.com/wiki/To_Temper_Thyself_and_Journey_Far/2026-05-18"
-    },
-    {
-      "name": "Nicole's Story Workshop",
-      "type": "web",
-      "start": "2026-05-19",
-      "end": "2026-05-27",
-      "tagline": "",
-      "rewards": "",
-      "url": "https://genshin-impact.fandom.com/wiki/Nicole%27s_Story_Workshop"
-    },
-    {
-      "name": "Test Run - Nicole, Durin, Prune, Razor, Fischl",
-      "type": "main",
-      "start": "2026-05-20",
-      "end": "2026-06-09",
-      "tagline": "",
-      "rewards": "",
-      "url": "https://genshin-impact.fandom.com/wiki/Test_Run_-_Character_Trial_Event/2026-05-20"
-    },
-    {
-      "name": "Gift of Splendor",
-      "type": "main",
-      "start": "2026-05-20",
-      "end": "2026-06-29",
-      "tagline": "",
-      "rewards": "",
-      "url": "https://genshin-impact.fandom.com/wiki/Battle_Pass/Gift_of_Splendor"
-    },
-    {
-      "name": "Prismatic Chronicles",
-      "type": "main",
-      "start": "2026-05-20",
-      "end": "2026-06-29",
-      "tagline": "",
-      "rewards": "",
-      "url": "https://genshin-impact.fandom.com/wiki/Miliastra_Pass/2026-05-20"
-    },
-    {
-      "name": "Hexerei: Ballad of Whimsical Polyphony",
-      "type": "main",
-      "start": "2026-05-20",
-      "end": "2026-06-30",
-      "tagline": "",
-      "rewards": "",
-      "url": "https://genshin-impact.fandom.com/wiki/Hexerei:_Ballad_of_Whimsical_Polyphony_(Event)"
-    },
-    {
-      "name": "The Forge Realm's Temper: Clever Stratagems",
-      "type": "main",
-      "start": "2026-05-20",
-      "end": "2026-06-30",
-      "tagline": "",
-      "rewards": "",
-      "url": "https://genshin-impact.fandom.com/wiki/The_Forge_Realm%27s_Temper/2026-05-20"
-    },
-    {
-      "name": "As All Falls to Emptiness",
-      "type": "main",
-      "start": "2026-05-20",
-      "end": "2026-06-30",
-      "tagline": "",
-      "rewards": "",
-      "url": "https://genshin-impact.fandom.com/wiki/As_All_Falls_to_Emptiness_(Event)"
-    },
-    {
-      "name": "Raiment Collection: Convergent Tides",
-      "type": "main",
-      "start": "2026-05-20",
-      "end": "2026-07-01",
-      "tagline": "",
-      "rewards": "",
-      "url": "https://genshin-impact.fandom.com/wiki/Raiment_Collection/2026-05-20"
-    },
-    {
       "name": "Mage Nicole's Tea Party",
       "type": "web",
       "start": "2026-05-20",
       "end": "2026-06-02",
       "tagline": "",
       "rewards": "",
-      "url": "https://genshin-impact.fandom.com/wiki/Mage_Nicole%27s_Tea_Party"
+      "url": "https://game8.co/games/Genshin-Impact/archives/600996"
     },
     {
-      "name": "Stellar Reunion",
-      "type": "login",
-      "start": "2026-05-21",
-      "end": "2026-07-01",
-      "rewards": "4★ Selector + Primogems",
-      "tagline": "Welcome-back rewards for returning Travelers.",
-      "patch": "5.7"
+      "name": "To Temper Thyself and Journey Far",
+      "type": "story",
+      "start": "2026-05-18",
+      "end": "2026-08-10",
+      "tagline": "",
+      "rewards": "+ 5-Star Stella Fortuna",
+      "url": "https://game8.co/games/Genshin-Impact/archives/546841"
     },
     {
       "name": "Phantasmal Pals",
@@ -114,44 +24,26 @@
       "start": "2026-05-22",
       "end": "2026-06-08",
       "tagline": "",
-      "rewards": "",
-      "url": "https://genshin-impact.fandom.com/wiki/Phantasmal_Pals"
-    },
-    {
-      "name": "Echoing Tales of Geo",
-      "type": "main",
-      "start": "2026-05-25",
-      "end": "2026-06-15",
-      "rewards": "Linnea trial + Primogems",
-      "tagline": "Combat trial introducing Linnea's mechanics.",
-      "patch": "5.7"
+      "rewards": "+ Claymore Weapon Skin + Talent Materials",
+      "url": "https://game8.co/games/Genshin-Impact/archives/598978"
     },
     {
       "name": "Stygian Onslaught",
-      "type": "main",
+      "type": "combat",
       "start": "2026-05-27",
       "end": "2026-06-30",
       "tagline": "",
-      "rewards": "",
-      "url": "https://genshin-impact.fandom.com/wiki/Stygian_Onslaught/2026-05-27"
-    },
-    {
-      "name": "Marvelous Merchandise",
-      "type": "exploration",
-      "start": "2026-05-30",
-      "end": "2026-06-08",
-      "rewards": "Mora · Hero's Wit",
-      "tagline": "Daily trade-in event with Liben.",
-      "patch": "5.7"
+      "rewards": "+ Dust of Enlightenment",
+      "url": "https://game8.co/games/Genshin-Impact/archives/527266"
     },
     {
       "name": "Trials of the Brave Warrior",
-      "type": "main",
+      "type": "combat",
       "start": "2026-06-08",
       "end": "2026-06-18",
       "tagline": "",
-      "rewards": "",
-      "url": "https://genshin-impact.fandom.com/wiki/Trials_of_the_Brave_Warrior"
+      "rewards": "+ Weapon Materials",
+      "url": "https://game8.co/games/Genshin-Impact/archives/598986"
     },
     {
       "name": "Miliastral Gifts",
@@ -160,16 +52,7 @@
       "end": "2026-06-24",
       "tagline": "",
       "rewards": "",
-      "url": "https://genshin-impact.fandom.com/wiki/Miliastral_Gifts"
-    },
-    {
-      "name": "Starlight Voyage: Winning Grace",
-      "type": "main",
-      "start": "2026-06-15",
-      "end": "2026-06-29",
-      "tagline": "",
-      "rewards": "",
-      "url": "https://genshin-impact.fandom.com/wiki/Starlight_Voyage/2026-06-15"
+      "url": null
     },
     {
       "name": "Kaleidoscopic Color Chase",
@@ -177,57 +60,174 @@
       "start": "2026-06-18",
       "end": "2026-06-29",
       "tagline": "",
-      "rewards": "",
-      "url": "https://genshin-impact.fandom.com/wiki/Kaleidoscopic_Color_Chase"
+      "rewards": "+ Talent Materials",
+      "url": null
     }
   ],
   "hsr": [
     {
-      "name": "Trailblaze Comm: Memory",
-      "type": "combat",
-      "start": "2026-05-21",
-      "end": "2026-07-02",
-      "rewards": "5★ Light Cone + Jade",
-      "tagline": "End-game combat tower with Remembrance synergies.",
-      "patch": "3.7"
+      "name": "Festive Gifts",
+      "type": "login",
+      "start": "2026-04-22",
+      "end": "2026-06-01",
+      "tagline": "",
+      "rewards": "+ Special Passes",
+      "url": "https://game8.co/games/Honkai-Star-Rail/archives/448217"
     },
     {
-      "name": "Path Through Stardust",
+      "name": "Cherished Recollection",
       "type": "main",
-      "start": "2026-05-22",
-      "end": "2026-06-19",
-      "rewards": "Cyrene trial + Stellar Jade",
-      "tagline": "Story event exploring Amphoreus past.",
-      "patch": "3.7"
+      "start": "2026-04-22",
+      "end": "2026-06-01",
+      "tagline": "",
+      "rewards": "",
+      "url": "https://game8.co/games/Honkai-Star-Rail/archives/507548"
     },
     {
-      "name": "Boulder Town Olympics",
-      "type": "web",
-      "start": "2026-05-26",
-      "end": "2026-06-10",
-      "rewards": "Stellar Jade × 200",
-      "tagline": "Web event with mini-games.",
-      "patch": "3.7"
+      "name": "Come With Me, Take the Journey",
+      "type": "story",
+      "start": "2026-04-22",
+      "end": "2026-06-01",
+      "tagline": "",
+      "rewards": "",
+      "url": null
+    },
+    {
+      "name": "Novaflare",
+      "type": "combat",
+      "start": "2026-04-22",
+      "end": "2026-06-01",
+      "tagline": "",
+      "rewards": "",
+      "url": "https://game8.co/games/Honkai-Star-Rail/archives/531216"
+    },
+    {
+      "name": "Relic Recon",
+      "type": "combat",
+      "start": "2026-04-22",
+      "end": "2026-06-01",
+      "tagline": "",
+      "rewards": "",
+      "url": "https://game8.co/games/Honkai-Star-Rail/archives/560903"
+    },
+    {
+      "name": "Cosmic Data Roaming",
+      "type": "exploration",
+      "start": "2026-04-22",
+      "end": "2026-06-01",
+      "tagline": "",
+      "rewards": "",
+      "url": "https://game8.co/games/Honkai-Star-Rail/archives/594115"
+    },
+    {
+      "name": "Cosmicon, Roll On Again!",
+      "type": "main",
+      "start": "2026-04-29",
+      "end": "2026-06-01",
+      "tagline": "",
+      "rewards": "+ Self-Modeling Resin + Stellar Jade",
+      "url": "https://game8.co/games/Honkai-Star-Rail/archives/594117"
+    },
+    {
+      "name": "300% Garden of Plenty",
+      "type": "combat",
+      "start": "2026-05-13",
+      "end": "2026-05-25",
+      "tagline": "",
+      "rewards": "+ Double Calyx drops",
+      "url": null
+    },
+    {
+      "name": "300% Realm of the Strange",
+      "type": "combat",
+      "start": "2026-05-22",
+      "end": "2026-06-01",
+      "tagline": "",
+      "rewards": "+ Double Cavern of Corrosion drops",
+      "url": null
     }
   ],
   "zzz": [
     {
-      "name": "Aria Debut Trial",
-      "type": "combat",
-      "start": "2026-05-21",
-      "end": "2026-06-04",
-      "rewards": "Aria trial + Polychrome",
-      "tagline": "Test-drive Aria with a curated team.",
-      "patch": "2.5"
+      "name": "All-New Program",
+      "type": "login",
+      "start": "2026-05-06",
+      "end": "2026-06-16",
+      "tagline": "",
+      "rewards": "+ Encrypted Master Tapes",
+      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/463484"
     },
     {
-      "name": "Shiyu Defense: Phase 2",
+      "name": "The Final Callback",
+      "type": "story",
+      "start": "2026-05-06",
+      "end": "2026-05-27",
+      "tagline": "",
+      "rewards": "",
+      "url": null
+    },
+    {
+      "name": "Operation: Save Bootopia",
+      "type": "main",
+      "start": "2026-05-07",
+      "end": "2026-06-15",
+      "tagline": "",
+      "rewards": "+ Booltergeist Bangboo + Polychrome",
+      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596538"
+    },
+    {
+      "name": "Ultimate Verdict Trial",
       "type": "combat",
-      "start": "2026-05-26",
-      "end": "2026-06-26",
-      "rewards": "Polychrome × 300",
-      "tagline": "Bimonthly combat tower with new affixes.",
-      "patch": "2.5"
+      "start": "2026-05-13",
+      "end": "2026-06-01",
+      "tagline": "",
+      "rewards": "",
+      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596539"
+    },
+    {
+      "name": "Advanced Bounty: Area Patrol",
+      "type": "combat",
+      "start": "2026-05-20",
+      "end": "2026-05-25",
+      "tagline": "",
+      "rewards": "+ Double Drive Disc drops",
+      "url": null
+    },
+    {
+      "name": "En-Nah Into Your Lap",
+      "type": "login",
+      "start": "2026-05-27",
+      "end": "2026-06-16",
+      "tagline": "",
+      "rewards": "+ Boopons",
+      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/459873"
+    },
+    {
+      "name": "\"Spirit\" Artist's Notebook",
+      "type": "story",
+      "start": "2026-05-27",
+      "end": "2026-06-15",
+      "tagline": "",
+      "rewards": "",
+      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596537"
+    },
+    {
+      "name": "A Look Into Ridu's Legends",
+      "type": "exploration",
+      "start": "2026-06-01",
+      "end": "2026-06-15",
+      "tagline": "",
+      "rewards": "",
+      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596722"
+    },
+    {
+      "name": "Data Bounty: Combat Simulation",
+      "type": "combat",
+      "start": "2026-06-10",
+      "end": "2026-06-15",
+      "tagline": "",
+      "rewards": "+ Double W-Engine Materials",
+      "url": null
     }
   ]
 }

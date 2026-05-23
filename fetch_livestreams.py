@@ -1,11 +1,14 @@
-"""Fetch upcoming version livestream dates from each game's wiki.
+"""Fetch upcoming version livestream dates from each game's Game8 wiki.
 
 Outputs to livestreams.json. Run when a new patch livestream is announced.
 
 Strategy:
-- Load each game's version page with Playwright (handles Cloudflare).
-- Look for "Special Program" / "Livestream" text and the adjacent date.
-- Manual `highlights` are preserved across runs.
+- Load each game's wiki home page with Playwright.
+- Find the "X.Y Livestream" link in the top navigation.
+- Load that page and extract the release date + per-server times table.
+- Manual `highlights` and `title` fields are preserved across runs.
+
+Update NEXT_VERSION each patch cycle.
 """
 from __future__ import annotations
 import asyncio
@@ -17,20 +20,65 @@ from pathlib import Path
 
 OUTPUT = Path(__file__).parent / "livestreams.json"
 
-SOURCES = {
-    "gi":  "https://genshin-impact.fandom.com/wiki/Version/{ver}",
-    "hsr": "https://honkai-star-rail.fandom.com/wiki/Version/{ver}",
-    "zzz": "https://zenless-zone-zero.fandom.com/wiki/Version/{ver}",
+GAME_HOMES = {
+    "gi":  "https://game8.co/games/Genshin-Impact",
+    "hsr": "https://game8.co/games/Honkai-Star-Rail",
+    "zzz": "https://game8.co/games/Zenless-Zone-Zero",
 }
 
 # Bump these when a new version cycle begins.
 NEXT_VERSION = {
-    "gi":  "5.8",
-    "hsr": "3.8",
-    "zzz": "2.6",
+    "gi":  "6.7",
+    "hsr": "4.3",
+    "zzz": "3.0",
 }
 
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+
+# JS: find the X.Y Livestream link on the game home page
+_FIND_LS_LINK_JS = """
+(ver) => {
+    var anchors = document.querySelectorAll('a');
+    for (var i = 0; i < anchors.length; i++) {
+        var t = (anchors[i].innerText || '').trim();
+        var h = anchors[i].href || '';
+        if (h.includes('game8.co') && t.indexOf(ver) >= 0 && t.toLowerCase().indexOf('livestream') >= 0) {
+            return h;
+        }
+    }
+    return null;
+}
+"""
+
+# JS: extract release date from Game8 livestream page table
+_EXTRACT_DATE_JS = """
+() => {
+    var DATE_LABELS = /Release\\s*Date|Livestream\\s*Date/i;
+    var tables = document.querySelectorAll('table');
+    for (var i = 0; i < tables.length; i++) {
+        var rows = tables[i].querySelectorAll('tr');
+        for (var j = 0; j < rows.length; j++) {
+            var cells = rows[j].querySelectorAll('td, th');
+            if (cells.length < 2) continue;
+            if (DATE_LABELS.test(cells[0].innerText)) {
+                return cells[1].innerText.trim();
+            }
+        }
+    }
+    // Fallback: look for "North America | <date>" row
+    var tables2 = document.querySelectorAll('table');
+    for (var i = 0; i < tables2.length; i++) {
+        var rows2 = tables2[i].querySelectorAll('tr');
+        for (var j = 0; j < rows2.length; j++) {
+            var cells2 = rows2[j].querySelectorAll('td, th');
+            if (cells2.length >= 2 && /North America/i.test(cells2[0].innerText)) {
+                return cells2[1].innerText.trim();
+            }
+        }
+    }
+    return null;
+}
+"""
 
 
 def load_existing() -> dict:
@@ -44,8 +92,11 @@ def load_existing() -> dict:
 
 def parse_datetime(s: str) -> str | None:
     s = re.sub(r"\s+", " ", s).strip()
+    # Strip trailing countdown text
+    s = re.split(r"\s+(?:UTC|GMT)", s)[0].strip()
     fmts = [
-        "%Y-%m-%d %H:%M:%S",
+        "%B %d, %Y at %I:%M %p",
+        "%B %d, %Y %I:%M %p",
         "%B %d, %Y, %H:%M",
         "%B %d, %Y %H:%M",
         "%B %d, %Y",
@@ -60,49 +111,25 @@ def parse_datetime(s: str) -> str | None:
     return None
 
 
-_FIND_DATE_JS = """
-() => {
-    const LABELS = /Special\\s+Program|Livestream|Preview\\s+Stream/i;
-    for (const el of document.querySelectorAll('[data-source], .pi-data, tr, div')) {
-        const label = el.querySelector('.pi-data-label, th, [class*="label"]');
-        if (!label || !LABELS.test(label.innerText)) continue;
-        const val = el.querySelector('.pi-data-value, td, [class*="value"]');
-        if (val) {
-            const text = val.innerText.trim();
-            if (text && text.length > 4) return text;
-        }
-    }
-    // fallback: scan page text for date near the label
-    const body = document.body.innerText;
-    const m = body.match(/Special\\s+Program[^\\n]*\\n([^\\n]+)/i);
-    return m ? m[1].trim() : null;
-}
-"""
-
-
 async def scrape_game(page, game: str, ver: str) -> str | None:
-    url = SOURCES[game].format(ver=ver)
-    print(f"  [{game}] loading {url}")
+    home = GAME_HOMES[game]
+    print(f"  [{game}] looking for v{ver} livestream link on {home}")
     try:
-        await page.goto(url, wait_until="load", timeout=30000)
-        title = await page.title()
-        if "moment" in title.lower() or "404" in title:
-            print(f"  [{game}] Cloudflare/404, waiting extra...")
-            await page.wait_for_timeout(10000)
-            title = await page.title()
-        else:
-            await page.wait_for_timeout(5000)
+        await page.goto(home, wait_until="domcontentloaded", timeout=60000)
+        await page.wait_for_timeout(8000)
 
-        if "moment" in title.lower():
-            print(f"  [{game}] still blocked — skipping")
-            return None
-        if "404" in title or "not found" in title.lower():
-            print(f"  [{game}] page not found yet")
+        ls_url = await page.evaluate(_FIND_LS_LINK_JS, ver)
+        if not ls_url:
+            print(f"  [{game}] no v{ver} livestream link found on home page")
             return None
 
-        date_text = await page.evaluate(_FIND_DATE_JS)
+        print(f"  [{game}] found livestream page: {ls_url}")
+        await page.goto(ls_url, wait_until="domcontentloaded", timeout=60000)
+        await page.wait_for_timeout(8000)
+
+        date_text = await page.evaluate(_EXTRACT_DATE_JS)
         if not date_text:
-            print(f"  [{game}] no livestream date found on page")
+            print(f"  [{game}] no date found on livestream page")
             return None
 
         iso = parse_datetime(date_text)
@@ -132,14 +159,13 @@ async def main_async() -> None:
 
         for game, ver in NEXT_VERSION.items():
             date_iso = await scrape_game(page, game, ver)
-            url = SOURCES[game].format(ver=ver)
             prev = data.get(game) or {}
             if date_iso:
                 data[game] = {
                     "version":    ver,
                     "title":      prev.get("title") if prev.get("version") == ver else None,
                     "date":       date_iso,
-                    "url":        url,
+                    "url":        None,
                     "highlights": prev.get("highlights", []) if prev.get("version") == ver else [],
                 }
             else:
