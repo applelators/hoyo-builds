@@ -39,8 +39,8 @@ let eventData     = {};     // {gi: [{name, type, start, end, rewards, tagline}]
 let livestreamData = {};    // {gi: {version, title, date, highlights}, …}
 
 // ── favorites + density (localStorage) ───────────────────────
-const FAV_KEY = 'hoyo-builds:favorites';
-const DENSITY_KEY = 'hoyo-builds:density';
+const FAV_KEY = 'archon:favorites';
+const DENSITY_KEY = 'archon:density';
 function loadFavorites() {
   try {
     const raw = localStorage.getItem(FAV_KEY);
@@ -80,7 +80,7 @@ let paletteQuery = '';
 let paletteIndex = 0;
 let paletteItems = []; // [{type, char?, label, action}]
 
-const COLLAPSE_KEY = 'hoyo-builds:collapsed-groups';
+const COLLAPSE_KEY = 'archon:collapsed-groups';
 let collapsedGroups = {};
 function loadCollapsed() {
   try { return JSON.parse(localStorage.getItem(COLLAPSE_KEY) || '{}'); }

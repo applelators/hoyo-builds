@@ -1,10 +1,10 @@
-# CLAUDE.md — hoyo-builds
+# CLAUDE.md — Archon
 
-A guide for Claude Code working on the hoyo-builds app. Read this first.
+A guide for Claude Code working on the Archon app. Read this first.
 
 ## What this is
 
-A character build-guide reader for three HoYoverse games: **Genshin Impact (GI)**, **Honkai: Star Rail (HSR)**, and **Zenless Zone Zero (ZZZ)**. The front-end is plain HTML + CSS + JS — no framework, no build step. Open `index.html` directly or serve the folder with any static server.
+A character field guide / reference tool for three HoYoverse games: **Genshin Impact (GI)**, **Honkai: Star Rail (HSR)**, and **Zenless Zone Zero (ZZZ)**. The front-end is plain HTML + CSS + JS — no framework, no build step. Open `index.html` directly or serve the folder with any static server.
 
 ```bash
 python3 -m http.server 8000
@@ -117,10 +117,10 @@ All icons are inline SVG, 16×16 viewBox, `stroke="currentColor"`, `stroke-width
 
 All state in module-scoped variables at the top of `app.js`. **No store, no reducer, no event bus.** Render functions read state and write innerHTML.
 
-**localStorage keys** (all prefixed `hoyo-builds:`):
-- `hoyo-builds:favorites` — pinned characters per game
-- `hoyo-builds:density` — compact-list mode
-- `hoyo-builds:collapsed-groups` — element groups collapsed in sidebar, per game
+**localStorage keys** (all prefixed `archon:`):
+- `archon:favorites` — pinned characters per game
+- `archon:density` — compact-list mode
+- `archon:collapsed-groups` — element groups collapsed in sidebar, per game
 
 **URL hash** is the source of truth for navigation:
 - `#game=hsr&char=Acheron&compare=Cyrene` — game, character, optional compare
