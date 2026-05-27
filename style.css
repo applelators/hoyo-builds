@@ -1244,6 +1244,7 @@ body.game-zzz #char-portrait { transform: scale(1.15); object-position: center 3
     position: relative;
     overflow: hidden;
     min-height: 0;
+    height: 100%;
   }
 
   #sidebar {
