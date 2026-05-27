@@ -399,8 +399,10 @@ body::before {
   opacity: 0.7;
   transition: opacity 0.1s;
 }
-#char-list li:hover .li-icon,
 #char-list li.active .li-icon { opacity: 1; }
+@media (hover: hover) {
+  #char-list li:hover .li-icon { opacity: 1; }
+}
 .li-name {
   flex: 1 1 60%;
   overflow: hidden;
@@ -418,7 +420,9 @@ body::before {
   text-overflow: ellipsis;
   min-width: 0;
 }
-#char-list li:hover { color: var(--text); background: var(--surface); }
+@media (hover: hover) {
+  #char-list li:hover { color: var(--text); background: var(--surface); }
+}
 #char-list li.active {
   color: var(--char-accent);
   border-left-color: var(--char-accent);
@@ -1446,7 +1450,9 @@ body.game-zzz #char-portrait { transform: scale(1.15); object-position: center 3
   user-select: none;
 }
 #char-list li.list-section-header:first-child { padding-top: 8px; }
-#char-list li.list-section-header:hover { color: var(--text); }
+@media (hover: hover) {
+  #char-list li.list-section-header:hover { color: var(--text); }
+}
 .group-dot {
   width: 6px; height: 6px;
   border-radius: 50%;
@@ -1481,7 +1487,9 @@ body.game-zzz #char-portrait { transform: scale(1.15); object-position: center 3
   transition: opacity 0.12s, color 0.12s, transform 0.12s;
   margin-left: 4px;
 }
-#char-list li:hover .li-fav { opacity: 1; }
+@media (hover: hover) {
+  #char-list li:hover .li-fav { opacity: 1; }
+}
 .li-fav:hover { color: var(--gold); transform: scale(1.15); }
 .li-fav.active {
   opacity: 1;

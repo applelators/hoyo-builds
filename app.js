@@ -1260,11 +1260,11 @@ function renderList(pinned, rest) {
     pinned.forEach(c => ul.appendChild(buildListItem(c, true)));
   }
 
-  if (favoritesOnly) {
-    // flat list when favorites lens is on
+  if (favoritesOnly || !filterElement) {
+    // flat list sorted by release date (no filter = chronological; favorites = flat)
     rest.forEach(c => ul.appendChild(buildListItem(c, false)));
   } else {
-    // group by element
+    // element filter active — group by element
     const order = ELEMENT_ORDERS[currentGame] || [];
     const groups = new Map();
     for (const c of rest) {
