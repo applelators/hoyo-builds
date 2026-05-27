@@ -21,17 +21,24 @@ WIKIS = {
 ICON_OVERRIDES = {
     'gi': {
         'Traveler': 'Character_Lumine_Thumb.png',
+        'Raiden':   'Character_Raiden_Shogun_Thumb.png',
+        'Mizuki':   'Character_Yumemizuki_Mizuki_Thumb.png',
     },
     'hsr': {
-        'Trailblazer':      'Character_Trailblazer_Icon.png',
-        'March 7th':        'Character_March_7th_Icon.png',
-        'Imbibitor Lunae':  'Character_Dan_Heng_%E2%80%A2_Imbibitor_Lunae_Icon.png',
-        'Permansor Terrae': 'Character_Dan_Heng_%E2%80%A2_Permansor_Terrae_Icon.png',
-        'Topaz & Numby':    'Character_Topaz_%26_Numby_Icon.png',
+        'Trailblazer':                 'Character_Trailblazer_Icon.png',
+        'March 7th':                   'Character_March_7th_Icon.png',
+        'March 7th • The Hunt':        'Character_March_7th_Icon.png',
+        'March 7th • Evernight':       'Character_March_7th_Icon.png',
+        'Dan Heng • Imbibitor Lunae':  'Character_Dan_Heng_%E2%80%A2_Imbibitor_Lunae_Icon.png',
+        'Dan Heng • Permansor Terrae': 'Character_Dan_Heng_%E2%80%A2_Permansor_Terrae_Icon.png',
+        'Tingyun • Fugue':             'Character_Fugue_Icon.png',
+        'Silver Wolf • Lv. 999':       'Character_Silver_Wolf_LV.999_Icon.png',
+        'Topaz & Numby':               'Character_Topaz_%26_Numby_Icon.png',
     },
     'zzz': {
-        'Flora (Seed)':              'Agent_Seed_Icon.png',
-        'Orphie Magnusson & Magus':  'Agent_Orphie_Magnusson_%26_Magus_Icon.png',
+        'Seed':              'Agent_Seed_Icon.png',
+        'Orphie & Magus':    'Agent_Orphie_Magnusson_%26_Magus_Icon.png',
+        'Anby: Soldier 0':   'Agent_Soldier_0_-_Anby_Icon.png',
     },
 }
 

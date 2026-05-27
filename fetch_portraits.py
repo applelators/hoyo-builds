@@ -28,23 +28,63 @@ WIKIS = {
 # Set a name to None to explicitly skip (no portrait available).
 OVERRIDES = {
     'gi': {
-        # Traveler has no Profile image (only element-specific variants)
-        'TRAVELER': None,
+        'Traveler': None,
+        # Short builds name → full GI wiki portrait filename
+        'Itto':    'Arataki_Itto_Profile.png',
+        'Kazuha':  'Kaedehara_Kazuha_Profile.png',
+        'Ayaka':   'Kamisato_Ayaka_Profile.png',
+        'Ayato':   'Kamisato_Ayato_Profile.png',
+        'Sara':    'Kujou_Sara_Profile.png',
+        'Shinobu': 'Kuki_Shinobu_Profile.png',
+        'Raiden':  'Raiden_Shogun_Profile.png',
+        'Kokomi':  'Sangonomiya_Kokomi_Profile.png',
+        'Heizou':  'Shikanoin_Heizou_Profile.png',
+        'Mizuki':  'Yumemizuki_Mizuki_Profile.png',
     },
     'hsr': {
-        # Dan Heng IL and PT use the Unicode bullet (•) URL-encoded
-        'Imbibitor Lunae':  'Character_Dan_Heng_%E2%80%A2_Imbibitor_Lunae_Splash_Art.png',
-        'Permansor Terrae': 'Character_Dan_Heng_%E2%80%A2_Permansor_Terrae_Splash_Art.png',
-        # Topaz & Numby — ampersand must be URL-encoded
-        'Topaz & Numby':    'Character_Topaz_%26_Numby_Splash_Art.png',
-        # Trailblazer has no generic Splash Art on the wiki
+        'Dan Heng • Imbibitor Lunae':  'Character_Dan_Heng_%E2%80%A2_Imbibitor_Lunae_Splash_Art.png',
+        'Dan Heng • Permansor Terrae': 'Character_Dan_Heng_%E2%80%A2_Permansor_Terrae_Splash_Art.png',
+        'Topaz & Numby':               'Character_Topaz_%26_Numby_Splash_Art.png',
+        'Tingyun • Fugue':             'Character_Fugue_Splash_Art.png',
+        'March 7th • The Hunt':        'Character_March_7th_Splash_Art.png',
+        'March 7th • Evernight':       'Character_Evernight_Splash_Art.png',
+        'Silver Wolf • Lv. 999':       'Character_Silver_Wolf_LV.999_Splash_Art.png',
         'Trailblazer': None,
     },
     'zzz': {
-        # Flora (Seed) — wiki uses "Seed" as the page/file name
-        'Flora (Seed)':              'Mindscape_Seed_Full.png',
-        # Orphie Magnusson & Magus — ampersand URL-encoded
-        'Orphie Magnusson & Magus':  'Mindscape_Orphie_Magnusson_%26_Magus_Full.png',
+        # Short builds name → full ZZZ wiki Mindscape filename
+        'Anby':            'Mindscape_Anby_Demara_Full.png',
+        'Alice':           'Mindscape_Alice_Thymefield_Full.png',
+        'Anton':           'Mindscape_Anton_Ivanov_Full.png',
+        'Ben':             'Mindscape_Ben_Bigger_Full.png',
+        'Billy':           'Mindscape_Billy_Kid_Full.png',
+        'Burnice':         'Mindscape_Burnice_White_Full.png',
+        'Caesar':          'Mindscape_Caesar_King_Full.png',
+        'Corin':           'Mindscape_Corin_Wickes_Full.png',
+        'Ellen':           'Mindscape_Ellen_Joe_Full.png',
+        'Evelyn':          'Mindscape_Evelyn_Chevalier_Full.png',
+        'Grace':           'Mindscape_Grace_Howard_Full.png',
+        'Harumasa':        'Mindscape_Asaba_Harumasa_Full.png',
+        'Hugo':            'Mindscape_Hugo_Vlad_Full.png',
+        'Koleda':          'Mindscape_Koleda_Belobog_Full.png',
+        'Lucia':           'Mindscape_Lucia_Elowen_Full.png',
+        'Lucy':            'Mindscape_Luciana_de_Montefio_Full.png',
+        'Lycaon':          'Mindscape_Von_Lycaon_Full.png',
+        'Manato':          'Mindscape_Komano_Manato_Full.png',
+        'Miyabi':          'Mindscape_Hoshimi_Miyabi_Full.png',
+        'Nekomata':        'Mindscape_Nekomiya_Mana_Full.png',
+        'Nicole':          'Mindscape_Nicole_Demara_Full.png',
+        'Orphie & Magus':  'Mindscape_Orphie_Magnusson_%26_Magus_Full.png',
+        'Piper':           'Mindscape_Piper_Wheel_Full.png',
+        'Pulchra':         'Mindscape_Pulchra_Fellini_Full.png',
+        'Rina':            'Mindscape_Alexandrina_Sebastiane_Full.png',
+        'Seed':            'Mindscape_Seed_Full.png',
+        'Seth':            'Mindscape_Seth_Lowell_Full.png',
+        'Anby: Soldier 0': 'Mindscape_Soldier_0_-_Anby_Full.png',
+        'Vivian':          'Mindscape_Vivian_Banshee_Full.png',
+        'Yanagi':          'Mindscape_Tsukishiro_Yanagi_Full.png',
+        'Yidhari':         'Mindscape_Yidhari_Murphy_Full.png',
+        'Yuzuha':          'Mindscape_Ukinami_Yuzuha_Full.png',
     },
 }
 
