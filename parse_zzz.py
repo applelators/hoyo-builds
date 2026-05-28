@@ -7,8 +7,9 @@ import json
 import os
 import re
 
-CACHE_DIR = "/Users/hokori/.cache/zzz_builds"
-OUTPUT    = "/Users/hokori/genshin-builds/zzz_builds.json"
+CACHE_DIR     = "/Users/hokori/.cache/zzz_builds"
+SCRAPE_OUTPUT = "/Users/hokori/genshin-builds/zzz_builds_scrape.json"
+CANONICAL     = "/Users/hokori/genshin-builds/zzz_builds.json"  # user-editable; never written by parser
 
 SKIP_NAMES = {'S Rank Agents', 'A Rank Agents', 'S Rank', 'A Rank'}
 
@@ -322,6 +323,23 @@ def parse_block(rows):
     }
 
 
+def diff_builds(new_chars, old_chars):
+    new_by_name = {c['name']: c for c in new_chars}
+    old_by_name = {c['name']: c for c in old_chars}
+    added   = sorted(new_by_name.keys() - old_by_name.keys())
+    removed = sorted(old_by_name.keys() - new_by_name.keys())
+    updated = []
+    for name, new_c in new_by_name.items():
+        if name not in old_by_name:
+            continue
+        old_c = old_by_name[name]
+        if new_c.get('last_updated') != old_c.get('last_updated'):
+            updated.append((name, f"{old_c.get('last_updated')!r} → {new_c.get('last_updated')!r}"))
+        elif json.dumps(new_c, sort_keys=True) != json.dumps(old_c, sort_keys=True):
+            updated.append((name, 'build content changed'))
+    return added, removed, updated
+
+
 def main():
     all_agents = {}
     for f in sorted(glob.glob(f"{CACHE_DIR}/agents_*.csv")):
@@ -332,10 +350,28 @@ def main():
 
     result = sorted(all_agents.values(), key=lambda a: a['name'])
 
-    with open(OUTPUT, 'w', encoding='utf-8') as fh:
+    # Load previous scrape for diffing
+    try:
+        with open(SCRAPE_OUTPUT, encoding='utf-8') as fh:
+            old_scrape = json.load(fh)
+    except FileNotFoundError:
+        old_scrape = []
+
+    with open(SCRAPE_OUTPUT, 'w', encoding='utf-8') as fh:
         json.dump(result, fh, ensure_ascii=False, indent=2)
 
-    print(f"Wrote {len(result)} agents to {OUTPUT}")
+    added, removed, updated = diff_builds(result, old_scrape)
+    print(f"─── ZZZ scrape diff {'─'*40}")
+    print(f"  NEW     ({len(added)}):  {', '.join(added) or '(none)'}")
+    if updated:
+        for name, reason in updated:
+            print(f"  UPDATED:  {name}  [{reason}]")
+    else:
+        print(f"  UPDATED (0):  (none)")
+    print(f"  REMOVED ({len(removed)}):  {', '.join(removed) or '(none)'}")
+    print(f"\nWrote {len(result)} agents to {SCRAPE_OUTPUT}")
+    print(f"Canonical ({CANONICAL}) NOT modified — apply updates manually.")
+
     for a in result:
         b = a['builds'][0]
         d4 = ', '.join(b['disc_4pc']) or '—'

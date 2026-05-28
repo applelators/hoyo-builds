@@ -189,13 +189,20 @@ DOM updates always re-render their region from `innerHTML`. Cheap because the pa
 ## How to add things
 
 ### A new character to an existing game
-Don't edit `*_builds.json` by hand. Re-run the parser:
+
+The parsers use a **two-file workflow**:
+- `*_builds.json` — **canonical** (what the app reads). User-editable. **Never overwritten by the parser.**
+- `*_builds_scrape.json` — raw parser output. Overwritten on every run. Used as the diff baseline.
+
+Run the parser to see what changed in the spreadsheet:
 ```bash
-python parse.py        # GI
-python parse_hsr.py    # HSR
-python parse_zzz.py    # ZZZ
+python parse.py        # GI  → writes builds_scrape.json, diffs vs previous scrape
+python parse_hsr.py    # HSR → writes hsr_builds_scrape.json
+python parse_zzz.py    # ZZZ → writes zzz_builds_scrape.json
 ```
-Then refresh icons/portraits if the character is new:
+The parser prints a diff report (NEW / UPDATED / REMOVED characters). Apply changes you want to `*_builds.json` manually — either copy individual entries from the scrape file or copy the whole file if no manual edits exist yet.
+
+Then refresh icons/portraits if new characters appeared:
 ```bash
 python fetch_portraits.py && python fetch_icons.py
 ```

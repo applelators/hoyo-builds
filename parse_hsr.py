@@ -6,8 +6,10 @@ import glob
 import json
 import re
 
-CACHE_DIR = "/Users/hokori/.cache/hsr_builds"
-OUTPUT    = "/Users/hokori/genshin-builds/hsr_builds.json"
+CACHE_DIR     = "/Users/hokori/.cache/hsr_builds"
+_BASE_DIR     = "/Users/hokori/genshin-builds"
+SCRAPE_OUTPUT = f"{_BASE_DIR}/hsr_builds_scrape.json"
+CANONICAL     = f"{_BASE_DIR}/hsr_builds.json"  # user-editable; never written by parser
 
 HSR_NAME_NORMALIZE = {
     'Imbibitor Lunae':  'Dan Heng • Imbibitor Lunae',
@@ -193,9 +195,24 @@ def parse_block(rows):
     }
 
 
+def diff_builds(new_chars, old_chars):
+    new_by_name = {c['name']: c for c in new_chars}
+    old_by_name = {c['name']: c for c in old_chars}
+    added   = sorted(new_by_name.keys() - old_by_name.keys())
+    removed = sorted(old_by_name.keys() - new_by_name.keys())
+    updated = []
+    for name, new_c in new_by_name.items():
+        if name not in old_by_name:
+            continue
+        old_c = old_by_name[name]
+        if json.dumps(new_c, sort_keys=True) != json.dumps(old_c, sort_keys=True):
+            updated.append((name, 'build content changed'))
+    return added, removed, updated
+
+
 def main():
     # Load release dates
-    dates_path = OUTPUT.replace('hsr_builds.json', 'hsr_release_dates.json')
+    dates_path = f"{_BASE_DIR}/hsr_release_dates.json"
     try:
         with open(dates_path, encoding='utf-8') as fh:
             release_dates = json.load(fh)
@@ -203,7 +220,7 @@ def main():
         release_dates = {}
 
     # Load Sheet 2 data (kit overview + example teams)
-    s2_path = OUTPUT.replace('hsr_builds.json', 'hsr_s2.json')
+    s2_path = f"{_BASE_DIR}/hsr_s2.json"
     try:
         with open(s2_path, encoding='utf-8') as fh:
             s2_data = json.load(fh)
@@ -218,7 +235,6 @@ def main():
             key = f"{char['name']}|{char['path']}"
             if key not in all_chars:
                 char['release_date'] = release_dates.get(char['name'], '')
-                # Attach Sheet 2 fields (shared across all paths of the same character)
                 s2 = s2_data.get(char['name'], {})
                 char['kit_overview']         = s2.get('kit_overview', '')
                 char['worth_pulling']        = s2.get('worth_pulling', '')
@@ -229,10 +245,28 @@ def main():
     result = sorted(all_chars.values(), key=lambda c: c['name'])
     result = [c for c in result if c['builds']]
 
-    with open(OUTPUT, 'w', encoding='utf-8') as fh:
+    # Load previous scrape for diffing
+    try:
+        with open(SCRAPE_OUTPUT, encoding='utf-8') as fh:
+            old_scrape = json.load(fh)
+    except FileNotFoundError:
+        old_scrape = []
+
+    with open(SCRAPE_OUTPUT, 'w', encoding='utf-8') as fh:
         json.dump(result, fh, ensure_ascii=False, indent=2)
 
-    print(f"Wrote {len(result)} characters to {OUTPUT}")
+    added, removed, updated = diff_builds(result, old_scrape)
+    print(f"─── HSR scrape diff {'─'*40}")
+    print(f"  NEW     ({len(added)}):  {', '.join(added) or '(none)'}")
+    if updated:
+        for name, reason in updated:
+            print(f"  UPDATED:  {name}  [{reason}]")
+    else:
+        print(f"  UPDATED (0):  (none)")
+    print(f"  REMOVED ({len(removed)}):  {', '.join(removed) or '(none)'}")
+    print(f"\nWrote {len(result)} characters to {SCRAPE_OUTPUT}")
+    print(f"Canonical ({CANONICAL}) NOT modified — apply updates manually.")
+
     for c in result:
         roles  = ', '.join(b['role'][:30] for b in c['builds'])
         s2_tag = f"  s2={len(c['example_teams'])}teams" if c['example_teams'] else ''
