@@ -74,6 +74,10 @@ let compactMode = false;
 // ── compare mode state ───────────────────────────────────────
 let compareChar = null;
 
+// ── build overrides (user-edited builds, persisted) ──────────
+let baseCharsMap  = { gi: {}, hsr: {}, zzz: {} };
+let buildOverrides = { gi: {}, hsr: {}, zzz: {} };
+
 // ── palette + element grouping state ───────────────────────
 let paletteOpen = false;
 let paletteQuery = '';
@@ -97,6 +101,31 @@ function toggleGroup(el) {
   collapsedGroups[currentGame][el] = !collapsedGroups[currentGame][el];
   saveCollapsed();
   refreshList();
+}
+
+const OVERRIDES_KEY = 'archon:overrides';
+function loadOverrides() {
+  try {
+    const raw = localStorage.getItem(OVERRIDES_KEY);
+    return raw ? JSON.parse(raw) : { gi: {}, hsr: {}, zzz: {} };
+  } catch { return { gi: {}, hsr: {}, zzz: {} }; }
+}
+function saveOverride(game, name, charData) {
+  if (!buildOverrides[game]) buildOverrides[game] = {};
+  buildOverrides[game][name] = charData;
+  try { localStorage.setItem(OVERRIDES_KEY, JSON.stringify(buildOverrides)); } catch {}
+}
+function clearOverride(game, name) {
+  if (buildOverrides[game]) delete buildOverrides[game][name];
+  try { localStorage.setItem(OVERRIDES_KEY, JSON.stringify(buildOverrides)); } catch {}
+}
+function applyAllOverrides() {
+  [['gi', giChars], ['hsr', hsrChars], ['zzz', zzzChars]].forEach(([g, arr]) => {
+    const ovs = buildOverrides[g] || {};
+    for (let i = 0; i < arr.length; i++) {
+      if (ovs[arr[i].name]) arr[i] = { ...arr[i], ...ovs[arr[i].name] };
+    }
+  });
 }
 
 const $ = id => document.getElementById(id);
@@ -324,6 +353,14 @@ async function init() {
   bannerData = bnrs;
   eventData = evts;
   livestreamData = livs;
+
+  // snapshot unmodified data so Reset can restore it
+  baseCharsMap.gi  = Object.fromEntries(gi.map(c => [c.name, JSON.parse(JSON.stringify(c))]));
+  baseCharsMap.hsr = Object.fromEntries(hsr.map(c => [c.name, JSON.parse(JSON.stringify(c))]));
+  baseCharsMap.zzz = Object.fromEntries(zzz.map(c => [c.name, JSON.parse(JSON.stringify(c))]));
+  buildOverrides = loadOverrides();
+  applyAllOverrides();
+
   allChars = giChars;
 
   // load persisted state
@@ -403,6 +440,10 @@ async function init() {
   // ── wire compare close ──
   const cClose = $('compare-close');
   if (cClose) cClose.addEventListener('click', clearCompare);
+
+  // ── edit button ──
+  const editBtn = $('crumb-edit-btn');
+  if (editBtn) editBtn.addEventListener('click', () => { if (activeChar) renderEditView(activeChar); });
 
   // ── keyboard navigation ──
   document.addEventListener('keydown', handleKeydown);
@@ -1935,6 +1976,175 @@ function renderNotes(char) {
   } else {
     details.classList.add('hidden');
   }
+}
+
+// ── in-browser build editing ──────────────────────────────────
+const EDIT_FIELDS = {
+  gi: {
+    buildFields: [
+      { key: 'role',            label: 'Role',            multi: false },
+      { key: 'weapons',         label: 'Weapons',         multi: true  },
+      { key: 'artifacts',       label: 'Artifacts',       multi: true  },
+      { key: 'main_stats',      label: 'Main Stats',      multi: true  },
+      { key: 'substats',        label: 'Substats',        multi: true  },
+      { key: 'talent_priority', label: 'Talent Priority', multi: true  },
+      { key: 'tips',            label: 'Tips',            multi: true  },
+    ],
+    charFields: [
+      { key: 'notes',        label: 'Notes',        multi: true  },
+      { key: 'last_updated', label: 'Last Updated', multi: false },
+    ],
+  },
+  hsr: {
+    buildFields: [
+      { key: 'role',             label: 'Role',             multi: false },
+      { key: 'light_cones',      label: 'Light Cones',      multi: true  },
+      { key: 'relic_4pc',        label: 'Relic 4pc',        multi: false },
+      { key: 'planar_ornament',  label: 'Planar Ornament',  multi: false },
+      { key: 'main_stats',       label: 'Main Stats',       multi: true  },
+      { key: 'sub_stats',        label: 'Sub Stats',        multi: true  },
+      { key: 'ability_priority', label: 'Ability Priority', multi: true  },
+      { key: 'ability_notes',    label: 'Ability Notes',    multi: false },
+      { key: 'eidolons',         label: 'Eidolons',         multi: true  },
+      { key: 'relic_notes',      label: 'Relic Notes',      multi: true  },
+      { key: 'other_notes',      label: 'Other Notes',      multi: true  },
+      { key: 'baseline_stats',   label: 'Baseline Stats',   multi: false },
+    ],
+    charFields: [
+      { key: 'kit_overview',         label: 'Kit Overview',         multi: true  },
+      { key: 'worth_pulling',        label: 'Worth Pulling',        multi: true  },
+      { key: 'recommended_baseline', label: 'Recommended Baseline', multi: false },
+    ],
+  },
+  zzz: {
+    buildFields: [
+      { key: 'role',           label: 'Role',           multi: false },
+      { key: 'w_engines',      label: 'W-Engines',      multi: true  },
+      { key: 'main_stats',     label: 'Main Stats',     multi: true  },
+      { key: 'sub_stats',      label: 'Sub Stats',      multi: false },
+      { key: 'ability',        label: 'Ability',        multi: true  },
+      { key: 'disc_notes',     label: 'Disc Notes',     multi: true  },
+      { key: 'w_engine_notes', label: 'W-Engine Notes', multi: true  },
+      { key: 'mindscapes',     label: 'Mindscapes',     multi: true  },
+      { key: 'other_notes',    label: 'Other Notes',    multi: true  },
+      { key: 'baseline',       label: 'Baseline',       multi: false },
+    ],
+    charFields: [
+      { key: 'last_updated', label: 'Last Updated', multi: false },
+    ],
+  },
+};
+
+function renderEditView(char) {
+  const schema = EDIT_FIELDS[currentGame];
+  if (!schema) return;
+  const panel = $('char-right');
+  const isOverridden = !!(buildOverrides[currentGame] || {})[char.name];
+  const PENCIL = `<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M11 2.5L13.5 5L5.5 13H3V10.5L11 2.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 4L12 6.5" stroke="currentColor" stroke-width="1.4"/></svg>`;
+
+  let html = `<div class="edit-view">`;
+  html += `<div class="edit-header">`;
+  html += `<span class="edit-title">${PENCIL} editing ${escHtml(toTitle(char.name))}</span>`;
+  html += `<div class="edit-actions">`;
+  if (isOverridden) {
+    html += `<button class="edit-btn edit-btn-reset" id="edit-reset-btn">Reset to default</button>`;
+  }
+  html += `<button class="edit-btn edit-btn-export" id="edit-export-btn">Export JSON</button>`;
+  html += `<button class="edit-btn edit-btn-cancel" id="edit-cancel-btn">Cancel</button>`;
+  html += `<button class="edit-btn edit-btn-save" id="edit-save-btn">Save</button>`;
+  html += `</div></div>`;
+
+  char.builds.forEach((build, bi) => {
+    const roleLabel = build.role || `Build ${bi + 1}`;
+    html += `<div class="edit-section">`;
+    html += `<div class="edit-section-head">Build: ${escHtml(roleLabel)}</div>`;
+    for (const f of schema.buildFields) {
+      const val = build[f.key] ?? '';
+      html += `<div class="edit-field"><label class="edit-label">${escHtml(f.label)}</label>`;
+      if (f.multi) {
+        const rows = Math.max(2, val.split('\n').length + 1);
+        html += `<textarea class="edit-textarea" data-build="${bi}" data-field="${escHtml(f.key)}" rows="${rows}">${escHtml(val)}</textarea>`;
+      } else {
+        html += `<input class="edit-input" type="text" data-build="${bi}" data-field="${escHtml(f.key)}" value="${escHtml(val)}">`;
+      }
+      html += `</div>`;
+    }
+    html += `</div>`;
+  });
+
+  if (schema.charFields.length) {
+    html += `<div class="edit-section">`;
+    html += `<div class="edit-section-head">Character</div>`;
+    for (const f of schema.charFields) {
+      const val = char[f.key] ?? '';
+      html += `<div class="edit-field"><label class="edit-label">${escHtml(f.label)}</label>`;
+      if (f.multi) {
+        const rows = Math.max(2, val.split('\n').length + 1);
+        html += `<textarea class="edit-textarea" data-build="" data-field="${escHtml(f.key)}" rows="${rows}">${escHtml(val)}</textarea>`;
+      } else {
+        html += `<input class="edit-input" type="text" data-build="" data-field="${escHtml(f.key)}" value="${escHtml(val)}">`;
+      }
+      html += `</div>`;
+    }
+    html += `</div>`;
+  }
+
+  html += `</div>`;
+  panel.innerHTML = html;
+
+  $('edit-cancel-btn').addEventListener('click', () => _selectCharNoUrl(activeChar));
+  $('edit-save-btn').addEventListener('click', () => saveEditView(char));
+  $('edit-export-btn').addEventListener('click', exportBuilds);
+  const resetBtn = $('edit-reset-btn');
+  if (resetBtn) resetBtn.addEventListener('click', () => resetCharEdit(char));
+}
+
+function saveEditView(char) {
+  const newChar = JSON.parse(JSON.stringify(char));
+  document.querySelectorAll('#char-right [data-field]').forEach(el => {
+    const buildIdx = el.dataset.build;
+    const field    = el.dataset.field;
+    if (buildIdx !== '') {
+      const bi = parseInt(buildIdx, 10);
+      if (newChar.builds[bi]) newChar.builds[bi][field] = el.value;
+    } else {
+      newChar[field] = el.value;
+    }
+  });
+
+  saveOverride(currentGame, char.name, newChar);
+
+  const arr = currentGame === 'gi' ? giChars : currentGame === 'hsr' ? hsrChars : zzzChars;
+  const idx = arr.findIndex(c => c.name === char.name);
+  if (idx >= 0) arr[idx] = newChar;
+  const ai = allChars.findIndex(c => c.name === char.name);
+  if (ai >= 0) allChars[ai] = newChar;
+  activeChar = newChar;
+  _selectCharNoUrl(newChar);
+}
+
+function resetCharEdit(char) {
+  clearOverride(currentGame, char.name);
+  const baseChar = (baseCharsMap[currentGame] || {})[char.name];
+  const restored = baseChar ? JSON.parse(JSON.stringify(baseChar)) : char;
+  const arr = currentGame === 'gi' ? giChars : currentGame === 'hsr' ? hsrChars : zzzChars;
+  const idx = arr.findIndex(c => c.name === char.name);
+  if (idx >= 0) arr[idx] = restored;
+  const ai = allChars.findIndex(c => c.name === char.name);
+  if (ai >= 0) allChars[ai] = restored;
+  activeChar = restored;
+  _selectCharNoUrl(restored);
+}
+
+function exportBuilds() {
+  const arr = currentGame === 'gi' ? giChars : currentGame === 'hsr' ? hsrChars : zzzChars;
+  const filename = currentGame === 'gi' ? 'builds.json' : currentGame === 'hsr' ? 'hsr_builds.json' : 'zzz_builds.json';
+  const blob = new Blob([JSON.stringify(arr, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(a.href);
 }
 
 // ── card helpers ──────────────────────────────────────────────
