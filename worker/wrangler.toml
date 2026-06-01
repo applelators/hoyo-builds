@@ -1,10 +1,11 @@
 name = "archon-sync"
 main = "worker.js"
 compatibility_date = "2024-01-01"
+account_id = "cff6d6ab50094db3a0cac47d9ed51fbc"
 
 [[kv_namespaces]]
 binding = "ARCHON_KV"
-id = "REPLACE_WITH_KV_NAMESPACE_ID"
+id = "1c36776938e14e628c4bd80c5c03d0b1"
 
 # ARCHON_SECRET is set as a secret (never in this file):
 #   wrangler secret put ARCHON_SECRET
