@@ -35,6 +35,9 @@
         </button>
       </nav>
       <div class="rail-spacer"></div>
+      <button id="github-sync-btn" class="rail-btn" data-tip="Sync settings">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="6" cy="7.5" r="2.8" stroke="currentColor" stroke-width="1.5"/><path d="M8.5 7.5h5M11 6V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
       <button id="density-toggle" class="rail-btn" data-tip="Toggle compact list">
         <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
       </button>
@@ -105,6 +108,26 @@
           <aside id="compare-panel"></aside>
         </div>
       </main>
+    </div>
+
+    <!-- GitHub sync settings modal -->
+    <div id="sync-modal" class="hidden" role="dialog" aria-label="GitHub Sync settings">
+      <div class="sync-backdrop"></div>
+      <div class="sync-panel">
+        <div class="sync-head">
+          <span>GitHub Sync</span>
+          <button id="sync-modal-close" class="sync-close" aria-label="Close">✕</button>
+        </div>
+        <p class="sync-desc">Edits you make will be committed directly to the <strong>applelators/hoyo-builds</strong> repo so they persist across devices. Paste a GitHub personal access token with <code>repo</code> scope below.</p>
+        <label class="sync-label" for="sync-token-input">Personal Access Token</label>
+        <input id="sync-token-input" class="sync-token-input" type="password" placeholder="ghp_…" autocomplete="off" spellcheck="false">
+        <div id="sync-test-result" class="sync-test-result"></div>
+        <div class="sync-footer">
+          <button id="sync-test-btn" class="sync-btn sync-btn-test">Test</button>
+          <button id="sync-clear-btn" class="sync-btn sync-btn-clear">Clear</button>
+          <button id="sync-save-btn" class="sync-btn sync-btn-save">Save</button>
+        </div>
+      </div>
     </div>
 
     <!-- ⌘K Command palette -->

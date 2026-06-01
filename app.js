@@ -103,6 +103,113 @@ function toggleGroup(el) {
   refreshList();
 }
 
+// ── GitHub sync ───────────────────────────────────────────────
+const GITHUB_OWNER  = 'applelators';
+const GITHUB_REPO   = 'hoyo-builds';
+const GITHUB_BRANCH = 'main';
+const GITHUB_TOKEN_KEY = 'archon:github-token';
+
+function loadGithubToken() {
+  try { return localStorage.getItem(GITHUB_TOKEN_KEY) || ''; } catch { return ''; }
+}
+function saveGithubToken(t) {
+  try { localStorage.setItem(GITHUB_TOKEN_KEY, t); } catch {}
+}
+function toBase64Unicode(str) {
+  return btoa(unescape(encodeURIComponent(str)));
+}
+async function syncBuildsToGitHub(game, arr, charName) {
+  const token = loadGithubToken();
+  if (!token) return { ok: false, reason: 'no-token' };
+
+  const path = game === 'gi' ? 'builds.json' : game === 'hsr' ? 'hsr_builds.json' : 'zzz_builds.json';
+  const headers = {
+    'Authorization': `Bearer ${token}`,
+    'Accept':        'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28',
+  };
+
+  try {
+    const getResp = await fetch(
+      `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`,
+      { headers }
+    );
+    if (!getResp.ok) {
+      const e = await getResp.json().catch(() => ({}));
+      return { ok: false, reason: `${getResp.status}: ${e.message || getResp.statusText}` };
+    }
+    const { sha } = await getResp.json();
+
+    const putResp = await fetch(
+      `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`,
+      {
+        method: 'PUT',
+        headers: { ...headers, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: `Update ${charName} builds via Archon`,
+          content: toBase64Unicode(JSON.stringify(arr, null, 2)),
+          sha,
+          branch: GITHUB_BRANCH,
+        }),
+      }
+    );
+    if (!putResp.ok) {
+      const e = await putResp.json().catch(() => ({}));
+      return { ok: false, reason: `${putResp.status}: ${e.message || putResp.statusText}` };
+    }
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, reason: e.message };
+  }
+}
+
+// ── sync modal ────────────────────────────────────────────────
+function openSyncModal() {
+  const input = $('sync-token-input');
+  if (input) input.value = loadGithubToken();
+  $('sync-test-result').textContent = '';
+  $('sync-modal').classList.remove('hidden');
+  if (input) input.focus();
+}
+function closeSyncModal() {
+  $('sync-modal').classList.add('hidden');
+}
+function saveSyncToken() {
+  const token = ($('sync-token-input').value || '').trim();
+  saveGithubToken(token);
+  closeSyncModal();
+}
+function clearSyncToken() {
+  saveGithubToken('');
+  $('sync-token-input').value = '';
+  const r = $('sync-test-result');
+  r.className = 'sync-test-result';
+  r.textContent = 'Token cleared.';
+}
+async function testSyncToken() {
+  const token = ($('sync-token-input').value || '').trim();
+  const r = $('sync-test-result');
+  r.className = 'sync-test-result';
+  r.textContent = 'Testing…';
+  try {
+    const resp = await fetch(
+      `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}`,
+      { headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' } }
+    );
+    if (resp.ok) {
+      r.className = 'sync-test-result ok';
+      r.textContent = '✓ Connected — token has repo access.';
+    } else {
+      const e = await resp.json().catch(() => ({}));
+      r.className = 'sync-test-result error';
+      r.textContent = `✗ ${resp.status}: ${e.message || 'Authentication failed'}`;
+    }
+  } catch (e) {
+    r.className = 'sync-test-result error';
+    r.textContent = `✗ Network error: ${e.message}`;
+  }
+}
+
 const OVERRIDES_KEY = 'archon:overrides';
 function loadOverrides() {
   try {
@@ -445,6 +552,20 @@ async function init() {
   const editBtn = $('crumb-edit-btn');
   if (editBtn) editBtn.addEventListener('click', () => { if (activeChar) renderEditView(activeChar); });
 
+  // ── sync modal ──
+  const syncBtn = $('github-sync-btn');
+  if (syncBtn) syncBtn.addEventListener('click', openSyncModal);
+  const syncClose = $('sync-modal-close');
+  if (syncClose) syncClose.addEventListener('click', closeSyncModal);
+  const syncBackdrop = document.querySelector('#sync-modal .sync-backdrop');
+  if (syncBackdrop) syncBackdrop.addEventListener('click', closeSyncModal);
+  const syncSave = $('sync-save-btn');
+  if (syncSave) syncSave.addEventListener('click', saveSyncToken);
+  const syncClear = $('sync-clear-btn');
+  if (syncClear) syncClear.addEventListener('click', clearSyncToken);
+  const syncTest = $('sync-test-btn');
+  if (syncTest) syncTest.addEventListener('click', testSyncToken);
+
   // ── keyboard navigation ──
   document.addEventListener('keydown', handleKeydown);
 
@@ -511,6 +632,7 @@ function handleKeydown(e) {
     return;
   }
   if (e.key === 'Escape') {
+    if (!$('sync-modal').classList.contains('hidden')) { closeSyncModal(); return; }
     if (paletteOpen) { closePalette(); return; }
     if (inField) { t.blur(); return; }
     if (compareChar) { clearCompare(); return; }
@@ -2054,6 +2176,12 @@ function renderEditView(char) {
   html += `<button class="edit-btn edit-btn-save" id="edit-save-btn">Save</button>`;
   html += `</div></div>`;
 
+  if (loadGithubToken()) {
+    html += `<div id="edit-sync-status" class="edit-sync-status"></div>`;
+  } else {
+    html += `<div class="edit-sync-no-token">No GitHub token — edits save locally only. <button class="edit-sync-config-btn" id="edit-open-sync">Configure sync →</button></div>`;
+  }
+
   char.builds.forEach((build, bi) => {
     const roleLabel = build.role || `Build ${bi + 1}`;
     html += `<div class="edit-section">`;
@@ -2097,9 +2225,11 @@ function renderEditView(char) {
   $('edit-export-btn').addEventListener('click', exportBuilds);
   const resetBtn = $('edit-reset-btn');
   if (resetBtn) resetBtn.addEventListener('click', () => resetCharEdit(char));
+  const openSyncBtn = $('edit-open-sync');
+  if (openSyncBtn) openSyncBtn.addEventListener('click', openSyncModal);
 }
 
-function saveEditView(char) {
+async function saveEditView(char) {
   const newChar = JSON.parse(JSON.stringify(char));
   document.querySelectorAll('#char-right [data-field]').forEach(el => {
     const buildIdx = el.dataset.build;
@@ -2112,18 +2242,36 @@ function saveEditView(char) {
     }
   });
 
-  saveOverride(currentGame, char.name, newChar);
-
   const arr = currentGame === 'gi' ? giChars : currentGame === 'hsr' ? hsrChars : zzzChars;
   const idx = arr.findIndex(c => c.name === char.name);
   if (idx >= 0) arr[idx] = newChar;
   const ai = allChars.findIndex(c => c.name === char.name);
   if (ai >= 0) allChars[ai] = newChar;
   activeChar = newChar;
-  _selectCharNoUrl(newChar);
+  saveOverride(currentGame, char.name, newChar);
+
+  if (!loadGithubToken()) {
+    _selectCharNoUrl(newChar);
+    return;
+  }
+
+  const saveBtn = $('edit-save-btn');
+  if (saveBtn) { saveBtn.disabled = true; saveBtn.textContent = 'Saving…'; }
+  const result = await syncBuildsToGitHub(currentGame, arr, char.name);
+  if (result.ok) {
+    clearOverride(currentGame, char.name);
+    _selectCharNoUrl(newChar);
+  } else {
+    if (saveBtn) { saveBtn.disabled = false; saveBtn.textContent = 'Save'; }
+    const statusEl = $('edit-sync-status');
+    if (statusEl) {
+      statusEl.className = 'edit-sync-status error';
+      statusEl.textContent = `GitHub sync failed: ${result.reason}. Saved locally as fallback.`;
+    }
+  }
 }
 
-function resetCharEdit(char) {
+async function resetCharEdit(char) {
   clearOverride(currentGame, char.name);
   const baseChar = (baseCharsMap[currentGame] || {})[char.name];
   const restored = baseChar ? JSON.parse(JSON.stringify(baseChar)) : char;
@@ -2133,6 +2281,10 @@ function resetCharEdit(char) {
   const ai = allChars.findIndex(c => c.name === char.name);
   if (ai >= 0) allChars[ai] = restored;
   activeChar = restored;
+
+  if (loadGithubToken()) {
+    await syncBuildsToGitHub(currentGame, arr, char.name);
+  }
   _selectCharNoUrl(restored);
 }
 

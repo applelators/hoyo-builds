@@ -2907,3 +2907,168 @@ body.game-zzz .pg-events { background: color-mix(in srgb, var(--surface) 70%, tr
 }
 .edit-input { resize: none; }
 
+/* ── edit view sync status ───────────────────────────────────── */
+.edit-sync-status {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  min-height: 16px;
+  transition: color 0.12s;
+}
+.edit-sync-status.error { color: #ef4444; }
+.edit-sync-no-token {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.edit-sync-config-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--char-accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+@media (hover: hover) {
+  .edit-sync-config-btn:hover { opacity: 0.75; }
+}
+
+/* ── GitHub sync settings modal ──────────────────────────────── */
+#sync-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#sync-modal.hidden { display: none; }
+.sync-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+}
+.sync-panel {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-radius: 12px;
+  padding: 24px;
+  width: min(420px, calc(100vw - 32px));
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+  animation: char-fade 0.12s ease;
+}
+.sync-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+.sync-close {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px 4px;
+  line-height: 1;
+  border-radius: 4px;
+  transition: color 0.12s;
+}
+@media (hover: hover) {
+  .sync-close:hover { color: var(--text); }
+}
+.sync-desc {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.sync-desc strong { color: var(--muted-hi); font-weight: 500; }
+.sync-desc code {
+  background: var(--card-hi);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--char-accent-soft);
+}
+.sync-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sync-token-input {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  color: var(--text);
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.12s;
+}
+.sync-token-input:focus {
+  outline: none;
+  border-color: var(--char-accent);
+}
+.sync-test-result {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  min-height: 16px;
+}
+.sync-test-result.ok { color: var(--green); }
+.sync-test-result.error { color: #ef4444; }
+.sync-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 4px;
+}
+.sync-btn {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  padding: 5px 14px;
+  cursor: pointer;
+  border: 1px solid var(--border-hi);
+  background: none;
+  color: var(--muted);
+  transition: color 0.12s, border-color 0.12s, background 0.12s, opacity 0.12s;
+}
+@media (hover: hover) {
+  .sync-btn:hover { color: var(--text); border-color: var(--muted-hi); }
+}
+.sync-btn-save {
+  background: var(--char-accent);
+  border-color: var(--char-accent);
+  color: var(--char-accent-fg);
+}
+@media (hover: hover) {
+  .sync-btn-save:hover { opacity: 0.85; color: var(--char-accent-fg); }
+  .sync-btn-clear:hover { color: #ef4444; border-color: #ef4444; }
+}
+
