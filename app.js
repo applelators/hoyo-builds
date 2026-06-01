@@ -2161,12 +2161,15 @@ function renderNotes(char) {
 }
 
 // ── in-browser build editing ──────────────────────────────────
+let _pickerDragSrc = null;  // {listEl, idx} during a drag
+const _pickerPoolCache = {}; // poolKey → [{name, url}]
+
 const EDIT_FIELDS = {
   gi: {
     buildFields: [
       { key: 'role',            label: 'Role',            multi: false },
-      { key: 'weapons',         label: 'Weapons',         multi: true  },
-      { key: 'artifacts',       label: 'Artifacts',       multi: true  },
+      { key: 'weapons',         label: 'Weapons',         multi: true,  picker: 'gi-weapons'   },
+      { key: 'artifacts',       label: 'Artifacts',       multi: true,  picker: 'gi-artifacts' },
       { key: 'main_stats',      label: 'Main Stats',      multi: true  },
       { key: 'substats',        label: 'Substats',        multi: true  },
       { key: 'talent_priority', label: 'Talent Priority', multi: true  },
@@ -2180,9 +2183,9 @@ const EDIT_FIELDS = {
   hsr: {
     buildFields: [
       { key: 'role',             label: 'Role',             multi: false },
-      { key: 'light_cones',      label: 'Light Cones',      multi: true  },
-      { key: 'relic_4pc',        label: 'Relic 4pc',        multi: false },
-      { key: 'planar_ornament',  label: 'Planar Ornament',  multi: false },
+      { key: 'light_cones',      label: 'Light Cones',      multi: true,  picker: 'hsr-lc'      },
+      { key: 'relic_4pc',        label: 'Relic 4pc',        multi: false, picker: 'hsr-relics'  },
+      { key: 'planar_ornament',  label: 'Planar Ornament',  multi: false, picker: 'hsr-planars' },
       { key: 'main_stats',       label: 'Main Stats',       multi: true  },
       { key: 'sub_stats',        label: 'Sub Stats',        multi: true  },
       { key: 'ability_priority', label: 'Ability Priority', multi: true  },
@@ -2201,7 +2204,8 @@ const EDIT_FIELDS = {
   zzz: {
     buildFields: [
       { key: 'role',           label: 'Role',           multi: false },
-      { key: 'w_engines',      label: 'W-Engines',      multi: true  },
+      { key: 'w_engines',      label: 'W-Engines',      multi: true,  picker: 'zzz-engines' },
+      { key: 'disc_sets',      label: 'Drive Discs',    multi: false, picker: 'zzz-discs'   },
       { key: 'main_stats',     label: 'Main Stats',     multi: true  },
       { key: 'sub_stats',      label: 'Sub Stats',      multi: false },
       { key: 'ability',        label: 'Ability',        multi: true  },
@@ -2216,6 +2220,200 @@ const EDIT_FIELDS = {
     ],
   },
 };
+
+// ── item picker helpers ───────────────────────────────────────
+
+function getPickerPool(poolKey) {
+  if (_pickerPoolCache[poolKey]) return _pickerPoolCache[poolKey];
+  let entries = [];
+  const gi  = itemIcons.gi  || {};
+  const hsr = itemIcons.hsr || {};
+  const zzz = itemIcons.zzz || {};
+  if (poolKey === 'gi-weapons')   entries = Object.entries(gi).filter(([,u]) =>  u.includes('/Weapon_'));
+  if (poolKey === 'gi-artifacts') entries = Object.entries(gi).filter(([,u]) =>  u.includes('/Item_'));
+  if (poolKey === 'hsr-lc')       entries = Object.entries(hsr).filter(([,u]) => u.includes('/Light_Cone_'));
+  if (poolKey === 'hsr-relics')   entries = Object.entries(hsr).filter(([,u]) => u.includes('/Item_'));
+  if (poolKey === 'hsr-planars')  entries = Object.entries(hsr).filter(([,u]) => u.includes('/Item_'));
+  if (poolKey === 'zzz-engines')  entries = Object.entries(zzz).filter(([,u]) => u.includes('/W-Engine_') || u.includes('/W-engine_'));
+  if (poolKey === 'zzz-discs')    entries = Object.entries(zzz).filter(([,u]) => !u.includes('/W-Engine_') && !u.includes('/W-engine_'));
+  const pool = entries.map(([name, url]) => ({ name, url })).sort((a, b) => a.name.localeCompare(b.name));
+  _pickerPoolCache[poolKey] = pool;
+  return pool;
+}
+
+function deserializePickerItems(text, poolKey, fieldKey) {
+  if (!text || !text.trim()) return [];
+  const pool = getPickerPool(poolKey);
+  const poolNames = new Set(pool.map(p => p.name));
+  const items = parseItemList(text, fieldKey === 'w_engines' ? 'zzz' : 'gi');
+  return items.map(it => {
+    const clean = normalizeItemName(it.displayName || it.name);
+    if (poolNames.has(clean)) {
+      return { name: clean, equiv: it.rank === 0, note: (it.desc || '').trim() };
+    }
+    return { name: null, raw: it.displayName || it.name, equiv: it.rank === 0, note: '' };
+  });
+}
+
+function serializePickerItems(items, fieldKey) {
+  let rank = 0;
+  return items.map(item => {
+    const n = item.name || item.raw || '';
+    if (fieldKey === 'w_engines') {
+      const noteLines = item.note ? '\n' + item.note : '';
+      return `${n}:${noteLines}`;
+    }
+    if (item.equiv) return `≈ ${n}`;
+    rank++;
+    if (fieldKey === 'artifacts') return `${rank}. ${n} (4)`;
+    return `${rank}. ${n}`;
+  }).join('\n');
+}
+
+function pickerItemsFromDiscBuild(build) {
+  const items4 = (build.disc_4pc || []).map((n, i) => ({
+    name: n, label: (build.disc_4pc_labels || [])[i] || ''
+  }));
+  const items2 = (build.disc_2pc || []).map((n, i) => {
+    if (Array.isArray(n)) return { name: n.join(' / '), label: (build.disc_2pc_labels || [])[i] || '', paired: true };
+    return { name: n, label: (build.disc_2pc_labels || [])[i] || '' };
+  });
+  return { items4, items2 };
+}
+
+function syncDiscHiddenInputs(editorEl) {
+  const items4 = [], labels4 = [], items2 = [], labels2 = [];
+  editorEl.querySelectorAll('.disc-picker-row[data-section="4pc"]').forEach(row => {
+    items4.push(row.dataset.name);
+    labels4.push(row.querySelector('.disc-picker-label-input')?.value || '');
+  });
+  editorEl.querySelectorAll('.disc-picker-row[data-section="2pc"]').forEach(row => {
+    items2.push(row.dataset.name);
+    labels2.push(row.querySelector('.disc-picker-label-input')?.value || '');
+  });
+  const set = (field, val) => {
+    const el = editorEl.querySelector(`[data-field="${field}"]`);
+    if (el) el.value = JSON.stringify(val);
+  };
+  set('disc_4pc', items4); set('disc_4pc_labels', labels4);
+  set('disc_2pc', items2); set('disc_2pc_labels', labels2);
+}
+
+function renderPickerRowHtml(item, idx, fieldKey) {
+  const isEngine = fieldKey === 'w_engines';
+  const isRaw = item.name === null;
+  const displayName = isRaw ? (item.raw || '') : item.name;
+  const poolGame = (fieldKey === 'w_engines') ? 'zzz'
+    : (fieldKey === 'light_cones' || fieldKey === 'relic_4pc' || fieldKey === 'planar_ornament') ? 'hsr'
+    : 'gi';
+  const iconHtml = (!isRaw && item.name && lookupItemIcon(poolGame, item.name))
+    ? itemImgHtml(lookupItemIcon(poolGame, item.name), 'picker-row-icon')
+    : '<span class="picker-row-icon picker-no-icon"></span>';
+  const rankLabel = item.equiv ? '≈' : '';
+  const equivActive = item.equiv ? ' active' : '';
+  let noteHtml = '';
+  if (isEngine) {
+    const noteVal = escHtml(item.note || '');
+    noteHtml = `<textarea class="picker-item-note" placeholder="Notes (optional)">${noteVal}</textarea>`;
+  }
+  const rawClass = isRaw ? ' picker-row-raw' : '';
+  return `<div class="picker-row${rawClass}${item.equiv ? ' equiv' : ''}" draggable="true" data-idx="${idx}" data-equiv="${item.equiv}" data-raw="${isRaw}">
+  <span class="picker-drag-handle" title="Drag to reorder">⠿</span>
+  <span class="picker-rank">${rankLabel || (item.equiv ? '≈' : '')}</span>
+  ${iconHtml}
+  <span class="picker-row-name">${escHtml(displayName)}</span>
+  ${!isRaw ? `<button class="picker-equiv-btn${equivActive}" title="Mark as equivalent (≈)">≈</button>` : ''}
+  <button class="picker-remove-btn" title="Remove">✕</button>
+  ${noteHtml}
+</div>`;
+}
+
+function renderPickerField(f, val, bi, game) {
+  const pool = getPickerPool(f.picker);
+  const items = deserializePickerItems(val, f.picker, f.key);
+
+  const pickerGame = f.picker === 'zzz-engines' ? 'zzz' : f.picker.startsWith('hsr') ? 'hsr' : 'gi';
+
+  const selectedHtml = items.length
+    ? items.map((it, i) => renderPickerRowHtml(it, i, f.key)).join('')
+    : '<div class="picker-empty-hint">No items selected — add from the list below.</div>';
+
+  const tilesHtml = pool.map(p => {
+    const inUse = items.some(it => it.name === p.name);
+    return `<button class="picker-tile${inUse ? ' in-use' : ''}" data-name="${escHtml(p.name)}" title="${escHtml(p.name)}">
+      <img class="picker-tile-icon" src="${escHtml(p.url)}" alt="" loading="lazy" referrerpolicy="no-referrer">
+      <span class="picker-tile-name">${escHtml(p.name)}</span>
+    </button>`;
+  }).join('');
+
+  const hiddenVal = escHtml(val);
+  const pid = `picker-${bi}-${f.key}`;
+
+  return `<div class="picker-editor" id="${pid}" data-pool="${f.picker}" data-field-key="${f.key}" data-game="${pickerGame}">
+  <div class="picker-selected">
+    <div class="picker-selected-header">Selected</div>
+    <div class="picker-list">${selectedHtml}</div>
+  </div>
+  <div class="picker-pool">
+    <input class="picker-search" placeholder="Search ${escHtml(f.label.toLowerCase())}…" autocomplete="off">
+    <div class="picker-grid">${tilesHtml}</div>
+  </div>
+  <button class="picker-manual-link">Edit manually</button>
+</div>
+<textarea class="edit-textarea picker-hidden-ta" data-build="${bi}" data-field="${escHtml(f.key)}" rows="1">${hiddenVal}</textarea>`;
+}
+
+function renderDiscPickerField(build, bi) {
+  const pool = getPickerPool('zzz-discs');
+  const { items4, items2 } = pickerItemsFromDiscBuild(build);
+
+  function discRowHtml(item, section) {
+    const icon = itemImgHtml(lookupItemIcon('zzz', item.name), 'picker-row-icon');
+    return `<div class="disc-picker-row picker-row" draggable="true" data-name="${escHtml(item.name)}" data-section="${section}">
+  <span class="picker-drag-handle">⠿</span>
+  ${icon}
+  <span class="picker-row-name">${escHtml(item.name)}</span>
+  <input class="disc-picker-label-input" type="text" placeholder="Label (e.g. BIS)" value="${escHtml(item.label)}">
+  <button class="picker-remove-btn" title="Remove">✕</button>
+</div>`;
+  }
+
+  function tilesHtml(usedNames) {
+    return pool.map(p => {
+      const inUse = usedNames.includes(p.name);
+      return `<button class="picker-tile${inUse ? ' in-use' : ''}" data-name="${escHtml(p.name)}" title="${escHtml(p.name)}">
+        <img class="picker-tile-icon" src="${escHtml(p.url)}" alt="" loading="lazy" referrerpolicy="no-referrer">
+        <span class="picker-tile-name">${escHtml(p.name)}</span>
+      </button>`;
+    }).join('');
+  }
+
+  const used4 = items4.map(i => i.name);
+  const used2 = items2.filter(i => !i.paired).map(i => i.name);
+
+  return `<div class="picker-editor disc-picker-editor" data-pool="zzz-discs" data-field-key="disc_sets">
+  <div class="disc-picker-section">
+    <div class="disc-picker-section-head">4PC Sets</div>
+    <div class="picker-list picker-list-4pc">${items4.map(i => discRowHtml(i, '4pc')).join('') || '<div class="picker-empty-hint">No 4pc sets selected.</div>'}</div>
+    <div class="picker-pool">
+      <input class="picker-search" placeholder="Search disc sets…" autocomplete="off">
+      <div class="picker-grid">${tilesHtml(used4)}</div>
+    </div>
+  </div>
+  <div class="disc-picker-section">
+    <div class="disc-picker-section-head">2PC Sets</div>
+    <div class="picker-list picker-list-2pc">${items2.filter(i => !i.paired).map(i => discRowHtml(i, '2pc')).join('') || '<div class="picker-empty-hint">No 2pc sets selected.</div>'}</div>
+    <div class="picker-pool">
+      <input class="picker-search" placeholder="Search disc sets…" autocomplete="off">
+      <div class="picker-grid">${tilesHtml(used2)}</div>
+    </div>
+  </div>
+  <input type="hidden" data-build="${bi}" data-field="disc_4pc"        value="${escHtml(JSON.stringify(used4))}">
+  <input type="hidden" data-build="${bi}" data-field="disc_4pc_labels" value="${escHtml(JSON.stringify(items4.map(i => i.label)))}">
+  <input type="hidden" data-build="${bi}" data-field="disc_2pc"        value="${escHtml(JSON.stringify(used2))}">
+  <input type="hidden" data-build="${bi}" data-field="disc_2pc_labels" value="${escHtml(JSON.stringify(items2.filter(i => !i.paired).map(i => i.label)))}">
+</div>`;
+}
 
 function renderEditView(char) {
   const schema = EDIT_FIELDS[currentGame];
@@ -2247,6 +2445,19 @@ function renderEditView(char) {
     html += `<div class="edit-section">`;
     html += `<div class="edit-section-head">Build: ${escHtml(roleLabel)}</div>`;
     for (const f of schema.buildFields) {
+      if (f.picker === 'zzz-discs') {
+        html += `<div class="edit-field"><label class="edit-label">${escHtml(f.label)}</label>`;
+        html += renderDiscPickerField(build, bi);
+        html += `</div>`;
+        continue;
+      }
+      if (f.picker) {
+        const val = build[f.key] ?? '';
+        html += `<div class="edit-field"><label class="edit-label">${escHtml(f.label)}</label>`;
+        html += renderPickerField(f, val, bi, currentGame);
+        html += `</div>`;
+        continue;
+      }
       const val = build[f.key] ?? '';
       html += `<div class="edit-field"><label class="edit-label">${escHtml(f.label)}</label>`;
       if (f.multi) {
@@ -2287,18 +2498,314 @@ function renderEditView(char) {
   if (resetBtn) resetBtn.addEventListener('click', () => resetCharEdit(char));
   const openSyncBtn = $('edit-open-sync');
   if (openSyncBtn) openSyncBtn.addEventListener('click', openSyncModal);
+
+  panel.querySelectorAll('.picker-editor:not(.disc-picker-editor)').forEach(el => initPickerField(el));
+  panel.querySelectorAll('.picker-editor.disc-picker-editor').forEach(el => initDiscPickerField(el));
+}
+
+// ── picker interaction logic ──────────────────────────────────
+
+function getPickerItems(editorEl) {
+  const fieldKey  = editorEl.dataset.fieldKey;
+  const poolKey   = editorEl.dataset.pool;
+  const listEl    = editorEl.querySelector('.picker-list');
+  const items     = [];
+  listEl.querySelectorAll('.picker-row').forEach(row => {
+    const isRaw  = row.dataset.raw === 'true';
+    const equiv  = row.dataset.equiv === 'true';
+    const name   = isRaw ? null : row.querySelector('.picker-row-name').textContent;
+    const raw    = isRaw ? row.querySelector('.picker-row-name').textContent : null;
+    const noteEl = row.querySelector('.picker-item-note');
+    const note   = noteEl ? noteEl.value : '';
+    items.push(isRaw ? { name: null, raw, equiv, note } : { name, equiv, note });
+  });
+  return items;
+}
+
+function syncPickerHiddenTextarea(editorEl) {
+  const fieldKey = editorEl.dataset.fieldKey;
+  const items    = getPickerItems(editorEl);
+  const ta       = editorEl.parentElement.querySelector('.picker-hidden-ta');
+  if (ta) ta.value = serializePickerItems(items, fieldKey);
+}
+
+function reRenderPickerList(editorEl, items) {
+  const fieldKey = editorEl.dataset.fieldKey;
+  const poolKey  = editorEl.dataset.pool;
+  const listEl   = editorEl.querySelector('.picker-list');
+
+  // Compute sequential ranks for rank labels
+  let rank = 0;
+  listEl.innerHTML = items.length
+    ? items.map((item, i) => {
+        const html = renderPickerRowHtml(item, i, fieldKey);
+        if (!item.equiv) rank++;
+        return html;
+      }).join('')
+    : '<div class="picker-empty-hint">No items selected — add from the list below.</div>';
+
+  // Update rank labels after render (numbers need sequential counting)
+  let r = 0;
+  listEl.querySelectorAll('.picker-row').forEach(row => {
+    const equiv = row.dataset.equiv === 'true';
+    const rankEl = row.querySelector('.picker-rank');
+    if (rankEl) rankEl.textContent = equiv ? '≈' : ++r;
+  });
+
+  // Update in-use state on tiles
+  const usedNames = new Set(items.filter(i => i.name).map(i => i.name));
+  editorEl.querySelectorAll('.picker-tile').forEach(tile => {
+    tile.classList.toggle('in-use', usedNames.has(tile.dataset.name));
+  });
+
+  rewirePickerRowEvents(editorEl);
+  syncPickerHiddenTextarea(editorEl);
+}
+
+function rewirePickerRowEvents(editorEl) {
+  const listEl   = editorEl.querySelector('.picker-list');
+  const fieldKey = editorEl.dataset.fieldKey;
+
+  listEl.querySelectorAll('.picker-row').forEach((row, idx) => {
+    // Remove button
+    row.querySelector('.picker-remove-btn')?.addEventListener('click', () => {
+      const items = getPickerItems(editorEl);
+      items.splice(idx, 1);
+      reRenderPickerList(editorEl, items);
+    });
+
+    // Equiv toggle
+    row.querySelector('.picker-equiv-btn')?.addEventListener('click', () => {
+      const items = getPickerItems(editorEl);
+      items[idx].equiv = !items[idx].equiv;
+      row.dataset.equiv = items[idx].equiv;
+      reRenderPickerList(editorEl, items);
+    });
+
+    // Note textarea sync (w_engines)
+    row.querySelector('.picker-item-note')?.addEventListener('input', () => {
+      syncPickerHiddenTextarea(editorEl);
+    });
+
+    // DnD
+    row.addEventListener('dragstart', e => {
+      _pickerDragSrc = { listEl, idx };
+      row.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+    });
+    row.addEventListener('dragend', () => {
+      row.classList.remove('dragging');
+      listEl.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
+    });
+    row.addEventListener('dragover', e => {
+      e.preventDefault();
+      if (_pickerDragSrc && _pickerDragSrc.listEl === listEl) {
+        listEl.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
+        row.classList.add('drag-over');
+      }
+    });
+    row.addEventListener('drop', e => {
+      e.preventDefault();
+      if (!_pickerDragSrc || _pickerDragSrc.listEl !== listEl) return;
+      const from = _pickerDragSrc.idx;
+      const to   = idx;
+      if (from === to) return;
+      const items = getPickerItems(editorEl);
+      const [moved] = items.splice(from, 1);
+      items.splice(to, 0, moved);
+      _pickerDragSrc = null;
+      reRenderPickerList(editorEl, items);
+    });
+  });
+}
+
+function initPickerField(editorEl) {
+  const fieldKey = editorEl.dataset.fieldKey;
+  const poolKey  = editorEl.dataset.pool;
+  const pool     = getPickerPool(poolKey);
+
+  // Initial rank label update
+  let r = 0;
+  editorEl.querySelectorAll('.picker-list .picker-row').forEach(row => {
+    const equiv = row.dataset.equiv === 'true';
+    const rankEl = row.querySelector('.picker-rank');
+    if (rankEl) rankEl.textContent = equiv ? '≈' : ++r;
+  });
+
+  rewirePickerRowEvents(editorEl);
+
+  // Tile click → add item
+  editorEl.querySelectorAll('.picker-tile').forEach(tile => {
+    tile.addEventListener('click', () => {
+      const name = tile.dataset.name;
+      const items = getPickerItems(editorEl);
+      if (items.some(i => i.name === name)) return;
+      items.push({ name, equiv: false, note: '' });
+      reRenderPickerList(editorEl, items);
+    });
+  });
+
+  // Search
+  editorEl.querySelectorAll('.picker-search').forEach(input => {
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      const grid = input.closest('.picker-pool').querySelector('.picker-grid');
+      grid.querySelectorAll('.picker-tile').forEach(tile => {
+        tile.hidden = q && !tile.dataset.name.toLowerCase().includes(q);
+      });
+    });
+  });
+
+  // Manual toggle
+  const manualBtn = editorEl.querySelector('.picker-manual-link');
+  const hiddenTa  = editorEl.parentElement.querySelector('.picker-hidden-ta');
+  if (manualBtn && hiddenTa) {
+    manualBtn.addEventListener('click', () => {
+      syncPickerHiddenTextarea(editorEl);
+      hiddenTa.rows = Math.max(4, (hiddenTa.value || '').split('\n').length + 1);
+      hiddenTa.classList.remove('picker-manual-hidden');
+      hiddenTa.classList.add('picker-manual-visible');
+      editorEl.classList.add('picker-editor-hidden');
+
+      if (!hiddenTa._visualBtn) {
+        const btn = document.createElement('button');
+        btn.className = 'picker-manual-link picker-visual-btn';
+        btn.textContent = 'Use visual editor';
+        hiddenTa.insertAdjacentElement('afterend', btn);
+        hiddenTa._visualBtn = btn;
+        btn.addEventListener('click', () => {
+          const items2 = deserializePickerItems(hiddenTa.value, poolKey, fieldKey);
+          reRenderPickerList(editorEl, items2);
+          hiddenTa.classList.remove('picker-manual-visible');
+          editorEl.classList.remove('picker-editor-hidden');
+        });
+      }
+    });
+  }
+}
+
+function initDiscPickerField(editorEl) {
+  function rewireSection(section) {
+    const listEl = editorEl.querySelector(`.picker-list-${section}`);
+    if (!listEl) return;
+
+    listEl.querySelectorAll('.disc-picker-row').forEach((row, idx) => {
+      row.querySelector('.picker-remove-btn')?.addEventListener('click', () => {
+        row.remove();
+        syncDiscTiles(editorEl);
+        syncDiscHiddenInputs(editorEl);
+      });
+      row.querySelector('.disc-picker-label-input')?.addEventListener('input', () => {
+        syncDiscHiddenInputs(editorEl);
+      });
+
+      // DnD
+      row.addEventListener('dragstart', e => {
+        _pickerDragSrc = { listEl, idx };
+        row.classList.add('dragging');
+        e.dataTransfer.effectAllowed = 'move';
+      });
+      row.addEventListener('dragend', () => {
+        row.classList.remove('dragging');
+        listEl.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
+      });
+      row.addEventListener('dragover', e => {
+        e.preventDefault();
+        if (_pickerDragSrc?.listEl === listEl) {
+          listEl.querySelectorAll('.drag-over').forEach(el => el.classList.remove('drag-over'));
+          row.classList.add('drag-over');
+        }
+      });
+      row.addEventListener('drop', e => {
+        e.preventDefault();
+        if (!_pickerDragSrc || _pickerDragSrc.listEl !== listEl) return;
+        const from = _pickerDragSrc.idx;
+        const to   = [...listEl.querySelectorAll('.disc-picker-row')].indexOf(row);
+        if (from === to) { _pickerDragSrc = null; return; }
+        const rows = [...listEl.querySelectorAll('.disc-picker-row')];
+        const moved = rows.splice(from, 1)[0];
+        rows.splice(to, 0, moved);
+        rows.forEach(r => listEl.appendChild(r));
+        _pickerDragSrc = null;
+        syncDiscHiddenInputs(editorEl);
+      });
+    });
+  }
+
+  rewireSection('4pc');
+  rewireSection('2pc');
+
+  // Tile clicks — find which section the tile's picker-pool belongs to
+  editorEl.querySelectorAll('.disc-picker-section').forEach(sectionEl => {
+    const isFour = sectionEl.querySelector('.disc-picker-section-head').textContent.includes('4PC');
+    const section = isFour ? '4pc' : '2pc';
+    const listEl  = editorEl.querySelector(`.picker-list-${section}`);
+
+    sectionEl.querySelectorAll('.picker-tile').forEach(tile => {
+      tile.addEventListener('click', () => {
+        const name = tile.dataset.name;
+        if (listEl.querySelector(`.disc-picker-row[data-name="${CSS.escape(name)}"]`)) return;
+
+        const icon = itemImgHtml(lookupItemIcon('zzz', name), 'picker-row-icon');
+        const rowHtml = `<div class="disc-picker-row picker-row" draggable="true" data-name="${escHtml(name)}" data-section="${section}">
+  <span class="picker-drag-handle">⠿</span>
+  ${icon}
+  <span class="picker-row-name">${escHtml(name)}</span>
+  <input class="disc-picker-label-input" type="text" placeholder="Label (e.g. BIS)" value="">
+  <button class="picker-remove-btn" title="Remove">✕</button>
+</div>`;
+        const emptyHint = listEl.querySelector('.picker-empty-hint');
+        if (emptyHint) emptyHint.remove();
+        listEl.insertAdjacentHTML('beforeend', rowHtml);
+        rewireSection(section);
+        syncDiscTiles(editorEl);
+        syncDiscHiddenInputs(editorEl);
+      });
+    });
+
+    sectionEl.querySelectorAll('.picker-search').forEach(input => {
+      input.addEventListener('input', () => {
+        const q = input.value.trim().toLowerCase();
+        const grid = input.closest('.picker-pool').querySelector('.picker-grid');
+        grid.querySelectorAll('.picker-tile').forEach(tile => {
+          tile.hidden = q && !tile.dataset.name.toLowerCase().includes(q);
+        });
+      });
+    });
+  });
+
+  syncDiscHiddenInputs(editorEl);
+}
+
+function syncDiscTiles(editorEl) {
+  const used4 = [...editorEl.querySelectorAll('.disc-picker-row[data-section="4pc"]')].map(r => r.dataset.name);
+  const used2 = [...editorEl.querySelectorAll('.disc-picker-row[data-section="2pc"]')].map(r => r.dataset.name);
+  editorEl.querySelectorAll('.disc-picker-section').forEach(sectionEl => {
+    const isFour = sectionEl.querySelector('.disc-picker-section-head').textContent.includes('4PC');
+    const used   = isFour ? used4 : used2;
+    sectionEl.querySelectorAll('.picker-tile').forEach(tile => {
+      tile.classList.toggle('in-use', used.includes(tile.dataset.name));
+    });
+  });
 }
 
 async function saveEditView(char) {
+  // Sync picker states into hidden textareas before reading (skip if user is in manual mode)
+  document.querySelectorAll('#char-right .picker-editor:not(.disc-picker-editor)').forEach(ed => {
+    if (!ed.classList.contains('picker-editor-hidden')) syncPickerHiddenTextarea(ed);
+  });
+
   const newChar = JSON.parse(JSON.stringify(char));
   document.querySelectorAll('#char-right [data-field]').forEach(el => {
     const buildIdx = el.dataset.build;
     const field    = el.dataset.field;
-    if (buildIdx !== '') {
+    const rawVal   = el.value;
+    const val      = (rawVal.startsWith('[') || rawVal.startsWith('{')) ? (() => { try { return JSON.parse(rawVal); } catch { return rawVal; } })() : rawVal;
+    if (buildIdx !== undefined && buildIdx !== '') {
       const bi = parseInt(buildIdx, 10);
-      if (newChar.builds[bi]) newChar.builds[bi][field] = el.value;
-    } else {
-      newChar[field] = el.value;
+      if (newChar.builds[bi]) newChar.builds[bi][field] = val;
+    } else if (buildIdx === '') {
+      newChar[field] = val;
     }
   });
 

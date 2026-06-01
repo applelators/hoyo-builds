@@ -2958,6 +2958,249 @@ body.game-zzz .pg-events { background: color-mix(in srgb, var(--surface) 70%, tr
   .edit-sync-config-btn:hover { opacity: 0.75; }
 }
 
+/* ── item picker (visual edit for weapons/artifacts/relics/etc) ── */
+.picker-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.picker-editor-hidden { display: none; }
+
+.picker-selected {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.picker-selected-header {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  padding: 6px 10px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+.picker-empty-hint {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+  padding: 10px 12px;
+  font-style: italic;
+}
+.picker-list { display: flex; flex-direction: column; }
+.picker-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+  cursor: default;
+  user-select: none;
+}
+.picker-row:last-child { border-bottom: none; }
+.picker-row.dragging { opacity: 0.4; }
+.picker-row.drag-over { border-top: 2px solid var(--char-accent); }
+.picker-row.picker-row-raw { opacity: 0.65; }
+.picker-drag-handle {
+  cursor: grab;
+  color: var(--muted);
+  font-size: 14px;
+  flex-shrink: 0;
+  padding: 0 2px;
+}
+.picker-drag-handle:active { cursor: grabbing; }
+.picker-rank {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--char-accent);
+  min-width: 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.picker-row-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  object-fit: contain;
+  background: var(--card-hi);
+  flex-shrink: 0;
+}
+.picker-no-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: var(--card-hi);
+  flex-shrink: 0;
+  display: inline-block;
+}
+.picker-row-name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.picker-equiv-btn,
+.picker-remove-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 2px 6px;
+  flex-shrink: 0;
+  transition: color 0.12s, border-color 0.12s;
+}
+.picker-equiv-btn.active,
+.picker-row.equiv .picker-equiv-btn { color: var(--char-accent); border-color: var(--char-accent); }
+@media (hover: hover) {
+  .picker-equiv-btn:hover { color: var(--char-accent); border-color: var(--char-accent); }
+  .picker-remove-btn:hover { color: #ef4444; border-color: #ef4444; }
+}
+.picker-item-note {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  resize: vertical;
+  padding: 4px 6px;
+  width: 100%;
+  min-height: 42px;
+  margin-top: 4px;
+  display: block;
+}
+.picker-row { flex-wrap: wrap; }
+.picker-item-note { flex-basis: 100%; }
+
+.picker-pool {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.picker-search {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--card);
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  padding: 7px 10px;
+  outline: none;
+}
+.picker-search:focus { border-bottom-color: var(--char-accent); }
+.picker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  max-height: 260px;
+  overflow-y: auto;
+}
+.picker-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 4px 6px;
+  background: var(--card);
+  border: none;
+  cursor: pointer;
+  transition: background 0.1s;
+  text-align: center;
+}
+@media (hover: hover) {
+  .picker-tile:hover { background: var(--card-hi); }
+}
+.picker-tile.in-use { opacity: 0.3; pointer-events: none; }
+.picker-tile-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 4px;
+  background: var(--card-hi);
+}
+.picker-tile-name {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--muted);
+  line-height: 1.2;
+  word-break: break-word;
+  max-height: 28px;
+  overflow: hidden;
+}
+.picker-manual-link,
+.picker-visual-btn {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 2px 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-align: left;
+}
+@media (hover: hover) {
+  .picker-manual-link:hover,
+  .picker-visual-btn:hover { color: var(--text); }
+}
+.picker-hidden-ta {
+  display: none !important;
+}
+.picker-manual-visible {
+  display: block !important;
+  margin-top: 6px;
+}
+
+/* ZZZ disc picker */
+.disc-picker-editor { gap: 14px; }
+.disc-picker-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.disc-picker-section-head {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--char-accent);
+}
+.disc-picker-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+  cursor: default;
+}
+.disc-picker-label-input {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  padding: 2px 6px;
+  width: 120px;
+  flex-shrink: 0;
+}
+
 /* ── GitHub sync settings modal ──────────────────────────────── */
 #sync-modal {
   position: fixed;
