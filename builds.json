@@ -1162,6 +1162,40 @@
     "notes": "DPS\nBeing extremely squishy and prone to interruptions, Klee requires great positioning, or the use of a shielder - This is partically mitigated in her best teams currently, which focus on Overload with Chevreuse, also provide amazing stagger that helps her immensely with not getting hit. Even with this consideration, her best teams nomally don't include a shielder, she can often get knocked around and even KO'd in the midst of your rotations. Running a shielder makes survivability with Klee more comfortable, but at the cost of total DPS. You can choose teammates depending on your level of skill and comfortability.\n\nRegarding Weapon Choices: Weapon rankings assume Hexerei Resonance is active. \nThe Widsith: At [R5], this weapon performs closer to Tulaytullah's Remembrance. Klee cannot reliably utilize the Elemental Mastery buff, should she acquire it.\nSolar Pearl: At [R5], this weapon performs slightly worse than The Widsith [R5].  \nFlowing Purity: Calculations assume you clear the BoL.\nLost Prayer to the Sacred Winds: Assumed 12 DMG% averaged.\nKagura's Verity: Assumed 2 stacks on passive.\nTulaytullah's Remembrance: Averaged 25 Normal Attack DMG%.\nSurf's Up: Dynamic stacking.\nFlowing Purity [R5]: This weapon is calculated with the assumption that the BoL is instantly cleared. If this weapon is paired with Fragment of Harmonic Whimsy (4) at max stacks, this weapon can perform as well as Tullaytullah's Remembrance.\n\nRegarding Artifact Sets:\nLavawalker (4): Klee's kit makes it harder to utilize Vaporize and Melt the same way another Pyro carry would, but her constant Pyro application makes Lavawalker (4) a viable set.\nDesert Pavillion Chronicle: Klee naturally use her Charged Attack early on in the rotation making Desert Pavillion Chronicle (4) a viable set.\nEchoes of an Offering (4): With a 50.2% proc chance on average that gives Flat DMG to her Normal Attack, this set is competitive to Lavawalker (4) and is easier to farm.\nFragment of Harmonic Whimsy (4): This becomes Klee's second best set when you are specifically using Flowing Purity. For this reason, this set not a set you should farm for and is only recommended if you already have the set on standby.\n\nDetailed weapon comparison here."
   },
   {
+    "name": "Lohen",
+    "last_updated": "",
+    "builds": [
+      {
+        "role": "Main DPS",
+        "recommended": true,
+        "weapons": "TBD — build guide not yet available",
+        "artifacts": "TBD",
+        "main_stats": "TBD",
+        "substats": "TBD",
+        "talent_priority": "TBD",
+        "tips": "Build information not yet available. Check back after the guide is updated."
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "name": "Nicole",
+    "last_updated": "",
+    "builds": [
+      {
+        "role": "Main DPS",
+        "recommended": true,
+        "weapons": "TBD — build guide not yet available",
+        "artifacts": "TBD",
+        "main_stats": "TBD",
+        "substats": "TBD",
+        "talent_priority": "TBD",
+        "tips": "Build information not yet available. Check back after the guide is updated."
+      }
+    ],
+    "notes": ""
+  },
+  {
     "name": "Sara",
     "last_updated": "Version 5.0",
     "builds": [

@@ -23,6 +23,8 @@ ICON_OVERRIDES = {
         'Traveler': 'Character_Lumine_Thumb.png',
         'Raiden':   'Character_Raiden_Shogun_Thumb.png',
         'Mizuki':   'Character_Yumemizuki_Mizuki_Thumb.png',
+        'Nicole':   'Nicole_Icon.png',
+        'Lohen':    'Lohen_Icon.png',
     },
     'hsr': {
         'Trailblazer':                 'Character_Trailblazer_Icon.png',
@@ -39,6 +41,7 @@ ICON_OVERRIDES = {
         'Seed':              'Agent_Seed_Icon.png',
         'Orphie & Magus':    'Agent_Orphie_Magnusson_%26_Magus_Icon.png',
         'Anby: Soldier 0':   'Agent_Soldier_0_-_Anby_Icon.png',
+        'Starlight Billy':   'Agent_Starlight_-_Billy_Kid_Icon.png',
     },
 }
 

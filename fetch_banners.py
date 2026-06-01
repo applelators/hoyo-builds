@@ -44,17 +44,20 @@ _EXTRACT_GI_JS = """
         var rows = tables[i].querySelectorAll('tr');
         for (var j = 0; j < rows.length; j++) {
             var cells = rows[j].querySelectorAll('td');
-            if (cells.length < 2) continue;
-            var nameText = cells[0].innerText.trim();
-            var dateText = cells[1] ? cells[1].innerText.trim() : '';
-            // Look for rows that have a banner name and a date range
-            var dates = dateText.match(DATE_RE);
+            if (cells.length < 1) continue;
+            // Game8 GI banner page puts all info in cell[1] (or cell[0])
+            // Format: "Banner Dates:\\nMay 20, 2026 - June 9, 2026\\n5 Star Rate-Up:\\n\\n CharName\\n..."
+            var combinedText = '';
+            for (var k = 0; k < cells.length; k++) combinedText += ' ' + cells[k].innerText;
+            var dates = combinedText.match(DATE_RE);
             if (!dates || dates.length < 2) continue;
-            // Character name: strip phase suffix, grab 5★ from rate-up cell
-            var rateCell = cells[2] ? cells[2].innerText.trim() : '';
-            var charMatch = rateCell.match(/5 Star Rate-Up:\\s*([^\\n4]+)/);
-            var charName = charMatch ? charMatch[1].trim() : nameText.replace(/\\n.*/,'').trim();
-            // Phase: look for "Phase 1" or "Phase 2" in nameText
+            // Extract 5-star character name from "5 Star Rate-Up:" section
+            var fiveStarMatch = combinedText.match(/5 Star Rate-Up[:\\s]+\\n+\\s*([^\\n4]+)/);
+            if (!fiveStarMatch) continue;
+            var charName = fiveStarMatch[1].trim();
+            if (!charName) continue;
+            // Phase: look for "Phase N" in cell[0] nameText
+            var nameText = cells[0] ? cells[0].innerText.trim() : '';
             var phaseMatch = nameText.match(/Phase (\\d)/);
             var phase = phaseMatch ? parseInt(phaseMatch[1]) : 1;
             results.push({

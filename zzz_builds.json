@@ -2507,6 +2507,32 @@
     ]
   },
   {
+    "name": "Starlight Billy",
+    "specialty": "Attack",
+    "element": "Physical",
+    "last_updated": "",
+    "builds": [
+      {
+        "role": "Main DPS",
+        "w_engines": "TBD — build guide not yet available",
+        "main_stats": "TBD",
+        "sub_stats": "TBD",
+        "baseline": "",
+        "ability": "TBD",
+        "disc_4pc": [],
+        "disc_2pc": [],
+        "disc_4pc_labels": [],
+        "disc_2pc_labels": [],
+        "w_engine_notes": "",
+        "disc_notes": "",
+        "mindscapes": "",
+        "other_notes": "Build information not yet available. Check back after the guide is updated.",
+        "team_general": "",
+        "team_comps": []
+      }
+    ]
+  },
+  {
     "name": "Ye Shunguang",
     "specialty": "Attacker",
     "element": "Ice",

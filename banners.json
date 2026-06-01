@@ -24,38 +24,6 @@
   },
   "gi": [
     {
-      "character": "Angel's Reverie",
-      "phase": 1,
-      "start": "2026-05-20",
-      "end": "2026-06-09",
-      "rerun": false,
-      "verdict": ""
-    },
-    {
-      "character": "Rubedo, of White Stone Born",
-      "phase": 1,
-      "start": "2026-05-20",
-      "end": "2026-06-09",
-      "rerun": false,
-      "verdict": ""
-    },
-    {
-      "character": "Frostedge Nocturne",
-      "phase": 2,
-      "start": "2026-06-09",
-      "end": "2026-06-30",
-      "rerun": false,
-      "verdict": ""
-    },
-    {
-      "character": "Ancient Flame Ablaze",
-      "phase": 2,
-      "start": "2026-06-09",
-      "end": "2026-06-30",
-      "rerun": false,
-      "verdict": ""
-    },
-    {
       "character": "Nicole",
       "phase": 1,
       "start": "2026-05-20",
@@ -78,7 +46,7 @@
       "phase": 2,
       "start": "2026-06-09",
       "end": "2026-06-30",
-      "rerun": true,
+      "rerun": false,
       "verdict": "",
       "patch": "6.6"
     },

@@ -790,6 +790,20 @@
       "element": "Geo",
       "rarity": 5,
       "weapon_type": "Sword"
+    },
+    "Nicole": {
+      "version": "6.6",
+      "date": "2026-05-20",
+      "element": "Pyro",
+      "weapon_type": "Catalyst",
+      "rarity": 5
+    },
+    "Lohen": {
+      "version": "6.6",
+      "date": "2026-06-09",
+      "element": "Cryo",
+      "weapon_type": "Polearm",
+      "rarity": 5
     }
   },
   "hsr": {
@@ -1545,6 +1559,12 @@
     "Ye Shunguang": {
       "version": "2.5",
       "date": "2025-12-30",
+      "rarity": 5
+    },
+    "Starlight Billy": {
+      "version": "2.8",
+      "date": "2026-05-27",
+      "element": "Physical",
       "rarity": 5
     }
   }

@@ -47,13 +47,15 @@ ZZZ_NAME_NORMALIZE = {
     "Von Lycaon":                                  "Lycaon",
     "Yidhari Murphy":                              "Yidhari",
     "Alexandrina Sebastiane (Rina)":               "Rina",
+    "Starlight - Billy Kid":                       "Starlight Billy",
 }
 
 ZZZ_ELEMENT = {
     # Physical
-    "Alice":      "Physical",
-    "Banyue":     "Physical",
-    "Billy":      "Physical",
+    "Alice":           "Physical",
+    "Banyue":          "Physical",
+    "Billy":           "Physical",
+    "Starlight Billy": "Physical",
     "Caesar":     "Physical",
     "Corin":      "Physical",
     "Dialyn":     "Physical",
