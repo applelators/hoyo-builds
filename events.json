@@ -1,15 +1,6 @@
 {
   "gi": [
     {
-      "name": "Mage Nicole's Tea Party",
-      "type": "web",
-      "start": "2026-05-20",
-      "end": "2026-06-02",
-      "tagline": "",
-      "rewards": "",
-      "url": "https://game8.co/games/Genshin-Impact/archives/600996"
-    },
-    {
       "name": "To Temper Thyself and Journey Far",
       "type": "story",
       "start": "2026-05-18",
@@ -19,13 +10,22 @@
       "url": "https://game8.co/games/Genshin-Impact/archives/546841"
     },
     {
+      "name": "Mage Nicole's Tea Party",
+      "type": "web",
+      "start": "2026-05-20",
+      "end": "2026-06-02",
+      "tagline": "",
+      "rewards": "",
+      "url": "https://game8.co/games/Genshin-Impact/archives/600996"
+    },
+    {
       "name": "Phantasmal Pals",
       "type": "main",
       "start": "2026-05-22",
       "end": "2026-06-08",
       "tagline": "",
       "rewards": "+ Claymore Weapon Skin + Talent Materials",
-      "url": "https://game8.co/games/Genshin-Impact/archives/598978"
+      "url": "https://game8.co/games/Genshin-Impact/archives/309199"
     },
     {
       "name": "Stygian Onslaught",
@@ -43,7 +43,7 @@
       "end": "2026-06-18",
       "tagline": "",
       "rewards": "+ Weapon Materials",
-      "url": "https://game8.co/games/Genshin-Impact/archives/598986"
+      "url": "https://game8.co/games/Genshin-Impact/archives/598980"
     },
     {
       "name": "Miliastral Gifts",
@@ -52,7 +52,7 @@
       "end": "2026-06-24",
       "tagline": "",
       "rewards": "",
-      "url": null
+      "url": "https://game8.co/games/Genshin-Impact/archives/598997"
     },
     {
       "name": "Kaleidoscopic Color Chase",
@@ -61,7 +61,7 @@
       "end": "2026-06-29",
       "tagline": "",
       "rewards": "+ Talent Materials",
-      "url": null
+      "url": "https://game8.co/games/Genshin-Impact/archives/598979"
     }
   ],
   "hsr": [
@@ -129,15 +129,6 @@
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/594117"
     },
     {
-      "name": "300% Garden of Plenty",
-      "type": "combat",
-      "start": "2026-05-13",
-      "end": "2026-05-25",
-      "tagline": "",
-      "rewards": "+ Double Calyx drops",
-      "url": null
-    },
-    {
       "name": "300% Realm of the Strange",
       "type": "combat",
       "start": "2026-05-22",
@@ -145,6 +136,42 @@
       "tagline": "",
       "rewards": "+ Double Cavern of Corrosion drops",
       "url": null
+    },
+    {
+      "name": "Pixel Plane Rumble",
+      "type": "main",
+      "start": "2026-06-01",
+      "end": "2026-07-15",
+      "tagline": "",
+      "rewards": "",
+      "url": null
+    },
+    {
+      "name": "4.3 Planar Fissure",
+      "type": "combat",
+      "start": "2026-06-17",
+      "end": "2026-06-29",
+      "tagline": "",
+      "rewards": "",
+      "url": "https://game8.co/games/Honkai-Star-Rail/archives/413440"
+    },
+    {
+      "name": "Wispae Amusement Park",
+      "type": "main",
+      "start": "2026-06-24",
+      "end": "2026-07-15",
+      "tagline": "",
+      "rewards": "",
+      "url": "https://game8.co/games/Honkai-Star-Rail/archives/602039"
+    },
+    {
+      "name": "4.3 Realm of the Strange",
+      "type": "combat",
+      "start": "2026-07-03",
+      "end": "2026-07-13",
+      "tagline": "",
+      "rewards": "",
+      "url": "https://game8.co/games/Honkai-Star-Rail/archives/417674"
     }
   ],
   "zzz": [
@@ -162,6 +189,15 @@
       "type": "story",
       "start": "2026-05-06",
       "end": "2026-05-27",
+      "tagline": "",
+      "rewards": "",
+      "url": null
+    },
+    {
+      "name": "Operation - Save Bootopia",
+      "type": "main",
+      "start": "2026-05-07",
+      "end": "2026-06-15",
       "tagline": "",
       "rewards": "",
       "url": null
@@ -185,15 +221,6 @@
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596539"
     },
     {
-      "name": "Advanced Bounty: Area Patrol",
-      "type": "combat",
-      "start": "2026-05-20",
-      "end": "2026-05-25",
-      "tagline": "",
-      "rewards": "+ Double Drive Disc drops",
-      "url": null
-    },
-    {
       "name": "En-Nah Into Your Lap",
       "type": "login",
       "start": "2026-05-27",
@@ -201,6 +228,24 @@
       "tagline": "",
       "rewards": "+ Boopons",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/459873"
+    },
+    {
+      "name": "The Final Callback",
+      "type": "story",
+      "start": "2026-05-27",
+      "end": "2026-06-16",
+      "tagline": "",
+      "rewards": "",
+      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/460378"
+    },
+    {
+      "name": "“Spirit” Artist’s Notebook",
+      "type": "story",
+      "start": "2026-05-27",
+      "end": "2026-06-15",
+      "tagline": "",
+      "rewards": "",
+      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596537"
     },
     {
       "name": "\"Spirit\" Artist's Notebook",
@@ -212,6 +257,15 @@
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596537"
     },
     {
+      "name": "A Look Into Ridu’s Legends",
+      "type": "exploration",
+      "start": "2026-06-01",
+      "end": "2026-06-15",
+      "tagline": "",
+      "rewards": "",
+      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596722"
+    },
+    {
       "name": "A Look Into Ridu's Legends",
       "type": "exploration",
       "start": "2026-06-01",
@@ -219,6 +273,15 @@
       "tagline": "",
       "rewards": "",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596722"
+    },
+    {
+      "name": "Data Bounty - Combat Simulation",
+      "type": "combat",
+      "start": "2026-06-10",
+      "end": "2026-06-15",
+      "tagline": "",
+      "rewards": "",
+      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/473592"
     },
     {
       "name": "Data Bounty: Combat Simulation",

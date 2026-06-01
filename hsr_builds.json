@@ -3297,6 +3297,31 @@
     ]
   },
   {
+    "name": "Mortenax Blade",
+    "path": "Nihility",
+    "builds": [
+      {
+        "role": "Main DPS",
+        "light_cones": "TBD — build guide not yet available",
+        "relic_4pc": "TBD",
+        "sub_stats": "TBD",
+        "eidolons": "",
+        "planar_ornament": "TBD",
+        "baseline_stats": "",
+        "ability_notes": "",
+        "relic_notes": "",
+        "other_notes": "Build information not yet available. Check back after the guide is updated.",
+        "main_stats": "TBD",
+        "ability_priority": "TBD"
+      }
+    ],
+    "release_date": "2026-06-01",
+    "kit_overview": "Build guide not yet available for Mortenax Blade. Check back soon.",
+    "worth_pulling": "",
+    "recommended_baseline": "",
+    "example_teams": []
+  },
+  {
     "name": "Phainon",
     "path": "Destruction",
     "builds": [

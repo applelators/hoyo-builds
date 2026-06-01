@@ -1300,7 +1300,7 @@
         "ability_priority": "1.) Basic ATK\n2.) Ultimate\n3.) Talent\n4.) Skill"
       }
     ],
-    "release_date": "",
+    "release_date": "2023-08-30",
     "kit_overview": "",
     "worth_pulling": "",
     "recommended_baseline": "",
@@ -1325,7 +1325,7 @@
         "ability_priority": "1.) Ultimate\n~~ Skill\n~~ Talent\n2.) Basic ATK"
       }
     ],
-    "release_date": "",
+    "release_date": "2025-10-15",
     "kit_overview": "",
     "worth_pulling": "",
     "recommended_baseline": "",
@@ -4005,7 +4005,7 @@
         "ability_priority": "1.) Talent\n~~ Ultimate\n3.) Skill\n~~ Basic ATK"
       }
     ],
-    "release_date": "2025-12-17",
+    "release_date": "",
     "kit_overview": "Kit Overview: Premium Super Break Specialist\nDahlia's Skill deploys a Zone that lasts for 3 turns. In this Zone, allies' Weakness Break Efficiency is increased by 50% and are able to deal Super Break DMG to enemies who are not weakness broken.\n\nUpon entering combat, Dahlia selects the ally who started combat or has the highest BE% to be Dance Partner with her. When attacking weakness broken enemies, Dance Partner deals Super Break DMG and trigger Dahlia's FUA bounce attack. This can be triggered once per turn, and Dahlia recovers 1 SP for every 2 FUA attack she does.\n\nWhen using Ultimate, Dahlia inflicts Wilt to enemies, which reduces their DEF, implants Fire and the [Dance Partner]'s type weaknesses. This lasts for 4 enemy turns.\n\nWhenever allies implant weaknesses to enemies, their SPD increases. If a Fire character implants weakness, they deal additional Toughness DMG and gain 10% max energy. Only 50% max energy can be generated in this manner. When Dahlia receives healing or shield, she grants BE% to the team.\n\nSynergies:\n✦ Super Break or Break DPS/Teams, especially Fire Super Break/Break DPS who can implant weakness.\nNotes:\n✦ Due to how Wilt works, Dahlia's performance can fall short for wave content such as PF.\n✦ While Dahlia is also considered Dance Partner, she cannot trigger her own FUA.\n✦ Even though most Break teams prefer to run sustainless, Dahlia allows you to run sustainers without too much impact on the team's performance.\nTips:\n✦ Since Wilt duration is based on the enemies' turns, smart timing of her Ultimate is recommended for better Wilt uptime.",
     "worth_pulling": "",
     "recommended_baseline": "E0S1 or E1S1",

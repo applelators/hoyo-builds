@@ -1278,6 +1278,12 @@
       "date": "2024-07-31",
       "element": "Physical",
       "rarity": 5
+    },
+    "Mortenax Blade": {
+      "version": "4.3",
+      "date": "2026-06-01",
+      "element": "Fire",
+      "rarity": 5
     }
   },
   "zzz": {
