@@ -1872,6 +1872,7 @@ function normalizeItemName(name) {
     .replace(/\s*[¹²³⁴⁵⁶⁷⁸⁹]+\s*$/, '')
     .replace(/\s+\d+\s*$/, '')
     .replace(/^\d+-?PC:\s*/i, '')
+    .replace(/\s*\(\d+\).*$/, '')
     .trim();
 }
 
