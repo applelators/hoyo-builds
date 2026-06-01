@@ -103,59 +103,60 @@ function toggleGroup(el) {
   refreshList();
 }
 
-// ── GitHub sync ───────────────────────────────────────────────
-const GITHUB_OWNER  = 'applelators';
-const GITHUB_REPO   = 'hoyo-builds';
-const GITHUB_BRANCH = 'main';
-const GITHUB_TOKEN_KEY = 'archon:github-token';
+// ── Cloudflare Worker sync ────────────────────────────────────
+const WORKER_URL_KEY    = 'archon:worker-url';
+const WORKER_SECRET_KEY = 'archon:worker-secret';
 
-function loadGithubToken() {
-  try { return localStorage.getItem(GITHUB_TOKEN_KEY) || ''; } catch { return ''; }
-}
-function saveGithubToken(t) {
-  try { localStorage.setItem(GITHUB_TOKEN_KEY, t); } catch {}
-}
-function toBase64Unicode(str) {
-  return btoa(unescape(encodeURIComponent(str)));
-}
-async function syncBuildsToGitHub(game, arr, charName) {
-  const token = loadGithubToken();
-  if (!token) return { ok: false, reason: 'no-token' };
-
-  const path = game === 'gi' ? 'builds.json' : game === 'hsr' ? 'hsr_builds.json' : 'zzz_builds.json';
-  const headers = {
-    'Authorization': `Bearer ${token}`,
-    'Accept':        'application/vnd.github+json',
-    'X-GitHub-Api-Version': '2022-11-28',
-  };
-
+function loadWorkerConfig() {
   try {
-    const getResp = await fetch(
-      `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`,
-      { headers }
-    );
-    if (!getResp.ok) {
-      const e = await getResp.json().catch(() => ({}));
-      return { ok: false, reason: `${getResp.status}: ${e.message || getResp.statusText}` };
-    }
-    const { sha } = await getResp.json();
-
-    const putResp = await fetch(
-      `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`,
-      {
-        method: 'PUT',
-        headers: { ...headers, 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message: `Update ${charName} builds via Archon`,
-          content: toBase64Unicode(JSON.stringify(arr, null, 2)),
-          sha,
-          branch: GITHUB_BRANCH,
-        }),
-      }
-    );
-    if (!putResp.ok) {
-      const e = await putResp.json().catch(() => ({}));
-      return { ok: false, reason: `${putResp.status}: ${e.message || putResp.statusText}` };
+    return {
+      url:    localStorage.getItem(WORKER_URL_KEY)    || '',
+      secret: localStorage.getItem(WORKER_SECRET_KEY) || '',
+    };
+  } catch { return { url: '', secret: '' }; }
+}
+function saveWorkerConfig(url, secret) {
+  try {
+    localStorage.setItem(WORKER_URL_KEY,    url);
+    localStorage.setItem(WORKER_SECRET_KEY, secret);
+  } catch {}
+}
+function clearWorkerConfig() {
+  try {
+    localStorage.removeItem(WORKER_URL_KEY);
+    localStorage.removeItem(WORKER_SECRET_KEY);
+  } catch {}
+}
+function workerConfigured() {
+  const { url, secret } = loadWorkerConfig();
+  return !!(url && secret);
+}
+async function fetchWorkerOverrides() {
+  const { url, secret } = loadWorkerConfig();
+  if (!url || !secret) return null;
+  try {
+    const resp = await fetch(`${url.replace(/\/$/, '')}/overrides`, {
+      headers: { 'Authorization': `Bearer ${secret}` },
+    });
+    if (!resp.ok) return null;
+    return await resp.json();
+  } catch { return null; }
+}
+async function pushWorkerOverrides() {
+  const { url, secret } = loadWorkerConfig();
+  if (!url || !secret) return { ok: false, reason: 'not-configured' };
+  try {
+    const resp = await fetch(`${url.replace(/\/$/, '')}/overrides`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${secret}`,
+        'Content-Type':  'application/json',
+      },
+      body: JSON.stringify(buildOverrides),
+    });
+    if (!resp.ok) {
+      const e = await resp.json().catch(() => ({}));
+      return { ok: false, reason: `${resp.status}: ${e.error || resp.statusText}` };
     }
     return { ok: true };
   } catch (e) {
@@ -165,44 +166,56 @@ async function syncBuildsToGitHub(game, arr, charName) {
 
 // ── sync modal ────────────────────────────────────────────────
 function openSyncModal() {
-  const input = $('sync-token-input');
-  if (input) input.value = loadGithubToken();
+  const cfg = loadWorkerConfig();
+  const urlInput    = $('sync-url-input');
+  const secretInput = $('sync-token-input');
+  if (urlInput)    urlInput.value    = cfg.url;
+  if (secretInput) secretInput.value = cfg.secret;
   $('sync-test-result').textContent = '';
   $('sync-modal').classList.remove('hidden');
-  if (input) input.focus();
+  if (urlInput) urlInput.focus();
 }
 function closeSyncModal() {
   $('sync-modal').classList.add('hidden');
 }
 function saveSyncToken() {
-  const token = ($('sync-token-input').value || '').trim();
-  saveGithubToken(token);
+  const url    = ($('sync-url-input').value    || '').trim();
+  const secret = ($('sync-token-input').value  || '').trim();
+  saveWorkerConfig(url, secret);
   closeSyncModal();
 }
 function clearSyncToken() {
-  saveGithubToken('');
-  $('sync-token-input').value = '';
+  clearWorkerConfig();
+  const urlInput = $('sync-url-input');
+  if (urlInput) urlInput.value = '';
+  const secretInput = $('sync-token-input');
+  if (secretInput) secretInput.value = '';
   const r = $('sync-test-result');
   r.className = 'sync-test-result';
-  r.textContent = 'Token cleared.';
+  r.textContent = 'Config cleared.';
 }
 async function testSyncToken() {
-  const token = ($('sync-token-input').value || '').trim();
+  const url    = ($('sync-url-input').value    || '').trim();
+  const secret = ($('sync-token-input').value  || '').trim();
   const r = $('sync-test-result');
   r.className = 'sync-test-result';
   r.textContent = 'Testing…';
+  if (!url || !secret) {
+    r.className = 'sync-test-result error';
+    r.textContent = '✗ Enter a Worker URL and secret first.';
+    return;
+  }
   try {
-    const resp = await fetch(
-      `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}`,
-      { headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' } }
-    );
+    const resp = await fetch(`${url.replace(/\/$/, '')}/overrides`, {
+      headers: { 'Authorization': `Bearer ${secret}` },
+    });
     if (resp.ok) {
       r.className = 'sync-test-result ok';
-      r.textContent = '✓ Connected — token has repo access.';
+      r.textContent = '✓ Connected — worker is reachable.';
     } else {
       const e = await resp.json().catch(() => ({}));
       r.className = 'sync-test-result error';
-      r.textContent = `✗ ${resp.status}: ${e.message || 'Authentication failed'}`;
+      r.textContent = `✗ ${resp.status}: ${e.error || 'Request failed'}`;
     }
   } catch (e) {
     r.className = 'sync-test-result error';
@@ -466,6 +479,18 @@ async function init() {
   baseCharsMap.hsr = Object.fromEntries(hsr.map(c => [c.name, JSON.parse(JSON.stringify(c))]));
   baseCharsMap.zzz = Object.fromEntries(zzz.map(c => [c.name, JSON.parse(JSON.stringify(c))]));
   buildOverrides = loadOverrides();
+  if (workerConfigured()) {
+    try {
+      const workerOvs = await Promise.race([
+        fetchWorkerOverrides(),
+        new Promise(r => setTimeout(() => r(null), 2000)),
+      ]);
+      if (workerOvs) {
+        buildOverrides = workerOvs;
+        try { localStorage.setItem(OVERRIDES_KEY, JSON.stringify(buildOverrides)); } catch {}
+      }
+    } catch {}
+  }
   applyAllOverrides();
 
   allChars = giChars;
@@ -2176,10 +2201,10 @@ function renderEditView(char) {
   html += `<button class="edit-btn edit-btn-save" id="edit-save-btn">Save</button>`;
   html += `</div></div>`;
 
-  if (loadGithubToken()) {
+  if (workerConfigured()) {
     html += `<div id="edit-sync-status" class="edit-sync-status"></div>`;
   } else {
-    html += `<div class="edit-sync-no-token">No GitHub token — edits save locally only. <button class="edit-sync-config-btn" id="edit-open-sync">Configure sync →</button></div>`;
+    html += `<div class="edit-sync-no-token">No sync configured — edits save locally only. <button class="edit-sync-config-btn" id="edit-open-sync">Configure sync →</button></div>`;
   }
 
   char.builds.forEach((build, bi) => {
@@ -2248,31 +2273,35 @@ async function saveEditView(char) {
   const ai = allChars.findIndex(c => c.name === char.name);
   if (ai >= 0) allChars[ai] = newChar;
   activeChar = newChar;
-  saveOverride(currentGame, char.name, newChar);
 
-  if (!loadGithubToken()) {
+  buildOverrides[currentGame] = buildOverrides[currentGame] || {};
+  buildOverrides[currentGame][char.name] = newChar;
+  try { localStorage.setItem(OVERRIDES_KEY, JSON.stringify(buildOverrides)); } catch {}
+
+  if (!workerConfigured()) {
     _selectCharNoUrl(newChar);
     return;
   }
 
   const saveBtn = $('edit-save-btn');
   if (saveBtn) { saveBtn.disabled = true; saveBtn.textContent = 'Saving…'; }
-  const result = await syncBuildsToGitHub(currentGame, arr, char.name);
+  const result = await pushWorkerOverrides();
   if (result.ok) {
-    clearOverride(currentGame, char.name);
     _selectCharNoUrl(newChar);
   } else {
     if (saveBtn) { saveBtn.disabled = false; saveBtn.textContent = 'Save'; }
     const statusEl = $('edit-sync-status');
     if (statusEl) {
       statusEl.className = 'edit-sync-status error';
-      statusEl.textContent = `GitHub sync failed: ${result.reason}. Saved locally as fallback.`;
+      statusEl.textContent = `Sync failed: ${result.reason}. Saved locally as fallback.`;
     }
   }
 }
 
 async function resetCharEdit(char) {
-  clearOverride(currentGame, char.name);
+  if (buildOverrides[currentGame]) delete buildOverrides[currentGame][char.name];
+  try { localStorage.setItem(OVERRIDES_KEY, JSON.stringify(buildOverrides)); } catch {}
+
   const baseChar = (baseCharsMap[currentGame] || {})[char.name];
   const restored = baseChar ? JSON.parse(JSON.stringify(baseChar)) : char;
   const arr = currentGame === 'gi' ? giChars : currentGame === 'hsr' ? hsrChars : zzzChars;
@@ -2282,8 +2311,8 @@ async function resetCharEdit(char) {
   if (ai >= 0) allChars[ai] = restored;
   activeChar = restored;
 
-  if (loadGithubToken()) {
-    await syncBuildsToGitHub(currentGame, arr, char.name);
+  if (workerConfigured()) {
+    await pushWorkerOverrides();
   }
   _selectCharNoUrl(restored);
 }

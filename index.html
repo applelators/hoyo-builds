@@ -118,9 +118,11 @@
           <span>GitHub Sync</span>
           <button id="sync-modal-close" class="sync-close" aria-label="Close">✕</button>
         </div>
-        <p class="sync-desc">Edits you make will be committed directly to the <strong>applelators/hoyo-builds</strong> repo so they persist across devices. Paste a GitHub personal access token with <code>repo</code> scope below.</p>
-        <label class="sync-label" for="sync-token-input">Personal Access Token</label>
-        <input id="sync-token-input" class="sync-token-input" type="password" placeholder="ghp_…" autocomplete="off" spellcheck="false">
+        <p class="sync-desc">Edits push to a Cloudflare Worker so they persist across devices. Enter your Worker URL and the shared secret you set via <code>wrangler secret put ARCHON_SECRET</code>.</p>
+        <label class="sync-label" for="sync-url-input">Worker URL</label>
+        <input id="sync-url-input" class="sync-token-input" type="text" placeholder="https://archon-sync.yourname.workers.dev" autocomplete="off" spellcheck="false">
+        <label class="sync-label" for="sync-token-input">Secret</label>
+        <input id="sync-token-input" class="sync-token-input" type="password" placeholder="your-shared-secret" autocomplete="off" spellcheck="false">
         <div id="sync-test-result" class="sync-test-result"></div>
         <div class="sync-footer">
           <button id="sync-test-btn" class="sync-btn sync-btn-test">Test</button>
