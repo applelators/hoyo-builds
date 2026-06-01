@@ -37,6 +37,7 @@ let tiersData     = {};     // {gi: {name: tier}, hsr: {…}, zzz: {…}}
 let bannerData    = {};     // {gi: [{character, phase, start, end, verdict}], …}
 let eventData     = {};     // {gi: [{name, type, start, end, rewards, tagline}], …}
 let livestreamData = {};    // {gi: {version, title, date, highlights}, …}
+let itemIcons     = {};     // {gi: {itemName: url}, hsr: {…}, zzz: {…}}
 
 // ── favorites + density (localStorage) ───────────────────────
 const FAV_KEY = 'archon:favorites';
@@ -451,7 +452,7 @@ function statusPill(char) {
 
 // ── boot ─────────────────────────────────────────────────────
 async function init() {
-  const [gi, hsr, zzz, pts, ico, rel, tiers, bnrs, evts, livs] = await Promise.all([
+  const [gi, hsr, zzz, pts, ico, rel, tiers, bnrs, evts, livs, itmIco] = await Promise.all([
     fetch('builds.json').then(r => r.json()),
     fetch('hsr_builds.json').then(r => r.json()),
     fetch('zzz_builds.json').then(r => r.json()),
@@ -462,6 +463,7 @@ async function init() {
     fetch('banners.json').then(r => r.json()).catch(() => ({})),
     fetch('events.json').then(r => r.json()).catch(() => ({})),
     fetch('livestreams.json').then(r => r.json()).catch(() => ({})),
+    fetch('item_icons.json').then(r => r.json()).catch(() => ({})),
   ]);
   giChars  = gi;
   hsrChars = hsr;
@@ -473,6 +475,7 @@ async function init() {
   bannerData = bnrs;
   eventData = evts;
   livestreamData = livs;
+  itemIcons = itmIco;
 
   // snapshot unmodified data so Reset can restore it
   baseCharsMap.gi  = Object.fromEntries(gi.map(c => [c.name, JSON.parse(JSON.stringify(c))]));
@@ -1862,7 +1865,27 @@ function parseItemList(text, game) {
   return items;
 }
 
-function itemListHtml(items) {
+function normalizeItemName(name) {
+  return name
+    .replace(/\s*\d+[★✩⭐]\s*$/, '')
+    .replace(/\s*\[[^\]]*\]\s*$/, '')
+    .replace(/\s*[¹²³⁴⁵⁶⁷⁸⁹]+\s*$/, '')
+    .replace(/\s+\d+\s*$/, '')
+    .replace(/^\d+-?PC:\s*/i, '')
+    .trim();
+}
+
+function lookupItemIcon(game, name) {
+  const cleaned = normalizeItemName(name);
+  return (itemIcons[game] || {})[cleaned] || null;
+}
+
+function itemImgHtml(url, cls = 'item-icon') {
+  if (!url) return '';
+  return `<img class="${cls}" src="${escHtml(url)}" alt="" loading="lazy" referrerpolicy="no-referrer">`;
+}
+
+function itemListHtml(items, game) {
   if (!items.length) return '';
   return '<div class="item-list">' + items.map(item => {
     const cls = item.rank === 1 ? ' tier-1' : item.rank === 2 ? ' tier-2' : item.rank === 0 ? ' tier-eq' : '';
@@ -1870,7 +1893,8 @@ function itemListHtml(items) {
     const label = item.rank === 0 ? '≈' : item.rank;
     const star = item.trailingStar ? '<sup class="item-foot">*</sup>' : '';
     const display = item.displayName || item.name;
-    const nameHtml = `<span class="item-name-wrap"><span class="item-pill${rarityCls}${cls}">${escHtml(display)}</span>${star}</span>`;
+    const iconUrl = game ? lookupItemIcon(game, display) : null;
+    const nameHtml = `<span class="item-name-wrap">${itemImgHtml(iconUrl)}<span class="item-pill${rarityCls}${cls}">${escHtml(display)}</span>${star}</span>`;
     const descHtml = item.desc ? `<div class="item-desc">${escHtml(item.desc)}</div>` : '';
     return `<div class="item-row"><span class="item-rank">${label}</span><div class="item-body">${nameHtml}${descHtml}</div></div>`;
   }).join('') + '</div>';
@@ -1880,7 +1904,7 @@ function itemCard(label, text, game, wide = false) {
   if (!text || !text.trim()) return '';
   const items = parseItemList(text, game);
   if (!items.length) return card(label, text, wide, true);
-  return cardRaw(label, `<div class="card-body">${itemListHtml(items)}</div>`, wide);
+  return cardRaw(label, `<div class="card-body">${itemListHtml(items, game)}</div>`, wide);
 }
 
 function parseAbilityPriority(text) {
@@ -1967,12 +1991,18 @@ function hsrRelicCard(build) {
   let html = '<div class="build-card wide"><div class="card-label">' + sectionIcon('relics') + '<span>relics</span></div><div class="disc-sets">';
   if (sets4.length) {
     html += '<div class="disc-row"><span class="disc-pc-label">4PC</span>'
-      + sets4.map((s, i) => `<span class="disc-chip${i === 0 ? ' disc-bis' : ''}">${escHtml(s)}</span>`).join('')
+      + sets4.map((s, i) => {
+          const icon = itemImgHtml(lookupItemIcon('hsr', s), 'disc-icon');
+          return `<span class="disc-chip${i === 0 ? ' disc-bis' : ''}">${icon}${escHtml(s)}</span>`;
+        }).join('')
       + '</div>';
   }
   if (sets2.length) {
     html += '<div class="disc-row"><span class="disc-pc-label">2PC</span>'
-      + sets2.map((s, i) => `<span class="disc-chip${i === 0 ? ' disc-bis' : ''}">${escHtml(s)}</span>`).join('')
+      + sets2.map((s, i) => {
+          const icon = itemImgHtml(lookupItemIcon('hsr', s), 'disc-icon');
+          return `<span class="disc-chip${i === 0 ? ' disc-bis' : ''}">${icon}${escHtml(s)}</span>`;
+        }).join('')
       + '</div>';
   }
   html += '</div></div>';
@@ -2020,8 +2050,9 @@ function zzzDiscCard(build) {
       html += '<div class="disc-row">'
         + '<span class="disc-pc-label">4PC</span>'
         + build.disc_4pc.map((s, i) => {
+            const icon = itemImgHtml(lookupItemIcon('zzz', s), 'disc-icon');
             const lbl = labels4[i] ? `<span class="disc-chip-label">${escHtml(labels4[i])}</span>` : '';
-            return `<span class="disc-chip-wrap"><span class="disc-chip${i === 0 ? ' disc-bis' : ''}">${escHtml(s)}</span>${lbl}</span>`;
+            return `<span class="disc-chip-wrap"><span class="disc-chip${i === 0 ? ' disc-bis' : ''}">${icon}${escHtml(s)}</span>${lbl}</span>`;
           }).join('')
         + '</div>';
     }
@@ -2033,11 +2064,14 @@ function zzzDiscCard(build) {
             const lbl = labels2[i] ? `<span class="disc-chip-label">${escHtml(labels2[i])}</span>` : '';
             if (Array.isArray(s)) {
               return '<span class="disc-chip-wrap"><span class="disc-pair-group">'
-                + s.map(name => `<span class="disc-chip">${escHtml(name)}</span>`)
-                    .join('<span class="disc-pair-sep">/</span>')
+                + s.map(name => {
+                    const icon = itemImgHtml(lookupItemIcon('zzz', name), 'disc-icon');
+                    return `<span class="disc-chip">${icon}${escHtml(name)}</span>`;
+                  }).join('<span class="disc-pair-sep">/</span>')
                 + `</span>${lbl}</span>`;
             }
-            return `<span class="disc-chip-wrap"><span class="disc-chip${i === 0 ? ' disc-bis' : ''}">${escHtml(s)}</span>${lbl}</span>`;
+            const icon2pc = itemImgHtml(lookupItemIcon('zzz', s), 'disc-icon');
+            return `<span class="disc-chip-wrap"><span class="disc-chip${i === 0 ? ' disc-bis' : ''}">${icon2pc}${escHtml(s)}</span>${lbl}</span>`;
           }).join('')
         + '</div>';
     }

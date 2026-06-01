@@ -857,7 +857,15 @@ body.game-zzz #char-portrait { transform: scale(1.15); object-position: center 3
 }
 .item-pill.tier-1 { box-shadow: 0 0 0 1px color-mix(in srgb, currentColor 40%, transparent) inset; }
 .item-pill.tier-eq { opacity: 0.65; }
-.item-name-wrap { display: inline-block; }
+.item-name-wrap { display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.item-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  object-fit: contain;
+  background: var(--card-hi);
+  flex-shrink: 0;
+}
 .item-foot {
   color: var(--char-accent);
   font-weight: 700;
@@ -968,6 +976,16 @@ body.game-zzz #char-portrait { transform: scale(1.15); object-position: center 3
   border-radius: 4px;
   padding: 2px 8px;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.disc-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 3px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 .disc-chip.disc-bis {
   color: var(--char-accent);
