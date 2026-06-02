@@ -2491,7 +2491,10 @@ function renderEditView(char) {
   html += `</div>`;
   panel.innerHTML = html;
 
-  $('edit-cancel-btn').addEventListener('click', () => _selectCharNoUrl(activeChar));
+  $('edit-cancel-btn').addEventListener('click', () => {
+    $('char-right').innerHTML = '<div id="build-tabs"></div><div id="build-panel"></div>';
+    _selectCharNoUrl(activeChar);
+  });
   $('edit-save-btn').addEventListener('click', () => saveEditView(char));
   $('edit-export-btn').addEventListener('click', exportBuilds);
   const resetBtn = $('edit-reset-btn');
