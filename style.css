@@ -436,3 +436,32 @@
 
   /* ════ NUMERALS — instrument-panel digits in IBM Plex Mono ════ */
   .cd-seg b, .es-cd, .evt-pop-cd{font-family:var(--fnum);font-variant-numeric:tabular-nums;letter-spacing:-.02em;}
+
+  /* ════ DESKTOP HERO BAND — landscape cards, not portrait ════
+     At desktop widths the 3:4 aspect ratio makes each card ~400px tall,
+     consuming most of a compact viewport. Switch to a fixed height so the
+     band reads as a horizontal strip rather than a wall of tall portraits. */
+  @media (min-width:641px){
+    .fcard{aspect-ratio:unset;height:210px;}
+    .fcard-name{font-size:19px;}
+    .hero{grid-template-columns:repeat(3,1fr)!important;}
+  }
+
+  /* ════ SHORT-VIEWPORT COMPACTION (≤ 780px tall) ════
+     Targets windows like 1300×680 where vertical space is at a premium.
+     Reduces section gaps, bar padding, countdown digit size, and livestream
+     strip padding so meaningful content shows above the fold. */
+  @media (max-height:780px){
+    :root{--gap-sec:18px;--pad-x:22px;}
+    .bar{padding:8px 18px;}
+    .sec{margin-bottom:10px;}
+    .ls{padding:11px 18px;}
+    .ls-ver{font-size:20px;}
+    .cd-seg{padding:4px 7px 3px;min-width:30px;}
+    .cd-seg b{font-size:15px;}
+    .ls-ico{width:38px;height:38px;}
+    .panel{padding:13px 14px 14px;}
+    .bn-thumb{width:42px;height:42px;}
+    .bn-card{padding:7px;}
+    .sheet-portrait{height:320px;}
+  }

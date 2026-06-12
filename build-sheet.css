@@ -195,3 +195,15 @@
 }
 
 #frame[data-device="mobile"] .fullsheet .pair>.card{min-width:0;flex:1 1 100%;}
+
+/* ════ SHORT-VIEWPORT COMPACTION (≤ 780px tall) ════
+   At 680px the portrait at 3:3.45 ratio on a 300px column is ~345px — fine, but
+   combined with the plate and stat cards the left column exceeds the sticky area.
+   Reduce padding and tighten the portrait so the sticky left rail fits cleanly. */
+@media (max-height:780px){
+  #takeover .fullsheet{padding:14px 20px 28px;}
+  .fullsheet .grid{gap:14px;}
+  .fullsheet .art.sheet-portrait{aspect-ratio:3/2.7;}
+  .fullsheet .plate h1{font-size:26px;}
+  .fullsheet .col{gap:12px;}
+}

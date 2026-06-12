@@ -280,10 +280,11 @@ function heroSection() {
     .sort((a,b) => b.t - a.t || (b.rarity||0) - (a.rarity||0) || a.name.localeCompare(b.name)) : [];
   if (!featured.length) return '';
   const cols = Math.min(featured.length, 3) || 1;
+  const colDef = S.device === 'mobile' ? `repeat(${Math.min(cols,2)},1fr)` : `repeat(${cols},1fr)`;
   return `<section class="block">
     ${sec('spark', 'Just released', `Version ${cv} · ${featured.length} new`, '', '')}
     <div class="hero-wrap">
-      <div class="hero" style="grid-template-columns:repeat(${cols},minmax(0,300px));">${featured.map(heroCard).join('')}</div>
+      <div class="hero" style="grid-template-columns:${colDef};">${featured.map(heroCard).join('')}</div>
     </div>
   </section>`;
 }
