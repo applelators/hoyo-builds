@@ -1,6 +1,6 @@
 {
   "$schema": {
-    "_description": "Banner schedule per game. Update once per patch. All dates ISO YYYY-MM-DD in the game's primary server timezone (Asia, observed at 04:00 UTC reset).",
+    "_description": "Banner schedule per game. Update once per patch. All dates ISO YYYY-MM-DD in America server time (UTC-5). The app treats date-only strings as 11:00 UTC (= 06:00 UTC-5), matching HoYoverse America server maintenance time.",
     "_fields": {
       "character": "Exact character name as it appears in builds.json (case-sensitive)",
       "phase": "1 or 2 — which half of the patch this banner runs in",

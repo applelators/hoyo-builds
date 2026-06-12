@@ -51,7 +51,14 @@ const EVENT_TYPES = {
 const evtType = t => EVENT_TYPES[t] || ['#8b949e','Event'];
 
 const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-const parseISO = d => Date.parse((d||'') + (/\dT|\dZ|:/.test(d||'') ? '' : 'T00:00:00Z')) || 0;
+// Date-only strings (YYYY-MM-DD) are in America server time (UTC-5).
+// HoYoverse America server maintenance starts at 06:00 UTC-5 = 11:00 UTC,
+// which is when banners and events actually start and end.
+const parseISO = d => {
+  if (!d) return 0;
+  if (/\dT|\dZ|:/.test(d)) return Date.parse(d) || 0;
+  return Date.parse(d + 'T11:00:00Z') || 0;
+};
 const fmtDay = ms => { const d = new Date(ms); return MON[d.getUTCMonth()] + ' ' + d.getUTCDate(); };
 const fmtDateLong = ms => { const d = new Date(ms); return MON[d.getUTCMonth()] + ' ' + d.getUTCDate() + ', ' + d.getUTCFullYear(); };
 
