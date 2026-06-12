@@ -6,14 +6,157 @@ A guide for Claude Code working on the Archon app. Read this first.
 
 A character field guide / reference tool for three HoYoverse games: **Genshin Impact (GI)**, **Honkai: Star Rail (HSR)**, and **Zenless Zone Zero (ZZZ)**. The front-end is plain HTML + CSS + JS — no framework, no build step. Open `index.html` directly or serve the folder with any static server.
 
+> **⚠️ Production rebuild (Nightdesk) — read before editing the front-end.**
+> The live front-end is now the **Nightdesk** redesign (ported from `redesign/Dashboard & Build.html`):
+> a recency-first **dashboard feed** (livestream → just-released hero band → banners + active events → event timeline → roster) with a **hero-expand character takeover**.
+> - `index.html` — full-viewport shell: top app bar (`.bar`) + `#screen` / `#takeover` / `#tweaks`. `body[data-game]` drives the room tint.
+> - `style.css` — the Nightdesk design system (per-game room tints on `body[data-game]`, signature accent on `--ec`).
+> - `build-sheet.css` — the character build-sheet triptych (scoped to `#takeover .fullsheet`).
+> - `app.js` — dashboard/roster engine (ported from `redesign/db-app.js`): feed sections, roster by era, countdowns, event popups, vanilla Tweaks panel. Loads real data. **Clock is live** (`LIVE_CLOCK = true` in `app.js`, `NOW = Date.now`). Set `LIVE_CLOCK = false` to pin to `SIM0` (the 4.2/4.3 window) for frozen-date demos/screenshots.
+> - `sheet.js` — **data-driven** Nightdesk character sheet. Parses the real build JSON for all 3 games into the triptych (`buildSheetHTML(c)` / `wireSheet`).
+> - The **old codebase** (rail + sidebar IA, ⌘K palette, tier-list view, compare panel, favorites/density, edit-mode/GitHub-sync, per-game build renderers) is preserved verbatim in **`legacy/`** (`index-legacy.html`, `app-legacy.js`, `style-legacy.css`). Those features were **not** part of the approved redesign and are the obvious next port — lift them from `legacy/` into the Nightdesk shell when needed.
+> A full **Nightdesk architecture & design language** reference follows immediately below. Everything after it, under the **"Legacy reference"** divider, describes the old rail/sidebar codebase and applies to `legacy/` only — not the live app.
+
 ```bash
 python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
+## Backlog — deferred Nightdesk ports (not yet wired into production)
+
+These legacy power-features exist **only** in `legacy/` and were intentionally deferred (user decision, June 2026). Revisit when wanted; each is a self-contained port from `legacy/app-legacy.js` into the Nightdesk shell:
+
+- **⌘K command palette** — fuzzy character search + quick-jump (and shift-↵ set-compare). Highest-utility, lowest-risk; do this first if resuming. Lives in `legacy/app-legacy.js` (`openPalette` / `buildPaletteItems` / `renderPalette` / `handlePaletteKeydown`).
+- **Tier-list view** — filtered grid grouped by tier (T0/SS…D), with element/path/"new only" filters. `showTierView` / `renderTierView`; tier colors in `tierColor()`/`TIER_BLURBS`.
+- **Compare panel** — two characters side-by-side as a third column. `setCompareChar` / `clearCompare` / `renderCompareView`; gated on `body.compare-on`.
+- **Favorites / pinning + density toggle** — pin chars (per-game) to a "Pinned" group; compact list mode. localStorage `archon:favorites`, `archon:density`, `archon:collapsed-groups`.
+- **Edit-mode + GitHub sync** — in-app build editing + push/pull overrides via a worker. `legacy/app-legacy.js` sync modal + `worker/`.
+
+If/when porting: lift the renderer from `legacy/`, reskin to the Nightdesk design language (room tints on `body[data-game]`, `--ec` accent, `build-sheet.css` vocabulary), and surface entry points in the top app bar (`.bar`), not a left rail.
+
+---
+
+# Nightdesk reference (THE LIVE APP — read this for all new work)
+
+## Files (the live app)
+- `index.html` — full-viewport shell. `body[data-game]` (gi/hsr/zzz) drives the room tint. Structure: `.stage > #frame[data-device] > .device > #screen + #takeover + #tweaks`. Loads `sheet.js` **before** `app.js` (both are plain global scripts — no modules).
+- `style.css` — the Nightdesk design system: `:root` tokens, per-game room tints, the device frame, and every feed/dashboard component.
+- `build-sheet.css` — the character build-sheet triptych, scoped to `#takeover .fullsheet`. Self-contained; owns `--ec` (per-character signature accent) consumers.
+- `app.js` — the engine (~735 lines). Loads all data in `init()`, holds state in `S`, renders the feed into `#screen`, runs the 1s `tick()`, opens the character takeover, and drives the vanilla Tweaks panel.
+- `sheet.js` — the **data-driven** character sheet. An IIFE exposing `window.buildSheetHTML(c)` and `window.wireSheet(tk, c)`. Reads the real build JSON and lays it into the triptych. Borrows globals from `app.js` (`S`, `GAMES`, `RARITY`, `elColor`, `esc`, …) at call time.
+
+Data files are unchanged from the legacy app (see the Legacy reference's "Data files"), plus `item_icons.json` / `disc_icons.json` are now loaded in `init()`'s `Promise.all`.
+
+## Shell & layout (the IA)
+```
+body[data-game]                      ← room tint
+ └ .stage                            ← letterbox backdrop
+    └ #frame[data-device]            ← desktop | mobile (402×820 device frame)
+       └ .device
+          ├ #screen                  ← the dashboard FEED (always present)
+          ├ #takeover                ← character build sheet (overlay; hero-expand zoom)
+          └ #tweaks                  ← Tweaks panel
+```
+**Feed order** (each section is a function returning an HTML string, or `''` to omit itself):
+`topbar()` → `livestreamSection()` → `heroSection()` → `dashboardSection()` (banner + ending-soon) → `eventSection()` (gantt) → `rosterSection()` (by region/era).
+
+**Responsive**: `setDevice()` flips `#frame[data-device]` between `desktop` and `mobile` at the 640px breakpoint and re-renders. Mobile is a centered 402×820 phone frame; the feed and the sheet triptych both collapse to one column (`#frame[data-device="mobile"]` rules in `style.css` + `build-sheet.css`).
+
+**No URL-hash routing** in the live app (the legacy app had it). Navigation is just `S` + `render()`. The only persistence is the Tweaks blob in `localStorage['archon:whatsnew:tweaks']`.
+
+## Render model
+`render(reason)` is the whole loop: it sets `body.dataset.game`, rebuilds `#screen.innerHTML` from the section functions, then calls `tick()`, `wireScreen()`, `wireEventPops()`. `reason ∈ {boot, game, tweak, resize}` — the first three set `S.animate = true` so the entrance reveal plays; `resize` does not. **Always re-render a whole region from a string; never diff.** It's cheap because the feed is small.
+
+`tick()` runs every 1s and updates every `[data-deadline]` element in place (see Motion). `openChar(name, tileEl)` fills `#takeover` with `buildSheetHTML(c)` and runs the hero-expand zoom from the clicked tile; `closeChar()` reverses it.
+
+## Design tokens (in `style.css` — USE THESE, never hardcode)
+**Type** — three families, on short var names (NOT the legacy `--font-*`):
+- `--fd` Schibsted Grotesk — display: names, titles, version numbers, eyebrows.
+- `--fm` IBM Plex Sans — body: labels, pills, copy, controls. (`body` defaults to this.)
+- `--fnum` IBM Plex Mono, tabular figures — numerals ONLY where the instrument-panel quality earns it (countdown digits `.cd-seg b`, tier letters). Don't blanket the UI in mono.
+
+**Room palette** — set per game on `body[data-game="…"]`; components read the role tokens, never the raw hex:
+`--bg --surface --card --card2 --card-hi --border --border-hi` (surfaces), `--ink --dim --faint` (text), `--amb-a --amb-b` (ambient gradient pair), and the signature `--accent --accent2 --accent-soft --accent-line`. GI = blue, HSR = violet, ZZZ = amber.
+
+**Semantic (game-independent)**: `--mint`/`--mint-soft`/`--mint-line` (live/positive), `--amber`/`--amber-soft`/`--amber-line` (warn/ending-soon).
+
+**Per-character signature**: `accentFor(c)` returns a character's hue (element color, or a hand-set signature like Evanescia's rose). The build sheet sets `--ec`/`--ec2` from it; use `--ec` for the sheet's accents.
+
+**Geometry & motion**: radii `--r-card:14 / --r-sm:9 / --r-chip:6`; `--shadow`, `--shadow-lift`; rhythm `--pad-x:28 / --gap-sec:30`; easing `--ease`. Hover lift is a small `translateY(-1…-3px)` — don't animate big shadows.
+
+## Motion language (keep it calm)
+- **Entrance**: `.reveal` elements rise/fade once, staggered by `--i` (set via the `reveal()` helper), only when `S.animate` and `.anim` is on the screen.
+- **Timers**: never rebuild a countdown's `innerHTML` each second. The segmented countdown (`.cd[data-cd="seg"]`) updates each `.cd-seg > b` in place and fades **only the digit that changed** (`.dchg`). Text timers (`short`/`full`/`inline`) go through `setTimerText()`, which writes only on change and fades with `.cd-fade`. Both keyframes are a soft opacity-only dip (`cddigit`).
+- All motion is gated on `S.tw.motion` (the Tweaks "Live animations" toggle) **and** `@media (prefers-reduced-motion)`. Honor both for anything new.
+
+## Iconography
+Inline SVG, 16-viewBox, `stroke="currentColor"`, width 1.3–1.6. **The catalog is `ICONS` in `app.js`** — add a glyph there and reference it (e.g. via `sec(iconKey, …)`); don't inline at the call site. Element/status dots are flat circles with `box-shadow: 0 0 6px currentColor`.
+
+## Component vocabulary (class → what it is)
+- `.bar` topbar; `.gswitch`/`.gs-btn`/`.gs-dot` game switcher.
+- `.block` is a feed section wrapper; `.sec` + `.sec-ico` is its header (built by `sec(icon,title,meta,mod,right)`).
+- `.card` generic surface; `.panel` (`.live` / `.warn`) the dashboard panels; `.dash`(`.cols`) the banner+ending-soon row.
+- `.ls`/`.ls-*` livestream strip; `.cd`/`.cd-seg` the shared countdown display.
+- `.fcard`/`.fcard-*` the "just released" hero card(s).
+- `.bn-*` banner items, `.es-*` ending-soon rows, `.evt-*` the event gantt (axis, rows, now-line, hover `.evt-pop`).
+- `.tile` roster cards (grouped by era).
+- Sheet (in `build-sheet.css`): `.sheet`/`.fullsheet` triptych; columns `.col.l` (identity), `.col` mid (build), `.col` right (teams/pull/abilities); `.card`+`.clab` cards, `.pill`/`.nm2` item names, `.flow` substat flow, `.trow` ability rows, `.av` team avatars, `.pull` pull-priority.
+
+## How to add things (Nightdesk)
+**A feed section** — write `mySection()` returning an HTML string (return `''` when it has no data so it self-hides); add it to the screen template array inside `render()`; wire any clicks in `wireScreen()`; if it has a header, add a glyph to `ICONS` and use `sec()`.
+
+**A build-sheet card** — in `sheet.js`, build markup with the `card(label, meta, body)` helper and push it into the relevant column array in `buildSheetHTML`. Pull data through `normalize(game, c)` (which maps each game's build JSON to a common shape) — don't special-case a character; extend the parser/normalizer.
+
+**A Tweak** — add a key+default to `S.tw`, a control in `renderTweaks()`, and apply it in `applyTweaks()` (CSS var on `:root` or a `body` class). Persisted automatically via `commitTweak()`/`TW_KEY`.
+
+**A 4th game / new character / patch data** — data workflow (parsers + JSON) is unchanged (see Legacy reference). New touchpoints for a game: `GAMES`, `GAME_ORDER`, `GAME_DOT`, `ELEMENT_ORDERS`, `ELEMENT_COLORS`, `ERA_MAP`, a `body[data-game="xxx"]{…}` tint block in `style.css`, and (if its build shape differs) a branch in `sheet.js`'s `normalize()`.
+
+## Code map (`app.js`)
+```
+constants: GAMES/GAME_ORDER/GAME_DOT, LIVE_CLOCK+NOW, ELEMENT_*,    ~14–88
+  RARITY, EVENT_TYPES, ERA_MAP, ICONS, S (state), TW_KEY
+boot: init() (loads JSON, builds S.data/S.builds), setDevice()       ~90–130
+roster helpers: roster() / eraOf() / byEra()                        ~135–160
+chrome: gameSwitch() / topbar() / sec()                             ~162–197
+render(): the loop + reveal() helper                                ~198–223
+feed §1 livestreamSection                                           ~225
+feed §2 heroSection (currentVersion / heroCard)                     ~253
+feed §3 dashboardSection (bannerPanel / endingSoonPanel)            ~292
+feed §4 eventSection (the gantt)                                    ~385
+feed §5 rosterSection                                               ~453
+countdown: fmtSeg/fmtFull/fmtShort/fmtInline, setTimerText, tick()  ~477–589
+character takeover: openChar / closeChar  (delegates to sheet.js)   ~590–625
+wiring: wireScreen / wireChrome                                     ~626–645
+tweaks: loadTweaks / saveTweaks / applyTweaks / renderTweaks        ~646–end
+```
+`sheet.js`: `buildSheetHTML(c)` (triptych) · `normalize(game,c)` (per-game build→common shape) · parsers `parseItems`/`parseEngines`/`cleanDesc` · `wireSheet`.
+
+## Hard rules (Nightdesk)
+- **No build step, no framework, no URL-hash routing.** Vanilla JS/CSS; state is `S` + the Tweaks localStorage blob.
+- **Tokens, never hex.** Type is `--fd`/`--fm`/`--fnum`; color via the room tokens on `body[data-game]` and `--ec` on the sheet.
+- **Sections self-hide** by returning `''`; **all data is optional** — guard every field (a thin patch JSON must not crash the feed).
+- **Timers update in place** and respect `S.tw.motion` + reduced-motion; never re-`innerHTML` a ticking element.
+- **One design language.** New treatments become a new `.card`/`.panel`/pill variant or `ICONS` glyph — don't fork a one-off style for a single screen.
+- **Per-game and element/rarity colors stay coordinated** between `style.css` tints and the `ELEMENT_COLORS`/`RARITY` maps in `app.js`.
+
+## Smoke test (Nightdesk, manual)
+After any non-trivial change:
+1. All three games load and the room tint changes when you switch (`body[data-game]`).
+2. The feed shows livestream → hero → banner/ending-soon → event gantt → roster (sections with no data quietly disappear).
+3. Clicking a roster tile / hero card / banner opens the takeover with a real build sheet (named cones/weapons + rarity, sets, teams) — try one character per game. Back / Esc closes it.
+4. Countdowns tick calmly — only the changing digit fades; no full-strip flash.
+5. Resize below 640px: the phone frame appears, feed and sheet collapse to one column, no horizontal overflow.
+6. Toggle Tweaks → "Live animations" off kills all motion; font/accent/layout tweaks apply and survive reload.
+
+---
+
+# Legacy reference — `legacy/` only (old rail/sidebar app)
+
+> Everything from here down documents the **previous** codebase, now preserved in `legacy/` (`index-legacy.html`, `app-legacy.js`, `style-legacy.css`). It is accurate for those files and is the guide for porting a deferred feature, but it does **not** describe the live app — note especially that the legacy app uses `--font-display`/`--font-body`/`--font-num`, a left rail + sidebar, and URL-hash routing, none of which exist in the Nightdesk app above.
+
 ## File map
 
-### Front-end (the live app — three files)
+### Front-end (the old app — three files, now in `legacy/`)
 - `index.html` — DOM shell. Three regions: icon rail, sidebar, content. ⌘K palette modal at the bottom.
 - `style.css` — all styling. Per-game tints, mobile breakpoints, all components.
 - `app.js` — single ~2200-line vanilla JS file. Section banners (`// ── X ──`) mark the major chunks.
@@ -41,9 +184,10 @@ The latter three banner/event/livestream files start with a `$schema` block docu
 ## Design language
 
 ### Type
-- **Display** (names, titles, large numbers): `Bricolage Grotesque` variable, 400–700 weight. CSS var: `--font-display`.
-- **Mono** (everything else): `DM Mono`, 400/500 only — never bold. CSS var: `--font-mono`.
-- Loaded from Google Fonts in `index.html`. Don't introduce a third family.
+- **Display** (names, titles, version numbers, eyebrows): `Schibsted Grotesk`, 400–800 weight. CSS var: `--font-display`.
+- **Body** (everything else — labels, pills, copy, controls): `IBM Plex Sans`, 400–600. CSS var: `--font-body`. (Was the old `--font-mono` role; renamed when body moved off mono.)
+- **Numerals** (countdown digits, tier letters): `IBM Plex Mono`, tabular figures. CSS var: `--font-num`. Use **only** where the instrument-panel/data-readout quality earns it — don't blanket the UI in mono.
+- Loaded from Google Fonts in `index.html`. Three families total — don't introduce a fourth.
 
 ### Color
 Per-game tint, applied via body class:
