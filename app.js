@@ -52,12 +52,12 @@ const evtType = t => EVENT_TYPES[t] || ['#8b949e','Event'];
 
 const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 // Date-only strings (YYYY-MM-DD) are in America server time (UTC-5).
-// HoYoverse America server maintenance starts at 06:00 UTC-5 = 11:00 UTC,
-// which is when banners and events actually start and end.
+// HoYoverse America server maintenance starts at 10:00 PM UTC-5 (= 03:00 UTC
+// the following calendar day), confirmed across GI / HSR / ZZZ on Game8.
 const parseISO = d => {
   if (!d) return 0;
   if (/\dT|\dZ|:/.test(d)) return Date.parse(d) || 0;
-  return Date.parse(d + 'T11:00:00Z') || 0;
+  return Date.parse(d + 'T22:00:00-05:00') || 0;
 };
 const fmtDay = ms => { const d = new Date(ms); return MON[d.getUTCMonth()] + ' ' + d.getUTCDate(); };
 const fmtDateLong = ms => { const d = new Date(ms); return MON[d.getUTCMonth()] + ' ' + d.getUTCDate() + ', ' + d.getUTCFullYear(); };
