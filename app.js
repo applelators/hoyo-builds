@@ -51,13 +51,15 @@ const EVENT_TYPES = {
 const evtType = t => EVENT_TYPES[t] || ['#8b949e','Event'];
 
 const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-// Date-only strings (YYYY-MM-DD) are in America server time (UTC-5).
-// HoYoverse America server maintenance starts at 10:00 PM UTC-5 (= 03:00 UTC
-// the following calendar day), confirmed across GI / HSR / ZZZ on Game8.
-const parseISO = d => {
+// Per-game America server maintenance times (UTC-5 offset strings):
+//   GI:  5:00 PM UTC-5 = 22:00 UTC  (EST 6 PM / PST 3 PM, confirmed Game8)
+//   HSR: 10:00 PM UTC-5 = 03:00 UTC next day (confirmed Game8 banner pages)
+//   ZZZ: 10:00 PM UTC-5 = 03:00 UTC next day (= 11 AM UTC+8, confirmed Game8)
+const SERVER_END = { gi: 'T17:00:00-05:00', hsr: 'T22:00:00-05:00', zzz: 'T22:00:00-05:00' };
+const parseISO = (d, game) => {
   if (!d) return 0;
   if (/\dT|\dZ|:/.test(d)) return Date.parse(d) || 0;
-  return Date.parse(d + 'T22:00:00-05:00') || 0;
+  return Date.parse(d + (SERVER_END[game] || 'T22:00:00-05:00')) || 0;
 };
 const fmtDay = ms => { const d = new Date(ms); return MON[d.getUTCMonth()] + ' ' + d.getUTCDate(); };
 const fmtDateLong = ms => { const d = new Date(ms); return MON[d.getUTCMonth()] + ' ' + d.getUTCDate() + ', ' + d.getUTCFullYear(); };
@@ -299,7 +301,7 @@ function heroSection() {
 // ── 3 · DASHBOARD (banner + ending soon) ───────────────────────
 function bannerData() {
   const now = NOW();
-  const all = (S.banners[S.game] || []).map(b => ({ ...b, s: parseISO(b.start), e: parseISO(b.end) })).filter(b => b.s && b.e);
+  const all = (S.banners[S.game] || []).map(b => ({ ...b, s: parseISO(b.start, S.game), e: parseISO(b.end, S.game) })).filter(b => b.s && b.e);
   const active = all.filter(b => b.s <= now && now < b.e).sort((a,b) => a.phase - b.phase);
   const future = all.filter(b => b.s > now).sort((a,b) => a.s - b.s);
   const nextStart = future.length ? future[0].s : null;
@@ -351,7 +353,7 @@ function bannerPanel() {
 // events list — used both for the "ending soon" panel and to feed the gantt
 function eventData() {
   const now = NOW();
-  const raw = (S.events[S.game] || []).map(e => ({ ...e, s: parseISO(e.start), e2: parseISO(e.end) })).filter(e => e.s && e.e2);
+  const raw = (S.events[S.game] || []).map(e => ({ ...e, s: parseISO(e.start, S.game), e2: parseISO(e.end, S.game) })).filter(e => e.s && e.e2);
   const seen = new Set(), list = [];
   for (const e of raw) {
     const k = e.start + '|' + e.end + '|' + e.name.toLowerCase().replace(/[^a-z0-9]/g, '');
