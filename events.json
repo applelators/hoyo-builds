@@ -9,7 +9,7 @@
       "start": "2026-05-18T10:00:00-05:00",
       "end": "2026-08-10T03:59:00-05:00",
       "tagline": "",
-      "rewards": "+ 5-Star Stella Fortuna",
+      "rewards": "+ 5-Star Stella Fortuna (free constellation) · Crown of Insight · Dust of Enlightenment",
       "url": "https://game8.co/games/Genshin-Impact/archives/546841"
     },
     {
@@ -18,7 +18,7 @@
       "start": "2026-05-20T05:00:00Z",
       "end": "2026-06-02T03:59:00-05:00",
       "tagline": "",
-      "rewards": "",
+      "rewards": "+ Primogems · Geode of Replication (web event, share-based)",
       "url": "https://game8.co/games/Genshin-Impact/archives/600996"
     },
     {
@@ -27,7 +27,7 @@
       "start": "2026-05-22T10:00:00-05:00",
       "end": "2026-06-08T03:59:00-05:00",
       "tagline": "",
-      "rewards": "+ Claymore Weapon Skin + Talent Materials",
+      "rewards": "+ 440 Primogems · Super Awesome Magic Key (Claymore Skin) · Crown of Insight · Talent Materials",
       "url": "https://game8.co/games/Genshin-Impact/archives/309199"
     },
     {
@@ -36,7 +36,7 @@
       "start": "2026-05-27T10:00:00-05:00",
       "end": "2026-06-30T03:59:00-05:00",
       "tagline": "",
-      "rewards": "+ Dust of Enlightenment",
+      "rewards": "+ 450 Primogems · 2× Dust of Enlightenment · 5★ Weapon Skin (Radiant Phantasm: Incursion Repeller)",
       "url": "https://game8.co/games/Genshin-Impact/archives/527266"
     },
     {
@@ -45,7 +45,7 @@
       "start": "2026-06-08T10:00:00-05:00",
       "end": "2026-06-18T03:59:00-05:00",
       "tagline": "",
-      "rewards": "+ Weapon Materials",
+      "rewards": "+ 270 Primogems · Talent Books · Sanctifying Unction",
       "url": "https://game8.co/games/Genshin-Impact/archives/598980"
     },
     {
@@ -54,7 +54,7 @@
       "start": "2026-06-10T10:00:00-05:00",
       "end": "2026-06-24T03:59:00-05:00",
       "tagline": "",
-      "rewards": "",
+      "rewards": "+ 270 Primogems",
       "url": "https://game8.co/games/Genshin-Impact/archives/598997"
     },
     {
@@ -63,7 +63,7 @@
       "start": "2026-06-18T10:00:00-05:00",
       "end": "2026-06-29T03:59:00-05:00",
       "tagline": "",
-      "rewards": "+ Talent Materials",
+      "rewards": "+ Primogems · Talent Books · Sanctifying Unction",
       "url": "https://game8.co/games/Genshin-Impact/archives/598979"
     }
   ],
@@ -74,7 +74,7 @@
       "start": "2026-04-22T03:00:00Z",
       "end": "2026-06-01T03:00:00Z",
       "tagline": "",
-      "rewards": "+ Special Passes",
+      "rewards": "+ 20 Star Rail Special Passes",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/448217"
     },
     {
@@ -83,7 +83,7 @@
       "start": "2026-04-22T03:00:00Z",
       "end": "2026-06-01T03:00:00Z",
       "tagline": "",
-      "rewards": "",
+      "rewards": "+ Pet · 5★ Character Select · Interference Key (top-up milestones)",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/507548"
     },
     {
@@ -101,7 +101,7 @@
       "start": "2026-04-22T03:00:00Z",
       "end": "2026-06-01T03:00:00Z",
       "tagline": "",
-      "rewards": "",
+      "rewards": "+ 80 Stellar Jade",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/531216"
     },
     {
@@ -110,7 +110,7 @@
       "start": "2026-04-22T03:00:00Z",
       "end": "2026-06-01T03:00:00Z",
       "tagline": "",
-      "rewards": "",
+      "rewards": "+ Full Maxed 5★ Relic Set (trial equipment)",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/560903"
     },
     {
@@ -119,7 +119,7 @@
       "start": "2026-04-22T03:00:00Z",
       "end": "2026-06-01T03:00:00Z",
       "tagline": "",
-      "rewards": "",
+      "rewards": "+ 1,120 Stellar Jade · Tracks of Destiny · Self-Modeling Resin · Free 4★ LC",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/594115"
     },
     {
@@ -128,7 +128,7 @@
       "start": "2026-04-29T10:00:00-05:00",
       "end": "2026-06-01T03:00:00Z",
       "tagline": "",
-      "rewards": "+ Self-Modeling Resin + Stellar Jade",
+      "rewards": "+ 1,020 Stellar Jade · 2× Tracks of Destiny · Self-Modeling Resin",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/594117"
     },
     {
@@ -146,8 +146,8 @@
       "start": "2026-06-01T03:00:00Z",
       "end": "2026-07-15T03:59:00-05:00",
       "tagline": "",
-      "rewards": "",
-      "url": null
+      "rewards": "+ 1,240 Stellar Jade · 2× Tracks of Destiny · Self-Modeling Resin · Speech Bubble",
+      "url": "https://game8.co/games/Honkai-Star-Rail/archives/601959"
     },
     {
       "name": "4.3 Planar Fissure",
@@ -155,7 +155,7 @@
       "start": "2026-06-17T10:00:00-05:00",
       "end": "2026-06-29T03:59:00-05:00",
       "tagline": "",
-      "rewards": "",
+      "rewards": "+ Double Simulated Universe drops (12 claims)",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/413440"
     },
     {
@@ -164,7 +164,7 @@
       "start": "2026-06-24T10:00:00-05:00",
       "end": "2026-07-15T03:59:00-05:00",
       "tagline": "",
-      "rewards": "",
+      "rewards": "+ 500 Stellar Jade · Tracks of Destiny",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/602039"
     },
     {
@@ -173,7 +173,7 @@
       "start": "2026-07-03T10:00:00-05:00",
       "end": "2026-07-13T03:59:00-05:00",
       "tagline": "",
-      "rewards": "",
+      "rewards": "+ Triple Cavern of Corrosion drops (3×/day)",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/417674"
     }
   ],
@@ -184,7 +184,7 @@
       "start": "2026-05-06T03:00:00Z",
       "end": "2026-06-16T03:59:00-05:00",
       "tagline": "",
-      "rewards": "+ Encrypted Master Tapes",
+      "rewards": "+ 10 Encrypted Master Tapes",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/463484"
     },
     {
@@ -202,7 +202,7 @@
       "start": "2026-05-07T10:00:00-05:00",
       "end": "2026-06-15T03:59:00-05:00",
       "tagline": "",
-      "rewards": "+ Booltergeist Bangboo + Polychrome",
+      "rewards": "+ 1,120 Polychrome · Booltergeist Bangboo · Hamster Cage Pass · 190,000 Denny",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596538"
     },
     {
@@ -211,7 +211,7 @@
       "start": "2026-05-13T10:00:00-05:00",
       "end": "2026-06-01T03:00:00Z",
       "tagline": "",
-      "rewards": "",
+      "rewards": "+ 360 Polychrome · Tuning Calibrator",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596539"
     },
     {
@@ -220,7 +220,7 @@
       "start": "2026-05-27T10:00:00-05:00",
       "end": "2026-06-16T03:59:00-05:00",
       "tagline": "",
-      "rewards": "+ Boopons",
+      "rewards": "+ 10 Boopons",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/459873"
     },
     {
@@ -229,7 +229,7 @@
       "start": "2026-05-27T10:00:00-05:00",
       "end": "2026-06-16T03:59:00-05:00",
       "tagline": "",
-      "rewards": "",
+      "rewards": "+ 40 Polychrome · Official Investigator Logs",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/460378"
     },
     {
@@ -238,7 +238,7 @@
       "start": "2026-05-27T10:00:00-05:00",
       "end": "2026-06-15T03:59:00-05:00",
       "tagline": "",
-      "rewards": "",
+      "rewards": "+ 300 Polychrome · 5 Boopons · 150,000 Denny",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596537"
     },
     {
@@ -247,7 +247,7 @@
       "start": "2026-06-01T10:00:00-05:00",
       "end": "2026-06-15T03:59:00-05:00",
       "tagline": "",
-      "rewards": "",
+      "rewards": "+ 300 Polychrome · Namecard · 100,000 Denny",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596722"
     },
     {
