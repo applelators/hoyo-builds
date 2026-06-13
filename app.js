@@ -51,15 +51,18 @@ const EVENT_TYPES = {
 const evtType = t => EVENT_TYPES[t] || ['#8b949e','Event'];
 
 const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-// Per-game America server maintenance times (UTC-5 offset strings):
-//   GI:  5:00 PM UTC-5 = 22:00 UTC  (EST 6 PM / PST 3 PM, confirmed Game8)
-//   HSR: 10:00 PM UTC-5 = 03:00 UTC next day (confirmed Game8 banner pages)
-//   ZZZ: 10:00 PM UTC-5 = 03:00 UTC next day (= 11 AM UTC+8, confirmed Game8)
-const SERVER_END = { gi: 'T17:00:00-05:00', hsr: 'T22:00:00-05:00', zzz: 'T22:00:00-05:00' };
+// Date-only strings (YYYY-MM-DD) in banners/events JSON are UTC calendar dates.
+// Append game-specific maintenance-end time (UTC) confirmed from Game8 maintenance pages:
+//   GI:  7-hour window → ends 05:00 UTC (midnight UTC-5)   confirmed Game8 GI maintenance
+//   HSR: 5-hour window → ends 03:00 UTC (10 PM UTC-5)      confirmed Game8 HSR 4.3 maintenance
+//   ZZZ: 5-hour window → ends 03:00 UTC (10 PM UTC-5)      confirmed Game8 ZZZ 2.8 maintenance
+// Mid-version events end at daily reset (04:00 UTC-5 = 09:00 UTC); using maintenance-end
+// time as a proxy is within ~4-6h and correct for all version-transition boundaries.
+const SERVER_END = { gi: 'T05:00:00Z', hsr: 'T03:00:00Z', zzz: 'T03:00:00Z' };
 const parseISO = (d, game) => {
   if (!d) return 0;
   if (/\dT|\dZ|:/.test(d)) return Date.parse(d) || 0;
-  return Date.parse(d + (SERVER_END[game] || 'T22:00:00-05:00')) || 0;
+  return Date.parse(d + (SERVER_END[game] || 'T03:00:00Z')) || 0;
 };
 const fmtDay = ms => { const d = new Date(ms); return MON[d.getUTCMonth()] + ' ' + d.getUTCDate(); };
 const fmtDateLong = ms => { const d = new Date(ms); return MON[d.getUTCMonth()] + ' ' + d.getUTCDate() + ', ' + d.getUTCFullYear(); };

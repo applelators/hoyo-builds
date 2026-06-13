@@ -1,6 +1,6 @@
 {
   "$schema": {
-    "_description": "Banner schedule per game. Update once per patch. All dates ISO YYYY-MM-DD in America server time (UTC-5). Per-game maintenance times: GI = 5:00 PM UTC-5 (22:00 UTC); HSR = 10:00 PM UTC-5 (03:00 UTC next day); ZZZ = 10:00 PM UTC-5 (03:00 UTC next day). All confirmed from Game8.",
+    "_description": "Banner schedule per game. Update once per patch. All dates are UTC calendar dates (YYYY-MM-DD). The app appends a per-game maintenance-end time: GI = T05:00:00Z (midnight UTC-5, 7-hour window); HSR = T03:00:00Z (10 PM UTC-5, 5-hour window); ZZZ = T03:00:00Z (same as HSR). Confirmed from Game8 maintenance schedule pages.",
     "_fields": {
       "character": "Exact character name as it appears in builds.json (case-sensitive)",
       "phase": "1 or 2 — which half of the patch this banner runs in",
