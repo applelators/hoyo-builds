@@ -1,10 +1,13 @@
 {
+  "$schema": {
+    "_description": "Event schedule per game. All datetimes use ISO 8601 with explicit UTC-5 offset. Start times are 10:00 UTC-5 for mid-version events (confirmed from GI/ZZZ official announcements); patch-day events use the per-game maintenance-end time (GI T05:00:00Z, HSR/ZZZ T03:00:00Z). End times are 03:59 UTC-5 = 08:59 UTC, the minute before the 04:00 America server daily reset — confirmed as the universal HoYoverse event close time."
+  },
   "gi": [
     {
       "name": "To Temper Thyself and Journey Far",
       "type": "story",
-      "start": "2026-05-18",
-      "end": "2026-08-10",
+      "start": "2026-05-18T10:00:00-05:00",
+      "end": "2026-08-10T03:59:00-05:00",
       "tagline": "",
       "rewards": "+ 5-Star Stella Fortuna",
       "url": "https://game8.co/games/Genshin-Impact/archives/546841"
@@ -12,8 +15,8 @@
     {
       "name": "Mage Nicole's Tea Party",
       "type": "web",
-      "start": "2026-05-20",
-      "end": "2026-06-02",
+      "start": "2026-05-20T05:00:00Z",
+      "end": "2026-06-02T03:59:00-05:00",
       "tagline": "",
       "rewards": "",
       "url": "https://game8.co/games/Genshin-Impact/archives/600996"
@@ -21,8 +24,8 @@
     {
       "name": "Phantasmal Pals",
       "type": "main",
-      "start": "2026-05-22",
-      "end": "2026-06-08",
+      "start": "2026-05-22T10:00:00-05:00",
+      "end": "2026-06-08T03:59:00-05:00",
       "tagline": "",
       "rewards": "+ Claymore Weapon Skin + Talent Materials",
       "url": "https://game8.co/games/Genshin-Impact/archives/309199"
@@ -30,8 +33,8 @@
     {
       "name": "Stygian Onslaught",
       "type": "combat",
-      "start": "2026-05-27",
-      "end": "2026-06-30",
+      "start": "2026-05-27T10:00:00-05:00",
+      "end": "2026-06-30T03:59:00-05:00",
       "tagline": "",
       "rewards": "+ Dust of Enlightenment",
       "url": "https://game8.co/games/Genshin-Impact/archives/527266"
@@ -39,8 +42,8 @@
     {
       "name": "Trials of the Brave Warrior",
       "type": "combat",
-      "start": "2026-06-08",
-      "end": "2026-06-18",
+      "start": "2026-06-08T10:00:00-05:00",
+      "end": "2026-06-18T03:59:00-05:00",
       "tagline": "",
       "rewards": "+ Weapon Materials",
       "url": "https://game8.co/games/Genshin-Impact/archives/598980"
@@ -48,8 +51,8 @@
     {
       "name": "Miliastral Gifts",
       "type": "main",
-      "start": "2026-06-10",
-      "end": "2026-06-24",
+      "start": "2026-06-10T10:00:00-05:00",
+      "end": "2026-06-24T03:59:00-05:00",
       "tagline": "",
       "rewards": "",
       "url": "https://game8.co/games/Genshin-Impact/archives/598997"
@@ -57,8 +60,8 @@
     {
       "name": "Kaleidoscopic Color Chase",
       "type": "main",
-      "start": "2026-06-18",
-      "end": "2026-06-29",
+      "start": "2026-06-18T10:00:00-05:00",
+      "end": "2026-06-29T03:59:00-05:00",
       "tagline": "",
       "rewards": "+ Talent Materials",
       "url": "https://game8.co/games/Genshin-Impact/archives/598979"
@@ -68,8 +71,8 @@
     {
       "name": "Festive Gifts",
       "type": "login",
-      "start": "2026-04-22",
-      "end": "2026-06-01",
+      "start": "2026-04-22T03:00:00Z",
+      "end": "2026-06-01T03:00:00Z",
       "tagline": "",
       "rewards": "+ Special Passes",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/448217"
@@ -77,8 +80,8 @@
     {
       "name": "Cherished Recollection",
       "type": "main",
-      "start": "2026-04-22",
-      "end": "2026-06-01",
+      "start": "2026-04-22T03:00:00Z",
+      "end": "2026-06-01T03:00:00Z",
       "tagline": "",
       "rewards": "",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/507548"
@@ -86,8 +89,8 @@
     {
       "name": "Come With Me, Take the Journey",
       "type": "story",
-      "start": "2026-04-22",
-      "end": "2026-06-01",
+      "start": "2026-04-22T03:00:00Z",
+      "end": "2026-06-01T03:00:00Z",
       "tagline": "",
       "rewards": "",
       "url": null
@@ -95,8 +98,8 @@
     {
       "name": "Novaflare",
       "type": "combat",
-      "start": "2026-04-22",
-      "end": "2026-06-01",
+      "start": "2026-04-22T03:00:00Z",
+      "end": "2026-06-01T03:00:00Z",
       "tagline": "",
       "rewards": "",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/531216"
@@ -104,8 +107,8 @@
     {
       "name": "Relic Recon",
       "type": "combat",
-      "start": "2026-04-22",
-      "end": "2026-06-01",
+      "start": "2026-04-22T03:00:00Z",
+      "end": "2026-06-01T03:00:00Z",
       "tagline": "",
       "rewards": "",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/560903"
@@ -113,8 +116,8 @@
     {
       "name": "Cosmic Data Roaming",
       "type": "exploration",
-      "start": "2026-04-22",
-      "end": "2026-06-01",
+      "start": "2026-04-22T03:00:00Z",
+      "end": "2026-06-01T03:00:00Z",
       "tagline": "",
       "rewards": "",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/594115"
@@ -122,8 +125,8 @@
     {
       "name": "Cosmicon, Roll On Again!",
       "type": "main",
-      "start": "2026-04-29",
-      "end": "2026-06-01",
+      "start": "2026-04-29T10:00:00-05:00",
+      "end": "2026-06-01T03:00:00Z",
       "tagline": "",
       "rewards": "+ Self-Modeling Resin + Stellar Jade",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/594117"
@@ -131,8 +134,8 @@
     {
       "name": "300% Realm of the Strange",
       "type": "combat",
-      "start": "2026-05-22",
-      "end": "2026-06-01",
+      "start": "2026-05-22T10:00:00-05:00",
+      "end": "2026-06-01T03:00:00Z",
       "tagline": "",
       "rewards": "+ Double Cavern of Corrosion drops",
       "url": null
@@ -140,8 +143,8 @@
     {
       "name": "Pixel Plane Rumble",
       "type": "main",
-      "start": "2026-06-01",
-      "end": "2026-07-15",
+      "start": "2026-06-01T03:00:00Z",
+      "end": "2026-07-15T03:59:00-05:00",
       "tagline": "",
       "rewards": "",
       "url": null
@@ -149,8 +152,8 @@
     {
       "name": "4.3 Planar Fissure",
       "type": "combat",
-      "start": "2026-06-17",
-      "end": "2026-06-29",
+      "start": "2026-06-17T10:00:00-05:00",
+      "end": "2026-06-29T03:59:00-05:00",
       "tagline": "",
       "rewards": "",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/413440"
@@ -158,8 +161,8 @@
     {
       "name": "Wispae Amusement Park",
       "type": "main",
-      "start": "2026-06-24",
-      "end": "2026-07-15",
+      "start": "2026-06-24T10:00:00-05:00",
+      "end": "2026-07-15T03:59:00-05:00",
       "tagline": "",
       "rewards": "",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/602039"
@@ -167,8 +170,8 @@
     {
       "name": "4.3 Realm of the Strange",
       "type": "combat",
-      "start": "2026-07-03",
-      "end": "2026-07-13",
+      "start": "2026-07-03T10:00:00-05:00",
+      "end": "2026-07-13T03:59:00-05:00",
       "tagline": "",
       "rewards": "",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/417674"
@@ -178,8 +181,8 @@
     {
       "name": "All-New Program",
       "type": "login",
-      "start": "2026-05-06",
-      "end": "2026-06-16",
+      "start": "2026-05-06T03:00:00Z",
+      "end": "2026-06-16T03:59:00-05:00",
       "tagline": "",
       "rewards": "+ Encrypted Master Tapes",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/463484"
@@ -187,17 +190,8 @@
     {
       "name": "The Final Callback",
       "type": "story",
-      "start": "2026-05-06",
-      "end": "2026-05-27",
-      "tagline": "",
-      "rewards": "",
-      "url": null
-    },
-    {
-      "name": "Operation - Save Bootopia",
-      "type": "main",
-      "start": "2026-05-07",
-      "end": "2026-06-15",
+      "start": "2026-05-06T03:00:00Z",
+      "end": "2026-05-27T03:59:00-05:00",
       "tagline": "",
       "rewards": "",
       "url": null
@@ -205,8 +199,8 @@
     {
       "name": "Operation: Save Bootopia",
       "type": "main",
-      "start": "2026-05-07",
-      "end": "2026-06-15",
+      "start": "2026-05-07T10:00:00-05:00",
+      "end": "2026-06-15T03:59:00-05:00",
       "tagline": "",
       "rewards": "+ Booltergeist Bangboo + Polychrome",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596538"
@@ -214,8 +208,8 @@
     {
       "name": "Ultimate Verdict Trial",
       "type": "combat",
-      "start": "2026-05-13",
-      "end": "2026-06-01",
+      "start": "2026-05-13T10:00:00-05:00",
+      "end": "2026-06-01T03:00:00Z",
       "tagline": "",
       "rewards": "",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596539"
@@ -223,8 +217,8 @@
     {
       "name": "En-Nah Into Your Lap",
       "type": "login",
-      "start": "2026-05-27",
-      "end": "2026-06-16",
+      "start": "2026-05-27T10:00:00-05:00",
+      "end": "2026-06-16T03:59:00-05:00",
       "tagline": "",
       "rewards": "+ Boopons",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/459873"
@@ -232,65 +226,38 @@
     {
       "name": "The Final Callback",
       "type": "story",
-      "start": "2026-05-27",
-      "end": "2026-06-16",
+      "start": "2026-05-27T10:00:00-05:00",
+      "end": "2026-06-16T03:59:00-05:00",
       "tagline": "",
       "rewards": "",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/460378"
     },
     {
-      "name": "“Spirit” Artist’s Notebook",
-      "type": "story",
-      "start": "2026-05-27",
-      "end": "2026-06-15",
-      "tagline": "",
-      "rewards": "",
-      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596537"
-    },
-    {
       "name": "\"Spirit\" Artist's Notebook",
       "type": "story",
-      "start": "2026-05-27",
-      "end": "2026-06-15",
+      "start": "2026-05-27T10:00:00-05:00",
+      "end": "2026-06-15T03:59:00-05:00",
       "tagline": "",
       "rewards": "",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596537"
-    },
-    {
-      "name": "A Look Into Ridu’s Legends",
-      "type": "exploration",
-      "start": "2026-06-01",
-      "end": "2026-06-15",
-      "tagline": "",
-      "rewards": "",
-      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596722"
     },
     {
       "name": "A Look Into Ridu's Legends",
       "type": "exploration",
-      "start": "2026-06-01",
-      "end": "2026-06-15",
+      "start": "2026-06-01T10:00:00-05:00",
+      "end": "2026-06-15T03:59:00-05:00",
       "tagline": "",
       "rewards": "",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596722"
     },
     {
-      "name": "Data Bounty - Combat Simulation",
-      "type": "combat",
-      "start": "2026-06-10",
-      "end": "2026-06-15",
-      "tagline": "",
-      "rewards": "",
-      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/473592"
-    },
-    {
       "name": "Data Bounty: Combat Simulation",
       "type": "combat",
-      "start": "2026-06-10",
-      "end": "2026-06-15",
+      "start": "2026-06-10T10:00:00-05:00",
+      "end": "2026-06-15T03:59:00-05:00",
       "tagline": "",
       "rewards": "+ Double W-Engine Materials",
-      "url": null
+      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/473592"
     }
   ]
 }
