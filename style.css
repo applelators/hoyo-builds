@@ -302,6 +302,7 @@
   .evt-pop-cdl{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);}
   .evt-pop-cd{font-family:var(--fd);font-weight:800;font-size:13px;color:var(--ink);font-variant-numeric:tabular-nums;}
   .evt-pop-cd.warn{color:var(--amber);}
+  .evt-pop-local{margin-top:6px;font-size:10px;color:var(--faint);}
   .evt-pop-rew{margin-top:8px;font-size:10px;color:var(--dim);line-height:1.45;border-top:1px solid var(--border);padding-top:8px;}
 
   /* ════ ROSTER (all chars by region) ════ */

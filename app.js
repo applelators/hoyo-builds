@@ -568,6 +568,7 @@ function evtPopEl() {
   if (!pop) { pop = document.createElement('div'); pop.id = 'evt-pop'; pop.className = 'evt-pop'; host.appendChild(pop); }
   return pop;
 }
+const fmtLocal = ms => new Date(ms).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
 function showEvtPop(row) {
   const pop = evtPopEl();
   const s = +row.dataset.s, e = +row.dataset.e, now = NOW();
@@ -581,6 +582,7 @@ function showEvtPop(row) {
     <div class="evt-pop-name">${row.dataset.name}</div>
     <div class="evt-pop-dates"><span class="evt-pop-rng">${fmtDay(s)} → ${fmtDay(e)}</span><span class="evt-pop-len">${total}d run</span></div>
     <div class="evt-pop-cdrow"><span class="evt-pop-cdl">${future ? 'Starts in' : 'Time remaining'}</span><span class="evt-pop-cd${soon ? ' warn' : ''}" data-deadline="${dl}" data-cd="full"></span></div>
+    <div class="evt-pop-local">Ends ${fmtLocal(e)}</div>
     ${row.dataset.rew ? `<div class="evt-pop-rew">${row.dataset.rew}</div>` : ''}`;
   pop.classList.add('on');
   tick();
