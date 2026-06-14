@@ -50,6 +50,13 @@ const EVENT_TYPES = {
 };
 const evtType = t => EVENT_TYPES[t] || ['#8b949e','Event'];
 
+// Rewards considered significant enough to surface prominently on the ending-soon card.
+const SIG_RX = /polychrome|stellar jade|primogem|bangboo|light cone\b|(?<!\w)w-engine\b(?!\s*(material|energy|power|supply))|weapon skin|crown of insight|tracks of destiny|self-modeling resin|stella fortuna|namecard|tuning calibrator|master tape|special pass|hamster cage|interference key|speech bubble/i;
+function sigRewards(str) {
+  if (!str) return [];
+  return str.replace(/^\+\s*/, '').split(/\s*·\s*/).filter(p => SIG_RX.test(p));
+}
+
 const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 // Date-only strings (YYYY-MM-DD) in banners/events JSON are UTC calendar dates.
 // Append game-specific maintenance-end time (UTC) confirmed from Game8 maintenance pages:
@@ -372,9 +379,14 @@ function endingSoonPanel() {
     const col = evtType(e.type)[0];
     const rem = e.e2 - now;
     const urgent = rem <= 60 * 36e5;                 // within ~2.5 days
+    const sig = sigRewards(e.rewards);
     return `<div class="es-row${urgent ? ' urgent' : ''}" data-name="${esc(e.name)}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards||'')}">
       <span class="es-dot" style="background:${col};color:${col}"></span>
-      <span class="es-mid"><span class="es-name">${e.name}</span><span class="es-type" style="color:${urgent ? 'var(--amber)' : col}">${urgent ? 'Ends soon · ' : ''}${evtType(e.type)[1]}</span></span>
+      <span class="es-mid">
+        <span class="es-name">${e.name}</span>
+        ${sig.length ? `<span class="es-sig">${sig.map(s => `<span class="es-sig-chip">${esc(s)}</span>`).join('')}</span>` : ''}
+        <span class="es-type" style="color:${urgent ? 'var(--amber)' : col}">${urgent ? 'Ends soon · ' : ''}${evtType(e.type)[1]}</span>
+      </span>
       <span class="es-right"><span class="es-cd${urgent ? ' warn' : ''}" data-deadline="${e.e2}" data-cd="short"></span><span class="es-rl">left</span></span>
     </div>`;
   }).join('');

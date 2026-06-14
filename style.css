@@ -217,6 +217,8 @@
   .es-mid{min-width:0;flex:1;display:flex;flex-direction:column;gap:2px;}
   .es-name{font-family:var(--fd);font-weight:600;font-size:13.5px;color:var(--ink);letter-spacing:-.01em;line-height:1.2;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .es-sig{display:flex;flex-wrap:wrap;gap:4px;margin:3px 0 1px;}
+  .es-sig-chip{font-family:var(--fm);font-size:9.5px;font-weight:600;color:var(--amber);background:var(--amber-soft);border:1px solid var(--amber-line);border-radius:var(--r-chip);padding:1px 6px;white-space:nowrap;}
   .es-type{font-family:var(--fm);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-top:2px;}
   .es-right{flex:none;display:flex;flex-direction:column;align-items:flex-end;gap:1px;font-family:var(--fm);}
   .es-cd{font-family:var(--fd);font-weight:800;font-size:14px;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.01em;}
