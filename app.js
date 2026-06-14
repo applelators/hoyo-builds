@@ -106,6 +106,18 @@ const S = {
 const TW_KEY = 'archon:whatsnew:tweaks';
 const FONTS = { schibsted: "'Schibsted Grotesk',ui-sans-serif,system-ui,sans-serif", bricolage: "'Bricolage Grotesque',ui-sans-serif,system-ui,sans-serif" };
 
+const EVT_DONE_KEY = 'archon:evt-done';
+const evtDoneSet = () => { try { return new Set(JSON.parse(localStorage.getItem(EVT_DONE_KEY) || '[]')); } catch { return new Set(); } };
+const evtDoneKey = (game, name) => game + '|' + name;
+function toggleEvtDone(game, name) {
+  const s = evtDoneSet(), k = evtDoneKey(game, name);
+  s.has(k) ? s.delete(k) : s.add(k);
+  try { localStorage.setItem(EVT_DONE_KEY, JSON.stringify([...s])); } catch {}
+  return s.has(k);
+}
+const CHK_OFF = '<svg viewBox="0 0 16 16" width="16" height="16"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
+const CHK_ON  = '<svg viewBox="0 0 16 16" width="16" height="16"><circle cx="8" cy="8" r="6" fill="currentColor"/><path d="M5.2 8.2l1.9 1.9 3.7-3.7" fill="none" stroke="var(--bg)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
 // ── boot ──
 async function boot() {
   loadTweaks();
@@ -380,7 +392,8 @@ function endingSoonPanel() {
     const rem = e.e2 - now;
     const urgent = rem <= 60 * 36e5;                 // within ~2.5 days
     const sig = sigRewards(e.rewards);
-    return `<div class="es-row${urgent ? ' urgent' : ''}" data-name="${esc(e.name)}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards||'')}">
+    const done = evtDoneSet().has(evtDoneKey(S.game, e.name));
+    return `<div class="es-row${urgent ? ' urgent' : ''}${done ? ' done' : ''}" data-name="${esc(e.name)}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards||'')}">
       <span class="es-dot" style="background:${col};color:${col}"></span>
       <span class="es-mid">
         <span class="es-name">${e.name}</span>
@@ -388,6 +401,7 @@ function endingSoonPanel() {
         <span class="es-type" style="color:${urgent ? 'var(--amber)' : col}">${urgent ? 'Ends soon · ' : ''}${evtType(e.type)[1]}</span>
       </span>
       <span class="es-right"><span class="es-cd${urgent ? ' warn' : ''}" data-deadline="${e.e2}" data-cd="short"></span><span class="es-rl">left</span></span>
+      <button class="es-chk" aria-label="${done ? 'Mark undone' : 'Mark done'}">${done ? CHK_ON : CHK_OFF}</button>
     </div>`;
   }).join('');
   return `<div class="panel warn ${reveal()}">
@@ -663,6 +677,14 @@ function wireScreen() {
   host.querySelectorAll('[data-sort]').forEach(b => b.addEventListener('click', () => { S.sort = b.dataset.sort; render('sort'); }));
   host.querySelectorAll('[data-el]').forEach(b => b.addEventListener('click', () => { S.filterEl = b.dataset.el || null; render('filter'); }));
   host.querySelectorAll('[data-char]').forEach(b => b.addEventListener('click', () => openChar(b.dataset.char, b)));
+  host.querySelectorAll('.es-chk').forEach(btn => btn.addEventListener('click', ev => {
+    ev.stopPropagation();
+    const row = btn.closest('.es-row');
+    const isDone = toggleEvtDone(S.game, row.dataset.name);
+    row.classList.toggle('done', isDone);
+    btn.innerHTML = isDone ? CHK_ON : CHK_OFF;
+    btn.setAttribute('aria-label', isDone ? 'Mark undone' : 'Mark done');
+  }));
 }
 function wireChrome() {
   document.querySelectorAll('#games-meta .gm').forEach(b => b.addEventListener('click', () => { S.game = b.dataset.game; S.filterEl = null; S.search = ''; render('game'); }));

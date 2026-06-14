@@ -224,6 +224,13 @@
   .es-cd{font-family:var(--fd);font-weight:800;font-size:14px;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.01em;}
   .es-cd.warn{color:var(--amber);}
   .es-rl{font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-top:1px;}
+  .es-chk{flex:none;background:none;border:none;cursor:pointer;color:var(--faint);padding:2px;line-height:0;border-radius:50%;transition:color .12s,opacity .12s;}
+  .es-chk:hover{color:var(--accent);}
+  .es-row.done .es-chk{color:var(--accent);}
+  .es-row.done{opacity:.45;}
+  .es-row.done.urgent{background:var(--card2);border-color:var(--border);}
+  .es-row.done .es-name{text-decoration:line-through;}
+  .es-row.done .es-sig{display:none;}
   .es-empty{font-family:var(--fm);font-size:11px;color:var(--faint);padding:8px 2px;line-height:1.5;}
 
   /* ════ HERO BAND — just released ════ */
