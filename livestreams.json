@@ -17,44 +17,42 @@
       "Game8 wiki homepages list the next version livestream link once announced.",
       "Livestream pages have a table with 'Release Date' and per-server times.",
       "If the next version has no announced livestream yet, estimate ~10-12 days before expected version release.",
-      "GI 6.7 expected ~July 1, 2026 — livestream expected ~June 20.",
-      "HSR 4.3 livestream confirmed May 22, 2026. Release expected June 1, 2026.",
-      "ZZZ 3.0 releases June 17, 2026 — livestream expected ~June 5 (not yet announced as of 2026-05-22)."
+      "GI: livestreams air Fridays at 08:00 AM EDT (12:00 UTC). GI 6.7 expected July 1 → livestream ~June 19.",
+      "HSR: livestreams air at 19:30 UTC+8 (11:30 UTC). HSR 4.4 expected July 15 → livestream ~July 3.",
+      "ZZZ: livestreams air at 19:30 UTC+8 (11:30 UTC). ZZZ 3.1 expected ~July 4 (2nd anniversary) → livestream ~June 21."
     ]
   },
   "gi": {
     "version": "6.7",
-    "title": null,
-    "date": "2026-06-20T12:00:00Z",
+    "title": "Luna VIII",
+    "date": "2026-06-19T12:00:00Z",
     "url": null,
     "highlights": [
-      "New 5★ characters",
-      "Snezhnaya story continuation",
-      "Version 6.6 follow-up content"
+      "Sandrone (Scaramouche's puppet) playable",
+      "First Snezhnaya story content",
+      "New 5★ characters"
     ]
   },
   "hsr": {
-    "version": "4.3",
+    "version": "4.4",
     "title": null,
-    "date": "2026-05-22T00:00:00Z",
+    "date": "2026-07-03T11:30:00Z",
     "url": null,
     "highlights": [
-      "Mortenax Blade new 5★",
-      "Cyrene, Yao Guang, Phainon reruns",
-      "Inkford Hermitage new map",
-      "Starward Mode endgame update"
+      "Himeko – Nova new 5★",
+      "Fate/stay night collab: Rin Tohsaka & Gilgamesh",
+      "Version 4.4 releases July 15"
     ]
   },
   "zzz": {
-    "version": "3.0",
+    "version": "3.1",
     "title": null,
-    "date": "2026-06-06T00:00:00Z",
+    "date": "2026-06-21T11:30:00Z",
     "url": null,
     "highlights": [
-      "Season 3 begins",
-      "Pyrois, Velina, Norma new agents",
-      "New hollow zone",
-      "Version 3.0 releases June 17"
+      "Remielle Dan — Ether Anomaly support",
+      "Sigrid — Ice Attack main DPS",
+      "2nd Anniversary patch (~July 4)"
     ]
   }
 }
