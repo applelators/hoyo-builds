@@ -97,7 +97,7 @@ const ICONS = {
 
 // ── state ──
 const S = {
-  game: 'hsr', device: 'desktop', search: '', filterEl: null, sort: 'newest',
+  game: 'all', device: 'desktop', search: '', filterEl: null, sort: 'newest',
   selected: null, animate: true,
   data: {}, icons: {}, portraits: {}, maxDate: {}, banners: {}, events: {}, streams: {},
   tw: { layout: 'composed', font: 'schibsted', accent: 'room', motion: true },
@@ -161,6 +161,7 @@ function setDevice() {
 
 const isNew = c => S.maxDate[S.game] && (S.maxDate[S.game] - c.t) <= NEW_DAYS * 864e5;
 const charByName = name => (S.data[S.game] || []).find(c => c.name === name);
+const charInGame = (g, name) => (S.data[g] || []).find(c => c.name === name);
 const totalCount = () => (S.data[S.game] || []).length;
 
 function roster() {
@@ -192,7 +193,10 @@ function byEra(list) {
 
 // ════════════════════════════════════════════════════════════════  CHROME
 function gameSwitch() {
-  return `<div class="gswitch" role="tablist">` + GAME_ORDER.map(g =>
+  const allBtn = `<button class="gs-btn gs-all${S.game === 'all' ? ' on' : ''}" data-game="all" role="tab">
+    <span class="gs-ab">All</span><span class="gs-full">All games</span>
+  </button>`;
+  return `<div class="gswitch" role="tablist">${allBtn}` + GAME_ORDER.map(g =>
     `<button class="gs-btn${g === S.game ? ' on' : ''}" data-game="${g}" role="tab">
       <span class="gs-dot" style="background:${GAME_DOT[g]};color:${GAME_DOT[g]}"></span>
       <span class="gs-ab">${g.toUpperCase()}</span><span class="gs-full">${GAMES[g]}</span>
@@ -240,11 +244,10 @@ function render(reason) {
   host.innerHTML = `${topbar()}
     <div class="scroll${S.animate ? ' anim' : ''}" id="feed-scroll">
       <div class="feed">
-        ${livestreamSection()}
-        ${heroSection()}
-        ${dashboardSection()}
-        ${eventSection()}
-        ${rosterSection()}
+        ${S.game === 'all'
+          ? allBannersSection() + allEventsSection()
+          : livestreamSection() + heroSection() + dashboardSection() + eventSection() + rosterSection()
+        }
       </div>
     </div>`;
   tick();
@@ -320,6 +323,81 @@ function heroSection() {
   </section>`;
 }
 
+// ── ALL-GAMES VIEW ─────────────────────────────────────────────
+function allBannersSection() {
+  const now = NOW();
+  let hasAny = false;
+  const sections = GAME_ORDER.map(g => {
+    const all = (S.banners[g] || []).map(b => ({ ...b, s: parseISO(b.start, g), e: parseISO(b.end, g) })).filter(b => b.s && b.e);
+    const active = all.filter(b => b.s <= now && now < b.e).sort((a, b) => a.phase - b.phase);
+    if (!active.length) return '';
+    hasAny = true;
+    const deadline = Math.min(...active.map(b => b.e));
+    const dot = GAME_DOT[g];
+    return `<div class="all-bn-section" style="--gc:${dot}">
+      <div class="all-bn-ghead">
+        <span class="all-bn-gdot" style="background:${dot};box-shadow:0 0 6px ${dot}"></span>
+        <span class="all-bn-gname">${GAMES[g]}</span>
+        <span class="all-bn-close">closes <span class="cd" data-deadline="${deadline}" data-cd="short"></span></span>
+      </div>
+      <div class="bn-list">${active.map(b => bannerCard(b, g)).join('')}</div>
+    </div>`;
+  }).join('');
+  if (!hasAny) return '';
+  return `<section class="block">
+    <div class="panel live ${reveal()}">
+      <div class="panel-h">
+        <span class="panel-ico">${ICONS.wish}</span>
+        <span class="panel-t">On the banner now</span>
+        <span class="panel-m"><span class="pulse"></span>all games</span>
+      </div>
+      ${sections}
+    </div>
+  </section>`;
+}
+function allEventsSection() {
+  const now = NOW();
+  const all = [];
+  for (const g of GAME_ORDER) {
+    const raw = (S.events[g] || []).map(e => ({ ...e, s: parseISO(e.start, g), e2: parseISO(e.end, g), game: g })).filter(e => e.s && e.e2);
+    const seen = new Set();
+    for (const e of raw) {
+      const k = e.start + '|' + e.end + '|' + e.name.toLowerCase().replace(/[^a-z0-9]/g, '');
+      if (!seen.has(k)) { seen.add(k); all.push(e); }
+    }
+  }
+  const live = all.filter(e => e.s <= now && e.e2 >= now).sort((a, b) => a.e2 - b.e2);
+  if (!live.length) return '';
+  const done = evtDoneSet();
+  const rows = live.map(e => {
+    const g = e.game, gdot = GAME_DOT[g];
+    const col = evtType(e.type)[0];
+    const rem = e.e2 - now, urgent = rem <= 60 * 36e5;
+    const sig = sigRewards(e.rewards);
+    const isDone = done.has(evtDoneKey(g, e.name));
+    return `<div class="es-row${urgent ? ' urgent' : ''}${isDone ? ' done' : ''}" data-name="${esc(e.name)}" data-game="${g}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards||'')}">
+      <span class="es-dot" style="background:${gdot};color:${gdot}"></span>
+      <span class="es-mid">
+        <span class="es-name">${e.name}</span>
+        ${sig.length ? `<span class="es-sig">${sig.map(s => `<span class="es-sig-chip">${esc(s)}</span>`).join('')}</span>` : ''}
+        <span class="es-type" style="color:${urgent ? 'var(--amber)' : col}"><span class="es-gab" style="color:${gdot}">${g.toUpperCase()}</span>${urgent ? ' · Ends soon' : ' · ' + evtType(e.type)[1]}</span>
+      </span>
+      <span class="es-right"><span class="es-cd${urgent ? ' warn' : ''}" data-deadline="${e.e2}" data-cd="short"></span><span class="es-rl">left</span></span>
+      <button class="es-chk" aria-label="${isDone ? 'Mark undone' : 'Mark done'}">${isDone ? CHK_ON : CHK_OFF}</button>
+    </div>`;
+  }).join('');
+  return `<section class="block">
+    <div class="panel warn ${reveal()}">
+      <div class="panel-h">
+        <span class="panel-ico">${ICONS.clock}</span>
+        <span class="panel-t">Active events</span>
+        <span class="panel-m">all games · soonest ending</span>
+      </div>
+      <div class="es-list">${rows}</div>
+    </div>
+  </section>`;
+}
+
 // ── 3 · DASHBOARD (banner + ending soon) ───────────────────────
 function bannerData() {
   const now = NOW();
@@ -330,14 +408,15 @@ function bannerData() {
   const next = nextStart != null ? future.filter(b => b.s === nextStart) : [];
   return { active, next };
 }
-function bannerCard(b) {
-  const c = charByName(b.character);
+function bannerCard(b, game) {
+  const g = game || S.game;
+  const c = charInGame(g, b.character);
   const rarity = c?.rarity || 5;
   const rc = RARITY[rarity] || RARITY[5];
   const el = c?.element, ec = accentFor(c) || elColor(el);
   const img = c?.icon || c?.splash;
   const click = !!c, tag = click ? 'button' : 'div';
-  return `<${tag} class="bn-card${click ? '' : ' static'}" ${click ? `data-char="${b.character}"` : ''} style="--ec:${ec};--rc:${rc[1]}">
+  return `<${tag} class="bn-card${click ? '' : ' static'}" ${click ? `data-char="${b.character}" data-char-game="${g}"` : ''} style="--ec:${ec};--rc:${rc[1]}">
     <span class="bn-thumb">${img ? `<img src="${img}" loading="lazy" referrerpolicy="no-referrer">` : `<span class="ph">${b.character[0]}</span>`}</span>
     <span class="bn-body">
       <span class="bn-top"><span class="bn-name">${b.character}</span><span class="bn-rar" style="color:${rc[1]}">${rarity}★</span></span>
@@ -629,9 +708,11 @@ function hideEvtPop() {
 }
 
 // ════════════════════════════════════════════════════════════════  CHARACTER TAKEOVER (data-driven Nightdesk sheet — sheet.js)
-function openChar(name, tileEl) {
-  const c = (S.data[S.game] || []).find(x => x.name === name);
+function openChar(name, tileEl, game) {
+  const g = game || S.game;
+  const c = (S.data[g] || []).find(x => x.name === name);
   if (!c) return;
+  if (g !== S.game) { S._prevGame = S.game; S.game = g; }
   S.selected = c;
   const tk = document.getElementById('takeover');
   tk.className = 'mode-full zoom';
@@ -661,6 +742,7 @@ function closeChar() {
     tk.innerHTML = '';
     tk.style.transformOrigin = '';
     tk._r0 = null; S.selected = null;
+    if (S._prevGame) { S.game = S._prevGame; S._prevGame = null; }
   }, 420);
 }
 
@@ -676,11 +758,11 @@ function wireScreen() {
   host.querySelector('#q-clear')?.addEventListener('click', () => { S.search = ''; render('search'); document.getElementById('q')?.focus(); });
   host.querySelectorAll('[data-sort]').forEach(b => b.addEventListener('click', () => { S.sort = b.dataset.sort; render('sort'); }));
   host.querySelectorAll('[data-el]').forEach(b => b.addEventListener('click', () => { S.filterEl = b.dataset.el || null; render('filter'); }));
-  host.querySelectorAll('[data-char]').forEach(b => b.addEventListener('click', () => openChar(b.dataset.char, b)));
+  host.querySelectorAll('[data-char]').forEach(b => b.addEventListener('click', () => openChar(b.dataset.char, b, b.dataset.charGame)));
   host.querySelectorAll('.es-chk').forEach(btn => btn.addEventListener('click', ev => {
     ev.stopPropagation();
     const row = btn.closest('.es-row');
-    const isDone = toggleEvtDone(S.game, row.dataset.name);
+    const isDone = toggleEvtDone(row.dataset.game || S.game, row.dataset.name);
     row.classList.toggle('done', isDone);
     btn.innerHTML = isDone ? CHK_ON : CHK_OFF;
     btn.setAttribute('aria-label', isDone ? 'Mark undone' : 'Mark done');

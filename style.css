@@ -31,6 +31,9 @@
   body[data-game="zzz"]{ --bg:#100b06; --surface:#170f07; --card:#211910; --card2:#181107; --card-hi:#2a2114; --border:#3a2e1c; --border-hi:#4e3e28;
     --ink:#f6f0e8; --dim:#b8a991; --faint:#7d705c; --amb-a:rgba(240,144,42,.18); --amb-b:rgba(190,70,24,.12);
     --accent:#f0a042; --accent2:#e07a18; --accent-soft:rgba(240,160,66,.15); --accent-line:rgba(240,160,66,.42); }
+  body[data-game="all"]{ --bg:#0b0d11; --surface:#0f1118; --card:#151820; --card2:#11141c; --card-hi:#1c2030; --border:#242836; --border-hi:#333848;
+    --ink:#e8ecf4; --dim:#8a95aa; --faint:#565f73; --amb-a:rgba(80,110,180,.10); --amb-b:rgba(100,80,190,.07);
+    --accent:#7b9fd4; --accent2:#5b80b8; --accent-soft:rgba(123,159,212,.14); --accent-line:rgba(123,159,212,.4); }
 
   /* ── device frame ── */
   .stage{flex:1;min-height:0;display:flex;align-items:stretch;justify-content:center;
@@ -231,7 +234,18 @@
   .es-row.done.urgent{background:var(--card2);border-color:var(--border);}
   .es-row.done .es-name{text-decoration:line-through;}
   .es-row.done .es-sig{display:none;}
+  .es-gab{font-weight:600;letter-spacing:.03em;}
   .es-empty{font-family:var(--fm);font-size:11px;color:var(--faint);padding:8px 2px;line-height:1.5;}
+
+  /* ════ ALL-GAMES BANNER SECTIONS ════ */
+  .all-bn-section{padding:12px var(--pad-x) 14px;}
+  .all-bn-section+.all-bn-section{border-top:1px solid var(--border);padding-top:14px;}
+  .all-bn-ghead{display:flex;align-items:center;gap:8px;margin-bottom:11px;}
+  .all-bn-gdot{width:7px;height:7px;border-radius:50%;flex:none;}
+  .all-bn-gname{font-family:var(--fm);font-size:11px;font-weight:600;color:var(--ink);letter-spacing:.05em;text-transform:uppercase;flex:1;}
+  .all-bn-close{font-family:var(--fm);font-size:10.5px;color:var(--faint);}
+  /* All-games switcher button — no dot, slightly wider */
+  .gs-all{font-style:italic;letter-spacing:.01em;}
 
   /* ════ HERO BAND — just released ════ */
   .hero-wrap{padding:0 var(--pad-x);}
