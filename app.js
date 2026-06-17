@@ -777,7 +777,7 @@ function closeChar() {
 // ════════════════════════════════════════════════════════════════  WIRING
 function wireScreen() {
   const host = document.getElementById('screen');
-  host.querySelectorAll('[data-game]').forEach(b => b.addEventListener('click', () => { S.game = b.dataset.game; S.filterEl = null; S.search = ''; render('game'); }));
+  host.querySelectorAll('.gs-btn[data-game]').forEach(b => b.addEventListener('click', () => { S.game = b.dataset.game; S.filterEl = null; S.search = ''; render('game'); }));
   const q = host.querySelector('#q');
   if (q) q.addEventListener('input', () => {
     S.search = q.value; const start = q.selectionStart; render('search');
