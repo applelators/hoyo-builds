@@ -245,7 +245,7 @@ function render(reason) {
     <div class="scroll${S.animate ? ' anim' : ''}" id="feed-scroll">
       <div class="feed">
         ${S.game === 'all'
-          ? allBannersSection() + allEventsSection()
+          ? `<div class="all-cols">${allBannersSection()}${allEventsSection()}</div>`
           : livestreamSection() + heroSection() + dashboardSection() + eventSection() + rosterSection()
         }
       </div>

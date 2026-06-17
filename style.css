@@ -247,6 +247,15 @@
   /* All-games switcher button — no dot, slightly wider */
   .gs-all{font-style:italic;letter-spacing:.01em;}
 
+  /* ════ ALL-GAMES TWO-COLUMN LAYOUT ════ */
+  .all-cols{display:grid;grid-template-columns:1fr 1.3fr;gap:18px;padding:var(--gap-sec) var(--pad-x);align-items:start;}
+  .all-cols .block{padding:0;}
+  #frame[data-device="mobile"] .all-cols{grid-template-columns:1fr 1.1fr;gap:9px;padding:14px 10px;}
+  #frame[data-device="mobile"] .all-cols .panel{padding:11px 10px 12px;}
+  #frame[data-device="mobile"] .all-cols .all-bn-section{padding:8px 6px 9px;}
+  #frame[data-device="mobile"] .all-cols .bn-thumb{width:38px;height:38px;}
+  #frame[data-device="mobile"] .all-cols .es-row{padding:7px 8px;gap:8px;}
+
   /* ════ HERO BAND — just released ════ */
   .hero-wrap{padding:0 var(--pad-x);}
   #frame[data-device="mobile"] .hero-wrap{padding:0 16px;}
