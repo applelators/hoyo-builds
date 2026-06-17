@@ -93,6 +93,7 @@ const ICONS = {
   clock:'<svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="6"/><path d="M8 4.6V8l2.4 1.6"/></svg>',
   calendar:'<svg viewBox="0 0 16 16"><rect x="2.5" y="3.2" width="11" height="10.3" rx="2"/><path d="M2.5 6.3h11M5.4 1.8v2.6M10.6 1.8v2.6"/></svg>',
   grid:'<svg viewBox="0 0 16 16"><rect x="2.4" y="2.4" width="4.6" height="4.6" rx="1.2"/><rect x="9" y="2.4" width="4.6" height="4.6" rx="1.2"/><rect x="2.4" y="9" width="4.6" height="4.6" rx="1.2"/><rect x="9" y="9" width="4.6" height="4.6" rx="1.2"/></svg>',
+  dollar:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2v12"/><path d="M11 5.5C11 4 9.7 3 8 3S5 4 5 5.5C5 7 6.3 7.5 8 8s3 1 3 2.5C11 12 9.7 13 8 13s-3-1-3-2.5"/></svg>',
 };
 
 // ── state ──
@@ -117,6 +118,84 @@ function toggleEvtDone(game, name) {
 }
 const CHK_OFF = '<svg viewBox="0 0 16 16" width="16" height="16"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';
 const CHK_ON  = '<svg viewBox="0 0 16 16" width="16" height="16"><circle cx="8" cy="8" r="6" fill="currentColor"/><path d="M5.2 8.2l1.9 1.9 3.7-3.7" fill="none" stroke="var(--bg)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+// ── spending tracker ──
+const SPD_KEY = 'archon:spending';
+const SPD_CATS = { welkin: 'Welkin Moon', battlepass: 'Battle Pass', topup: 'Top-up', bundle: 'Bundle', other: 'Other' };
+const fmtUSD = n => '$' + (n || 0).toFixed(2);
+const fmtEntryDate = d => { const dt = new Date(d + 'T12:00:00Z'); return MON[dt.getUTCMonth()] + ' ' + dt.getUTCDate(); };
+function loadSpending() { try { return JSON.parse(localStorage.getItem(SPD_KEY) || '[]'); } catch { return []; } }
+function saveSpending(entries) { try { localStorage.setItem(SPD_KEY, JSON.stringify(entries)); } catch {} }
+function renderSpending() {
+  const panel = document.getElementById('spending');
+  const entries = loadSpending().sort((a, b) => b.date.localeCompare(a.date));
+  const total = entries.reduce((s, e) => s + (e.amount || 0), 0);
+  const byGame = Object.fromEntries(GAME_ORDER.map(g => [g, 0]));
+  for (const e of entries) if (byGame[e.game] !== undefined) byGame[e.game] += e.amount || 0;
+  const defaultGame = GAME_ORDER.includes(S.game) ? S.game : 'gi';
+  panel.innerHTML = `
+    <div class="spd-hd" id="spd-drag"><b>Spending</b><button class="spd-x" id="spd-close">✕</button></div>
+    <div class="spd-body">
+      <div class="spd-totals">
+        <div class="spd-grand">${fmtUSD(total)}</div>
+        <div class="spd-bygame">
+          ${GAME_ORDER.map(g => `<span class="spd-gtot">
+            <span class="spd-gdot" style="background:${GAME_DOT[g]}"></span>
+            ${g.toUpperCase()} <b>${fmtUSD(byGame[g])}</b>
+          </span>`).join('')}
+        </div>
+      </div>
+      <div class="spd-sec">Add entry</div>
+      <form class="spd-form" id="spd-form">
+        <div class="spd-row2">
+          <select class="spd-sel" id="spd-game">
+            ${GAME_ORDER.map(g => `<option value="${g}"${g === defaultGame ? ' selected' : ''}>${GAMES[g]}</option>`).join('')}
+          </select>
+          <select class="spd-sel" id="spd-cat">
+            ${Object.entries(SPD_CATS).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}
+          </select>
+        </div>
+        <div class="spd-row2">
+          <input class="spd-inp" id="spd-amt" type="number" min="0.01" step="0.01" placeholder="Amount (USD)" required>
+          <input class="spd-inp" id="spd-note" type="text" placeholder="Note (optional)" maxlength="60">
+        </div>
+        <button class="spd-add" type="submit">Add entry</button>
+      </form>
+      ${entries.length ? `
+        <div class="spd-sec">Log <span class="spd-count">${entries.length}</span></div>
+        <div class="spd-log">
+          ${entries.map(e => `<div class="spd-entry">
+            <span class="spd-edate">${fmtEntryDate(e.date)}</span>
+            <span class="spd-edot" style="background:${GAME_DOT[e.game] || '#8b949e'}"></span>
+            <span class="spd-emid">
+              <span class="spd-ecat">${SPD_CATS[e.category] || e.category}</span>
+              ${e.note ? `<span class="spd-enote">${esc(e.note)}</span>` : ''}
+            </span>
+            <span class="spd-eamt">${fmtUSD(e.amount)}</span>
+            <button class="spd-del" data-id="${e.id}" aria-label="Delete entry">✕</button>
+          </div>`).join('')}
+        </div>` : `<p class="spd-empty">No entries yet — add your first purchase above.</p>`}
+    </div>`;
+  panel.querySelector('#spd-close').addEventListener('click', () => panel.classList.remove('on'));
+  panel.querySelector('#spd-form').addEventListener('submit', ev => {
+    ev.preventDefault();
+    const game = panel.querySelector('#spd-game').value;
+    const category = panel.querySelector('#spd-cat').value;
+    const amount = parseFloat(panel.querySelector('#spd-amt').value);
+    const note = panel.querySelector('#spd-note').value.trim();
+    if (!amount || amount <= 0) return;
+    const all = loadSpending();
+    all.push({ id: Date.now(), date: new Date().toISOString().slice(0, 10), game, category, amount, note });
+    saveSpending(all);
+    renderSpending();
+  });
+  panel.querySelectorAll('.spd-del').forEach(btn => btn.addEventListener('click', () => {
+    const id = +btn.dataset.id;
+    saveSpending(loadSpending().filter(e => e.id !== id));
+    renderSpending();
+  }));
+  makeDraggable(panel, panel.querySelector('#spd-drag'));
+}
 
 // ── boot ──
 async function boot() {
@@ -214,6 +293,7 @@ function topbar() {
         <input id="q" type="text" placeholder="Find a character…" value="${S.search.replace(/"/g,'&quot;')}" autocomplete="off" spellcheck="false">
         ${S.search ? '<button id="q-clear" aria-label="clear">✕</button>' : ''}
       </label>
+      <button class="gear" id="open-spending" aria-label="Spending tracker">${ICONS.dollar}</button>
       <button class="gear" aria-label="Settings">
         <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="2.3"/><path d="M8 1.5v2M8 12.5v2M14.5 8h-2M3.5 8h-2M12.6 3.4l-1.4 1.4M4.8 11.2l-1.4 1.4M12.6 12.6l-1.4-1.4M4.8 4.8L3.4 3.4"/></svg>
       </button>
@@ -800,7 +880,19 @@ function wireScreen() {
 function wireChrome() {
   document.querySelectorAll('#games-meta .gm').forEach(b => b.addEventListener('click', () => { S.game = b.dataset.game; S.filterEl = null; S.search = ''; render('game'); }));
   document.querySelectorAll('#devices .dc').forEach(b => b.addEventListener('click', () => { S.device = b.dataset.device; render('tweak'); }));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') { hideEvtPop(); closeChar(); } });
+  document.getElementById('open-spending')?.addEventListener('click', () => {
+    const panel = document.getElementById('spending');
+    if (panel.classList.contains('on')) { panel.classList.remove('on'); return; }
+    renderSpending();
+    panel.classList.add('on');
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.getElementById('spending')?.classList.remove('on');
+      hideEvtPop();
+      closeChar();
+    }
+  });
 }
 
 // ════════════════════════════════════════════════════════════════  TWEAKS (host protocol + vanilla panel)
