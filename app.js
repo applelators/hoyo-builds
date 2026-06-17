@@ -375,7 +375,7 @@ function allEventsSection() {
     const rem = e.e2 - now, urgent = rem <= 60 * 36e5;
     const sig = sigRewards(e.rewards);
     const isDone = done.has(evtDoneKey(g, e.name));
-    return `<div class="es-row${urgent ? ' urgent' : ''}${isDone ? ' done' : ''}" data-name="${esc(e.name)}" data-game="${g}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards||'')}">
+    return `<div class="es-row${urgent ? ' urgent' : ''}${isDone ? ' done' : ''}" data-name="${esc(e.name)}" data-game="${g}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards||'')}" data-tagline="${esc(e.tagline||'')}">
       <span class="es-dot" style="background:${gdot};color:${gdot}"></span>
       <span class="es-mid">
         <span class="es-name">${e.name}</span>
@@ -472,7 +472,7 @@ function endingSoonPanel() {
     const urgent = rem <= 60 * 36e5;                 // within ~2.5 days
     const sig = sigRewards(e.rewards);
     const done = evtDoneSet().has(evtDoneKey(S.game, e.name));
-    return `<div class="es-row${urgent ? ' urgent' : ''}${done ? ' done' : ''}" data-name="${esc(e.name)}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards||'')}">
+    return `<div class="es-row${urgent ? ' urgent' : ''}${done ? ' done' : ''}" data-name="${esc(e.name)}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards||'')}" data-tagline="${esc(e.tagline||'')}">
       <span class="es-dot" style="background:${col};color:${col}"></span>
       <span class="es-mid">
         <span class="es-name">${e.name}</span>
@@ -702,6 +702,7 @@ function showEvtPop(row) {
   pop.innerHTML = `
     <div class="evt-pop-h"><span class="evt-pop-dot" style="background:${col}"></span><span class="evt-pop-type" style="color:${col}">${tlabel}</span>${soon ? `<span class="evt-pop-warn">${WARN_SVG}Ends within 48h</span>` : ''}<button class="evt-pop-close" aria-label="Close">✕</button></div>
     <div class="evt-pop-name">${row.dataset.name}</div>
+    ${row.dataset.tagline ? `<div class="evt-pop-tagline">${row.dataset.tagline}</div>` : ''}
     <div class="evt-pop-dates"><span class="evt-pop-rng">${fmtDay(s)} → ${fmtDay(e)}</span><span class="evt-pop-len">${total}d run</span></div>
     <div class="evt-pop-cdrow"><span class="evt-pop-cdl">${future ? 'Starts in' : 'Time remaining'}</span><span class="evt-pop-cd${soon ? ' warn' : ''}" data-deadline="${dl}" data-cd="full"></span></div>
     <div class="evt-pop-local">Ends ${fmtLocal(e)}</div>
@@ -713,7 +714,7 @@ function positionEvtPop(row) {
   const pop = document.getElementById('evt-pop');
   if (!pop) return;
   const r = row.getBoundingClientRect();
-  const pw = pop.offsetWidth || 232, ph = pop.offsetHeight || 200;
+  const pw = pop.offsetWidth || 260, ph = pop.offsetHeight || 200;
   const pad = 10;
   let x, y;
   if (S.device === 'mobile') {

@@ -8,7 +8,7 @@
       "type": "exploration",
       "start": "2026-04-08T10:00:00-05:00",
       "end": "2026-06-30T03:59:00-05:00",
-      "tagline": "",
+      "tagline": "Multi-day exploration — traverse a frozen windswept realm and complete daily objectives to unlock the full reward track.",
       "rewards": "+ 400 Primogems",
       "url": "https://genshin-impact.fandom.com/wiki/The_Stilled_Interstice_of_a_Thousand_Winds"
     },
@@ -17,7 +17,7 @@
       "type": "story",
       "start": "2026-05-18T10:00:00-05:00",
       "end": "2026-08-10T03:59:00-05:00",
-      "tagline": "",
+      "tagline": "Story event — follow Escoffier's journey across multiple chapters and complete combat trials to earn a free 5★ constellation.",
       "rewards": "+ 5-Star Stella Fortuna (free constellation) · Crown of Insight · Dust of Enlightenment",
       "url": "https://game8.co/games/Genshin-Impact/archives/546841"
     },
@@ -26,7 +26,7 @@
       "type": "combat",
       "start": "2026-05-27T10:00:00-05:00",
       "end": "2026-06-30T03:59:00-05:00",
-      "tagline": "",
+      "tagline": "Wave-survival combat — hold out against escalating enemy waves across difficulty tiers; higher tiers unlock the weapon skin reward.",
       "rewards": "+ 450 Primogems · 2× Dust of Enlightenment · 5★ Weapon Skin (Radiant Phantasm: Incursion Repeller)",
       "url": "https://game8.co/games/Genshin-Impact/archives/527266"
     },
@@ -35,7 +35,7 @@
       "type": "combat",
       "start": "2026-06-08T10:00:00-05:00",
       "end": "2026-06-18T03:59:00-05:00",
-      "tagline": "",
+      "tagline": "Character trial showcase — test-drive featured characters in timed combat challenges, no investment required.",
       "rewards": "+ 420 Primogems · Talent Books · Sanctifying Unction",
       "url": "https://game8.co/games/Genshin-Impact/archives/598980"
     },
@@ -44,7 +44,7 @@
       "type": "main",
       "start": "2026-06-10T10:00:00-05:00",
       "end": "2026-06-24T03:59:00-05:00",
-      "tagline": "",
+      "tagline": "Check-in event — log in and complete daily missions over the event window to collect incremental Primogem rewards.",
       "rewards": "+ 270 Primogems",
       "url": "https://game8.co/games/Genshin-Impact/archives/598997"
     },
@@ -53,7 +53,7 @@
       "type": "main",
       "start": "2026-06-18T10:00:00-05:00",
       "end": "2026-06-29T03:59:00-05:00",
-      "tagline": "",
+      "tagline": "Color-matching mini-game — race through obstacle courses and match color sequences against the clock across multiple stages.",
       "rewards": "+ 420 Primogems · Talent Books · Sanctifying Unction",
       "url": "https://game8.co/games/Genshin-Impact/archives/598979"
     }
@@ -64,7 +64,7 @@
       "type": "login",
       "start": "2026-04-22T03:00:00Z",
       "end": "2026-08-25T03:00:00Z",
-      "tagline": "",
+      "tagline": "Permanent exchange store — accumulate Convergence Points across the patch season to redeem a free 5★ character of your choice.",
       "rewards": "+ 1 free 5★ character (exchange via Stellar Convergence store)",
       "url": "https://www.icy-veins.com/honkai-star-rail/stellar-companions"
     },
@@ -73,7 +73,7 @@
       "type": "login",
       "start": "2026-06-01T03:00:00Z",
       "end": "2026-07-14T03:00:00Z",
-      "tagline": "",
+      "tagline": "Log-in reward — check in on 7 separate days before the patch ends to claim 10 Star Rail Special Passes.",
       "rewards": "+ 10 Star Rail Special Passes",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/413645"
     },
@@ -82,7 +82,7 @@
       "type": "main",
       "start": "2026-06-01T03:00:00Z",
       "end": "2026-07-15T03:59:00-05:00",
-      "tagline": "",
+      "tagline": "Roguelike pixel-art dungeon — draft blessings, battle retro-styled enemies, and face escalating bosses across multiple biomes.",
       "rewards": "+ 1,240 Stellar Jade · 2× Tracks of Destiny · Self-Modeling Resin · Speech Bubble",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/601959"
     },
@@ -91,7 +91,7 @@
       "type": "combat",
       "start": "2026-06-17T10:00:00-05:00",
       "end": "2026-06-29T03:59:00-05:00",
-      "tagline": "",
+      "tagline": "Simulated Universe bonus — all SU runs during this window grant double Planar Ornament relic drops (up to 12 claims).",
       "rewards": "+ Double Simulated Universe drops (12 claims)",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/413440"
     },
@@ -100,7 +100,7 @@
       "type": "main",
       "start": "2026-06-24T10:00:00-05:00",
       "end": "2026-07-15T03:59:00-05:00",
-      "tagline": "",
+      "tagline": "Theme park exploration — collect Wispae spirits scattered across carnival attractions and complete mini-game challenges to progress.",
       "rewards": "+ 500 Stellar Jade · Tracks of Destiny",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/602039"
     },
@@ -109,7 +109,7 @@
       "type": "combat",
       "start": "2026-07-03T10:00:00-05:00",
       "end": "2026-07-13T03:59:00-05:00",
-      "tagline": "",
+      "tagline": "Cavern of Corrosion bonus — earn triple relic set drops per run for the event duration, up to 3 bonus runs per day.",
       "rewards": "+ Triple Cavern of Corrosion drops (3×/day)",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/417674"
     }
@@ -120,7 +120,7 @@
       "type": "main",
       "start": "2026-06-17T03:00:00Z",
       "end": "2026-07-28T03:59:00-05:00",
-      "tagline": "",
+      "tagline": "Story-driven Bangboo event — navigate narrative chapters, solve chip-circuit puzzles, and unlock cosmetic rewards.",
       "rewards": "+ 1,000+ Polychrome · exclusive profile cosmetics",
       "url": null
     },
@@ -129,7 +129,7 @@
       "type": "combat",
       "start": "2026-06-17T03:00:00Z",
       "end": "2026-07-28T03:59:00-05:00",
-      "tagline": "",
+      "tagline": "Hollow Zero variant — navigate exam-themed Hollow maps, answer ability-check questions, and defeat boss Ethereals at the end.",
       "rewards": "+ 1,200 Polychrome · Hamster Cage Pass · Boisterous Echoes (A-rank W-Engine)",
       "url": null
     },
@@ -138,7 +138,7 @@
       "type": "exploration",
       "start": "2026-06-17T03:00:00Z",
       "end": "2026-07-28T03:59:00-05:00",
-      "tagline": "",
+      "tagline": "Investigation event — gather clues and scan evidence across New Eridu districts to piece together a multi-part conspiracy.",
       "rewards": "+ Polychrome · Boopon · Official Investigator Log",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/604631"
     },
@@ -147,7 +147,7 @@
       "type": "combat",
       "start": "2026-06-17T03:00:00Z",
       "end": "2026-07-28T03:59:00-05:00",
-      "tagline": "",
+      "tagline": "Shiyu Defense variant — clear shadow-realm combat waves under fixed-team restrictions; higher nodes require attribute-specific strategies.",
       "rewards": "+ 360 Polychrome · character leveling materials",
       "url": null
     },
@@ -156,7 +156,7 @@
       "type": "login",
       "start": "2026-06-17T03:00:00Z",
       "end": "2026-07-28T03:59:00-05:00",
-      "tagline": "",
+      "tagline": "Daily check-in event — log in each day to collect Polychrome and Boopons; no gameplay required.",
       "rewards": "+ 420 Polychrome · Boopons",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/604665"
     },
@@ -165,7 +165,7 @@
       "type": "story",
       "start": "2026-07-03T10:00:00-05:00",
       "end": "2026-07-20T03:59:00-05:00",
-      "tagline": "",
+      "tagline": "Narrative story event — follow the Hobbling Crow faction through a multi-chapter story with light combat sequences.",
       "rewards": "",
       "url": null
     }
