@@ -4,6 +4,15 @@
   },
   "gi": [
     {
+      "name": "The Stilled Interstice of a Thousand Winds",
+      "type": "exploration",
+      "start": "2026-04-08T10:00:00-05:00",
+      "end": "2026-06-30T03:59:00-05:00",
+      "tagline": "",
+      "rewards": "+ 400 Primogems",
+      "url": "https://genshin-impact.fandom.com/wiki/The_Stilled_Interstice_of_a_Thousand_Winds"
+    },
+    {
       "name": "To Temper Thyself and Journey Far",
       "type": "story",
       "start": "2026-05-18T10:00:00-05:00",
@@ -11,24 +20,6 @@
       "tagline": "",
       "rewards": "+ 5-Star Stella Fortuna (free constellation) · Crown of Insight · Dust of Enlightenment",
       "url": "https://game8.co/games/Genshin-Impact/archives/546841"
-    },
-    {
-      "name": "Mage Nicole's Tea Party",
-      "type": "web",
-      "start": "2026-05-20T05:00:00Z",
-      "end": "2026-06-02T03:59:00-05:00",
-      "tagline": "",
-      "rewards": "+ Primogems · Geode of Replication (web event, share-based)",
-      "url": "https://game8.co/games/Genshin-Impact/archives/600996"
-    },
-    {
-      "name": "Phantasmal Pals",
-      "type": "main",
-      "start": "2026-05-22T10:00:00-05:00",
-      "end": "2026-06-08T03:59:00-05:00",
-      "tagline": "",
-      "rewards": "+ 440 Primogems · Super Awesome Magic Key (Claymore Skin) · Crown of Insight · Talent Materials",
-      "url": "https://game8.co/games/Genshin-Impact/archives/309199"
     },
     {
       "name": "Stygian Onslaught",
@@ -45,7 +36,7 @@
       "start": "2026-06-08T10:00:00-05:00",
       "end": "2026-06-18T03:59:00-05:00",
       "tagline": "",
-      "rewards": "+ 270 Primogems · Talent Books · Sanctifying Unction",
+      "rewards": "+ 420 Primogems · Talent Books · Sanctifying Unction",
       "url": "https://game8.co/games/Genshin-Impact/archives/598980"
     },
     {
@@ -63,82 +54,28 @@
       "start": "2026-06-18T10:00:00-05:00",
       "end": "2026-06-29T03:59:00-05:00",
       "tagline": "",
-      "rewards": "+ Primogems · Talent Books · Sanctifying Unction",
+      "rewards": "+ 420 Primogems · Talent Books · Sanctifying Unction",
       "url": "https://game8.co/games/Genshin-Impact/archives/598979"
     }
   ],
   "hsr": [
     {
-      "name": "Festive Gifts",
+      "name": "Stellar Companions",
       "type": "login",
       "start": "2026-04-22T03:00:00Z",
-      "end": "2026-06-01T03:00:00Z",
+      "end": "2026-08-25T03:00:00Z",
       "tagline": "",
-      "rewards": "+ 20 Star Rail Special Passes",
-      "url": "https://game8.co/games/Honkai-Star-Rail/archives/448217"
+      "rewards": "+ 1 free 5★ character (exchange via Stellar Convergence store)",
+      "url": "https://www.icy-veins.com/honkai-star-rail/stellar-companions"
     },
     {
-      "name": "Cherished Recollection",
-      "type": "main",
-      "start": "2026-04-22T03:00:00Z",
-      "end": "2026-06-01T03:00:00Z",
+      "name": "4.3 Gift of Odyssey",
+      "type": "login",
+      "start": "2026-06-01T03:00:00Z",
+      "end": "2026-07-14T03:00:00Z",
       "tagline": "",
-      "rewards": "+ Pet · 5★ Character Select · Interference Key (top-up milestones)",
-      "url": "https://game8.co/games/Honkai-Star-Rail/archives/507548"
-    },
-    {
-      "name": "Come With Me, Take the Journey",
-      "type": "story",
-      "start": "2026-04-22T03:00:00Z",
-      "end": "2026-06-01T03:00:00Z",
-      "tagline": "",
-      "rewards": "",
-      "url": null
-    },
-    {
-      "name": "Novaflare",
-      "type": "combat",
-      "start": "2026-04-22T03:00:00Z",
-      "end": "2026-06-01T03:00:00Z",
-      "tagline": "",
-      "rewards": "+ 80 Stellar Jade",
-      "url": "https://game8.co/games/Honkai-Star-Rail/archives/531216"
-    },
-    {
-      "name": "Relic Recon",
-      "type": "combat",
-      "start": "2026-04-22T03:00:00Z",
-      "end": "2026-06-01T03:00:00Z",
-      "tagline": "",
-      "rewards": "+ Full Maxed 5★ Relic Set (trial equipment)",
-      "url": "https://game8.co/games/Honkai-Star-Rail/archives/560903"
-    },
-    {
-      "name": "Cosmic Data Roaming",
-      "type": "exploration",
-      "start": "2026-04-22T03:00:00Z",
-      "end": "2026-06-01T03:00:00Z",
-      "tagline": "",
-      "rewards": "+ 1,120 Stellar Jade · Tracks of Destiny · Self-Modeling Resin · Free 4★ LC",
-      "url": "https://game8.co/games/Honkai-Star-Rail/archives/594115"
-    },
-    {
-      "name": "Cosmicon, Roll On Again!",
-      "type": "main",
-      "start": "2026-04-29T10:00:00-05:00",
-      "end": "2026-06-01T03:00:00Z",
-      "tagline": "",
-      "rewards": "+ 1,020 Stellar Jade · 2× Tracks of Destiny · Self-Modeling Resin",
-      "url": "https://game8.co/games/Honkai-Star-Rail/archives/594117"
-    },
-    {
-      "name": "300% Realm of the Strange",
-      "type": "combat",
-      "start": "2026-05-22T10:00:00-05:00",
-      "end": "2026-06-01T03:00:00Z",
-      "tagline": "",
-      "rewards": "+ Double Cavern of Corrosion drops",
-      "url": null
+      "rewards": "+ 10 Star Rail Special Passes",
+      "url": "https://game8.co/games/Honkai-Star-Rail/archives/413645"
     },
     {
       "name": "Pixel Plane Rumble",
@@ -179,85 +116,58 @@
   ],
   "zzz": [
     {
-      "name": "All-New Program",
-      "type": "login",
-      "start": "2026-05-06T03:00:00Z",
-      "end": "2026-06-16T03:59:00-05:00",
+      "name": "Bangbang! The Genius and the Miracle Chip",
+      "type": "main",
+      "start": "2026-06-17T03:00:00Z",
+      "end": "2026-07-28T03:59:00-05:00",
       "tagline": "",
-      "rewards": "+ 10 Encrypted Master Tapes",
-      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/463484"
-    },
-    {
-      "name": "The Final Callback",
-      "type": "story",
-      "start": "2026-05-06T03:00:00Z",
-      "end": "2026-05-27T03:59:00-05:00",
-      "tagline": "",
-      "rewards": "",
+      "rewards": "+ 1,000+ Polychrome · exclusive profile cosmetics",
       "url": null
     },
     {
-      "name": "Operation: Save Bootopia",
-      "type": "main",
-      "start": "2026-05-07T10:00:00-05:00",
-      "end": "2026-06-15T03:59:00-05:00",
-      "tagline": "",
-      "rewards": "+ 1,120 Polychrome · Booltergeist Bangboo · Hamster Cage Pass · 190,000 Denny",
-      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596538"
-    },
-    {
-      "name": "Ultimate Verdict Trial",
+      "name": "Assemble! Mock Exam Comeback Plan",
       "type": "combat",
-      "start": "2026-05-13T10:00:00-05:00",
-      "end": "2026-06-01T03:00:00Z",
+      "start": "2026-06-17T03:00:00Z",
+      "end": "2026-07-28T03:59:00-05:00",
       "tagline": "",
-      "rewards": "+ 360 Polychrome · Tuning Calibrator",
-      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596539"
+      "rewards": "+ 1,200 Polychrome · Hamster Cage Pass · Boisterous Echoes (A-rank W-Engine)",
+      "url": null
     },
     {
-      "name": "En-Nah Into Your Lap",
-      "type": "login",
-      "start": "2026-05-27T10:00:00-05:00",
-      "end": "2026-06-16T03:59:00-05:00",
-      "tagline": "",
-      "rewards": "+ 10 Boopons",
-      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/459873"
-    },
-    {
-      "name": "The Final Callback",
-      "type": "story",
-      "start": "2026-05-27T10:00:00-05:00",
-      "end": "2026-06-16T03:59:00-05:00",
-      "tagline": "",
-      "rewards": "+ 40 Polychrome · Official Investigator Logs",
-      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/460378"
-    },
-    {
-      "name": "\"Spirit\" Artist's Notebook",
-      "type": "story",
-      "start": "2026-05-27T10:00:00-05:00",
-      "end": "2026-06-15T03:59:00-05:00",
-      "tagline": "",
-      "rewards": "+ 300 Polychrome · 5 Boopons · 150,000 Denny",
-      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596537"
-    },
-    {
-      "name": "A Look Into Ridu's Legends",
+      "name": "Celestial Nexus Intelligence Dossier",
       "type": "exploration",
-      "start": "2026-06-01T10:00:00-05:00",
-      "end": "2026-06-15T03:59:00-05:00",
+      "start": "2026-06-17T03:00:00Z",
+      "end": "2026-07-28T03:59:00-05:00",
       "tagline": "",
-      "rewards": "+ 300 Polychrome · Namecard · 100,000 Denny",
-      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/596722"
+      "rewards": "+ Polychrome · Boopon · Official Investigator Log",
+      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/604631"
     },
     {
-      "name": "Data Bounty: Combat Simulation",
+      "name": "Gleaming Shadow Team Battle",
       "type": "combat",
-      "start": "2026-06-10T10:00:00-05:00",
-      "end": "2026-06-15T03:59:00-05:00",
+      "start": "2026-06-17T03:00:00Z",
+      "end": "2026-07-28T03:59:00-05:00",
       "tagline": "",
-      "rewards": "+ Double W-Engine Materials",
-      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/473592"
+      "rewards": "+ 360 Polychrome · character leveling materials",
+      "url": null
+    },
+    {
+      "name": "Art is Bangboo!",
+      "type": "login",
+      "start": "2026-06-17T03:00:00Z",
+      "end": "2026-07-28T03:59:00-05:00",
+      "tagline": "",
+      "rewards": "+ 420 Polychrome · Boopons",
+      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/604665"
+    },
+    {
+      "name": "Tales of the Hobbling Crow",
+      "type": "story",
+      "start": "2026-07-03T10:00:00-05:00",
+      "end": "2026-07-20T03:59:00-05:00",
+      "tagline": "",
+      "rewards": "",
+      "url": null
     }
   ]
 }
