@@ -118,40 +118,40 @@
   ],
   "zzz": [
     {
-      "character": "Promeia",
+      "character": "Velina",
       "phase": 1,
-      "start": "2026-05-06",
-      "end": "2026-05-27",
+      "start": "2026-06-17",
+      "end": "2026-07-08",
       "rerun": false,
       "verdict": "",
-      "patch": "2.8"
+      "patch": "3.0"
     },
     {
-      "character": "Lucia",
+      "character": "Ye Shunguang",
       "phase": 1,
-      "start": "2026-05-06",
-      "end": "2026-05-27",
+      "start": "2026-06-17",
+      "end": "2026-07-08",
       "rerun": true,
       "verdict": "",
-      "patch": "2.8"
+      "patch": "3.0"
     },
     {
-      "character": "Starlight Billy",
+      "character": "Norma",
       "phase": 2,
-      "start": "2026-05-27",
-      "end": "2026-06-16",
+      "start": "2026-07-08",
+      "end": "2026-07-28",
       "rerun": false,
       "verdict": "",
-      "patch": "2.8"
+      "patch": "3.0"
     },
     {
-      "character": "Orphie and Magus",
+      "character": "Sunna",
       "phase": 2,
-      "start": "2026-05-27",
-      "end": "2026-06-16",
+      "start": "2026-07-08",
+      "end": "2026-07-28",
       "rerun": true,
       "verdict": "",
-      "patch": "2.8"
+      "patch": "3.0"
     }
   ]
 }
