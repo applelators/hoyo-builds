@@ -213,7 +213,7 @@
   /* ending soon list inside panel */
   .es-list{display:flex;flex-direction:column;gap:8px;}
   .es-row{display:flex;align-items:center;gap:11px;padding:9px 11px;border-radius:var(--r-sm);background:var(--card2);
-    border:1px solid var(--border);position:relative;overflow:hidden;cursor:default;transition:transform .14s var(--ease),border-color .14s;}
+    border:1px solid var(--border);position:relative;overflow:hidden;cursor:pointer;transition:transform .14s var(--ease),border-color .14s;}
   .es-row:hover{transform:translateX(2px);border-color:var(--border-hi);}
   .es-row.urgent{background:var(--amber-soft);border-color:var(--amber-line);}
   .es-dot{width:8px;height:8px;border-radius:50%;flex:none;box-shadow:0 0 6px currentColor;}
@@ -322,11 +322,13 @@
   .evt-pop{position:fixed;z-index:80;left:0;top:0;pointer-events:none;width:232px;background:var(--surface);
     border:1px solid var(--border-hi);border-radius:12px;padding:12px 13px;box-shadow:0 20px 54px rgba(0,0,0,.55);
     font-family:var(--fm);opacity:0;transform:translateY(5px);transition:opacity .12s var(--ease),transform .12s var(--ease);}
-  .evt-pop.on{opacity:1;transform:none;}
+  .evt-pop.on{opacity:1;transform:none;pointer-events:auto;}
   .evt-pop-h{display:flex;align-items:center;gap:7px;margin-bottom:7px;}
   .evt-pop-dot{width:7px;height:7px;border-radius:50%;box-shadow:0 0 6px currentColor;flex:none;}
   .evt-pop-type{font-size:9px;letter-spacing:.1em;text-transform:uppercase;}
-  .evt-pop-warn{display:inline-flex;align-items:center;gap:4px;margin-left:auto;font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:var(--amber);}
+  .evt-pop-warn{display:inline-flex;align-items:center;gap:4px;font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:var(--amber);}
+  .evt-pop-close{margin-left:auto;appearance:none;border:0;background:none;color:var(--faint);font-size:13px;line-height:1;width:20px;height:20px;border-radius:5px;cursor:pointer;display:grid;place-items:center;flex:none;}
+  .evt-pop-close:hover{color:var(--ink);background:var(--card-hi);}
   .evt-pop-name{font-family:var(--fd);font-weight:700;font-size:15px;color:var(--ink);line-height:1.2;margin-bottom:8px;letter-spacing:-.01em;}
   .evt-pop-dates{display:flex;align-items:baseline;justify-content:space-between;gap:8px;font-size:10.5px;color:var(--dim);margin-bottom:9px;}
   .evt-pop-len{color:var(--faint);font-size:9.5px;flex:none;}

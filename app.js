@@ -661,10 +661,26 @@ function tick() {
   });
 }
 function wireEventPops() {
-  document.querySelectorAll('.evt-row, .es-row').forEach(row => {
-    row.addEventListener('mouseenter', () => showEvtPop(row));
-    row.addEventListener('mousemove', moveEvtPop);
+  const host = document.getElementById('screen');
+  // gantt bars — hover as before
+  host.querySelectorAll('.evt-row').forEach(row => {
+    row.addEventListener('mouseenter', () => { showEvtPop(row); positionEvtPop(row); });
     row.addEventListener('mouseleave', hideEvtPop);
+  });
+  // event list rows — click to open, click same row again to close
+  host.querySelectorAll('.es-row').forEach(row => {
+    row.addEventListener('click', ev => {
+      if (ev.target.closest('.es-chk')) return;
+      const pop = evtPopEl();
+      if (pop.dataset.src === row.dataset.name + '|' + row.dataset.s && pop.classList.contains('on')) {
+        hideEvtPop(); return;
+      }
+      showEvtPop(row); positionEvtPop(row);
+    });
+  });
+  // click outside any row or popup to dismiss
+  host.addEventListener('click', ev => {
+    if (!ev.target.closest('.es-row') && !ev.target.closest('#evt-pop')) hideEvtPop();
   });
 }
 function evtPopEl() {
@@ -682,25 +698,37 @@ function showEvtPop(row) {
   const soon = !future && (e - now) <= 48 * 36e5;
   const dl = future ? s : e;
   const total = Math.max(1, Math.round((e - s) / 864e5));
+  pop.dataset.src = row.dataset.name + '|' + row.dataset.s;
   pop.innerHTML = `
-    <div class="evt-pop-h"><span class="evt-pop-dot" style="background:${col}"></span><span class="evt-pop-type" style="color:${col}">${tlabel}</span>${soon ? `<span class="evt-pop-warn">${WARN_SVG}Ends within 48h</span>` : ''}</div>
+    <div class="evt-pop-h"><span class="evt-pop-dot" style="background:${col}"></span><span class="evt-pop-type" style="color:${col}">${tlabel}</span>${soon ? `<span class="evt-pop-warn">${WARN_SVG}Ends within 48h</span>` : ''}<button class="evt-pop-close" aria-label="Close">✕</button></div>
     <div class="evt-pop-name">${row.dataset.name}</div>
     <div class="evt-pop-dates"><span class="evt-pop-rng">${fmtDay(s)} → ${fmtDay(e)}</span><span class="evt-pop-len">${total}d run</span></div>
     <div class="evt-pop-cdrow"><span class="evt-pop-cdl">${future ? 'Starts in' : 'Time remaining'}</span><span class="evt-pop-cd${soon ? ' warn' : ''}" data-deadline="${dl}" data-cd="full"></span></div>
     <div class="evt-pop-local">Ends ${fmtLocal(e)}</div>
     ${row.dataset.rew ? `<div class="evt-pop-rew">${row.dataset.rew}</div>` : ''}`;
-  pop.classList.add('on');
+  pop.querySelector('.evt-pop-close').addEventListener('click', ev => { ev.stopPropagation(); hideEvtPop(); });
   tick();
 }
-function moveEvtPop(ev) {
+function positionEvtPop(row) {
   const pop = document.getElementById('evt-pop');
   if (!pop) return;
-  const pad = 10, w = pop.offsetWidth, h = pop.offsetHeight;
-  let x = ev.clientX + 16, y = ev.clientY + 16;
-  if (x + w + pad > window.innerWidth) x = ev.clientX - w - 16;
-  if (y + h + pad > window.innerHeight) y = ev.clientY - h - 12;
+  const r = row.getBoundingClientRect();
+  const pw = pop.offsetWidth || 232, ph = pop.offsetHeight || 200;
+  const pad = 10;
+  let x, y;
+  if (S.device === 'mobile') {
+    x = Math.max(pad, Math.min(window.innerWidth - pw - pad, r.left + r.width / 2 - pw / 2));
+    y = r.bottom + 8;
+    if (y + ph > window.innerHeight - pad) y = r.top - ph - 8;
+  } else {
+    x = r.right + 12;
+    if (x + pw + pad > window.innerWidth) x = r.left - pw - 12;
+    y = r.top;
+    if (y + ph + pad > window.innerHeight) y = window.innerHeight - ph - pad;
+  }
   pop.style.left = Math.max(pad, x) + 'px';
   pop.style.top = Math.max(pad, y) + 'px';
+  pop.classList.add('on');
 }
 function hideEvtPop() {
   const pop = document.getElementById('evt-pop');
@@ -771,7 +799,7 @@ function wireScreen() {
 function wireChrome() {
   document.querySelectorAll('#games-meta .gm').forEach(b => b.addEventListener('click', () => { S.game = b.dataset.game; S.filterEl = null; S.search = ''; render('game'); }));
   document.querySelectorAll('#devices .dc').forEach(b => b.addEventListener('click', () => { S.device = b.dataset.device; render('tweak'); }));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeChar(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { hideEvtPop(); closeChar(); } });
 }
 
 // ════════════════════════════════════════════════════════════════  TWEAKS (host protocol + vanilla panel)
