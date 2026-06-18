@@ -122,17 +122,69 @@ const CHK_ON  = '<svg viewBox="0 0 16 16" width="16" height="16"><circle cx="8" 
 // ── spending tracker ──
 const SPD_KEY = 'archon:spending';
 const SPD_CATS = { welkin: 'Welkin Moon', battlepass: 'Battle Pass', topup: 'Top-up', bundle: 'Bundle', other: 'Other' };
+// Premium-currency name per game (all share the same USD top-up tiers).
+const SPD_CUR = { gi: 'Genesis Crystals', hsr: 'Oneiric Shards', zzz: 'Monochrome' };
+// Standard America-region USD top-up tiers (uniform across GI/HSR/ZZZ).
+// repeat crystals = base + bonus; first-time = base × 2 (double-bonus until that tier is used).
+const SPD_TOPUP = [
+  { price: 0.99,  base: 60,   bonus: 0 },
+  { price: 4.99,  base: 300,  bonus: 30 },
+  { price: 14.99, base: 980,  bonus: 110 },
+  { price: 29.99, base: 1980, bonus: 260 },
+  { price: 49.99, base: 3280, bonus: 600 },
+  { price: 99.99, base: 6480, bonus: 1600 },
+];
+// Fixed-price recurring presets (membership + battle pass) per game.
+const SPD_PRESETS = {
+  gi: [
+    { id: 'welkin', cat: 'welkin',     label: 'Welkin Moon',        price: 4.99 },
+    { id: 'bp',     cat: 'battlepass', label: 'Gnostic Hymn',       price: 9.99 },
+    { id: 'bpd',    cat: 'battlepass', label: 'Gnostic Chorus',     price: 19.99 },
+  ],
+  hsr: [
+    { id: 'welkin', cat: 'welkin',     label: 'Express Supply Pass', price: 4.99 },
+    { id: 'bp',     cat: 'battlepass', label: 'Nameless Glory',      price: 9.99 },
+    { id: 'bpd',    cat: 'battlepass', label: 'Nameless Medal',      price: 19.99 },
+  ],
+  zzz: [
+    { id: 'welkin', cat: 'welkin',     label: 'Inter-Knot Membership', price: 4.99 },
+    { id: 'bp',     cat: 'battlepass', label: 'New Eridu City Fund',   price: 9.99 },
+    { id: 'bpd',    cat: 'battlepass', label: 'City Fund Deluxe',      price: 19.99 },
+  ],
+};
+let spdGame = null; // selected game for the quick-add section
 const fmtUSD = n => '$' + (n || 0).toFixed(2);
-const fmtEntryDate = d => { const dt = new Date(d + 'T12:00:00Z'); return MON[dt.getUTCMonth()] + ' ' + dt.getUTCDate(); };
+const fmtCr = n => (n || 0).toLocaleString('en-US');
+const monthKeyToday = () => new Date().toISOString().slice(0, 7);
+const monthLabel = mk => { const [y, m] = mk.split('-'); return MON[+m - 1] + ' ' + y; };
 function loadSpending() { try { return JSON.parse(localStorage.getItem(SPD_KEY) || '[]'); } catch { return []; } }
 function saveSpending(entries) { try { localStorage.setItem(SPD_KEY, JSON.stringify(entries)); } catch {} }
+function addSpending(entry) {
+  const all = loadSpending();
+  all.push({ id: Date.now() + Math.floor(Math.random() * 1000), date: new Date().toISOString().slice(0, 10), ...entry });
+  saveSpending(all);
+  renderSpending();
+}
+// A top-up tier's double-bonus is available until that exact game+price tier has been logged once.
+function topupUsed(game, price) {
+  return loadSpending().some(e => e.category === 'topup' && e.game === game && Math.abs((e.amount || 0) - price) < 0.001);
+}
 function renderSpending() {
   const panel = document.getElementById('spending');
-  const entries = loadSpending().sort((a, b) => b.date.localeCompare(a.date));
+  const entries = loadSpending().sort((a, b) => b.date.localeCompare(a.date) || b.id - a.id);
   const total = entries.reduce((s, e) => s + (e.amount || 0), 0);
   const byGame = Object.fromEntries(GAME_ORDER.map(g => [g, 0]));
   for (const e of entries) if (byGame[e.game] !== undefined) byGame[e.game] += e.amount || 0;
-  const defaultGame = GAME_ORDER.includes(S.game) ? S.game : 'gi';
+  if (!GAME_ORDER.includes(spdGame)) spdGame = GAME_ORDER.includes(S.game) ? S.game : 'gi';
+  const qg = spdGame;
+
+  // group log by month, newest first; current month always shown even if empty
+  const groups = {};
+  for (const e of entries) (groups[e.date.slice(0, 7)] ||= []).push(e);
+  const curMonth = monthKeyToday();
+  if (!groups[curMonth]) groups[curMonth] = [];
+  const monthKeys = Object.keys(groups).sort().reverse();
+
   panel.innerHTML = `
     <div class="spd-hd" id="spd-drag"><b>Spending</b><button class="spd-x" id="spd-close">✕</button></div>
     <div class="spd-body">
@@ -145,38 +197,82 @@ function renderSpending() {
           </span>`).join('')}
         </div>
       </div>
-      <div class="spd-sec">Add entry</div>
-      <form class="spd-form" id="spd-form">
-        <div class="spd-row2">
-          <select class="spd-sel" id="spd-game">
-            ${GAME_ORDER.map(g => `<option value="${g}"${g === defaultGame ? ' selected' : ''}>${GAMES[g]}</option>`).join('')}
-          </select>
-          <select class="spd-sel" id="spd-cat">
-            ${Object.entries(SPD_CATS).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}
-          </select>
-        </div>
-        <div class="spd-row2">
-          <input class="spd-inp" id="spd-amt" type="number" min="0.01" step="0.01" placeholder="Amount (USD)" required>
-          <input class="spd-inp" id="spd-note" type="text" placeholder="Note (optional)" maxlength="60">
-        </div>
-        <button class="spd-add" type="submit">Add entry</button>
-      </form>
-      ${entries.length ? `
-        <div class="spd-sec">Log <span class="spd-count">${entries.length}</span></div>
-        <div class="spd-log">
-          ${entries.map(e => `<div class="spd-entry">
-            <span class="spd-edate">${fmtEntryDate(e.date)}</span>
-            <span class="spd-edot" style="background:${GAME_DOT[e.game] || '#8b949e'}"></span>
-            <span class="spd-emid">
-              <span class="spd-ecat">${SPD_CATS[e.category] || e.category}</span>
-              ${e.note ? `<span class="spd-enote">${esc(e.note)}</span>` : ''}
-            </span>
-            <span class="spd-eamt">${fmtUSD(e.amount)}</span>
-            <button class="spd-del" data-id="${e.id}" aria-label="Delete entry">✕</button>
-          </div>`).join('')}
-        </div>` : `<p class="spd-empty">No entries yet — add your first purchase above.</p>`}
+
+      <div class="spd-sec">Quick add</div>
+      <div class="spd-gtabs">
+        ${GAME_ORDER.map(g => `<button class="spd-gtab${g === qg ? ' on' : ''}" data-qgame="${g}">
+          <span class="spd-gdot" style="background:${GAME_DOT[g]}"></span>${g.toUpperCase()}
+        </button>`).join('')}
+      </div>
+      <div class="spd-presets">
+        ${SPD_PRESETS[qg].map(p => `<button class="spd-pbtn" data-preset="${p.id}">
+          <span class="spd-pname">${p.label}</span><span class="spd-pprice">${fmtUSD(p.price)}</span>
+        </button>`).join('')}
+      </div>
+      <div class="spd-tup-lab">${SPD_CUR[qg]} top-up</div>
+      <div class="spd-tup">
+        ${SPD_TOPUP.map((t, i) => {
+          const first = !topupUsed(qg, t.price);
+          const cr = first ? t.base * 2 : t.base + t.bonus;
+          return `<button class="spd-tbtn${first ? ' first' : ''}" data-tier="${i}" title="${fmtCr(cr)} ${SPD_CUR[qg]}${first ? ' (first-time ×2)' : ''}">
+            <span class="spd-tprice">${fmtUSD(t.price)}</span>
+            <span class="spd-tcr">${fmtCr(cr)}${first ? ' <b>×2</b>' : ''}</span>
+          </button>`;
+        }).join('')}
+      </div>
+
+      <details class="spd-custom">
+        <summary>Custom entry</summary>
+        <form class="spd-form" id="spd-form">
+          <div class="spd-row2">
+            <select class="spd-sel" id="spd-game">
+              ${GAME_ORDER.map(g => `<option value="${g}"${g === qg ? ' selected' : ''}>${GAMES[g]}</option>`).join('')}
+            </select>
+            <select class="spd-sel" id="spd-cat">
+              ${Object.entries(SPD_CATS).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}
+            </select>
+          </div>
+          <div class="spd-row2">
+            <input class="spd-inp" id="spd-amt" type="number" min="0.01" step="0.01" placeholder="Amount (USD)" required>
+            <input class="spd-inp" id="spd-note" type="text" placeholder="Note (optional)" maxlength="60">
+          </div>
+          <button class="spd-add" type="submit">Add entry</button>
+        </form>
+      </details>
+
+      <div class="spd-months">
+        ${monthKeys.map(mk => {
+          const list = groups[mk];
+          const mtot = list.reduce((s, e) => s + (e.amount || 0), 0);
+          return `<div class="spd-month">
+            <div class="spd-mhd"><span>${monthLabel(mk)}</span><b>${fmtUSD(mtot)}</b></div>
+            ${list.length ? list.map(e => `<div class="spd-entry">
+              <span class="spd-edate">${(+e.date.slice(8, 10))}</span>
+              <span class="spd-edot" style="background:${GAME_DOT[e.game] || '#8b949e'}"></span>
+              <span class="spd-emid">
+                <span class="spd-ecat">${e.note ? esc(e.note) : (SPD_CATS[e.category] || e.category)}</span>
+                ${e.crystals ? `<span class="spd-ecr">+${fmtCr(e.crystals)}${e.first ? ' ×2' : ''}</span>` : ''}
+              </span>
+              <span class="spd-eamt">${fmtUSD(e.amount)}</span>
+              <button class="spd-del" data-id="${e.id}" aria-label="Delete entry">✕</button>
+            </div>`).join('') : `<p class="spd-mempty">No purchases this month.</p>`}
+          </div>`;
+        }).join('')}
+      </div>
     </div>`;
+
   panel.querySelector('#spd-close').addEventListener('click', () => panel.classList.remove('on'));
+  panel.querySelectorAll('.spd-gtab').forEach(b => b.addEventListener('click', () => { spdGame = b.dataset.qgame; renderSpending(); }));
+  panel.querySelectorAll('.spd-pbtn').forEach(b => b.addEventListener('click', () => {
+    const p = SPD_PRESETS[qg].find(x => x.id === b.dataset.preset);
+    if (p) addSpending({ game: qg, category: p.cat, amount: p.price, note: p.label });
+  }));
+  panel.querySelectorAll('.spd-tbtn').forEach(b => b.addEventListener('click', () => {
+    const t = SPD_TOPUP[+b.dataset.tier];
+    const first = !topupUsed(qg, t.price);
+    const crystals = first ? t.base * 2 : t.base + t.bonus;
+    addSpending({ game: qg, category: 'topup', amount: t.price, note: SPD_CUR[qg], crystals, first });
+  }));
   panel.querySelector('#spd-form').addEventListener('submit', ev => {
     ev.preventDefault();
     const game = panel.querySelector('#spd-game').value;
@@ -184,10 +280,7 @@ function renderSpending() {
     const amount = parseFloat(panel.querySelector('#spd-amt').value);
     const note = panel.querySelector('#spd-note').value.trim();
     if (!amount || amount <= 0) return;
-    const all = loadSpending();
-    all.push({ id: Date.now(), date: new Date().toISOString().slice(0, 10), game, category, amount, note });
-    saveSpending(all);
-    renderSpending();
+    addSpending({ game, category, amount, note });
   });
   panel.querySelectorAll('.spd-del').forEach(btn => btn.addEventListener('click', () => {
     const id = +btn.dataset.id;
