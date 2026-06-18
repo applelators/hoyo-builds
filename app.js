@@ -47,6 +47,7 @@ const RARITY = { 5:['#fcd66e','#f0b400'], 4:['#d4bbff','#b78bff'], 3:['#a8c8ff',
 const EVENT_TYPES = {
   main:['#f0b400','Event'], story:['#b78bff','Story'], combat:['#ef6b6b','Combat'],
   web:['#5b9eff','Web'], login:['#34d399','Login'], exploration:['#22d3ee','Explore'],
+  quest:['#f59e6b','Quest'],
 };
 const evtType = t => EVENT_TYPES[t] || ['#8b949e','Event'];
 
