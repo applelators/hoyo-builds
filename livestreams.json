@@ -3,6 +3,7 @@
     "_description": "Upcoming version livestream per game. Update once a livestream is announced (typically ~10 days before next patch).",
     "_fields": {
       "version": "Upcoming version number (e.g. '6.7')",
+      "announced": "Boolean. true only once HoYoverse OFFICIALLY announces the livestream. The app surfaces the livestream section only when this is true — estimated/unannounced dates stay hidden. Set false for projected dates.",
       "title": "Optional version theme/name (e.g. 'Luna VII')",
       "date": "ISO datetime YYYY-MM-DDTHH:mm:ssZ. Use 12:00:00Z (UTC noon) if unknown — most livestreams air at 12:30 UTC.",
       "url": "Official livestream announcement URL. Optional.",
@@ -27,6 +28,7 @@
   "gi": {
     "version": "6.7",
     "title": "Luna VIII",
+    "announced": true,
     "date": "2026-06-18T12:00:00Z",
     "url": "https://game8.co/games/Genshin-Impact/archives/605418",
     "highlights": [
@@ -45,6 +47,7 @@
   "hsr": {
     "version": "4.4",
     "title": null,
+    "announced": false,
     "date": "2026-07-03T11:30:00Z",
     "url": null,
     "highlights": [
@@ -56,6 +59,7 @@
   "zzz": {
     "version": "3.1",
     "title": null,
+    "announced": false,
     "date": "2026-06-21T11:30:00Z",
     "url": null,
     "highlights": [

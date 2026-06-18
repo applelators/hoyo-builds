@@ -441,7 +441,7 @@ function render(reason) {
 // ── 1 · LIVESTREAM ─────────────────────────────────────────────
 function livestreamSection() {
   const ls = (S.streams || {})[S.game];
-  if (!ls || !ls.date) return '';
+  if (!ls || !ls.date || !ls.announced) return '';  // hide until officially announced
   const when = parseISO(ls.date);
   const now = NOW();
   if (when < now - 1.5 * 864e5) return '';           // hide once well past
