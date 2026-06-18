@@ -524,7 +524,8 @@
   .spd-pname{font-family:var(--fm);font-size:11.5px;color:var(--ink);font-weight:500;}
   .spd-pprice{font-family:var(--fnum);font-size:11.5px;font-weight:600;color:var(--accent);flex:none;}
   /* quick-add: top-up tiers */
-  .spd-tup-lab{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-top:-4px;}
+  .spd-tup-lab{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-top:-4px;display:flex;align-items:center;justify-content:space-between;gap:6px;}
+  .spd-reset{font-family:var(--fnum);font-size:8.5px;letter-spacing:0;text-transform:none;color:var(--mint);background:var(--mint-soft);border:1px solid var(--mint-line);border-radius:5px;padding:1px 5px;white-space:nowrap;cursor:help;}
   .spd-tup{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;}
   .spd-tbtn{display:flex;flex-direction:column;align-items:center;gap:2px;background:var(--card);border:1px solid var(--border);
     border-radius:8px;padding:7px 4px;cursor:pointer;transition:border-color .12s,background .12s,transform .12s;}

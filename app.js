@@ -152,11 +152,16 @@ const SPD_PRESETS = {
     { id: 'bpd',    cat: 'battlepass', label: 'City Fund Deluxe',      price: 19.99 },
   ],
 };
+// Most recent server-side first-time-bonus reset per game (ISO date). When a reset
+// passes, every tier's ×2 becomes available again; update these when HoYoverse resets.
+// GI: v6.0 (2025-09-10) · HSR: anniversary (2026-04-22) · ZZZ: v2.0 (2025-06-06).
+const SPD_RESETS = { gi: '2025-09-10', hsr: '2026-04-22', zzz: '2025-06-06' };
 let spdGame = null; // selected game for the quick-add section
 const fmtUSD = n => '$' + (n || 0).toFixed(2);
 const fmtCr = n => (n || 0).toLocaleString('en-US');
 const monthKeyToday = () => new Date().toISOString().slice(0, 7);
 const monthLabel = mk => { const [y, m] = mk.split('-'); return MON[+m - 1] + ' ' + y; };
+const fmtIsoDate = d => { const dt = new Date(d + 'T12:00:00Z'); return MON[dt.getUTCMonth()] + ' ' + dt.getUTCDate() + ', ' + dt.getUTCFullYear(); };
 function loadSpending() { try { return JSON.parse(localStorage.getItem(SPD_KEY) || '[]'); } catch { return []; } }
 function saveSpending(entries) { try { localStorage.setItem(SPD_KEY, JSON.stringify(entries)); } catch {} }
 function addSpending(entry) {
@@ -165,9 +170,12 @@ function addSpending(entry) {
   saveSpending(all);
   renderSpending();
 }
-// A top-up tier's double-bonus is available until that exact game+price tier has been logged once.
+// A top-up tier's double-bonus is available until that exact game+price tier has been
+// logged once SINCE the game's most recent reset. Purchases before the reset no longer count.
 function topupUsed(game, price) {
-  return loadSpending().some(e => e.category === 'topup' && e.game === game && Math.abs((e.amount || 0) - price) < 0.001);
+  const reset = SPD_RESETS[game] || '0000-00-00';
+  return loadSpending().some(e => e.category === 'topup' && e.game === game
+    && Math.abs((e.amount || 0) - price) < 0.001 && e.date >= reset);
 }
 function renderSpending() {
   const panel = document.getElementById('spending');
@@ -209,7 +217,9 @@ function renderSpending() {
           <span class="spd-pname">${p.label}</span><span class="spd-pprice">${fmtUSD(p.price)}</span>
         </button>`).join('')}
       </div>
-      <div class="spd-tup-lab">${SPD_CUR[qg]} top-up</div>
+      <div class="spd-tup-lab">${SPD_CUR[qg]} top-up
+        ${SPD_RESETS[qg] ? `<span class="spd-reset" title="First-time ×2 bonus last reset on this date. After a reset, every tier grants double again until repurchased.">×2 reset ${fmtIsoDate(SPD_RESETS[qg])}</span>` : ''}
+      </div>
       <div class="spd-tup">
         ${SPD_TOPUP.map((t, i) => {
           const first = !topupUsed(qg, t.price);
