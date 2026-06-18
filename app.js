@@ -865,6 +865,12 @@ function wireScreen() {
     const q2 = document.getElementById('q'); if (q2) { q2.focus(); q2.setSelectionRange(start, start); }
   });
   host.querySelector('#q-clear')?.addEventListener('click', () => { S.search = ''; render('search'); document.getElementById('q')?.focus(); });
+  host.querySelector('#open-spending')?.addEventListener('click', () => {
+    const panel = document.getElementById('spending');
+    if (panel.classList.contains('on')) { panel.classList.remove('on'); return; }
+    renderSpending();
+    panel.classList.add('on');
+  });
   host.querySelectorAll('[data-sort]').forEach(b => b.addEventListener('click', () => { S.sort = b.dataset.sort; render('sort'); }));
   host.querySelectorAll('[data-el]').forEach(b => b.addEventListener('click', () => { S.filterEl = b.dataset.el || null; render('filter'); }));
   host.querySelectorAll('[data-char]').forEach(b => b.addEventListener('click', () => openChar(b.dataset.char, b, b.dataset.charGame)));
@@ -880,12 +886,6 @@ function wireScreen() {
 function wireChrome() {
   document.querySelectorAll('#games-meta .gm').forEach(b => b.addEventListener('click', () => { S.game = b.dataset.game; S.filterEl = null; S.search = ''; render('game'); }));
   document.querySelectorAll('#devices .dc').forEach(b => b.addEventListener('click', () => { S.device = b.dataset.device; render('tweak'); }));
-  document.getElementById('open-spending')?.addEventListener('click', () => {
-    const panel = document.getElementById('spending');
-    if (panel.classList.contains('on')) { panel.classList.remove('on'); return; }
-    renderSpending();
-    panel.classList.add('on');
-  });
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       document.getElementById('spending')?.classList.remove('on');
