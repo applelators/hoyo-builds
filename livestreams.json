@@ -6,7 +6,9 @@
       "title": "Optional version theme/name (e.g. 'Luna VII')",
       "date": "ISO datetime YYYY-MM-DDTHH:mm:ssZ. Use 12:00:00Z (UTC noon) if unknown — most livestreams air at 12:30 UTC.",
       "url": "Official livestream announcement URL. Optional.",
-      "highlights": "Array of 1-4 short strings teasing what's expected (new characters, regions, etc.). Optional."
+      "highlights": "Array of 1-4 short strings teasing what's expected (new characters, regions, etc.). Optional. After a stream airs, replace teasers with confirmed reveals.",
+      "codes": "Array of livestream redemption code strings. Optional; populate after the stream airs. Shown only in the aired state.",
+      "codes_note": "Short string describing the codes' reward/expiry (e.g. '100 Primogems each · expires Jun 21'). Optional."
     },
     "_wiki_sources": {
       "gi": "https://game8.co/games/Genshin-Impact (check top links for 'X.Y Livestream')",
@@ -26,12 +28,19 @@
     "version": "6.7",
     "title": "Luna VIII",
     "date": "2026-06-18T12:00:00Z",
-    "url": "https://x.com/GenshinImpact/status/2066732499732975924",
+    "url": "https://game8.co/games/Genshin-Impact/archives/605418",
     "highlights": [
-      "Sandrone/Pulonia Marionette — new Fatui Harbinger 5★",
-      "Last patch before Snezhnaya (Version 7.0 in August)",
+      "Sandrone — new 5★ Fatui Harbinger (Claymore), debuts Phase 1",
+      "The Moon — permanent new map beyond Teyvat",
+      "Phase 2 reruns: Columbina & Raiden Shogun",
       "Version 6.7 releases July 1"
-    ]
+    ],
+    "codes": [
+      "Marionette",
+      "TotheMoon",
+      "TeaPartyTime"
+    ],
+    "codes_note": "100 Primogems each · expires Jun 21"
   },
   "hsr": {
     "version": "4.4",

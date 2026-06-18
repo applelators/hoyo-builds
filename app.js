@@ -446,20 +446,25 @@ function livestreamSection() {
   const now = NOW();
   if (when < now - 1.5 * 864e5) return '';           // hide once well past
   const aired = when <= now;
-  const hl = (ls.highlights || []).slice(0, 3);
+  const hl = (ls.highlights || []).slice(0, 4);
+  const codes = aired ? (ls.codes || []) : [];
   const right = aired
     ? `<span class="ls-rl">Aired</span><span class="ls-when">${fmtDateLong(when)}</span>`
     : `<span class="ls-rl">Goes live in</span><span class="cd" data-deadline="${when}" data-cd="seg"></span><span class="ls-when">${fmtDateLong(when)}</span>`;
   return `<section class="block">
-    ${sec('broadcast', 'Next livestream', GAMES[S.game], '', '')}
-    <div class="ls ${reveal()}">
+    ${sec('broadcast', aired ? 'Latest livestream' : 'Next livestream', GAMES[S.game], '', '')}
+    <div class="ls ${aired ? 'aired ' : ''}${reveal()}">
       <div class="ls-badge">
         <span class="ls-ico">${ICONS.broadcast}</span>
       </div>
       <div class="ls-mid">
-        <div class="ls-kicker">Special Program</div>
+        <div class="ls-kicker">${aired ? 'Revealed · Special Program' : 'Special Program'}</div>
         <div class="ls-ver" style="margin-top:6px">Version ${ls.version}${ls.title ? ` <small>· ${ls.title}</small>` : ''}</div>
         ${hl.length ? `<div class="ls-hl">${hl.map(h => `<span class="ls-chip">${h}</span>`).join('')}</div>` : ''}
+        ${codes.length ? `<div class="ls-codes">
+          <span class="ls-codes-lab">Codes${ls.codes_note ? ` · ${ls.codes_note}` : ''}</span>
+          <span class="ls-codes-row">${codes.map(c => `<button class="ls-code" data-code="${esc(c)}" title="Copy code">${esc(c)}</button>`).join('')}</span>
+        </div>` : ''}
       </div>
       <div class="ls-right">${right}</div>
     </div>
@@ -974,6 +979,13 @@ function wireScreen() {
     renderSpending();
     panel.classList.add('on');
   });
+  host.querySelectorAll('.ls-code').forEach(b => b.addEventListener('click', () => {
+    const code = b.dataset.code;
+    navigator.clipboard?.writeText(code).catch(() => {});
+    const prev = b.textContent;
+    b.classList.add('copied'); b.textContent = 'Copied';
+    setTimeout(() => { b.classList.remove('copied'); b.textContent = prev; }, 1100);
+  }));
   host.querySelectorAll('[data-sort]').forEach(b => b.addEventListener('click', () => { S.sort = b.dataset.sort; render('sort'); }));
   host.querySelectorAll('[data-el]').forEach(b => b.addEventListener('click', () => { S.filterEl = b.dataset.el || null; render('filter'); }));
   host.querySelectorAll('[data-char]').forEach(b => b.addEventListener('click', () => openChar(b.dataset.char, b, b.dataset.charGame)));
