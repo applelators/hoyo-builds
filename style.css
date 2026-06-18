@@ -342,6 +342,11 @@
   .evt-pop-cd.warn{color:var(--amber);}
   .evt-pop-local{margin-top:6px;font-size:10px;color:var(--faint);}
   .evt-pop-rew{margin-top:8px;font-size:10px;color:var(--dim);line-height:1.45;border-top:1px solid var(--border);padding-top:8px;}
+  .evt-pop-quests{margin-top:8px;border-top:1px solid var(--border);padding-top:8px;}
+  .evt-pop-qlab{font-family:var(--fm);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);}
+  .evt-pop-qlist{margin:6px 0 0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:3px;}
+  .evt-pop-qlist li{font-family:var(--fm);font-size:10.5px;color:var(--ink);line-height:1.4;}
+  .evt-pop-qlist li::marker{color:var(--accent);font-family:var(--fnum);font-size:9.5px;}
 
   /* ════ ROSTER (all chars by region) ════ */
   .controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:0 var(--pad-x) 14px;}

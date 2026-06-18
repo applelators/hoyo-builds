@@ -1,6 +1,9 @@
 {
   "$schema": {
-    "_description": "Event schedule per game. All datetimes use ISO 8601 with explicit UTC-5 offset. Start times are 10:00 UTC-5 for mid-version events (confirmed from GI/ZZZ official announcements); patch-day events use the per-game maintenance-end time (GI T05:00:00Z, HSR/ZZZ T03:00:00Z). End times are 03:59 UTC-5 = 08:59 UTC, the minute before the 04:00 America server daily reset — confirmed as the universal HoYoverse event close time."
+    "_description": "Event schedule per game. All datetimes use ISO 8601 with explicit UTC-5 offset. Start times are 10:00 UTC-5 for mid-version events (confirmed from GI/ZZZ official announcements); patch-day events use the per-game maintenance-end time (GI T05:00:00Z, HSR/ZZZ T03:00:00Z). End times are 03:59 UTC-5 = 08:59 UTC, the minute before the 04:00 America server daily reset — confirmed as the universal HoYoverse event close time.",
+    "_fields": {
+      "quests": "Optional array of the individual quest names that make up a story-driven event (used for type 'quest' Archon/Story Quests). List them in completion order; shown in the event popup."
+    }
   },
   "gi": [
     {
@@ -26,9 +29,14 @@
       "type": "quest",
       "start": "2026-05-20T10:00:00-05:00",
       "end": "2026-06-30T03:59:00-05:00",
-      "tagline": "Archon Quest bonus — finish the new acts of the 'Song of the Welkin Moon' Archon Quest before Version 6.6 ends to claim a one-time Primogem reward.",
+      "tagline": "Archon Quest bonus — finish Act IV, 'An Elegy for Faded Moonlight,' of the 'Song of the Welkin Moon' Archon Quest before Version 6.6 ends to claim a one-time Primogem reward.",
       "rewards": "+ 560 Primogems · Nicole's Ascension Materials",
-      "url": null
+      "quests": [
+        "All Is Foretold",
+        "Dance of Death: Serpent and Scorpion",
+        "Echoes of Fate"
+      ],
+      "url": "https://game8.co/games/Genshin-Impact/archives/557059"
     },
     {
       "name": "Lepus Miles Chapter: Act I",
@@ -37,6 +45,11 @@
       "end": "2026-06-30T03:59:00-05:00",
       "tagline": "Character Story Quest bonus — complete Lohen's new Story Quest, 'Lepus Miles Chapter: Act I — A Knight's Legacy,' for first-clear rewards. Requires AR 40 and Song of the Welkin Moon Act IV.",
       "rewards": "+ 60 Primogems · Character Talent Materials",
+      "quests": [
+        "A Knight's Merit",
+        "A Knight's Pursuit",
+        "A Knight's Resolve"
+      ],
       "url": "https://game8.co/games/Genshin-Impact/archives/598985"
     },
     {
