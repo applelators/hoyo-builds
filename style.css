@@ -89,7 +89,7 @@
   .gear:hover{color:var(--ink);border-color:var(--border-hi);}
   .gear svg{width:15px;height:15px;stroke:currentColor;stroke-width:1.4;fill:none;}
 
-  .scroll{flex:1;min-height:0;overflow-y:auto;scrollbar-width:thin;scroll-behavior:smooth;}
+  .scroll{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scroll-behavior:smooth;}
   .scroll::-webkit-scrollbar{width:10px;}
   .scroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:6px;border:3px solid transparent;background-clip:content-box;}
   .scroll::-webkit-scrollbar-thumb:hover{background:var(--border-hi);background-clip:content-box;}
@@ -109,8 +109,9 @@
   .sec.live .sec-ico{background:var(--mint-soft);border-color:var(--mint-line);color:var(--mint);}
   .sec.warn .sec-ico{background:var(--amber-soft);border-color:var(--amber-line);color:var(--amber);}
   .sec.muted .sec-ico{background:var(--card-hi);border-color:var(--border);color:var(--dim);}
-  #frame[data-device="mobile"] .sec{padding:0 16px;gap:9px;}
+  #frame[data-device="mobile"] .sec{padding:0 16px;gap:9px;min-width:0;}
   #frame[data-device="mobile"] .sec-t{letter-spacing:.1em;}
+  #frame[data-device="mobile"] .sec-m{min-width:0;overflow:hidden;text-overflow:ellipsis;}
 
   /* live pulse dot used in section meta */
   .pulse{position:relative;width:7px;height:7px;border-radius:50%;background:var(--mint);flex:none;}
@@ -599,7 +600,8 @@
      viewport fluidly and drop the mockup chrome. Desktop preview is unaffected
      because its viewport stays > 640px. */
   @media (max-width:640px){
-    .stage{background:var(--bg);}
-    #frame[data-device="mobile"]{padding:0;}
-    #frame[data-device="mobile"] .device{width:100%;height:100%;max-height:none;border-radius:0;border:0;box-shadow:none;}
+    html,body{max-width:100%;overflow-x:hidden;}
+    .stage{background:var(--bg);max-width:100%;overflow-x:hidden;}
+    #frame[data-device="mobile"]{padding:0;max-width:100%;}
+    #frame[data-device="mobile"] .device{width:100%;max-width:100%;height:100%;max-height:none;border-radius:0;border:0;box-shadow:none;overflow-x:hidden;}
   }
