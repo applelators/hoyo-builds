@@ -591,3 +591,15 @@
     .bn-card{padding:7px;}
     .sheet-portrait{height:320px;}
   }
+
+  /* ════ REAL SMALL VIEWPORTS (≤ 640px wide) ════
+     The 402×820 "device" is a phone mockup meant for desktop preview (manual
+     mobile toggle at wide viewports). On an actual phone the fixed width +
+     padding is wider than the screen and clips the right edge, so fill the
+     viewport fluidly and drop the mockup chrome. Desktop preview is unaffected
+     because its viewport stays > 640px. */
+  @media (max-width:640px){
+    .stage{background:var(--bg);}
+    #frame[data-device="mobile"]{padding:0;}
+    #frame[data-device="mobile"] .device{width:100%;height:100%;max-height:none;border-radius:0;border:0;box-shadow:none;}
+  }
