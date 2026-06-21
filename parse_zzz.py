@@ -48,6 +48,7 @@ ZZZ_NAME_NORMALIZE = {
     "Yidhari Murphy":                              "Yidhari",
     "Alexandrina Sebastiane (Rina)":               "Rina",
     "Starlight - Billy Kid":                       "Starlight Billy",
+    "Velina Airgid":                               "Velina",
 }
 
 ZZZ_ELEMENT = {
@@ -109,6 +110,9 @@ ZZZ_ELEMENT = {
     "Vivian":   "Ether",
     "Yixuan":   "Ether",
     "Zhu Yuan": "Ether",
+    "Pyrois":   "Ether",
+    # Wind
+    "Velina":   "Wind",
 }
 HEADER_VALS = {'Equipment', 'Drive Disc Stats', 'Ability Priority',
                'W-Engines', '4 Piece Drive Disc Set', 'Main Stats', 'Sub stats',

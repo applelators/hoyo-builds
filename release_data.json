@@ -804,6 +804,13 @@
       "element": "Cryo",
       "weapon_type": "Polearm",
       "rarity": 5
+    },
+    "Prune": {
+      "version": "6.6",
+      "date": "2026-05-20",
+      "element": "Anemo",
+      "weapon_type": "Catalyst",
+      "rarity": 4
     }
   },
   "hsr": {
@@ -1298,6 +1305,30 @@
       "date": "2026-06-01",
       "element": "Fire",
       "rarity": 5
+    },
+    "Dan Heng • Imbibitor Lunae": {
+      "version": "",
+      "date": ""
+    },
+    "Dan Heng • Permansor Terrae": {
+      "version": "",
+      "date": ""
+    },
+    "March 7th • Evernight": {
+      "version": "",
+      "date": ""
+    },
+    "March 7th • The Hunt": {
+      "version": "",
+      "date": ""
+    },
+    "Silver Wolf • Lv. 999": {
+      "version": "",
+      "date": ""
+    },
+    "Tingyun • Fugue": {
+      "version": "",
+      "date": ""
     }
   },
   "zzz": {
@@ -1565,6 +1596,150 @@
       "version": "2.8",
       "date": "2026-05-27",
       "element": "Physical",
+      "rarity": 5
+    },
+    "Alice": {
+      "version": "",
+      "date": ""
+    },
+    "Anby": {
+      "version": "",
+      "date": ""
+    },
+    "Anby: Soldier 0": {
+      "version": "",
+      "date": ""
+    },
+    "Anton": {
+      "version": "",
+      "date": ""
+    },
+    "Ben": {
+      "version": "",
+      "date": ""
+    },
+    "Billy": {
+      "version": "",
+      "date": ""
+    },
+    "Burnice": {
+      "version": "",
+      "date": ""
+    },
+    "Caesar": {
+      "version": "",
+      "date": ""
+    },
+    "Corin": {
+      "version": "",
+      "date": ""
+    },
+    "Ellen": {
+      "version": "",
+      "date": ""
+    },
+    "Evelyn": {
+      "version": "",
+      "date": ""
+    },
+    "Grace": {
+      "version": "",
+      "date": ""
+    },
+    "Harumasa": {
+      "version": "",
+      "date": ""
+    },
+    "Hugo": {
+      "version": "",
+      "date": ""
+    },
+    "Koleda": {
+      "version": "",
+      "date": ""
+    },
+    "Lucia": {
+      "version": "",
+      "date": ""
+    },
+    "Lucy": {
+      "version": "",
+      "date": ""
+    },
+    "Lycaon": {
+      "version": "",
+      "date": ""
+    },
+    "Manato": {
+      "version": "",
+      "date": ""
+    },
+    "Miyabi": {
+      "version": "",
+      "date": ""
+    },
+    "Nekomata": {
+      "version": "",
+      "date": ""
+    },
+    "Nicole": {
+      "version": "",
+      "date": ""
+    },
+    "Orphie & Magus": {
+      "version": "",
+      "date": ""
+    },
+    "Piper": {
+      "version": "",
+      "date": ""
+    },
+    "Pulchra": {
+      "version": "",
+      "date": ""
+    },
+    "Pyrois": {
+      "version": "3.0",
+      "date": "2026-06-17",
+      "element": "Ether",
+      "rarity": 5
+    },
+    "Rina": {
+      "version": "",
+      "date": ""
+    },
+    "Seed": {
+      "version": "1.0",
+      "date": "2025-09-04"
+    },
+    "Seth": {
+      "version": "",
+      "date": ""
+    },
+    "Soldier 11": {
+      "version": "1.0",
+      "date": "2024-07-04"
+    },
+    "Vivian": {
+      "version": "",
+      "date": ""
+    },
+    "Yanagi": {
+      "version": "",
+      "date": ""
+    },
+    "Yidhari": {
+      "version": "",
+      "date": ""
+    },
+    "Yuzuha": {
+      "version": "",
+      "date": ""
+    },
+    "Velina": {
+      "version": "3.0",
+      "date": "2026-06-17",
+      "element": "Wind",
       "rarity": 5
     }
   }

@@ -1,0 +1,11 @@
+{
+  "$schema": {
+    "_description": "Per-game data freshness metadata. 'builds' holds the ISO date (YYYY-MM-DD) the character build data for each game was last rescraped from its published Google Sheet. The app shows a 'last refreshed' notice atop each game feed and surfaces a staleness warning once the data is older than 21 days (3 weeks). Update the relevant date whenever you rerun parse.py / parse_hsr.py / parse_zzz.py and merge fresh data into the canonical *_builds.json.",
+    "_stale_days": 21
+  },
+  "builds": {
+    "gi": "2026-06-20",
+    "hsr": "2026-06-20",
+    "zzz": "2026-06-20"
+  }
+}

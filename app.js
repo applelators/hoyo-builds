@@ -33,7 +33,7 @@ const accentFor = c => (c && c.name === 'Evanescia') ? EVA_ROSE : elColor(c && c
 const ELEMENT_ORDERS = {
   gi:  ['Pyro', 'Hydro', 'Cryo', 'Electro', 'Anemo', 'Geo', 'Dendro'],
   hsr: ['Fire', 'Ice', 'Wind', 'Lightning', 'Physical', 'Quantum', 'Imaginary', 'Elation'],
-  zzz: ['Physical', 'Fire', 'Electric', 'Ice', 'Ether'],
+  zzz: ['Physical', 'Fire', 'Electric', 'Ice', 'Ether', 'Wind'],
 };
 const ELEMENT_COLORS = {
   Pyro:['#f87171','#ef4444'], Hydro:['#60a5fa','#3b82f6'], Cryo:['#67e8f9','#22d3ee'],
@@ -95,6 +95,8 @@ const ICONS = {
   calendar:'<svg viewBox="0 0 16 16"><rect x="2.5" y="3.2" width="11" height="10.3" rx="2"/><path d="M2.5 6.3h11M5.4 1.8v2.6M10.6 1.8v2.6"/></svg>',
   grid:'<svg viewBox="0 0 16 16"><rect x="2.4" y="2.4" width="4.6" height="4.6" rx="1.2"/><rect x="9" y="2.4" width="4.6" height="4.6" rx="1.2"/><rect x="2.4" y="9" width="4.6" height="4.6" rx="1.2"/><rect x="9" y="9" width="4.6" height="4.6" rx="1.2"/></svg>',
   dollar:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2v12"/><path d="M11 5.5C11 4 9.7 3 8 3S5 4 5 5.5C5 7 6.3 7.5 8 8s3 1 3 2.5C11 12 9.7 13 8 13s-3-1-3-2.5"/></svg>',
+  refresh:'<svg viewBox="0 0 16 16"><path d="M13.2 8a5.2 5.2 0 10-1.3 3.4M13.2 12.4V8.6h-3.8"/></svg>',
+  warn:'<svg viewBox="0 0 16 16"><path d="M8 1.8l6.4 11.1H1.6L8 1.8z"/><path d="M8 6.4v3.1M8 11.6v.05"/></svg>',
 };
 
 // ── state ──
@@ -305,13 +307,14 @@ function renderSpending() {
 async function boot() {
   loadTweaks();
   const grab = (p) => fetch(p).then(r => r.json()).catch(() => ({}));
-  const [icons, portraits, release, banners, events, streams, giB, hsrB, zzzB, itemIcons, discIcons] = await Promise.all([
+  const [icons, portraits, release, banners, events, streams, giB, hsrB, zzzB, itemIcons, discIcons, dataMeta] = await Promise.all([
     grab('icons.json'), grab('portraits.json'), grab('release_data.json'),
     grab('banners.json'), grab('events.json'), grab('livestreams.json'),
     grab('builds.json'), grab('hsr_builds.json'), grab('zzz_builds.json'),
-    grab('item_icons.json'), grab('disc_icons.json'),
+    grab('item_icons.json'), grab('disc_icons.json'), grab('data_meta.json'),
   ]);
   S.icons = icons; S.portraits = portraits; S.banners = banners; S.events = events; S.streams = streams;
+  S.meta = dataMeta || {};
   S.itemIcons = itemIcons || {}; S.discIcons = discIcons || {};
   const _raw = { gi: giB, hsr: hsrB, zzz: zzzB };
   S.builds = {};
@@ -430,13 +433,34 @@ function render(reason) {
       <div class="feed">
         ${S.game === 'all'
           ? `<div class="all-cols">${allBannersSection()}${allEventsSection()}</div>`
-          : livestreamSection() + heroSection() + dashboardSection() + eventSection() + rosterSection()
+          : refreshNotice() + livestreamSection() + heroSection() + dashboardSection() + eventSection() + rosterSection()
         }
       </div>
     </div>`;
   tick();
   wireScreen();
   wireEventPops();
+}
+
+// ── 0 · DATA REFRESH NOTICE ────────────────────────────────────
+const STALE_DAYS = 21;
+function refreshNotice() {
+  const iso = ((S.meta || {}).builds || {})[S.game];
+  if (!iso) return '';
+  const when = new Date(iso + 'T12:00:00Z').getTime();
+  if (!when) return '';
+  const days = Math.max(0, Math.floor((NOW() - when) / 864e5));
+  const stale = days >= STALE_DAYS;
+  const ago = days === 0 ? 'today' : days === 1 ? 'yesterday' : `${days} days ago`;
+  return `<div class="refresh-note${stale ? ' warn' : ''} ${reveal()}">
+    <span class="rn-ico">${stale ? ICONS.warn : ICONS.refresh}</span>
+    <span class="rn-text">
+      <b>Builds last refreshed ${fmtIsoDate(iso)}</b>
+      <span class="rn-sub">${stale
+        ? `Over ${STALE_DAYS} days old — data may be out of date (updated ${ago}).`
+        : `Updated ${ago}.`}</span>
+    </span>
+  </div>`;
 }
 
 // ── 1 · LIVESTREAM ─────────────────────────────────────────────

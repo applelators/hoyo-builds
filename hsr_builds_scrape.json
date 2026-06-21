@@ -84,7 +84,7 @@
         "baseline_stats": "CRIT Rate: 80%\nCRIT DMG: 120%\nSPD: Base SPD ¹",
         "ability_notes": "Leveling Skill can be ignored.",
         "relic_notes": "-",
-        "other_notes": "Both Aglaea and Garmentmaker deal damage in similar ratio, which makes them prefer buffs that can affect both of them, like Robin, Sunday, and Trailblazer (Remembrance).\n\n¹ An exception to this: With Time Woven into Gold, you can tune Aglaea's SPD such that it is slightly more than double that of Bronya / Sunday's SPD, taking into account all in-combat SPD buffs. For example, if Sunday's SPD is 134.0, Aglaea on 4-PC: Hero of Triumphant Song should have 159+ SPD out of combat, so that she outspeeds Sunday at 6 SPD boost stacks. This allows Aglaea to get 3 turns per Sunday turn. However, this setup is not neessary, and having Aglaea at base SPD with a fast Sunday / Bronya works too.\n--- Specifically with Robin, having Sunday at 135 SPD and Aglaea at 161+ SPD allows Aglaea to fit in an additional turn before Concerto ends.",
+        "other_notes": "Both Aglaea and Garmentmaker deal damage in similar ratio, which makes them prefer buffs that can affect both of them, like Robin, Sunday, and Trailblazer (Remembrance).\n\n¹ An exception to this: With Time Woven into Gold, you can tune Aglaea's SPD such that it is slightly more than double that of Bronya / Sunday's SPD, taking into account all in-combat SPD buffs. For example, if Sunday's SPD is 134.0, Aglaea on 4-PC: Hero of Triumphant Song should have 159+ SPD out of combat, so that she outspeeds Sunday at 6 SPD boost stacks. This allows Aglaea to get 3 turns per Sunday turn. However, this setup is not necessary, and having Aglaea at base SPD with a fast Sunday / Bronya works too.\n--- Specifically with Robin, having Sunday at 135 SPD and Aglaea at 161+ SPD allows Aglaea to fit in an additional turn before Concerto ends.",
         "main_stats": "CRIT Rate / CRIT DMG\nATK%\nLightning DMG%\nERR%",
         "ability_priority": "1.) Basic ATK\n2.) Ultimate\n3.) Talent\n4.) M. Skill\n5) M. Talent\n6.) Skill"
       }
@@ -148,7 +148,7 @@
       {
         "role": "Main DPS\nSub DPS",
         "light_cones": "1 - Into the Unreachable Veil 5★\n~~ Life Should be Cast to Flames 5★ ¹\n2 - The Great Cosmic Enterprise 4★ [Free]\n~~ Night On The Milky Way 5★ ²\n3 - Today is Another Peaceful Day 4★ \n     [Battle Pass]\n4 - The Day The Cosmos Fell 4★ [Free]\n~~ The Seriousness of Breakfast 4★ [Free]",
-        "relic_4pc": "1.) 4-PC: Genius of Brilliant Stars\n~~ 4-PC: Eagle of Twilight Line ³\n2.) 4-PC: Scholar Lost in Erudition \n~~ 4-PC: Pioneer Diver of Dead Waters\n~~ 4-PC: Wavestrider Captain",
+        "relic_4pc": "1.) 4-PC: Genius of Brilliant Stars\n~~ 4-PC: Eagle of Twilight Line ³\n2.) 4-PC: Scholar Lost in Erudition \n~~ 4-PC: Pioneer Diver of Dead Waters\n~~ 4-PC: Wavestrider Captain \n~~ 4-PC: As Navigator Isee Sees It",
         "sub_stats": "1.) CRIT Rate / CRIT DMG\n~~ ATK%\n2.) SPD",
         "eidolons": "E2\nE6",
         "planar_ornament": "1.) Rutilant Arena\n2.) Izumo Gensei and Takama Divine Realm (With Erudition Ally)\n3.) Firmament Frontline: Glamoth",
@@ -219,7 +219,7 @@
       {
         "role": "Main DPS",
         "light_cones": "1 - The Finale of a Lie 5★\n2 - The Hell Where Ideals Burn 5★\n3 - Baptism of Pure Thought 5★\n4 - Cruising in the Stellar Sea 5★ [Free]\n~~ Worrisome, Blissful 5★",
-        "relic_4pc": "1.) 4-PC: Genius of Brilliant Stars\n2.) 4-PC: Scholar Lost in Erudition\n~~ 4-PC: Poet of Mourning Collapse",
+        "relic_4pc": "1.) 4-PC: Genius of Brilliant Stars\n2.) 4-PC: As Navigator Isee Sees It \n3.) 4-PC: Scholar Lost in Erudition\n~~ 4-PC: Poet of Mourning Collapse",
         "sub_stats": "1.) CRIT Rate / CRIT DMG\n2.) ATK%",
         "eidolons": "E1",
         "planar_ornament": "1.) Tengoku@Livestream\n2.) Rutilant Arena\n~~ Inert Salsotto",
@@ -395,7 +395,7 @@
       {
         "role": "Main DPS\nSub DPS",
         "light_cones": "1 - The Finale of a Lie 5★ ¹\n~~ Baptism of Pure Thought 5★\n2 - The Hell Where Ideals Burn 5★ ²\n3 - Worrisome, Blissful 5★ ¹\n4 - Cruising in the Stellar Sea 5★ [Free]\n5 - Only Silence Remains 4★ ³",
-        "relic_4pc": "1.) 4-PC: The Ashblazing Grand Duke\n2.) 4-PC: Pioneer Diver of Dead Waters\n~~ 4-PC: Eagle of Twilight Line ¹ \n5.) 2-PC: ATK% Set / CRIT Rate Set / CRIT DMG Set / Thunder [Choose 2]",
+        "relic_4pc": "1.) 4-PC: The Ashblazing Grand Duke\n2.) 4-PC: Pioneer Diver of Dead Waters\n~~ 4-PC: Eagle of Twilight Line ¹ \n3.) 2-PC: ATK% Set / CRIT Rate Set / CRIT DMG Set / Thunder [Choose 2]",
         "sub_stats": "1.) CRIT Rate / CRIT DMG\n2.) ATK\n~~ SPD",
         "eidolons": "E1\nE2",
         "planar_ornament": "1.) Duran, Dynasty of Running Wolves\n~~ City of Converging Stars ¹\n2.) Izumo Gensei and Takama Divine Realm (With Hunt Ally)\n3.) Inert Salsotto",
@@ -633,13 +633,13 @@
       {
         "role": "Main DPS\nDamage Over Time\n(Post 4.0 Buff)",
         "light_cones": "1 - Why Does the Ocean Sing 5★ ⁴\n2 - Reforged Remembrance 5★ ²\n3 - Those Many Springs 5★\n4 - Good Night Sleep Well 4★\n~~ It's Showtime 4★ [Free]\n~~ Eyes of the Prey 4★\n~~ Before the Tutorial Mission Starts 4★ [Free]",
-        "relic_4pc": "1.) 4-PC: Prisoner in Deep Confinement\n2.) 2-PC: ATK% Set + Eagle of Twilight Line",
+        "relic_4pc": "1.) 4-PC: Prisoner in Deep Confinement\n2.) 4-PC: Divine-Querying Master Smith ⁵\n2.) 2-PC: ATK% Set + Eagle of Twilight Line",
         "sub_stats": "1.) EHR\n2.) ATK%\n~~ SPD",
         "eidolons": "E1\nE2",
         "planar_ornament": "1.) Revelry by the Sea\n2.) Firmament Frontline: Glamoth \n~~ Space Sealing Station",
         "baseline_stats": "ATK: 3000+\nEHR: 120% ³\nSPD: Base SPD",
         "ability_notes": "-",
-        "relic_notes": "¹ The difference between ATK% sphere and Wind DMG% sphere is minimal, so going for the one that has better substats is recommended",
+        "relic_notes": "¹ The difference between ATK% sphere and Wind DMG% sphere is minimal, so going for the one that has better substats is recommended\n⁵ 4-PC: Divine-Querying Master Smith can be used to buff Hysilens DMG.",
         "other_notes": "² Black Swan now does not need all DoT debuffs or for an enemy to have \"Epiphany\" from her ultimate to use her Signature Light Cone, Reforged Remembrance. Making it much more viable now as it has full uptime now.\n³ Black Swan wants 120% Effect Hit Rate to maximize the DMG buff from her A6 trace.\n⁴ Why Does the Ocean Sing is better only if you have Black Swan's E1.",
         "main_stats": "EHR%\nATK%\nATK% / Wind DMG% ¹\nATK%",
         "ability_priority": "1.) Talent\n2.) Ultimate\n3.) Skill\n4.) Basic ATK"
@@ -1087,13 +1087,13 @@
       {
         "role": "Support\nSub DPS",
         "light_cones": "1 - Lies Dance on the Breeze 5★ ³\n2 - Holiday Thermae Escapade 4★ [Battle Pass]\n3 - Incessant Rain 5★\n4 - Resolution Shines as Pearls of Sweat 4★ ³\n5 - Good Night Sleep Well 4★\n6 - Boundless Choreo 4★",
-        "relic_4pc": "1.) 2-PC: SPD% Set + SPD% Set\n2.) 4-PC: Genius of Brilliant Stars\n3.) 4-PC: Pioneer Diver of Dead Waters",
+        "relic_4pc": "1.) 2-PC: SPD% Set + SPD% Set\n~~ 4-PC: Divine-Querying Master Smith ⁶ \n2.) 4-PC: Genius of Brilliant Stars\n3.) 4-PC: Pioneer Diver of Dead Waters",
         "sub_stats": "1.) SPD\n2.) EHR% ²\n3.) CRIT Rate / CRIT DMG¹\n4.) ATK%",
         "eidolons": "E1 ⁵\nE2",
         "planar_ornament": "1.) Lushaka, the Sunken Seas\n~~ City of Converging Stars \n~~ Firmament Frontline: Glamoth\n~~ Izumo Gensei and Takama Divine Realm\n~~ Duran, Dynasty of Running Wolves\n~~ Inert Salsotto",
         "baseline_stats": "ATK: 2500+ ¹\nCRIT Rate: 50% ¹\nCRIT DMG: 160% ¹\nEHR: 38.9% ²\nSPD: 170+ ⁴",
         "ability_notes": "All abilities can be ignored if running pure support.",
-        "relic_notes": "¹ Cipher can be played as a Sub-DPS or a support. If played as a support, you can completely ignore damage stats for SPD and survivability instead.\n- Sub DPS Cipher prefers to run 4-PC: Genius of Brilliant Stars or 4-PC: Pioneer Diver of Dead Waters over 2-PC: SPD% Set + 2-PC SPD% Set.\n² Cipher only needs 38.9% EHR to consistently land all of her debuffs (including Lies Dance on the Breeze)",
+        "relic_notes": "¹ Cipher can be played as a Sub-DPS or a support. If played as a support, you can completely ignore damage stats for SPD and survivability instead.\n- Sub DPS Cipher prefers to run 4-PC: Genius of Brilliant Stars or 4-PC: Pioneer Diver of Dead Waters over 2-PC: SPD% Set + 2-PC SPD% Set.\n² Cipher only needs 38.9% EHR to consistently land all of her debuffs (including Lies Dance on the Breeze)\n⁶ Cipher wants to hold Lies Dance on the Breeze or Resolution Shines as Pearls of Sweat for 4-PC: Divine-Querying Master Smith to be used.",
         "other_notes": "³ Cipher needs Lies Dance on the Breeze or Along the Passing Shore to reapply debuffs, while Resolution Shines as Pearls of Sweat has to wait for the debuff to expire before it can be reapplied. This is mainly relevant for Acheron teams.\n⁴ Cipher needs 170 SPD for her A2 trace.\n⁵ Cipher wants E1 for her Sub-DPS capabilities to be worth pursuing.",
         "main_stats": "CRIT DMG / HP%  ¹\nSPD\nDMG / HP% ¹\nATK / ERR% ¹",
         "ability_priority": "1.) Talent\n~~ Skill\n2.) Ultimate\n3.) Basic"
@@ -1236,17 +1236,17 @@
     "path": "Remembrance",
     "builds": [
       {
-        "role": "Support",
+        "role": "Support\nMain DPS\nSub DPS",
         "light_cones": "1.) This Love, Forever 5★\n~~ Long May Rainbows Adorn the Sky 5★\n2.) Memory's Curtain Never Falls 5★ [Free]\n3.) Victory in a Blink 4★ [Free]",
-        "relic_4pc": "1.) 2-PC: SPD% Set + SPD% Set\n~~ 4-PC: Eagle of Twilight Line\n~~ 4-PC: World-Remaking Deliverer ¹",
+        "relic_4pc": "1.) 4-PC: World-Remaking Deliverer\n~~ 4-PC: Eagle of Twilight Line \n~~ 4-PC: Messenger Traversing Hackerspace ¹\n2.) 2-PC: SPD% Set + SPD% Set",
         "sub_stats": "1.) SPD\n2.) HP%\n~~ CRIT Rate / CRIT DMG",
         "eidolons": "E1\nE2",
-        "planar_ornament": "1.) Sprightly Vonwacq\n2.) SPD% Set\n3.) Amphoreus, The Eternal Land ²",
-        "baseline_stats": "50% CRIT Rate\n5,000+ HP\n180+ SPD ³",
+        "planar_ornament": "1.) Sprightly Vonwacq ²\n~~ Bone Collection's Serene Demesne ²\n2.) SPD% Set\n3.) Amphoreus, The Eternal Land ³",
+        "baseline_stats": "50% CRIT Rate\n5,000+ HP\n180+ SPD ⁴",
         "ability_notes": "Ultimate and\nBasic ATK can\nbe ignored if \nrunning pure \nsupport.",
-        "relic_notes": "¹ 4-PC: World-Remaking Deliverer can become best in slot if you can get 180+ SPD through substats.\n² In Rememberance Teams, Amphoreus, The Eternal Land, is best in slot if nobody else is holding it.",
-        "other_notes": "³ Reaching 180 SPD is more important than a bit more damage. Ideally one would want to get her to 200 SPD if possible.\n⁴ HP% Orb is more useful for Sustainless / Castorice Newbud / RMC's Ode buff",
-        "main_stats": "HP% / CRIT DMG\nSPD\nHP% ⁴ / Ice DMG%\nHP%",
+        "relic_notes": "¹ 4-PC: Messenger Traversing Hackerspace can be BiS in some teams as Cyrene's ultimate can trigger the SPD bonus.\n² Sprightly Vonwacq is preferred if Cyrene is played as a support and Bone Collection's Serene Demesne is preferred if Cyrene is played as a Main DPS.\n³ Amphoreus, The Eternal Land becomes BiS if you play Cyrene in Castorice's full premium team (Castorice + Hyacine + Evernight + Cyrene).",
+        "other_notes": "⁴ Reaching 180 SPD is more important than a bit more damage. Ideally one would want to get her to 200 SPD if possible.\n⁵ HP% Orb is more useful for Sustainless / Castorice Newbud / RMC's Ode buff",
+        "main_stats": "HP% / CRIT DMG\nSPD\nHP% ⁵ / Ice DMG%\nHP%",
         "ability_priority": "1.) M. Skill\n2.) Skill\n3.) Talent\n4.) M. Talent\n5.) Ultimate\n6.) Basic ATK"
       }
     ],
@@ -2086,15 +2086,15 @@
       {
         "role": "Sustain",
         "light_cones": "1 - Long May Rainbows Adorn the Sky 5★\n2 - Memory's Curtain Never Falls 5★ [Free]\n~~ The Story's Next Page 4★\n3 - Shadowburn 3★ [S5]",
-        "relic_4pc": "1.) 4-PC: Warrior Goddess of Sun and Thunder         \n2.) 2-PC: SPD% Set + SPD% Set / Longevous Disciple [Choose 1]\n~~ 4-PC: World-Remaking Deliverer",
+        "relic_4pc": "1.) 4-PC: Warrior Goddess of Sun and Thunder       \n~~ 4-PC: World-Remaking Deliverer \n2.) 2-PC: SPD% Set + SPD% Set / Longevous Disciple [Choose 1]",
         "sub_stats": "1.) SPD\n2.) HP%\n3.) CRIT DMG",
-        "eidolons": "E1 ²\nE2",
-        "planar_ornament": "1.) Giant Tree of Rapt Brooding\n2.) Amphoreus, The Eternal Land\n~~ Fleet of the Ageless\n~~ Broken Keel\n~~ Lushaka, the Sunken Seas\n~~ Penacony, Land of the Dreams",
+        "eidolons": "E1 ⁴\nE2",
+        "planar_ornament": "1.) Giant Tree of Rapt Brooding \n~~ Amphoreus, The Eternal Land ¹\n2.) Lushaka, The Sunken Seas\n~~ Fleet of the Ageless\n~~ Broken Keel\n3.) Penacony, Land of the Dreams ²",
         "baseline_stats": "HP: 4500+\nSPD: 200+",
         "ability_notes": "Leveling Basic ATK can be ignored.",
-        "relic_notes": "¹ Bone Collection's Serene Demesne is not listed because Giant Tree of Rapt Brooding would give more utility and personal damage at the same time.",
-        "other_notes": "² E1 is mainly useful for teams with a HP-scaling DPS.",
-        "main_stats": "Outgoing Healing%\nSPD\nHP%\nERR%",
+        "relic_notes": "¹ Amphoreus, The Eternal Land is undisturbed BiS if Hyacine is used with a SPD scaling DPS and nobody else is holding it.\n² Penacony, Land of the Dreams can be used if Hyacine is paired with a Wind DPS.",
+        "other_notes": "³ HP% Rope can be preferred over ERR% if you use Cyrene's Memosprite Skill \"Ode to Sky\" directly on Hyacine\n⁴ E1 is notable for HP scaling teams.",
+        "main_stats": "Outgoing Healing%\nSPD\nHP%\nERR% / HP% ³",
         "ability_priority": "1.) Skill\n2.) Ultimate\n3.) M. Talent\n4.) Talent\n5.) M. Skill\n6.) Basic ATK"
       }
     ],
@@ -2299,7 +2299,7 @@
       {
         "role": "Support",
         "light_cones": "1 - Those Many Springs 5★\n2 - Why Does the Ocean Sing 5★ ⁵\n3 - Incessant Rain 5★\n4 - Eyes of the Prey 4★\n~~ Before the Tutorial Mission Starts 4★ [Free] ³\n5 - Resolution Shines as Pearls of Sweat 4★\n~~ Holiday Thermae Escapade 4★ [Battle Pass]\n\nFor Pure Fiction: Solitary Healing 5★ [Free] ⁴",
-        "relic_4pc": "1.) 2-PC: SPD% Set + SPD% Set [Choose 1]\n~~ 4-PC: Eagle of Twilight Line ¹\n2.) 4-PC: Prisoner in Deep Confinement ²",
+        "relic_4pc": "1.) 4-PC: Eagle of Twilight Line ¹\n2.) 2-PC: SPD% Set + SPD% Set \n3.) 4-PC: Prisoner in Deep Confinement ²",
         "sub_stats": "1.) EHR\n~~ SPD\n2.) ATK%",
         "eidolons": "E2",
         "planar_ornament": "1.) Sprightly Vonwacq\n~~ Pan-Cosmic Commercial Enterprise\n2.) Fleet of the Ageless\n~~ Broken Keel\n~~ Lushaka, the Sunken Seas\n~~ City of Converging Stars",
@@ -2924,6 +2924,31 @@
     "example_teams": []
   },
   {
+    "name": "Mortenax Blade",
+    "path": "Nihility",
+    "builds": [
+      {
+        "role": "Support\nSub DPS",
+        "light_cones": "Support Build\n1 - Lies Dance on the Breeze 5★ ¹\n2 - Holiday Thermae Escapade 4★ \n      [Battle Pass] ²\n~~ Before The Tutorial Mission Starts 4★ [Free]\n3 - Resolution Shines as Pearls of Sweat 4★ ²\n\nSub DPS Build\n1 - Lies Dance on the Breeze 5★ ¹ ³\n~~ Reforged in Hellfire 5★ ³\n2 - Along the Passing Shore 5★\n3 - Holiday Thermae Escapade 4★\n      [Battle Pass] ²\n4 - Good Night and Sleep Well 4★\n~~ Boundless Choreo 4★",
+        "relic_4pc": "Support Build\n1.) 4-PC: Divine-Querying Master Smith \n2.) 4-PC: Eagle of Twilight Line \n* 4-PC: Guard of Wuthering Snow ⁴\nSub DPS Build\n1.) 4-PC: Divine-Querying Master Smith \n2.) 4-PC: Longevous Disciple\n~~ 4-PC: Pioneer Diver of Dead Waters",
+        "sub_stats": "1.) CRIT Rate / CRIT DMG\n2.) HP%\n~~ SPD\n3.) Effect Hit Rate% ²",
+        "eidolons": "E1\nE2",
+        "planar_ornament": "Support Build\n1.) Sprightly Vonwacq \n~~ Lushaka, The Sunken Seas\n~~ City of Converging Stars \nSub DPS Build\n1.) Bone Collection's Serene Demesne\n2.) Inert Salsotto",
+        "baseline_stats": "CRIT Rate: 80% ⁶\nCRIT DMG: 120%+ ⁶\nHP: 5000+\nSPD: Base SPD / 140+ / 170 ¹",
+        "ability_notes": "Leveling Basic ATK can be ignored.",
+        "relic_notes": "¹ Lies Dance on the Breeze requires 170+ SPD to activate its effect. This can make 2-PC: SPD + 2-PC: SPD viable for lower investment builds, though ideally Mortenax Blade reaches 170+ SPD with one of the recommended Relic sets.\n² Holiday Thermae Escapade and Resolution Shines as Pearls of Sweat require EHR (66.7%) to guarantee their debuffs, but due to Mortenax Blade's attack frequency, this can be lowered to around 40%.\n⁴ 4-PC: Guard of Wuthering Snow has niche uses in some sustainless teams (usually with Welt) and teams with a shielder. Note that this is not required for sustainless teams in general, as you can save Mortenax Blade's Ultimate to use it when he dies.\n⁵ HP rope and HP boots are preferred to maximize his personal DMG. They aren't recommended if Mortenax Blade isn't the main DPS.",
+        "other_notes": "³ Lies Dance on the Breeze provides more team DMG while Reforged in Hellfire provides more personal DMG.\n⁶ These are for his sub DPS build; a lower CRIT Rate / CRIT DMG is fine if he's built for support. Getting some CRIT Rate / CRIT DMG as a support is still worth it, since Mortenax Blade has decent damage multipliers, especially on his Ultimate.",
+        "main_stats": "CRIT Rate / CRIT DMG\nSPD / HP% ⁵\nHP% / Fire DMG%\nERR% / HP% ⁵",
+        "ability_priority": "1.) Ultimate\n2.) Talent\n3.) Skill\n4.) Basic ATK"
+      }
+    ],
+    "release_date": "",
+    "kit_overview": "",
+    "worth_pulling": "",
+    "recommended_baseline": "",
+    "example_teams": []
+  },
+  {
     "name": "Moze",
     "path": "Hunt",
     "builds": [
@@ -2955,13 +2980,13 @@
       {
         "role": "Main DPS",
         "light_cones": "1 - Flame of Blood, Blaze My Path 5★\n2 - The Unreachable Side 5★\n3 - A Secret Vow 4★\n4 - Ninja Record: Sound Hunt 4★ [Free]\n5 - Flames Afar 4★ [Free]",
-        "relic_4pc": "1.) 4-PC: Scholar Lost in Erudition\n2.) 4-PC: Longevous Disciple",
+        "relic_4pc": "1.) 4-PC: As Navigator Isee Sees It ³\n2.) 4-PC: Scholar Lost in Erudition\n3.) 4-PC: Longevous Disciple",
         "sub_stats": "1.) CRIT DMG / CRIT Rate\n~~ HP%",
         "eidolons": "E1",
         "planar_ornament": "1.) Bone Collection's Serene Demesne\n~~ Rutilant Arena",
         "baseline_stats": "HP: 8000+\nCRIT Rate: 52%+ ²\nCRIT DMG: 140%",
         "ability_notes": "Leveling Basic ATK can be ignored",
-        "relic_notes": "¹ It is recommended to get 8000 HP before going for any additional stats, and the easiest way to do this is by using an HP% body and/or sphere.\n- If you already have 8000 HP, the priority in replacing mainstats is Imaginary DMG sphere > CRIT DMG body.",
+        "relic_notes": "¹ It is recommended to get 8000 HP before going for any additional stats, and the easiest way to do this is by using an HP% body and/or sphere.\n- If you already have 8000 HP, the priority in replacing mainstats is Imaginary DMG sphere > CRIT DMG body\n³ 4-PC: As Navigator Isee Sees It assumes you're using his BiS team of Cyrene + Cerydra. It's performance drops significantly without either.",
         "other_notes": "² As long as Mydei has 8,000+ HP in Combat, he will gain 48% Crit Rate from his A6 Trace (Bloodied Chiton).",
         "main_stats": "HP% / CRIT DMG ¹\nHP%\nHP% / Imaginary DMG% ¹\nHP%",
         "ability_priority": "1.) Skill\n2.) Ultimate\n3.) Talent\n4.) Basic ATK"
@@ -3051,7 +3076,7 @@
       {
         "role": "Support",
         "light_cones": "1 - Lies Dance on the Breeze 5★\n2 - Resolution Shines as Pearls of Sweat 4★\n~~ Holiday Thermae Escapade 4★ [Battle Pass]\n3 - Incessant Rain 5★\n4 - Before the Tutorial Mission Starts 4★ [Free]\n5 - Eyes of the Prey 4★",
-        "relic_4pc": "1.) 4-PC: Eagle of Twilight Line\n2.) 2-PC: SPD% Set + SPD% Set [Choose 1]",
+        "relic_4pc": "1.) 4-PC: Eagle of Twilight Line\n~~ 4-PC: Divine-Querying Master Smith \n2.) 2-PC: SPD% Set + SPD% Set [Choose 1]",
         "sub_stats": "1.) EHR\n2.) SPD\n3.) HP% \n4.) DEF%",
         "eidolons": "E4",
         "planar_ornament": "1.) City of Converging Stars\n~~ Broken Keel\n~~ Lushaka, the Sunken Seas\n2.) Penacony, Land of the Dreams ¹",
@@ -3076,7 +3101,7 @@
       {
         "role": "Main DPS",
         "light_cones": "1 - Thus Burns the Dawn 5★\n2 - Brighter Than The Sun 5★\n3 - On the Fall of an Aeon 5★ [Free]\n4 - Something Irreplaceable 5★\n5 - A Trail of Bygone Blood 4★ [Battle Pass]",
-        "relic_4pc": "1.) 4-PC: Wavestrider Captain\n2.) 4-PC: Scholar Lost in Erudition\n~~ 4-PC: Pioneer Diver of Dead Waters",
+        "relic_4pc": "1.) 4-PC: As Navigator Isee Sees It\n2.) 4-PC: Wavestrider Captain\n3.) 4-PC: Scholar Lost in Erudition\n~~ 4-PC: Pioneer Diver of Dead Waters",
         "sub_stats": "1.) CRIT Rate\n2.) CRIT DMG\n3.) ATK%",
         "eidolons": "E2\nE6",
         "planar_ornament": "1.) Arcadia of Woven Dreams\n~~ Rutilant Arena",
@@ -3331,11 +3356,11 @@
     "builds": [
       {
         "role": "Support",
-        "light_cones": "1 - Past Self in Mirror 5★ ⁴\n~~ In Pursuit of the Wind 4★ [Battle Pass]\n2 - Memories of the Past 4★ [S5]\n3 - Meshing Cogs 3★ [S5]\n4 - Planetary Rendezvous 4★ ¹",
+        "light_cones": "1 - Past Self in Mirror 5★ ⁴\n~~ In Pursuit of the Wind 4★ [Battle Pass]\n2 - Memories of the Past 4★ [S5]\n~~ Meshing Cogs 3★ [S5]\n3 - Planetary Rendezvous 4★ ¹",
         "relic_4pc": "1.) 2-PC: SPD% Set + BE% Set\n~~ 4-PC: Watchmaker, Master of Dream Machinations ²\n2.) 4-PC: Thief of Shooting Meteor",
         "sub_stats": "1.) SPD / Break Effect\n2.) HP% / DEF%\n3.) Effect RES",
         "eidolons": "E1\nE6",
-        "planar_ornament": "1.) Sprightly Vonwacq\n~~ Lushaka, the Sunken Seas\n~~ Penacony, Land of the Dreams ¹\n2.) Fleet of the Ageless\n~~ Broken Keel\n~~ City of Converging Stars",
+        "planar_ornament": "1.) Sprightly Vonwacq\n~~ Lushaka, the Sunken Seas\n~~ Penacony, Land of the Dreams ¹",
         "baseline_stats": "HP: 3000+\nDEF: 1000+\nBreak Effect: 160% ³\nSPD: 134+",
         "ability_notes": "Leveling Basic ATK can be ignored.",
         "relic_notes": "¹ Planetary Rendezvous and Penacony, Land of the Dreams can be used if paired with Ice DPS.\n² 4-PC: Watchmaker, Master of Dream Machinations may be preferable in break teams.",
@@ -3613,7 +3638,7 @@
       {
         "role": "Support\n(Post 3.4 Buff)",
         "light_cones": "1 - Lies Dance on the Breeze 5★\n2 - Resolution Shines as Pearls of Sweat 4★\n~~ Holiday Thermae Escapade 4★ [Battle Pass]\n~~ Incessant Rain 5★\n~~ Before the Tutorial Mission Starts 4★ [Free] ² ⁴",
-        "relic_4pc": "1.) 2-PC: SPD% Set + SPD% Set [Choose 1]\n* 4-PC: Eagle of Twilight Line ²",
+        "relic_4pc": "1.) 2-PC: SPD% Set + SPD% Set [Choose 1]\n~~ 4-PC: Eagle of Twilight Line ²\n~~ 4-PC: Divine-Querying Master Smith",
         "sub_stats": "1.) SPD\n~~ EHR\n2.) CRIT Rate / CRIT DMG\n3.) ATK%",
         "eidolons": "E1 ²\nE2",
         "planar_ornament": "1.) Lushaka, the Sunken Seas\n~~ Penacony, Land of the Dreams\n2.) Sprightly Vonwacq",
@@ -3832,9 +3857,9 @@
         "planar_ornament": "1.) Tengoku@Livestream\n~~ Punklorde Stage Zero",
         "baseline_stats": "CRIT Rate: 90%+\nCRIT DMG: 140%+\nATK: 2700+",
         "ability_notes": "-",
-        "relic_notes": "- Sparxie has an ATK -> Elation conversion capping at 3600 ATK (in combat), making ATK a worthwhile investment until that point.\n¹ Sparxie can use any Mainstat if you reach 3600 ATK with them.\n² As a Main DPS, Sparxie prefers ATK% boots and ERR% Rope. As a Sub DPS, Sparxie prefers SPD Boots and ATK% Rope.",
+        "relic_notes": "- Sparxie has an ATK -> Elation conversion capping at 3600 ATK (in combat), making ATK a worthwhile investment until that point.\n¹ Sparxie can use any Mainstat if you reach 3600 ATK with them.\n² As a Main DPS, Sparxie wants ATK% boots and as a Sub DPS, Sparxie slightly prefers SPD boots.",
         "other_notes": "- Elation DMG does not scale on ATK/DEF/HP or DMG%. It scales on Level, CRIT, Punchline, Merrymaking, Elation%, Vulnerability%, RES PEN, and DEF shred/ignore.",
-        "main_stats": "CRIT Rate / CRIT DMG\nATK% ² / SPD ²\nATK% / Any ¹\nERR% ² / ATK% ²",
+        "main_stats": "CRIT Rate / CRIT DMG\nATK% ² / SPD ²\nATK% / Any ¹\nERR%",
         "ability_priority": "1.) Talent\n2.) Elation Skill\n3.) Ultimate\n4.) Skill\n5.) Basic ATK"
       }
     ],
@@ -4700,9 +4725,9 @@
       {
         "role": "Main DPS\nSupport\n(Post 4.2 Buff)",
         "light_cones": "1 - Those Many Springs 5★\n~~ Along the Passing Shore 5★\n2 - Holiday Thermae Escapade 4★ [Battle Pass]\n3 - In the Name of the World 5★\n4 - Incessant Rain 5★\n5 - Good Night and Sleep Well 4★\n~~ Boundless Choreo 4★\n\nSupport Build\n1 - Before The Tutorial Mission Starts 4★ [Free]\n~~ Lies Dance on the Breeze 5★\n2 - Holiday Thermae Escapade 4★ [Battle Pass]\n~~ Those Many Springs 5★\n3 - Resolution Shines as Pearls of Sweat 4★",
-        "relic_4pc": "1.) 4-PC: Pioneer Diver of Dead Waters\n~~ 4-PC: Eagle of Twilight Line ¹\n2.) 4-PC: Wastelander of Banditry Desert\n~~ 4-PC: Genius of Brilliant Stars \n~~ 2-PC: SPD Set + 2-PC: SPD Set ¹",
+        "relic_4pc": "1.) 4-PC: Pioneer Diver of Dead Waters\n~~ 4-PC: Eagle of Twilight Line ¹\n~~ 4-PC: Divine-Querying Master Smith ¹\n2.) 4-PC: Wastelander of Banditry Desert\n~~ 4-PC: Genius of Brilliant Stars \n~~ 2-PC: SPD Set + 2-PC: SPD Set ¹",
         "sub_stats": "1.) EHR\n~~ CRIT Rate / CRIT DMG\n2.) SPD\n3.) ATK",
-        "eidolons": "E2\nE4\nE6",
+        "eidolons": "E2\nE4",
         "planar_ornament": "1.) Pan-Cosmic Commercial Enterprise \n~~ Sprightly Vonwacq ¹\n~~ Lushaka, The Sunken Seas ¹\n2.) Izumo Gensei and Takama Divine Realm (With Nihility Ally)\n3.) Rutilant Arena",
         "baseline_stats": "EHR: 80% / 66.7% ²\nCRIT Rate: 90%+\nCRIT DMG: 120%+\nSPD: Base SPD / 135\nATK: 2500+",
         "ability_notes": "Leveling Basic ATK can be ignored.",
@@ -4808,11 +4833,11 @@
         "relic_4pc": "1.) 4-PC: Scholar Lost in Erudition\n2.) 4-PC: The Wind-Soaring Valorous\n3.) 4-PC: Hunter of Glacial Forest\n4.) 2-PC: CRIT Rate% Set / Wavestrider / Hunter / ATK% Set [Choose 2]",
         "sub_stats": "1.) CRIT DMG / CRIT Rate\n2.) ATK%\n3.) SPD",
         "eidolons": "E2\nE4",
-        "planar_ornament": "1.) Firmament Frontline: Glamoth ³\n2.) Space Sealing Station ³\n~~ City of Converging Stars ⁶\n3.) Inert Salsotto\n~~ Rutilant Arena",
+        "planar_ornament": "1.) Firmament Frontline: Glamoth ³\n2.) Space Sealing Station ³\n~~ City of Converging Stars\n3.) Inert Salsotto\n~~ Rutilant Arena",
         "baseline_stats": "ATK: 2500+\nCRIT Rate: 70%+ ⁴ ⁵\nCRIT DMG: 160%+\nSPD: 135+",
         "ability_notes": "Leveling Basic ATK can be ignored.",
         "relic_notes": "³ Firmament Frontline: Glamoth and Space Sealing Station need 135 and 120 SPD respectively to activate.",
-        "other_notes": "¹ Swordplay performs worse if switching between enemies.\n² Only Silence Remains performs worse with 3 (or more) enemies on field.\n⁴ Even though Yanqing gains 60% CRIT Rate for his Ultimate, his Skill deals too much DMG to ignore.\n⁵ Yanqing grants himself 20% CRIT Rate from his Talent.",
+        "other_notes": "¹ Swordplay performs worse if switching between enemies.\n² Only Silence Remains performs worse with 3 (or more) enemies on field.\n⁴ Even though Yanqing gains 60% CRIT Rate for his Ultimate, his Skill deals too much DMG to build around it.\n⁵ Yanqing grants himself 20% CRIT Rate from his Talent.",
         "main_stats": "CRIT DMG\nSPD / ATK%\nIce DMG%\nATK%",
         "ability_priority": "1.) Ultimate\n2.) Talent\n3.) Skill\n4.) Basic ATK"
       }
@@ -4880,7 +4905,7 @@
         "sub_stats": "1.) SPD ³\n2.) CRIT Rate ⁴\n3.) CRIT DMG ⁴",
         "eidolons": "E1\nE6",
         "planar_ornament": "1.) Sprightly Vonwacq\n~~ Lushaka, The Sunken Seas\n2.) Broken Keel\n~~ City of Converging Stars",
-        "baseline_stats": "CRIT Rate: 90%+ ⁴\nSPD: 180+ (W/ Sig) ³\nSPD: 160+ (W/o Sig) ¹ ³",
+        "baseline_stats": "CRIT Rate: 72%+ \n(With Diviner)\nSPD: 200+ (W/ Sig) ³\nSPD: 180+ (W/o Sig) ³",
         "ability_notes": "Leveling Basic ATK can be ignored",
         "relic_notes": "¹ With 4-PC: Diviner of Distant Reach, Yao Guang requires 160 SPD before battle to gain 18% CRIT Rate in battle.\n² Defensive Mainstats are preferred for more survivability.",
         "other_notes": "- Elation DMG does not scale on ATK/DEF/HP or DMG%. It scales on Level, CRIT, Punchline, Merrymaking, Elation%, Vulnerability%, RES PEN, and DEF shred/ignore.\n³ Yao Guang has a SPD conversion which boosts her Elation, boosting personal DMG and teamwide Elation. This makes it Yao Guangs most important substat.\n⁴ CRIT stats are only to benefit her Personal DMG. CRIT DMG has a lower priority to CRIT Rate due to her A4 Trace granting self CRIT DMG.",

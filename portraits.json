@@ -113,7 +113,8 @@
     "Zhongli": "https://static.wikia.nocookie.net/gensin-impact/images/f/f2/Zhongli_Profile.png/revision/latest?cb=20221009201612",
     "Zibai": "https://static.wikia.nocookie.net/gensin-impact/images/0/0b/Zibai_Profile.png/revision/latest?cb=20260203232641",
     "Nicole": "https://static.wikia.nocookie.net/gensin-impact/images/e/e0/Character_Nicole_Full_Wish.png/revision/latest?cb=20260520033047",
-    "Lohen": "https://static.wikia.nocookie.net/gensin-impact/images/5/56/Lohen_Card.png/revision/latest?cb=20260414040204"
+    "Lohen": "https://static.wikia.nocookie.net/gensin-impact/images/5/56/Lohen_Card.png/revision/latest?cb=20260414040204",
+    "Prune": "https://static.wikia.nocookie.net/gensin-impact/images/c/c7/Prune_Profile.png/revision/latest?cb=20260518040409"
   },
   "hsr": {
     "Acheron": "https://static.wikia.nocookie.net/houkai-star-rail/images/7/78/Character_Acheron_Splash_Art.png/revision/latest?cb=20240327021325",
@@ -251,6 +252,8 @@
     "Yixuan": "https://static.wikia.nocookie.net/zenless-zone-zero/images/e/e4/Mindscape_Yixuan_Full.png/revision/latest?cb=20250606024134",
     "Zhao": "https://static.wikia.nocookie.net/zenless-zone-zero/images/8/83/Mindscape_Zhao_Full.png/revision/latest?cb=20251230124206",
     "Zhu Yuan": "https://static.wikia.nocookie.net/zenless-zone-zero/images/b/bb/Mindscape_Zhu_Yuan_Full.png/revision/latest?cb=20240724195640",
-    "Starlight Billy": "https://static.wikia.nocookie.net/zenless-zone-zero/images/0/0e/Mindscape_Starlight_-_Billy_Kid_Full.png/revision/latest?cb=20260529000054"
+    "Starlight Billy": "https://static.wikia.nocookie.net/zenless-zone-zero/images/0/0e/Mindscape_Starlight_-_Billy_Kid_Full.png/revision/latest?cb=20260529000054",
+    "Velina": "https://static.wikia.nocookie.net/zenless-zone-zero/images/c/cf/Agent_Velina_Airgid_Portrait.png",
+    "Pyrois": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/45/Agent_Pyrois_Portrait.png"
   }
 }
