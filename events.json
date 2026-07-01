@@ -7,15 +7,6 @@
   },
   "gi": [
     {
-      "name": "The Stilled Interstice of a Thousand Winds",
-      "type": "exploration",
-      "start": "2026-04-08T10:00:00-05:00",
-      "end": "2026-06-30T03:59:00-05:00",
-      "tagline": "Multi-day exploration — traverse a frozen windswept realm and complete daily objectives to unlock the full reward track.",
-      "rewards": "+ 400 Primogems",
-      "url": "https://genshin-impact.fandom.com/wiki/The_Stilled_Interstice_of_a_Thousand_Winds"
-    },
-    {
       "name": "To Temper Thyself and Journey Far",
       "type": "story",
       "start": "2026-05-18T10:00:00-05:00",
@@ -25,68 +16,49 @@
       "url": "https://game8.co/games/Genshin-Impact/archives/546841"
     },
     {
-      "name": "Song of the Welkin Moon",
-      "type": "quest",
-      "start": "2026-05-20T10:00:00-05:00",
-      "end": "2026-06-30T03:59:00-05:00",
-      "tagline": "Archon Quest bonus — finish Act IV, 'An Elegy for Faded Moonlight,' of the 'Song of the Welkin Moon' Archon Quest before Version 6.6 ends to claim a one-time Primogem reward.",
-      "rewards": "+ 560 Primogems · Nicole's Ascension Materials",
-      "quests": [
-        "All Is Foretold",
-        "Dance of Death: Serpent and Scorpion",
-        "Echoes of Fate"
-      ],
-      "url": "https://game8.co/games/Genshin-Impact/archives/557059"
-    },
-    {
-      "name": "Lepus Miles Chapter: Act I",
-      "type": "quest",
-      "start": "2026-06-09T10:00:00-05:00",
-      "end": "2026-06-30T03:59:00-05:00",
-      "tagline": "Character Story Quest bonus — complete Lohen's new Story Quest, 'Lepus Miles Chapter: Act I — A Knight's Legacy,' for first-clear rewards. Requires AR 40 and Song of the Welkin Moon Act IV.",
-      "rewards": "+ 60 Primogems · Character Talent Materials",
-      "quests": [
-        "A Knight's Merit",
-        "A Knight's Pursuit",
-        "A Knight's Resolve"
-      ],
-      "url": "https://game8.co/games/Genshin-Impact/archives/598985"
+      "name": "Sunny Summer Fontinalia",
+      "type": "main",
+      "start": "2026-07-01T10:00:00-05:00",
+      "end": "2026-08-11T03:59:00-05:00",
+      "tagline": "Version 6.7 flagship event — join a summer festival across Fontaine to earn a free 4★ Charlotte with a new outfit plus a large Primogem haul.",
+      "rewards": "+ 1,060 Primogems · 4★ Charlotte + outfit · event materials",
+      "url": null
     },
     {
       "name": "Stygian Onslaught",
       "type": "combat",
-      "start": "2026-05-27T10:00:00-05:00",
-      "end": "2026-06-30T03:59:00-05:00",
-      "tagline": "Wave-survival combat — hold out against escalating enemy waves across difficulty tiers; higher tiers unlock the weapon skin reward.",
-      "rewards": "+ 450 Primogems · 2× Dust of Enlightenment · 5★ Weapon Skin (Radiant Phantasm: Incursion Repeller)",
-      "url": "https://game8.co/games/Genshin-Impact/archives/527266"
+      "start": "2026-07-07T10:00:00-05:00",
+      "end": "2026-08-11T03:59:00-05:00",
+      "tagline": "Wave-survival endgame — hold out against escalating enemy waves across difficulty tiers for Primogems and materials.",
+      "rewards": "+ 450 Primogems · event materials",
+      "url": null
     },
     {
-      "name": "Trials of the Brave Warrior",
-      "type": "combat",
-      "start": "2026-06-08T10:00:00-05:00",
-      "end": "2026-06-18T03:59:00-05:00",
-      "tagline": "Character trial showcase — test-drive featured characters in timed combat challenges, no investment required.",
-      "rewards": "+ 420 Primogems · Talent Books · Sanctifying Unction",
-      "url": "https://game8.co/games/Genshin-Impact/archives/598980"
-    },
-    {
-      "name": "Miliastral Gifts",
+      "name": "Final Long-Range Sichtlines",
       "type": "main",
-      "start": "2026-06-10T10:00:00-05:00",
-      "end": "2026-06-24T03:59:00-05:00",
-      "tagline": "Check-in event — log in and complete daily missions over the event window to collect incremental Primogem rewards.",
-      "rewards": "+ 270 Primogems",
-      "url": "https://game8.co/games/Genshin-Impact/archives/598997"
+      "start": "2026-07-17T10:00:00-05:00",
+      "end": "2026-07-27T03:59:00-05:00",
+      "tagline": "Shooting mini-game — line up long-range trick shots across timed stages for Primogem rewards.",
+      "rewards": "+ 420 Primogems · event materials",
+      "url": null
     },
     {
-      "name": "Kaleidoscopic Color Chase",
+      "name": "Dance Dance Easy-Breezy Disco",
       "type": "main",
-      "start": "2026-06-18T10:00:00-05:00",
-      "end": "2026-06-29T03:59:00-05:00",
-      "tagline": "Color-matching mini-game — race through obstacle courses and match color sequences against the clock across multiple stages.",
-      "rewards": "+ 420 Primogems · Talent Books · Sanctifying Unction",
-      "url": "https://game8.co/games/Genshin-Impact/archives/598979"
+      "start": "2026-07-24T10:00:00-05:00",
+      "end": "2026-08-03T03:59:00-05:00",
+      "tagline": "Rhythm mini-game — hit the beat across escalating disco routines to earn Primogems and materials.",
+      "rewards": "+ 420 Primogems · event materials",
+      "url": null
+    },
+    {
+      "name": "Ley Line Overflow",
+      "type": "main",
+      "start": "2026-08-03T10:00:00-05:00",
+      "end": "2026-08-10T03:59:00-05:00",
+      "tagline": "Farming bonus — Ley Line Outcrops grant double Mora and Hero's Wit for the event window.",
+      "rewards": "+ Double Mora & Hero's Wit (Ley Line Outcrops)",
+      "url": null
     }
   ],
   "hsr": [
