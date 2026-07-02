@@ -1795,6 +1795,12 @@
     "notes": "This Build focuses on Rosaria's Buffing/Energy generation/Cryo application capabilities. Though it does not mean that you dont invest in her personal damage, only that it's a lower priority overall.\n\nRosaria A4 passive provides a potent Crit Rate buff to her teammates via her own Crit Rate after casting Burst. This heavily incentivizes building enough Energy Recharge to Burst consistently and getting as close to 100% Crit Rate as possible\n\nRegarding Weapon Choices:\nFavonius Lance: The best option in situations where you havent met your teams Energy Recharge requirements. Outside of that scenario you would be better off using a Crit Rate weapon that benefits her A4 buff.\n\nRegarding Artifact Sets:\nScroll of the Hero of Cinder City: Unconditional 12 DMG% to any element that she reacts with, Scroll of the Hero of Cinder City (2) also help her Energy Recharge requirement when there is a Nightsoul Burst triggered in the party\nArchaic Petra: Only used in teams where she can reliably pick up Crystalized crystals\nInstructor: Can be the better option in teams that prefer the Elemental Mastery buff over ATK, such as Hu Tao VapeMelt, while sacrificing her Crit Rate buffing potential\n\nRegarding Artifact Substats Priority:\nEnergy Recharge: er-req."
   },
   {
+    "name": "Sandrone",
+    "last_updated": "Version WIP",
+    "builds": [],
+    "notes": ""
+  },
+  {
     "name": "Sara",
     "last_updated": "Version 5.0",
     "builds": [
