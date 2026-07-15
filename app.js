@@ -588,7 +588,7 @@ function allEventsSection() {
     const rem = e.e2 - now, urgent = rem <= 60 * 36e5;
     const sig = sigRewards(e.rewards);
     const isDone = done.has(evtDoneKey(g, e.name));
-    return `<div class="es-row${urgent ? ' urgent' : ''}${isDone ? ' done' : ''}" data-name="${esc(e.name)}" data-game="${g}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards||'')}" data-tagline="${esc(e.tagline||'')}" data-quests="${esc(JSON.stringify(e.quests||[]))}">
+    return `<div class="es-row${urgent ? ' urgent' : ''}${isDone ? ' done' : ''}" data-name="${esc(e.name)}" data-game="${g}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards||'')}" data-tagline="${esc(e.tagline||'')}" data-image="${esc(e.image||'')}" data-quests="${esc(JSON.stringify(e.quests||[]))}">
       <span class="es-dot" style="background:${gdot};color:${gdot}"></span>
       <span class="es-mid">
         <span class="es-name">${e.name}</span>
@@ -627,7 +627,7 @@ function bannerCard(b, game) {
   const rarity = c?.rarity || 5;
   const rc = RARITY[rarity] || RARITY[5];
   const el = c?.element, ec = accentFor(c) || elColor(el);
-  const img = c?.icon || c?.splash;
+  const img = c?.icon || c?.splash || (S.icons[g] || {})[b.character] || (S.portraits[g] || {})[b.character];
   const click = !!c, tag = click ? 'button' : 'div';
   return `<${tag} class="bn-card${click ? '' : ' static'}" ${click ? `data-char="${b.character}" data-char-game="${g}"` : ''} style="--ec:${ec};--rc:${rc[1]}">
     <span class="bn-thumb">${img ? `<img src="${img}" loading="lazy" referrerpolicy="no-referrer">` : `<span class="ph">${b.character[0]}</span>`}</span>
@@ -685,7 +685,7 @@ function endingSoonPanel() {
     const urgent = rem <= 60 * 36e5;                 // within ~2.5 days
     const sig = sigRewards(e.rewards);
     const done = evtDoneSet().has(evtDoneKey(S.game, e.name));
-    return `<div class="es-row${urgent ? ' urgent' : ''}${done ? ' done' : ''}" data-name="${esc(e.name)}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards||'')}" data-tagline="${esc(e.tagline||'')}" data-quests="${esc(JSON.stringify(e.quests||[]))}">
+    return `<div class="es-row${urgent ? ' urgent' : ''}${done ? ' done' : ''}" data-name="${esc(e.name)}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards||'')}" data-tagline="${esc(e.tagline||'')}" data-image="${esc(e.image||'')}" data-quests="${esc(JSON.stringify(e.quests||[]))}">
       <span class="es-dot" style="background:${col};color:${col}"></span>
       <span class="es-mid">
         <span class="es-name">${e.name}</span>
@@ -731,7 +731,7 @@ function eventSection() {
     if (!liveNow) barlab = 'in ' + Math.max(1, Math.round((e.s - now) / 864e5)) + 'd';
     else if (soon) barlab = Math.max(1, Math.round(remMs / 36e5)) + 'h left';
     else barlab = Math.round(remMs / 864e5) + 'd left';
-    return `<div class="evt-row${soon ? ' soon' : ''}" data-name="${esc(e.name)}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards || '')}" data-tagline="${esc(e.tagline||'')}" data-quests="${esc(JSON.stringify(e.quests||[]))}">
+    return `<div class="evt-row${soon ? ' soon' : ''}" data-name="${esc(e.name)}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards || '')}" data-tagline="${esc(e.tagline||'')}" data-image="${esc(e.image||'')}" data-quests="${esc(JSON.stringify(e.quests||[]))}">
       <span class="evt-label"><span class="evt-tdot" style="background:${col}"></span><span class="evt-name">${e.name}</span>${soon ? `<span class="evt-warn">${WARN_SVG}Ends soon</span>` : `<span class="evt-type" style="color:${col}">${evtType(e.type)[1]}</span>`}</span>
       <span class="evt-track">
         <span class="evt-bar${e.s < winS ? ' clipL' : ''}${e.e2 > winE ? ' clipR' : ''}${soon ? ' soon' : ''}" style="left:${L}%;width:${R - L}%;--c:${soon ? 'var(--amber)' : col}">
@@ -915,6 +915,7 @@ function showEvtPop(row) {
   pop.innerHTML = `
     <div class="evt-pop-h"><span class="evt-pop-dot" style="background:${col}"></span><span class="evt-pop-type" style="color:${col}">${tlabel}</span>${soon ? `<span class="evt-pop-warn">${WARN_SVG}Ends within 48h</span>` : ''}<button class="evt-pop-close" aria-label="Close">✕</button></div>
     <div class="evt-pop-name">${row.dataset.name}</div>
+    ${row.dataset.image ? `<div class="evt-pop-img"><img src="${row.dataset.image}" loading="lazy" referrerpolicy="no-referrer" alt=""></div>` : ''}
     ${row.dataset.tagline ? `<div class="evt-pop-tagline">${row.dataset.tagline}</div>` : ''}
     <div class="evt-pop-dates"><span class="evt-pop-rng">${fmtDay(s)} → ${fmtDay(e)}</span><span class="evt-pop-len">${total}d run</span></div>
     <div class="evt-pop-cdrow"><span class="evt-pop-cdl">${future ? 'Starts in' : 'Time remaining'}</span><span class="evt-pop-cd${soon ? ' warn' : ''}" data-deadline="${dl}" data-cd="full"></span></div>

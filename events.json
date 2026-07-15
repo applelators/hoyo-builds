@@ -2,7 +2,8 @@
   "$schema": {
     "_description": "Event schedule per game. All datetimes use ISO 8601 with explicit UTC-5 offset. Start times are 10:00 UTC-5 for mid-version events (confirmed from GI/ZZZ official announcements); patch-day events use the per-game maintenance-end time (GI T05:00:00Z, HSR/ZZZ T03:00:00Z). End times are 03:59 UTC-5 = 08:59 UTC, the minute before the 04:00 America server daily reset — confirmed as the universal HoYoverse event close time.",
     "_fields": {
-      "quests": "Optional array of the individual quest names that make up a story-driven event (used for type 'quest' Archon/Story Quests). List them in completion order; shown in the event popup."
+      "quests": "Optional array of the individual quest names that make up a story-driven event (used for type 'quest' Archon/Story Quests). List them in completion order; shown in the event popup.",
+      "image": "Optional event banner/menu image URL from the game Fandom wiki (static.wikia.nocookie.net). null when the wiki has no clean event image yet."
     }
   },
   "gi": [
@@ -13,7 +14,8 @@
       "end": "2026-08-10T03:59:00-05:00",
       "tagline": "Story event — follow Escoffier's journey across multiple chapters and complete combat trials to earn a free 5★ constellation.",
       "rewards": "+ 5-Star Stella Fortuna (free constellation) · Crown of Insight · Dust of Enlightenment",
-      "url": "https://game8.co/games/Genshin-Impact/archives/546841"
+      "url": "https://game8.co/games/Genshin-Impact/archives/546841",
+      "image": "https://static.wikia.nocookie.net/gensin-impact/images/b/b3/To_Temper_Thyself_and_Journey_Far_Event_Menu.png/revision/latest?cb=20250829160028"
     },
     {
       "name": "Sunny Summer Fontinalia",
@@ -22,7 +24,8 @@
       "end": "2026-08-11T03:59:00-05:00",
       "tagline": "Version 6.7 flagship event — join a summer festival across Fontaine to earn a free 4★ Charlotte with a new outfit plus a large Primogem haul.",
       "rewards": "+ 1,060 Primogems · 4★ Charlotte + outfit · event materials",
-      "url": "https://game8.co/games/Genshin-Impact/archives/605802"
+      "url": "https://game8.co/games/Genshin-Impact/archives/605802",
+      "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/59/Sunny_Summer_Fontinalia_Chapter.png/revision/latest?cb=20260701034336"
     },
     {
       "name": "Stygian Onslaught",
@@ -31,7 +34,8 @@
       "end": "2026-08-11T03:59:00-05:00",
       "tagline": "Wave-survival endgame — hold out against escalating enemy waves across difficulty tiers for Primogems and materials.",
       "rewards": "+ 450 Primogems · event materials",
-      "url": "https://game8.co/games/Genshin-Impact/archives/527266"
+      "url": "https://game8.co/games/Genshin-Impact/archives/527266",
+      "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/41/Stygian_Onslaught.png/revision/latest?cb=20250623040614"
     },
     {
       "name": "Final Long-Range Sightlines",
@@ -40,7 +44,8 @@
       "end": "2026-07-27T03:59:00-05:00",
       "tagline": "Shooting mini-game — fire observation grenades and guide each projectile as far as possible without hitting obstacles for Primogem rewards.",
       "rewards": "+ 420 Primogems · event materials",
-      "url": "https://game8.co/games/Genshin-Impact/archives/605803"
+      "url": "https://game8.co/games/Genshin-Impact/archives/605803",
+      "image": "https://static.wikia.nocookie.net/gensin-impact/images/3/30/Final_Long-Range_Sightlines.png/revision/latest?cb=20260715131237"
     },
     {
       "name": "Dance Dance Easy-Breezy Disco",
@@ -49,7 +54,8 @@
       "end": "2026-08-03T03:59:00-05:00",
       "tagline": "Rhythm mini-game — a co-op rerun of Dance Dance Dynamic Disco; follow the lead dancer's beat to earn Primogems and materials.",
       "rewards": "+ 420 Primogems · event materials",
-      "url": "https://game8.co/games/Genshin-Impact/archives/605811"
+      "url": "https://game8.co/games/Genshin-Impact/archives/605811",
+      "image": "https://static.wikia.nocookie.net/gensin-impact/images/6/69/Dance_Dance_Easy-Breezy_Disco.png/revision/latest?cb=20260618125657"
     },
     {
       "name": "Ley Line Overflow",
@@ -58,7 +64,8 @@
       "end": "2026-08-10T03:59:00-05:00",
       "tagline": "Farming bonus — Ley Line Outcrops grant double Mora and Hero's Wit for the event window.",
       "rewards": "+ Double Mora & Hero's Wit (Ley Line Outcrops)",
-      "url": "https://game8.co/games/Genshin-Impact/archives/316998"
+      "url": "https://game8.co/games/Genshin-Impact/archives/316998",
+      "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d2/Ley_Line_Overflow_Overview.png/revision/latest?cb=20210227020538"
     }
   ],
   "hsr": [
@@ -69,7 +76,8 @@
       "end": "2026-08-25T03:00:00Z",
       "tagline": "Permanent exchange store — accumulate Convergence Points across the patch season to redeem a free 5★ character of your choice.",
       "rewards": "+ 1 free 5★ character (exchange via Stellar Convergence store)",
-      "url": "https://www.icy-veins.com/honkai-star-rail/stellar-companions"
+      "url": "https://www.icy-veins.com/honkai-star-rail/stellar-companions",
+      "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/6/60/Event_Stellar_Companions_2025-04-09.png/revision/latest?cb=20250409032926"
     },
     {
       "name": "4.4 Gift of Odyssey",
@@ -78,7 +86,8 @@
       "end": "2026-08-25T03:00:00Z",
       "tagline": "Log-in reward — check in on 7 separate days before the patch ends to claim 10 Star Rail Special Passes.",
       "rewards": "+ 10 Star Rail Special Passes",
-      "url": "https://game8.co/games/Honkai-Star-Rail/archives/413645"
+      "url": "https://game8.co/games/Honkai-Star-Rail/archives/413645",
+      "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/8/86/Event_Gift_of_Odyssey_2023-06-07.png/revision/latest?cb=20240608125724"
     },
     {
       "name": "Antigraft Brickbuster",
@@ -87,7 +96,8 @@
       "end": "2026-08-25T03:59:00-05:00",
       "tagline": "Version 4.4 flagship — take on a request from Aventurine and investigate IPC corruption by stacking data bricks in a block-building mini-game.",
       "rewards": "+ 900 Stellar Jade · Self-Modeling Resin · 2× Tracks of Destiny",
-      "url": null
+      "url": null,
+      "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/f/fd/Event_Antigraft_Brickbuster.png/revision/latest?cb=20260714045044"
     },
     {
       "name": "Fate/Star Rail Night",
@@ -96,7 +106,8 @@
       "end": "2026-08-25T03:59:00-05:00",
       "tagline": "Fate/stay night collab combat event — defeat foes to unlock their Noble Phantasms and stack escalating abilities across the Holy Grail War.",
       "rewards": "+ 1,650 Stellar Jade · Self-Modeling Resin · 2× Tracks of Destiny",
-      "url": "https://game8.co/games/Honkai-Star-Rail/archives/608554"
+      "url": "https://game8.co/games/Honkai-Star-Rail/archives/608554",
+      "image": null
     },
     {
       "name": "Fate Contract: Renewal",
@@ -105,7 +116,8 @@
       "end": "2026-08-25T03:59:00-05:00",
       "tagline": "Collab claim event — log in during the window to pick a free 5★ Archer or Gilgamesh plus ascension and trace materials to raise them to Level 60.",
       "rewards": "+ Free 5★ Archer or Gilgamesh (to Lv. 60) · 10 Star Rail Special Passes",
-      "url": null
+      "url": null,
+      "image": null
     },
     {
       "name": "4.4 Planar Fissure",
@@ -114,7 +126,8 @@
       "end": "2026-08-08T03:59:00-05:00",
       "tagline": "Simulated Universe bonus — all SU runs during this window grant double Planar Ornament relic drops (up to 12 claims).",
       "rewards": "+ Double Simulated Universe drops (12 claims)",
-      "url": "https://game8.co/games/Honkai-Star-Rail/archives/413440"
+      "url": "https://game8.co/games/Honkai-Star-Rail/archives/413440",
+      "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/9/91/Event_Planar_Fissure.png/revision/latest?cb=20250509000528"
     },
     {
       "name": "Garden of Plenty",
@@ -123,7 +136,8 @@
       "end": "2026-08-21T03:59:00-05:00",
       "tagline": "Calyx bonus — claim double Golden and Crimson Calyx rewards when spending Trailblaze Power for the event duration.",
       "rewards": "+ Double Calyx drops (Golden & Crimson)",
-      "url": "https://game8.co/games/Honkai-Star-Rail/archives/413423"
+      "url": "https://game8.co/games/Honkai-Star-Rail/archives/413423",
+      "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/3/36/Event_Garden_of_Plenty.png/revision/latest?cb=20230720105834"
     }
   ],
   "zzz": [
@@ -134,7 +148,8 @@
       "end": "2026-07-28T03:59:00-05:00",
       "tagline": "Story-driven Bangboo event — navigate narrative chapters, solve chip-circuit puzzles, and unlock cosmetic rewards.",
       "rewards": "+ 1,000+ Polychrome · exclusive profile cosmetics",
-      "url": null
+      "url": null,
+      "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/72/Event_Bangbang%21_The_Genius_and_the_Miracle_Chip.png/revision/latest?cb=20260617123508"
     },
     {
       "name": "Assemble! Mock Exam Comeback Plan",
@@ -143,7 +158,8 @@
       "end": "2026-07-28T03:59:00-05:00",
       "tagline": "Hollow Zero variant — navigate exam-themed Hollow maps, answer ability-check questions, and defeat boss Ethereals at the end.",
       "rewards": "+ 1,200 Polychrome · Hamster Cage Pass · Boisterous Echoes (A-rank W-Engine)",
-      "url": null
+      "url": null,
+      "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a3/Event_Assemble%21_Mock_Exam_Comeback_Plan.png/revision/latest?cb=20260624041241"
     },
     {
       "name": "Celestial Nexus Intelligence Dossier",
@@ -152,7 +168,8 @@
       "end": "2026-07-28T03:59:00-05:00",
       "tagline": "Investigation event — gather clues and scan evidence across New Eridu districts to piece together a multi-part conspiracy.",
       "rewards": "+ Polychrome · Boopon · Official Investigator Log",
-      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/604631"
+      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/604631",
+      "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/1/13/Event_Celestial_Nexus_Intelligence_Dossier.png/revision/latest?cb=20260615104523"
     },
     {
       "name": "Gleaming Shadow Team Battle",
@@ -161,7 +178,8 @@
       "end": "2026-07-28T03:59:00-05:00",
       "tagline": "Shiyu Defense variant — clear shadow-realm combat waves under fixed-team restrictions; higher nodes require attribute-specific strategies.",
       "rewards": "+ 360 Polychrome · character leveling materials",
-      "url": null
+      "url": null,
+      "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/49/Event_Gleaming_Shadow_Team_Battle.png/revision/latest?cb=20260618095715"
     },
     {
       "name": "Art is Bangboo!",
@@ -170,7 +188,8 @@
       "end": "2026-07-28T03:59:00-05:00",
       "tagline": "Daily check-in event — log in each day to collect Polychrome and Boopons; no gameplay required.",
       "rewards": "+ 420 Polychrome · Boopons",
-      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/604665"
+      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/604665",
+      "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a2/Event_Art_Is_Bangboo%21.png/revision/latest?cb=20260707015534"
     },
     {
       "name": "Tales of the Hobbling Crow",
@@ -179,7 +198,8 @@
       "end": "2026-07-20T03:59:00-05:00",
       "tagline": "Narrative story event — follow the Hobbling Crow faction through a multi-chapter story with light combat sequences.",
       "rewards": "",
-      "url": null
+      "url": null,
+      "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/3/37/Event_Tales_of_the_Hobbling_Crow.png/revision/latest?cb=20260701044544"
     }
   ]
 }

@@ -114,7 +114,8 @@
     "Zibai": "https://static.wikia.nocookie.net/gensin-impact/images/0/0b/Zibai_Profile.png/revision/latest?cb=20260203232641",
     "Nicole": "https://static.wikia.nocookie.net/gensin-impact/images/e/e0/Character_Nicole_Full_Wish.png/revision/latest?cb=20260520033047",
     "Lohen": "https://static.wikia.nocookie.net/gensin-impact/images/5/56/Lohen_Card.png/revision/latest?cb=20260414040204",
-    "Prune": "https://static.wikia.nocookie.net/gensin-impact/images/c/c7/Prune_Profile.png/revision/latest?cb=20260518040409"
+    "Prune": "https://static.wikia.nocookie.net/gensin-impact/images/c/c7/Prune_Profile.png/revision/latest?cb=20260518040409",
+    "Sandrone": "https://static.wikia.nocookie.net/gensin-impact/images/6/62/Sandrone_Profile.png/revision/latest?cb=20260625040631"
   },
   "hsr": {
     "Acheron": "https://static.wikia.nocookie.net/houkai-star-rail/images/7/78/Character_Acheron_Splash_Art.png/revision/latest?cb=20240327021325",
@@ -197,7 +198,10 @@
     "Yao Guang": "https://static.wikia.nocookie.net/houkai-star-rail/images/e/e1/Character_Yao_Guang_Splash_Art.png/revision/latest?cb=20260213053032",
     "Yukong": "https://static.wikia.nocookie.net/houkai-star-rail/images/0/04/Character_Yukong_Splash_Art.png/revision/latest?cb=20230628090836",
     "Yunli": "https://static.wikia.nocookie.net/houkai-star-rail/images/7/72/Character_Yunli_Splash_Art.png/revision/latest?cb=20241007221656",
-    "Mortenax Blade": "https://static.wikia.nocookie.net/houkai-star-rail/images/4/4b/Character_Mortenax_Blade_Splash_Art.png/revision/latest?cb=20260601025859"
+    "Mortenax Blade": "https://static.wikia.nocookie.net/houkai-star-rail/images/4/4b/Character_Mortenax_Blade_Splash_Art.png/revision/latest?cb=20260601025859",
+    "Himeko • Nova": "https://static.wikia.nocookie.net/houkai-star-rail/images/b/b9/Character_Himeko_%E2%80%A2_Nova_Splash_Art.png/revision/latest?cb=20260715025512",
+    "Rin Tohsaka": "https://static.wikia.nocookie.net/houkai-star-rail/images/0/04/Character_Rin_Tohsaka_Splash_Art.png/revision/latest?cb=20260703172910",
+    "Gilgamesh": "https://static.wikia.nocookie.net/houkai-star-rail/images/4/4f/Character_Gilgamesh_Splash_Art.png/revision/latest?cb=20260703172846"
   },
   "zzz": {
     "Rina": "https://static.wikia.nocookie.net/zenless-zone-zero/images/8/81/Mindscape_Alexandrina_Sebastiane_Full.png/revision/latest?cb=20240711035152",
@@ -254,6 +258,7 @@
     "Zhu Yuan": "https://static.wikia.nocookie.net/zenless-zone-zero/images/b/bb/Mindscape_Zhu_Yuan_Full.png/revision/latest?cb=20240724195640",
     "Starlight Billy": "https://static.wikia.nocookie.net/zenless-zone-zero/images/0/0e/Mindscape_Starlight_-_Billy_Kid_Full.png/revision/latest?cb=20260529000054",
     "Velina": "https://static.wikia.nocookie.net/zenless-zone-zero/images/c/cf/Agent_Velina_Airgid_Portrait.png",
-    "Pyrois": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/45/Agent_Pyrois_Portrait.png"
+    "Pyrois": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/45/Agent_Pyrois_Portrait.png",
+    "Norma": "https://static.wikia.nocookie.net/zenless-zone-zero/images/d/d4/Mindscape_Norma_Hollowell_Full.png/revision/latest?cb=20260708044809"
   }
 }
