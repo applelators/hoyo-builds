@@ -6,21 +6,23 @@
     "last_updated": "2.7",
     "builds": [
       {
-        "role": "Anomaly DPS",
-        "w_engines": "Practiced Perfection: \nBiS; gives in-combat AM, and 40% Physical DMG.\nAngel in the shell:\nGreat alternative; AM main stat and engine passive gives AP.\nSharpened Stinger:\nGood alternative; provides\nin-combat DMG% and Anomaly Buildup Rate%, if you can keep up stacks.\nWeeping Gemini (Craftable):\nGreat budget option.",
-        "main_stats": "AM% Disc 6\nPEN% / ATK% / Phys% Disc 5\nAP Disc 4",
-        "sub_stats": "AP > ATK% > Flat PEN/ATK",
+        "role": "On-Field DPS\nQuick Swap DPS",
+        "w_engines": "Practiced Perfection: \nBiS; ATK% Main Stat, AM, Physical DMG%\nAngel in the Shell:\nAM% Main Stat, AP\nSharpened Stinger:\nAP Main Stat, Physical DMG%, Anomaly Buildup Rate%\nWeeping Gemini (Craftable):\nATK% Main Stat, AP",
+        "main_stats": "Anomaly Mastery% Disc 6\nPEN% = ATK% = Phys% Disc 5\nAP Disc 4",
+        "sub_stats": "AP >= ATK% > Flat PEN/ATK",
         "baseline": "ATK:\nATK Main Engine: 2500-2900+\nNon ATK Main Engine: 2300-2700+\n\nAP:\nAP Main Engine: 400-420+\nNon AP Main Engine: 320-350+",
-        "ability": "1. Core\n2. Basic\n3. Chain/Ult\n4. EX Special\nAlice's Core Passive is the most important skill to level.  The rest can be ignored or leveled for minor increases in damage and daze.",
+        "ability": "1. Core\n2. Basic\n2. Assist\n3. EX Special\n3. Chain/Ult\n4. Dodge\nOnly Core is needed, the rest of her abilities can be upgraded for more Daze and slightly more DMG scaling.",
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [],
-        "disc_2pc_labels": [],
+        "disc_2pc_labels": [
+          "Choose the one with the most effective Sub Stats"
+        ],
         "w_engine_notes": "",
         "disc_notes": "",
-        "mindscapes": "M1: Provides 25 Blade Etiquette whenever she triggers a Polarized Assault. It also further increases her DPS by reducing enemies' DEF by 20% whenever she triggers Assault. (decent)\nM2: Alice's Ultimate also triggers a Polarized Assault when hitting an enemy, and the whole squad's Assault DMG is increased by 15%. Disorder DMG against enemies suffering from Physical Anomaly increases by 15%. Upon entering the battlefield, Alice immediately gains 1,000 Decibels. In Investigation Zone mode, this effect can trigger once every 180 seconds. (amazing)\nMindscapes past M2 are not recommended.",
-        "other_notes": "You want to utilize Alice's moveset to gain Blade Etiquette in order to trigger Polarity Assaults through EBA. Using EX before being attacked to trigger a Perfect Dodge is ideal to gain an extra 10 Sword Etiquette.",
-        "team_general": "Best used with off-field / quick swap Anomaly to utilize Disorder \nHypercarry with Anomaly support is also viable as she can self-disorder with Polarity Assaults",
+        "mindscapes": "M1: Provides Alice additional Blade Etiquette and DEF Shred% for more damage. (decent)\nM2: Alice's Ultimate triggers a Polarized Assault now. Teamwide Assault and Disorder DMG%, and extra Decibels to Alice at the start of combat.  (amazing)\nIf you want to invest, M0W1 is the recommended stopping point. If you cannot get M2 and will be stuck at M1, it is better to invest into her teammates.",
+        "other_notes": "You want to utilize Alice's moveset to gain Blade Etiquette in order to trigger Polarity Assaults through EBA. Using EX before being attacked to trigger a Perfect Dodge is ideal to gain an extra 10 Sword Etiquette.\nUsing EX Special or Special Attack immediately maxes out Sharpened Stinger's passive.",
+        "team_general": "Anomaly/Supportive Agent + Support",
         "team_comps": [
           {
             "label": "Bunny's Fateful Mischief",
@@ -95,11 +97,11 @@
     "name": "Anby: Soldier 0",
     "specialty": "Attack",
     "element": "Electric",
-    "last_updated": "2.4",
+    "last_updated": "3.0",
     "builds": [
       {
         "role": "Main DPS",
-        "w_engines": "Severed Innocence:\nBiS in All Situations\nCordis Germina:\n39% CR total\nDEF ignore on Ult and BA+Electric DMG%\nLimited S-rank Engine:\nDecent alternative\nCrit statstick\nMarcato (Event)/\nStarlight (Craftable):\nSimilar Performance budget option",
+        "w_engines": "Severed Innocence:\nBiS in All Situations\nCordis Germina:\n39% CR total\nDEF ignore on Ult and BA+Electric DMG%\nLimited S-rank Engine:\nDecent alternative\nCrit statstick\nSol Exuvia (Story) > Starlight Engine (Craftable):\nGood Main Stats, usable Passives",
         "main_stats": "ATK% Disc 6\nPEN% / ATK% > Elec%  Disc 5\nCR% / CD% Disc 4",
         "sub_stats": "CR% = CD% > ATK%",
         "baseline": "ATK:\nATK Main Engine: 2800-3100+ \nNon ATK Main Engine: 2700-3000+\n\nCR: 70-78%  \n66% for M2 Sanby\n\nCD: 120-160%+",
@@ -154,11 +156,11 @@
     "builds": [
       {
         "role": "Main DPS",
-        "w_engines": "Cordis Germina:\n39% CR total\nDEF ignore on Ult and BA+Electric DMG%\nHeartstring Nocturne / Severed Innocence:\nhigh Crit Values\nThe Brimstone:\nStrong sustained DPS\nStarlight Engine (Craftable)\n/Marcato Desire (Event):\nDecent A-Rank options, choose base on availability",
+        "w_engines": "Cordis Germina:\n39% CR total\nDEF ignore on Ult and BA+Electric DMG%\nHeartstring Nocturne / Severed Innocence:\nhigh Crit Values\nThe Brimstone:\nStrong sustained DPS\nNot recommended for lower\nskill level players.\nStarlight Engine (Craftable)\n/Marcato Desire (Event):\nDecent A-Rank options, choose base on availability",
         "main_stats": "ATK% Disc 6\nPEN% / ATK% / Elec% Disc 5\nCR%/CD%Disc 4",
         "sub_stats": "CR% = CD% > ATK%",
         "baseline": "ATK: \nATK Main Engine: 2700-3000+ \nNon ATK Main Engine: 2400-2700+ \n\nCR: 60-70%+ \n\nCD: 130-170%+",
-        "ability": "1.Core\n1.Basic\n2.Chain/Ult\n3. Assist\n3.Dodge\n4.EX Special\nQuick Assist has high multipliers which is worth upgrading for Burst play, ignore Dodge",
+        "ability": "1.Core\n1.Basic\n2.Chain/Ult\n3. Assist\n3.Dodge\n4.EX Special\nQuick Assist has high multipliers which is worth upgrading for Burst play.",
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [
@@ -308,15 +310,15 @@
     "name": "Banyue",
     "specialty": "Rupture",
     "element": "Physical",
-    "last_updated": "2.5",
+    "last_updated": "3.0",
     "builds": [
       {
         "role": "Main DPS",
-        "w_engines": "Wrathful Vajra:\nBiS, HP% main stat, in-combat CR, Fire Sheer DMG%\nCauldron of Clarity:\nGreat free Option, HP main, DMG%, CR%\nQingming Birdcage:\nRupture Stat Stick, HP% Main Stat + CR%\nGrill O'Wisp:\nHP main stat, DMG%, no CR% buff\nCrit Stat Stick:\nGood option to balance your stat",
+        "w_engines": "Wrathful Vajra:\nBiS; HP% Main Stat, CR%, Fire Sheer DMG%\nCauldron of Clarity:\nGreat free Option, HP main, DMG%, CR%\nQingming Birdcage:\nRupture Stat Stick, HP% Main Stat + CR%\nGrill O'Wisp:\nHP main stat, DMG%, no CR% buff\nCrit Stat Stick:\nGood option to balance your stat",
         "main_stats": "HP% Disc 6\nFire% > HP% Disc 5\nCR% / CD% Disc 4",
         "sub_stats": "CR% (until cap) > CD% > HP%",
         "baseline": "HP:\nHP main Engine: 17,000-20,000+\nNon HP main Engine: 15,000-17,000+\n\nCR: 68% / 77% / 88%\n\nCD: 130%+\n(Prioritize CR%/CD% over HP%)",
-        "ability": "1. Core\n1. EX Special\n1.Chain/Ult\n1. Basic\n2. Assist\n2. Dodge\nAssist and Dodge aren't good for damage but can be upgraded if you need the Daze",
+        "ability": "1. Core\n1. EX Special\n1.Chain/Ult\n1. Basic\n2. Assist\n2. Dodge\nAll Skills can be leveled for extra Damage and Daze.",
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [],
@@ -361,7 +363,7 @@
     "builds": [
       {
         "role": "Shielder\nSub-DPS",
-        "w_engines": "Tusks of Fury:                     \nBiS, DMG% and Daze\nSprings Embrace (BP):\nDmg Reduction%\nTransferable EGR%\nS-Rank Stun Engines:\r\nHigh impact &\r\nBase attack values\nAny Impact Main:  \nBest budget option",
+        "w_engines": "Tusks of Fury:                     \nBiS; DMG% and Daze\nSprings Embrace (BP):\nDmg Reduction%\nTransferable EGR%\nS-Rank Stun Engines:\r\nHigh impact &\r\nBase attack values\nAny Impact Main:  \nBest budget option",
         "main_stats": "Impact% Disc 6\nATK% / Fire% Disc 5\nCR% / CD% Disc 4",
         "sub_stats": "CR% = CD% > ATK%",
         "baseline": "CR: 50%+\n\nCD: 100%+",
@@ -407,7 +409,7 @@
     "name": "Billy",
     "specialty": "Attack",
     "element": "Physical",
-    "last_updated": "2.8",
+    "last_updated": "3.0",
     "builds": [
       {
         "role": "Main DPS",
@@ -478,13 +480,16 @@
         "ability": "1.Core\n2.EX Special\n2.Chain/Ult\n3.Assist\nOnly Core is needed, the rest of her abilities can be upgraded for more Daze and slightly more DMG scaling.",
         "disc_4pc": [],
         "disc_2pc": [],
-        "disc_4pc_labels": [],
+        "disc_4pc_labels": [
+          "General build",
+          "BiS with Wind Anomaly"
+        ],
         "disc_2pc_labels": [
           "Awaken Potential LV 2+"
         ],
         "w_engine_notes": "",
         "disc_notes": "",
-        "mindscapes": "M1 provides good QoL by increasing the amount of Heat Burnice can hold, additionally it also increases mainly the Anomaly Buildup of her Afterburn effect. M2 provides a teamwide 20% PEN Ratio increase against enemies hit by her Afterburn.\nMindscapes past M2 are not recommended unless going for M6, though they allow her to take on a CRIT DPS status.",
+        "mindscapes": "M1 provides good QoL by increasing the amount of Heat Burnice can hold, additionally it also increases mainly the Anomaly Buildup of her Afterburn effect. M2 provides a teamwide 20% PEN Ratio increase against enemies hit by her Afterburn.\nMindscapes past M2 are not recommended. All her mindscapes/engine suck or not worth the pulls so just invest on teammates instead.",
         "other_notes": "Afterburn can trigger the burn anomaly status off field which allow less field time on Burnice while also letting the team to refresh the burn status after it get removed by disorder from other anomalies. Her Ultimate provides her with 50 heat with great Burn Anomaly Buildup and triggering Quick Assist which enables quicker combo for her teammates",
         "team_general": "Used with any anomaly agent + a support/ supportive agent (preferably team buffer) to amplify both DPS's Anomaly/Disorder Damage",
         "team_comps": [
@@ -524,23 +529,23 @@
     "builds": [
       {
         "role": "Support\nShielder",
-        "w_engines": "Tusks of Fury:                     \nBiS, DMG% and Daze%.\nS-Rank Stun Engine:\nImpact + Shield.\nNo passive.\nA-rank Stun Engine:\nslightly less Impact than S-rank options.\nSpring Embrace (BP):\nOption for EGR teams.\nTransmorpher (Craftable):\nCombat impact (does not\nprovide shield value).",
-        "main_stats": "Impact% Disc 6\nPEN% / ATK% / Phys% Disc 5\nCR% / ATK% / AP Disc 4",
+        "w_engines": "Tusks of Fury:                     \nBiS; Impact% Main Stat, Shield value%, teamwide DMG% and Daze%\nS-Rank Impact% W-Engine:\nImpact% Main Stat\nA-Rank Impact% W-Engine:\nImpact% Main Stat\nSpring Embrace (BP):\nOption for EGR teams\nTransmorpher (Craftable):\nIn-combat Impact%\n(For faster Stun, does not affect shield)",
+        "main_stats": "Impact% Disc 6\nPEN% = ATK% = Phys% Disc 5\nCR% > ATK% / AP Disc 4",
         "sub_stats": "CR% = CD% > ATK%",
-        "baseline": "Impact: 152-174 \n\nCR: 50%+\n\nCD: 100%+\n\nAP in Anomaly teams: 220+",
-        "ability": "1. Core\n2. EX Special\n3. Assist\n4. Chain/Ult\n4. Basic\n4. Dodge\nThe abilities on ranking 4 can be upgraded for more DMG and Daze, or completely ignored.",
+        "baseline": "CR: 50%+\n\nCD: 100%+\n\nAP in Anomaly teams: 220+",
+        "ability": "1. Core\n3. Assist\n2. EX Special\nEverything else is ignored.",
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [
-          "Team Buffs",
-          "If able to keep full stacks"
+          "Overall Best",
+          "3 Stacks"
         ],
         "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "",
-        "mindscapes": "M1: Provides significant QoL, enabling Caesar to apply her Shield when entering the field without activating it (on a 300s Cooldown), while further applying an All-Attribute RES reduction to nearby enemies.\nM2: Further increases the ATK buff her Shield provides, by up to 500 ATK more. It also slightly increases Caesar's Energy Generation Rate by 10%, which increases the Energy gain from all sources.",
-        "other_notes": "Parries, Block Counters, and Retaliatory Attacks after Assists and Dodge Counters are the best and fastest way to reapply Caesar's shield and buffs for the team and debuff on nearby targets.\nAs a Defense agent you will need to use your EX Special even when you do not have energy for EX Special to activate her block counter. Caesar is best used in short bursts to apply Daze/Rebuff. \nReel Projector is not \"worth\" to level up for Caesar. Levelling a Stun engine has more value, since you can use it on a Stun unit while not using Caesar. Reel's passive effectively does nothing more than Stun engines do. Consider it an alternative to the A-Rank stun W-Engines.",
-        "team_general": "Used with any DPS* \nto shield and buff ATK\n\n*Caesar's Shield + Buff is only active for the current on-fielder",
+        "mindscapes": "M1: Caesar's shield is instantly enabled when swapped to, once at the start of combat with a cooldown of 300s. When the shield is active, teamwide 15% RES PEN. (decent)\nM2: Energy Generation Rate% for Caesar, and the ATK buff from her shield increases from 1000 to 1500. (ok)\nIf you want to invest, M1W0 is the recommended stopping point.",
+        "other_notes": "Caesar's best use is with a single DPS, due to her shield and ATK buff only being active for the on-fielder.\nParries, Block Counters, and Retaliatory Attacks after Assists and Dodge Counters are the best and fastest way to reapply Caesar's shield and buffs for the team and debuff on nearby enemies.\nReel Projector is more niche than the other mentioned W-Engines, and not worth leveling for that reason.",
+        "team_general": "Attack/Anomaly + Support/Stun",
         "team_comps": [
           {
             "label": "Mono Physical no Dialyn Version",
@@ -573,24 +578,26 @@
     "name": "Cissia",
     "specialty": "Attack",
     "element": "Electric",
-    "last_updated": "2.7",
+    "last_updated": "3.0",
     "builds": [
       {
         "role": "Quick-Swap DPS",
-        "w_engines": "Serpentine Seeker:\nBiS: ER% main stat, CR% and DEF ignore in passive\nDrill Rig - Red Axis:\nER% main stat, buffs Basic Attack DMG after using EX Special or Chain Attack\nCrit stat stick\nIdeally one with CR% as she lacks a lot of it.\nBrimstone:\nCorrode Bone stacks passive",
+        "w_engines": "Serpentine Seeker:\nBiS: ER% Main Stat, CR%, DEF Shred%\nCordis Germina > Bellicose Blaze:\nGood Main Stats, usable Passives\nDrill Rig - Red Axis:\nER% Main Stat, Basic Attack DMG%\nCRIT W-Engine:\nPreferably CR% Main Stat or Passive\nBrimstone:¹\nATK% Main Stat, Combat ATK%",
         "main_stats": "ER% Disc 6\nElec% > ATK% Disc 5\nCR% > CD% Disc 4",
         "sub_stats": "CR% (until cap) > CD% = ATK%",
-        "baseline": "ATK:\nATK Main Engine: 2700-3200+\nNon ATK Main Engine: 2200-2700+\n\nCR: 57-82%\n(57% with Sig) \n\nCD: 110%+",
-        "ability": "1.Core\n1. Basic\n2. EX Special\n2. Ultimate\n3. Assist\n4. Dodge\nDodge can be ignored outside of hypercarry",
+        "baseline": "ATK:\nATK Main Engine: 2700-3200+\nNon ATK Main Engine: 2200-2700+\n\nCR: 57-82%³\n\nCD: 110%+",
+        "ability": "1. Core\n1. Basic\n2. EX Special\n2. Chain/Ult\n3. Assist\n4. Dodge\nDodge is ignored outside of hypercarry.",
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [],
-        "disc_2pc_labels": [],
-        "w_engine_notes": "Seed Sig is her best Crit stat stick as she can make great use of the passive fully. Orphie sig is also a top Crit stat stick as it also gives Cissia ER. Both Seed and Orphie sig is better than Anton sig mainly cause of the CR/passive. If you have none of listed W-Engines then you'll have to use an ER stat stick like Steam Oven (Starlight if main dps) until you get something better.\nBrimstone is generally her second best option if you are running Main DPS Cissia.",
+        "disc_2pc_labels": [
+          "Choose the one with the most effective Sub Stats²"
+        ],
+        "w_engine_notes": "Sol Exuvia is free from Season 3 story. If you have yet to progress far enough, ER% stat stick with Seed or craftable Starlight Engine in hypercarry are usable options.\n¹ If you are running hypercarry Cissia, Serpentine Seeker > Cordis Germina > Brimstone > Sol Exuvia >> Starlight Engine.",
         "disc_notes": "",
-        "mindscapes": "M1 makes Cissia start combat with 6 Venom, increases DEF shred by 140% (25→35%), makes all teammates ignore 5% Electric Res, and makes Corrode Bone ignore an additional 10% Electric Res.\nM2 increaes the DMG of Serpent's Kiss by 35%, Ult and Chain Attack provide an additional 3 Venom.\nRecommended stopping point for high invest is M2. M1>R1 for Seed teams.",
-        "other_notes": "After EX you can chain directly to 4th hit of Basic Attack: Tongue Flick to gain 2 extra Venom quickly. When you use EX, Chain, Ult, or 4th hit of BA and have at least 3 Venom you can hold BA to use up your Serpentine Shadow and perform Serpent's Kiss.\nCissia's Chain activates QA to the next agent",
-        "team_general": "Can be played on field with a combination of Quick-Swap Stunners and Supports",
+        "mindscapes": "M1: Cissia starts with 6 Venom. Increases the team's damage by providing more DEF Shred% and Electric RES PEN%, with additional RES PEN% for her Corrode Bone. (good)\nM2: Additional Venom for Cissia after Chain/Ult. Basic Attack: Serpent's Kiss deals 35% more DMG. (good)\nIf you want to invest, M1W0 for boosting Seed or M0W1 if ran in hypercarry is the recommended stopping point. If you are running hypercarry Cissia, M2 makes her much better if you can afford it.",
+        "other_notes": "After an EX cast, you can chain directly into the 4th hit of Basic Attack: Tongue Flick to gain 2 extra Venom quickly. When you use an EX, Chain, Ult, or the 4th hit of Basic Attack, and have at least 3 Venom, you can hold Basic Attack to use up your Serpentine Shadow and perform Serpent's Kiss.\nCissia's Chain activates a Quick Assist to the next agent.",
+        "team_general": "With Seed: Seed + Support/Stun\n\nHypercarry: Stun + Supportive Agent",
         "team_comps": [
           {
             "label": "Ssseed",
@@ -640,7 +647,7 @@
     "name": "Corin",
     "specialty": "Attack",
     "element": "Physical",
-    "last_updated": "2.4",
+    "last_updated": "2.6",
     "builds": [
       {
         "role": "Main DPS",
@@ -698,28 +705,29 @@
   },
   {
     "name": "Dialyn",
-    "specialty": "Stunner",
+    "specialty": "Stun",
     "element": "Physical",
     "last_updated": "2.6",
     "builds": [
       {
         "role": "Burst Stunner",
-        "w_engines": "Yesterday Calls:\nBiS; CR% main stat, off-field ER, 27% Daze, and teamwide 30% CDMG buff\nSteam Oven: \nER% main stat, up to 25.6% in-combat Impact\nHellfire Gears:\nImpact% main stat, ER% passive when off-field, 10% in-combat Impact buff after using EX, can be stacked twice",
-        "main_stats": "Energy Regen% Disc 6\nPEN% / ATK% / Phys% Disc 5\nCR% Disc 4",
-        "sub_stats": "CR% >>> CD% ≥ ATK%",
-        "baseline": "CR:\nWithout Sig. Engine: 80-100%\nWith Sig. Engine: 100%\n(100% to maximize the Impact self-buff)",
-        "ability": "1. Core\n1. EX Special\n2. Assist\n2. Chain/Ult\nCore and EX are her main priorities, followed by Assist and Chain/Ult.\nBasic and Dodge should be levelled for on-field play.",
+        "w_engines": "Yesterday Calls:\nBiS; CR% Main Stat, off-field ER, Daze%, and teamwide CD% buff\nSteam Oven: \nER% Main Stat, in-combat Impact%\nHellfire Gears:¹\nImpact% Main Stat, off-field ER, in-combat Impact%",
+        "main_stats": "Energy Regen% Disc 6\nPEN% = ATK% = Phys% Disc 5\nCR% Disc 4",
+        "sub_stats": "CR% (until cap) > CD% = ATK%",
+        "baseline": "CR:\nWithout Sig. Engine: 80-100%\nWith Sig. Engine: 100%\n(100% to maximize the Impact% self-buff)",
+        "ability": "1. Core\n1. EX Special\n2. Assist\n2. Chain/Ult\nBasic and Dodge should be levelled for on-field play, but lower priority.",
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [],
         "disc_2pc_labels": [
-          "If you maintain 85%+ CR"
+          "If you maintain 85%+ CR²",
+          "Extra CR%"
         ],
-        "w_engine_notes": "Steam Oven can be preferred over Hellfire Gears in some scenarios, since ER% Passive from Hellfire Gears is only during Dialyn's off-field time which leads to less Energy total compared to Steam Oven, and less on-fielding capabilities. Steam Oven's 25.6% Impact can be up during key moments like Defensive Assists or Ultimate, while Hellfire Gears needs to use an EX or 2 for maximum Impact buff.\nHellfire Gears with higher Refinement is preferred over Steam Oven due to more Impact and more ER% regardless of said issues.",
+        "w_engine_notes": "The off-field ER from Hellfire Gears leads to less Energy total compared to Steam Oven, and less on-fielding capabilities. Steam Oven's 25.6% Impact can be up during key moments, whereas Hellfire Gears needs to use an EX or two for the max Impact% buff.\n¹ Despite these issues, Hellfire Gears at Overclock 3+ is preferred over Steam Oven.",
         "disc_notes": "",
-        "mindscapes": "M1: Increases her Positive Review generation and amount gained by using her EX Special Attacks by 16%. Agents in the Overwhelmingly Positive state ignore 15% enemy All-Attribute RES.\nM2: Grants an additional 20% Stun DMG Multiplier on enemies under Malicious Complaint, and the team deals +15% DMG to enemies under that effect.\nM1 is a good stopping point, save M2 for later once you invest into your teams a little more.",
-        "other_notes": "Dialyn's Chain-to-Ult conversion works as follows: She gains 1 Customer Complaint when an Ultimate is used or upon reaching 90 Positive Reviews. She generates 0.6 Positive Reviews per second and 7.5 per EX.\nUpon reaching 90: Triggering a Chain Attack window will convert the next agent’s Chain into their Ultimate, consuming 60 Positive Reviews if done when the enemy is stunned. If her positive reviews are less than 90, she can hold BA to consume Customer Complaint, triggering a Quick Assist instead. Outside-of-stun, if Dialyn has 90+ Positive Reviews, she triggers a Chain Attack window instead of a quick assist, upgrading the next Chain Attack into an Ultimate.",
-        "team_general": "Can be used in most Attacker/Rupture + Support/Defense comps",
+        "mindscapes": "M1: Increases her bar generation and provides RES PEN% for more team damage. (great)\nM2: Stun DMG Multiplier and DMG% for more team damage. (decent)\nIf you want to invest, M1W0 is the recommended stopping point.",
+        "other_notes": "Dialyn's Chain-to-Ult conversion works as follows: She gains 1 Customer Complaint when an Ultimate is used or upon reaching 90 Positive Reviews. She generates 0.6 Positive Reviews per second and 7.5 per EX.\nUpon reaching 90: Triggering a Chain Attack window will convert the next Agent’s Chain into their Ultimate, consuming 60 Positive Reviews if done when the enemy is Stunned. If her Positive Reviews are less than 90, she can hold Basic Attack to consume Customer Complaint, triggering a Quick Assist instead. Outside-of-Stun, if Dialyn has 90+ Positive Reviews, she triggers a Chain Attack window instead of a Quick Assist, upgrading the next Chain Attack into an Ultimate.",
+        "team_general": "Attack/Rupture + Supportive Agent",
         "team_comps": [
           {
             "label": "Hotline Bling",
@@ -748,7 +756,7 @@
     "builds": [
       {
         "role": "Main DPS",
-        "w_engines": "Myriad Eclipse:\nBiS. gives CR%, in-combat CD% and DEF ignore.\nDeep Sea Visitor:\nEllen's signature, very \ncomfy to play.\nCrit Mainstat Engines:\nChoose based on availability\nBrimstone:\nBest Non-Limited option.\nStarlight/Marcato:\nSimilar Performance \nbudget option",
+        "w_engines": "Myriad Eclipse:\nBiS. gives CR%, in-combat CD% and DEF ignore.\nDeep Sea Visitor:\nEllen's signature, very \ncomfy to play.\nCrit Mainstat Engines:\nChoose based on availability\nBrimstone:\nBest Non-Limited option.\nSol Exuvia (Story) > Starlight Engine (Craftable):\nGood Main Stats, usable Passives",
         "main_stats": "ATK% Disc 6\nPEN% / ATK% / Ice% Disc 5\nCR% / ATK% > CD% Disc 4",
         "sub_stats": "CR% > ATK% > CD%",
         "baseline": "ATK:\nATK Main Engine: 2750-3450+\nNon ATK Main Engine: 2700-3000+\n\nCR: 80%-100%      \nCD: 120%+",
@@ -788,11 +796,11 @@
     "name": "Evelyn",
     "specialty": "Attack",
     "element": "Fire",
-    "last_updated": "2.4",
+    "last_updated": "3.0",
     "builds": [
       {
         "role": "Main DPS",
-        "w_engines": "Heartstring Nocturne:\nBiS in All Situation\nLimited S-Rank Engine:\nAlternative for Heartstring\nBrimstone:\nMay see uptime and ramping issues in combat. Marginally better than A-Ranks\nStarlight (Craftable)\n/ Marcato (Event):\nSimilar Performance\nOption choose base on\navailability",
+        "w_engines": "Heartstring Nocturne:\nBiS in All Situation\nLimited S-Rank Engine:\nAlternative for Heartstring\nBrimstone:\nMay see uptime and ramping issues in combat. Marginally better than A-Ranks\nSol Exuvia (Story) > Starlight Engine (Craftable):\nGood Main Stats, usable Passives",
         "main_stats": "ATK% Disc 6\nPEN% / Fire% Disc 5\nCR% / CD% Disc 4",
         "sub_stats": "CR% (till 75) = CD% > ATK%",
         "baseline": "ATK: \nATK% Main W-Engine: 3200-3400+\nNon-ATK% Main: 2700-3000+\n\nCR: 55-75% *Do not exceed 75%\n\nCD: 130-160%+",
@@ -806,7 +814,7 @@
         "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "",
-        "mindscapes": "M1 enable Evelyn to cast her initial ult a lot faster during each encounter as she will open with an additional 1500 decibel while providing a small damage boost in the form of 12% def shred.\nM2 provide Evelyn with an unconditional 15% combat attack while refunding her 1 set of burning ember every 25 sec when she cast her EBA.",
+        "mindscapes": "M1 enable Evelyn to cast her initial ult a lot faster during each encounter as she will open with an additional 1500 decibel while providing a small damage boost in the form of 12% def shred.\nM2 provide Evelyn with an unconditional 15% combat attack while refunding her 1 set of burning ember every 25 sec when she cast her EBA.\nR1>>>M1/M2 All of Eve's mindscapes besides M6 are super mid so not recomended to get just invest on supports instead.",
         "other_notes": "Evelyn Guide by lzz",
         "team_general": "On-Field: combination of supportive units and Quick-Swap/Off-Field Stunners",
         "team_comps": [
@@ -858,8 +866,8 @@
     "last_updated": "3.0",
     "builds": [
       {
-        "role": "Anomaly DPS\nAnomaly Sub DPS",
-        "w_engines": "Fusion Compiler:\nGrace's BiS For mono shock teams\nTimeweaver: BiS for Grace\ndisorder teams\nElectro-Lip Gloss (BP):\nBP is her 3rd best\nWeeping Gemini (Craftable):\nHigh Damage Potential",
+        "role": "Anomaly DPS",
+        "w_engines": "Fusion Compiler:\nGrace's BiS For mono shock teams\nTimeweaver:\nBiS for Grace disorder teams\nElectro-Lip Gloss (BP):\nBP is her 3rd best\nWeeping Gemini (Craftable):\nHigh Damage Potential",
         "main_stats": "AM% (Disorder) ATK% (Monoshock) Disc 6\nPEN% / ATK% / Elec% Disc 5\nAP Disc 4",
         "sub_stats": "AP > ATK% > Flat PEN/ATK",
         "baseline": "ATK:\nATK Main Engine: 2500-2700+\nNon ATK Main Engine: 2200-2400+\n\nAP:\nAP Main Engine: 400-420+\nNon AP Main Engine: 330-350+",
@@ -958,10 +966,10 @@
       {
         "role": "Burst DPS",
         "w_engines": "Myriad Eclipse:\nBiS. gives CR%, in-combat CD% and DEF ignore.\nLimited S-Rank Engine:\nSecond best picks after Sig\nSteel Cushion:\nBest non-limited option, his EX lets him go behind enemy\nViable A-Rank options:\n1 - Marcato Desire \n~~ Gilded Blossom (Event)\n2 - Street Superstar (Craftable)",
-        "main_stats": "ATK% Disc 6\nPEN% / ATK% / Ice% Disc 5\nCR% / CD% Disc 4",
-        "sub_stats": "CR% (Until Cap) > CD% = ATK%",
+        "main_stats": "ATK% Disc 6\nPEN% / ATK% / Ice% Disc 5\nCR% / CD% >= ATK% Disc 4",
+        "sub_stats": "CR% (until cap) > CD% = ATK%",
         "baseline": "ATK:\nATK Main Engine: 2800-3400+\nNon ATK Main Engine: 2700-3200+\n\nCR: 68-88%\nCD: 120-150%+",
-        "ability": "1.Core\n1.EX Special\n1.Chain/Ult\n2.Basic\n2.Dodge\n2.Assist\nBasic Attack and Dodge is only need for Shiyu mobs and very specific DA Bosses. Ignore Assist",
+        "ability": "1.Core\n1. EX Special\n1. Chain/Ult\n2. Assist\n3. Basic\n4. Dodge\nBasic Attack and Dodge are mostly needed for Shiyu mobs and very specific DA Bosses.",
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [
@@ -971,7 +979,7 @@
         "disc_2pc_labels": [],
         "w_engine_notes": "When using Deep Sea Visitor or Severed Innocence, make sure you use Basic Attack once before you EX/Ult so you trigger the W-Engine's CR%/CD% passive.\nWhen using Steel Cushion, you can use his EX to let him go behind the enemy, then quickly cancel it with Ultimate before he depletes the energy. this way his Ultimate can benefit from Steel Cushion's passive.",
         "disc_notes": "",
-        "mindscapes": "M1 In Dark Abyss Reverb state, totalize skill gets an extra 30% CDMG and 12% CR\nM2 When Ult triggers totalize, it doesn't end the stun window, allowing an EX to be used as well, effectively doubling your damage in that stun window. Totalize damage also gains 15% DEF Ignore.",
+        "mindscapes": "M1 In Dark Abyss Reverb state, totalize skill gets an extra 30% CD and 12% CR\nM2 When Ult triggers totalize, it doesn't end the stun window, allowing an EX to be used as well, effectively doubling your damage in that stun window. Totalize damage also gains 15% DEF Ignore.",
         "other_notes": "Hugo has a pretty straightforward playstyle: Stun the enemy, then use double Chain Attack with Hugo, get Dark Abyss Reverb state, then EX/Ult which triggers Totalize and ends the stun state, rinse and repeat. \nNote that even without Lighter's stun extension, you still want to use double Chain Attack since it still nets more damage than skipping the 2nd Chain for slightly more Totalize Damage, unless the stun window has a short duration.",
         "team_general": "Ideally used with double stunners to get as many Totalized as you can while also getting the extra ATK from having 1/2 stunners in his team",
         "team_comps": [
@@ -1008,19 +1016,21 @@
     "builds": [
       {
         "role": "Anomaly DPS",
-        "w_engines": "Practiced Perfection:\nBiS; Superior buildup buff, easier to stack DMG% buff\nSharpened Stinger:\nJane's Signature; use Dodge and Dash Attacks to keep up buff\nWeeping Gemini (Craftable):\nBest budget option; needs ramping up for max AP buff\nElectro Lip Gloss (BP):\nGood option at R5 with close to 100% uptime",
-        "main_stats": "AM% Disc 6\nPEN% / ATK% / Phys% Disc 5\nAP Disc 4",
+        "w_engines": "Practiced Perfection: \nBiS; ATK% Main Stat, AM, Physical DMG%\nSharpened Stinger:\nAP Main Stat, Physical DMG%, Anomaly Buildup Rate%\nWeeping Gemini (Craftable):\nATK% Main Stat, AP\nElectro Lip Gloss (BP):\nAP Main Stat, Combat ATK%, DMG%",
+        "main_stats": "Anomaly Mastery% Disc 6\nPEN% = Phys% > ATK% Disc 5\nAP Disc 4",
         "sub_stats": "AP > ATK% > Flat PEN/ATK",
         "baseline": "ATK:\nATK Main Engine: 2500-2700+\nNon ATK Main Engine: 2300-2500+\n\nAP:\nAP Main Engine: 420+\nNon AP Main Engine: 375+",
         "ability": "1. Core\n2. Basic\n3. EX Special\n3. Chain/Ult\n3. Dodge\n4. Assist\nOnly Core is needed, the rest of her abilities can be upgraded for more Daze and slightly more DMG scaling.",
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [],
-        "disc_2pc_labels": [],
+        "disc_2pc_labels": [
+          "Choose the one with the most effective Sub Stats"
+        ],
         "w_engine_notes": "",
         "disc_notes": "",
-        "mindscapes": "M1: Allows Jane to hold 1 additional usage of Salchow Jump and slightly increases her DMG% and Anomaly Buildup Rate% while in the Passion state. (decent)\nM2: Significantly increases the CDMG% of Assaults (~33% over M0), and then further increases their damage by allowing them to ignore a percentage of the target's DEF. M2 also significantly increases the damage output of Mono Phys. (amazing)\nM2 is the recommended stopping point.",
-        "other_notes": "375 AP is the bare minimum to cap Jane's CR% for her Assaults (in-combat AP counts). At 420 AP, the ATK buff from Passion caps out at 600.",
+        "mindscapes": "M1: Provides Jane an additional red dot for an easier time at managing her Passion state. Increases Anomaly Buildup Rate% and DMG% while in the Passion state for more damage. (decent)\nM2: Heavily increases the CD% of Assaults (~33% total increase over M0), and then further improves Assault damage by giving DEF Shred%. M2 significantly increases the damage output of Mono Phys. (amazing)\nIf you want to invest, M2 is the recommended stopping point. If you would like to invest further, W1 Practiced Perfection is the next recommendation.",
+        "other_notes": "At 375 AP, the CRIT Rate for her Assaults caps out at 100%. At 420 AP, the ATK buff from Passion caps out at 600 (in-combat AP counts).",
         "team_general": "Seth can be used as a budget alternative to Yuzuha, especially when Jane's AA is not enabled. \nIt's more beneficial to pick a Support (or Caesar/Trigger) over Seth in Mono Phys.",
         "team_comps": [
           {
@@ -1049,26 +1059,22 @@
     "builds": [
       {
         "role": "Off-Field Stunner\nSupport\nCute Tiger",
-        "w_engines": "Roaring Fur-nace:\nBiS, provides ATK% for her Core Passive, in-combat daze buff and team-wide DMG% buffs\nBlazing Laurel:\nHigh base ATK for Core Passive, in-combat impact buff and Crit Dmg for Ice/Fire DPS\nSteam Oven (Craftable):\nProvides in-combat Impact%",
+        "w_engines": "Roaring Fur-nace:\nBiS; ATK% Main Stat, in-combat Daze% and team DMG% buffs\nBlazing Laurel:\nHigh Base ATK for Core Passive, Impact% Main Stat, in-combat Impact% and CRIT DMG for Ice/Fire DPS'\nSteam Oven:\n(Craftable): ER% Main Stat, in-combat Impact%",
         "main_stats": "Impact% > ATK% Disc 6\nATK% Disc 5\nATK% > CR% Disc 4",
         "sub_stats": "CR% (till 50%) > ATK% > Flat ATK",
-        "baseline": "ATK: \nSignature: 3400 (Maxing core CD% buff)\nNon-signature: 3100-3300+\n\nCR: 50% (For KotS)",
-        "ability": "1. Core\n2. Chain/Ult\n3. EX Special\n3. Assist\n3.Basic\n4. Dodge\nUpgrading Basic increases Hu Wei's Daze\nDodge is low priority",
+        "baseline": "ATK: \nSignature: 3400 (Maxing CD% buff)\nNon-signature: 3100-3300+\n\nCR: 50% (4PC KoTS)",
+        "ability": "1. Core\n2. Chain/Ult\n3. EX Special\n3. Assist\n3.Basic\n4. Dodge\nUpgrading Basic increases Hu Wei's Daze.\nDodge is low priority.",
         "disc_4pc": [],
         "disc_2pc": [],
-        "disc_4pc_labels": [
-          "CD% for team",
-          "Alternative for KotS"
-        ],
+        "disc_4pc_labels": [],
         "disc_2pc_labels": [
-          "ATK% / CR% for Core / KotS",
-          "Faster stun"
+          "ATK% for Core"
         ],
         "w_engine_notes": "",
         "disc_notes": "",
-        "mindscapes": "Fufu's M1 increases Stun DMG Multiplier by 35% when hitting Chain Attacks and grants her 12% CR, allowing her to hit the 50% requirement for KotS easier. This Mindscape is also the best stopping point.",
-        "other_notes": "While not difficult to play, it is important to be mindful of managing her resources (Might, Momentum). As Fufu gains 80 Might from EX Special and 100 Might from her Ult, it is recommended to use EX at or below 100 Might (Half bar) and Ult at or below 80 Might to avoid overcapping after she gains another 20 Might from Hu Wei's off-field BA. Enable back-swap in a Yixuan team for ease of switching to Fufu to gain resources.\nAlthough Core stated \"every 100 ATK\", any amount of ATK counts toward buff threshold.",
-        "team_general": "Use with any Rupture/Attack agent for Additional Ability decibel refund and increase in decibel cap. \nAlso provides fast stuns",
+        "mindscapes": "M1: Increases Stun DMG Multiplier for more damage, and grants her 12% CR which allows her to hit the 50% KoTS requirement easier.\nM2: Team-wide CD% buffs and extra Chain Attacks from Ju Fufu for more Daze.\nM1>>>R1 M1 is the recommended stopping point.",
+        "other_notes": "While not difficult to play, it is important to be mindful of managing her resources (Might and Momentum). As Fufu gains 80 Might from EX Special and 100 Might from her Ult, it is recommended to use EX at or below 100 Might (half bar) and Ult at or below 80 Might to avoid overcapping after she gains another 20 Might from Hu Wei's off-field BA. Enable back-swap in a Yixuan team for ease of switching to Fufu to gain resources.\nDespite Core stating \"every 100 ATK\", any amount of ATK counts toward buff threshold.",
+        "team_general": "Rupture/Attack + Support/Stun",
         "team_comps": [
           {
             "label": "Yunkui Zoo",
@@ -1157,12 +1163,12 @@
     "name": "Lighter",
     "specialty": "Stun",
     "element": "Fire",
-    "last_updated": "2.6",
+    "last_updated": "3.0",
     "builds": [
       {
         "role": "Burst Stunner\nFire/Ice Support",
-        "w_engines": "Blazing Laurel:\nBiS Providing Combat\nImpact and Ice/Fire Crit\nDmg\nIce-Jade Teapot:\nGood option provided that buff stacks are managed\nHellfire Gears: \nStandard S-Rank Option, gives Impact on EX\nuse EX twice before morale punches for max buff\nSteam Oven Craftable:\nProvides in-combat Impact%",
-        "main_stats": "Impact% Disc 6\nPEN% / ATK% Disc 5\nCR% > CD% Disc 4",
+        "w_engines": "Blazing Laurel:\nBiS Providing Combat\nImpact and Ice/Fire Crit\nDmg\nIce-Jade Teapot:\nGood option provided that buff stacks are managed\nChief Sidekick:\nIn-combat Impact, off-field ER, and teamwide DMG%\nHellfire Gears: \nUse EX twice before morale punches for max buff\nSteam Oven Craftable:\nProvides in-combat Impact%",
+        "main_stats": "Impact% Disc 6\nPEN% / ATK% Disc 5\nCR% Disc 4",
         "sub_stats": "CR% > CD%  > ATK%",
         "baseline": "Impact: 168-193\n\nCR: 50%+\n(Needed if using 4PC King of the Summit)\n\nCD: 100%+ (Optional)",
         "ability": "1.Core\n2.Assist\n2.EX Special\n3.Chain/Ult\n2.Basic\nDodge can be ignored",
@@ -1174,7 +1180,7 @@
         "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "",
-        "mindscapes": "M1 further extends his Stun Pause effect (3s->5s pause) and his Ice/Fire RES reduction. It also provides a slight personal damage increase.\nM2 allows Lighter to increase the Stun DMG Multiplier of enemies affected by Collapse effect and further increases the Ice/Fire DMG bonus provided by Morale.\nFurther Mindscapes past M2 are not recommended for pure Stun Lighter.",
+        "mindscapes": "M1 further extends his Stun Pause effect (3s->5s pause) and his Ice/Fire RES reduction. It also provides a slight personal damage increase.\nM2 allows Lighter to increase the Stun DMG Multiplier of enemies affected by Collapse effect and further increases the Ice/Fire DMG bonus provided by Morale.\nFurther Mindscapes past M2 are not recommended for pure Stun Lighter. R1>M1/M2",
         "other_notes": "Ice/Fire Damage buff Lighter can reach with each engine sheet provided by iamabigfatloser This is still up to date cause there has been no new engines that are good for him.",
         "team_general": "Used with any Fire or Ice DPS to stun/amplify the DPS's damage output provided that Additional Ability is active",
         "team_comps": [
@@ -1207,13 +1213,13 @@
         "disc_2pc": [],
         "disc_4pc_labels": [],
         "disc_2pc_labels": [
-          "If you reach 24k HP"
+          "If you reach 24,000 HP"
         ],
         "w_engine_notes": "",
         "disc_notes": "",
         "mindscapes": "M1: Dreamer's Nursery Rhyme additionally grants the whole team with 18% All-Attribute RES Ignore and a 5% increase to their Decibel Generation Rate. (amazing)\nM2: Lucia's Harmony attacks deal 15% more DMG. While under Ether Veil: Wellspring, Agents in the Darkbreaker state gain an extra 15% Sheer DMG. (decent)\nM1 is a good stopping point, save M2 for later once you invest into your teams a little more.",
         "other_notes": "After using EX, you can follow up with the 5th hit of BA, allowing you to immediately gain 100 Dream Points so you can trigger Ether Veil.\nMindscape and W-Engine Calculation Comparison is available here: Lucia Detailed Comparison (zaulea) 2-5% margin of error.",
-        "team_general": "Rupture + Stunner/Support",
+        "team_general": "Rupture + Stun/Support",
         "team_comps": [
           {
             "label": "Yunkui's Goat",
@@ -1249,20 +1255,22 @@
     "builds": [
       {
         "role": "Support",
-        "w_engines": "Kaboom the Cannon:\nBiS, the only engine to\nsynergize with her boars\nReverb Mark II:\nB rank option",
+        "w_engines": "Kaboom the Cannon:\nBiS; ER% main stat, Combat ATK% for team\nER% Stat Stick:\nA-Rank; ER% main stat\nReverb Mark II:\nB-Rank; ER% main stat",
         "main_stats": "ER% / ATK% / AM%* Disc 6\nPEN% / ATK% Disc 5\nAP / CR% Disc 4",
-        "sub_stats": "AP Build ATK%>AP/CR Build CR%=CDMG",
-        "baseline": "ATK(more in note): 2367/ 2265/ 2083/ 1922\nfor EX Special level 11/ 12/ 14/ 16\n\nAP in Anomaly team: 250+\n \nCR: 50%+\nCD: 100%+\n*Only use AM in Miyabi+Lighter team",
-        "ability": "1.EX Special\n2.Core\n3.Basic\n4.Chain/Ult\n5.Assist\n6.Dodge\nLucy's Boars' DMG is tied to Basic\nDodge can be ignored.",
+        "sub_stats": "Anomaly: AP>ATK% | Crit: CR%>CD%",
+        "baseline": "CR: 50%+\n\nCD: 100%+\n\nATK: 2367 / 2265 / 2083 / 1922**\nCheck Drive Disc Notes\n\nAP in Anomaly teams: 250+",
+        "ability": "1. EX Special\n3. Basic\n2. Core\n5. Assist\n4. Chain/Ult\nLucy's Boars' DMG is tied to Basic.\nDodge can be ignored.",
         "disc_4pc": [],
         "disc_2pc": [],
-        "disc_4pc_labels": [],
+        "disc_4pc_labels": [
+          "Buff on EX Special"
+        ],
         "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "",
-        "mindscapes": "M2 allows Lucy to provide her Cheer On! buff through her Chain Attack and Ultimate. M4 enhances Cheer On! to also provide 10% CRIT DMG. M6 allows EX Special used by allies with the Cheer On! buff to extend its duration (up to 3 times), while increasing Lucy's personal damage and Anomaly Buildup.",
-        "other_notes": "Lucy's Cheer-on provides her boars with up to +1200 attack. Lucys engine also Buffs the Boars attack letting her provide them with over 1500 ATK. They also inherit her Crit Rate and Crit DMG% from Additional Ability. For this reason it is best to build additional offensive stats (like Crit, or AP) after hitting the ATK goal which is quite easy to go for.\nAttack needed to max out Lucy's buff based off her EX level by JetaluskiPro",
-        "team_general": "Used with any DPS to buff ATK\n\nUsed with any Dual DPS Team as a teamwide ATK buffer",
+        "mindscapes": "M2: Gives Lucy better uptime on her buff, as it can not be provided through her Chain Attack and Ultimate.\nM4: Her buff now gives 10% CDMG.\nM6: Increases Lucy's personal damage and Anomaly Buildup. When another squad member uses EX Special, they extend Lucy's buff (up to 3 times).",
+        "other_notes": "Lucy's Cheer On! buff provides her guard boars with up to +1200 ATK. Lucy's W-Engine also buffs the boars attack, letting her provide them with over 1500 ATK. They also inherit her CRIT Rate and CRIT DMG when her Additional Ability is active. For this reason, it is best to build additional offensive stats (such as CRIT or AP) after hitting the ATK goal.\nAttack Thresholds based on Lucy's EX Special Level by JetaluskiPro",
+        "team_general": "Used with a DPS + Stun/Supportive Agent to buff ATK",
         "team_comps": [
           {
             "label": "Budget Sword",
@@ -1350,7 +1358,7 @@
     "builds": [
       {
         "role": "Main DPS",
-        "w_engines": "Grill O'Wisp:\nBiS all situations at R5\nS-Rank Rupture Engines:\nFor Hp% main and incombat Crit\nCrit Stat Stick:\nGood option even without passive\nA-Rank Rupture Engines:\nUsable options",
+        "w_engines": "Grill O'Wisp:\nBiS all situations at R5\nS-Rank Rupture Engines:\nFor HH% main and incombat Crit\nCrit Stat Stick:\nGood option even without passive\nA-Rank Rupture Engines:\nUsable options",
         "main_stats": "HP% Disc 6\nFire% > HP% Disc 5\nCR% / CD% Disc 4",
         "sub_stats": "CR% (until cap) > CD% > HP%",
         "baseline": "HP:\nHP main Engine: 17,000-20,000+\nNon HP main Engine: 15,000-17,000+\n\nCR: 54-63%\n\nCD: 130-150%+",
@@ -1391,10 +1399,10 @@
     "builds": [
       {
         "role": "Anomaly DPS",
-        "w_engines": "Hailstorm Shrine:\nBiS; CR% main stat, CDMG% and DMG% passive\nFusion Compiler:\nHigh base ATK, PEN% mainstat and ATK% passive\nWeeping Gemini:\n(Craftable): ATK% main stat, AP to buff Miyabi's Anomaly Damage\nCRIT Rate Statstick: \nMakes building Miyabi easier",
-        "main_stats": "ATK% / (AM with Yuzuha SKK) Disc 6\nPEN% > ATK% / Ice% Disc 5\nCR% > ATK% / CDMG% / AP Disc 4",
-        "sub_stats": "CR% (until 80%) > ATK% > CD% > AP",
-        "baseline": "ATK:\nATK Main Engine: 2800-3200+\nNon ATK Main Engine: 2700-3200+\nAM Disc 6: 2200-2500+\n\nCR: 68-80%+\nCD: 110-150%+\n(AP is only half the value of ATK% or Crit)",
+        "w_engines": "Hailstorm Shrine:\nBiS; CR% Main Stat, CD% and DMG% passive\nFusion Compiler:\nHigh base ATK, PEN% mainstat and ATK% passive\nWeeping Gemini:\n(Craftable): ATK% main stat, AP to buff Miyabi's Anomaly Damage\nCRIT Rate Statstick: \nMakes building Miyabi easier",
+        "main_stats": "ATK% / (AM with Yuzuha SKK) Disc 6\nPEN% > ATK% / Ice% Disc 5\nCR% >= ATK% / CD% / AP Disc 4",
+        "sub_stats": "CR% (until 80%) > ATK% >= CD% > AP",
+        "baseline": "ATK:\nATK Main Engine: 2800-3200+\nNon ATK Main Engine: 2700-3200+\nAM Disc 6: 2200-2500+\n\nCR: 68-80%+\nCD: 110-150%+\n(AP is generally half the value of ATK% or CRIT)",
         "ability": "1. Core\n1. Basic\n2. Chain/Ult\n3. EX Special\n4. Assist\n5. Dodge\nAll Skills should be upgraded to take advantage of Crit stats and Skill's scaling",
         "disc_4pc": [],
         "disc_2pc": [],
@@ -1451,24 +1459,26 @@
     "name": "Nangong Yu",
     "specialty": "Stun",
     "element": "Fire",
-    "last_updated": "2.7",
+    "last_updated": "3.0",
     "builds": [
       {
-        "role": "Anomaly Stunner\nSub DPS",
-        "w_engines": "Neon Fantasies:\nBiS: AM% main stat, gives AP for personal damage as well as team wide DMG%\nHellfire Gears:\nGives ER% when off field and Impact%. Higher ATK helps with DMG output.\nSteam Oven:\nER% and combat Impact%, best choice overall for stunning below Hellfire and Signature.\nThe Simmering Pot:\nDaze and self DMG% on Assist Follow-Up. Worse than Oven unless you get the same amount of stuns in DA.",
+        "role": "Anomaly Stunner\nQuick Swap DPS",
+        "w_engines": "Neon Fantasies:\nBiS: AM% main stat, gives AP for personal damage as well as team wide DMG%\nHellfire Gears:\nGives ER% when off field and Impact%. Higher ATK helps with DMG output.\nSteam Oven (Craftable):\nER% and combat Impact%, best choice overall for stunning below Hellfire and Signature.\nFossilized Core (Craftable):\nCombat Daze%, helpful for Stun speedrun (mainly in Shiyu)",
         "main_stats": "AM% Disc 6\nEther% / ATK% / PEN% Disc 5\nAP Disc 4",
-        "sub_stats": "AP > ATK% > PEN >= Flat ATK",
+        "sub_stats": "AP > ATK% > Flat PEN = Flat ATK",
         "baseline": "ATK: 2000-2500+\n\nAP: 300-330+",
         "ability": "1. Core\n1. Basic\n1. EX Special\n1. Chain/Ult\n2. Assist\n3. Dodge\nDodge can be ignored",
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [
-          "Best general pick"
+          "Best General Pick"
         ],
         "disc_2pc_labels": [
-          "AM for core"
+          "AM for Core",
+          "Personal DMG Boost",
+          "For Daze"
         ],
-        "w_engine_notes": "Simmering Pot is worse than Steam Oven as it lacks the Daze needed for 4 Stuns on bosses, and the self DMG% doesn't make up for it. Aside from her own signature, none other stun W-Engines significantly differ in results besides Simmering Pot. R5 Steam Oven is recommended for general use. Hellfire gets less value when with Aria as when Aria does her stomps Nangong is on field, losing the ER passive.",
+        "w_engine_notes": "Simmering Pot lacks stun speed, it's only helpful if you gain a big benefit from boosting Nangong's DMG while being able to keep a good stun rotation and therefore not recommended for the average player.  Aside from her own signature, none other stun W-Engines significantly differ in results. R5 Steam Oven is recommended for general use. Hellfire gets less value when used with Aria as when Aria does her stomps Nangong is on field, losing the ER passive.",
         "disc_notes": "",
         "mindscapes": "M1 reduces enemy's All-Attribute RES by 18% upon using Nangong's EX or Charged Basic and fills her EBA bar fully at the start of combat.\nM2 increases Nangong's Abloom ratio an additional 10% per Vibrato stack, increases AA Stun DMG multiplier an additional 30%, and triggers a Polarity Disorder via any agent's Chain Attack once per stun.\nSignature W-Engine is recommended to get first before Mindscape. M2 is a good stopping point for high investment.",
         "other_notes": "Hold Basic 1-2-3 when timed correctly will have increased daze, while also take more time to execute. Using EX Special, Chain Attack, Ultimate also allow you to chain into Hold Basic 2-3. Hold Basic 3 can be swap-cancelled. You should always be doing the EX into EBA combo.",
@@ -1537,7 +1547,9 @@
           "Used with Dialyn",
           "On-Field DPS"
         ],
-        "disc_2pc_labels": [],
+        "disc_2pc_labels": [
+          "Choose the one with the most effective Sub Stats"
+        ],
         "w_engine_notes": "",
         "disc_notes": "",
         "mindscapes": "M1: Provides Nekomata with a conditional Phys RES PEN%, and all Nekomata's attacks are considered back attacks when the enemy is stunned.\nM2: Gives Nekomata increased ER by 25%, allowing her to use her EX more frequently. This has the added effect of allowing Nekomata users to use EX right before a parry window pops up in order to squeeze out a little more DPS, similar to Dodge Parry Tech but way easier.",
@@ -1580,24 +1592,22 @@
     "builds": [
       {
         "role": "Support",
-        "w_engines": "The Vault:\nDMG% for Team\nKaboom the Cannon:\nCombat ATK% For Team\nWeeping Cradle:\nStrong option without\nR2 Vault or Kaboom\nER Stat Stick:\n(Oven, etc.)\nFor the ER",
+        "w_engines": "The Vault:\nDMG% for the team\nKaboom the Cannon:\nCombat ATK% for the team\nWeeping Cradle:\nSlightly less DMG%\nBetter than Vault/Kaboom at Overclock 3+\nER Stat Stick:\n(Steam Oven, etc.):\nER% Main Stat",
         "main_stats": "ER% Disc 6\nATK% / Ether% Disc 5\nAP / CR% Disc 4",
-        "sub_stats": "Anom build AP/ATK% | CR build ATK%/CR",
+        "sub_stats": "Anomaly: AP/ATK% | Crit: ATK%/CR%",
         "baseline": "CR: 50%+\n\nCD: 100%+\n\nATK: 2000+ \n\nAP in Anomaly teams: 250+",
-        "ability": "1.Core\n2. Chain/Ult\n2. EX Special\nNicole's Power lies in her core, but upgrading EX and Chain/Ult is good for more Daze and some Crit DMG as you will use it often.\n\nAssist can be upgraded for some Daze, ignore Basic and Dodge.",
+        "ability": "1. Core\n2. Assist\n2. EX Special\n3. Chain/Ult\nLevel EX, Assist, and Chain/Ult for more Daze and some personal damage. Ignore Basic and Dodge.",
         "disc_4pc": [],
         "disc_2pc": [],
-        "disc_4pc_labels": [],
-        "disc_2pc_labels": [
-          "Team Buff on\n EX Special",
-          "Buff on\nQuick Assist",
-          "Disorder/ Corruption procs"
+        "disc_4pc_labels": [
+          "Buff on EX Special"
         ],
+        "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "",
-        "mindscapes": "M1 increases Nicole's EX Special's Anomaly Buildup, it also allows her to further charge it, which is niche but can occasionally be useful. M4 increases the range and grouping ability of her Energy Fields. M6 allows Nicole to provide a stacking CRIT Rate debuff against enemies hit by her Energy Field, up to 15% CRIT Rate.",
-        "other_notes": "Nicole has amazing grouping with her Energy Field. There are a few little tricks you can learn with her to further enhance her Energy field like making it last longer, there are many videos explaining\nhow to use these online, a quick example; while charging her energy field with EX hold, you can press WASD in quick succession, Nicole will sit on her briefcase and gain duration on her vortex.\nWhen Nicole EX isn't available yet, you can use her Dash Attack (Directional inputs -> Normal) to apply a short DEF down debuff and quickly switch off to DPS after. This gives her more energy to use EX as well.",
-        "team_general": "Used in any team due to DEF shred and enemy grouping.\n\nCan be used as a Pseudo Ether Anomaly",
+        "mindscapes": "M1: Nicole's EX Special does more Buildup and DMG%, and her energy field lasts longer.\nM4: Increases the range and grouping ability of her energy field.\nM6: Allows Nicole to provide a stacking CRIT Rate debuff against enemies hit by her energy field, up to 15% CRIT Rate.",
+        "other_notes": "Nicole has amazing grouping with her energy field. There are a few small tricks you can learn with her to further enhance this energy field, such as making it last longer. There are many videos online explaining\nhow to use these, and a quick example is: while charging her Energy Field with EX hold, if you can press WASD in quick succession, Nicole will sit on her briefcase and gain duration on her vortex.\nWhen Nicole's EX Special isn't available, you can use her Dash Attack (Directional Inputs → Normal) to apply a short DEF down debuff and quickly swap to your DPS after. This gives her more energy to use EX as well.\nDespite Rupture ignoring enemy defense, Nicole can be used with any Ether Rupture as a decent budget option due to the Ether DMG% she gives from her Additional Ability.",
+        "team_general": "Used in any team that can utilize her DEF Shred\n\nCan be used as a Pseudo Ether Anomaly",
         "team_comps": [
           {
             "label": "Pubsec Krampus Collab",
@@ -1634,6 +1644,35 @@
     ]
   },
   {
+    "name": "Norma Hollowell",
+    "specialty": "Stun",
+    "element": "",
+    "last_updated": "3.0",
+    "builds": [
+      {
+        "role": "Off-Field Stunner\nOff-Field DPS",
+        "w_engines": "Chief Sidekick:\nBiS; CR% Main Stat, in-combat Impact, Fire RES PEN%, off-field ER, and teamwide DMG%\nHellfire Gears:\nImpact% Main Stat, off-field ER, in-combat Impact%\nSteam Oven (Craftable): \nER% Main Stat, in-combat Impact%",
+        "main_stats": "Energy Regen% Disc 6\nPEN% = Fire% >= ATK% Disc 5\nCR% Disc 4",
+        "sub_stats": "CR% (until cap) > CD% = ATK%",
+        "baseline": "CR:\nWithout Sig. Engine: 80-100%\nWith Sig. Engine: 100%\n(100% to maximize the Daze% and CD% self-buffs)",
+        "ability": "1. Core\n2. EX Special\n2. Assist\n2. Chain/Ult\nEX is her main Daze source, followed by Assist\nand Chain/Ult.\nBasic and Dodge should be levelled for on-field play.",
+        "disc_4pc": [],
+        "disc_2pc": [],
+        "disc_4pc_labels": [],
+        "disc_2pc_labels": [
+          "Not at 100% CR",
+          "With 100% CR¹"
+        ],
+        "w_engine_notes": "",
+        "disc_notes": "",
+        "mindscapes": "M1: Increases the entire team's damage output with RES PEN% and has a longer duration on her missile bay. (decent)\nM2: Further increases her Stun DMG Mult% for more team damage and extra Energy for Norma. (decent)\nIf you want to invest, M0W1 is the recommended stopping point.",
+        "other_notes": "When Norma holds Basic Attack and her bar is at 80% or more, she can provide a Chain Attack to the Agent on her left side in the Agent Lineup. If her bar is not at 80% or more, it's just a Quick Assist. Unfortunately, because of this, she does not work with Pan Yinhu, as his buffs rely on granting a Quick Assist to the Rupture Agent on his left side as well.",
+        "team_general": "Paired with an Attacker or Rupture + Supportive Agent",
+        "team_comps": []
+      }
+    ]
+  },
+  {
     "name": "Orphie & Magus",
     "specialty": "Attacker",
     "element": "Ice",
@@ -1641,7 +1680,7 @@
     "builds": [
       {
         "role": "Off-Field DPS",
-        "w_engines": "Bellicose Blaze:\nBiS; Provides ER% as well as CR% and DEF Ignore in-combat\nSerpentine Seeker:\nProvides ER% as well as CR\nCrit Mainstat Engines:\nChoose based on availability\nGilded Blossom:\n(Purchasable): Increases ATK% and EX DMG%",
+        "w_engines": "Bellicose Blaze:\nBiS; Provides ER% as well as CR% and DEF Ignore in-combat\nSerpentine Seeker:\nProvides ER% as well as CR\nCRIT Mainstat Engines:\nChoose based on availability\nGilded Blossom:\n(Purchasable): Increases ATK% and EX DMG%",
         "main_stats": "ER% Disc 6\nFire% / ATK% Disc 5\nCD% / ATK% / CR% Disc 4",
         "sub_stats": "CR% (until cap) > CD% = ATK%",
         "baseline": "ATK: 2200-2500+\n\nCR: 38% / 43% / 63%\nCheck Disc Drive Notes*\n\nCD: 120-150%+",
@@ -1682,10 +1721,7 @@
         "ability": "1. Core\n2. Assist\n2. Chain/Ult\n2. EX Special\nCore is the most important,\nUlt can be leveled for \nmore healing while \nAssist can be levelled for \nextra Daze.\n\nBasic and Dodge are not used.",
         "disc_4pc": [],
         "disc_2pc": [],
-        "disc_4pc_labels": [
-          "Better uptime",
-          "If able to keep full stacks"
-        ],
+        "disc_4pc_labels": [],
         "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "",
@@ -1719,21 +1755,23 @@
     "last_updated": "3.0",
     "builds": [
       {
-        "role": "Anomaly DPS\nAnomaly Sub DPS",
-        "w_engines": "Practiced Perfection:\nPiper's BiS\nSharpend Stinger:\nGreat option but requires Perfect Dodges to keep up stacks\nWeeping Gemini (Craftable):\nGreat A-Rank option\nRoaring Ride:\nUsable A-Rank option",
-        "main_stats": "AM% Disc 6\nPEN% / ATK% / Phys% Disc 5\nAP Disc 4",
-        "sub_stats": "AP = ATK% > Flat PEN/ATK",
+        "role": "Anomaly DPS",
+        "w_engines": "Practiced Perfection:\nBiS; ATK% Main Stat, AM, Physical DMG%\nFusion Compiler:\nPEN% Main Stat, Combat ATK%, AP\nWeeping Gemini (Craftable):\nATK% Main Stat, AP\nRoaring Ride:\nATK% Main Stat, Combat ATK%, AP, Anomaly Buildup Rate%",
+        "main_stats": "Anomaly Mastery% Disc 6\nPEN% / ATK% / Phys% Disc 5\nAP Disc 4",
+        "sub_stats": "AP > ATK% >>> Flat PEN/ATK",
         "baseline": "ATK:\nATK Main Engine: 2400-2550+\nNon ATK Main Engine: 2200-2400+\n\nAP:\nAP Main Engine: 350-400+\nNon AP Main Engine: 330-350+",
-        "ability": "1. Core\n2. EX Special\n3. Basic\n3. Chain/Ult\n3. Dodge\n4. Assist\nOnly Core is needed, the rest of her abilities can be upgraded for more Daze and slightly more DMG scaling.",
+        "ability": "1. Core\n2. EX Special\n3. Basic\n3. Chain/Ult\n3. Assist\n4. Dodge\nOnly Core is needed, the rest of her abilities can be upgraded for more Daze and slightly more DMG scaling.",
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [],
-        "disc_2pc_labels": [],
-        "w_engine_notes": "",
+        "disc_2pc_labels": [
+          "Choose the one with the most effective Sub Stats¹"
+        ],
+        "w_engine_notes": "Sharpened Stinger's performance depends on how well you are able to upkeep its passive, but can be difficult to optimize and is not worth picking up from Collectible Exchange.\nWeeping Gemini versus Roaring Ride comes down to what team she is in. It is generally recommended to stick with Weeping Gemini, as Roaring Ride is more niche and not usually worth leveling for that reason.",
         "disc_notes": "",
-        "mindscapes": "M1 further increases Piper's Anomaly Buildup Rate%, both increasing how fast it stacks and its maximum value. \nM2's increased movement speed during her (EX) Special helps her properly connect all the hits, while increasing their damage, as well as her Ultimate's damage. \nM6's increased EX Special duration increases the Buildup it can provide, while the increased Power duration allows more flexible rotations.",
-        "other_notes": "When her Additional Ability is active, she provide her team with an 18% DMG buff while she has at least 20 stacks of Power. Abusing Defensive Assist and Dodge Counter enables \nher to enter her EX Special state with a quicker wind-up speed improving her Power stack uptime and Anomaly Buildup, while also lessening the chance of her taking excess damage.",
-        "team_general": "Disorder: 1 other Anomaly DPS while being Sub-DPS/ Main DPS (+ teamwide buffer) to utilize Disorder\n\nHypercarry no Disorder: 2 Support/Supportive units",
+        "mindscapes": "M1: Increases Piper's damage by providing more Anomaly Buildup Rate%.\nM2: Enhances the existing DMG% buff for Piper.\nM4: Additional Energy for Piper.\nM6: Extends the duration of her stacks that provide Anomaly Buildup Rate% and her EX Special spin move.",
+        "other_notes": "When her Additional Ability is active, she provides a teamwide 20% DMG buff when she has at least 20 stacks of Power.\nDoing three Basic Attacks followed by holding Special Attack allows you to enter her rapid spin state much faster. Alternatively, a Defensive Assist or Dodge Counter followed by two Basic Attacks will allow you to enter the rapid spin state as well.",
+        "team_general": "Disorder: Anomaly + Support\n\nHypercarry: Double Support",
         "team_comps": [
           {
             "label": "Keep up the Spinning Beat",
@@ -1764,9 +1802,9 @@
         "role": "Anomaly DPS",
         "w_engines": "Frostfall Sickle:\nBiS: AM main stat, 2x20% Ice DMG, 35% Abloom Damage when at max stacks\nFusion Compiler:\nCan maintain full stacks making it a good secondary option\nAngel in the Shell:\nGood option if you lack high refinement Compiler\nWeeping Gemini (Craftable):\nATK% Main stat and AP in combat. Solid F2P option if missing Compiler",
         "main_stats": "AM% Disc 6\nATK% / Ice% / PEN% Disc 5\nAP Disc 4",
-        "sub_stats": "AP > ATK% > Flat PEN/ATK",
+        "sub_stats": "AP >= ATK% > Flat PEN/ATK",
         "baseline": "ATK:\nATK Main Engine: 2600+\nNon ATK Main Engine: 2400+\n\nAP\nAP Main Engine: 370-400+\nNon AP Main Engine: 300-330+",
-        "ability": "1. Core\n2.EX\n3.Ult\n4.Basic\n4.Assist\n4.Dodge\nHer most important skill is her Core. Everything else can be left on lower skill levels or upgraded for some extra daze/dmg",
+        "ability": "1. Core\n2. EX Special\n3. Chain/Ult\n4. Basic\n4. Assist\n4. Dodge\nHer most important skill is her Core. Everything else can be left on lower skill levels or upgraded for some extra daze/dmg",
         "disc_4pc": [
           "Notes From the Chained"
         ],
@@ -1902,7 +1940,7 @@
     "builds": [
       {
         "role": "Main DPS\nAura Farmer",
-        "w_engines": "Sol Exuvia:\nBiS; ATK% main stat, RES Ignore, and 20% CR.\nObtainable for free from Interboo levels.",
+        "w_engines": "Sol Exuvia:\nBiS; ATK% Main Stat, RES Ignore, and 20% CR.\nObtainable for free from Interboo levels.",
         "main_stats": "ATK% Disc 6\nEther% / ATK% / PEN% Disc 5\nCR% / CD% Disc 4",
         "sub_stats": "CR% (until cap) > CD% > ATK%",
         "baseline": "ATK: 3200-3700+\n\nCR: 72%\n\nCD: 120-140%+",
@@ -1910,10 +1948,11 @@
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [
-          "BiS",
-          "Placeholder/Alternative"
+          "Best in Slot"
         ],
-        "disc_2pc_labels": [],
+        "disc_2pc_labels": [
+          "Choose the one with the most effective Sub Stats"
+        ],
         "w_engine_notes": "",
         "disc_notes": "",
         "mindscapes": "M1: Pyrois gains 8% CRIT Rate in-combat permanently, as well as 1000 extra Decibels at the start of combat.\nM2: Raises Pyrois' Decibel limit by 1000 and restores 1500 Decibels when using the Lower Branch Ultimate (180 second cooldown).\nPyrois' Mindscapes are free to obtain. As of 3.0, only M1 and M2 are available.",
@@ -1938,10 +1977,7 @@
         "ability": "1.Core\n1.Basic\n2.EX Special\n2.Chain/Ult\n3.Dodge\n4.Assist\nYou can Ignore Assist",
         "disc_4pc": [],
         "disc_2pc": [],
-        "disc_4pc_labels": [
-          "CD% Buff",
-          "Stun Speed"
-        ],
+        "disc_4pc_labels": [],
         "disc_2pc_labels": [],
         "w_engine_notes": "",
         "disc_notes": "",
@@ -2044,7 +2080,7 @@
     "builds": [
       {
         "role": "Quick-Swap DPS",
-        "w_engines": "Cordis Germina:\nBiS, 39% total Crit Rate plus Electric DMG Bonus and DEF ignore\nS-Rank Crit Engines:\nGreat alternatives due to their Crit value\nThe Brimstone:\nGood ATK value\nMarcato (Event)\n/Starlight (Craftable):\nBest A-Rank options, pick based on availability",
+        "w_engines": "Cordis Germina:\nBiS; CR% Main Stat, CR%, Basic and Ultimate DEF Shred%, and Elec DMG%\nHeartstring Nocturne / Severed Innocence:\nCRIT Main Stat, CRIT Passive\nThe Brimstone:\nATK% Main Stat, Combat ATK%\nSol Exuvia (Story) > Starlight Engine (Craftable):\nGood Main Stats, usable Passives",
         "main_stats": "ATK% Disc 6\nPEN% (No Cissia) / Elec% Disc 5\nCR% / CD% Disc 4",
         "sub_stats": "CR% (until cap) > CD% = ATK%",
         "baseline": "ATK:\nATK Main Engine: 2800-3000+\nNon ATK Main Engine: 2500-2700+\n\nCR: 60-75%+\nMax 85% with Cordis, otherwise 100%\n\nCD: 120%+",
@@ -2148,11 +2184,11 @@
     "name": "Soldier 11",
     "specialty": "Attack",
     "element": "Fire",
-    "last_updated": "2.6",
+    "last_updated": "3.0",
     "builds": [
       {
         "role": "Main DPS\nnoodle",
-        "w_engines": "Heartstring Nocturne:  \n25% RES ignore, use double chain\nBiS all situations\nCordis Germina:\n39% Crit Rate, 20% DEF ignore on all important skills. EX at least 40s Before stun.\nThe Brimstone:\nSignature, build stacks by pressing EX and basic attacking before Chaining.\nStarlight Engine (Craftable):\nBest A-rank W-Engine",
+        "w_engines": "Heartstring Nocturne:  \n25% RES ignore, use double chain\nBiS with Dialyn.\nCordis Germina:\n39% Crit Rate, 20% DEF ignore on all important skills. EX at least 40s Before stun.\nThe Brimstone:\nSignature, build stacks by pressing EX and basic attacking before Chaining.\nSol Exuvia (Story) > Starlight Engine (Craftable):\nGood Main Stats, usable Passives",
         "main_stats": "ATK% Disc 6\nPEN% / ATK% Disc 5\nCR% / CD% / ATK% Disc 4",
         "sub_stats": "CR% > CD% = ATK%",
         "baseline": "ATK: \nATK% Main W-Engine: 3100-3300+\nNon-ATK% Main: 2600-3000+\n\nCR: 70-100%\n(72% cap for 4PC Inferno Metal)\n\nCD: 100-160%+",
@@ -2166,7 +2202,7 @@
         "w_engine_notes": "",
         "disc_notes": "",
         "mindscapes": "M1 is fairly decent to give extra EXs, translating into 3 BA3-5 chains if you time supressions properly. \nM2 provides a stackable DMG increase to her Basic Attacks, Dash Attacks and Dodge Counters when triggering her (timing-based) Fire Suppression effect. M3 and M5 are decent for Multiplier Increases.\nM6 allows the next 8 Fire Suppressions used to ignore 25% of the target's Fire RES after using EX Special, Chain Attack or Ultimate. \nm4 might be the most useless mindscape in the entire game lmao",
-        "other_notes": "Updated with Potential Vision buffs!\nAfter the buff, Soldier 11 still maintains the timing aspect of her kit, only this time it is applied to her guarenteed Fire Supression basics. Time your basics after using EX/Chain/Ult (successful timing is indicated by a flash) to launch Basic attacks more quickly without any move endlag. If done on BA5, this enables BA1 and BA2 to be skipped, directly placing her next basic at BA3.\nnoodle guide coming soon(?)",
+        "other_notes": "Updated with Potential Vision buffs!\nAfter the buff, Soldier 11 still maintains the timing aspect of her kit, only this time it is applied to her guaranteed Fire Supression basics. Time your basics after using EX/Chain/Ult (successful timing is indicated by a flash) to launch Basic attacks more quickly without any move endlag. If done on BA5, this enables BA1 and BA2 to be skipped, directly placing her next basic at BA3.\nM0W1 Orphie ≈ Lucy when used with Soldier 11, not a recommended option.",
         "team_general": "On-Field: combination of supportive units and Quick-Swap/Off-Field Stunners",
         "team_comps": [
           {
@@ -2205,13 +2241,13 @@
         "w_engines": "Kaboom the Cannon:\nBiS; ER% main stat, better buff with easier condition\nBashful Demon:\nATK% main stat, slightly lower team buff with harder conditions causing long downtime\nER Stat Stick:\n(Cradle, Vault, Oven, etc.)\nUseful if you don't own Kaboom or Bashful",
         "main_stats": "ER% / ATK% / AM%* Disc 6\nATK% / Ice% Disc 5\nCR% / ATK% / AP Disc 4",
         "sub_stats": "ATK% till requirement >= CR% >= CD%",
-        "baseline": "ATK:\nCore F: 2500+ \nCore E: 2623+ \nCore D: 2778+\nAP: 250+ (Optional and only useful for Yuzu Ice)\n\n *You only use AM in Mono Freeze",
+        "baseline": "ATK:\nCore F: 2500+ \nCore E: 2623+ \nCore D: 2778+\nAP: 250+ (Optional and only useful for Yuzu Ice)\n\n *You only use AM with Miyabi",
         "ability": "1.Core\n1.EX Special\n2.Chain/Ult\n3.Assist\n4.Basic\n4.Dodge\nIgnore Basic and Dodge if using Soukaku purely as a Buffer.",
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [
           "Buff on Quick Assist",
-          "Mono Freeze"
+          "Miyabo"
         ],
         "disc_2pc_labels": [],
         "w_engine_notes": "",
@@ -2250,24 +2286,26 @@
     "name": "Starlight Billy",
     "specialty": "Rupture",
     "element": "Physical",
-    "last_updated": "2.8",
+    "last_updated": "3.0",
     "builds": [
       {
-        "role": "Main DPS",
-        "w_engines": "Starlight Rider Faceplate:\nBiS; HP% main stat, 20% CR, 20% Physical Sheer DMG\nS-Rank Rupture Engine:\nHP% main stat and unconditional 20% CR\nCheck W-Engine Notes\nCauldron of Clarity:\nHP% main stat, DMG%, CR% after using EX\nCrit Stat Stick:\nGood option if nothing else is available\nGrill O'Wisp:\nHP% main stat, CR% after draining HP",
+        "role": "On-Field DPS",
+        "w_engines": "Starlight Rider Faceplate:\nBiS; HP% Main Stat, CR%, Physical Sheer DMG%\nS-Rank Rupture Engine:¹\nHP% Main Stat, CR%\nCauldron of Clarity:\nHP% Main Stat, DMG%, CR%\nCRIT Stat Stick:\nPreferably CR% Main Stat\nGrill O'Wisp:²\nHP% Main Stat, CR% after draining HP",
         "main_stats": "HP% Disc 6\nPhys% > HP% Disc 5\nCR% / CD% Disc 4",
         "sub_stats": "CR% (until cap) > CD% > HP% >> ATK%",
-        "baseline": "HP:\nHP main Engine: 17,000-20,000+\nNon HP main Engine: 15,000-17,000+\n\nCR: 64% / 68% / 77% / 88%*\n\nCD: 130%+\n(Prioritize CR%/CD% over HP%)",
-        "ability": "1. Core\n1. EX Special\n1. Chain/Ult\n2. Basic\n3. Assist\n3. Dodge\nEx Special and Ult are the most important, but all Skills can be leveled for extra Damage and Daze. Assist and Dodge are low priority.",
+        "baseline": "HP:\nHP Main Engine: 17,000-20,000+\nNon HP Main Engine: 15,000-17,000+\n\nCR: 64% / 68% / 77% / 88%³\n\nCD: 130%+",
+        "ability": "1. Core\n1. EX Special\n1. Chain/Ult\n2. Basic\n3. Assist\n3. Dodge\nAll Skills can be leveled for extra Damage and Daze. Assist and Dodge are low priority.",
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [],
-        "disc_2pc_labels": [],
-        "w_engine_notes": "Yidhari's Signature, Kraken's Cradle, is not good for Starlight Billy as its 20% CR relies on the user being below 50% HP, which Starlight Billy does not usually fulfill.\nWhen using Grill O'Wisp, make sure Starlight Billy launches a Special Attack to reduce his HP before any Chain Attack, Ultimate, or any big damage dealing attack.\nStarlight Billy cannot fully utilize the CR% from Grill O'Wisp, meaning it falls behind in terms of ranking. It can be on par or better than a Crit Stat Stick if you play optimally.",
+        "disc_2pc_labels": [
+          "Choose the one with the most effective Sub Stats"
+        ],
+        "w_engine_notes": "¹ Yidhari's Signature, Kraken's Cradle, is not good for Starlight Billy because its 20% CR passive relies on the user being below 50% HP, which Starlight Billy does not consistently upkeep.\n² When using Grill O'Wisp, make sure Starlight Billy launches a Special Attack to reduce his HP before any Chain Attack, Ultimate, or any big damage dealing attack. Starlight Billy cannot fully utilize the CR% from Grill O'Wisp, meaning it falls behind in terms of ranking. It can be on par or better than a CRIT Stat Stick if you play optimally.",
         "disc_notes": "",
-        "mindscapes": "M1: Gives Billy an additional 60 Adrenaline at the start of combat and gives 18% Physical Res Ignore after hitting an enemy with an EX Special. (good)\nM2: Increases the DMG of Basic Attack: Full-Throttle Starlight, EX Special: Cool Wheelie, and Ultimate by 50%. Allows Billy to follow up with EX Special: Cool Wheelie with 50% increased CDMG after using Special on a stunned enemy or EX Special at any time. (good, changes stun rotation)\nM2 is the recommended stopping point. If you cannot get M2 and will be stuck at M1, it is better to invest into his Supports.",
-        "other_notes": "Prioritize CR% until you get to the respective threshold for your W-Engine, since Starlight - Billy gives himself 90% CDMG in-combat and more from teammates.",
-        "team_general": "Any 2 Supports/Supportive Agents or 1 Support + 1 Stunner\n\nHaving a Stunner in the team is recommended",
+        "mindscapes": "M1: Gives Starlight Billy more starting Adrenaline and RES% PEN for more damage. (decent)\nM2: Buffs the DMG% of certain moves. Allows Billy to follow up with a +50% CRIT Damage EX Special: Cool Wheelie after using Special Attack on a Stunned enemy or EX Special at any time. (good, changes Stun rotation)\nIf you want to invest, M0W1 is the recommended stopping point. If you cannot get M2 and will be stuck at M1, it is better to invest into his teammates.",
+        "other_notes": "Prioritize CR% until you get to the respective threshold for your W-Engine, since Starlight - Billy gives himself 90% CD in-combat and more from teammates.",
+        "team_general": "Stun/Supportive Agent + Support/Stun",
         "team_comps": []
       }
     ]
@@ -2280,20 +2318,22 @@
     "builds": [
       {
         "role": "Support\nEther Veil Enabler",
-        "w_engines": "Thoughtbop:\nBiS; Provides lots of ER for Sunna as well as ATK% and DMG% for the team\nDreamlit Hearth:\nER passive, DMG% buff\nKaboom the Cannon:\nER% main stat, ATK% buff\nER Stat Stick:\n(Cradle, Vault, Oven, etc.)\nUseful if you don't own Kaboom",
-        "main_stats": "Energy Regen% / Impact%* Disc 6\nATK% Disc 5\nATK% Disc 4",
+        "w_engines": "Thoughtbop:\nBiS; ER% Main Stat, off-field ER, teamwide DMG% and Combat ATK%\nDreamlit Hearth:\nER passive, teamwide DMG%\nKaboom the Cannon:\nER% Main Stat, teamwide Combat ATK%\nER% Stat Stick:\n(Cradle¹, Vault, Oven, etc.):\nER% Main Stat",
+        "main_stats": "Energy Regen% / Impact%² Disc 6\nATK% Disc 5\nATK% Disc 4",
         "sub_stats": "ATK% > Flat ATK",
-        "baseline": "ATK: 3300 - 3500\n\nEnergy Regen:\nThoughtbop: 2.6\nKaboom the Cannon or ER Stat Stick: 2.5\nWeeping Cradle or Dreamlit Hearth: 2.0",
-        "ability": "1. Core\n2. EX Special\n2. Assist\n3. Chain/Ult\nPrioritize Core Skill to maximize buffs. Basic and Dodge are rarely used and can be ignored. EX Special, Assist, and Ult are for more daze when it matters.",
+        "baseline": "ATK: 3300 - 3500\n(3500 to maximize her teamwide ATK buffs)",
+        "ability": "1. Core\n2. EX Special\n2. Assist\n3. Chain/Ult\nEX Special, Assist, and Ult are only for more Daze when it matters. Basic and Dodge can be ignored.",
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [],
-        "disc_2pc_labels": [],
-        "w_engine_notes": "",
+        "disc_2pc_labels": [
+          "Faster Stun²"
+        ],
+        "w_engine_notes": "¹ Cat's Gaze does not count as Sunna's attack, so Weeping Cradle's DMG% buff does not work. The ER effect is not active when paired with Aria during her Ablooms, since it makes Sunna appear on-field.",
         "disc_notes": "",
-        "mindscapes": "M1: When Cat's Gaze hits an enemy, reduce the enemy's DEF by 7%, up to 21%. (good)\nM2: Increases the ATK of all agents by 10% while any Ether Veil is active, it also reduces the number of attacks required to trigger Cat's Gaze and increases its Multiplier. (ok)\nM1 is the recommended stopping point.",
-        "other_notes": "Sunna's first EX will activate Angelic Chord-ination, using EX again while this is active will then open an Ether Veil. Holding EX while performing the first one will cause her to instantly chain into the second EX and activate/refresh the Ether Veil. Try not use her with an Anomaly unless Aria or Nangong is present as her AA does not activate.\nWeeping Cradle's DMG% buff does not work on Sunna's Cat Gaze as it does not count as Sunna's attack. The ER% effect doesn't work when paired with Aria since the attack makes Sunna appear on field.",
-        "team_general": "Attacker + Stunner/Support",
+        "mindscapes": "M1: After Cat's Gaze hits an enemy, teamwide DEF Shred% for more damage. (good)\nM2: Teamwide Combat ATK% for more damage. Increases the damage output from Cat's Gaze. (decent)\nIf you want to invest, M1W0 is the recommended stopping point.",
+        "other_notes": "Sunna's first EX will activate Angelic Chord-ination, granting her teamwide ATK buff. Using EX again while this is active will then open her Ether Veil, granting her Stun DMG Mult% debuff. Holding EX while performing the first one will cause her to instantly chain into the second EX and activate/refresh the Ether Veil.\nTry to not use her with an Anomaly unless Aria or Nangong is present, since her Additional Ability won't be active.",
+        "team_general": "Attack + Stun/Supportive Agent\n\nAnomaly + Nangong",
         "team_comps": []
       }
     ]
@@ -2302,7 +2342,7 @@
     "name": "Trigger",
     "specialty": "Stun",
     "element": "Electric",
-    "last_updated": "2.2",
+    "last_updated": "3.0",
     "builds": [
       {
         "role": "Off-Field Stunner\nSupport",
@@ -2314,9 +2354,8 @@
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [
-          "Team CD% buff",
-          "DMG% buff",
-          "Stun speed"
+          "CD% Buff",
+          "DMG% Buff"
         ],
         "disc_2pc_labels": [
           "Best for Stun",
@@ -2324,8 +2363,8 @@
         ],
         "w_engine_notes": "",
         "disc_notes": "",
-        "mindscapes": "Trigger's M1 increases Purge gained and Max amount of Purge, the Stun Multiplier from Core is added an additional 20% and reduces Aftershock's CD by 1s.\nLow spender should stop at her M1 and Signature W-Engine\nRegarding the D5 Main Stat choices- these are for her personal DMG. Even if it isn't a PEN% / ATK% / Elec DMG% Main Stat, use it if it has a lot of CR%.",
-        "other_notes": "Signature W-Engine gives 24% CRIT Rate, 20% Impact for the wearer and 25% DEF Reduct for the team, very clearly her best weapon but is not usable on a single other character.",
+        "mindscapes": "Trigger's M1 increases Purge gained and Max amount of Purge, the Stun Multiplier from Core is added an additional 20% and reduces Aftershock's CD by 1s.\nR1>M1 Mindscapes above M1 are ass so not recommended",
+        "other_notes": "She is super reliant on her Signature to be good or else she is not worth it at all.",
         "team_general": "Can be used in any team for Off-Field stunning and Team buff purpose\n\nBest paired with On-Field Attacker",
         "team_comps": [
           {
@@ -2368,21 +2407,21 @@
     "last_updated": "3.0",
     "builds": [
       {
-        "role": "Sub DPS Anomaly\nMommy",
-        "w_engines": "Joyau Dore:\nBiS; ER% main stat, 70 AP, 14% DMG, and additional teamwide 60 AP.\nWeeping Gemini:\n(Craftable): ATK% main stat and up to 192 AP in-combat.\nCheck W-Engine Notes\nBoisterous Echoes:\nAP main stat, Flat ER, and DMG%. Usable option, but Weeping Gemini is craftable.\nER% Stat Stick:\nER% main stat for DMG% and AM from Core, and more EX Specials\nCheck W-Engine Notes",
-        "main_stats": "ER% Disc 6\nWind% / PEN% > ATK% Disc 5\nAP Disc 4",
-        "sub_stats": "AP > ATK% > Flat PEN/ATK",
+        "role": "Off-Field Anomaly\nMommy",
+        "w_engines": "Joyau Dore:\nBiS; ER% Main Stat, 70 AP, 14% DMG, and additional teamwide 60 AP\nWeeping Gemini:\n(Craftable): ATK% Main Stat and up to 192 AP in-combat\nCheck W-Engine Notes¹\nBoisterous Echoes:\nAP Main Stat, Energy, and DMG%. Usable option, but Weeping Gemini is craftable\nER% Stat Stick:\nER% Main Stat for DMG% and AM from Core, and more EX Specials\nCheck W-Engine Notes²",
+        "main_stats": "ER% Disc 6\nWind% = PEN% > ATK% Disc 5\nAP Disc 4",
+        "sub_stats": "AP >= ATK% >> Flat PEN/ATK",
         "baseline": "ATK:\nATK Main Engine: 2700+\nNon ATK Main Engine: 2500+\n\nAP\nAP Main Engine: 410-440+\nNon AP Main Engine: 340-370+",
-        "ability": "1. Core\n2. Assist\n2. Ex Special\n4. Basic\n3. Chain/Ult\nDue to her high Daze Multipliers, leveling her other skills are worth it. Keep Basic low, ignore Dodge.",
+        "ability": "1. Core\n2. Assist\n2. EX Special\n4. Basic\n3. Chain/Ult\nDue to her high Daze Multipliers, leveling her other skills are worth it. Keep Basic low, ignore Dodge.",
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [],
         "disc_2pc_labels": [],
-        "w_engine_notes": "R1 Fusion Compiler, R5 Weeping Gemini, R5 Boisterous Echoes, and R3+ Electro-Lip Gloss are all very similar, use depending on what is available.\nER% stat stick is better if it allows for an additional Stun phase. Otherwise, use an alternative option mentioned.\nFlamemaker Shaker is a valid choice, but can be difficult to optimize and is not worth picking up from Collectible Exchange.",
+        "w_engine_notes": "¹R1 Fusion Compiler, R5 Weeping Gemini, R3+ Electro-Lip Gloss, and R5 Boisterous Echoes are all very similar, use depending on what is available. Boisterous Echoes is more niche than the other mentioned W-Engines, and not usually worth leveling for that reason.\n²ER% stat stick is better if it allows for an additional Stun phase. Otherwise, use an alternative option mentioned. If ran alongside an Abloom focused DPS, do not use an ER% Stat Stick or Boisterous Echoes.\nFlamemaker Shaker is a valid choice, but can be difficult to optimize and is not worth picking up from Collectible Exchange.",
         "disc_notes": "",
         "mindscapes": "M1: Gives Velina's Vortex 20% All-Attribute RES Ignore. The whole Squad's Windswept damage gets 20% Wind Attribute RES Ignore. Daze from EX: Wide-Area Cyclone is increased by 20%.\nM2: Triggering Windswept will grant Velina 1 Windbite (5s cd). Triggering Coloring will build Anomaly for the teammate's Attribute (does not contribute to damage). Windswept/Vortex DMG bonus from AA increases by 15%.\nM0R1 is a good stopping point, but her M1 and M2 are great vertical investment choices.",
         "other_notes": "Applying a Wind Anomaly inflicts the Windswept status, and applying a different Attribute Anomaly on top of it does not trigger a Disorder, but instead triggers Vortex. This means that agents who rely on Disorder, such as Miyabi, have poor synergy with Velina, as gaining resources becomes much harder.\nAlong with Miyabi, Alice and Yanagi are not great partners with Velina. Alice due to no Disorders for Blade Etiquette generation, and Yanagi due to Wind's Disorder MV being very low.",
-        "team_general": "Best used with agents with fast Anomaly Buildup to make full use of the Vortex mechanic. Generic team example: Anomaly not reliant on Disorders alongside a Support (or Zhao)",
+        "team_general": "Best with Agents that have fast Anomaly Buildup to make full use of the Vortex mechanic. Generic team example: Anomaly not reliant on Disorders alongside a Support (or Zhao)",
         "team_comps": []
       }
     ]
@@ -2396,8 +2435,8 @@
       {
         "role": "Off-Field Anomaly",
         "w_engines": "Flight of Fancy:\nBiS; AP main stat, Anomaly Buildup Rate buff, AP in-combat\nWeeping Gemini (Craftable):\nATK% main stat, AP in-combat",
-        "main_stats": "AM% Disc 6\nEther% ≥ PEN% / ATK% Disc 5\nAP Disc 4",
-        "sub_stats": "AP >>> ATK% > Flat PEN/ATK",
+        "main_stats": "AM% Disc 6\nEther% = PEN% > ATK% Disc 5\nAP Disc 4",
+        "sub_stats": "AP >> ATK% >> Flat PEN/ATK",
         "baseline": "ATK:\nATK Main Engine: 2500-2700+\nNon ATK Main Engine: 2200-2400+\n\nAP: \nAP Main Engine: 430-450+ \nNon AP Main Engine: 350-370+",
         "ability": "1. Core\n2. Basic\n3. Chain/Ult\n3. EX Special\nOnly Core is needed, the rest of her abilities can be upgraded for more Daze and slightly more DMG scaling.",
         "disc_4pc": [],
@@ -2451,7 +2490,7 @@
     "last_updated": "2.7",
     "builds": [
       {
-        "role": "Anomaly DPS",
+        "role": "On-Field Anomaly",
         "w_engines": "Timeweaver:\nBest Performing Engine\nFusion Compiler:\nVery strong 2nd option\nworks well with Rina\nElectro-Lip Gloss:\nBest A-Rank Engine\noption, requires BP\nWeeping Gemini (Craftable):\nStrong A-Rank option",
         "main_stats": "AM% / ATK%* Disc 6\nPEN% / Elec% Disc 5\nAP Disc 4",
         "sub_stats": "AP > ATK% > Flat PEN/ATK",
@@ -2505,26 +2544,28 @@
   },
   {
     "name": "Ye Shunguang",
-    "specialty": "Attacker",
+    "specialty": "Attack",
     "element": "Ice",
     "last_updated": "2.6",
     "builds": [
       {
-        "role": "Main DPS",
-        "w_engines": "Cloudcleave Radiance:\nBiS; CD% main stat, 20% Phys RES PEN, 25% Phys DMG, and CD% upon activating Ether Veil\nThe Brimstone:\nBest non-sig alternative; Gives ton of ATK% and Passive condition is easily achievable for her\nS-Rank Crit W-Engine:\nPreferably one that gives CD% since she has CR% bonus in her kit and BiS 4PC Disc Set\nStarlight Engine (Craftable):\nGood budget option",
-        "main_stats": "ATK% Disc 6\nPEN% / ATK% / Phys% Disc 5\nCD% / ATK% Disc 4",
-        "sub_stats": "CR% (until 50) > CD% = ATK% > PEN/ATK",
-        "baseline": "ATK:\nATK Main Engine: 3200-3400+\nNon-ATK Main Engine: 2700-3000+\n\nCR: 50%*\n(*CR% threshold for 4PC Ballad, otherwise 70%)\n\nCD: 160-200%+",
-        "ability": "1. Core\n1. Basic\n2. Chain/Ult\n3. EX Special\n3. Assist\n4. Dodge\nMost of Ye Shunguang's damage comes from Basic.\nAssist is her Entry Skill Damage. Dodge has low priority.",
+        "role": "On-Field DPS",
+        "w_engines": "Cloudcleave Radiance:\nBiS; CD% Main Stat, Phys RES PEN%, Phys DMG%, and CD%\nThe Brimstone:\nATK% Main Stat, Combat ATK%\nS-Rank CRIT W-Engine:\nPreferably CD% Main Stat and Passive\nStarlight Engine (Craftable):\nATK% Main Stat, Combat ATK%",
+        "main_stats": "ATK% Disc 6\nPEN% >= ATK% = Phys%¹ Disc 5\nCD% = ATK%¹ Disc 4",
+        "sub_stats": "CR% (until cap) > CD% = ATK%",
+        "baseline": "ATK:\nATK Main Engine: 3200-3400+\nNon-ATK Main Engine: 2700-3000+\n\nCR: 50%²\n\nCD: 160-200%+",
+        "ability": "1. Core\n1. Basic\n2. Chain/Ult\n2. EX Special\n3. Assist\n4. Dodge\nAssist is her Entry Skill damage. Dodge is low priority.",
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [],
-        "disc_2pc_labels": [],
+        "disc_2pc_labels": [
+          "Choose the one with the most effective Sub Stats"
+        ],
         "w_engine_notes": "",
         "disc_notes": "",
-        "mindscapes": "M1 enables YSG to immediately enter the Enlightened state when entering battle, and further amplifies her damage. (decent)\nM2 allows YSG to overflow up to 6 stacks of Qingming Sword Force instead of 3, while increasing the amount of EX Special Attack: Enlightened Mind - Soaring Light that can be used while preserving the same amount of Basic Attacks that use Sword Force. EX Special: Soaring Light and Ultimate: Cleaving Heavens ignore 40% of enemy DEF. (amazing)\nM2 is the recommended stopping point.",
-        "other_notes": "Ye Shunguang plays around her Enlightened state, activated by getting 6 stack of Qingming Sword Force. She gains stacks through attacks, with additional points granted if you Perfect Dodge using her Special.\nFull stacks can be given from the following sources: 1 upon using her EX, 6 upon using Ult outside of Enlightened state, and 3 from her Additional Ability. Excess Qingming Sword Force stacks are converted to Bearer, including those gained while in Enlightened state. Upon ending the state, those are converted back to Qingming Sword Force up to 3, so make sure to not waste your excess stacks at this point.",
-        "team_general": "Zhao + Support\nDialyn + Support\nor double Support",
+        "mindscapes": "M1: Enables Ye Shunguang to immediately enter the Enlightened state when entering battle, and further amplifies her damage. (decent)\nM2: Allows Ye Shunguang to overcap up to 6 stacks of Qingming Sword Force instead of 3, and increases the amount of EX Special Attack: Soaring Light that can be used while preserving the same amount of Basic Attacks that use Sword Force. EX Special: Soaring Light and Ultimate: Cleaving Heavens ignore 40% of enemy DEF. (amazing)\nIf you want to invest, M0W1 is the recommended stopping point.",
+        "other_notes": "Ye Shunguang plays around her Enlightened state, activated by getting 6 stack of Qingming Sword Force. She gains stacks through Basic Attacks, with additional points granted if you Perfect Dodge using her Special.\nFull stacks can be given from the following sources: 1 upon using her EX, 6 upon using Ult outside of Enlightened state, and 3 from her Additional Ability. Excess Qingming Sword Force stacks are converted to Bearer, including those gained while in Enlightened state. Upon ending the state, those are converted back to Qingming Sword Force up to 3 before M2, so make sure to not waste excess stacks.",
+        "team_general": "Zhao + Support\nDialyn + Support\nSupport + Support",
         "team_comps": [
           {
             "label": "Astranomical Qingming force",
@@ -2619,27 +2660,27 @@
     "name": "Yuzuha",
     "specialty": "Support",
     "element": "Electric",
-    "last_updated": "2.7",
+    "last_updated": "3.0",
     "builds": [
       {
         "role": "Anomaly Support",
-        "w_engines": "Metanukimorphosis: \nBiS; ER% main, AM to the equipper- allowing Yuzuha to max out her AA buff- and gives AP to the whole team\nThoughtbop:\nSecond best option, and best option if you use Yuzuha with a Crit DPS\nKaboom the Cannon:\nBest A-Rank option\nWeeping Cradle:\nBetter than Kaboom at higher overclock\nReverb Mark II:\nB-Rank option.",
+        "w_engines": "Metanukimorphosis: \nBiS; ER% Main Stat, AM to user, teamwide 60 AP\nThoughtbop:¹\nER% Main Stat, off-field ER, teamwide DMG% and Combat ATK%\nKaboom the Cannon:\nER% Main Stat, teamwide Combat ATK%\nWeeping Cradle:²\nOff-field ER, teamwide DMG%\nReverb Mark II:\nER% Main Stat, minimal teamwide AP and AM",
         "main_stats": "Anomaly Mastery% Disc 6\nATK% Disc 5\nATK% Disc 4",
-        "sub_stats": "ATK% > Flat Atk > AP",
-        "baseline": "ATK: 3000 (to max out buff at Core F)\n\nAM: 171",
-        "ability": "1. Core\n2. Chain/Ult\n2. EX Special\n2. Basic\nCore, Ult, Basic, and EX are the most important but Ult and Basic have priority over EX for Cage. Assist can be levelled for extra Daze while Dodge can be completely ignored.",
+        "sub_stats": "ATK% > Flat ATK > AP",
+        "baseline": "ATK: 3000\n(3000 to maximize her teamwide ATK buffs)",
+        "ability": "1. Core\n1. Basic\n2. EX Special\n2. Chain/Ult\nAssist can be leveled for Daze. Dodge is ignored.",
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [
-          "Overall best",
-          "Hypercarry"
+          "Overall Best",
+          "3 Stacks³"
         ],
         "disc_2pc_labels": [],
-        "w_engine_notes": "",
+        "w_engine_notes": "¹ Thoughtbop is her Best in Slot when paired with CRIT DPS, including Miyabi in most cases.\n² Weeping Cradle is better than Kaboom the Cannon at Overclock 3+, and never surpasses Thoughtbop or her Signature Engine.",
         "disc_notes": "",
-        "mindscapes": "M1: Yuzuha gains 30 Energy when entering the battle, enemies under Sweet Scare have All-Type RES reduced by 10%. DMG% buff from AA is increased by 8% with signature W-Engine and 4% without. (ok)\nM2: When EX or Ult hits the enemy, increases DMG% and Anomaly Buildup by 15%. When a heavy attack hits an unstunned enemy, triggers a Chain Attack window (20s Cooldown). Ally entering the field through this Chain Attack gives Yuzuha 1 Sugar Point. The Cooldown of Basic Attack: Hard Candy Shot is reduced by 25%. (great with Anomaly that can utilize chain, otherwise just decent)",
-        "other_notes": "Despite her specialty in buffing Anomaly agents, she is still good for non-Anomaly teams because of the teamwide 1200 ATK and 15% DMG buff. If you're not going to make use of Yuzuha's AA you could use ER%/Impact% Disc 6 and a different 2PC. If you get M4, 4PC Astral becomes viable even as the only person who can Quick Assist in her team. If you have a higher refinement Weeping it can do better than Kaboom.",
-        "team_general": "Can be used in any team for teamwide ATK and DMG% buffs. Best used in Anomaly teams to make use of her Anomaly Buildup Rate% buff and Anomaly DMG% buff",
+        "mindscapes": "M1: Extra initial Energy to Yuzuha. Teamwide 10% RES PEN and the Attribute Anomaly/Disorder DMG% from her AA is increased by 6% with her Signature, otherwise 4%. (ok)\nM2: Teamwide 15% DMG and Anomaly Buildup Rate. Triggers forced Chain Attacks when a heavy attack hits a non-Stunned enemy, with a cooldown of 20s. Hard Candy Shot's cooldown reduced by 25%. (decent to great)\nIf you want to invest, M2W0 is the recommended stopping point. If you cannot get M2 and will be stuck at M1, it is better to invest into her teammates.",
+        "other_notes": "Despite her specialty in buffing Anomaly, she is still usable in non-Anomaly teams because of the teamwide 1200 ATK and 15% DMG buff.",
+        "team_general": "(Best Use): Anomaly + Anomaly/Supportive Agent\n\nAttack + Stun/Supportive Agent",
         "team_comps": [
           {
             "label": "New Anomaly Wheelchair",
@@ -2682,7 +2723,7 @@
     "builds": [
       {
         "role": "Support\nEther Veil Enabler",
-        "w_engines": "Half-Sugar Bunny:\nBiS, HP% main stat with\nER passive, plus ATK% and CD% for team\nTusks of Fury:\nGood teamwide buff in passive and gives team extra daze. The DMG% from passive makes up for the loss of DMG% from AA.\nER% Statstick:\nFor the ER main\nHp% Statstick:\nUsed just for the mainstat, helping achieve 27k HP easier.",
+        "w_engines": "Half-Sugar Bunny:\nBiS, HP% main stat with\nER passive, plus ATK% and CD% for team\nTusks of Fury:\nGood teamwide buff in passive and gives team extra daze. The DMG% from passive makes up for the loss of DMG% from AA.\nER% Stat Stick:\nER% Main Stat\nHP% Stat Stick:\nUsed just for the mainstat, helping achieve 27k HP easier.",
         "main_stats": "HP% / ER% Disc 6\nHP% Disc 5\nHP% Disc 4",
         "sub_stats": "HP% > Flat HP",
         "baseline": "HP: \nHP Main Engine: 23,000 - 27,000\nNon HP Main Engine: 21,000 - 25,000+",
@@ -2699,7 +2740,7 @@
         ],
         "w_engine_notes": "",
         "disc_notes": "",
-        "mindscapes": "M1 Righteous Verdict grants the team 15% All-Attribute RES Ignore for 50s after swapping off of Zhao.                         \nM2 Krampus Senior grants Zhao 20% combat attack and her teammates 15% combat attack whenever Zhao recovers HP.\nM1 is her best stopping point for mindscapes.",
+        "mindscapes": "M1 Righteous Verdict grants the team 15% All-Attribute RES Ignore for 50s after swapping off of Zhao.                         \nM2 Krampus Senior grants Zhao 20% combat attack and her teammates 15% combat attack whenever Zhao recovers HP.\nM1 is her best stopping point for mindscapes. R1>M1",
         "other_notes": "Her Assist Follow Up, Chain and Ult grants a Quick Assist to the next character while Ether Veil is up, while nice for upkeeping Astral Voice, its only recommended for non-Ye Shuanguang teams as she wants as much field time as she can to spam basics",
         "team_general": "Can be used in any team for team wide ATK buff and 40% DMG% buff with AA active",
         "team_comps": [
@@ -2729,22 +2770,24 @@
     "builds": [
       {
         "role": "Main DPS",
-        "w_engines": "Cordis Germina:\nBiS in all situations;\nDEF Shred on BA and Ult. But harder not to overcap CR with Nicole\nRiot Suppressor MkVI:\nGood option with Ether DMG% on BA with combat CR\nBrimstone:\nVERY strong non sig option\nhigh ATK buff\nStarlight Engine (Craftable):\nBest budget option",
-        "main_stats": "ATK% Disc 6\nATK% / Ether% Disc 5\nCR% / CD% Disc 4",
+        "w_engines": "Cordis Germina:\nCR% Main Stat, 15% CR, 20% DEF Ignore on Basic Attack and Ultimate\nHeartstring Nocturne:\nCR% Main Stat, 50% CD\nThe Brimstone:\nATK% Main Stat, up to 28% Combat ATK\nBiS at Overclock 3+\nSol Exuvia (Story) > Starlight Engine (Craftable):\nGood Main Stats, usable Passives",
+        "main_stats": "ATK% Disc 6\nATK% / Ether% / PEN% Disc 5\nCR% / CD% / ATK% Disc 4",
         "sub_stats": "CR% (until cap) > CD% > ATK%",
-        "baseline": "ATK:\nATK Main Engine: 2800-3300+\nNon ATK Main Engine: 2700-3300+\n\nCR: 35-70%+\n\nCD: 150-200%+",
-        "ability": "1. Core\n1.Basic\n2. Chain/Ult\n3. EX Special\n4. Dodge\n4. Assist\nDodge and Assist are low priority.",
+        "baseline": "ATK:\nATK Main Engine: 2800-3300+\nNon ATK Main Engine: 2700-3300+\n\nCR: 28-70%¹\n\nCD: 150-200%+",
+        "ability": "1. Core\n1. Basic\n2. Chain/Ult\n3. EX Special\n3. Dodge\n4. Assist\nAssist is low priority.\nHer Enhanced Shotshell sideways is counted in Dodge.",
         "disc_4pc": [],
         "disc_2pc": [],
         "disc_4pc_labels": [
-          "Easy uptime"
+          "Best-in-Slot",
+          "Easy Uptime",
+          "With Dialyn"
         ],
         "disc_2pc_labels": [],
-        "w_engine_notes": "",
+        "w_engine_notes": "Zhu Yuan's Signature Engine is bad and not worth pulling for.",
         "disc_notes": "",
-        "mindscapes": "M1: Allows Zhu Yuan to extend her Burst Window by providing additional Shotshells.\nM2: Provides an easy to trigger DMG bonus for her Basic and Dash attacks, while providing a slight QoL through interruption resistance and damage reduction.",
-        "other_notes": "After her 3rd Enhanced Shot, holding any direction (except back) on your respective device will allow her to perform a Quick Dodge maneuver. This allows her to skip straight to the 3rd Enhanced Shot shell, and repeating this allows her to use all shotshells at maximum possible damage output, keeping you close to the boss to prevent damage fall off.",
-        "team_general": "Burst: 1 On-Field Stunner +Support/ Supportive unit\n\nOn-Field: combination of supportive units and Quick-Swap/Off-Field Stunners",
+        "mindscapes": "M1: Provides Zhu Yuan with alot more enhanced Basic Attacks resulting in more damage. Strong without Nicole.\nM2: Slight QoL through interruption resistance and damage reduction and more DMG% for her enhanced Basic Attacks. (not very good)\nM0 is the recommended stopping point.",
+        "other_notes": "After her 3rd Enhanced Shot, holding any direction (except back) on your respective device will allow her to perform a Quick Dodge maneuver. This allows her to skip straight to the 3rd Enhanced Shotshell, and repeating this allows her to use all Shotshells at maximum possible damage output, keeping you close to the boss to prevent damage fall off.",
+        "team_general": "Burst: 1 On-Field Stunner + Support/Supportive unit\n\nOn-Field: Combination of Supportive units and Quick-Swap/Off-Field Stunners",
         "team_comps": [
           {
             "label": "Pubsec Krampus Collab",
