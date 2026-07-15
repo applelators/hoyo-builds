@@ -72,49 +72,58 @@
       "url": "https://www.icy-veins.com/honkai-star-rail/stellar-companions"
     },
     {
-      "name": "4.3 Gift of Odyssey",
+      "name": "4.4 Gift of Odyssey",
       "type": "login",
-      "start": "2026-06-01T03:00:00Z",
-      "end": "2026-07-14T03:00:00Z",
+      "start": "2026-07-15T03:00:00Z",
+      "end": "2026-08-25T03:00:00Z",
       "tagline": "Log-in reward — check in on 7 separate days before the patch ends to claim 10 Star Rail Special Passes.",
       "rewards": "+ 10 Star Rail Special Passes",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/413645"
     },
     {
-      "name": "Pixel Plane Rumble",
+      "name": "Antigraft Brickbuster",
       "type": "main",
-      "start": "2026-06-01T03:00:00Z",
-      "end": "2026-07-15T03:59:00-05:00",
-      "tagline": "Roguelike pixel-art dungeon — draft blessings, battle retro-styled enemies, and face escalating bosses across multiple biomes.",
-      "rewards": "+ 1,240 Stellar Jade · 2× Tracks of Destiny · Self-Modeling Resin · Speech Bubble",
-      "url": "https://game8.co/games/Honkai-Star-Rail/archives/601959"
+      "start": "2026-07-15T03:00:00Z",
+      "end": "2026-08-25T03:59:00-05:00",
+      "tagline": "Version 4.4 flagship — take on a request from Aventurine and investigate IPC corruption by stacking data bricks in a block-building mini-game.",
+      "rewards": "+ 900 Stellar Jade · Self-Modeling Resin · 2× Tracks of Destiny",
+      "url": null
     },
     {
-      "name": "4.3 Planar Fissure",
+      "name": "Fate/Star Rail Night",
       "type": "combat",
-      "start": "2026-06-17T10:00:00-05:00",
-      "end": "2026-06-29T03:59:00-05:00",
+      "start": "2026-07-24T10:00:00-05:00",
+      "end": "2026-08-25T03:59:00-05:00",
+      "tagline": "Fate/stay night collab combat event — defeat foes to unlock their Noble Phantasms and stack escalating abilities across the Holy Grail War.",
+      "rewards": "+ 1,650 Stellar Jade · Self-Modeling Resin · 2× Tracks of Destiny",
+      "url": "https://game8.co/games/Honkai-Star-Rail/archives/608554"
+    },
+    {
+      "name": "Fate Contract: Renewal",
+      "type": "login",
+      "start": "2026-07-24T10:00:00-05:00",
+      "end": "2026-08-25T03:59:00-05:00",
+      "tagline": "Collab claim event — log in during the window to pick a free 5★ Archer or Gilgamesh plus ascension and trace materials to raise them to Level 60.",
+      "rewards": "+ Free 5★ Archer or Gilgamesh (to Lv. 60) · 10 Star Rail Special Passes",
+      "url": null
+    },
+    {
+      "name": "4.4 Planar Fissure",
+      "type": "combat",
+      "start": "2026-07-27T10:00:00-05:00",
+      "end": "2026-08-08T03:59:00-05:00",
       "tagline": "Simulated Universe bonus — all SU runs during this window grant double Planar Ornament relic drops (up to 12 claims).",
       "rewards": "+ Double Simulated Universe drops (12 claims)",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/413440"
     },
     {
-      "name": "Wispae Amusement Park",
-      "type": "main",
-      "start": "2026-06-24T10:00:00-05:00",
-      "end": "2026-07-15T03:59:00-05:00",
-      "tagline": "Theme park exploration — collect Wispae spirits scattered across carnival attractions and complete mini-game challenges to progress.",
-      "rewards": "+ 500 Stellar Jade · Tracks of Destiny",
-      "url": "https://game8.co/games/Honkai-Star-Rail/archives/602039"
-    },
-    {
-      "name": "4.3 Realm of the Strange",
+      "name": "Garden of Plenty",
       "type": "combat",
-      "start": "2026-07-03T10:00:00-05:00",
-      "end": "2026-07-13T03:59:00-05:00",
-      "tagline": "Cavern of Corrosion bonus — earn triple relic set drops per run for the event duration, up to 3 bonus runs per day.",
-      "rewards": "+ Triple Cavern of Corrosion drops (3×/day)",
-      "url": "https://game8.co/games/Honkai-Star-Rail/archives/417674"
+      "start": "2026-08-14T10:00:00-05:00",
+      "end": "2026-08-21T03:59:00-05:00",
+      "tagline": "Calyx bonus — claim double Golden and Crimson Calyx rewards when spending Trailblaze Power for the event duration.",
+      "rewards": "+ Double Calyx drops (Golden & Crimson)",
+      "url": "https://game8.co/games/Honkai-Star-Rail/archives/413423"
     }
   ],
   "zzz": [
