@@ -1,0 +1,55 @@
+{
+  "$schema": {
+    "_description": "Character outfit/skin promotions per game. Only list skins that are currently sold at a limited-time discount. Dates are UTC calendar dates (YYYY-MM-DD); the app appends the same per-game maintenance-end time as banners (GI T05:00:00Z, HSR/ZZZ T03:00:00Z) and shows a skin only while start <= now < end.",
+    "_fields": {
+      "character": "Character/agent the outfit is for (display name).",
+      "outfit": "Outfit/skin name as it appears in-game.",
+      "priceNow": "Discounted price during the promotion (integer, in the game's premium currency).",
+      "priceWas": "Regular price after the promotion ends.",
+      "currency": "Premium currency name — GI: Genesis Crystals, HSR: Oneiric Shards, ZZZ: Monochrome.",
+      "start": "ISO date the discount opens.",
+      "end": "ISO date the discount closes (exclusive).",
+      "image": "Outfit splash/portrait image URL from the game Fandom wiki.",
+      "url": "Optional Game8 or wiki guide link for the outfit."
+    }
+  },
+  "gi": [
+    {
+      "character": "Citlali",
+      "outfit": "Whispers of Stars and Smoke",
+      "priceNow": 1350,
+      "priceWas": 1680,
+      "currency": "Genesis Crystals",
+      "start": "2026-07-01",
+      "end": "2026-08-10",
+      "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/dd/Character_Citlali_Whispers_of_Stars_and_Smoke_Full_Wish.png/revision/latest?cb=20260701022712",
+      "url": "https://game8.co/games/Genshin-Impact/archives/605820"
+    }
+  ],
+  "hsr": [
+    {
+      "character": "Sparxie",
+      "outfit": "Candy-Coated Waves",
+      "priceNow": 1350,
+      "priceWas": 1680,
+      "currency": "Oneiric Shards",
+      "start": "2026-07-15",
+      "end": "2026-08-25",
+      "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/b/b7/Character_Sparxie_Candy-Coated_Waves_Splash_Art.png/revision/latest?cb=20260715070609",
+      "url": null
+    }
+  ],
+  "zzz": [
+    {
+      "character": "Velina",
+      "outfit": "Shade of Leisure",
+      "priceNow": 1350,
+      "priceWas": 1680,
+      "currency": "Monochrome",
+      "start": "2026-06-17",
+      "end": "2026-07-28",
+      "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/47/Agent_Velina_Airgid_Shade_of_Leisure_Portrait.png/revision/latest?cb=20260617071454",
+      "url": "https://game8.co/games/Zenless-Zone-Zero/archives/604517"
+    }
+  ]
+}

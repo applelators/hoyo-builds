@@ -103,7 +103,7 @@ const ICONS = {
 const S = {
   game: 'all', device: 'desktop', search: '', filterEl: null, sort: 'newest',
   selected: null, animate: true,
-  data: {}, icons: {}, portraits: {}, maxDate: {}, banners: {}, events: {}, streams: {},
+  data: {}, icons: {}, portraits: {}, maxDate: {}, banners: {}, events: {}, streams: {}, skins: {},
   tw: { layout: 'composed', font: 'schibsted', accent: 'room', motion: true },
 };
 
@@ -307,13 +307,14 @@ function renderSpending() {
 async function boot() {
   loadTweaks();
   const grab = (p) => fetch(p).then(r => r.json()).catch(() => ({}));
-  const [icons, portraits, release, banners, events, streams, giB, hsrB, zzzB, itemIcons, discIcons, dataMeta] = await Promise.all([
+  const [icons, portraits, release, banners, events, streams, giB, hsrB, zzzB, itemIcons, discIcons, dataMeta, skins] = await Promise.all([
     grab('icons.json'), grab('portraits.json'), grab('release_data.json'),
     grab('banners.json'), grab('events.json'), grab('livestreams.json'),
     grab('builds.json'), grab('hsr_builds.json'), grab('zzz_builds.json'),
     grab('item_icons.json'), grab('disc_icons.json'), grab('data_meta.json'),
+    grab('skins.json'),
   ]);
-  S.icons = icons; S.portraits = portraits; S.banners = banners; S.events = events; S.streams = streams;
+  S.icons = icons; S.portraits = portraits; S.banners = banners; S.events = events; S.streams = streams; S.skins = skins || {};
   S.meta = dataMeta || {};
   S.itemIcons = itemIcons || {}; S.discIcons = discIcons || {};
   const _raw = { gi: giB, hsr: hsrB, zzz: zzzB };
@@ -432,8 +433,8 @@ function render(reason) {
     <div class="scroll${S.animate ? ' anim' : ''}" id="feed-scroll">
       <div class="feed">
         ${S.game === 'all'
-          ? `<div class="all-cols">${allBannersSection()}${allEventsSection()}</div>`
-          : refreshNotice() + livestreamSection() + heroSection() + dashboardSection() + eventSection() + rosterSection()
+          ? `<div class="all-cols"><div class="all-col-l">${allBannersSection()}${allSkinsSection()}</div>${allEventsSection()}</div>`
+          : refreshNotice() + livestreamSection() + heroSection() + dashboardSection() + skinsSection() + eventSection() + rosterSection()
         }
       </div>
     </div>`;
@@ -563,6 +564,33 @@ function allBannersSection() {
         <span class="panel-ico">${ICONS.wish}</span>
         <span class="panel-t">On the banner now</span>
         <span class="panel-m"><span class="pulse"></span>all games</span>
+      </div>
+      ${sections}
+    </div>
+  </section>`;
+}
+function allSkinsSection() {
+  let hasAny = false;
+  const sections = GAME_ORDER.map(g => {
+    const list = skinData(g);
+    if (!list.length) return '';
+    hasAny = true;
+    const dot = GAME_DOT[g];
+    return `<div class="all-bn-section" style="--gc:${dot}">
+      <div class="all-bn-ghead">
+        <span class="all-bn-gdot" style="background:${dot};box-shadow:0 0 6px ${dot}"></span>
+        <span class="all-bn-gname">${GAMES[g]}</span>
+      </div>
+      <div class="skin-list">${list.map(s => skinCard(s, g)).join('')}</div>
+    </div>`;
+  }).join('');
+  if (!hasAny) return '';
+  return `<section class="block">
+    <div class="panel skin-panel ${reveal()}">
+      <div class="panel-h">
+        <span class="panel-ico">${ICONS.spark}</span>
+        <span class="panel-t">Skins on promotion</span>
+        <span class="panel-m">all games</span>
       </div>
       ${sections}
     </div>
@@ -710,6 +738,50 @@ function dashboardSection() {
   if (!bp && !ep) return '';
   const cols = (bp && ep && S.tw.layout === 'composed') ? ' cols' : '';
   return `<section class="block"><div class="dash${cols}">${bp}${ep}</div></section>`;
+}
+
+// ── 3b · SKINS ON PROMOTION ────────────────────────────────────
+function skinData(game) {
+  const g = game || S.game, now = NOW();
+  return (S.skins[g] || [])
+    .map(s => ({ ...s, s: parseISO(s.start, g), e: parseISO(s.end, g) }))
+    .filter(s => s.s && s.e && s.s <= now && now < s.e)
+    .sort((a, b) => a.e - b.e);
+}
+function skinCard(s, game) {
+  const g = game || S.game;
+  const c = charInGame(g, s.character);
+  const ec = accentFor(c) || elColor(c?.element) || 'var(--room)';
+  const off = (s.priceWas && s.priceNow) ? Math.round((1 - s.priceNow / s.priceWas) * 100) : 0;
+  const tag = s.url ? 'a' : 'div';
+  const href = s.url ? `href="${s.url}" target="_blank" rel="noopener"` : '';
+  return `<${tag} class="skin-card" ${href} style="--ec:${ec}">
+    <span class="skin-art">${s.image ? `<img src="${s.image}" loading="lazy" referrerpolicy="no-referrer" alt="">` : `<span class="ph">${s.character[0]}</span>`}</span>
+    <span class="skin-body">
+      <span class="skin-outfit">${s.outfit}</span>
+      <span class="skin-char">${s.character}${off ? `<span class="skin-off">-${off}%</span>` : ''}</span>
+      <span class="skin-price">
+        <span class="skin-now">${s.priceNow.toLocaleString()}</span>
+        ${s.priceWas ? `<span class="skin-was">${s.priceWas.toLocaleString()}</span>` : ''}
+        <span class="skin-cur">${s.currency}</span>
+      </span>
+      <span class="skin-foot"><span class="skin-cdl">Discount ends in</span><span class="skin-cd" data-deadline="${s.e}" data-cd="short"></span></span>
+    </span>
+  </${tag}>`;
+}
+function skinsSection() {
+  const list = skinData();
+  if (!list.length) return '';
+  return `<section class="block ${reveal()}">
+    <div class="panel skin-panel">
+      <div class="panel-h">
+        <span class="panel-ico">${ICONS.spark}</span>
+        <span class="panel-t">Skins on promotion</span>
+        <span class="panel-m">limited discount</span>
+      </div>
+      <div class="skin-list">${list.map(s => skinCard(s)).join('')}</div>
+    </div>
+  </section>`;
 }
 
 // ── 4 · EVENT TIMELINE (gantt) ─────────────────────────────────
