@@ -24,96 +24,123 @@
   },
   "gi": [
     {
-      "character": "Nicole",
+      "character": "Sandrone",
       "phase": 1,
-      "start": "2026-05-20",
-      "end": "2026-06-09",
+      "start": "2026-07-01",
+      "end": "2026-07-21",
       "rerun": false,
-      "verdict": "",
-      "patch": "6.6"
+      "verdict": "New 5★ Cryo debut.",
+      "patch": "6.7"
     },
     {
-      "character": "Durin",
+      "character": "Citlali",
       "phase": 1,
-      "start": "2026-05-20",
-      "end": "2026-06-09",
-      "rerun": false,
-      "verdict": "",
-      "patch": "6.6"
-    },
-    {
-      "character": "Lohen",
-      "phase": 2,
-      "start": "2026-06-09",
-      "end": "2026-06-30",
-      "rerun": false,
-      "verdict": "",
-      "patch": "6.6"
-    },
-    {
-      "character": "Mavuika",
-      "phase": 2,
-      "start": "2026-06-09",
-      "end": "2026-06-30",
+      "start": "2026-07-01",
+      "end": "2026-07-21",
       "rerun": true,
-      "verdict": "Best Pyro DPS in the game. High-value if you missed her last rerun.",
-      "patch": "6.6"
+      "verdict": "Cryo applicator and shielder; strong in Melt/Freeze cores.",
+      "patch": "6.7"
+    },
+    {
+      "character": "Columbina",
+      "phase": 2,
+      "start": "2026-07-21",
+      "end": "2026-08-11",
+      "rerun": true,
+      "verdict": "First rerun.",
+      "patch": "6.7"
+    },
+    {
+      "character": "Raiden",
+      "phase": 2,
+      "start": "2026-07-21",
+      "end": "2026-08-11",
+      "rerun": true,
+      "verdict": "Universal energy battery and sub-DPS. Safe rerun if you lack an Electro enabler.",
+      "patch": "6.7"
     }
   ],
   "hsr": [
     {
-      "character": "Evanescia",
-      "phase": 2,
-      "start": "2026-05-13",
-      "end": "2026-05-31",
-      "rerun": false,
-      "verdict": "",
-      "patch": "4.2"
-    },
-    {
-      "character": "Feixiao",
-      "phase": 2,
-      "start": "2026-05-13",
-      "end": "2026-05-31",
-      "rerun": true,
-      "verdict": "Available via Indelible Coterie selectable banner (pick Feixiao, Sunday, or Tribbie).",
-      "patch": "4.2"
-    },
-    {
-      "character": "Mortenax Blade",
+      "character": "Himeko • Nova",
       "phase": 1,
-      "start": "2026-06-01",
-      "end": "2026-06-20",
+      "start": "2026-07-15",
+      "end": "2026-08-25",
       "rerun": false,
-      "verdict": "",
-      "patch": "4.3"
+      "verdict": "Debut. Her Ad Astra Nova banner runs the entire version — full patch to pull.",
+      "patch": "4.4"
     },
     {
-      "character": "Yao Guang",
+      "character": "Sparxie",
       "phase": 1,
-      "start": "2026-06-01",
-      "end": "2026-06-20",
+      "start": "2026-07-15",
+      "end": "2026-08-05",
       "rerun": true,
       "verdict": "",
-      "patch": "4.3"
+      "patch": "4.4"
     },
     {
-      "character": "Cyrene",
-      "phase": 2,
-      "start": "2026-06-20",
-      "end": "2026-07-09",
-      "rerun": true,
-      "verdict": "Pull if you play Remembrance teams. Era-defining support; Cyrene reshapes the meta for Chrysos Heirs.",
-      "patch": "4.3"
-    },
-    {
-      "character": "Phainon",
-      "phase": 2,
-      "start": "2026-06-20",
-      "end": "2026-07-09",
+      "character": "Dan Heng • Permansor Terrae",
+      "phase": 1,
+      "start": "2026-07-15",
+      "end": "2026-08-05",
       "rerun": true,
       "verdict": "",
-      "patch": "4.3"
+      "patch": "4.4"
+    },
+    {
+      "character": "March 7th • Evernight",
+      "phase": 1,
+      "start": "2026-07-15",
+      "end": "2026-08-05",
+      "rerun": true,
+      "verdict": "",
+      "patch": "4.4"
+    },
+    {
+      "character": "Rin Tohsaka",
+      "phase": 1,
+      "start": "2026-07-24",
+      "end": "2026-08-25",
+      "rerun": false,
+      "verdict": "Fate/stay night collab debut; banner runs through the rest of Version 4.4.",
+      "patch": "4.4"
+    },
+    {
+      "character": "Gilgamesh",
+      "phase": 1,
+      "start": "2026-07-24",
+      "end": "2026-08-25",
+      "rerun": false,
+      "verdict": "Fate/stay night collab debut. Also claimable free via the Fate Contract: Renewal event.",
+      "patch": "4.4"
+    },
+    {
+      "character": "Cerydra",
+      "phase": 2,
+      "start": "2026-08-05",
+      "end": "2026-08-25",
+      "rerun": true,
+      "verdict": "",
+      "patch": "4.4"
+    },
+    {
+      "character": "Anaxa",
+      "phase": 2,
+      "start": "2026-08-05",
+      "end": "2026-08-25",
+      "rerun": true,
+      "verdict": "",
+      "patch": "4.4"
+    },
+    {
+      "character": "Aventurine",
+      "phase": 2,
+      "start": "2026-08-05",
+      "end": "2026-08-25",
+      "rerun": true,
+      "verdict": "",
+      "patch": "4.4"
     }
   ],
   "zzz": [
