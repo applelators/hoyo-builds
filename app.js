@@ -617,7 +617,7 @@ function allEventsSection() {
     const sig = sigRewards(e.rewards);
     const isDone = done.has(evtDoneKey(g, e.name));
     return `<div class="es-row${urgent ? ' urgent' : ''}${isDone ? ' done' : ''}" data-name="${esc(e.name)}" data-game="${g}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards||'')}" data-tagline="${esc(e.tagline||'')}" data-image="${esc(e.image||'')}" data-quests="${esc(JSON.stringify(e.quests||[]))}">
-      <span class="es-dot" style="background:${gdot};color:${gdot}"></span>
+      ${e.image ? `<span class="es-thumb" style="border-color:${gdot}"><img src="${esc(e.image)}" loading="lazy" referrerpolicy="no-referrer" alt=""></span>` : `<span class="es-dot" style="background:${gdot};color:${gdot}"></span>`}
       <span class="es-mid">
         <span class="es-name">${e.name}</span>
         ${sig.length ? `<span class="es-sig">${sig.map(s => `<span class="es-sig-chip">${esc(s)}</span>`).join('')}</span>` : ''}
@@ -714,7 +714,7 @@ function endingSoonPanel() {
     const sig = sigRewards(e.rewards);
     const done = evtDoneSet().has(evtDoneKey(S.game, e.name));
     return `<div class="es-row${urgent ? ' urgent' : ''}${done ? ' done' : ''}" data-name="${esc(e.name)}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards||'')}" data-tagline="${esc(e.tagline||'')}" data-image="${esc(e.image||'')}" data-quests="${esc(JSON.stringify(e.quests||[]))}">
-      <span class="es-dot" style="background:${col};color:${col}"></span>
+      ${e.image ? `<span class="es-thumb" style="border-color:${col}"><img src="${esc(e.image)}" loading="lazy" referrerpolicy="no-referrer" alt=""></span>` : `<span class="es-dot" style="background:${col};color:${col}"></span>`}
       <span class="es-mid">
         <span class="es-name">${e.name}</span>
         ${sig.length ? `<span class="es-sig">${sig.map(s => `<span class="es-sig-chip">${esc(s)}</span>`).join('')}</span>` : ''}
