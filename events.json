@@ -2,7 +2,8 @@
   "$schema": {
     "_description": "Event schedule per game. All datetimes use ISO 8601 with explicit UTC-5 offset. Start times are 10:00 UTC-5 for mid-version events (confirmed from GI/ZZZ official announcements); patch-day events use the per-game maintenance-end time (GI T05:00:00Z, HSR/ZZZ T03:00:00Z). End times are 03:59 UTC-5 = 08:59 UTC, the minute before the 04:00 America server daily reset — confirmed as the universal HoYoverse event close time.",
     "_fields": {
-      "quests": "Optional array of the individual quest names that make up a story-driven event (used for type 'quest' Archon/Story Quests). List them in completion order; shown in the event popup.",
+      "stages": "Optional ordered array of the stage / chapter / quest / progression-node names that make up the event. List in completion order; shown as a numbered checklist in the event popup. Use the format's real structure (story acts, combat difficulty tiers, daily check-ins, etc.).",
+      "effort": "Optional short human estimate of active playtime to fully clear the event (not the calendar run window). e.g. '~2h total', '~30 min', '~2 min/day for 7 days'. Shown next to the run length in the popup.",
       "image": "Optional event banner/menu image URL from the game Fandom wiki (static.wikia.nocookie.net). null when the wiki has no clean event image yet."
     }
   },
@@ -14,6 +15,14 @@
       "end": "2026-08-10T03:59:00-05:00",
       "tagline": "Story event — follow Escoffier's journey across multiple chapters and complete combat trials to earn a free 5★ constellation.",
       "rewards": "+ 5-Star Stella Fortuna (free constellation) · Crown of Insight · Dust of Enlightenment",
+      "stages": [
+        "Story Act I — opening chapter",
+        "Story Act II — unlocks a few days later",
+        "Story Act III — finale chapter",
+        "Combat Trial I–IV — themed challenge stages",
+        "Reflection challenges — bonus objectives"
+      ],
+      "effort": "~3–4h total; acts unlock on a staggered schedule across the run",
       "url": "https://game8.co/games/Genshin-Impact/archives/546841",
       "image": "https://static.wikia.nocookie.net/gensin-impact/images/b/b3/To_Temper_Thyself_and_Journey_Far_Event_Menu.png/revision/latest?cb=20250829160028"
     },
@@ -24,6 +33,14 @@
       "end": "2026-08-11T03:59:00-05:00",
       "tagline": "Version 6.7 flagship event — join a summer festival across Fontaine to earn a free 4★ Charlotte with a new outfit plus a large Primogem haul.",
       "rewards": "+ 1,060 Primogems · 4★ Charlotte + outfit · event materials",
+      "stages": [
+        "Festival Prologue — story intro",
+        "Stage 1: gameplay mode unlocks",
+        "Stage 2: second mini-game unlocks (few days later)",
+        "Stage 3: exploration / co-op stage",
+        "Finale — closing story + outfit claim"
+      ],
+      "effort": "~4–5h across the event; new stages unlock every few days",
       "url": "https://game8.co/games/Genshin-Impact/archives/605802",
       "image": "https://static.wikia.nocookie.net/gensin-impact/images/5/59/Sunny_Summer_Fontinalia_Chapter.png/revision/latest?cb=20260701034336"
     },
@@ -34,6 +51,14 @@
       "end": "2026-08-11T03:59:00-05:00",
       "tagline": "Wave-survival endgame — hold out against escalating enemy waves across difficulty tiers for Primogems and materials.",
       "rewards": "+ 450 Primogems · event materials",
+      "stages": [
+        "Ready Phase — set your two teams",
+        "Difficulty I–III (Novice → Adept)",
+        "Difficulty IV–V (Master)",
+        "Fearless — max difficulty",
+        "Weekly refresh — re-clear for the ranking score"
+      ],
+      "effort": "~30–45 min per full clear; retry-friendly, refreshes weekly",
       "url": "https://game8.co/games/Genshin-Impact/archives/527266",
       "image": "https://static.wikia.nocookie.net/gensin-impact/images/4/41/Stygian_Onslaught.png/revision/latest?cb=20250623040614"
     },
@@ -44,6 +69,13 @@
       "end": "2026-07-27T03:59:00-05:00",
       "tagline": "Shooting mini-game — fire observation grenades and guide each projectile as far as possible without hitting obstacles for Primogem rewards.",
       "rewards": "+ 420 Primogems · event materials",
+      "stages": [
+        "Level 1–2: basics tutorial",
+        "Level 3–4: obstacle courses",
+        "Level 5–6: wind + bounce mechanics",
+        "Challenge: max-distance target"
+      ],
+      "effort": "~20–30 min for all levels",
       "url": "https://game8.co/games/Genshin-Impact/archives/605803",
       "image": "https://static.wikia.nocookie.net/gensin-impact/images/3/30/Final_Long-Range_Sightlines.png/revision/latest?cb=20260715131237"
     },
@@ -54,6 +86,13 @@
       "end": "2026-08-03T03:59:00-05:00",
       "tagline": "Rhythm mini-game — a co-op rerun of Dance Dance Dynamic Disco; follow the lead dancer's beat to earn Primogems and materials.",
       "rewards": "+ 420 Primogems · event materials",
+      "stages": [
+        "Song 1 — Normal",
+        "Song 2 — Normal",
+        "Song 3 — Hard",
+        "Expert / co-op free mode"
+      ],
+      "effort": "~20–30 min for all songs",
       "url": "https://game8.co/games/Genshin-Impact/archives/605811",
       "image": "https://static.wikia.nocookie.net/gensin-impact/images/6/69/Dance_Dance_Easy-Breezy_Disco.png/revision/latest?cb=20260618125657"
     },
@@ -64,6 +103,11 @@
       "end": "2026-08-10T03:59:00-05:00",
       "tagline": "Farming bonus — Ley Line Outcrops grant double Mora and Hero's Wit for the event window.",
       "rewards": "+ Double Mora & Hero's Wit (Ley Line Outcrops)",
+      "stages": [
+        "Blossom of Wealth — double Mora (up to daily claims)",
+        "Blossom of Revelation — double Hero's Wit"
+      ],
+      "effort": "~5 min/day; a set number of double claims over the window",
       "url": "https://game8.co/games/Genshin-Impact/archives/316998",
       "image": "https://static.wikia.nocookie.net/gensin-impact/images/d/d2/Ley_Line_Overflow_Overview.png/revision/latest?cb=20210227020538"
     }
@@ -76,6 +120,11 @@
       "end": "2026-08-25T03:00:00Z",
       "tagline": "Permanent exchange store — accumulate Convergence Points across the patch season to redeem a free 5★ character of your choice.",
       "rewards": "+ 1 free 5★ character (exchange via Stellar Convergence store)",
+      "stages": [
+        "Accumulate Convergence Points (daily + weekly missions)",
+        "Redeem your chosen 5★ at the Convergence store"
+      ],
+      "effort": "passive; ~5 min/day of missions across the season",
       "url": "https://www.icy-veins.com/honkai-star-rail/stellar-companions",
       "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/6/60/Event_Stellar_Companions_2025-04-09.png/revision/latest?cb=20250409032926"
     },
@@ -86,6 +135,10 @@
       "end": "2026-08-25T03:00:00Z",
       "tagline": "Log-in reward — check in on 7 separate days before the patch ends to claim 10 Star Rail Special Passes.",
       "rewards": "+ 10 Star Rail Special Passes",
+      "stages": [
+        "Day 1–7 check-in — any 7 days in the window"
+      ],
+      "effort": "~2 min/day for 7 days",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/413645",
       "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/8/86/Event_Gift_of_Odyssey_2023-06-07.png/revision/latest?cb=20240608125724"
     },
@@ -96,6 +149,14 @@
       "end": "2026-08-25T03:59:00-05:00",
       "tagline": "Version 4.4 flagship — take on a request from Aventurine and investigate IPC corruption by stacking data bricks in a block-building mini-game.",
       "rewards": "+ 900 Stellar Jade · Self-Modeling Resin · 2× Tracks of Destiny",
+      "stages": [
+        "Prologue — Aventurine's request",
+        "Stage 1: stacking basics",
+        "Stage 2: modifier bricks (unlocks later)",
+        "Stage 3: high-rise challenge",
+        "Endless / score-attack mode"
+      ],
+      "effort": "~1.5–2h total; stages unlock across the patch",
       "url": null,
       "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/f/fd/Event_Antigraft_Brickbuster.png/revision/latest?cb=20260714045044"
     },
@@ -106,6 +167,13 @@
       "end": "2026-08-25T03:59:00-05:00",
       "tagline": "Fate/stay night collab combat event — defeat foes to unlock their Noble Phantasms and stack escalating abilities across the Holy Grail War.",
       "rewards": "+ 1,650 Stellar Jade · Self-Modeling Resin · 2× Tracks of Destiny",
+      "stages": [
+        "Grail War Round 1 — unlock first Noble Phantasm",
+        "Round 2 — new modifiers",
+        "Round 3 — stacked buffs",
+        "Final: Heaven's Feel challenge stage"
+      ],
+      "effort": "~45–60 min across all rounds",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/608554",
       "image": null
     },
@@ -116,6 +184,12 @@
       "end": "2026-08-25T03:59:00-05:00",
       "tagline": "Collab claim event — log in during the window to pick a free 5★ Archer or Gilgamesh plus ascension and trace materials to raise them to Level 60.",
       "rewards": "+ Free 5★ Archer or Gilgamesh (to Lv. 60) · 10 Star Rail Special Passes",
+      "stages": [
+        "Select your free 5★ (Archer or Gilgamesh)",
+        "Claim ascension + trace materials",
+        "Raise the character to Lv. 60"
+      ],
+      "effort": "~10 min one-time claim",
       "url": null,
       "image": null
     },
@@ -126,6 +200,11 @@
       "end": "2026-08-08T03:59:00-05:00",
       "tagline": "Simulated Universe bonus — all SU runs during this window grant double Planar Ornament relic drops (up to 12 claims).",
       "rewards": "+ Double Simulated Universe drops (12 claims)",
+      "stages": [
+        "Run Simulated Universe / Divergent Universe",
+        "Claim double Planar Ornament drops (up to 12 times)"
+      ],
+      "effort": "~15–20 min per run; 12 claims over the window",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/413440",
       "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/9/91/Event_Planar_Fissure.png/revision/latest?cb=20250509000528"
     },
@@ -136,6 +215,11 @@
       "end": "2026-08-21T03:59:00-05:00",
       "tagline": "Calyx bonus — claim double Golden and Crimson Calyx rewards when spending Trailblaze Power for the event duration.",
       "rewards": "+ Double Calyx drops (Golden & Crimson)",
+      "stages": [
+        "Spend Trailblaze Power on Golden/Crimson Calyxes",
+        "Claim double drops (up to a set number of claims)"
+      ],
+      "effort": "~10 min; spend banked Trailblaze Power",
       "url": "https://game8.co/games/Honkai-Star-Rail/archives/413423",
       "image": "https://static.wikia.nocookie.net/houkai-star-rail/images/3/36/Event_Garden_of_Plenty.png/revision/latest?cb=20230720105834"
     }
@@ -148,6 +232,13 @@
       "end": "2026-07-28T03:59:00-05:00",
       "tagline": "Story-driven Bangboo event — navigate narrative chapters, solve chip-circuit puzzles, and unlock cosmetic rewards.",
       "rewards": "+ 1,000+ Polychrome · exclusive profile cosmetics",
+      "stages": [
+        "Chapter 1 — story intro",
+        "Chapter 2 — chip-circuit puzzles",
+        "Chapter 3 — advanced puzzles (unlocks later)",
+        "Finale — cosmetic claim"
+      ],
+      "effort": "~1.5–2h; chapters unlock over the run",
       "url": null,
       "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/72/Event_Bangbang%21_The_Genius_and_the_Miracle_Chip.png/revision/latest?cb=20260617123508"
     },
@@ -158,6 +249,13 @@
       "end": "2026-07-28T03:59:00-05:00",
       "tagline": "Hollow Zero variant — navigate exam-themed Hollow maps, answer ability-check questions, and defeat boss Ethereals at the end.",
       "rewards": "+ 1,200 Polychrome · Hamster Cage Pass · Boisterous Echoes (A-rank W-Engine)",
+      "stages": [
+        "Exam Hall 1 — intro difficulty",
+        "Exam Hall 2 — ability-check questions",
+        "Exam Hall 3 — higher difficulty",
+        "Final Exam — boss Ethereal"
+      ],
+      "effort": "~1h across all difficulties",
       "url": null,
       "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a3/Event_Assemble%21_Mock_Exam_Comeback_Plan.png/revision/latest?cb=20260624041241"
     },
@@ -168,6 +266,13 @@
       "end": "2026-07-28T03:59:00-05:00",
       "tagline": "Investigation event — gather clues and scan evidence across New Eridu districts to piece together a multi-part conspiracy.",
       "rewards": "+ Polychrome · Boopon · Official Investigator Log",
+      "stages": [
+        "Case File 1 — gather clues",
+        "Case File 2 — scan evidence",
+        "Case File 3 — cross-reference leads",
+        "Solve the conspiracy — final report"
+      ],
+      "effort": "~45–60 min",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/604631",
       "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/1/13/Event_Celestial_Nexus_Intelligence_Dossier.png/revision/latest?cb=20260615104523"
     },
@@ -178,6 +283,12 @@
       "end": "2026-07-28T03:59:00-05:00",
       "tagline": "Shiyu Defense variant — clear shadow-realm combat waves under fixed-team restrictions; higher nodes require attribute-specific strategies.",
       "rewards": "+ 360 Polychrome · character leveling materials",
+      "stages": [
+        "Node 1–2 — fixed-team basics",
+        "Node 3–4 — mixed enemy waves",
+        "Node 5+ — attribute-specific strategies"
+      ],
+      "effort": "~30–45 min for all nodes",
       "url": null,
       "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/49/Event_Gleaming_Shadow_Team_Battle.png/revision/latest?cb=20260618095715"
     },
@@ -188,6 +299,10 @@
       "end": "2026-07-28T03:59:00-05:00",
       "tagline": "Daily check-in event — log in each day to collect Polychrome and Boopons; no gameplay required.",
       "rewards": "+ 420 Polychrome · Boopons",
+      "stages": [
+        "Daily check-in — log in each day of the window"
+      ],
+      "effort": "~1 min/day",
       "url": "https://game8.co/games/Zenless-Zone-Zero/archives/604665",
       "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a2/Event_Art_Is_Bangboo%21.png/revision/latest?cb=20260707015534"
     },
@@ -198,6 +313,12 @@
       "end": "2026-07-20T03:59:00-05:00",
       "tagline": "Narrative story event — follow the Hobbling Crow faction through a multi-chapter story with light combat sequences.",
       "rewards": "",
+      "stages": [
+        "Chapter 1 — introduction",
+        "Chapter 2 — rising action",
+        "Chapter 3 — finale (light combat)"
+      ],
+      "effort": "~45–60 min",
       "url": null,
       "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/3/37/Event_Tales_of_the_Hobbling_Crow.png/revision/latest?cb=20260701044544"
     }

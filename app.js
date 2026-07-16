@@ -616,7 +616,7 @@ function allEventsSection() {
     const rem = e.e2 - now, urgent = rem <= 60 * 36e5;
     const sig = sigRewards(e.rewards);
     const isDone = done.has(evtDoneKey(g, e.name));
-    return `<div class="es-row${urgent ? ' urgent' : ''}${isDone ? ' done' : ''}" data-name="${esc(e.name)}" data-game="${g}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards||'')}" data-tagline="${esc(e.tagline||'')}" data-image="${esc(e.image||'')}" data-quests="${esc(JSON.stringify(e.quests||[]))}">
+    return `<div class="es-row${urgent ? ' urgent' : ''}${isDone ? ' done' : ''}" data-name="${esc(e.name)}" data-game="${g}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards||'')}" data-tagline="${esc(e.tagline||'')}" data-image="${esc(e.image||'')}" data-effort="${esc(e.effort||'')}" data-stages="${esc(JSON.stringify(e.stages||[]))}">
       ${e.image ? `<span class="es-thumb" style="border-color:${gdot}"><img src="${esc(e.image)}" loading="lazy" referrerpolicy="no-referrer" alt=""></span>` : `<span class="es-dot" style="background:${gdot};color:${gdot}"></span>`}
       <span class="es-mid">
         <span class="es-name">${e.name}</span>
@@ -713,7 +713,7 @@ function endingSoonPanel() {
     const urgent = rem <= 60 * 36e5;                 // within ~2.5 days
     const sig = sigRewards(e.rewards);
     const done = evtDoneSet().has(evtDoneKey(S.game, e.name));
-    return `<div class="es-row${urgent ? ' urgent' : ''}${done ? ' done' : ''}" data-name="${esc(e.name)}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards||'')}" data-tagline="${esc(e.tagline||'')}" data-image="${esc(e.image||'')}" data-quests="${esc(JSON.stringify(e.quests||[]))}">
+    return `<div class="es-row${urgent ? ' urgent' : ''}${done ? ' done' : ''}" data-name="${esc(e.name)}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards||'')}" data-tagline="${esc(e.tagline||'')}" data-image="${esc(e.image||'')}" data-effort="${esc(e.effort||'')}" data-stages="${esc(JSON.stringify(e.stages||[]))}">
       ${e.image ? `<span class="es-thumb" style="border-color:${col}"><img src="${esc(e.image)}" loading="lazy" referrerpolicy="no-referrer" alt=""></span>` : `<span class="es-dot" style="background:${col};color:${col}"></span>`}
       <span class="es-mid">
         <span class="es-name">${e.name}</span>
@@ -803,7 +803,7 @@ function eventSection() {
     if (!liveNow) barlab = 'in ' + Math.max(1, Math.round((e.s - now) / 864e5)) + 'd';
     else if (soon) barlab = Math.max(1, Math.round(remMs / 36e5)) + 'h left';
     else barlab = Math.round(remMs / 864e5) + 'd left';
-    return `<div class="evt-row${soon ? ' soon' : ''}" data-name="${esc(e.name)}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards || '')}" data-tagline="${esc(e.tagline||'')}" data-image="${esc(e.image||'')}" data-quests="${esc(JSON.stringify(e.quests||[]))}">
+    return `<div class="evt-row${soon ? ' soon' : ''}" data-name="${esc(e.name)}" data-type="${e.type}" data-s="${e.s}" data-e="${e.e2}" data-rew="${esc(e.rewards || '')}" data-tagline="${esc(e.tagline||'')}" data-image="${esc(e.image||'')}" data-effort="${esc(e.effort||'')}" data-stages="${esc(JSON.stringify(e.stages||[]))}">
       <span class="evt-label"><span class="evt-tdot" style="background:${col}"></span><span class="evt-name">${e.name}</span>${soon ? `<span class="evt-warn">${WARN_SVG}Ends soon</span>` : `<span class="evt-type" style="color:${col}">${evtType(e.type)[1]}</span>`}</span>
       <span class="evt-track">
         <span class="evt-bar${e.s < winS ? ' clipL' : ''}${e.e2 > winE ? ' clipR' : ''}${soon ? ' soon' : ''}" style="left:${L}%;width:${R - L}%;--c:${soon ? 'var(--amber)' : col}">
@@ -989,15 +989,15 @@ function showEvtPop(row) {
     <div class="evt-pop-name">${row.dataset.name}</div>
     ${row.dataset.image ? `<div class="evt-pop-img"><img src="${row.dataset.image}" loading="lazy" referrerpolicy="no-referrer" alt=""></div>` : ''}
     ${row.dataset.tagline ? `<div class="evt-pop-tagline">${row.dataset.tagline}</div>` : ''}
-    <div class="evt-pop-dates"><span class="evt-pop-rng">${fmtDay(s)} → ${fmtDay(e)}</span><span class="evt-pop-len">${total}d run</span></div>
+    <div class="evt-pop-dates"><span class="evt-pop-rng">${fmtDay(s)} → ${fmtDay(e)}</span><span class="evt-pop-len">${total}d run${row.dataset.effort ? ` · ${esc(row.dataset.effort)}` : ''}</span></div>
     <div class="evt-pop-cdrow"><span class="evt-pop-cdl">${future ? 'Starts in' : 'Time remaining'}</span><span class="evt-pop-cd${soon ? ' warn' : ''}" data-deadline="${dl}" data-cd="full"></span></div>
     <div class="evt-pop-local">Ends ${fmtLocal(e)}</div>
     ${row.dataset.rew ? `<div class="evt-pop-rew">${row.dataset.rew}</div>` : ''}
     ${(() => {
-      let qs = []; try { qs = JSON.parse(row.dataset.quests || '[]'); } catch {}
-      return qs.length ? `<div class="evt-pop-quests">
-        <span class="evt-pop-qlab">Quests</span>
-        <ol class="evt-pop-qlist">${qs.map(q => `<li>${esc(q)}</li>`).join('')}</ol>
+      let st = []; try { st = JSON.parse(row.dataset.stages || '[]'); } catch {}
+      return st.length ? `<div class="evt-pop-quests">
+        <span class="evt-pop-qlab">Stages</span>
+        <ol class="evt-pop-qlist">${st.map(q => `<li>${esc(q)}</li>`).join('')}</ol>
       </div>` : '';
     })()}`;
   pop.querySelector('.evt-pop-close').addEventListener('click', ev => { ev.stopPropagation(); hideEvtPop(); });
