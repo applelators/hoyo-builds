@@ -811,6 +811,13 @@
       "element": "Anemo",
       "weapon_type": "Catalyst",
       "rarity": 4
+    },
+    "Sandrone": {
+      "version": "6.7",
+      "date": "2026-07-01",
+      "element": "Cryo",
+      "weapon_type": "Claymore",
+      "rarity": 5
     }
   },
   "hsr": {
@@ -1740,6 +1747,18 @@
       "version": "3.0",
       "date": "2026-06-17",
       "element": "Wind",
+      "rarity": 5
+    },
+    "Remielle": {
+      "version": "3.1",
+      "date": "2026-07-29",
+      "element": "Ether",
+      "rarity": 5
+    },
+    "Sigrid": {
+      "version": "3.1",
+      "date": "2026-08-19",
+      "element": "Ice",
       "rarity": 5
     }
   }

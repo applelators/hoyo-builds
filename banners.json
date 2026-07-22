@@ -179,6 +179,33 @@
       "rerun": true,
       "verdict": "",
       "patch": "3.0"
+    },
+    {
+      "character": "Remielle",
+      "phase": 1,
+      "start": "2026-07-29",
+      "end": "2026-09-08",
+      "rerun": false,
+      "verdict": "New S-Rank Ether Anomaly. Anniversary headliner — her banner runs the entire Version 3.1.",
+      "patch": "3.1"
+    },
+    {
+      "character": "Aria",
+      "phase": 1,
+      "start": "2026-07-29",
+      "end": "2026-08-19",
+      "rerun": true,
+      "verdict": "First rerun. Ether Anomaly / Disorder specialist and a natural Remielle partner.",
+      "patch": "3.1"
+    },
+    {
+      "character": "Sigrid",
+      "phase": 2,
+      "start": "2026-08-19",
+      "end": "2026-09-08",
+      "rerun": false,
+      "verdict": "New S-Rank Ice Attack (Airspace Patrol Bureau). Debuts alongside the anniversary S-Rank selector.",
+      "patch": "3.1"
     }
   ]
 }

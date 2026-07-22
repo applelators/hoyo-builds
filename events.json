@@ -321,6 +321,55 @@
       "effort": "~45–60 min",
       "url": null,
       "image": "https://static.wikia.nocookie.net/zenless-zone-zero/images/3/37/Event_Tales_of_the_Hobbling_Crow.png/revision/latest?cb=20260701044544"
+    },
+    {
+      "name": "Summer Waves Roll In",
+      "type": "main",
+      "start": "2026-07-29T03:00:00Z",
+      "end": "2026-09-01T03:59:00-05:00",
+      "tagline": "Version 3.1 summer flagship — join Remielle, Lucy, and Sigrid at the Seaside Resort for beach exploration and a semi-roguelike upgrade loop.",
+      "rewards": "+ 1,000+ Polychrome · A-Rank Bangboo Overtimeboo · upgrade materials",
+      "stages": [
+        "Story chapters — Seaside Resort getaway",
+        "Beachcombing — explore the beach to gather resources",
+        "Treasure Trading — semi-roguelike upgrade progression",
+        "Finale — claim Overtimeboo + cosmetics"
+      ],
+      "effort": "~2–3h total; stages unlock across the run",
+      "url": null,
+      "image": null
+    },
+    {
+      "name": "Second Anniversary Celebration",
+      "type": "login",
+      "start": "2026-07-29T03:00:00Z",
+      "end": "2026-09-08T03:00:00Z",
+      "tagline": "ZZZ 2nd anniversary — log in across the version for a huge gift haul plus a free limited S-Rank Agent of your choice.",
+      "rewards": "+ Free limited S-Rank selector (Jane / Soldier 0 – Anby / Trigger / Lucia / Hugo) + W-Engine · 1,600 Polychrome · 30 pulls · free outfit",
+      "stages": [
+        "Daily anniversary login — claim gifts across the patch",
+        "Pick your free limited S-Rank Agent + matching W-Engine",
+        "Redeem anniversary code + bonus pulls"
+      ],
+      "effort": "~5 min for the big claims; a couple minutes/day for login stamps",
+      "url": null,
+      "image": null
+    },
+    {
+      "name": "Deadly Assault: Adversity Mode",
+      "type": "combat",
+      "start": "2026-07-29T03:00:00Z",
+      "end": "2026-09-08T03:00:00Z",
+      "tagline": "New endgame challenge — score 9 stars in the current Deadly Assault season to unlock Adversity Mode, a high-difficulty tier rewarding exclusive cosmetics.",
+      "rewards": "+ Exclusive avatars & cosmetic collectibles (no extra Polychrome)",
+      "stages": [
+        "Clear the current Deadly Assault season for 9 stars",
+        "Unlock Adversity Mode",
+        "Clear Adversity nodes for exclusive avatars"
+      ],
+      "effort": "~30–45 min per rotation; high-end, retry-friendly",
+      "url": null,
+      "image": null
     }
   ]
 }
